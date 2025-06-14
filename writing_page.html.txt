@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing - Mileena Rayne</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #0a0a0a;
+            color: #e8e8e8;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Elegant background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 30px 0;
+            border-bottom: 1px solid #333;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 300;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav a.active {
+            color: #8a9fff;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #8a9fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+        }
+
+        .nav a:hover {
+            color: #8a9fff;
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+        }
+
+        .page-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .page-subtitle {
+            font-size: 1.2em;
+            color: #bbb;
+            max-width: 600px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        /* Featured Book */
+        .featured-book-section {
+            padding: 80px 0;
+        }
+
+        .featured-book {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .book-cover {
+            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+            border-radius: 15px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #000;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .cover-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .cover-author {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        .book-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .book-label {
+            color: #8a9fff;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .book-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .book-genre {
+            color: #999;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .book-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .book-excerpt {
+            background: rgba(138, 159, 255, 0.05);
+            border-left: 4px solid #8a9fff;
+            padding: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .book-links {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .book-link {
+            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+            color: #000;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .book-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
+        }
+
+        .book-link.secondary {
+            background: rgba(138, 159, 255, 0.2);
+            color: #8a9fff;
+            border: 1px solid #8a9fff;
+        }
+
+        .book-link.secondary:hover {
+            background: rgba(138, 159, 255, 0.3);
+        }
+
+        /* Work in Progress */
+        .wip-section {
+            padding: 80px 0;
+            background: rgba(10, 10, 20, 0.6);
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #f0f0f0;
+            font-weight: 300;
+        }
+
+        .wip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .wip-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .wip-card:hover {
+            transform: translateY(-5px);
+            border-color: #8a9fff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .wip-status {
+            background: rgba(138, 159, 255, 0.2);
+            color: #8a9fff;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .wip-title {
+            font-size: 1.4em;
+            color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+
+        .wip-genre {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .wip-description {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            background: rgba(51, 51, 51, 0.6);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #8a9fff, #a8b5ff);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            color: #999;
+            font-size: 0.9em;
+            text-align: right;
+        }
+
+        /* Writing Philosophy */
+        .philosophy-section {
+            padding: 80px 0;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .philosophy-quote {
+            font-size: 1.4em;
+            color: #ddd;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            border-left: 4px solid #8a9fff;
+            padding-left: 30px;
+            text-align: left;
+        }
+
+        .philosophy-text {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        /* Short Stories Section */
+        .stories-section {
+            padding: 80px 0;
+            background: rgba(10, 10, 20, 0.8);
+        }
+
+        .stories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .story-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            border-color: #8a9fff;
+            transform: translateY(-3px);
+        }
+
+        .story-title {
+            color: #f0f0f0;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .story-theme {
+            color: #8a9fff;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .story-preview {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .read-story-link {
+            color: #8a9fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .read-story-link:hover {
+            border-bottom-color: #8a9fff;
+        }
+
+        /* Newsletter CTA */
+        .newsletter-cta {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+            border: 1px solid #8a9fff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            margin: 80px 0;
+        }
+
+        .cta-title {
+            color: #f0f0f0;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .cta-text {
+            color: #ccc;
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #444;
+            border-radius: 8px;
+            color: #e8e8e8;
+            font-size: 1em;
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: #8a9fff;
+        }
+
+        .newsletter-button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .featured-book {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .book-cover {
+                height: 300px;
+                margin: 0 auto;
+                max-width: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .page-title {
+                font-size: 2.2em;
+            }
+            
+            .featured-book {
+                padding: 30px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .stories-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">Mileena Rayne</a>
+                <nav class="nav">
+                    <a href="index.html">Home</a>
+                    <a href="diary.html">Diary</a>
+                    <a href="music.html">Music</a>
+                    <a href="writing.html" class="active">Writing</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Writing</h1>
+            <p class="page-subtitle">
+                Stories that explore the uncomfortable truths, characters who refuse to stay on the surface, 
+                and narratives that challenge us to confront what we'd rather ignore.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Book -->
+    <section class="featured-book-section">
+        <div class="container">
+            <div class="featured-book">
+                <div class="book-cover">
+                    <div class="cover-title">Fractures</div>
+                    <div class="cover-author">Mileena Rayne</div>
+                </div>
+                
+                <div class="book-info">
+                    <div class="book-label">Published Novel</div>
+                    <h2 class="book-title">Fractures</h2>
+                    <div class="book-genre">Literary Fiction • Psychological Drama</div>
+                    
+                    <p class="book-description">
+                        A raw exploration of family trauma, resilience, and the invisible wounds that shape us. 
+                        When Maya returns home after years of absence, she must confront the fractures in her 
+                        family - and herself - that have never truly healed. This novel doesn't shy away from 
+                        the uncomfortable truths about how we hurt the people we love and how we learn to 
+                        forgive the unforgivable.
+                    </p>
+                    
+                    <div class="book-excerpt">
+                        "Some fractures are so deep they become part of your architecture. You don't heal them - 
+                        you learn to build around them, to make them beautiful in their brokenness."
+                    </div>
+                    
+                    <div class="book-links">
+                        <a href="#" class="book-link">Buy on Amazon</a>
+                        <a href="#" class="book-link secondary">Barnes & Noble</a>
+                        <a href="#" class="book-link secondary">Goodreads</a>
+                        <a href="#" class="book-link secondary">Read Sample</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work in Progress -->
+    <section class="wip-section">
+        <div class="container">
+            <h2 class="section-title">Current Projects</h2>
+            
+            <div class="wip-grid">
+                
+                <!-- WIP 1 -->
+                <div class="wip-card">
+                    <div class="wip-status">First Draft - 75%</div>
+                    <h3 class="wip-title">The Space Between Shadows</h3>
+                    <div class="wip-genre">Psychological Thriller</div>
+                    <p class="wip-description">
+                        A complex exploration of stalking, trauma, and the thin line between protection and obsession. 
+                        This novel forces readers to confront uncomfortable questions about safety, consent, and the 
+                        psychology of predatory behavior. Not for the faint of heart.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <div class="progress-text">65,000 / 85,000 words</div>
+                </div>
+
+                <!-- WIP 2 -->
+                <div class="wip-card">
+                    <div class="wip-status">Outline Complete</div>
+                    <h3 class="wip-title">Shelter</h3>
+                    <div class="wip-genre">Literary Memoir</div>
+                    <p class="wip-description">
+                        A raw, honest memoir about my family's experience with homelessness. This book examines 
+                        the complicated dynamics of crisis, the misconceptions about shelter life, and the 
+                        unexpected lessons learned when everything familiar falls away.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%;"></div>
+                    </div>
+                    <div class="progress-text">Planning phase complete</div>
+                </div>
+
+                <!-- WIP 3 -->
+                <div class="wip-card">
+                    <div class="wip-status">Second Draft</div>
+                    <h3 class="wip-title">Unraveling</h3>
+                    <div class="wip-genre">Short Story Collection</div>
+                    <p class="wip-description">
+                        A collection of interconnected stories about people at their breaking points - and what 
+                        they discover about themselves when everything they thought they knew falls apart. 
+                        Each story explores a different aspect of human resilience and transformation.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 60%;"></div>
+                    </div>
+                    <div class="progress-text">8 of 12 stories complete</div>
+                </div>
+
+                <!-- WIP 4 -->
+                <div class="wip-card">
+                    <div class="wip-status">Research Phase</div>
+                    <h3 class="wip-title">Too Intense: A Guide</h3>
+                    <div class="wip-genre">Self-Help / Psychology</div>
+                    <p class="wip-description">
+                        A guide for highly sensitive, emotionally intelligent people navigating a world that 
+                        often tells them they're "too much." Combining personal experience with psychological 
+                        research to help readers embrace their intensity as a superpower.
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%;"></div>
+                    </div>
+                    <div class="progress-text">Research and outline phase</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Short Stories -->
+    <section class="stories-section">
+        <div class="container">
+            <h2 class="section-title">Recent Short Works</h2>
+            
+            <div class="stories-grid">
+                
+                <div class="story-card">
+                    <h3 class="story-title">The Weight of Words Unspoken</h3>
+                    <div class="story-theme">Family • Communication</div>
+                    <p class="story-preview">
+                        A daughter visits her estranged father in the hospital, carrying twenty years 
+                        of things she's never said. Sometimes the heaviest conversations are the ones 
+                        we never have.
+                    </p>
+                    <a href="#" class="read-story-link">Read full story →</a>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">Surface Tension</h3>
+                    <div class="story-theme">Relationships • Authenticity</div>
+                    <p class="story-preview">
+                        At a dinner party filled with perfect small talk, one woman decides to tell 
+                        the truth about her life. The results are both devastating and liberating.
+                    </p>
+                    <a href="#" class="read-story-link">Read full story →</a>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">The Art of Drowning</h3>
+                    <div class="story-theme">Mental Health • Survival</div>
+                    <p class="story-preview">
+                        A meditation on depression that refuses to romanticize suffering while still 
+                        finding beauty in the struggle to surface. Sometimes drowning looks like 
+                        treading water.
+                    </p>
+                    <a href="#" class="read-story-link">Read full story →</a>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">Inherited Trauma</h3>
+                    <div class="story-theme">Family • Healing</div>
+                    <p class="story-preview">
+                        Three generations of women confront the patterns they've passed down and 
+                        the courage it takes to break cycles that feel like destiny.
+                    </p>
+                    <a href="#" class="read-story-link">Read full story →</a>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">The Performance</h3>
+                    <div class="story-theme">Identity • Social Media</div>
+                    <p class="story-preview">
+                        A social media influencer's carefully curated life unravels in real-time 
+                        when she accidentally posts her authentic thoughts instead of her brand content.
+                    </p>
+                    <a href="#" class="read-story-link">Read full story →</a>
+                </div>
+
+                <div class="story-card">
+                    <h3 class="story-title">Empty Rooms</h3>
+                    <div class="story-theme">Loss • Memory</div>
+                    <p class="story-preview">
+                        After her mother's death, a woman returns to clean out the family home and 
+                        discovers that grief isn't about letting go - it's about learning to carry 
+                        love differently.
+                    </p>
+                    <a href="#" class="read-story-link">Read full story →</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Writing Philosophy -->
+    <section class="philosophy-section">
+        <div class="container">
+            <h2 class="section-title">My Writing Philosophy</h2>
+            <div class="philosophy-content">
+                <div class="philosophy-quote">
+                    "I write the stories that make me uncomfortable, because comfort is the enemy of truth. 
+                    If my words don't disturb someone into awareness, then I'm not doing my job as a storyteller."
+                </div>
+                <div class="philosophy-text">
+                    <p>My writing comes from the belief that literature should be more than entertainment - it should be transformation. I'm not interested in stories that let readers stay comfortable in their assumptions. I want to write the narratives that force us to examine our own shadows, to question what we think we know about human nature, and to find beauty in the places we're afraid to look.</p>
+                    
+                    <p>Every story I write is born from authentic experience or deep emotional truth. I don't create suffering for shock value, but I refuse to sanitize the human experience for palatability. My characters are flawed, complex, and real because real people are messy and contradictory and beautiful in their brokenness.</p>
+                    
+                    <p>I believe that vulnerability in storytelling creates connection, that sharing our struggles helps others feel less alone, and that sometimes the most healing thing literature can do is simply witness our pain and say: "Yes, this happened. Yes, it mattered. Yes, you survived."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="container">
+        <div class="newsletter-cta">
+            <h2 class="cta-title">Get Writing Updates</h2>
+            <p class="cta-text">
+                Be the first to know about new releases, work-in-progress updates, and exclusive excerpts 
+                from my current projects.
+            </p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                <button type="submit" class="newsletter-button">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
