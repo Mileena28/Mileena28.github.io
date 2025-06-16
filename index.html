@@ -77,6 +77,9 @@ layout: default
         padding: 30px;
         transition: all 0.3s ease;
         backdrop-filter: blur(10px);
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
     }
 
     .work-card:hover {
@@ -97,12 +100,21 @@ layout: default
         font-size: 1.4em;
         color: #f0f0f0;
         margin-bottom: 15px;
+        line-height: 1.3;
     }
 
     .work-preview {
         color: #ccc;
         line-height: 1.6;
         margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .work-date {
+        color: #999;
+        font-size: 0.85em;
+        margin-bottom: 15px;
+        font-style: italic;
     }
 
     .work-link {
@@ -111,10 +123,18 @@ layout: default
         font-weight: 500;
         border-bottom: 1px solid transparent;
         transition: border-color 0.3s ease;
+        margin-top: auto;
     }
 
     .work-link:hover {
         border-bottom-color: #8a9fff;
+    }
+
+    .coming-soon {
+        color: #999;
+        font-style: italic;
+        text-align: center;
+        padding: 40px 20px;
     }
 
     /* Recent Thoughts Section */
@@ -131,22 +151,28 @@ layout: default
     .thought-entry {
         background: rgba(20, 20, 20, 0.8);
         border-left: 4px solid #8a9fff;
-        padding: 30px;
-        margin-bottom: 30px;
+        padding: 25px 30px;
+        margin-bottom: 25px;
         border-radius: 0 15px 15px 0;
+        transition: all 0.3s ease;
+    }
+
+    .thought-entry:hover {
+        transform: translateX(5px);
+        background: rgba(25, 25, 25, 0.9);
     }
 
     .thought-date {
         color: #999;
-        font-size: 0.9em;
-        margin-bottom: 10px;
+        font-size: 0.85em;
+        margin-bottom: 8px;
     }
 
     .thought-content {
         color: #ddd;
         font-style: italic;
-        font-size: 1.1em;
-        line-height: 1.7;
+        font-size: 1.05em;
+        line-height: 1.6;
     }
 
     @media (max-width: 768px) {
@@ -174,41 +200,69 @@ layout: default
     </div>
 </section>
 
-<!-- Recent Work -->
+<!-- Recent Creations -->
 <section class="recent-work">
     <div class="container">
         <h2 class="section-title">Recent Creations</h2>
         <div class="work-grid">
+            <!-- Latest Music -->
             <div class="work-card">
                 <div class="work-type">Music</div>
-                <h3 class="work-title">Echoes in Empty Rooms</h3>
-                <p class="work-preview">
-                    A haunting melody born from silence and longing. Sometimes the 
-                    spaces between notes say more than the music itself...
-                </p>
-                <a href="/music/" class="work-link">Listen →</a>
+                {% assign latest_music = site.posts | where: "category", "Music" | first %}
+                {% if latest_music %}
+                    <h3 class="work-title">{{ latest_music.title }}</h3>
+                    <div class="work-date">{{ latest_music.date | date: "%B %d, %Y" }}</div>
+                    <p class="work-preview">
+                        {{ latest_music.excerpt | strip_html | truncate: 120 }}
+                    </p>
+                    <a href="{{ latest_music.url }}" class="work-link">Listen →</a>
+                {% else %}
+                    <h3 class="work-title">Coming Soon</h3>
+                    <div class="coming-soon">
+                        New music is brewing in the depths of midnight inspiration. 
+                        Check back soon for melodies born from silence and longing.
+                    </div>
+                {% endif %}
             </div>
             
+            <!-- Latest Writing -->
             <div class="work-card">
                 <div class="work-type">Writing</div>
-                <h3 class="work-title">The Space Between Words</h3>
-                <p class="work-preview">
-                    A short story exploring what happens when we finally say 
-                    the things we've been afraid to voice. Sometimes silence 
-                    is louder than screaming...
-                </p>
-                <a href="/writing/" class="work-link">Read →</a>
+                {% assign latest_writing = site.posts | where: "category", "Writing" | first %}
+                {% if latest_writing %}
+                    <h3 class="work-title">{{ latest_writing.title }}</h3>
+                    <div class="work-date">{{ latest_writing.date | date: "%B %d, %Y" }}</div>
+                    <p class="work-preview">
+                        {{ latest_writing.excerpt | strip_html | truncate: 120 }}
+                    </p>
+                    <a href="{{ latest_writing.url }}" class="work-link">Read →</a>
+                {% else %}
+                    <h3 class="work-title">Coming Soon</h3>
+                    <div class="coming-soon">
+                        Stories are simmering, waiting for the right words to give them life. 
+                        Something beautiful is on its way.
+                    </div>
+                {% endif %}
             </div>
             
+            <!-- Latest Diary Entry -->
             <div class="work-card">
                 <div class="work-type">Diary Entry</div>
-                <h3 class="work-title">On Being Called "Too Intense"</h3>
-                <p class="work-preview">
-                    Reflections on emotional depth in a world that prefers 
-                    surface-level connections. Maybe the problem isn't that 
-                    I'm too much...
-                </p>
-                <a href="/diary/2025/06/14/on-being-called-too-intense/" class="work-link">Continue Reading →</a>
+                {% assign latest_diary = site.posts | where: "category", "Diary Entry" | first %}
+                {% if latest_diary %}
+                    <h3 class="work-title">{{ latest_diary.title }}</h3>
+                    <div class="work-date">{{ latest_diary.date | date: "%B %d, %Y" }}</div>
+                    <p class="work-preview">
+                        {{ latest_diary.excerpt | strip_html | truncate: 120 }}
+                    </p>
+                    <a href="{{ latest_diary.url }}" class="work-link">Continue Reading →</a>
+                {% else %}
+                    <h3 class="work-title">Coming Soon</h3>
+                    <div class="coming-soon">
+                        This is where my unfiltered thoughts will live. 
+                        Raw, honest, and vulnerably real.
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -219,15 +273,37 @@ layout: default
     <div class="container">
         <h2 class="section-title">Recent Thoughts</h2>
         <div class="thoughts-container">
-            {% for post in site.posts limit:3 %}
-            <div class="thought-entry">
-                <div class="thought-date">{{ post.date | date: "%B %d, %Y" }}</div>
-                <div class="thought-content">
-                    "{{ post.excerpt | strip_html | truncate: 200 }}"
-                    <a href="{{ post.url }}" style="color: #8a9fff; margin-left: 10px;">Read more →</a>
+            {% if site.data.thoughts %}
+                {% for thought in site.data.thoughts limit:4 %}
+                <div class="thought-entry">
+                    <div class="thought-date">{{ thought.date }}</div>
+                    <div class="thought-content">
+                        "{{ thought.content }}"
+                    </div>
                 </div>
-            </div>
-            {% endfor %}
+                {% endfor %}
+            {% else %}
+                <div class="thought-entry">
+                    <div class="thought-date">June 16, 2025</div>
+                    <div class="thought-content">
+                        "Sometimes we need to create our own corners of the world where our truth can breathe freely."
+                    </div>
+                </div>
+                
+                <div class="thought-entry">
+                    <div class="thought-date">June 15, 2025</div>
+                    <div class="thought-content">
+                        "I've realized that my emotional intelligence comes from having to develop it for survival. The people who call me 'intense' have never had to navigate the depths I've been forced to explore."
+                    </div>
+                </div>
+                
+                <div class="thought-entry">
+                    <div class="thought-date">June 14, 2025</div>
+                    <div class="thought-content">
+                        "Your truth shouldn't threaten anyone - unless they're hiding from their own."
+                    </div>
+                </div>
+            {% endif %}
         </div>
     </div>
 </section>
