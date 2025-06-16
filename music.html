@@ -1,704 +1,514 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music - Mileena Rayne</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Music
+---
 
-  gtag('config', 'G-7K576LDGCK');
-</script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    /* Page Header */
+    .page-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    .page-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
 
-        /* Elegant background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
-            opacity: 0.6;
-            z-index: -1;
-        }
+    .page-subtitle {
+        font-size: 1.2em;
+        color: #bbb;
+        max-width: 600px;
+        margin: 0 auto;
+        font-style: italic;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* Featured Song */
+    .featured-section {
+        padding: 80px 0;
+    }
 
-        /* Header */
-        .header {
-            padding: 30px 0;
-            border-bottom: 1px solid #333;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .featured-song {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.05));
+        border: 1px solid #8a9fff;
+        border-radius: 20px;
+        padding: 50px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .featured-label {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 300;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
+    .featured-title {
+        font-size: 2.5em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
 
-        .nav {
-            display: flex;
-            gap: 40px;
-        }
+    .featured-description {
+        color: #ccc;
+        font-size: 1.1em;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
 
-        .nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+    .audio-player {
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 30px 0;
+    }
 
-        .nav a.active {
-            color: #8a9fff;
-        }
+    .play-button {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        transition: all 0.3s ease;
+        color: #000;
+        font-size: 1.5em;
+    }
 
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #8a9fff;
-            transition: width 0.3s ease;
-        }
+    .play-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.4);
+    }
 
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 100%;
-        }
+    .player-info {
+        text-align: center;
+        color: #ccc;
+    }
 
-        .nav a:hover {
-            color: #8a9fff;
-        }
+    .streaming-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+    }
 
-        /* Page Header */
-        .page-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
-        }
+    .streaming-link {
+        background: rgba(20, 20, 20, 0.8);
+        color: #ccc;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        border: 1px solid #333;
+        transition: all 0.3s ease;
+    }
 
-        .page-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
+    .streaming-link:hover {
+        border-color: #8a9fff;
+        color: #8a9fff;
+        transform: translateY(-2px);
+    }
 
-        .page-subtitle {
-            font-size: 1.2em;
-            color: #bbb;
-            max-width: 600px;
-            margin: 0 auto;
-            font-style: italic;
-        }
+    /* Songs Grid */
+    .songs-section {
+        padding: 80px 0;
+    }
 
-        /* Featured Song */
-        .featured-section {
-            padding: 80px 0;
-        }
+    .section-title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #f0f0f0;
+        font-weight: 300;
+    }
 
-        .featured-song {
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.05));
-            border: 1px solid #8a9fff;
-            border-radius: 20px;
-            padding: 50px;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .songs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
 
-        .featured-label {
-            color: #8a9fff;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
+    .song-card {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
 
-        .featured-title {
-            font-size: 2.5em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-            font-weight: 300;
-        }
+    .song-card:hover {
+        transform: translateY(-10px);
+        border-color: #8a9fff;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
 
-        .featured-description {
-            color: #ccc;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            line-height: 1.7;
-        }
+    .song-title {
+        font-size: 1.4em;
+        color: #f0f0f0;
+        margin-bottom: 10px;
+    }
 
-        .audio-player {
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 30px 0;
-        }
+    .song-theme {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
 
-        .play-button {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            transition: all 0.3s ease;
-            color: #000;
-            font-size: 1.5em;
-        }
+    .song-description {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
 
-        .play-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.4);
-        }
+    .song-lyric-preview {
+        background: rgba(138, 159, 255, 0.05);
+        border-left: 3px solid #8a9fff;
+        padding: 15px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 8px 8px 0;
+    }
 
-        .player-info {
-            text-align: center;
-            color: #ccc;
-        }
+    .song-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .streaming-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
+    .mini-play-button {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        color: #000;
+    }
 
-        .streaming-link {
-            background: rgba(20, 20, 20, 0.8);
-            color: #ccc;
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 25px;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-        }
+    .mini-play-button:hover {
+        transform: scale(1.1);
+    }
 
-        .streaming-link:hover {
-            border-color: #8a9fff;
-            color: #8a9fff;
-            transform: translateY(-2px);
-        }
+    .song-duration {
+        color: #999;
+        font-size: 0.9em;
+    }
 
-        /* Songs Grid */
-        .songs-section {
-            padding: 80px 0;
-        }
+    /* Musical Philosophy */
+    .philosophy-section {
+        padding: 80px 0;
+        background: rgba(10, 10, 20, 0.8);
+    }
 
-        .section-title {
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #f0f0f0;
-            font-weight: 300;
-        }
+    .philosophy-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
 
-        .songs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
+    .philosophy-quote {
+        font-size: 1.4em;
+        color: #ddd;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 30px;
+    }
 
-        .song-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
+    .philosophy-text {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
 
-        .song-card:hover {
-            transform: translateY(-10px);
-            border-color: #8a9fff;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
+    /* Currently Working */
+    .current-work-section {
+        padding: 80px 0;
+    }
 
-        .song-title {
-            font-size: 1.4em;
-            color: #f0f0f0;
-            margin-bottom: 10px;
-        }
+    .current-work-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
 
-        .song-theme {
-            color: #8a9fff;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
+    .work-item {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        border-left: 4px solid #8a9fff;
+    }
 
-        .song-description {
-            color: #ccc;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+    .work-title {
+        color: #8a9fff;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
 
-        .song-lyric-preview {
-            background: rgba(138, 159, 255, 0.05);
-            border-left: 3px solid #8a9fff;
-            padding: 15px;
-            margin: 20px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 8px 8px 0;
-        }
+    .work-description {
+        color: #ccc;
+        line-height: 1.6;
+    }
 
-        .song-controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .mini-play-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            color: #000;
-        }
-
-        .mini-play-button:hover {
-            transform: scale(1.1);
-        }
-
-        .song-duration {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        /* Musical Philosophy */
-        .philosophy-section {
-            padding: 80px 0;
-            background: rgba(10, 10, 20, 0.8);
-        }
-
-        .philosophy-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .philosophy-quote {
-            font-size: 1.4em;
-            color: #ddd;
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .philosophy-text {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-
-        /* Currently Working */
-        .current-work-section {
-            padding: 80px 0;
-        }
-
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
         .current-work-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1000px;
-            margin: 0 auto;
+            grid-template-columns: 1fr;
         }
+    }
 
-        .work-item {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 2.2em;
+        }
+        
+        .featured-song {
             padding: 30px;
-            border-left: 4px solid #8a9fff;
         }
-
-        .work-title {
-            color: #8a9fff;
-            font-size: 1.2em;
-            margin-bottom: 15px;
-            font-weight: 600;
+        
+        .featured-title {
+            font-size: 2em;
         }
-
-        .work-description {
-            color: #ccc;
-            line-height: 1.6;
+        
+        .songs-grid {
+            grid-template-columns: 1fr;
         }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .current-work-grid {
-                grid-template-columns: 1fr;
-            }
+        
+        .streaming-links {
+            flex-direction: column;
+            align-items: center;
         }
+    }
 
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .page-title {
-                font-size: 2.2em;
-            }
-            
-            .featured-song {
-                padding: 30px;
-            }
-            
-            .featured-title {
-                font-size: 2em;
-            }
-            
-            .songs-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .streaming-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+    /* Custom animations */
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
 
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+    .play-button.playing {
+        animation: pulse 2s infinite;
+    }
+</style>
 
-        /* Custom animations */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Music</h1>
+        <p class="page-subtitle">
+            Melodies for the spaces between words, harmonies for the contradictions we carry, 
+            rhythms for the heartbeats of real life.
+        </p>
+    </div>
+</section>
 
-        .play-button.playing {
-            animation: pulse 2s infinite;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-container">
-                <a href="index.html" class="logo">Mileena Rayne</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="diary.html">Diary</a>
-                    <a href="music.html" class="active">Music</a>
-                    <a href="writing.html">Writing</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Music</h1>
-            <p class="page-subtitle">
-                Melodies for the spaces between words, harmonies for the contradictions we carry, 
-                rhythms for the heartbeats of real life.
+<!-- Featured Song -->
+<section class="featured-section">
+    <div class="container">
+        <div class="featured-song">
+            <div class="featured-label">Featured Track</div>
+            <h2 class="featured-title">Echoes in Empty Rooms</h2>
+            <p class="featured-description">
+                A haunting exploration of solitude and memory, born from those quiet moments 
+                when silence speaks louder than words. This song captures the weight of what's 
+                unsaid and the beauty found in the spaces we thought were empty.
             </p>
+            
+            <div class="audio-player">
+                <button class="play-button" onclick="togglePlay(this)">▶</button>
+                <div class="player-info">
+                    <div>Echoes in Empty Rooms</div>
+                    <div style="font-size: 0.9em; color: #999;">4:23</div>
+                </div>
+            </div>
+            
+            <div class="streaming-links">
+                <a href="#" class="streaming-link">Spotify</a>
+                <a href="#" class="streaming-link">Apple Music</a>
+                <a href="#" class="streaming-link">YouTube</a>
+                <a href="#" class="streaming-link">Bandcamp</a>
+                <a href="#" class="streaming-link">SoundCloud</a>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Featured Song -->
-    <section class="featured-section">
-        <div class="container">
-            <div class="featured-song">
-                <div class="featured-label">Featured Track</div>
-                <h2 class="featured-title">Echoes in Empty Rooms</h2>
-                <p class="featured-description">
-                    A haunting exploration of solitude and memory, born from those quiet moments 
-                    when silence speaks louder than words. This song captures the weight of what's 
-                    unsaid and the beauty found in the spaces we thought were empty.
+<!-- Songs Collection -->
+<section class="songs-section">
+    <div class="container">
+        <h2 class="section-title">Recent Releases</h2>
+        
+        <div class="songs-grid">
+            
+            <!-- Song 1 -->
+            <div class="song-card">
+                <h3 class="song-title">The Space Between Words</h3>
+                <div class="song-theme">Vulnerability • Communication</div>
+                <p class="song-description">
+                    An intimate ballad about the things we struggle to say and the silences 
+                    that carry more weight than speech. Written during a period of learning 
+                    to communicate authentically, even when it's uncomfortable.
                 </p>
-                
-                <div class="audio-player">
-                    <button class="play-button" onclick="togglePlay(this)">▶</button>
-                    <div class="player-info">
-                        <div>Echoes in Empty Rooms</div>
-                        <div style="font-size: 0.9em; color: #999;">4:23</div>
-                    </div>
+                <div class="song-lyric-preview">
+                    "In the space between what we say and what we mean<br>
+                    Lives the truth we're all afraid to see..."
                 </div>
-                
-                <div class="streaming-links">
-                    <a href="#" class="streaming-link">Spotify</a>
-                    <a href="#" class="streaming-link">Apple Music</a>
-                    <a href="#" class="streaming-link">YouTube</a>
-                    <a href="#" class="streaming-link">Bandcamp</a>
-                    <a href="#" class="streaming-link">SoundCloud</a>
+                <div class="song-controls">
+                    <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
+                    <span class="song-duration">3:47</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Songs Collection -->
-    <section class="songs-section">
-        <div class="container">
-            <h2 class="section-title">Recent Releases</h2>
+            <!-- Song 2 -->
+            <div class="song-card">
+                <h3 class="song-title">Storm Season</h3>
+                <div class="song-theme">Resilience • Growth</div>
+                <p class="song-description">
+                    A powerful anthem about weathering life's difficulties and emerging 
+                    stronger. Inspired by the realization that storms don't destroy us - 
+                    they reveal what we're truly made of.
+                </p>
+                <div class="song-lyric-preview">
+                    "They say lightning never strikes the same place twice<br>
+                    But I've been struck so many times, I've learned to love the light..."
+                </div>
+                <div class="song-controls">
+                    <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
+                    <span class="song-duration">4:12</span>
+                </div>
+            </div>
+
+            <!-- Song 3 -->
+            <div class="song-card">
+                <h3 class="song-title">Too Intense</h3>
+                <div class="song-theme">Self-Acceptance • Identity</div>
+                <p class="song-description">
+                    A defiant celebration of emotional depth in a world that prefers surface-level 
+                    connections. This song is for everyone who's been told they're "too much" 
+                    and learned to see it as their superpower.
+                </p>
+                <div class="song-lyric-preview">
+                    "They say I'm too intense, like it's something to hide<br>
+                    But I'd rather feel everything than feel nothing inside..."
+                </div>
+                <div class="song-controls">
+                    <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
+                    <span class="song-duration">3:29</span>
+                </div>
+            </div>
+
+            <!-- Add more songs as needed -->
+
+        </div>
+    </div>
+</section>
+
+<!-- Musical Philosophy -->
+<section class="philosophy-section">
+    <div class="container">
+        <div class="philosophy-content">
+            <h2 class="section-title">My Musical Philosophy</h2>
+            <div class="philosophy-quote">
+                "Music should be a conversation with the parts of ourselves we don't know how to voice. 
+                It should disturb us, heal us, and help us feel less alone in our humanity."
+            </div>
+            <div class="philosophy-text">
+                <p>I don't write songs to be comfortable or comforting. I write them to be real. My music comes from the spaces between words - the emotions we feel but can't quite articulate, the truths we're afraid to speak, the beauty we find in our broken places.</p>
+                
+                <p>Every melody is born from authentic emotion, every lyric from lived experience. I believe that vulnerability in music creates connection, that sharing our struggles helps others feel less alone in theirs, and that sometimes the most healing thing we can do is simply witness each other's truth.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Currently Working On -->
+<section class="current-work-section">
+    <div class="container">
+        <h2 class="section-title">Currently Creating</h2>
+        
+        <div class="current-work-grid">
+            <div class="work-item">
+                <h3 class="work-title">New EP: "Depth Charges"</h3>
+                <p class="work-description">
+                    A collection of songs about the beautiful destruction that comes with growth. 
+                    Each track explores a different aspect of breaking open to become who you're meant to be. 
+                    Expected release: Fall 2025.
+                </p>
+            </div>
             
-            <div class="songs-grid">
-                
-                <!-- Song 1 -->
-                <div class="song-card">
-                    <h3 class="song-title">The Space Between Words</h3>
-                    <div class="song-theme">Vulnerability • Communication</div>
-                    <p class="song-description">
-                        An intimate ballad about the things we struggle to say and the silences 
-                        that carry more weight than speech. Written during a period of learning 
-                        to communicate authentically, even when it's uncomfortable.
-                    </p>
-                    <div class="song-lyric-preview">
-                        "In the space between what we say and what we mean<br>
-                        Lives the truth we're all afraid to see..."
-                    </div>
-                    <div class="song-controls">
-                        <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                        <span class="song-duration">3:47</span>
-                    </div>
-                </div>
-
-                <!-- Song 2 -->
-                <div class="song-card">
-                    <h3 class="song-title">Storm Season</h3>
-                    <div class="song-theme">Resilience • Growth</div>
-                    <p class="song-description">
-                        A powerful anthem about weathering life's difficulties and emerging 
-                        stronger. Inspired by the realization that storms don't destroy us - 
-                        they reveal what we're truly made of.
-                    </p>
-                    <div class="song-lyric-preview">
-                        "They say lightning never strikes the same place twice<br>
-                        But I've been struck so many times, I've learned to love the light..."
-                    </div>
-                    <div class="song-controls">
-                        <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                        <span class="song-duration">4:12</span>
-                    </div>
-                </div>
-
-                <!-- Song 3 -->
-                <div class="song-card">
-                    <h3 class="song-title">Too Intense</h3>
-                    <div class="song-theme">Self-Acceptance • Identity</div>
-                    <p class="song-description">
-                        A defiant celebration of emotional depth in a world that prefers surface-level 
-                        connections. This song is for everyone who's been told they're "too much" 
-                        and learned to see it as their superpower.
-                    </p>
-                    <div class="song-lyric-preview">
-                        "They say I'm too intense, like it's something to hide<br>
-                        But I'd rather feel everything than feel nothing inside..."
-                    </div>
-                    <div class="song-controls">
-                        <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                        <span class="song-duration">3:29</span>
-                    </div>
-                </div>
-
-                <!-- Song 4 -->
-                <div class="song-card">
-                    <h3 class="song-title">Shelter</h3>
-                    <div class="song-theme">Family • Survival</div>
-                    <p class="song-description">
-                        A raw, honest reflection on finding home in unexpected places and the 
-                        strength it takes to make impossible choices. Sometimes shelter isn't 
-                        a building - it's a decision to protect what matters most.
-                    </p>
-                    <div class="song-lyric-preview">
-                        "Home isn't always where the heart is<br>
-                        Sometimes it's where the heart learns to be..."
-                    </div>
-                    <div class="song-controls">
-                        <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                        <span class="song-duration">5:03</span>
-                    </div>
-                </div>
-
-                <!-- Song 5 -->
-                <div class="song-card">
-                    <h3 class="song-title">Breathe Again</h3>
-                    <div class="song-theme">Healing • Hope</div>
-                    <p class="song-description">
-                        A gentle, building piece about the moment you realize you're going to be okay. 
-                        Written from the other side of crisis, when you can finally see the growth 
-                        that pain made possible.
-                    </p>
-                    <div class="song-lyric-preview">
-                        "I forgot what it felt like to breathe without drowning<br>
-                        But here I am, still here, still breathing..."
-                    </div>
-                    <div class="song-controls">
-                        <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                        <span class="song-duration">4:35</span>
-                    </div>
-                </div>
-
-                <!-- Song 6 -->
-                <div class="song-card">
-                    <h3 class="song-title">Mask Off</h3>
-                    <div class="song-theme">Authenticity • Freedom</div>
-                    <p class="song-description">
-                        An upbeat track about the liberation that comes from dropping pretenses 
-                        and showing up as your real self. Sometimes the most radical thing you 
-                        can do is simply be authentic.
-                    </p>
-                    <div class="song-lyric-preview">
-                        "I'm done pretending to be smaller than I am<br>
-                        Watch me bloom in all the ways you said I can't..."
-                    </div>
-                    <div class="song-controls">
-                        <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                        <span class="song-duration">3:56</span>
-                    </div>
-                </div>
-
+            <div class="work-item">
+                <h3 class="work-title">Collaboration Project</h3>
+                <p class="work-description">
+                    Working with other artists who aren't afraid of emotional depth to create something 
+                    that challenges the sanitized version of mental health awareness in music. 
+                    Real stories, real struggles, real healing.
+                </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Musical Philosophy -->
-    <section class="philosophy-section">
-        <div class="container">
-            <div class="philosophy-content">
-                <h2 class="section-title">My Musical Philosophy</h2>
-                <div class="philosophy-quote">
-                    "Music should be a conversation with the parts of ourselves we don't know how to voice. 
-                    It should disturb us, heal us, and help us feel less alone in our humanity."
-                </div>
-                <div class="philosophy-text">
-                    <p>I don't write songs to be comfortable or comforting. I write them to be real. My music comes from the spaces between words - the emotions we feel but can't quite articulate, the truths we're afraid to speak, the beauty we find in our broken places.</p>
-                    
-                    <p>Every melody is born from authentic emotion, every lyric from lived experience. I believe that vulnerability in music creates connection, that sharing our struggles helps others feel less alone in theirs, and that sometimes the most healing thing we can do is simply witness each other's truth.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Currently Working On -->
-    <section class="current-work-section">
-        <div class="container">
-            <h2 class="section-title">Currently Creating</h2>
             
-            <div class="current-work-grid">
-                <div class="work-item">
-                    <h3 class="work-title">New EP: "Depth Charges"</h3>
-                    <p class="work-description">
-                        A collection of songs about the beautiful destruction that comes with growth. 
-                        Each track explores a different aspect of breaking open to become who you're meant to be. 
-                        Expected release: Fall 2025.
-                    </p>
-                </div>
-                
-                <div class="work-item">
-                    <h3 class="work-title">Collaboration Project</h3>
-                    <p class="work-description">
-                        Working with other artists who aren't afraid of emotional depth to create something 
-                        that challenges the sanitized version of mental health awareness in music. 
-                        Real stories, real struggles, real healing.
-                    </p>
-                </div>
-                
-                <div class="work-item">
-                    <h3 class="work-title">Live Performance Series</h3>
-                    <p class="work-description">
-                        Developing intimate live shows that feel more like group therapy than concerts. 
-                        Creating spaces where vulnerability is welcomed and authentic connection happens 
-                        through shared musical experience.
-                    </p>
-                </div>
-                
-                <div class="work-item">
-                    <h3 class="work-title">Songwriting Workshops</h3>
-                    <p class="work-description">
-                        Teaching others how to write from authentic emotion rather than trying to create 
-                        what they think people want to hear. Because the world needs more real voices, 
-                        not more perfect performances.
-                    </p>
-                </div>
+            <div class="work-item">
+                <h3 class="work-title">Live Performance Series</h3>
+                <p class="work-description">
+                    Developing intimate live shows that feel more like group therapy than concerts. 
+                    Creating spaces where vulnerability is welcomed and authentic connection happens 
+                    through shared musical experience.
+                </p>
+            </div>
+            
+            <div class="work-item">
+                <h3 class="work-title">Songwriting Workshops</h3>
+                <p class="work-description">
+                    Teaching others how to write from authentic emotion rather than trying to create 
+                    what they think people want to hear. Because the world needs more real voices, 
+                    not more perfect performances.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script>
-        function togglePlay(button) {
-            // Simple play/pause toggle for demo
-            const isPlaying = button.textContent === '⏸';
-            button.textContent = isPlaying ? '▶' : '⏸';
-            
-            if (isPlaying) {
-                button.classList.remove('playing');
-            } else {
-                // Stop other players
-                document.querySelectorAll('.play-button, .mini-play-button').forEach(btn => {
-                    if (btn !== button) {
-                        btn.textContent = '▶';
-                        btn.classList.remove('playing');
-                    }
-                });
-                button.classList.add('playing');
-            }
+<script>
+    function togglePlay(button) {
+        // Simple play/pause toggle for demo
+        const isPlaying = button.textContent === '⏸';
+        button.textContent = isPlaying ? '▶' : '⏸';
+        
+        if (isPlaying) {
+            button.classList.remove('playing');
+        } else {
+            // Stop other players
+            document.querySelectorAll('.play-button, .mini-play-button').forEach(btn => {
+                if (btn !== button) {
+                    btn.textContent = '▶';
+                    btn.classList.remove('playing');
+                }
+            });
+            button.classList.add('playing');
         }
-    </script>
-</body>
-</html>
+    }
+</script>
