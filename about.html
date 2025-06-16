@@ -1,623 +1,487 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Mileena Rayne</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: About
+---
 
-  gtag('config', 'G-7K576LDGCK');
-</script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    /* Page Header */
+    .page-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    .page-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
 
-        /* Elegant background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
-            opacity: 0.6;
-            z-index: -1;
-        }
+    .page-subtitle {
+        font-size: 1.2em;
+        color: #bbb;
+        max-width: 600px;
+        margin: 0 auto;
+        font-style: italic;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* Main Content */
+    .main-content {
+        padding: 80px 0;
+    }
 
-        /* Header */
-        .header {
-            padding: 30px 0;
-            border-bottom: 1px solid #333;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .about-content {
+        max-width: 800px;
+    }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 300;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
+    .section {
+        margin-bottom: 60px;
+    }
 
-        .nav {
-            display: flex;
-            gap: 40px;
-        }
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 30px;
+        font-weight: 400;
+        border-bottom: 2px solid #8a9fff;
+        padding-bottom: 10px;
+    }
 
-        .nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+    .section-content {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+    }
 
-        .nav a.active {
-            color: #8a9fff;
-        }
+    .section-content p {
+        margin-bottom: 25px;
+    }
 
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #8a9fff;
-            transition: width 0.3s ease;
-        }
+    .highlight-quote {
+        background: rgba(138, 159, 255, 0.1);
+        border-left: 4px solid #8a9fff;
+        padding: 25px;
+        margin: 30px 0;
+        border-radius: 0 10px 10px 0;
+        font-style: italic;
+        font-size: 1.2em;
+        color: #ddd;
+    }
 
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 100%;
-        }
+    .philosophy-list {
+        list-style: none;
+        padding: 0;
+    }
 
-        .nav a:hover {
-            color: #8a9fff;
-        }
+    .philosophy-list li {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        border-left: 4px solid #8a9fff;
+    }
 
-        /* Page Header */
-        .page-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
-        }
+    .philosophy-list li:hover {
+        border-color: #8a9fff;
+        background: rgba(138, 159, 255, 0.05);
+    }
 
-        .page-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
+    .philosophy-title {
+        color: #8a9fff;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
 
-        .page-subtitle {
-            font-size: 1.2em;
-            color: #bbb;
-            max-width: 600px;
-            margin: 0 auto;
-            font-style: italic;
-        }
+    /* Sidebar */
+    .sidebar {
+        padding-top: 0;
+    }
 
-        /* Main Content */
-        .main-content {
-            padding: 80px 0;
-        }
+    .sidebar-section {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+    }
 
+    .sidebar-title {
+        color: #f0f0f0;
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #8a9fff;
+        padding-bottom: 10px;
+    }
+
+    .quick-facts {
+        list-style: none;
+        padding: 0;
+    }
+
+    .quick-facts li {
+        padding: 10px 0;
+        border-bottom: 1px solid #333;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .quick-facts li:last-child {
+        border-bottom: none;
+    }
+
+    .fact-label {
+        color: #8a9fff;
+        font-weight: 600;
+    }
+
+    .fact-value {
+        color: #ccc;
+    }
+
+    .values-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .values-list li {
+        color: #ccc;
+        padding: 8px 0;
+        border-bottom: 1px solid #333;
+    }
+
+    .values-list li:last-child {
+        border-bottom: none;
+    }
+
+    .values-list li::before {
+        content: '→';
+        color: #8a9fff;
+        margin-right: 10px;
+    }
+
+    /* Full Width Sections */
+    .full-width-section {
+        background: rgba(10, 10, 20, 0.8);
+        padding: 80px 0;
+        margin: 80px 0;
+    }
+
+    .timeline {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .timeline-item {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 40px;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #333;
+    }
+
+    .timeline-item:last-child {
+        border-bottom: none;
+    }
+
+    .timeline-year {
+        color: #8a9fff;
+        font-size: 1.4em;
+        font-weight: 600;
+        text-align: right;
+    }
+
+    .timeline-content h3 {
+        color: #f0f0f0;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+    }
+
+    .timeline-content p {
+        color: #ccc;
+        line-height: 1.7;
+    }
+
+    /* Contact CTA */
+    .contact-cta {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+        border: 1px solid #8a9fff;
+        border-radius: 15px;
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .cta-title {
+        color: #f0f0f0;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .cta-text {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-button {
+        display: inline-block;
+        padding: 15px 35px;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .about-content {
-            max-width: 800px;
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 30px;
-            font-weight: 400;
-            border-bottom: 2px solid #8a9fff;
-            padding-bottom: 10px;
-        }
-
-        .section-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-        }
-
-        .section-content p {
-            margin-bottom: 25px;
-        }
-
-        .highlight-quote {
-            background: rgba(138, 159, 255, 0.1);
-            border-left: 4px solid #8a9fff;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 0 10px 10px 0;
-            font-style: italic;
-            font-size: 1.2em;
-            color: #ddd;
-        }
-
-        .philosophy-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .philosophy-list li {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-            border-left: 4px solid #8a9fff;
-        }
-
-        .philosophy-list li:hover {
-            border-color: #8a9fff;
-            background: rgba(138, 159, 255, 0.05);
-        }
-
-        .philosophy-title {
-            color: #8a9fff;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            padding-top: 0;
-        }
-
-        .sidebar-section {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .sidebar-title {
-            color: #f0f0f0;
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #8a9fff;
-            padding-bottom: 10px;
-        }
-
-        .quick-facts {
-            list-style: none;
-            padding: 0;
-        }
-
-        .quick-facts li {
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .quick-facts li:last-child {
-            border-bottom: none;
-        }
-
-        .fact-label {
-            color: #8a9fff;
-            font-weight: 600;
-        }
-
-        .fact-value {
-            color: #ccc;
-        }
-
-        .values-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .values-list li {
-            color: #ccc;
-            padding: 8px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        .values-list li:last-child {
-            border-bottom: none;
-        }
-
-        .values-list li::before {
-            content: '→';
-            color: #8a9fff;
-            margin-right: 10px;
-        }
-
-        /* Full Width Sections */
-        .full-width-section {
-            background: rgba(10, 10, 20, 0.8);
-            padding: 80px 0;
-            margin: 80px 0;
-        }
-
-        .timeline {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 150px 1fr;
+            grid-template-columns: 1fr;
             gap: 40px;
-            margin-bottom: 50px;
-            padding-bottom: 50px;
-            border-bottom: 1px solid #333;
         }
-
-        .timeline-item:last-child {
-            border-bottom: none;
+        
+        .timeline-item {
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
-
+        
         .timeline-year {
-            color: #8a9fff;
-            font-size: 1.4em;
-            font-weight: 600;
-            text-align: right;
+            text-align: left;
+            font-size: 1.2em;
         }
+    }
 
-        .timeline-content h3 {
-            color: #f0f0f0;
-            margin-bottom: 15px;
-            font-size: 1.3em;
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 2.2em;
         }
-
-        .timeline-content p {
-            color: #ccc;
-            line-height: 1.7;
+        
+        .section-title {
+            font-size: 1.6em;
         }
+    }
+</style>
 
-        /* Contact CTA */
-        .contact-cta {
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
-            border: 1px solid #8a9fff;
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            margin-top: 60px;
-        }
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">About</h1>
+        <p class="page-subtitle">
+            The story behind the music, the writing, and the woman who refuses to apologize for feeling deeply.
+        </p>
+    </div>
+</section>
 
-        .cta-title {
-            color: #f0f0f0;
-            font-size: 1.8em;
-            margin-bottom: 20px;
-        }
-
-        .cta-text {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            color: #000;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+<!-- Main Content -->
+<main class="main-content">
+    <div class="container">
+        <div class="about-grid">
             
-            .timeline-item {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .timeline-year {
-                text-align: left;
-                font-size: 1.2em;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .page-title {
-                font-size: 2.2em;
-            }
-            
-            .section-title {
-                font-size: 1.6em;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-container">
-                <a href="index.html" class="logo">Mileena Rayne</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="diary.html">Diary</a>
-                    <a href="music.html">Music</a>
-                    <a href="writing.html">Writing</a>
-                    <a href="about.html" class="active">About</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">About</h1>
-            <p class="page-subtitle">
-                The story behind the music, the writing, and the woman who refuses to apologize for feeling deeply.
-            </p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <div class="about-grid">
+            <!-- Main About Content -->
+            <div class="about-content">
                 
-                <!-- Main About Content -->
-                <div class="about-content">
-                    
-                    <!-- Who I Am -->
-                    <section class="section">
-                        <h2 class="section-title">Who I Am</h2>
-                        <div class="section-content">
-                            <p>I'm Mileena Rayne - artist, writer, and truth-teller. I create from the depths of human experience, refusing to stay on the surface where most people feel safe. My work emerges from a place of hard-earned wisdom, emotional intelligence forged in fire, and an unwavering commitment to authenticity.</p>
-                            
-                            <p>People often tell me I'm "intense." They're not wrong. I feel deeply, think critically, and refuse to pretend that everything is fine when it's not. This intensity isn't a flaw - it's my superpower. It's what allows me to create music that moves people, write stories that disturb and heal, and share insights that help others feel less alone in their own darkness.</p>
-                            
-                            <div class="highlight-quote">
-                                "I've learned that vulnerability is seen as an act of aggression by people who can't access their own. My truth shouldn't threaten you - unless you're hiding from your own."
-                            </div>
-                            
-                            <p>My art comes from lived experience, not theory. Every song, every story, every vulnerable diary entry is born from real moments of struggle, growth, and revelation. I don't create to be comfortable or comforting - I create to be real.</p>
+                <!-- Who I Am -->
+                <section class="section">
+                    <h2 class="section-title">Who I Am</h2>
+                    <div class="section-content">
+                        <p>I'm Mileena Rayne - musician, writer, and truth-teller. I create from the depths of human experience, refusing to stay on the surface where most people feel safe. My work emerges from a place of hard-earned wisdom, emotional intelligence forged in fire, and an unwavering commitment to authenticity.</p>
+                        
+                        <p>People often tell me I'm "intense." They're not wrong. I feel deeply, think critically, and refuse to pretend that everything is fine when it's not. This intensity isn't a flaw - it's my superpower. It's what allows me to create music that moves people, write stories that disturb and heal, and share insights that help others feel less alone in their own darkness.</p>
+                        
+                        <div class="highlight-quote">
+                            "I've learned that vulnerability is seen as an act of aggression by people who can't access their own. My truth shouldn't threaten you - unless you're hiding from your own."
                         </div>
-                    </section>
+                        
+                        <p>My art comes from lived experience, not theory. Every song, every story, every vulnerable diary entry is born from real moments of struggle, growth, and revelation. I don't create to be comfortable or comforting - I create to be real.</p>
+                    </div>
+                </section>
 
-                    <!-- My Story -->
-                    <section class="section">
-                        <h2 class="section-title">My Story</h2>
-                        <div class="section-content">
-                            <p>My journey hasn't been conventional, and I wouldn't change that if I could. Every hardship, every moment of feeling misunderstood, every time I've been told I'm "too much" has shaped me into the artist I am today.</p>
-                            
-                            <p>I've experienced homelessness - three months that felt like years, sleeping in unfamiliar places with thin walls where strange voices echoed through the night. This experience opened my eyes to the quiet, complicated nature of this world and taught me lessons about resilience, persistence, and gratitude that no comfortable life could have provided.</p>
-                            
-                            <p>I've navigated complex family dynamics, learning to set boundaries while maintaining love, understanding that sometimes the people closest to you are the least equipped to handle your growth. I've been the target of someone else's unresolved pain and learned to transform that experience into compassion rather than bitterness.</p>
-                            
-                            <p>Through it all, I've developed what some call emotional intelligence - though I prefer to think of it as emotional fluency. I can navigate the depths of human feeling because I've been forced to. I can articulate complex emotions because I've had to survive them.</p>
-                        </div>
-                    </section>
+                <!-- My Story -->
+                <section class="section">
+                    <h2 class="section-title">My Story</h2>
+                    <div class="section-content">
+                        <p>My journey hasn't been conventional, and I wouldn't change that if I could. Every hardship, every moment of feeling misunderstood, every time I've been told I'm "too much" has shaped me into the artist I am today.</p>
+                        
+                        <p>I've experienced homelessness - three months that felt like years, sleeping in unfamiliar places with thin walls where strange voices echoed through the night. This experience opened my eyes to the quiet, complicated nature of this world and taught me lessons about resilience, persistence, and gratitude that no comfortable life could have provided.</p>
+                        
+                        <p>I've navigated complex family dynamics, learning to set boundaries while maintaining love, understanding that sometimes the people closest to you are the least equipped to handle your growth. I've been the target of someone else's unresolved pain and learned to transform that experience into compassion rather than bitterness.</p>
+                        
+                        <p>Through it all, I've developed what some call emotional intelligence - though I prefer to think of it as emotional fluency. I can navigate the depths of human feeling because I've been forced to. I can articulate complex emotions because I've had to survive them.</p>
+                    </div>
+                </section>
 
-                    <!-- My Philosophy -->
-                    <section class="section">
-                        <h2 class="section-title">My Philosophy</h2>
-                        <div class="section-content">
-                            <p>I believe that growth lives on the other side of discomfort. Most people spend their lives avoiding the very experiences that could transform them. I choose differently.</p>
-                            
-                            <ul class="philosophy-list">
-                                <li>
-                                    <div class="philosophy-title">Authenticity Over Performance</div>
-                                    <div>I'd rather share one vulnerable truth than a thousand perfect lies. Real connection happens when we stop performing and start being.</div>
-                                </li>
-                                <li>
-                                    <div class="philosophy-title">Depth Over Surface</div>
-                                    <div>Small talk is for small minds. I'm interested in the conversations that matter, the questions that challenge, the connections that change us.</div>
-                                </li>
-                                <li>
-                                    <div class="philosophy-title">Growth Through Discomfort</div>
-                                    <div>Comfort is the enemy of growth. I actively seek the experiences that challenge me, even when - especially when - they make me uncomfortable.</div>
-                                </li>
-                                <li>
-                                    <div class="philosophy-title">Art as Truth-Telling</div>
-                                    <div>Art should disturb the comfortable and comfort the disturbed. If my work doesn't make someone feel something real, I'm not doing my job.</div>
-                                </li>
-                                <li>
-                                    <div class="philosophy-title">Emotional Intelligence as Survival</div>
-                                    <div>Understanding emotions - your own and others' - isn't a luxury. It's a necessity for navigating a complex world with grace and wisdom.</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-
-                    <!-- My Work -->
-                    <section class="section">
-                        <h2 class="section-title">My Creative Approach</h2>
-                        <div class="section-content">
-                            <p>My music comes from the spaces between words - the emotions we feel but can't quite articulate. I write melodies for the moments when language fails us, harmonies for the contradictions we carry, rhythms for the heartbeats of real life.</p>
-                            
-                            <p>My writing explores the uncomfortable truths we'd rather avoid. I'll write scenes that make me physically uncomfortable if they serve a greater truth. I believe in the power of literature to force us to confront realities we'd rather ignore.</p>
-                            
-                            <p>My diary entries are where I process the raw material of existence. These aren't polished thoughts - they're real-time attempts to make sense of a complex world. They're vulnerable, sometimes messy, always honest.</p>
-                            
-                            <div class="highlight-quote">
-                                "Comfort doesn't create change or awareness. Sometimes art needs to disturb us into consciousness."
-                            </div>
-                        </div>
-                    </section>
-
-                </div>
-
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    
-                    <!-- Quick Facts -->
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">Quick Facts</h3>
-                        <ul class="quick-facts">
+                <!-- My Philosophy -->
+                <section class="section">
+                    <h2 class="section-title">My Philosophy</h2>
+                    <div class="section-content">
+                        <p>I believe that growth lives on the other side of discomfort. Most people spend their lives avoiding the very experiences that could transform them. I choose differently.</p>
+                        
+                        <ul class="philosophy-list">
                             <li>
-                                <span class="fact-label">Location</span>
-                                <span class="fact-value">Based in the US</span>
+                                <div class="philosophy-title">Authenticity Over Performance</div>
+                                <div>I'd rather share one vulnerable truth than a thousand perfect lies. Real connection happens when we stop performing and start being.</div>
                             </li>
                             <li>
-                                <span class="fact-label">Focus</span>
-                                <span class="fact-value">Music & Writing</span>
+                                <div class="philosophy-title">Depth Over Surface</div>
+                                <div>Small talk is for small minds. I'm interested in the conversations that matter, the questions that challenge, the connections that change us.</div>
                             </li>
                             <li>
-                                <span class="fact-label">Style</span>
-                                <span class="fact-value">Authentic & Vulnerable</span>
+                                <div class="philosophy-title">Growth Through Discomfort</div>
+                                <div>Comfort is the enemy of growth. I actively seek the experiences that challenge me, even when - especially when - they make me uncomfortable.</div>
                             </li>
                             <li>
-                                <span class="fact-label">Mission</span>
-                                <span class="fact-value">Truth-telling through art</span>
+                                <div class="philosophy-title">Art as Truth-Telling</div>
+                                <div>Art should disturb the comfortable and comfort the disturbed. If my work doesn't make someone feel something real, I'm not doing my job.</div>
+                            </li>
+                            <li>
+                                <div class="philosophy-title">Emotional Intelligence as Survival</div>
+                                <div>Understanding emotions - your own and others' - isn't a luxury. It's a necessity for navigating a complex world with grace and wisdom.</div>
                             </li>
                         </ul>
                     </div>
+                </section>
 
-                    <!-- Core Values -->
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">Core Values</h3>
-                        <ul class="values-list">
-                            <li>Vulnerability as strength</li>
-                            <li>Growth through discomfort</li>
-                            <li>Emotional intelligence</li>
-                            <li>Authentic expression</li>
-                            <li>Deep connection</li>
-                            <li>Truth over comfort</li>
-                            <li>Art as healing</li>
-                        </ul>
-                    </div>
-
-                    <!-- Current Focus -->
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">Current Focus</h3>
-                        <div class="sidebar-content">
-                            <p><strong>Music:</strong> Working on songs that explore the space between what we say and what we mean</p>
-                            <p><strong>Writing:</strong> Developing stories that examine the uncomfortable truths about human nature</p>
-                            <p><strong>Growth:</strong> Learning to trust my voice even when others find it "too intense"</p>
+                <!-- My Work -->
+                <section class="section">
+                    <h2 class="section-title">My Creative Approach</h2>
+                    <div class="section-content">
+                        <p>My music comes from the spaces between words - the emotions we feel but can't quite articulate. I write melodies for the moments when language fails us, harmonies for the contradictions we carry, rhythms for the heartbeats of real life.</p>
+                        
+                        <p>My writing explores the uncomfortable truths we'd rather avoid. I'll write scenes that make me physically uncomfortable if they serve a greater truth. I believe in the power of literature to force us to confront realities we'd rather ignore.</p>
+                        
+                        <p>My diary entries are where I process the raw material of existence. These aren't polished thoughts - they're real-time attempts to make sense of a complex world. They're vulnerable, sometimes messy, always honest.</p>
+                        
+                        <div class="highlight-quote">
+                            "Comfort doesn't create change or awareness. Sometimes art needs to disturb us into consciousness."
                         </div>
                     </div>
+                </section>
 
-                </aside>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                
+                <!-- Quick Facts -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Quick Facts</h3>
+                    <ul class="quick-facts">
+                        <li>
+                            <span class="fact-label">Location</span>
+                            <span class="fact-value">Based in the US</span>
+                        </li>
+                        <li>
+                            <span class="fact-label">Focus</span>
+                            <span class="fact-value">Music & Writing</span>
+                        </li>
+                        <li>
+                            <span class="fact-label">Style</span>
+                            <span class="fact-value">Authentic & Vulnerable</span>
+                        </li>
+                        <li>
+                            <span class="fact-label">Mission</span>
+                            <span class="fact-value">Truth-telling through art</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Core Values -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Core Values</h3>
+                    <ul class="values-list">
+                        <li>Vulnerability as strength</li>
+                        <li>Growth through discomfort</li>
+                        <li>Emotional intelligence</li>
+                        <li>Authentic expression</li>
+                        <li>Deep connection</li>
+                        <li>Truth over comfort</li>
+                        <li>Art as healing</li>
+                    </ul>
+                </div>
+
+                <!-- Current Focus -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Current Focus</h3>
+                    <div class="sidebar-content">
+                        <p><strong>Music:</strong> Working on songs that explore the space between what we say and what we mean</p>
+                        <p><strong>Writing:</strong> Developing stories that examine the uncomfortable truths about human nature</p>
+                        <p><strong>Growth:</strong> Learning to trust my voice even when others find it "too intense"</p>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </div>
+</main>
+
+<!-- Timeline Section -->
+<section class="full-width-section">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">My Journey</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">Early Years</div>
+                <div class="timeline-content">
+                    <h3>Learning to Navigate Complexity</h3>
+                    <p>Growing up in a complex family dynamic, I learned early that survival sometimes means developing emotional intelligence beyond your years. These experiences, while difficult, became the foundation for my understanding of human nature and resilience.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <div class="timeline-content">
+                    <h3>The Perfect Storm</h3>
+                    <p>Experienced homelessness for three months - a period that completely shifted my perspective on vulnerability, community, and what really matters. This experience became the crucible for much of my artistic work and philosophy.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2023-2024</div>
+                <div class="timeline-content">
+                    <h3>Rebuilding and Creating</h3>
+                    <p>Used the lessons learned from hardship to fuel my creative work. Began writing more vulnerably, creating music from authentic emotion, and developing my voice as an artist unafraid of depth and complexity.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <h3>Finding My Voice</h3>
+                    <p>Fully embracing my identity as an artist who refuses to apologize for intensity, depth, or emotional intelligence. Building a platform where vulnerability is strength and authenticity is non-negotiable.</p>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
+</section>
 
-    <!-- Timeline Section -->
-    <section class="full-width-section">
-        <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">My Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">Early Years</div>
-                    <div class="timeline-content">
-                        <h3>Learning to Navigate Complexity</h3>
-                        <p>Growing up in a complex family dynamic, I learned early that survival sometimes means developing emotional intelligence beyond your years. These experiences, while difficult, became the foundation for my understanding of human nature and resilience.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <h3>The Perfect Storm</h3>
-                        <p>Experienced homelessness for three months - a period that completely shifted my perspective on vulnerability, community, and what really matters. This experience became the crucible for much of my artistic work and philosophy.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2023-2024</div>
-                    <div class="timeline-content">
-                        <h3>Rebuilding and Creating</h3>
-                        <p>Used the lessons learned from hardship to fuel my creative work. Began writing more vulnerably, creating music from authentic emotion, and developing my voice as an artist unafraid of depth and complexity.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-year">2025</div>
-                    <div class="timeline-content">
-                        <h3>Finding My Voice</h3>
-                        <p>Fully embracing my identity as an artist who refuses to apologize for intensity, depth, or emotional intelligence. Building a platform where vulnerability is strength and authenticity is non-negotiable.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact CTA -->
-    <section class="container">
-        <div class="contact-cta">
-            <h2 class="cta-title">Let's Connect</h2>
-            <p class="cta-text">
-                If my story resonates with you, if you're tired of surface-level connections, 
-                or if you're ready for art that challenges as much as it comforts, I'd love to hear from you.
-            </p>
-            <a href="contact.html" class="cta-button">Get In Touch</a>
-        </div>
-    </section>
-
-</body>
-</html>
+<!-- Contact CTA -->
+<section class="container">
+    <div class="contact-cta">
+        <h2 class="cta-title">Let's Connect</h2>
+        <p class="cta-text">
+            If my story resonates with you, if you're tired of surface-level connections, 
+            or if you're ready for art that challenges as much as it comforts, I'd love to hear from you.
+        </p>
+        <a href="/contact/" class="cta-button">Get In Touch</a>
+    </div>
+</section>
