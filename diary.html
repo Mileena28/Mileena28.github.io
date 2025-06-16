@@ -1,567 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diary - Mileena Rayne</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Diary
+---
 
-  gtag('config', 'G-7K576LDGCK');
-</script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    .blog-header {
+        padding: 80px 0 40px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    .blog-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
 
-        /* Elegant background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
-            opacity: 0.6;
-            z-index: -1;
-        }
+    .blog-subtitle {
+        font-size: 1.2em;
+        color: #bbb;
+        font-style: italic;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .posts-container {
+        padding: 60px 0;
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-        /* Header - Same as home page */
-        .header {
-            padding: 30px 0;
-            border-bottom: 1px solid #333;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .post-preview {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 40px;
+        margin-bottom: 40px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .post-preview:hover {
+        transform: translateY(-5px);
+        border-color: #8a9fff;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 300;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
+    .post-preview-meta {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
 
-        .nav {
-            display: flex;
-            gap: 40px;
-        }
+    .post-preview-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
 
-        .nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+    .post-preview-title a {
+        color: #f0f0f0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
 
-        .nav a.active {
-            color: #8a9fff;
-        }
+    .post-preview-title a:hover {
+        color: #8a9fff;
+    }
 
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #8a9fff;
-            transition: width 0.3s ease;
-        }
+    .post-preview-excerpt {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
 
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 100%;
-        }
+    .post-preview-link {
+        color: #8a9fff;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
 
-        .nav a:hover {
-            color: #8a9fff;
-        }
+    .post-preview-link:hover {
+        border-bottom-color: #8a9fff;
+    }
+</style>
 
-        /* Page Header */
-        .page-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
-        }
+<div class="blog-header">
+    <div class="container">
+        <h1 class="blog-title">Diary</h1>
+        <p class="blog-subtitle">Unfiltered thoughts and vulnerable truths</p>
+    </div>
+</div>
 
-        .page-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .page-subtitle {
-            font-size: 1.2em;
-            color: #bbb;
-            max-width: 600px;
-            margin: 0 auto;
-            font-style: italic;
-        }
-
-        /* Main Content Area */
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 60px;
-            padding: 80px 0;
-        }
-
-        /* Blog Posts */
-        .posts-container {
-            max-width: 800px;
-        }
-
-        .post {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 40px;
-            margin-bottom: 50px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .post:hover {
-            border-color: #8a9fff;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .post-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #333;
-        }
-
-        .post-date {
-            color: #999;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .post-category {
-            background: rgba(138, 159, 255, 0.2);
-            color: #8a9fff;
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .post-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 20px;
-            font-weight: 400;
-            line-height: 1.3;
-        }
-
-        .post-title a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .post-title a:hover {
-            color: #8a9fff;
-        }
-
-        .post-excerpt {
-            color: #ccc;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            font-size: 1.1em;
-        }
-
-        .post-quote {
-            border-left: 4px solid #8a9fff;
-            padding-left: 20px;
-            margin: 25px 0;
-            font-style: italic;
-            color: #ddd;
-            background: rgba(138, 159, 255, 0.05);
-            padding: 20px;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .read-more {
-            color: #8a9fff;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .read-more:hover {
-            border-bottom-color: #8a9fff;
-        }
-
-        .read-more::after {
-            content: '→';
-            transition: transform 0.3s ease;
-        }
-
-        .read-more:hover::after {
-            transform: translateX(5px);
-        }
-
-        /* Sidebar */
-        .sidebar {
-            padding-top: 0;
-        }
-
-        .sidebar-section {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-        }
-
-        .sidebar-title {
-            color: #f0f0f0;
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #8a9fff;
-            padding-bottom: 10px;
-        }
-
-        .sidebar-content {
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        .currently-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: rgba(138, 159, 255, 0.05);
-            border-radius: 8px;
-            border-left: 3px solid #8a9fff;
-        }
-
-        .currently-label {
-            color: #8a9fff;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-
-        .newsletter-signup {
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
-            border: 1px solid #8a9fff;
-        }
-
-        .newsletter-input {
-            width: 100%;
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: #e8e8e8;
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            border-color: #8a9fff;
-        }
-
-        .newsletter-button {
-            width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            color: #000;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
-        }
-
-        .categories {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .category-tag {
-            background: rgba(138, 159, 255, 0.1);
-            color: #8a9fff;
-            padding: 8px 15px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.9em;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(138, 159, 255, 0.3);
-        }
-
-        .category-tag:hover {
-            background: rgba(138, 159, 255, 0.2);
-            border-color: #8a9fff;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .main-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-            
-            .page-title {
-                font-size: 2.2em;
-            }
-            
-            .post {
-                padding: 25px;
-            }
-            
-            .post-meta {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-container">
-                <a href="index.html" class="logo">Mileena Rayne</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="diary.html" class="active">Diary</a>
-                    <a href="music.html">Music</a>
-                    <a href="writing.html">Writing</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
+<div class="posts-container">
+    <div class="container">
+        {% for post in site.posts %}
+        <article class="post-preview">
+            <div class="post-preview-meta">{{ post.date | date: "%B %d, %Y" }} • {{ post.category | default: "Diary Entry" }}</div>
+            <h2 class="post-preview-title">
+                <a href="{{ post.url }}">{{ post.title }}</a>
+            </h2>
+            <div class="post-preview-excerpt">
+                {{ post.excerpt | strip_html | truncate: 300 }}
+            </div>
+            <a href="{{ post.url }}" class="post-preview-link">Continue Reading →</a>
+        </article>
+        {% endfor %}
+        
+        {% if site.posts.size == 0 %}
+        <div class="post-preview">
+            <h2 class="post-preview-title">Coming Soon...</h2>
+            <div class="post-preview-excerpt">
+                This is where my thoughts will live. Raw, honest, and unfiltered. 
+                Check back soon for the first entry.
             </div>
         </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Diary</h1>
-            <p class="page-subtitle">
-                Unfiltered thoughts, raw emotions, and the messy beauty of being human. 
-                This is where I process life, creativity, and everything in between.
-            </p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
-            <div class="main-content">
-                <!-- Blog Posts -->
-                <div class="posts-container">
-                    
-                    <!-- Post 1 -->
-                    <article class="post">
-                        <div class="post-meta">
-                            <span class="post-date">June 14, 2025</span>
-                            <span class="post-category">Self-Reflection</span>
-                        </div>
-                        <h2 class="post-title">
-                            <a href="post-too-intense.html">On Being Called "Too Intense"</a>
-                        </h2>
-                        <div class="post-excerpt">
-                            <p>I've been thinking about what it means when people say I'm "intense." Is that just code for "you make me uncomfortable because you feel things deeply?" I've realized that my emotional intelligence comes from having to develop it for survival...</p>
-                            
-                            <div class="post-quote">
-                                "Your intensity is actually your superpower, even when it makes others uncomfortable."
-                            </div>
-                            
-                            <p>Maybe the problem isn't that I'm too much. Maybe the problem is that most people have learned to be too little. They've been conditioned to stay on the surface, to avoid the depths where real growth happens...</p>
-                        </div>
-                        <a href="post-too-intense.html" class="read-more">Continue reading</a>
-                    </article>
-
-                    <!-- Post 2 -->
-                    <article class="post">
-                        <div class="post-meta">
-                            <span class="post-date">June 10, 2025</span>
-                            <span class="post-category">Family Dynamics</span>
-                        </div>
-                        <h2 class="post-title">
-                            <a href="post-shelter-aftermath.html">The Shelter Post Aftermath</a>
-                        </h2>
-                        <div class="post-excerpt">
-                            <p>My family got upset about my post regarding our time in the homeless shelter. It's fascinating how sharing your truth can make people defensive about their own choices. I wasn't attacking anyone - I was sharing what I learned...</p>
-                            
-                            <p>Sometimes I wonder if vulnerability is seen as an act of aggression by people who can't access their own. My truth shouldn't threaten you - unless you're hiding from your own.</p>
-                        </div>
-                        <a href="post-shelter-aftermath.html" class="read-more">Continue reading</a>
-                    </article>
-
-                    <!-- Post 3 -->
-                    <article class="post">
-                        <div class="post-meta">
-                            <span class="post-date">June 5, 2025</span>
-                            <span class="post-category">Creative Process</span>
-                        </div>
-                        <h2 class="post-title">
-                            <a href="post-writing-uncomfortable.html">Writing the Uncomfortable</a>
-                        </h2>
-                        <div class="post-excerpt">
-                            <p>I wrote a scene today that made me physically uncomfortable. It was about a stalker, and I needed to convey the true horror of what that experience does to someone. Art shouldn't always be pretty. Sometimes it needs to disturb us into awareness...</p>
-                            
-                            <div class="post-quote">
-                                "Comfort doesn't create change or awareness."
-                            </div>
-                            
-                            <p>I have this belief that people should make themselves uncomfortable in order to grow. The discomfort is to prove a point, to force us to confront realities we'd rather ignore...</p>
-                        </div>
-                        <a href="post-writing-uncomfortable.html" class="read-more">Continue reading</a>
-                    </article>
-
-                    <!-- Post 4 -->
-                    <article class="post">
-                        <div class="post-meta">
-                            <span class="post-date">May 28, 2025</span>
-                            <span class="post-category">Life Lessons</span>
-                        </div>
-                        <h2 class="post-title">
-                            <a href="post-perfect-storm.html">When Life Creates a Perfect Storm</a>
-                        </h2>
-                        <div class="post-excerpt">
-                            <p>Homelessness is something I thought I'd never experience, but sometimes life creates a perfect storm that sweeps you away. Three months. Only three months, but it felt like years of being adrift, sleeping in strange places with thin walls where unfamiliar voices echoed through the night...</p>
-                            
-                            <p>This experience opened my eyes even more to the quiet, complicated nature of this world. But more than anything, it humbled me. I've learned the value of persistence, the beauty of gratitude, and that sometimes love gets difficult...</p>
-                        </div>
-                        <a href="post-perfect-storm.html" class="read-more">Continue reading</a>
-                    </article>
-
-                </div>
-
-                <!-- Sidebar -->
-                <aside class="sidebar">
-                    
-                    <!-- Currently Section -->
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">Currently</h3>
-                        <div class="sidebar-content">
-                            <div class="currently-item">
-                                <div class="currently-label">Feeling</div>
-                                <div>Processing family dynamics and wondering why emotional honesty threatens people so much</div>
-                            </div>
-                            <div class="currently-item">
-                                <div class="currently-label">Creating</div>
-                                <div>A song about the space between what we say and what we mean</div>
-                            </div>
-                            <div class="currently-item">
-                                <div class="currently-label">Reading</div>
-                                <div>"The Body Keeps the Score" - understanding trauma and healing</div>
-                            </div>
-                            <div class="currently-item">
-                                <div class="currently-label">Learning</div>
-                                <div>That vulnerability is strength, not weakness - no matter who tells you otherwise</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Categories -->
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">Categories</h3>
-                        <div class="categories">
-                            <a href="#" class="category-tag">Self-Reflection</a>
-                            <a href="#" class="category-tag">Creative Process</a>
-                            <a href="#" class="category-tag">Family Dynamics</a>
-                            <a href="#" class="category-tag">Life Lessons</a>
-                            <a href="#" class="category-tag">Mental Health</a>
-                            <a href="#" class="category-tag">Relationships</a>
-                            <a href="#" class="category-tag">Growth</a>
-                        </div>
-                    </div>
-
-                    <!-- Newsletter Signup -->
-                    <div class="sidebar-section newsletter-signup">
-                        <h3 class="sidebar-title">Stay Connected</h3>
-                        <div class="sidebar-content">
-                            <p>Get new diary entries, music releases, and creative updates delivered directly to your inbox.</p>
-                            <form>
-                                <input type="email" class="newsletter-input" placeholder="Your email address" required>
-                                <button type="submit" class="newsletter-button">Subscribe</button>
-                            </form>
-                        </div>
-                    </div>
-
-                    <!-- About Snippet -->
-                    <div class="sidebar-section">
-                        <h3 class="sidebar-title">About This Diary</h3>
-                        <div class="sidebar-content">
-                            <p>This is my unfiltered space. Here I share the thoughts, struggles, and insights that shape my art and my life. If you're looking for sanitized content, this isn't the place. If you want real talk about growth, creativity, and the messy beauty of being human - welcome home.</p>
-                        </div>
-                    </div>
-
-                </aside>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
+        {% endif %}
+    </div>
+</div>
