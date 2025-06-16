@@ -3,26 +3,17 @@ description: Musician, Writer, Truth-Teller
 url: https://mileena28.github.io
 baseurl: ""
 
-# Tell Jekyll to include these nested directories
-include:
-  - chapters
-  - chapters/the-silence
-  - chapters/the-chosen
-  - chapters/lost-histories
-  - chapters/lost-histories/god-who-wept
-  - chapters/lost-histories/seven-days-of-sun
-  - chapters/lost-histories/sin-of-mercy
-  - chapters/lost-histories/song-of-blood-and-stone
-  - chapters/lost-histories/weaver-of-sorrows
-
 # Permalink structure for blog posts
 permalink: /diary/:year/:month/:day/:title/
 
-# Collections
+# Collections - this is the key part
 collections:
   posts:
     output: true
     permalink: /diary/:year/:month/:day/:title/
+  chapters:
+    output: true
+    permalink: /chapters/:path/
 
 # Plugins
 plugins:
