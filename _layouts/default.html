@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-7K576LDGCK');
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #0a0a0a;
+            color: #e8e8e8;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Elegant background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
+                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 30px 0;
+            border-bottom: 1px solid #333;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 300;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav a.active {
+            color: #8a9fff;
+        }
+
+        .nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #8a9fff;
+            transition: width 0.3s ease;
+        }
+
+        .nav a:hover {
+            color: #8a9fff;
+        }
+
+        .nav a:hover::after,
+        .nav a.active::after {
+            width: 100%;
+        }
+
+        /* Content styles */
+        .main-content {
+            min-height: 60vh;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px 0;
+            text-align: center;
+            border-top: 1px solid #333;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .footer-content {
+            color: #999;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #8a9fff;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="/" class="logo">{{ site.title }}</a>
+                <nav class="nav">
+                    <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
+                    <a href="/diary/" {% if page.url contains "diary" %}class="active"{% endif %}>Diary</a>
+                    <a href="/music/" {% if page.url contains "music" %}class="active"{% endif %}>Music</a>
+                    <a href="/writing/" {% if page.url contains "writing" %}class="active"{% endif %}>Writing</a>
+                    <a href="/about/" {% if page.url contains "about" %}class="active"{% endif %}>About</a>
+                    <a href="/contact/" {% if page.url contains "contact" %}class="active"{% endif %}>Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-nav">
+                <a href="/diary/">Diary</a>
+                <a href="/music/">Music</a>
+                <a href="/writing/">Writing</a>
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </div>
+            <div class="footer-content">
+                <p>&copy; 2025 {{ site.title }}. All rights reserved.</p>
+                <p>Built with authenticity, vulnerability, and a lot of late-night thoughts.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
