@@ -1,437 +1,233 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mileena Rayne - Artist, Writer, Truth-Teller</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+---
 
-  gtag('config', 'G-7K576LDGCK');
-</script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    /* Hero Section */
+    .hero {
+        padding: 80px 0 120px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    .hero-title {
+        font-size: 3.5em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 3px;
+    }
 
-        /* Elegant background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
-            opacity: 0.6;
-            z-index: -1;
-        }
+    .hero-subtitle {
+        font-size: 1.3em;
+        color: #bbb;
+        margin-bottom: 30px;
+        font-style: italic;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    .hero-description {
+        font-size: 1.1em;
+        color: #ccc;
+        max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.8;
+    }
 
-        /* Header */
-        .header {
-            padding: 30px 0;
-            border-bottom: 1px solid #333;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .cta-button {
+        display: inline-block;
+        padding: 15px 35px;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+    }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+    }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 300;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
+    /* Recent Work Section */
+    .recent-work {
+        padding: 80px 0;
+    }
 
-        .nav {
-            display: flex;
-            gap: 40px;
-        }
+    .section-title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #f0f0f0;
+        font-weight: 300;
+    }
 
-        .nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+    .work-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+    }
 
-        .nav a.active {
-            color: #8a9fff;
-        }
+    .work-card {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
 
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #8a9fff;
-            transition: width 0.3s ease;
-        }
+    .work-card:hover {
+        transform: translateY(-10px);
+        border-color: #8a9fff;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
 
-        .nav a:hover {
-            color: #8a9fff;
-        }
+    .work-type {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
 
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 100%;
-        }
+    .work-title {
+        font-size: 1.4em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+    }
 
-        /* Hero Section */
-        .hero {
-            padding: 80px 0 120px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
-        }
+    .work-preview {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
 
+    .work-link {
+        color: #8a9fff;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .work-link:hover {
+        border-bottom-color: #8a9fff;
+    }
+
+    /* Recent Thoughts Section */
+    .recent-thoughts {
+        padding: 80px 0;
+        background: rgba(10, 10, 20, 0.6);
+    }
+
+    .thoughts-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .thought-entry {
+        background: rgba(20, 20, 20, 0.8);
+        border-left: 4px solid #8a9fff;
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 0 15px 15px 0;
+    }
+
+    .thought-date {
+        color: #999;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .thought-content {
+        color: #ddd;
+        font-style: italic;
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
         .hero-title {
-            font-size: 3.5em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-            letter-spacing: 3px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3em;
-            color: #bbb;
-            margin-bottom: 30px;
-            font-style: italic;
-        }
-
-        .hero-description {
-            font-size: 1.1em;
-            color: #ccc;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
-        }
-
-        .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            color: #000;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
-        }
-
-        /* Recent Work Section */
-        .recent-work {
-            padding: 80px 0;
-        }
-
-        .section-title {
             font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 60px;
-            color: #f0f0f0;
-            font-weight: 300;
         }
-
+        
         .work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: 1fr;
         }
+    }
+</style>
 
-        .work-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <h1 class="hero-title">{{ site.title }}</h1>
+        <p class="hero-subtitle">Musician • Writer • Truth-Teller</p>
+        <p class="hero-description">
+            Welcome to my corner of the internet where vulnerability meets artistry. 
+            Here you'll find unfiltered thoughts, authentic music, and stories that 
+            dig deep into what it means to be beautifully, perfectly imperfect.
+        </p>
+        <a href="/diary/" class="cta-button">Read My Latest Thoughts</a>
+    </div>
+</section>
 
-        .work-card:hover {
-            transform: translateY(-10px);
-            border-color: #8a9fff;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .work-type {
-            color: #8a9fff;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
-
-        .work-title {
-            font-size: 1.4em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .work-preview {
-            color: #ccc;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .work-link {
-            color: #8a9fff;
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        .work-link:hover {
-            border-bottom-color: #8a9fff;
-        }
-
-        /* Recent Thoughts Section */
-        .recent-thoughts {
-            padding: 80px 0;
-            background: rgba(10, 10, 20, 0.6);
-        }
-
-        .thoughts-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .thought-entry {
-            background: rgba(20, 20, 20, 0.8);
-            border-left: 4px solid #8a9fff;
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 0 15px 15px 0;
-        }
-
-        .thought-date {
-            color: #999;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-
-        .thought-content {
-            color: #ddd;
-            font-style: italic;
-            font-size: 1.1em;
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        .footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid #333;
-            background: rgba(0, 0, 0, 0.9);
-        }
-
-        .footer-content {
-            color: #999;
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-        }
-
-        .footer-nav a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-nav a:hover {
-            color: #8a9fff;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
+<!-- Recent Work -->
+<section class="recent-work">
+    <div class="container">
+        <h2 class="section-title">Recent Creations</h2>
+        <div class="work-grid">
+            <div class="work-card">
+                <div class="work-type">Music</div>
+                <h3 class="work-title">Echoes in Empty Rooms</h3>
+                <p class="work-preview">
+                    A haunting melody born from silence and longing. Sometimes the 
+                    spaces between notes say more than the music itself...
+                </p>
+                <a href="/music/" class="work-link">Listen →</a>
+            </div>
             
-            .hero-title {
-                font-size: 2.5em;
-            }
+            <div class="work-card">
+                <div class="work-type">Writing</div>
+                <h3 class="work-title">The Space Between Words</h3>
+                <p class="work-preview">
+                    A short story exploring what happens when we finally say 
+                    the things we've been afraid to voice. Sometimes silence 
+                    is louder than screaming...
+                </p>
+                <a href="/writing/" class="work-link">Read →</a>
+            </div>
             
-            .work-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-container">
-                <a href="index.html" class="logo">Mileena Rayne</a>
-                <nav class="nav">
-                    <a href="index.html" class="active">Home</a>
-                    <a href="diary.html">Diary</a>
-                    <a href="music.html">Music</a>
-                    <a href="writing.html">Writing</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
+            <div class="work-card">
+                <div class="work-type">Diary Entry</div>
+                <h3 class="work-title">On Being Called "Too Intense"</h3>
+                <p class="work-preview">
+                    Reflections on emotional depth in a world that prefers 
+                    surface-level connections. Maybe the problem isn't that 
+                    I'm too much...
+                </p>
+                <a href="/diary/2025/06/14/on-being-called-too-intense/" class="work-link">Continue Reading →</a>
             </div>
         </div>
-    </header>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1 class="hero-title">Mileena Rayne</h1>
-            <p class="hero-subtitle">Artist • Writer • Truth-Teller</p>
-            <p class="hero-description">
-                Welcome to my corner of the internet where vulnerability meets artistry. 
-                Here you'll find unfiltered thoughts, authentic music, and stories that 
-                dig deep into what it means to be beautifully, perfectly imperfect.
-            </p>
-            <a href="diary.html" class="cta-button">Read My Latest Thoughts</a>
-        </div>
-    </section>
-
-    <!-- Recent Work -->
-    <section class="recent-work">
-        <div class="container">
-            <h2 class="section-title">Recent Creations</h2>
-            <div class="work-grid">
-                <div class="work-card">
-                    <div class="work-type">Music</div>
-                    <h3 class="work-title">Echoes in Empty Rooms</h3>
-                    <p class="work-preview">
-                        A haunting melody born from silence and longing. Sometimes the 
-                        spaces between notes say more than the music itself...
-                    </p>
-                    <a href="music.html" class="work-link">Listen →</a>
-                </div>
-                
-                <div class="work-card">
-                    <div class="work-type">Writing</div>
-                    <h3 class="work-title">The Space Between Words</h3>
-                    <p class="work-preview">
-                        A short story exploring what happens when we finally say 
-                        the things we've been afraid to voice. Sometimes silence 
-                        is louder than screaming...
-                    </p>
-                    <a href="writing.html" class="work-link">Read →</a>
-                </div>
-                
-                <div class="work-card">
-                    <div class="work-type">Diary Entry</div>
-                    <h3 class="work-title">On Being Called "Too Intense"</h3>
-                    <p class="work-preview">
-                        Reflections on emotional depth in a world that prefers 
-                        surface-level connections. Maybe the problem isn't that 
-                        I'm too much...
-                    </p>
-                    <a href="blog_post_page.html" class="work-link">Continue Reading →</a>
+<!-- Recent Thoughts -->
+<section class="recent-thoughts">
+    <div class="container">
+        <h2 class="section-title">Recent Thoughts</h2>
+        <div class="thoughts-container">
+            {% for post in site.posts limit:3 %}
+            <div class="thought-entry">
+                <div class="thought-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                <div class="thought-content">
+                    "{{ post.excerpt | strip_html | truncate: 200 }}"
+                    <a href="{{ post.url }}" style="color: #8a9fff; margin-left: 10px;">Read more →</a>
                 </div>
             </div>
+            {% endfor %}
         </div>
-    </section>
-
-    <!-- Recent Thoughts -->
-    <section class="recent-thoughts">
-        <div class="container">
-            <h2 class="section-title">Recent Thoughts</h2>
-            <div class="thoughts-container">
-                <div class="thought-entry">
-                    <div class="thought-date">June 14, 2025</div>
-                    <div class="thought-content">
-                        "I've realized that my emotional intelligence comes from having to develop it 
-                        for survival. The people who call me 'intense' have never had to navigate 
-                        the depths I've been forced to explore."
-                    </div>
-                </div>
-                
-                <div class="thought-entry">
-                    <div class="thought-date">June 10, 2025</div>
-                    <div class="thought-content">
-                        "Sometimes I wonder if vulnerability is seen as an act of aggression by 
-                        people who can't access their own. My truth shouldn't threaten you - 
-                        unless you're hiding from your own."
-                    </div>
-                </div>
-                
-                <div class="thought-entry">
-                    <div class="thought-date">June 5, 2025</div>
-                    <div class="thought-content">
-                        "Art shouldn't always be pretty. Sometimes it needs to disturb us into 
-                        awareness. Comfort doesn't create change - it creates complacency."
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-nav">
-                <a href="diary.html">Diary</a>
-                <a href="music.html">Music</a>
-                <a href="writing.html">Writing</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="footer-content">
-                <p>&copy; 2025 Mileena Rayne. All rights reserved.</p>
-                <p>Built with authenticity, vulnerability, and a lot of late-night thoughts.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+    </div>
+</section>
