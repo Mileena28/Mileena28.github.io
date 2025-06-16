@@ -11,6 +11,35 @@ title: Writing
         background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
     }
 
+    /* Writing Philosophy */
+    .philosophy-section {
+        padding: 80px 0;
+    }
+
+    .philosophy-content {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .philosophy-quote {
+        font-size: 1.4em;
+        color: #ddd;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        border-left: 4px solid #8a9fff;
+        padding-left: 30px;
+        text-align: left;
+    }
+
+    .philosophy-text {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+    }
+
     .page-title {
         font-size: 3em;
         font-weight: 300;
@@ -46,27 +75,16 @@ title: Writing
     }
 
     .book-cover {
-        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        position: relative;
         border-radius: 15px;
-        height: 400px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: #000;
+        overflow: hidden;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
-    .cover-title {
-        font-size: 1.8em;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .cover-author {
-        font-size: 1.1em;
-        opacity: 0.8;
+    .book-cover img {
+        width: 100%;
+        height: auto;
+        display: block;
     }
 
     .book-info {
@@ -144,8 +162,8 @@ title: Writing
         background: rgba(138, 159, 255, 0.3);
     }
 
-    /* Work in Progress */
-    .wip-section {
+    /* Current Projects Section */
+    .projects-section {
         padding: 80px 0;
         background: rgba(10, 10, 20, 0.6);
     }
@@ -158,29 +176,21 @@ title: Writing
         font-weight: 300;
     }
 
-    .wip-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-        margin-bottom: 40px;
-    }
-
-    .wip-card {
+    .project-card {
         background: rgba(20, 20, 20, 0.8);
         border: 1px solid #333;
         border-radius: 15px;
-        padding: 30px;
-        transition: all 0.3s ease;
+        padding: 40px;
+        margin-bottom: 40px;
         backdrop-filter: blur(10px);
     }
 
-    .wip-card:hover {
-        transform: translateY(-5px);
+    .project-card:hover {
         border-color: #8a9fff;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     }
 
-    .wip-status {
+    .project-status {
         background: rgba(138, 159, 255, 0.2);
         color: #8a9fff;
         padding: 5px 12px;
@@ -192,44 +202,104 @@ title: Writing
         margin-bottom: 15px;
     }
 
-    .wip-title {
-        font-size: 1.4em;
+    .project-title {
+        font-size: 1.8em;
         color: #f0f0f0;
         margin-bottom: 10px;
     }
 
-    .wip-genre {
+    .project-genre {
         color: #999;
         font-size: 0.9em;
         margin-bottom: 20px;
         font-style: italic;
     }
 
-    .wip-description {
+    .project-description {
         color: #ccc;
-        line-height: 1.6;
-        margin-bottom: 20px;
+        line-height: 1.7;
+        margin-bottom: 25px;
     }
 
-    .progress-bar {
-        background: rgba(51, 51, 51, 0.6);
-        height: 8px;
-        border-radius: 4px;
-        overflow: hidden;
+    .chapter-link {
+        color: #8a9fff;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .chapter-link:hover {
+        border-bottom-color: #8a9fff;
+    }
+
+    /* Lost Histories Section */
+    .lost-histories-container {
+        background: rgba(30, 30, 30, 0.6);
+        border-radius: 15px;
+        padding: 30px;
+        margin-top: 20px;
+    }
+
+    .historian-note {
+        background: rgba(138, 159, 255, 0.05);
+        border-left: 4px solid #8a9fff;
+        padding: 25px;
+        margin-bottom: 40px;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 10px 10px 0;
+    }
+
+    .story-section {
+        margin-bottom: 50px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #444;
+    }
+
+    .story-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .story-title {
+        font-size: 1.5em;
+        color: #8a9fff;
         margin-bottom: 10px;
     }
 
-    .progress-fill {
-        background: linear-gradient(90deg, #8a9fff, #a8b5ff);
-        height: 100%;
-        border-radius: 4px;
-        transition: width 0.3s ease;
+    .story-description {
+        color: #999;
+        font-style: italic;
+        margin-bottom: 20px;
+        font-size: 0.95em;
     }
 
-    .progress-text {
-        color: #999;
-        font-size: 0.9em;
-        text-align: right;
+    .authors-note {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #555;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 25px;
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.7;
+    }
+
+    .chapter-excerpt {
+        margin-top: 20px;
+        color: #ddd;
+        line-height: 1.8;
+    }
+
+    .excerpt-quote {
+        background: rgba(138, 159, 255, 0.05);
+        border-left: 3px solid #8a9fff;
+        padding: 15px 20px;
+        margin: 20px 0;
+        font-style: italic;
+        color: #e0e0e0;
+    }
+
     }
 
     /* Writing Philosophy */
@@ -261,64 +331,6 @@ title: Writing
         text-align: left;
     }
 
-    /* Short Stories Section */
-    .stories-section {
-        padding: 80px 0;
-        background: rgba(10, 10, 20, 0.8);
-    }
-
-    .stories-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-    }
-
-    .story-card {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-    }
-
-    .story-card:hover {
-        border-color: #8a9fff;
-        transform: translateY(-3px);
-    }
-
-    .story-title {
-        color: #f0f0f0;
-        font-size: 1.2em;
-        margin-bottom: 10px;
-    }
-
-    .story-theme {
-        color: #8a9fff;
-        font-size: 0.8em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
-    .story-preview {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-        margin-bottom: 15px;
-    }
-
-    .read-story-link {
-        color: #8a9fff;
-        text-decoration: none;
-        font-size: 0.9em;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.3s ease;
-    }
-
-    .read-story-link:hover {
-        border-bottom-color: #8a9fff;
-    }
-
     /* Mobile Responsive */
     @media (max-width: 1024px) {
         .featured-book {
@@ -328,7 +340,6 @@ title: Writing
         }
         
         .book-cover {
-            height: 300px;
             margin: 0 auto;
             max-width: 250px;
         }
@@ -343,8 +354,8 @@ title: Writing
             padding: 30px;
         }
         
-        .stories-grid {
-            grid-template-columns: 1fr;
+        .project-card {
+            padding: 25px;
         }
     }
 </style>
@@ -354,100 +365,9 @@ title: Writing
     <div class="container">
         <h1 class="page-title">Writing</h1>
         <p class="page-subtitle">
-            Stories that explore the uncomfortable truths, characters who refuse to stay on the surface, 
-            and narratives that challenge us to confront what we'd rather ignore.
+            Where gods wage war in silence, where love defies time itself, and where mercy becomes the greatest sin.
+            These are the stories whispered between the lines of history.
         </p>
-    </div>
-</section>
-
-<!-- Featured Book -->
-<section class="featured-book-section">
-    <div class="container">
-        <div class="featured-book">
-            <div class="book-cover">
-                <div class="cover-title">Fractures</div>
-                <div class="cover-author">Mileena Rayne</div>
-            </div>
-            
-            <div class="book-info">
-                <div class="book-label">Published Novel</div>
-                <h2 class="book-title">Fractures</h2>
-                <div class="book-genre">Literary Fiction • Psychological Drama</div>
-                
-                <p class="book-description">
-                    A raw exploration of family trauma, resilience, and the invisible wounds that shape us. 
-                    When Maya returns home after years of absence, she must confront the fractures in her 
-                    family - and herself - that have never truly healed. This novel doesn't shy away from 
-                    the uncomfortable truths about how we hurt the people we love and how we learn to 
-                    forgive the unforgivable.
-                </p>
-                
-                <div class="book-excerpt">
-                    "Some fractures are so deep they become part of your architecture. You don't heal them - 
-                    you learn to build around them, to make them beautiful in their brokenness."
-                </div>
-                
-                <div class="book-links">
-                    <a href="#" class="book-link">Buy on Amazon</a>
-                    <a href="#" class="book-link secondary">Barnes & Noble</a>
-                    <a href="#" class="book-link secondary">Goodreads</a>
-                    <a href="#" class="book-link secondary">Read Sample</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Work in Progress -->
-<section class="wip-section">
-    <div class="container">
-        <h2 class="section-title">Current Projects</h2>
-        
-        <div class="wip-grid">
-            
-            <!-- WIP 1 -->
-            <div class="wip-card">
-                <div class="wip-status">First Draft - 75%</div>
-                <h3 class="wip-title">The Space Between Shadows</h3>
-                <div class="wip-genre">Psychological Thriller</div>
-                <p class="wip-description">
-                    A complex exploration of stalking, trauma, and the thin line between protection and obsession. 
-                    This novel forces readers to confront uncomfortable questions about safety, consent, and the 
-                    psychology of predatory behavior. Not for the faint of heart.
-                </p>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 75%;"></div>
-                </div>
-                <div class="progress-text">65,000 / 85,000 words</div>
-            </div>
-
-            <!-- Add more WIP cards as needed -->
-
-        </div>
-    </div>
-</section>
-
-<!-- Recent Short Stories -->
-<section class="stories-section">
-    <div class="container">
-        <h2 class="section-title">Recent Short Works</h2>
-        
-        <div class="stories-grid">
-            
-            <div class="story-card">
-                <h3 class="story-title">The Weight of Words Unspoken</h3>
-                <div class="story-theme">Family • Communication</div>
-                <p class="story-preview">
-                    A daughter visits her estranged father in the hospital, carrying twenty years 
-                    of things she's never said. Sometimes the heaviest conversations are the ones 
-                    we never have.
-                </p>
-                <a href="#" class="read-story-link">Read full story →</a>
-            </div>
-
-            <!-- Add more story cards as needed -->
-
-        </div>
     </div>
 </section>
 
@@ -464,6 +384,299 @@ title: Writing
                 <p>My writing comes from the belief that literature should be more than entertainment - it should be transformation. I'm not interested in stories that let readers stay comfortable in their assumptions. I want to write the narratives that force us to examine our own shadows, to question what we think we know about human nature, and to find beauty in the places we're afraid to look.</p>
                 
                 <p>Every story I write is born from authentic experience or deep emotional truth. I don't create suffering for shock value, but I refuse to sanitize the human experience for palatability. My characters are flawed, complex, and real because real people are messy and contradictory and beautiful in their brokenness.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Published Book -->
+<section class="featured-book-section">
+    <div class="container">
+        <div class="featured-book">
+            <div class="book-cover">
+                <img src="the-silence-cover.jpg" alt="Blood of the Wild Gods: The Silence">
+            </div>
+            
+            <div class="book-info">
+                <div class="book-label">Published Novel</div>
+                <h2 class="book-title">Blood of the Wild Gods: The Silence</h2>
+                <div class="book-genre">Dark Fantasy • Epic Fantasy</div>
+                
+                <p class="book-description">
+                    Long ago, the gods waged war across the heavens, leaving scars that reshaped the world. Their blood seeped into the land, birthing the Beastborn—monstrous creatures of divine wrath, sorrow, and forgotten desires. But not all touched by this power became beasts. Some became the Bloodmarked—mortals who wield impossible power, forever teetering on the edge of corruption.
+                </p>
+                
+                <p class="book-description">
+                    Now, as humanity clings to the ruins of divine legacies, something far older and more terrifying begins to stir. The Silent God, a being erased from history and feared even by the divine, is awakening. Its whispers seep into the minds of five mortals, each chosen for a purpose they do not understand.
+                </p>
+                
+                <div class="book-excerpt">
+                    "When silence itself becomes a weapon, the fate of the realm will depend on choices that defy destiny and truths buried in blood. The gods may be gone, but their echoes remain—and the age of silence has just begun."
+                </div>
+                
+                <div class="book-links">
+                    <a href="https://a.co/d/1XDMREf" class="book-link">Ebook</a>
+                    <a href="https://a.co/d/4jmp1tc" class="book-link secondary">Paperback</a>
+                    <a href="https://a.co/d/4wzxoA6" class="book-link secondary">Hardcover</a>
+                    <a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheSilence/Chapter01_TheUnspokenGod.md" class="book-link secondary">Read Chapter 1</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Current Projects -->
+<section class="projects-section">
+    <div class="container">
+        <h2 class="section-title">Current Projects</h2>
+        
+        <!-- The Chosen -->
+        <div class="project-card">
+            <div class="project-status">In Progress</div>
+            <h3 class="project-title">Blood of the Wild Gods: The Chosen</h3>
+            <div class="project-genre">Dark Fantasy • Psychological Horror</div>
+            
+            <p class="project-description">
+                Five years after The Silence, the world is still learning how to breathe again.
+            </p>
+            
+            <p class="project-description">
+                In the quiet coastal town she calls home, Mira Roehart clings to the wild beauty of the forest and the sea—places that have always made sense when nothing else does. But when waves of refugees begin arriving, followed by a silver-tongued leader named Lucien Altheris, everything begins to shift.
+            </p>
+            
+            <p class="project-description">
+                Lucien brings promises of Light, of order rising from the ashes of chaos. To many, he is salvation. To Mira, something about him feels wrong—too perfect, too polished, too powerful. As her world changes in ways she can't explain, Mira begins to question not just who she is, but what she might become in a world where light and darkness blur.
+            </p>
+            
+            <p class="project-description">
+                <em>In a time of fragile peace, what happens when the real danger wears a halo?</em>
+            </p>
+            
+            <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheChosen/Chapter01_TheLightThatSwallowedtheSilence.md" class="chapter-link">Read Chapter 1: The Light That Swallowed the Silence</a></p>
+        </div>
+
+        <!-- The Lost Histories -->
+        <div class="project-card">
+            <div class="project-status">In Progress</div>
+            <h3 class="project-title">Blood of the Wild Gods: The Lost Histories, Volume One</h3>
+            <div class="project-genre">Dark Fantasy • Anthology</div>
+            
+            <p class="project-description">
+                A collection of forgotten tales from the world of the Wild Gods—stories whispered between stone and silence, lost beneath conquest and doctrine. Each tale reveals a different facet of divine nature: love that defies time, mercy that becomes sin, and the terrible price of walking among mortals.
+            </p>
+
+            <div class="lost-histories-container">
+                <!-- Historian's Note -->
+                <div class="historian-note">
+                    <strong>A Note from the Historian</strong><br><br>
+                    <em>Recorded by Tanneus G'Raja, Ashborn of the Wastes, who found purpose not in plunder, but in bearing witness so others might not repeat what was lost.</em><br><br>
+                    
+                    I was not born with ink-stained hands or reverent eyes for scrolls. I was born in ash. Among the relic-hunters of the Godscarred Wastes, where bone and ruin are all that remain of divine war, my people search for fragments—shards of the past traded like coin, prized for power more than truth.<br><br>
+                    
+                    But I chose a different pursuit.<br><br>
+                    
+                    These are the tales whispered between stone and silence, lost beneath conquest and doctrine. The Lost Histories.<br><br>
+                    
+                    I have given my life to seeking them. In crumbling sanctuaries and blood-stained ruins, through forbidden texts and the dreams of the dying, I have gathered what remains. I know the danger in this work. To write history is to shape it. What I record may someday define the gods themselves in the minds of those who follow.<br><br>
+                    
+                    So I make this vow: I will not soften their cruelty, nor gild their virtues. I will not stitch fables to comfort, nor omit horrors to please. I will tell their stories as they were told to me—in truth, however fractured. In grief, in glory, in shadow.<br><br>
+                    
+                    Let the reader see them as they are.<br>
+                    Let the gods answer for themselves.
+                </div>
+
+                <!-- Seven Days of Sun -->
+                <div class="story-section">
+                    <h4 class="story-title">Seven Days of Sun</h4>
+                    <p class="story-description">A tragic love story of a god cursed to watch his beloved die again and again through endless incarnations.</p>
+                    
+                    <div class="authors-note">
+                        <strong>Author's Note</strong><br><br>
+                        This story reached me first as a song—fragmented, mournful, carried in the voices of ocean-bound bards who still sing to the dusk. They claimed it was older than the city of Atheria itself—passed down from the time when the land was still called Quenos, a quiet village by the sea where gods once walked beside mortals. The melody shifts from coast to coast, but the names never change.<br><br>
+                        
+                        Years later, on a windswept coast north of old Quenos, I found a weather-beaten shack nearly swallowed by sand and time. Inside, buried beneath a thick coat of dust and rotted canvas, was a journal. The pages, brittle and translucent, shimmered faintly—crystallized by salt and age. Most of the writing had long since vanished, devoured by moisture and silence. But the illustrations endured.<br><br>
+                        
+                        Dozens of women. Each different. Each the same.<br><br>
+                        
+                        One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her.<br><br>
+                        
+                        Pressed between two pages, I found sun daisies. Their color had nearly faded, but not completely. I cannot say with certainty whose hand once held that book. But I have not shaken the feeling since: that I touched something sacred. That I held the grief of a god who remembers every life she lived, and every time she loved him—before the end came again.<br><br>
+                        
+                        If that is true—if I have held the grief of a god—then no myth in this collection is more tender. Or more tragic. I write this account not for glory or acclaim, but because truth, however painful, deserves witness.
+                    </div>
+                    
+                    <div class="chapter-excerpt">
+                        <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheLostHistories/SevenDaysofSun/Chapter01_TheSunKissedStall.md" class="chapter-link">Read Chapter 1: The Sun-Kissed Stall</a></p>
+                        
+                        <div class="excerpt-quote">
+                            "Why would I look at the stars," he said, his voice dropping to a softer timbre, rich and warm as honey in sunlight, "when I have always loved the sun?"
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "She felt like something was beginning. Something real. Something strange. Something that tasted like love and danger all at once—a flavor both new and hauntingly familiar."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Weaver of Sorrows -->
+                <div class="story-section">
+                    <h4 class="story-title">The Weaver of Sorrows</h4>
+                    <p class="story-description">The origin story of the curse put upon Elodias and Senia in Seven Days of Sun—a tale of divine jealousy and the price of denying fate.</p>
+                    
+                    <div class="authors-note">
+                        <strong>Preface to the Sixth Account</strong><br><br>
+                        <em>As recorded by Tanneus G'Raja, Ashborn of the Wastes—once taught to unearth what gods left behind, now using that same instinct to drag buried truth into light, even from the depths where few dare to look.</em><br><br>
+                        
+                        I discovered this account sealed in a blackwood box, half-buried in a sea cave beneath the cliffs of old Quenos—where modern Atheria now gleams above, unaware. The cave mouth opens only at low tide, and even then, only long enough for the brave or the reckless to slip inside. I was both.<br><br>
+                        
+                        The scroll was wrapped in oilskin and bound with silver thread. Its script was mirrored—illegible by torchlight, but revealed in full beneath the rising moon. No title. No signature. Only the sharp, deliberate hand of someone who poured their sorrow into ink, never daring to speak it aloud.<br><br>
+                        
+                        Not far from where I found it lay a skeleton, folded as if the tide itself had tucked it into rest. I did not linger. The bones were old, almost hollow with time. A ring of silver thread still clung to one wrist. I have my theories, but none I'll speak aloud in a place like that.<br><br>
+                        
+                        This is not a tale you'll hear sung. Not in the markets of Atheria, nor in the sanctified halls that now bless its name.<br><br>
+                        
+                        But the wind remembers.<br>
+                        The sea remembers.<br>
+                        And some griefs are woven too deeply to ever stay buried.
+                    </div>
+                    
+                    <div class="chapter-excerpt">
+                        <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheLostHistories/TheWeaverofSorrows/Chapter06_TheBloodMoonChild.md" class="chapter-link">Read Chapter 6: The Blood-Moon Child</a></p>
+                        
+                        <div class="excerpt-quote">
+                            "Malritha was born during the deepest moment of lunar eclipse, when the moon hung like an open wound in the night sky. The air itself seemed to hold its breath, caught between anticipation and dread."
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "Her loom required no ordinary material. Malritha would wait until the full moon hung heavy in the night sky, then climb to the highest spire of the temple. There, with a spindle carved from driftwood and fingers dipped in saltwater, she would gather moonlight itself, pulling it from the air like silver silk."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The God Who Wept -->
+                <div class="story-section">
+                    <h4 class="story-title">The God Who Wept</h4>
+                    <p class="story-description">A philosophical journey of a god who descended to become mortal and walked the earth for 1000 years in search of one human untouched by cruelty—learning that the journey was more important than the destination.</p>
+                    
+                    <div class="authors-note">
+                        <strong>Author's Note</strong><br><br>
+                        <em>As recorded by Tanneus G'Raja</em><br><br>
+                        
+                        I find myself in the strange position of maintaining two records. One—the official archive—contains what I can substantiate through accepted archaeological methods: datable artifacts, cross-referenced accounts, inscriptions that still hold under scrutiny. That record will survive peer review. It is cautious, methodical, restrained.<br><br>
+                        
+                        This, however—this journal—is something else. It is the place I write what I believe beyond what I can prove. Not fantasy. Not projection. But the patterns that emerge just outside the edges of evidence. The echoes that refuse to be footnoted. The resonances that feel older than anything we've yet unearthed.<br><br>
+                        
+                        The story of Thainos is not merely a theological oddity or an unusually persistent myth. It is a lens—one that reshapes how we think about divinity, about hope, about the very nature of what it means to try to be good in a world so shaped by failure. Most gods demand reverence, fear, submission. This one demands something far more difficult: reflection.<br><br>
+                        
+                        What undoes me is not the idea that he failed. It's the idea that no one could rise to meet him. He became everything he was searching for—and we could not match him. Not once. Not in a thousand years.<br><br>
+                        
+                        I don't think it was our sins that broke him. Perhaps it was the way we excused them.<br><br>
+                        
+                        Do you think he left us because he, too, became afraid of what he had created? Or do you think—as I have sometimes dared to hope—that he scattered himself like seeds, that some fragment of his light remains, waiting for the day when we might finally prove worthy of his faith?<br><br>
+                        
+                        I do not know if he truly failed. I only know that he tried longer than anyone else would have. And perhaps—perhaps that is enough.
+                    </div>
+                    
+                    <div class="chapter-excerpt">
+                        <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheLostHistories/TheGodWhoWept/Chapter01_TheFirstClay.md" class="chapter-link">Read Chapter 1: The First Clay</a></p>
+                        
+                        <div class="excerpt-quote">
+                            "He gave them softer skin than made sense, bodies that would bruise at a touch, hearts that could break from mere words. He gave them minds that would never be satisfied, always reaching beyond their grasp. He gave them souls that could contain infinities but would be housed in flesh that lasted mere moments. He made them absurd. He made them glorious. He made them human."
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "They love precisely because they know loss. They create beauty because they understand decay. They choose hope not from ignorance of despair, but in full knowledge of it—and that makes their hope infinitely more precious than the easy certainty of those who have never faced darkness."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Sin of Mercy -->
+                <div class="story-section">
+                    <h4 class="story-title">The Sin of Mercy</h4>
+                    <p class="story-description">A tale of a god cast from heaven for making an impossible choice—following what he believed was right but committing atrocities in the name of mercy.</p>
+                    
+                    <div class="authors-note">
+                        <strong>Author's Note</strong><br><br>
+                        <em>As recorded by Tanneus G'Raja, Scholar of the Hollow Spire, who has learned that the most damning truths are often buried beneath the most beautiful lies</em><br><br>
+                        
+                        I found this story in blood.<br><br>
+                        
+                        Not metaphorically—though there is blood enough in the telling. I mean literally, in the rusted stains that still mark the floorboards of a cabin deep in what locals call the Dark Forest. The pattern of it troubles me even now. Too much for violence alone. Too deliberate for accident. As if something profound and terrible had occurred in that small space, leaving its signature in crimson.<br><br>
+                        
+                        The trail began with a children's rhyme in Oakhaven, sung with the casual cruelty of those who've forgotten fear can have a source:<br><br>
+                        
+                        <em>"The demon dwells in darkest wood<br>
+                        Where light fears to fall<br>
+                        He feasts on those who trust too much<br>
+                        And darkness takes them all"</em><br><br>
+                        
+                        What I discovered challenged everything we think we know about demons and angels, about mercy and judgment, about the price of choosing compassion in a world that calls it weakness. This is not a tale of simple good conquering evil, nor of darkness consuming light. It asks harder questions: What does it mean to show mercy to those who seem undeserving? How do we judge actions taken in impossible circumstances? And when the divine walks among us, scarred by choices we cannot fathom, do we have the wisdom to recognize grace beneath the guilt?<br><br>
+                        
+                        I publish this account not because I've found all the answers, but because the questions themselves deserve better than children's rhymes and comfortable lies. Because blood on floorboards might tell a different story than the one we've inherited. Because sometimes what we name as demons are simply those who choose mercy in a world that counts it as sin.<br><br>
+                        
+                        And sometimes, the greatest mercy is the one that damns us.
+                    </div>
+                    
+                    <div class="chapter-excerpt">
+                        <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheLostHistories/TheSinofMercy/Chapter01_BeautyandtheBeast.md" class="chapter-link">Read Chapter 1: Beauty and the Beast</a></p>
+                        
+                        <div class="excerpt-quote">
+                            "The creature that emerged from the shadows was no natural beast—too tall, too wrong, with matted black fur and pale green eyes that burned in the dying light. This stranger—this dark figure who had appeared like salvation from the night itself—moved with a grace that seemed almost inhuman."
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "She stared back at him from where she lay among the leaves, her arm throbbing with pain but her fear temporarily forgotten. This close, she could see that his green eyes held depths of sorrow that seemed older than the forest itself."
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Song of Blood and Stone -->
+                <div class="story-section">
+                    <h4 class="story-title">The Song of Blood and Stone</h4>
+                    <p class="story-description">A tale of how the wealthy buy history and change it forever. With enough coin, a villain can become a legend.</p>
+                    
+                    <div class="authors-note">
+                        <strong>Author's Note</strong><br><br>
+                        <em>As recorded by Tanneus G'Raja, Scholar of the Hollow Spire</em><br><br>
+                        
+                        I first encountered this tale not in scrolls or songs, but carved into stone.<br><br>
+                        
+                        Deep within the stone sanctuary near what was once High Pass, I found a mural that took my breath away. Ancient beyond reckoning, its lines worn soft by countless years, it depicted a story I thought I knew: a radiant Vaelari wielding a blade of pure light, striking down a shadowed figure who glowed with ethereal darkness. Below them, a human figure reached toward the fallen god. The standard tale—Light conquering Dark, balance restored through sacrifice.<br><br>
+                        
+                        For years, I accepted this version. It aligned perfectly with every official record, every teaching about the dangers of unchecked darkness and the necessity of the Light's dominion.<br><br>
+                        
+                        Then I found Captain Morris's journal, buried deep within his family's private archives and sealed away as if it contained a disgrace too dangerous to confront—its weathered pages revealing a story entirely different from the one the world had been told.<br><br>
+                        
+                        His private account of the deaths at High Pass. Blood patterns that didn't match testimonies. Defensive wounds on the wrong person. The precision of a blade between ribs that spoke not of desperate struggle, but of calculated murder.<br><br>
+                        
+                        The official investigation records, when I finally unearthed them from a magistrate's sealed files, confirmed my growing suspicion. The reports had been... edited. Revised. Purchased. A hefty donation to the High Pass Widows and Orphans Fund had transformed murder into mythology.<br><br>
+                        
+                        The mural I had studied with such reverence was not a record of divine justice, but a monument to mortal lies. The "corrupted Vaelari" and the "dark witch" were simply two people who had loved each other, killed by a jealous princess whose family had enough gold to rewrite history.<br><br>
+                        
+                        Let those who read this remember: the stones we carve our stories into are no more truthful than the hands that wield the chisel.
+                    </div>
+                    
+                    <div class="chapter-excerpt">
+                        <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheLostHistories/TheSongofBloodandStone/Chapter01_WhereRiversRemember.md" class="chapter-link">Read Chapter 1: Where Rivers Remember</a></p>
+                        <p><a href="https://github.com/yourusername/BloodOfTheWildGods/blob/main/TheLostHistories/TheSongofBloodandStone/Chapter02_ThePrincessandTheProphecy.md" class="chapter-link">Read Chapter 2: The Princess and the Prophecy</a></p>
+                        
+                        <div class="excerpt-quote">
+                            "The river knew her name, though she had never told it."
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "Perhaps the greatest power lay not in mighty demonstrations but in small acts of compassion, in being present when fear threatened to drown hope entirely. Perhaps this was why she had chosen this form, this place, this quiet work among mortals who would never truly know what walked among them."
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "Oh, your cottage is absolutely enchanting! It's exactly how I've always imagined a fairy tale dwelling should look—you know, the sort where the wise woman is secretly lovely and the woodland creatures all adore her."
+                        </div>
+                        
+                        <div class="excerpt-quote">
+                            "There was something oddly endearing about Jade's complete inability to take even her own nightmares entirely seriously... 'At this point, I'd let you paint me blue and dance naked under the moon if it would give me one decent night's sleep.'"
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
