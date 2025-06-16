@@ -1,0 +1,31 @@
+title: Mileena Rayne
+description: Musician, Writer, Truth-Teller
+url: https://mileenarayne.com
+baseurl: ""
+
+# Permalink structure for blog posts
+permalink: /diary/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /diary/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude files
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# Site settings
+timezone: America/Chicago
