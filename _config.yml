@@ -3,6 +3,10 @@ description: Musician, Writer, Truth-Teller
 url: https://mileena28.github.io
 baseurl: ""
 
+# Tell Jekyll to include these directories
+include:
+  - chapters
+
 # Permalink structure for blog posts
 permalink: /diary/:year/:month/:day/:title/
 
