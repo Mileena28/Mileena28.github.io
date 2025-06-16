@@ -1,34 +1,28 @@
 title: Mileena Rayne
 description: Musician, Writer, Truth-Teller
-url: https://mileena28.github.io
+url: https://mileenarayne.com
 baseurl: ""
 
-# Permalink structure for blog posts
 permalink: /diary/:year/:month/:day/:title/
 
-# Collections - this is the key part
 collections:
   posts:
     output: true
     permalink: /diary/:year/:month/:day/:title/
-  chapters:
-    output: true
-    permalink: /chapters/:path/
 
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-# Exclude files
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
 
-# Markdown settings
 markdown: kramdown
 highlighter: rouge
-
-# Site settings
 timezone: America/Chicago
+
+# Process all files, even in subdirectories
+keep_files:
+  - chapters
