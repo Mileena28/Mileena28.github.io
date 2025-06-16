@@ -1,832 +1,508 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Mileena Rayne</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+---
+layout: default
+title: Contact
+---
 
-  gtag('config', 'G-7K576LDGCK');
-</script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+    /* Page Header */
+    .page-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
 
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
+    .page-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
 
-        /* Elegant background pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%),
-                        radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%);
-            opacity: 0.6;
-            z-index: -1;
-        }
+    .page-subtitle {
+        font-size: 1.2em;
+        color: #bbb;
+        max-width: 600px;
+        margin: 0 auto;
+        font-style: italic;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+    /* Main Content */
+    .main-content {
+        padding: 80px 0;
+    }
 
-        /* Header */
-        .header {
-            padding: 30px 0;
-            border-bottom: 1px solid #333;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
 
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Newsletter Section */
+    .newsletter-section {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+        border: 1px solid #8a9fff;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+    }
 
-        .logo {
-            font-size: 1.8em;
-            font-weight: 300;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
 
-        .nav {
-            display: flex;
+    .section-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+        line-height: 1.6;
+    }
+
+    /* Signup Button Styles */
+    .signup-button-container {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .signup-button {
+        display: inline-block;
+        padding: 20px 40px;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        border-radius: 15px;
+        font-weight: 600;
+        font-size: 1.2em;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+    }
+
+    .signup-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+    }
+
+    .signup-note {
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+
+    .newsletter-benefits {
+        color: #bbb;
+        font-size: 0.9em;
+        text-align: left;
+    }
+
+    .newsletter-benefits ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .newsletter-benefits li {
+        padding: 5px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .newsletter-benefits li::before {
+        content: '✓';
+        color: #8a9fff;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    /* Contact Form */
+    .contact-form-section {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label {
+        color: #8a9fff;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid #444;
+        border-radius: 8px;
+        color: #e8e8e8;
+        font-size: 1em;
+        font-family: inherit;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+        outline: none;
+        border-color: #8a9fff;
+    }
+
+    .form-textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+    .submit-button {
+        padding: 15px;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        border: none;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 1em;
+    }
+
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
+    }
+
+    /* Social Media Section */
+    .social-section {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .social-title {
+        font-size: 2.5em;
+        color: #f0f0f0;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    .social-description {
+        color: #ccc;
+        margin-bottom: 40px;
+        font-size: 1.1em;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .social-card {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        backdrop-filter: blur(10px);
+    }
+
+    .social-card:hover {
+        transform: translateY(-5px);
+        border-color: #8a9fff;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 
+            0 8px 32px rgba(138, 159, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .social-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .social-icon:hover::before {
+        left: 100%;
+    }
+
+    .social-icon:hover {
+        transform: translateY(-5px);
+        box-shadow: 
+            0 20px 40px rgba(138, 159, 255, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .social-icon svg {
+        width: 28px;
+        height: 28px;
+        fill: #8a9fff;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .social-name {
+        font-size: 1.2em;
+        color: #f0f0f0;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .social-purpose {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.5;
+    }
+
+    /* Response Time Notice */
+    .response-notice {
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .response-notice-text {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
             gap: 40px;
         }
+    }
 
-        .nav a {
-            color: #ccc;
-            text-decoration: none;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav a.active {
-            color: #8a9fff;
-        }
-
-        .nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: #8a9fff;
-            transition: width 0.3s ease;
-        }
-
-        .nav a:hover::after,
-        .nav a.active::after {
-            width: 100%;
-        }
-
-        .nav a:hover {
-            color: #8a9fff;
-        }
-
-        /* Page Header */
-        .page-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
-        }
-
+    @media (max-width: 768px) {
         .page-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
+            font-size: 2.2em;
         }
-
-        .page-subtitle {
-            font-size: 1.2em;
-            color: #bbb;
-            max-width: 600px;
-            margin: 0 auto;
-            font-style: italic;
-        }
-
-        /* Main Content */
-        .main-content {
-            padding: 80px 0;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
-            border: 1px solid #8a9fff;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .section-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-        /* Signup Button Styles */
-        .signup-button-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
+        
         .signup-button {
-            display: inline-block;
-            padding: 20px 40px;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            color: #000;
-            text-decoration: none;
-            border-radius: 15px;
-            font-weight: 600;
-            font-size: 1.2em;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
-        }
-
-        .signup-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
-        }
-
-        .signup-note {
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        .newsletter-benefits {
-            color: #bbb;
-            font-size: 0.9em;
-            text-align: left;
-        }
-
-        .newsletter-benefits ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .newsletter-benefits li {
-            padding: 5px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .newsletter-benefits li::before {
-            content: '✓';
-            color: #8a9fff;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Contact Form */
-        .contact-form-section {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 40px;
-            backdrop-filter: blur(10px);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-label {
-            color: #8a9fff;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .form-input,
-        .form-textarea,
-        .form-select {
-            padding: 12px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid #444;
-            border-radius: 8px;
-            color: #e8e8e8;
-            font-size: 1em;
-            font-family: inherit;
-        }
-
-        .form-input:focus,
-        .form-textarea:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: #8a9fff;
-        }
-
-        .form-textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-button {
-            padding: 15px;
-            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-            color: #000;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1em;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
-        }
-
-        /* Social Media Section */
-        .social-section {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .social-title {
-            font-size: 2.5em;
-            color: #f0f0f0;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .social-description {
-            color: #ccc;
-            margin-bottom: 40px;
+            padding: 15px 30px;
             font-size: 1.1em;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
-
+        
         .social-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            max-width: 800px;
-            margin: 0 auto;
+            grid-template-columns: 1fr;
         }
+    }
+</style>
 
-        .social-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 25px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-            backdrop-filter: blur(10px);
-        }
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Let's Connect</h1>
+        <p class="page-subtitle">
+            Ready for authentic connection? Here's how to find me, follow my journey, 
+            and be part of a community that values depth over surface.
+        </p>
+    </div>
+</section>
 
-        .social-card:hover {
-            transform: translateY(-5px);
-            border-color: #8a9fff;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .social-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 8px 32px rgba(138, 159, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .social-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .social-icon:hover::before {
-            left: 100%;
-        }
-
-        .social-icon:hover {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 20px 40px rgba(138, 159, 255, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        .social-icon svg {
-            width: 28px;
-            height: 28px;
-            fill: #8a9fff;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        }
-
-        .social-name {
-            font-size: 1.2em;
-            color: #f0f0f0;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .social-purpose {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        /* Professional Inquiries */
-        .inquiries-section {
-            background: rgba(10, 10, 20, 0.8);
-            padding: 80px 0;
-        }
-
-        .inquiries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .inquiry-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .inquiry-card:hover {
-            border-color: #8a9fff;
-            transform: translateY(-5px);
-        }
-
-        .inquiry-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 25px;
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 
-                0 10px 40px rgba(138, 159, 255, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .inquiry-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .inquiry-card:hover .inquiry-icon::before {
-            left: 100%;
-        }
-
-        .inquiry-card:hover .inquiry-icon {
-            transform: translateY(-5px);
-            box-shadow: 
-                0 25px 50px rgba(138, 159, 255, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3),
-                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-        }
-
-        .inquiry-icon svg {
-            width: 32px;
-            height: 32px;
-            fill: #8a9fff;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        }
-
-        .inquiry-title {
-            color: #f0f0f0;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-        }
-
-        .inquiry-description {
-            color: #ccc;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .inquiry-note {
-            color: #999;
-            font-size: 0.9em;
-            font-style: italic;
-        }
-
-        /* Response Time Notice */
-        .response-notice {
-            background: rgba(138, 159, 255, 0.1);
-            border: 1px solid rgba(138, 159, 255, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .response-notice-text {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
+<!-- Main Contact Options -->
+<section class="main-content">
+    <div class="container">
+        <div class="contact-grid">
             
-            .page-title {
-                font-size: 2.2em;
-            }
-            
-            .signup-button {
-                padding: 15px 30px;
-                font-size: 1.1em;
-            }
-            
-            .social-links {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-container">
-                <a href="index.html" class="logo">Mileena Rayne</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="diary.html">Diary</a>
-                    <a href="music.html">Music</a>
-                    <a href="writing.html">Writing</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html" class="active">Contact</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Let's Connect</h1>
-            <p class="page-subtitle">
-                Ready for authentic connection? Here's how to find me, follow my journey, 
-                and be part of a community that values depth over surface.
-            </p>
-        </div>
-    </section>
-
-    <!-- Main Contact Options -->
-    <section class="main-content">
-        <div class="container">
-            <div class="contact-grid">
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <h2 class="section-title">Join My Inner Circle</h2>
+                <p class="section-description">
+                    Get exclusive access to new diary entries, early releases, behind-the-scenes 
+                    creative process insights, and the unfiltered thoughts that don't make it to social media.
+                </p>
                 
-                <!-- Newsletter Signup -->
-                <div class="newsletter-section">
-                    <h2 class="section-title">Join My Inner Circle</h2>
-                    <p class="section-description">
-                        Get exclusive access to new diary entries, early releases, behind-the-scenes 
-                        creative process insights, and the unfiltered thoughts that don't make it to social media.
-                    </p>
-                    
-                    <div class="signup-button-container">
-                        <a href="https://tr.ee/_4_LnSSJqu" target="_blank" class="signup-button">
-                            📧 Join My Inner Circle
-                        </a>
-                        <p class="signup-note">Opens in new window • Takes 30 seconds</p>
+                <div class="signup-button-container">
+                    <a href="https://tr.ee/_4_LnSSJqu" target="_blank" class="signup-button">
+                        📧 Join My Inner Circle
+                    </a>
+                    <p class="signup-note">Opens in new window • Takes 30 seconds</p>
+                </div>
+                
+                <div class="newsletter-benefits">
+                    <strong>You'll receive:</strong>
+                    <ul>
+                        <li>New diary entries delivered directly to your inbox</li>
+                        <li>First access to new music and writing releases</li>
+                        <li>Exclusive excerpts from work-in-progress projects</li>
+                        <li>Personal updates and creative process insights</li>
+                        <li>Invitation to live virtual events and Q&As</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h2 class="section-title">Send Me a Message</h2>
+                <p class="section-description">
+                    Have something meaningful to share? A question about my work? 
+                    Or just want to connect authentically? I'd love to hear from you.
+                </p>
+                
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input type="text" class="form-input" required>
                     </div>
                     
-                    <div class="newsletter-benefits">
-                        <strong>You'll receive:</strong>
-                        <ul>
-                            <li>New diary entries delivered directly to your inbox</li>
-                            <li>First access to new music and writing releases</li>
-                            <li>Exclusive excerpts from work-in-progress projects</li>
-                            <li>Personal updates and creative process insights</li>
-                            <li>Invitation to live virtual events and Q&As</li>
-                        </ul>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" required>
                     </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="contact-form-section">
-                    <h2 class="section-title">Send Me a Message</h2>
-                    <p class="section-description">
-                        Have something meaningful to share? A question about my work? 
-                        Or just want to connect authentically? I'd love to hear from you.
-                    </p>
                     
-                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
-                        <div class="form-group">
-                            <label class="form-label">Your Name</label>
-                            <input type="text" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Email Address</label>
-                            <input type="email" class="form-input" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">What's this about?</label>
-                            <select class="form-select" required>
-                                <option value="">Choose a category</option>
-                                <option value="general">General connection / fan mail</option>
-                                <option value="collaboration">Creative collaboration</option>
-                                <option value="speaking">Speaking / workshop inquiry</option>
-                                <option value="interview">Interview / media request</option>
-                                <option value="feedback">Feedback on my work</option>
-                                <option value="personal">Personal story / shared experience</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Your Message</label>
-                            <textarea class="form-textarea" placeholder="Share what's on your mind. I appreciate authenticity over perfection." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </form>
-                </div>
-
+                    <div class="form-group">
+                        <label class="form-label">What's this about?</label>
+                        <select class="form-select" required>
+                            <option value="">Choose a category</option>
+                            <option value="general">General connection / fan mail</option>
+                            <option value="collaboration">Creative collaboration</option>
+                            <option value="speaking">Speaking / workshop inquiry</option>
+                            <option value="interview">Interview / media request</option>
+                            <option value="feedback">Feedback on my work</option>
+                            <option value="personal">Personal story / shared experience</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Your Message</label>
+                        <textarea class="form-textarea" placeholder="Share what's on your mind. I appreciate authenticity over perfection." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
             </div>
-        </div>
-    </section>
 
-    <!-- Social Media -->
-    <section class="social-section">
-        <div class="container">
-            <h2 class="social-title">Follow My Journey</h2>
-            <p class="social-description">
-                Each platform offers a different window into my world. Choose the ones that resonate 
-                with how you like to connect and consume content.
-            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Social Media -->
+<section class="social-section">
+    <div class="container">
+        <h2 class="social-title">Follow My Journey</h2>
+        <p class="social-description">
+            Each platform offers a different window into my world. Choose the ones that resonate 
+            with how you like to connect and consume content.
+        </p>
+        
+        <div class="social-links">
             
-            <div class="social-links">
-                
-                <a href="#" class="social-card">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
-                    </div>
-                    <div class="social-name">Instagram</div>
-                    <div class="social-purpose">
-                        Daily authentic moments, behind-the-scenes creative process, 
-                        and visual stories that capture the beauty in imperfection.
-                    </div>
-                </a>
+            <a href="#" class="social-card">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                </div>
+                <div class="social-name">Instagram</div>
+                <div class="social-purpose">
+                    Daily authentic moments, behind-the-scenes creative process, 
+                    and visual stories that capture the beauty in imperfection.
+                </div>
+            </a>
 
-                <a href="#" class="social-card">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
-                        </svg>
-                    </div>
-                    <div class="social-name">TikTok</div>
-                    <div class="social-purpose">
-                        Raw, unfiltered thoughts, music previews, and conversations about 
-                        emotional intelligence and authentic living.
-                    </div>
-                </a>
+            <a href="#" class="social-card">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                    </svg>
+                </div>
+                <div class="social-name">Twitter</div>
+                <div class="social-purpose">
+                    Real-time thoughts, cultural commentary, and conversations with 
+                    other deep thinkers who aren't afraid of complexity.
+                </div>
+            </a>
 
-                <a href="#" class="social-card">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                        </svg>
-                    </div>
-                    <div class="social-name">Twitter</div>
-                    <div class="social-purpose">
-                        Real-time thoughts, cultural commentary, and conversations with 
-                        other deep thinkers who aren't afraid of complexity.
-                    </div>
-                </a>
+            <a href="#" class="social-card">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
+                    </svg>
+                </div>
+                <div class="social-name">Spotify</div>
+                <div class="social-purpose">
+                    My complete music catalog, curated playlists that match different 
+                    moods, and collaborative playlists with followers.
+                </div>
+            </a>
 
-                <a href="#" class="social-card">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M4.556 17.357c0-4.083 1.888-6.09 5.667-6.09 1.526 0 2.685.233 3.479.7v8.831c-.988.585-2.293.878-3.915.878-2.456 0-4.098-.585-4.925-1.756-.585-.817-.878-1.805-.878-2.964v-.6zm0-8.675c0-1.269.341-2.256 1.024-2.964.731-.707 1.756-1.061 3.077-1.061 1.756 0 3.195.463 4.318 1.39v5.667c-.683-.366-1.585-.549-2.708-.549-3.048 0-4.572 1.464-4.572 4.393v.732c0 1.463.525 2.195 1.574 2.195.707 0 1.269-.146 1.683-.439v-6.024h2.683v7.39c-1.317 1.146-3.097 1.72-5.342 1.72-1.926 0-3.39-.538-4.393-1.611C4.983 17.528 4.556 16.281 4.556 14.696v-5.989zm15.22 0c0 2.781-.854 4.867-2.561 6.256-1.464 1.195-3.586 1.793-6.366 1.793h-.976v-2.073h.976c1.829 0 3.17-.366 4.024-1.098.927-.854 1.39-2.098 1.39-3.732V8.682c0-1.634-.463-2.878-1.39-3.732-.854-.732-2.195-1.098-4.024-1.098h-.976V1.78h.976c2.78 0 4.902.598 6.366 1.793 1.707 1.39 2.561 3.475 2.561 6.256v5.989z"/>
-                        </svg>
-                    </div>
-                    <div class="social-name">Goodreads</div>
-                    <div class="social-purpose">
-                        Book reviews, reading updates, and literary discussions about 
-                        works that challenge and transform us.
-                    </div>
-                </a>
+            <a href="#" class="social-card">
+                <div class="social-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                    </svg>
+                </div>
+                <div class="social-name">YouTube</div>
+                <div class="social-purpose">
+                    Long-form content, music videos, creative process vlogs, 
+                    and deeper dives into topics that matter.
+                </div>
+            </a>
 
-                <a href="#" class="social-card">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                        </svg>
-                    </div>
-                    <div class="social-name">Spotify</div>
-                    <div class="social-purpose">
-                        My complete music catalog, curated playlists that match different 
-                        moods, and collaborative playlists with followers.
-                    </div>
-                </a>
-
-                <a href="#" class="social-card">
-                    <div class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                        </svg>
-                    </div>
-                    <div class="social-name">YouTube</div>
-                    <div class="social-purpose">
-                        Long-form content, music videos, creative process vlogs, 
-                        and deeper dives into topics that matter.
-                    </div>
-                </a>
-
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Professional Inquiries -->
-    <section class="inquiries-section">
-        <div class="container">
-            <h2 class="social-title">Professional Collaborations</h2>
-            
-            <div class="inquiries-grid">
-                
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2c-4.97 0-9 4.03-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7c0-4.97-4.03-9-9-9z"/>
-                        </svg>
-                    </div>
-                    <h3 class="inquiry-title">Speaking Engagements</h3>
-                    <p class="inquiry-description">
-                        Workshops on emotional intelligence, authenticity in creativity, 
-                        overcoming adversity, and building resilience through art.
-                    </p>
-                    <div class="inquiry-note">Use the contact form above with "Speaking" category</div>
-                </div>
+<!-- Response Time Notice -->
+<section class="container">
+    <div class="response-notice">
+        <p class="response-notice-text">
+            <strong>A note on response times:</strong> I believe in meaningful connection over quick replies. 
+            I read every message personally and respond thoughtfully, which means it may take 3-5 business days 
+            to hear back from me. Thank you for your patience and for choosing depth over speed.
+        </p>
+    </div>
+</section>
 
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                            <path d="M19 12h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/>
-                        </svg>
-                    </div>
-                    <h3 class="inquiry-title">Creative Collaborations</h3>
-                    <p class="inquiry-description">
-                        Music collaborations, co-writing projects, artistic partnerships 
-                        with creators who value depth and authenticity.
-                    </p>
-                    <div class="inquiry-note">Use the contact form above with "Collaboration" category</div>
-                </div>
-
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-                        </svg>
-                    </div>
-                    <h3 class="inquiry-title">Media & Interviews</h3>
-                    <p class="inquiry-description">
-                        Podcast appearances, interviews, feature stories about 
-                        authentic creativity, mental health, and artistic resilience.
-                    </p>
-                    <div class="inquiry-note">Use the contact form above with "Interview" category</div>
-                </div>
-
-                <div class="inquiry-card">
-                    <div class="inquiry-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="inquiry-title">Mentoring & Workshops</h3>
-                    <p class="inquiry-description">
-                        One-on-one mentoring for emerging artists, songwriting workshops, 
-                        and creative writing guidance for authentic storytelling.
-                    </p>
-                    <div class="inquiry-note">Use the contact form above with "Speaking" category</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Response Time Notice -->
-    <section class="container">
-        <div class="response-notice">
-            <p class="response-notice-text">
-                <strong>A note on response times:</strong> I believe in meaningful connection over quick replies. 
-                I read every message personally and respond thoughtfully, which means it may take 3-5 business days 
-                to hear back from me. Thank you for your patience and for choosing depth over speed.
-            </p>
-        </div>
-    </section>
-
-    <script>
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            // Contact form logic would go here
-            alert('Thank you for your message! I\'ll respond within 3-5 business days.');
-        }
-    </script>
-
-</body>
-</html>
+<script>
+    function handleContactSubmit(event) {
+        event.preventDefault();
+        // Contact form logic would go here
+        alert('Thank you for your message! I\'ll respond within 3-5 business days.');
+    }
+</script>
