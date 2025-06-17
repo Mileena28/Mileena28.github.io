@@ -9,6 +9,9 @@ collections:
   posts:
     output: true
     permalink: /diary/:year/:month/:day/:title/
+  chapters:
+    output: true
+    permalink: /chapters/:path/
 
 plugins:
   - jekyll-feed
