@@ -24,6 +24,14 @@ layout: default
         margin-bottom: 10px;
     }
 
+    .story-title {
+        font-size: 1.6em;
+        color: #ddd;
+        font-weight: 300;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+
     .chapter-title {
         font-size: 2.5em;
         color: #f0f0f0;
@@ -63,11 +71,19 @@ layout: default
         color: #8a9fff;
     }
 
+    .chapter-content em {
+        color: #a8b5ff;
+        font-style: italic;
+        letter-spacing: 0.5px;
+    }
+
     .navigation {
         margin-top: 60px;
         padding-top: 30px;
         border-top: 1px solid #333;
-        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .nav-link {
@@ -94,6 +110,10 @@ layout: default
             font-size: 1.5em;
         }
         
+        .story-title {
+            font-size: 1.3em;
+        }
+        
         .chapter-content {
             font-size: 1em;
         }
@@ -109,6 +129,9 @@ layout: default
         {% if page.book_title %}
         <div class="book-title">{{ page.book_title }}</div>
         {% endif %}
+        {% if page.story_title %}
+        <div class="story-title">{{ page.story_title }}</div>
+        {% endif %}
         <h1 class="chapter-title">{{ page.title }}</h1>
         {% if page.subtitle %}
         <div class="chapter-subtitle">{{ page.subtitle }}</div>
@@ -120,6 +143,16 @@ layout: default
     </div>
 
     <div class="navigation">
+        {% if page.prev_chapter %}
+        <a href="{{ page.prev_chapter }}" class="nav-link">← Previous Chapter</a>
+        {% else %}
+        <span></span>
+        {% endif %}
+        
         <a href="/writing/" class="nav-link">Back to Writing</a>
+        
+        {% if page.next_chapter %}
+        <a href="{{ page.next_chapter }}" class="nav-link">Next Chapter →</a>
+        {% endif %}
     </div>
 </article>
