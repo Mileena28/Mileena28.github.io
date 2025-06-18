@@ -103,6 +103,56 @@ title: About
         margin-bottom: 8px;
     }
 
+    .favorites-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin: 30px 0;
+    }
+
+    .favorites-category {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .favorites-title {
+        color: #8a9fff;
+        font-weight: 600;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+
+    .favorites-list {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .dream-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .dream-list li {
+        color: #ccc;
+        padding: 12px 0;
+        border-bottom: 1px solid #333;
+        font-style: italic;
+    }
+
+    .dream-list li:last-child {
+        border-bottom: none;
+    }
+
+    .dream-list li::before {
+        content: '→';
+        color: #8a9fff;
+        margin-right: 15px;
+        font-style: normal;
+    }
+
     /* Sidebar */
     .sidebar {
         padding-top: 0;
@@ -269,6 +319,10 @@ title: About
             text-align: left;
             font-size: 1.2em;
         }
+
+        .favorites-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 768px) {
@@ -304,15 +358,15 @@ title: About
                 <section class="section">
                     <h2 class="section-title">Who I Am</h2>
                     <div class="section-content">
-                        <p>I'm Mileena Rayne - musician, writer, and truth-teller. I create from the depths of human experience, refusing to stay on the surface where most people feel safe. My work emerges from a place of hard-earned wisdom, emotional intelligence forged in fire, and an unwavering commitment to authenticity.</p>
+                        <p>I'm Mileena Rayne - Registered Nurse, mother, musician, and writer from Minnesota. I create from the depths of human experience, refusing to stay on the surface where most people feel safe. My work emerges from a place of hard-earned wisdom, emotional intelligence forged in fire, and an unwavering commitment to authenticity.</p>
                         
-                        <p>People often tell me I'm "intense." They're not wrong. I feel deeply, think critically, and refuse to pretend that everything is fine when it's not. This intensity isn't a flaw - it's my superpower. It's what allows me to create music that moves people, write stories that disturb and heal, and share insights that help others feel less alone in their own darkness.</p>
+                        <p>People often tell me I'm "intense." They're not wrong. I feel deeply, think critically, and refuse to pretend that everything is fine when it's not. This intensity isn't a flaw - it's my superpower. It's what allows me to create music that moves people, write stories that disturb and heal, and provide trauma-informed care as a nurse.</p>
                         
                         <div class="highlight-quote">
-                            "I've learned that vulnerability is seen as an act of aggression by people who can't access their own. My truth shouldn't threaten you - unless you're hiding from your own."
+                            "I don't write to escape. I write to confront. Music is where I say the things I'm not ready to speak."
                         </div>
                         
-                        <p>My art comes from lived experience, not theory. Every song, every story, every vulnerable diary entry is born from real moments of struggle, growth, and revelation. I don't create to be comfortable or comforting - I create to be real.</p>
+                        <p>My art comes from lived experience, not theory. Every song, every story comes from real moments of struggle, growth, and revelation. I don't create to be comfortable or comforting - I create to be real. After growing up being told what to believe, I'm obsessed with finding truth, even when it's uncomfortable. Especially when it's uncomfortable.</p>
                     </div>
                 </section>
 
@@ -320,13 +374,66 @@ title: About
                 <section class="section">
                     <h2 class="section-title">My Story</h2>
                     <div class="section-content">
-                        <p>My journey hasn't been conventional, and I wouldn't change that if I could. Every hardship, every moment of feeling misunderstood, every time I've been told I'm "too much" has shaped me into the artist I am today.</p>
+                        <p>I was born into a fractured family. When I was two years old, my parents gave me up, and my paternal grandparents stepped in to raise me. For most of my childhood, they were my foundation. Around the age of twelve, I moved in with my dad, his new wife, and her children. Living with my dad gave me something I had longed for—but it wasn't without pain.</p>
                         
-                        <p>I've experienced homelessness - three months that felt like years, sleeping in unfamiliar places with thin walls where strange voices echoed through the night. This experience opened my eyes to the quiet, complicated nature of this world and taught me lessons about resilience, persistence, and gratitude that no comfortable life could have provided.</p>
+                        <p>My stepmother, caught in the unresolved tensions of her relationship with my father, often took her frustrations out on me. It was an emotionally abusive environment, one that left marks I still carry. By fifteen, I had returned to my grandmother's care, unable to endure the emotional turmoil any longer. By sixteen, I was on my own—navigating the world without a roadmap, collecting more pain than answers.</p>
                         
-                        <p>I've navigated complex family dynamics, learning to set boundaries while maintaining love, understanding that sometimes the people closest to you are the least equipped to handle your growth. I've been the target of someone else's unresolved pain and learned to transform that experience into compassion rather than bitterness.</p>
+                        <p>Layered over all of this was the belief system I was born into. I was raised as one of Jehovah's Witnesses, a high-control religious group that shaped nearly every aspect of my identity. I left at eighteen, and that decision shattered everything I thought I knew. My entire worldview unraveled. I had to start from nothing—searching, questioning, aching for what was real.</p>
                         
-                        <p>Through it all, I've developed what some call emotional intelligence - though I prefer to think of it as emotional fluency. I can navigate the depths of human feeling because I've been forced to. I can articulate complex emotions because I've had to survive them.</p>
+                        <p>That unraveling became the root of my obsession with truth, even when it's uncomfortable. I didn't begin writing or making music until nearly thirty. But once I did, it became clear that everything I create comes from the life I've lived. Every song, every story, is stitched with memory, survival, and scars that never quite healed.</p>
+                        
+                        <p>Today, I'm a Registered Nurse and a mother to two incredible daughters. I'm passionate about trauma-informed care and dream of becoming a SANE nurse, a policy advocate, and an expert witness for survivors of abuse. I've learned the importance of speaking up, especially after being taught for so long to stay silent.</p>
+                    </div>
+                </section>
+
+                <!-- Things That Shaped Me -->
+                <section class="section">
+                    <h2 class="section-title">Things That Shaped Me</h2>
+                    <div class="section-content">
+                        <p>Growing up, I found solace in stories and music. I learned piano, cello, viola, and guitar, and more recently started dabbling with violin. When the real world felt unsafe, I escaped into books and games where I could be someone else, somewhere else.</p>
+                        
+                        <div class="favorites-grid">
+                            <div class="favorites-category">
+                                <div class="favorites-title">Books That Raised Me</div>
+                                <div class="favorites-list">
+                                    <em>Eragon</em> series - because dragons understand being different<br>
+                                    <em>Inkheart</em> series - stories should be powerful enough to pull you in<br>
+                                    <em>Kira-Kira</em> - beauty exists even in broken places<br>
+                                    <em>Chronicles of Narnia</em> - sometimes you have to leave everything you know
+                                </div>
+                            </div>
+                            
+                            <div class="favorites-category">
+                                <div class="favorites-title">Games That Saved Me</div>
+                                <div class="favorites-list">
+                                    <em>EverQuest Online Adventures</em> - the world I built online felt safer<br>
+                                    <em>Final Fantasy Online</em> - community in virtual spaces<br>
+                                    <em>Skyrim</em> - because being a bard wandering ancient forests still haunts my soul<br>
+                                    <em>Elder Scrolls Online</em> & <em>Ark</em> - building something from nothing
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p>These weren't just entertainment - they were survival tools. They taught me that stories matter, that other worlds exist, and that sometimes the truest version of yourself is the one you become when no one else is watching.</p>
+                    </div>
+                </section>
+
+                <!-- My Dreams -->
+                <section class="section">
+                    <h2 class="section-title">Where I'm Headed</h2>
+                    <div class="section-content">
+                        <p>My passion for trauma-informed care drives everything I do. I dream of becoming a SANE (Sexual Assault Nurse Examiner), standing in courtrooms speaking for survivors who can't, changing policy that keeps people silent, and teaching trauma-informed care as the standard, not the exception.</p>
+                        
+                        <div class="highlight-quote">
+                            "In another life, I might have been a scholar at the Hollow Spire, cataloging divine myths. But in this one, I'm cataloging human stories - and fighting for the ones who need their voices heard."
+                        </div>
+                        
+                        <ul class="dream-list">
+                            <li>One day, I hope to stand in a courtroom and speak for survivors who can't</li>
+                            <li>To change policy that keeps people silent</li>
+                            <li>To teach trauma-informed care as the standard, not the exception</li>
+                            <li>Until then—I'm writing stories, writing songs, saying the things no one else will</li>
+                        </ul>
                     </div>
                 </section>
 
@@ -338,42 +445,22 @@ title: About
                         
                         <ul class="philosophy-list">
                             <li>
-                                <div class="philosophy-title">Authenticity Over Performance</div>
-                                <div>I'd rather share one vulnerable truth than a thousand perfect lies. Real connection happens when we stop performing and start being.</div>
+                                <div class="philosophy-title">Truth Over Comfort</div>
+                                <div>I don't sugarcoat pain—I translate it. My truth isn't pretty, but it's honest.</div>
                             </li>
                             <li>
-                                <div class="philosophy-title">Depth Over Surface</div>
-                                <div>Small talk is for small minds. I'm interested in the conversations that matter, the questions that challenge, the connections that change us.</div>
-                            </li>
-                            <li>
-                                <div class="philosophy-title">Growth Through Discomfort</div>
-                                <div>Comfort is the enemy of growth. I actively seek the experiences that challenge me, even when - especially when - they make me uncomfortable.</div>
-                            </li>
-                            <li>
-                                <div class="philosophy-title">Art as Truth-Telling</div>
-                                <div>Art should disturb the comfortable and comfort the disturbed. If my work doesn't make someone feel something real, I'm not doing my job.</div>
+                                <div class="philosophy-title">Vulnerability as Strength</div>
+                                <div>I've always been willing to set aside my pride and say the things most people wouldn't dare say out loud.</div>
                             </li>
                             <li>
                                 <div class="philosophy-title">Emotional Intelligence as Survival</div>
-                                <div>Understanding emotions - your own and others' - isn't a luxury. It's a necessity for navigating a complex world with grace and wisdom.</div>
+                                <div>Understanding emotions isn't a luxury—it's how you navigate a complex world with grace and wisdom.</div>
+                            </li>
+                            <li>
+                                <div class="philosophy-title">Art as Truth-Telling</div>
+                                <div>If my work doesn't make someone feel something real, I'm not doing my job. Comfort doesn't create change or awareness.</div>
                             </li>
                         </ul>
-                    </div>
-                </section>
-
-                <!-- My Work -->
-                <section class="section">
-                    <h2 class="section-title">My Creative Approach</h2>
-                    <div class="section-content">
-                        <p>My music comes from the spaces between words - the emotions we feel but can't quite articulate. I write melodies for the moments when language fails us, harmonies for the contradictions we carry, rhythms for the heartbeats of real life.</p>
-                        
-                        <p>My writing explores the uncomfortable truths we'd rather avoid. I'll write scenes that make me physically uncomfortable if they serve a greater truth. I believe in the power of literature to force us to confront realities we'd rather ignore.</p>
-                        
-                        <p>My diary entries are where I process the raw material of existence. These aren't polished thoughts - they're real-time attempts to make sense of a complex world. They're vulnerable, sometimes messy, always honest.</p>
-                        
-                        <div class="highlight-quote">
-                            "Comfort doesn't create change or awareness. Sometimes art needs to disturb us into consciousness."
-                        </div>
                     </div>
                 </section>
 
@@ -387,20 +474,28 @@ title: About
                     <h3 class="sidebar-title">Quick Facts</h3>
                     <ul class="quick-facts">
                         <li>
+                            <span class="fact-label">Name</span>
+                            <span class="fact-value">Mileena Rayne</span>
+                        </li>
+                        <li>
                             <span class="fact-label">Location</span>
-                            <span class="fact-value">Based in the US</span>
+                            <span class="fact-value">Minnesota, USA</span>
                         </li>
                         <li>
-                            <span class="fact-label">Focus</span>
-                            <span class="fact-value">Music & Writing</span>
+                            <span class="fact-label">Career</span>
+                            <span class="fact-value">Registered Nurse</span>
                         </li>
                         <li>
-                            <span class="fact-label">Style</span>
-                            <span class="fact-value">Authentic & Vulnerable</span>
+                            <span class="fact-label">Instruments</span>
+                            <span class="fact-value">Piano, Cello, Viola, Guitar, Violin</span>
                         </li>
                         <li>
-                            <span class="fact-label">Mission</span>
-                            <span class="fact-value">Truth-telling through art</span>
+                            <span class="fact-label">Passions</span>
+                            <span class="fact-value">Trauma Care, Truth-seeking</span>
+                        </li>
+                        <li>
+                            <span class="fact-label">Mom To</span>
+                            <span class="fact-value">Two brilliant daughters</span>
                         </li>
                     </ul>
                 </div>
@@ -423,8 +518,9 @@ title: About
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">Current Focus</h3>
                     <div class="sidebar-content">
-                        <p><strong>Music:</strong> Working on songs that explore the space between what we say and what we mean</p>
-                        <p><strong>Writing:</strong> Developing stories that examine the uncomfortable truths about human nature</p>
+                        <p><strong>Music:</strong> Writing songs that say the things I'm not ready to speak</p>
+                        <p><strong>Writing:</strong> Stories that examine uncomfortable truths about human nature</p>
+                        <p><strong>Nursing:</strong> Working toward becoming a SANE nurse and policy advocate</p>
                         <p><strong>Growth:</strong> Learning to trust my voice even when others find it "too intense"</p>
                     </div>
                 </div>
@@ -440,34 +536,42 @@ title: About
         <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">My Journey</h2>
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-year">Early Years</div>
+                <div class="timeline-year">Age 2</div>
                 <div class="timeline-content">
-                    <h3>Learning to Navigate Complexity</h3>
-                    <p>Growing up in a complex family dynamic, I learned early that survival sometimes means developing emotional intelligence beyond your years. These experiences, while difficult, became the foundation for my understanding of human nature and resilience.</p>
+                    <h3>The Beginning</h3>
+                    <p>My parents gave me up, and my paternal grandparents became my foundation. Learning early that family isn't always blood, and love sometimes comes from unexpected places.</p>
                 </div>
             </div>
             
             <div class="timeline-item">
-                <div class="timeline-year">2022</div>
+                <div class="timeline-year">Age 12-15</div>
                 <div class="timeline-content">
-                    <h3>The Perfect Storm</h3>
-                    <p>Experienced homelessness for three months - a period that completely shifted my perspective on vulnerability, community, and what really matters. This experience became the crucible for much of my artistic work and philosophy.</p>
+                    <h3>Learning About Pain</h3>
+                    <p>Moved in with my dad and stepmother. While I got something I had longed for, I also learned about emotional abuse and the complexity of family dynamics. Developed survival skills I still use today.</p>
                 </div>
             </div>
             
             <div class="timeline-item">
-                <div class="timeline-year">2023-2024</div>
+                <div class="timeline-year">Age 18</div>
                 <div class="timeline-content">
-                    <h3>Rebuilding and Creating</h3>
-                    <p>Used the lessons learned from hardship to fuel my creative work. Began writing more vulnerably, creating music from authentic emotion, and developing my voice as an artist unafraid of depth and complexity.</p>
+                    <h3>Breaking Free</h3>
+                    <p>Left Jehovah's Witnesses, shattering my entire worldview. Had to rebuild everything I thought I knew about truth, relationships, and meaning. This became the foundation of my obsession with authentic truth.</p>
                 </div>
             </div>
             
             <div class="timeline-item">
-                <div class="timeline-year">2025</div>
+                <div class="timeline-year">Nearly 30</div>
                 <div class="timeline-content">
                     <h3>Finding My Voice</h3>
-                    <p>Fully embracing my identity as an artist who refuses to apologize for intensity, depth, or emotional intelligence. Building a platform where vulnerability is strength and authenticity is non-negotiable.</p>
+                    <p>Started writing and making music, finally having processed enough to transform pain into art. Discovered that everything I create comes from the life I've lived.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">Present</div>
+                <div class="timeline-content">
+                    <h3>Building Something Real</h3>
+                    <p>Working as a Registered Nurse, raising two daughters, and pursuing my dream of becoming a SANE nurse. Using my voice to speak for those who can't, and creating art that refuses to look away from hard truths.</p>
                 </div>
             </div>
         </div>
