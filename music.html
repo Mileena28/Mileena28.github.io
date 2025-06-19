@@ -57,6 +57,14 @@ title: Music
         font-weight: 300;
     }
 
+    .featured-genre {
+        color: #999;
+        margin-bottom: 25px;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
     .featured-description {
         color: #ccc;
         font-size: 1.1em;
@@ -64,38 +72,23 @@ title: Music
         line-height: 1.7;
     }
 
-    .audio-player {
-        background: rgba(0, 0, 0, 0.6);
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 20px;
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
         margin: 30px 0;
+        border-radius: 15px;
     }
 
-    .play-button {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 20px;
-        transition: all 0.3s ease;
-        color: #000;
-        font-size: 1.5em;
-    }
-
-    .play-button:hover {
-        transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.4);
-    }
-
-    .player-info {
-        text-align: center;
-        color: #ccc;
+        border-radius: 15px;
     }
 
     .streaming-links {
@@ -187,39 +180,103 @@ title: Music
         border-radius: 0 8px 8px 0;
     }
 
-    .song-controls {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .song-video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        margin: 20px 0;
+        border-radius: 10px;
     }
 
-    .mini-play-button {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+    .song-video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         border: none;
-        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .song-links {
         display: flex;
-        align-items: center;
         justify-content: center;
-        transition: all 0.3s ease;
-        color: #000;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 15px;
     }
 
-    .mini-play-button:hover {
-        transform: scale(1.1);
-    }
-
-    .song-duration {
-        color: #999;
+    .song-link {
+        background: rgba(138, 159, 255, 0.2);
+        color: #8a9fff;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 15px;
+        border: 1px solid #8a9fff;
         font-size: 0.9em;
+        transition: all 0.3s ease;
+    }
+
+    .song-link:hover {
+        background: rgba(138, 159, 255, 0.3);
+        transform: translateY(-1px);
+    }
+
+    /* Latest Release */
+    .latest-section {
+        padding: 80px 0;
+        background: rgba(10, 10, 20, 0.6);
+    }
+
+    .latest-card {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 50px;
+        max-width: 800px;
+        margin: 0 auto;
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    .latest-label {
+        background: rgba(138, 159, 255, 0.2);
+        color: #8a9fff;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+
+    .latest-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 10px;
+        font-weight: 300;
+    }
+
+    .latest-genre {
+        color: #999;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+    }
+
+    .latest-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 30px;
     }
 
     /* Musical Philosophy */
     .philosophy-section {
         padding: 80px 0;
-        background: rgba(10, 10, 20, 0.8);
     }
 
     .philosophy-content {
@@ -242,46 +299,7 @@ title: Music
         line-height: 1.8;
     }
 
-    /* Currently Working */
-    .current-work-section {
-        padding: 80px 0;
-    }
-
-    .current-work-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        max-width: 1000px;
-        margin: 0 auto;
-    }
-
-    .work-item {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 30px;
-        border-left: 4px solid #8a9fff;
-    }
-
-    .work-title {
-        color: #8a9fff;
-        font-size: 1.2em;
-        margin-bottom: 15px;
-        font-weight: 600;
-    }
-
-    .work-description {
-        color: #ccc;
-        line-height: 1.6;
-    }
-
     /* Mobile Responsive */
-    @media (max-width: 1024px) {
-        .current-work-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
     @media (max-width: 768px) {
         .page-title {
             font-size: 2.2em;
@@ -299,21 +317,15 @@ title: Music
             grid-template-columns: 1fr;
         }
         
-        .streaming-links {
+        .streaming-links,
+        .song-links {
             flex-direction: column;
             align-items: center;
         }
-    }
 
-    /* Custom animations */
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-
-    .play-button.playing {
-        animation: pulse 2s infinite;
+        .video-container {
+            padding-bottom: 75%;
+        }
     }
 </style>
 
@@ -333,98 +345,188 @@ title: Music
     <div class="container">
         <div class="featured-song">
             <div class="featured-label">Featured Track</div>
-            <h2 class="featured-title">Echoes in Empty Rooms</h2>
+            <h2 class="featured-title">In The Stars</h2>
+            <div class="featured-genre">Pop</div>
             <p class="featured-description">
-                A haunting exploration of solitude and memory, born from those quiet moments 
-                when silence speaks louder than words. This song captures the weight of what's 
-                unsaid and the beauty found in the spaces we thought were empty.
+                A raw exploration of grief and faith after losing someone who meant everything. This song captures 
+                that space between heaven and earth where we're left holding onto memories while questioning 
+                everything we thought we believed. Sometimes the hardest part isn't saying goodbye—it's learning 
+                how to keep living when forever feels too final.
             </p>
             
-            <div class="audio-player">
-                <button class="play-button" onclick="togglePlay(this)">▶</button>
-                <div class="player-info">
-                    <div>Echoes in Empty Rooms</div>
-                    <div style="font-size: 0.9em; color: #999;">4:23</div>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/TPnXoWyOQmE?si=uBcVXPu7NXh2szyP" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            
+            <div class="streaming-links">
+                <a href="https://open.spotify.com/track/2KvNohOTDJRyPKEi9FdDyd?si=1f16e29c29df4679" class="streaming-link">Spotify</a>
+                <a href="https://music.apple.com/us/album/in-the-stars-single/1767080900" class="streaming-link">Apple Music</a>
+                <a href="https://youtu.be/gAixYcgdOps?si=ObXFSmMyD46ew7M2" class="streaming-link">YouTube</a>
+                <a href="https://soundcloud.com/mileena_rayne/in-the-stars-1?si=0ef52c11c7a44a3d87f74b9b92047534&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="streaming-link">SoundCloud</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Popular Songs -->
+<section class="songs-section">
+    <div class="container">
+        <h2 class="section-title">Popular Releases</h2>
+        
+        <div class="songs-grid">
+            
+            <!-- Runaway To Mars -->
+            <div class="song-card">
+                <h3 class="song-title">Runaway To Mars</h3>
+                <div class="song-theme">Folk • Escapism</div>
+                <p class="song-description">
+                    When the world feels too heavy and love feels too complicated, sometimes we dream of running 
+                    away to somewhere the rules don't apply. This song captures that universal desire to escape 
+                    to a place where our hearts can finally make sense—even if that place is impossibly far away.
+                </p>
+                <div class="song-lyric-preview">
+                    "What If I run away to Mars?<br>
+                    Would you find me in the stars?<br>
+                    Would you miss me in the end<br>
+                    If I run out of oxygen?"
                 </div>
+                
+                <div class="song-video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7HPLMDGwfHA?si=Vof-SSCt-hrf3O1d" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="song-links">
+                    <a href="https://open.spotify.com/track/350sMJN5LexFn2EXdYV6Gk?si=67b4b33349f248b9" class="song-link">Spotify</a>
+                    <a href="https://music.apple.com/us/album/runaway-to-mars-single/1779906498" class="song-link">Apple Music</a>
+                    <a href="https://youtu.be/OB8LvkhuHaA?si=7j5hOxL7gOyYokEr" class="song-link">YouTube</a>
+                    <a href="https://soundcloud.com/mileena_rayne/runaway-to-mars?si=fc0ea2eac5504a4180d418597e66180e&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="song-link">SoundCloud</a>
+                </div>
+            </div>
+
+            <!-- You Don't Have To Say You're Sorry -->
+            <div class="song-card">
+                <h3 class="song-title">You Don't Have To Say You're Sorry</h3>
+                <div class="song-theme">Pop • Mental Health</div>
+                <p class="song-description">
+                    A love letter to anyone who's ever felt like their struggles were a burden to others. 
+                    This song speaks to the shame that comes with mental illness and the healing power of 
+                    unconditional support. Sometimes the most radical thing we can offer someone is the 
+                    permission to stop apologizing for being human.
+                </p>
+                <div class="song-lyric-preview">
+                    "You don't have to say you're sorry, we already know<br>
+                    You're human, and you're hurting—it's okay to let it show<br>
+                    No, we don't need your reasons—we just need you to stay"
+                </div>
+                
+                <div class="song-video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Vt9SAbzVtd8?si=X5WDj5neit9iNU3O" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="song-links">
+                    <a href="https://open.spotify.com/track/5icEKqNjrQr9Zg0RmAoneo?si=a359a5c3851440be" class="song-link">Spotify</a>
+                    <a href="https://music.apple.com/us/album/you-dont-have-to-say-youre-sorry-single/1786705967" class="song-link">Apple Music</a>
+                    <a href="https://youtu.be/p1nWepA44NM?si=f8ZSOWvrhqVsKx8X" class="song-link">YouTube</a>
+                    <a href="https://soundcloud.com/mileena_rayne/you-dont-have-to-say-youre-sorry?si=50d57bf660b64c218052725171df2fdd&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="song-link">SoundCloud</a>
+                </div>
+            </div>
+
+            <!-- Don't Wait For Me -->
+            <div class="song-card">
+                <h3 class="song-title">Don't Wait For Me</h3>
+                <div class="song-theme">Pop • Boundaries</div>
+                <p class="song-description">
+                    The hardest kind of honesty—telling someone you care about that you can't love them the way 
+                    they deserve. This song explores the painful wisdom of knowing when to let someone go, 
+                    even when they're willing to wait. Sometimes the most loving thing you can do is refuse 
+                    to let someone waste their heart on yours.
+                </p>
+                <div class="song-lyric-preview">
+                    "Don't wait for me, don't waste your time<br>
+                    Love's not enough if the timing ain't right<br>
+                    You want forever, I need space<br>
+                    You'll only lose yourself this way"
+                </div>
+                
+                <div class="song-video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/CoFcigeTE-U?si=JEsRz_Sw61XiY3nk" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="song-links">
+                    <a href="https://open.spotify.com/track/6vN3b3KAa9BZIbXg72MuUg?si=540c173f66d14ddf" class="song-link">Spotify</a>
+                    <a href="https://music.apple.com/us/album/dont-wait-for-me-single/1800613546" class="song-link">Apple Music</a>
+                    <a href="https://youtu.be/vXFkc3VYOkM?si=5CmNGU4Sb674PPOJ" class="song-link">YouTube</a>
+                    <a href="https://soundcloud.com/mileena_rayne/dont-wait-for-me?si=99392ad52b694c66a0a580ef6f53ed87&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="song-link">SoundCloud</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Latest Release -->
+<section class="latest-section">
+    <div class="container">
+        <h2 class="section-title">Latest Release</h2>
+        
+        <div class="latest-card">
+            <div class="latest-label">🎵 Just Released</div>
+            <h3 class="latest-title">Rose in the Snow</h3>
+            <div class="latest-genre">Folk</div>
+            <p class="latest-description">
+                A defiant anthem for anyone who's ever been underestimated or counted out. This song speaks to 
+                the power of thriving despite those who wanted to see you fail, of blooming in impossible 
+                conditions, and of the strange dynamic between those who try to bury us and then can't stop 
+                watching us grow. Sometimes your success is the best response to those who hoped for your failure.
+            </p>
+            
+            <div class="song-lyric-preview">
+                "I'm a rose blooming through the snow<br>
+                Above the graves who never wanted me to grow<br>
+                They tried to bury all that I could be<br>
+                But the frost couldn't tame the flame in me"
+            </div>
+            
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/699pIujlIRg?si=WlPutATBNfy1shA0" 
+                    title="YouTube video player" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
             </div>
             
             <div class="streaming-links">
                 <a href="#" class="streaming-link">Spotify</a>
                 <a href="#" class="streaming-link">Apple Music</a>
                 <a href="#" class="streaming-link">YouTube</a>
-                <a href="#" class="streaming-link">Bandcamp</a>
                 <a href="#" class="streaming-link">SoundCloud</a>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Songs Collection -->
-<section class="songs-section">
-    <div class="container">
-        <h2 class="section-title">Recent Releases</h2>
-        
-        <div class="songs-grid">
-            
-            <!-- Song 1 -->
-            <div class="song-card">
-                <h3 class="song-title">The Space Between Words</h3>
-                <div class="song-theme">Vulnerability • Communication</div>
-                <p class="song-description">
-                    An intimate ballad about the things we struggle to say and the silences 
-                    that carry more weight than speech. Written during a period of learning 
-                    to communicate authentically, even when it's uncomfortable.
-                </p>
-                <div class="song-lyric-preview">
-                    "In the space between what we say and what we mean<br>
-                    Lives the truth we're all afraid to see..."
-                </div>
-                <div class="song-controls">
-                    <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                    <span class="song-duration">3:47</span>
-                </div>
-            </div>
-
-            <!-- Song 2 -->
-            <div class="song-card">
-                <h3 class="song-title">Storm Season</h3>
-                <div class="song-theme">Resilience • Growth</div>
-                <p class="song-description">
-                    A powerful anthem about weathering life's difficulties and emerging 
-                    stronger. Inspired by the realization that storms don't destroy us - 
-                    they reveal what we're truly made of.
-                </p>
-                <div class="song-lyric-preview">
-                    "They say lightning never strikes the same place twice<br>
-                    But I've been struck so many times, I've learned to love the light..."
-                </div>
-                <div class="song-controls">
-                    <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                    <span class="song-duration">4:12</span>
-                </div>
-            </div>
-
-            <!-- Song 3 -->
-            <div class="song-card">
-                <h3 class="song-title">Too Intense</h3>
-                <div class="song-theme">Self-Acceptance • Identity</div>
-                <p class="song-description">
-                    A defiant celebration of emotional depth in a world that prefers surface-level 
-                    connections. This song is for everyone who's been told they're "too much" 
-                    and learned to see it as their superpower.
-                </p>
-                <div class="song-lyric-preview">
-                    "They say I'm too intense, like it's something to hide<br>
-                    But I'd rather feel everything than feel nothing inside..."
-                </div>
-                <div class="song-controls">
-                    <button class="mini-play-button" onclick="togglePlay(this)">▶</button>
-                    <span class="song-duration">3:29</span>
-                </div>
-            </div>
-
-            <!-- Add more songs as needed -->
-
         </div>
     </div>
 </section>
@@ -446,69 +548,3 @@ title: Music
         </div>
     </div>
 </section>
-
-<!-- Currently Working On -->
-<section class="current-work-section">
-    <div class="container">
-        <h2 class="section-title">Currently Creating</h2>
-        
-        <div class="current-work-grid">
-            <div class="work-item">
-                <h3 class="work-title">New EP: "Depth Charges"</h3>
-                <p class="work-description">
-                    A collection of songs about the beautiful destruction that comes with growth. 
-                    Each track explores a different aspect of breaking open to become who you're meant to be. 
-                    Expected release: Fall 2025.
-                </p>
-            </div>
-            
-            <div class="work-item">
-                <h3 class="work-title">Collaboration Project</h3>
-                <p class="work-description">
-                    Working with other artists who aren't afraid of emotional depth to create something 
-                    that challenges the sanitized version of mental health awareness in music. 
-                    Real stories, real struggles, real healing.
-                </p>
-            </div>
-            
-            <div class="work-item">
-                <h3 class="work-title">Live Performance Series</h3>
-                <p class="work-description">
-                    Developing intimate live shows that feel more like group therapy than concerts. 
-                    Creating spaces where vulnerability is welcomed and authentic connection happens 
-                    through shared musical experience.
-                </p>
-            </div>
-            
-            <div class="work-item">
-                <h3 class="work-title">Songwriting Workshops</h3>
-                <p class="work-description">
-                    Teaching others how to write from authentic emotion rather than trying to create 
-                    what they think people want to hear. Because the world needs more real voices, 
-                    not more perfect performances.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    function togglePlay(button) {
-        // Simple play/pause toggle for demo
-        const isPlaying = button.textContent === '⏸';
-        button.textContent = isPlaying ? '▶' : '⏸';
-        
-        if (isPlaying) {
-            button.classList.remove('playing');
-        } else {
-            // Stop other players
-            document.querySelectorAll('.play-button, .mini-play-button').forEach(btn => {
-                if (btn !== button) {
-                    btn.textContent = '▶';
-                    btn.classList.remove('playing');
-                }
-            });
-            button.classList.add('playing');
-        }
-    }
-</script>
