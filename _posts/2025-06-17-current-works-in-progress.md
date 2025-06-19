@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "Current Works in Progress: The Chosen and The Lost Histories"
+title: "Blood of the Wild Gods Series - Dark Fantasy About Cults and Trauma"
 date: 2025-06-17
 category: Writing
-excerpt: "I'm currently working on two very different projects that explore the psychology of cults, forgotten myths, and the deeper layers of what it means to be human. One mirrors my own journey of leaving a high-control religious environment, while the other started as a lighthearted escape but became something much more profound."
+description: "Inside look at my dark fantasy novels The Chosen and Lost Histories. Stories exploring cult psychology, religious trauma, and the deeper layers of human nature."
+excerpt: "I'm currently working on two very different projects that explore the psychology of cults, forgotten myths, and the deeper layers of what it means to be human."
+tags: [dark-fantasy, blood-of-wild-gods, cults, religious-trauma, fantasy-novels]
+image: "/assets/images/EbookPic.jpg"
 ---
 
 I'm currently working on two very different projects. The first is *The Chosen*, the sequel to my debut novel *The Silence* in my *Blood of the Wild Gods* series. It takes place five years after the events of the first book. The realm is fractured. People are desperate for something to believe in—some steady ground after so many waves have crashed through their lives. Then a man appears from the eastern islands, bringing promises of light and order. In a time of chaos, people cling to it. And slowly, my main character's quiet coastal town begins to change.
