@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "The Story Behind 'Rose in the Snow'"
+title: "Rose in the Snow - New Folk Song About Overcoming Stalkers and Doubters"
 date: 2025-06-18
 category: Music
+description: "The story behind my latest folk song Rose in the Snow - about being stalked, underestimated, and quietly resented, yet choosing to bloom anyway. A defiant anthem for survivors."
 excerpt: "A song about being watched, doubted, and silently resented—yet choosing to bloom anyway. This one came from a place I don't often speak about, about the strange ache of knowing people who never supported you are still watching you."
+tags: [rose-in-the-snow, folk-music, stalking, survival, defiance, new-song]
+image: "/assets/images/mileena-rayne-author.jpg"
 ---
 
 *"Rose in the Snow"* is a song about being watched, doubted, and silently resented—yet choosing to bloom anyway.
