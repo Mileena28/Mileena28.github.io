@@ -30,6 +30,6 @@ And I'm not going anywhere.
 
 ---
 
-**Experience the full song with its visualizer and find all my music on my [Music page](/music/).** You can also stream "Rose in the Snow" on [Spotify](https://open.spotify.com/artist/0DZlZexMYSKS7twfxpcM0P), [Apple Music](https://music.apple.com/us/artist/mileena-rayne/1730631759), and [YouTube](https://youtube.com/@mileenarayne).
+**Experience the full song with its visualizer and find all my music on my [Music page](/music/).**
 
 *Have you ever felt like you were being quietly watched or underestimated? This song is for you. Sometimes the most powerful thing we can do is simply refuse to stop growing.*
