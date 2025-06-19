@@ -235,6 +235,27 @@ title: Writing
         border-bottom-color: #8a9fff;
     }
 
+    .chapter-links {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .chapter-quotes {
+        margin: 25px 0;
+    }
+
+    .chapter-quote {
+        background: rgba(138, 159, 255, 0.05);
+        border-left: 3px solid #8a9fff;
+        padding: 15px 20px;
+        margin: 15px 0;
+        font-style: italic;
+        color: #e0e0e0;
+        border-radius: 0 8px 8px 0;
+    }
+
     /* Lost Histories Section */
     .lost-histories-container {
         background: rgba(30, 30, 30, 0.6);
@@ -303,37 +324,6 @@ title: Writing
         color: #e0e0e0;
     }
 
-    }
-
-    /* Writing Philosophy */
-    .philosophy-section {
-        padding: 80px 0;
-    }
-
-    .philosophy-content {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .philosophy-quote {
-        font-size: 1.4em;
-        color: #ddd;
-        font-style: italic;
-        line-height: 1.6;
-        margin-bottom: 30px;
-        border-left: 4px solid #8a9fff;
-        padding-left: 30px;
-        text-align: left;
-    }
-
-    .philosophy-text {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        text-align: left;
-    }
-
     /* Mobile Responsive */
     @media (max-width: 1024px) {
         .featured-book {
@@ -359,6 +349,10 @@ title: Writing
         
         .project-card {
             padding: 25px;
+        }
+
+        .chapter-links {
+            flex-direction: column;
         }
     }
 </style>
@@ -454,8 +448,38 @@ title: Writing
             <p class="project-description">
                 <em>In a time of fragile peace, what happens when the real danger wears a halo?</em>
             </p>
+
+            <div class="chapter-quotes">
+                <div class="chapter-quote">
+                    "The sea, in its ceaseless rhythm, had always sung to Mira Roehart—a tongue of tides and whispers, salt-laced winds, and the groan of ancient piers."
+                </div>
+                
+                <div class="chapter-quote">
+                    "She wanted to belong. No matter how much she pretended it didn't matter, that desire had always lived inside her. The yearning to be liked, to be wanted, to be enough."
+                </div>
+
+                <div class="chapter-quote">
+                    "She was groundless, unanchored, a solitary starling lost in a world that demanded she be something—someone—she fundamentally, irrevocably, was not."
+                </div>
+
+                <div class="chapter-quote">
+                    "Because she's not like us, Mira! She walks a different path, Mira. A path… a path we—you and I—can never follow."
+                </div>
+
+                <div class="chapter-quote">
+                    "The world has balance. Light and shadow, joy and sorrow, creation and destruction, good and evil... they have to coexist. They're two sides of the same coin, aren't they?"
+                </div>
+
+                <div class="chapter-quote">
+                    "And the lie—the slow, insidious lie she was about to step into—felt heavier, more suffocating, more terrifying than the deepest, darkest depths of the hidden pool beneath the whispering falls."
+                </div>
+            </div>
             
-<a href="/chapters/the-chosen/chapter-01/" class="book-link secondary">Read Chapter 1</a>
+            <div class="chapter-links">
+                <a href="/chapters/the-chosen/chapter-01/" class="book-link secondary">Read Chapter 1</a>
+                <a href="/chapters/the-chosen/chapter-02/" class="book-link secondary">Read Chapter 2</a>
+                <a href="/chapters/the-chosen/chapter-03/" class="book-link secondary">Read Chapter 3</a>
+            </div>
         </div>
 
         <!-- The Lost Histories -->
