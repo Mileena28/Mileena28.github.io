@@ -1,8 +1,31 @@
+# Site Information
 title: Mileena Rayne
-description: Musician, Writer, Truth-Teller
+tagline: Musician, Writer, Truth-Teller
+description: "Dark fantasy author and musician creating raw, honest stories about trauma, faith, and human resilience. Read Blood of the Wild Gods series and listen to original songs about mental health."
 url: https://mileenarayne.com
 baseurl: ""
 
+# SEO Settings
+title_separator: "|"
+name: Mileena Rayne
+author:
+  name: Mileena Rayne
+  bio: "Registered Nurse, author of Blood of the Wild Gods series, and musician writing songs about mental health, trauma, and truth."
+  location: "Minnesota, USA"
+
+# Social Media (for SEO and sharing)
+social:
+  name: Mileena Rayne
+  links:
+    - https://www.facebook.com/share/16qhtJiSk8/?mibextid=wwXIfr
+    - https://www.instagram.com/mileenarayne
+    - https://www.tiktok.com/@mileena_rayne
+    - https://x.com/mileena_rayne
+    - https://open.spotify.com/artist/0DZlZexMYSKS7twfxpcM0P
+    - https://youtube.com/@mileenarayne
+    - https://linktr.ee/mileenarayne
+
+# Content Settings
 permalink: /diary/:year/:month/:day/:title/
 
 collections:
@@ -13,19 +36,49 @@ collections:
     output: true
     permalink: /chapters/:path/
 
+# Plugins
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-
+# Build Settings
 markdown: kramdown
 highlighter: rouge
 timezone: America/Chicago
 
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
 # Process all files, even in subdirectories
 keep_files:
   - chapters
+
+# SEO Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Mileena Rayne"
+      image: "/assets/images/default-post-image.jpg"
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+      author: "Mileena Rayne"
+      image: "/assets/images/book-cover-default.jpg"
+  - scope:
+      path: ""
+    values:
+      image: "/assets/images/mileena-rayne-default.jpg"
