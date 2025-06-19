@@ -1,9 +1,12 @@
 ---
 layout: post
-title: "Welcome to My Little Refuge"
+title: "Welcome to My Little Refuge - Starting Over After Homelessness"
 date: 2025-06-16
 category: "Diary Entry"
+description: "My journey from homelessness to finding my voice. Why I created this space for authentic creative work and unfiltered thoughts about trauma, recovery, and truth-telling."
 excerpt: "Here it is. My website. A place I've finally decided to create so I can share my creative work and unfiltered thoughts—and maybe spare my friends and family a little bit on social media."
+tags: [homelessness, recovery, authenticity, truth-telling, creative-writing]
+image: "/assets/images/mileena-rayne-author.jpg"
 ---
 
 Here it is. My website. A place I've finally decided to create so I can share my creative work and unfiltered thoughts—and maybe spare my friends and family a little bit on social media.
