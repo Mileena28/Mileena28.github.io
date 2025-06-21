@@ -299,6 +299,128 @@ image: "/assets/images/mileena-rayne-author.jpg"
         box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
     }
 
+    /* Community Posts Section */
+    .community-posts-section {
+        padding: 80px 0;
+        background: rgba(15, 15, 25, 0.6);
+    }
+
+    .posts-intro {
+        max-width: 800px;
+        margin: 0 auto 60px auto;
+        text-align: center;
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
+
+    .community-posts-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .community-post-card {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .community-post-card:hover {
+        transform: translateY(-5px);
+        border-color: #8a9fff;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .post-date {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .post-title {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+
+    .post-title a {
+        color: #f0f0f0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .post-title a:hover {
+        color: #8a9fff;
+    }
+
+    .post-excerpt {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .read-more-link {
+        color: #8a9fff;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .read-more-link:hover {
+        border-bottom-color: #8a9fff;
+    }
+
+    .no-posts-yet {
+        grid-column: 1 / -1;
+        text-align: center;
+        background: rgba(30, 30, 30, 0.8);
+        border: 1px solid #444;
+        border-radius: 15px;
+        padding: 60px 40px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .no-posts-yet h3 {
+        color: #f0f0f0;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+
+    .no-posts-yet p {
+        color: #ccc;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+
+    .see-all-posts {
+        grid-column: 1 / -1;
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .see-all-link {
+        color: #8a9fff;
+        text-decoration: none;
+        font-size: 1.1em;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .see-all-link:hover {
+        border-bottom-color: #8a9fff;
+    }
+
     /* Floating Elements */
     .floating-quote {
         position: absolute;
@@ -327,6 +449,10 @@ image: "/assets/images/mileena-rayne-author.jpg"
             grid-template-columns: 1fr;
         }
         
+        .community-posts-grid {
+            grid-template-columns: 1fr;
+        }
+        
         .floating-quote {
             display: none;
         }
@@ -350,6 +476,19 @@ image: "/assets/images/mileena-rayne-author.jpg"
         .stories-grid {
             grid-template-columns: 1fr;
             gap: 30px;
+        }
+
+        .community-posts-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .community-post-card {
+            padding: 25px;
+        }
+
+        .no-posts-yet {
+            padding: 40px 25px;
         }
     }
 </style>
@@ -518,6 +657,48 @@ image: "/assets/images/mileena-rayne-author.jpg"
         </div>
         <div class="story-author">
             — Coming soon
+        </div>
+    </div>
+</section>
+
+<!-- Community Stories Posts -->
+<section class="community-posts-section">
+    <div class="container">
+        <h2 class="section-title">Community Stories: In-Depth</h2>
+        <div class="posts-intro">
+            <p>Sometimes the stories shared with me deserve more than a quick feature—they deserve reflection, 
+            connection, and the kind of deep dive that helps us all understand we're not alone in this journey. 
+            These are my diary entries exploring the community stories that have found their way to me.</p>
+        </div>
+        
+        <div class="community-posts-grid">
+            {% assign community_posts = site.posts | where: "category", "Community Stories" %}
+            {% if community_posts.size > 0 %}
+                {% for post in community_posts limit:6 %}
+                <article class="community-post-card">
+                    <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+                    <h3 class="post-title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <div class="post-excerpt">
+                        {{ post.excerpt | strip_html | truncate: 200 }}
+                    </div>
+                    <a href="{{ post.url }}" class="read-more-link">Read Full Story →</a>
+                </article>
+                {% endfor %}
+                
+                {% if community_posts.size > 6 %}
+                <div class="see-all-posts">
+                    <a href="/diary/" class="see-all-link">See All Community Stories in Diary →</a>
+                </div>
+                {% endif %}
+            {% else %}
+                <div class="no-posts-yet">
+                    <h3>Coming Soon</h3>
+                    <p>This is where my deeper reflections on community stories will live. When people share their journeys with me, I'll explore those conversations here—processing the patterns, the pain, the hope, and the healing that emerges when we witness each other's truth.</p>
+                    <p>The first stories are already being shared. Check back soon for the first deep dive.</p>
+                </div>
+            {% endif %}
         </div>
     </div>
 </section>
