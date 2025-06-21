@@ -1,0 +1,566 @@
+---
+layout: default
+title: "Community Stories & Testimonials | Mileena Rayne"
+description: "Real stories from readers and listeners whose lives have been touched by dark fantasy novels and honest music about mental health. A community built on authentic connection."
+image: "/assets/images/mileena-rayne-author.jpg"
+---
+
+<style>
+    /* Page Header */
+    .page-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
+
+    .page-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2em;
+        color: #bbb;
+        max-width: 700px;
+        margin: 0 auto;
+        font-style: italic;
+        line-height: 1.6;
+    }
+
+    /* Main Content */
+    .main-content {
+        padding: 80px 0;
+    }
+
+    .section-title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #f0f0f0;
+        font-weight: 300;
+    }
+
+    .intro-section {
+        max-width: 800px;
+        margin: 0 auto 80px auto;
+        text-align: center;
+    }
+
+    .intro-text {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .intro-quote {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.05));
+        border-left: 4px solid #8a9fff;
+        padding: 30px;
+        margin: 40px 0;
+        font-style: italic;
+        color: #ddd;
+        font-size: 1.2em;
+        border-radius: 0 15px 15px 0;
+    }
+
+    /* Featured Story */
+    .featured-section {
+        margin-bottom: 80px;
+    }
+
+    .featured-story {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.15), rgba(138, 159, 255, 0.08));
+        border: 1px solid #8a9fff;
+        border-radius: 20px;
+        padding: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        backdrop-filter: blur(10px);
+    }
+
+    .featured-label {
+        background: rgba(138, 159, 255, 0.3);
+        color: #8a9fff;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 25px;
+        font-weight: 600;
+    }
+
+    .story-content {
+        color: #ddd;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        font-style: italic;
+    }
+
+    .story-attribution {
+        text-align: right;
+        color: #8a9fff;
+        font-size: 0.95em;
+        border-top: 1px solid rgba(138, 159, 255, 0.3);
+        padding-top: 20px;
+        margin-top: 30px;
+    }
+
+    /* Story Categories */
+    .categories-section {
+        margin-bottom: 80px;
+    }
+
+    .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .story-category {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .story-category:hover {
+        transform: translateY(-10px);
+        border-color: #8a9fff;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .category-header {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+        padding: 30px;
+        border-bottom: 1px solid rgba(138, 159, 255, 0.3);
+    }
+
+    .category-title {
+        font-size: 1.6em;
+        color: #f0f0f0;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
+
+    .category-subtitle {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .category-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .category-stories {
+        padding: 30px;
+    }
+
+    .individual-story {
+        margin-bottom: 30px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #333;
+    }
+
+    .individual-story:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .story-text {
+        color: #ddd;
+        font-style: italic;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        font-size: 1.05em;
+    }
+
+    .story-author {
+        color: #999;
+        font-size: 0.85em;
+        text-align: right;
+    }
+
+    /* Manuscript Style Elements */
+    .manuscript-story {
+        background: rgba(30, 25, 20, 0.9);
+        border: 1px solid #4a3728;
+        border-radius: 15px;
+        padding: 40px;
+        margin: 40px 0;
+        position: relative;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .manuscript-story::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        border: 1px solid rgba(138, 159, 255, 0.2);
+        border-radius: 10px;
+        pointer-events: none;
+    }
+
+    .manuscript-story .story-text {
+        color: #e8e0d6;
+        font-family: 'Georgia', serif;
+        font-size: 1.1em;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .manuscript-story .story-author {
+        color: #a88b5a;
+        font-size: 0.9em;
+        border-top: 1px solid rgba(138, 159, 255, 0.2);
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+
+    /* Share Your Story Section */
+    .share-section {
+        background: rgba(10, 10, 20, 0.8);
+        padding: 80px 0;
+        margin-top: 80px;
+    }
+
+    .share-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .share-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    .share-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 40px;
+    }
+
+    .share-button {
+        display: inline-block;
+        padding: 18px 40px;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+    }
+
+    .share-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+    }
+
+    /* Floating Elements */
+    .floating-quote {
+        position: absolute;
+        right: -50px;
+        top: 20px;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.1), transparent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        color: rgba(138, 159, 255, 0.3);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .stories-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .floating-quote {
+            display: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 2.2em;
+        }
+        
+        .featured-story,
+        .manuscript-story {
+            padding: 30px;
+        }
+        
+        .category-header,
+        .category-stories {
+            padding: 20px;
+        }
+
+        .stories-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+</style>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Community</h1>
+        <p class="page-subtitle">
+            The stories that find me in dark corners of the internet, whispered confessions, 
+            and messages that remind me why vulnerability in art matters. These are the voices 
+            of people who understand that beauty lives in broken places.
+        </p>
+    </div>
+</section>
+
+<!-- Introduction -->
+<section class="main-content">
+    <div class="container">
+        <div class="intro-section">
+            <p class="intro-text">
+                This page exists because art is meant to be a conversation, not a monologue. Every song I write, 
+                every chapter I publish, every raw diary entry I share—it's all an invitation for connection. 
+                What I never expected was how deeply that invitation would be accepted.
+            </p>
+            
+            <div class="intro-quote">
+                "When someone tells you that your broken song helped them feel less alone in their darkness, 
+                you realize that vulnerability isn't just brave—it's necessary. These stories are proof that 
+                authentic art creates authentic connection."
+            </div>
+            
+            <p class="intro-text">
+                The messages below are real—shared with permission, some with names changed to protect privacy. 
+                They represent the conversations happening in private messages, the reviews that make me cry, 
+                and the random encounters that remind me why I do this work. If any of these resonate with you, 
+                know that you're part of something bigger. A community of people who refuse to pretend 
+                everything is fine when it's not.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Story -->
+<section class="featured-section">
+    <div class="container">
+        <div class="featured-story">
+            <div class="floating-quote">"</div>
+            <div class="featured-label">Featured Community Story</div>
+            <div class="story-content">
+                "I found your music at 3 AM during one of the worst nights of my life. I'd been struggling with leaving a toxic religious environment for months, and I felt so alone. When 'You Don't Have To Say You're Sorry' started playing, I just broke down and cried. Someone finally understood that I wasn't broken for struggling. Your lyrics about not having to apologize for being human—that saved me that night. I've been following your work ever since, and honestly, your honesty about your own journey gives me permission to be honest about mine. Thank you for refusing to make art that's comfortable. The world needs more people willing to say the hard things."
+            </div>
+            <div class="story-attribution">
+                — Sarah M., recovered from religious trauma
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Story Categories -->
+<section class="categories-section">
+    <div class="container">
+        <h2 class="section-title">Voices from the Community</h2>
+        
+        <div class="stories-grid">
+            
+            <!-- Music Impact Stories -->
+            <div class="story-category">
+                <div class="category-header">
+                    <h3 class="category-title">Music That Heals</h3>
+                    <div class="category-subtitle">Songs • Mental Health • Connection</div>
+                    <p class="category-description">
+                        Stories from listeners who found solace, understanding, and hope in melodies born from authentic pain.
+                    </p>
+                </div>
+                <div class="category-stories">
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "Runaway to Mars' made me feel seen in a way I didn't know I needed. That line about running out of oxygen hit so hard—it's exactly how depression feels. Like you're slowly suffocating but everyone expects you to keep smiling."
+                        </div>
+                        <div class="story-author">— Alex T.</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "I was driving home from my therapist, feeling raw and exposed, when 'In the Stars' came on. I had to pull over and just sit with the grief I'd been avoiding. Your music doesn't try to fix anything—it just sits with you in the mess. That's exactly what I needed."
+                        </div>
+                        <div class="story-author">— M.R.</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "I shared your song about boundaries with my family group chat. For the first time, they actually listened. Sometimes people need to hear hard truths set to music before they can really hear them at all."
+                        </div>
+                        <div class="story-author">— Jordan</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Impact Stories -->
+            <div class="story-category">
+                <div class="category-header">
+                    <h3 class="category-title">Stories That Transform</h3>
+                    <div class="category-subtitle">Books • Dark Fantasy • Truth</div>
+                    <p class="category-description">
+                        Readers who found pieces of themselves in fictional worlds that refuse to look away from difficult truths.
+                    </p>
+                </div>
+                <div class="category-stories">
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "Blood of the Wild Gods was the first fantasy book that felt real to me. The way you write trauma isn't romanticized or glossed over—it's just true. Mira's struggle with belonging spoke to every cult survivor who feels permanently displaced."
+                        </div>
+                        <div class="story-author">— Emma, ex-JW reader</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "I couldn't put down The Chosen. The way Lucien's manipulation felt so familiar was unsettling in the best way. You captured something about cult psychology that most fiction misses—how seductive certainty can be when you're tired of questioning everything."
+                        </div>
+                        <div class="story-author">— David K.</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "Your Lost Histories broke my heart in the most beautiful way. 'Seven Days of Sun' made me ugly cry for an hour. The way you write love that transcends time but can't escape tragedy—it's devastating and gorgeous."
+                        </div>
+                        <div class="story-author">— Riley S.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Connection Stories -->
+            <div class="story-category">
+                <div class="category-header">
+                    <h3 class="category-title">Shared Journeys</h3>
+                    <div class="category-subtitle">Connection • Understanding • Growth</div>
+                    <p class="category-description">
+                        Messages from people who see their own experiences reflected in the vulnerability shared here.
+                    </p>
+                </div>
+                <div class="category-stories">
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "Your diary entries about leaving the JWs hit so close to home. I'm three years out and still feel like I'm learning how to be human. Reading your honest thoughts about the journey makes me feel less alone in it."
+                        </div>
+                        <div class="story-author">— Anonymous</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "I'm a nurse too, and your posts about trauma-informed care inspire me every day. The way you see your patients' whole stories, not just their symptoms—that's the kind of nurse I want to be."
+                        </div>
+                        <div class="story-author">— Jessica, RN</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "Thank you for being so honest about emotional intensity. I've been called 'too much' my whole life, and seeing someone embrace that quality instead of apologizing for it gives me permission to do the same."
+                        </div>
+                        <div class="story-author">— Sam</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Random Beautiful Moments -->
+            <div class="story-category">
+                <div class="category-header">
+                    <h3 class="category-title">Beautiful Surprises</h3>
+                    <div class="category-subtitle">Unexpected • Meaningful • Human</div>
+                    <p class="category-description">
+                        The random messages, chance encounters, and unexpected connections that remind us art creates community.
+                    </p>
+                </div>
+                <div class="category-stories">
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "My teenage daughter found your music and shared it with me. Now we have actual conversations about mental health instead of the surface-level check-ins we used to do. Your authenticity opened a door between us that I didn't know how to open myself."
+                        </div>
+                        <div class="story-author">— Proud mom</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "I recommended your book to my book club thinking nobody would get it. Turns out, three other members had similar religious trauma backgrounds. We ended up having the most honest conversation about faith and healing that any of us had ever experienced."
+                        </div>
+                        <div class="story-author">— Book club leader</div>
+                    </div>
+                    
+                    <div class="individual-story">
+                        <div class="story-text">
+                            "Randomly found you on TikTok and ended up reading everything you've written. Your work makes me want to be braver in my own creative pursuits. If you can be that vulnerable in public, maybe I can be vulnerable on a smaller scale."
+                        </div>
+                        <div class="story-author">— Aspiring writer</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Manuscript-style Special Story -->
+<section class="container">
+    <div class="manuscript-story">
+        <div class="story-text">
+            I wanted to write and tell you that your vulnerability gives others permission to be human. I discovered your work during a particularly dark period—questioning my faith, struggling with family relationships, and feeling like I didn't fit anywhere. Your diary entries about leaving high-control religion, your songs about not apologizing for struggling, your books that don't shy away from difficult truths—they created a space where my pain felt valid instead of shameful. 
+            <br><br>
+            You write about things most people whisper about. You sing about emotions most people hide. You create characters who are beautifully broken instead of perfectly healed. In a world that wants us to pretend everything is fine, you insist on telling the truth about what it actually feels like to be human. That courage is contagious.
+            <br><br>
+            I started therapy. I started writing in my own journal. I started having honest conversations with people instead of performing happiness. Your willingness to be seen in your struggle gave me permission to stop hiding in mine. I don't know if you realize how much your work matters, but it does. More than you know.
+        </div>
+        <div class="story-author">
+            — Someone who found their voice by hearing yours
+        </div>
+    </div>
+</section>
+
+<!-- Share Your Story -->
+<section class="share-section">
+    <div class="container">
+        <div class="share-container">
+            <h2 class="share-title">Share Your Story</h2>
+            <p class="share-description">
+                Has something I've written or sung touched your life? Do you have a story about finding 
+                connection through vulnerability, healing through art, or hope in unexpected places? 
+                I'd love to hear from you. Your story might be exactly what someone else needs to read.
+            </p>
+            <a href="/contact/" class="share-button">Tell Me Your Story</a>
+        </div>
+    </div>
+</section>
