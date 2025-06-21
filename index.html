@@ -285,6 +285,27 @@ image: "/assets/images/mileena-rayne-author.jpg"
                     </div>
                 {% endif %}
             </div>
+
+            <!-- Latest Community Stories -->
+            <div class="work-card">
+                <div class="work-type">Community Stories</div>
+                {% assign latest_community = site.posts | where: "category", "Community Stories" | first %}
+                {% if latest_community %}
+                    <h3 class="work-title">{{ latest_community.title }}</h3>
+                    <div class="work-date">{{ latest_community.date | date: "%B %d, %Y" }}</div>
+                    <p class="work-preview">
+                        {{ latest_community.excerpt | strip_html | truncate: 120 }}
+                    </p>
+                    <a href="{{ latest_community.url }}" class="work-link">Read Stories →</a>
+                {% else %}
+                    <h3 class="work-title">Stories Being Shared</h3>
+                    <div class="coming-soon">
+                        A space for the voices that find me in dark corners of the internet—
+                        survivors sharing truth, strangers becoming witnesses, community growing from connection.
+                    </div>
+                    <a href="/community/" class="work-link">See Community →</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </section>
