@@ -19,7 +19,7 @@ warning-text: "This post contains discussions of child sexual abuse, suicide, re
 
 Sometimes a story arrives in your inbox that makes you stop everything. That makes you close your laptop and sit in silence because the weight of someone's truth deserves that kind of reverence.
 
-When I put out my call for stories—when I promised that every voice would be heard, that every experience mattered—I thought I knew what might come back. I was wrong. This person, this fellow traveler who left everything behind for truth, handed me their story like a broken bird. Carefully. Trusting me not to drop it.
+When I put out my call for stories, when I promised that every voice would be heard, that every experience mattered, I thought I knew what might come back. I was wrong. This person, this fellow traveler who left everything behind for truth, handed me their story like a broken bird. Carefully. Trusting me not to drop it.
 
 > *"You want an ex-Jehovah's Witness story?"* they asked.
 
@@ -35,7 +35,7 @@ What happened to them—what their father did, what their mother allowed, what t
 
 Their childhood held secrets mine didn't. Darkness that no child should know. And yet we wore the same meeting clothes, carried the same book bags, knocked on the same doors with the same practiced smiles.
 
-Their sister disappeared one day. No explanation. No goodbye. Just gone—sent to live with grandparents while the family continued their charade of righteousness. The brothers wondered, but children in the "truth" learn early not to ask questions that might have uncomfortable answers.
+Their sister disappeared one day. No explanation. No goodbye. Just gone, sent to live with grandparents while the family continued their charade of righteousness. The brothers wondered, but children in the "truth" learn early not to ask questions that might have uncomfortable answers.
 
 It would be ten years before they learned why she vanished. Ten years of their father sitting in the Kingdom Hall. Ten years of their mother's silence. Ten years of pretending everything was fine while a child's life had been shattered beyond repair.
 
@@ -47,13 +47,13 @@ There it is. The truth that turns everything upside down. In the careful mathema
 
 ## The Shepherd Who Hunted
 
-At fifteen, they made the mistake of being caught with a Stephen King novel. In the congregation's eyes, this made them "bad association"—spiritually dangerous, in need of stronger guidance. The elders had a solution: spend time with Larry, a ministerial servant. A spiritual mentor. Someone to set them on the right path.
+At fifteen, they made the mistake of being caught with a Stephen King novel. In the congregation's eyes, this made them "bad association": spiritually dangerous, in need of stronger guidance. The elders had a solution: spend time with Larry, a ministerial servant. A spiritual mentor. Someone to set them on the right path.
 
 I wonder sometimes about the delicate trust of children. How we hand it over to those who wear the right clothes, say the right words, carry the right title. Larry wore all of those things.
 
 They woke one night to find his hands where they shouldn't be. A child, frozen in the dark, trying to make sense of why God's servant was doing this. They hid in the bathroom until morning light made it safe to call for rescue. But they never said why they stopped visiting Larry. Who would believe the "bad association" kid over a respected ministerial servant?
 
-A year later, at a congregation gathering—one of those wholesome get-togethers with water gun fights and potluck dishes—Larry found them alone in a bathroom. Tried again. This time, they fought. Hit him with a water gun and ran.
+A year later, at a congregation gathering (one of those wholesome get-togethers with water gun fights and potluck dishes), Larry found them alone in a bathroom. Tried again. This time, they fought. Hit him with a water gun and ran.
 
 Such a small weapon against such a large betrayal. But they fought.
 
@@ -71,7 +71,7 @@ She had, but barely.
 
 Thirteen years, and the wound still bleeds through their words. How could it not? Their sister was sacrificed to protect an image. Sent away like a shameful secret instead of a child who needed justice, needed healing, needed someone to believe her.
 
-When the pain finally became unbearable, she chose the only door she could find. And their parents—those guardians of righteousness—couldn't even honor her in death. Attending an apostate's funeral might displease Jehovah. Even if that apostate was your daughter. Even if her life ended because no one protected her when it mattered.
+When the pain finally became unbearable, she chose the only door she could find. And their parents, those guardians of righteousness, couldn't even honor her in death. Attending an apostate's funeral might displease Jehovah. Even if that apostate was your daughter. Even if her life ended because no one protected her when it mattered.
 
 The same absence marked their grandparents' funerals. Death after death, and the empty chairs where family should have been standing. All for an organization that protected the abuser and exiled the abused.
 
@@ -83,7 +83,7 @@ After losing everything—family, friends, community, God himself—what remains
 
 > *"I figured the universe, or 'god' owed me some answers. I had literally, nothing else to lose."*
 
-They dove deep into the searching. Read the Bible twelve times, looking for truth between the lines they'd been taught. Studied the origins of those ancient stories. Traced the fingerprints of older gods on newer scriptures. They weren't just leaving a religion—they were archaeologists excavating their own buried truth from under decades of carefully constructed lies.
+They dove deep into the searching. Read the Bible twelve times, looking for truth between the lines they'd been taught. Studied the origins of those ancient stories. Traced the fingerprints of older gods on newer scriptures. They weren't just leaving a religion. They were archaeologists excavating their own buried truth from under decades of carefully constructed lies.
 
 They tried to build something normal from the rubble. Got a good job with AT&T. Moved to Omaha. Wore business clothes instead of meeting clothes. Focused on the material world they'd been taught to despise.
 
@@ -99,7 +99,7 @@ I won't pretend to understand what happened that night. What matters is that som
 
 > *"Once the universe gives you glasses, and you put them on, you can never take them off, and you cannot force anyone else to look through them."*
 
-After begging the universe for truth, they received something that made them even more alone. There's a terrible poetry in that—to survive religious trauma only to be handed a reality that isolates you further. To escape one unbelievable truth only to encounter another.
+After begging the universe for truth, they received something that made them even more alone. There's a terrible poetry in that: to survive religious trauma only to be handed a reality that isolates you further. To escape one unbelievable truth only to encounter another.
 
 ---
 
@@ -119,7 +119,7 @@ That's not just survival. That's the most profound kind of courage I know.
 
 In high-control religions, the architecture of silence is carefully built. Children learn which truths are speakable and which must be swallowed. Victims discover that their pain matters less than the congregation's reputation. Those who finally speak face exile as their reward for honesty.
 
-This person's journey—from childhood in "the truth" to searching for truth among the stars—maps the territory so many of us travel after religious trauma. When the foundation cracks, when everything you believed becomes suspect, sometimes you have to be willing to look everywhere for what's real. Even if that search takes you places others can't follow.
+This person's journey, from childhood in "the truth" to searching for truth among the stars, maps the territory so many of us travel after religious trauma. When the foundation cracks, when everything you believed becomes suspect, sometimes you have to be willing to look everywhere for what's real. Even if that search takes you places others can't follow.
 
 ---
 
