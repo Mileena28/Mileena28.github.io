@@ -135,11 +135,9 @@ This isn't failure. This is wisdom earned through unimaginable pain. This is som
 
 To the person who shared this story: Your journey amazes me. Not just what you survived, but how you survived it. How you protected others when no one protected you. How you kept trying when trying only brought pain. How you finally learned to protect yourself when no one else would.
 
-Your childhood should have been filled with safety and love. Your teenagers years should have been about discovering who you were, not defending who you had a right to be. Your early adulthood should have been about building your own life, not healing from the destruction of your earliest years.
+Your childhood should have been filled with safety and love. Your teenage years should have been about discovering who you were, not defending who you had a right to be. Your early adulthood should have been about building your own life, not healing from the destruction of your earliest years.
 
 None of this should have happened to you. And yet, you're here. You survived. You learned to distinguish between the people who claimed to love you and the people who actually did. You spent thirty-two years trying to believe in a version of family that didn't exist, and then you found the strength to stop trying.
-
-That's not giving up. That's wisdom earned through unimaginable pain. That's someone who spent thirty-two years learning the difference between love and loyalty, between family and biology, between hope and delusion.
 
 Your story matters because it shows that healing doesn't always look like reconciliation. Sometimes healing looks like finally admitting that some people aren't capable of the love you need, and choosing to find that love elsewhere. Sometimes healing means understanding that you can't save people who don't want to be saved—including family members.
 
