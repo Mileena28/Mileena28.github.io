@@ -127,11 +127,7 @@ Because in a very real way, the people who might have loved you, who should have
 
 What strikes me most about this story is not the catalog of horrors this person endured—though they are staggering—but the profound resilience that carried them through each moment of choice. The decision to protect their siblings. The decision to show care when their mother had a medical emergency, even knowing they'd likely have it thrown back in their face. The decision to keep trying for thirty-two years. And finally, the decision to stop trying and choose themselves.
 
-Each of these choices required a different kind of courage. The courage to fight. The courage to love despite being unloved. The courage to hope despite repeated disappointment. And ultimately, the courage to let go.
-
-They learned to shut off physical pain to survive beatings, but somehow never shut off their capacity to care. They stood up to their abuser to protect other children. They sought their mother in hospitals and at funerals, carrying love like an offering that was repeatedly refused. They kept a door open for three decades, waiting for people who would never walk through it.
-
-And then, finally, they chose themselves. They chose healing over hope. They chose their own peace over the exhausting work of loving people who couldn't love them back.
+Each of these choices required a different kind of courage. The courage to fight. The courage to love despite being unloved. The courage to hope despite repeated disappointment. And ultimately, the courage to let go. They kept a door open for three decades, waiting for people who would never walk through it.
 
 This isn't failure. This is wisdom earned through unimaginable pain. This is someone who spent thirty-two years learning the difference between love and loyalty, between family and biology, between hope and delusion.
 
