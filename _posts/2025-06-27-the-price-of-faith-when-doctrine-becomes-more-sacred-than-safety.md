@@ -312,6 +312,8 @@ That's the kind of faith that actually saves people.
 <p>If you or someone you know is experiencing domestic violence, please reach out to the <a href="https://www.thehotline.org/" target="_blank">National Domestic Violence Hotline</a> at 1-800-799-7233. For those dealing with religious trauma specifically, resources like <a href="https://recoveringfromreligion.org/" target="_blank">Recovering from Religion</a> offer specialized support.</p>
 
 <p>And to Shannon, wherever you are: thank you for trusting me with this. Thank you for surviving. Thank you for choosing freedom over fear, truth over silence, your children's safety over religious approval. Your story will help other women recognize their own strength, and that matters more than you may ever know.</p>
+
+<p>Shannon also shares her journey and insights on her YouTube channel <a href="https://youtube.com/@DeservinglyYou" target="_blank">@DeservinglyYou</a>, where she continues to offer support and encouragement to other survivors finding their way to freedom.</p>
 </div>
 
 <style>
