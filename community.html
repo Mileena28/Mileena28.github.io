@@ -336,51 +336,6 @@ schema:
         border: 2px solid rgba(138, 159, 255, 0.3);
     }
 
-    /* Share Your Story Section */
-    .share-section {
-        background: rgba(10, 10, 20, 0.8);
-        padding: 80px 0;
-        margin-top: 80px;
-    }
-
-    .share-container {
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .share-title {
-        font-size: 2.2em;
-        color: #f0f0f0;
-        margin-bottom: 30px;
-        font-weight: 300;
-    }
-
-    .share-description {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.7;
-        margin-bottom: 40px;
-    }
-
-    .share-button {
-        display: inline-block;
-        padding: 18px 40px;
-        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-        color: #000;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: 600;
-        font-size: 1.1em;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
-    }
-
-    .share-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
-    }
-
     /* Community Posts Section */
     .community-posts-section {
         padding: 80px 0;
@@ -503,6 +458,257 @@ schema:
         border-bottom-color: #8a9fff;
     }
 
+    /* Podcast Section */
+    .podcast-section {
+        padding: 80px 0;
+        background: rgba(10, 10, 20, 0.8);
+        margin-bottom: 0;
+    }
+
+    .podcast-intro {
+        max-width: 800px;
+        margin: 0 auto 60px auto;
+        text-align: center;
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
+
+    .podcast-content-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    .latest-episode {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+    }
+
+    .episode-title {
+        color: #f0f0f0;
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        height: 0;
+        overflow: hidden;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        background: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .episode-description {
+        color: #ccc;
+        line-height: 1.7;
+        font-size: 1.05em;
+    }
+
+    .podcast-platforms {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.15), rgba(138, 159, 255, 0.08));
+        border: 1px solid #8a9fff;
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(10px);
+    }
+
+    .platforms-title {
+        color: #f0f0f0;
+        font-size: 1.6em;
+        margin-bottom: 15px;
+        font-weight: 300;
+        text-align: center;
+    }
+
+    .platforms-description {
+        color: #ccc;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .platform-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .platform-link {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 20px;
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .platform-link:hover {
+        border-color: #8a9fff;
+        background: rgba(138, 159, 255, 0.1);
+        transform: translateY(-2px);
+    }
+
+    .platform-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 
+            0 8px 32px rgba(138, 159, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        flex-shrink: 0;
+    }
+
+    .platform-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .platform-link:hover .platform-icon::before {
+        left: 100%;
+    }
+
+    .platform-link:hover .platform-icon {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 
+            0 20px 40px rgba(138, 159, 255, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .platform-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: #8a9fff;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        transition: all 0.3s ease;
+    }
+
+    .platform-link:hover .platform-icon svg {
+        fill: #a8b5ff;
+    }
+
+    .platform-info {
+        flex-grow: 1;
+    }
+
+    .platform-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        font-size: 1.1em;
+        margin-bottom: 3px;
+    }
+
+    .platform-detail {
+        color: #999;
+        font-size: 0.85em;
+    }
+
+    .podcast-note {
+        background: rgba(30, 30, 30, 0.8);
+        border: 1px solid #444;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .podcast-note p {
+        color: #ccc;
+        font-size: 0.9em;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .podcast-note strong {
+        color: #8a9fff;
+    }
+
+    /* Share Your Story Section */
+    .share-section {
+        background: rgba(10, 10, 20, 0.8);
+        padding: 80px 0;
+        margin-top: 80px;
+    }
+
+    .share-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .share-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 30px;
+        font-weight: 300;
+    }
+
+    .share-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.7;
+        margin-bottom: 40px;
+    }
+
+    .share-button {
+        display: inline-block;
+        padding: 18px 40px;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+    }
+
+    .share-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+    }
+
     /* Floating Elements */
     .floating-quote {
         position: absolute;
@@ -533,6 +739,11 @@ schema:
         
         .community-posts-grid {
             grid-template-columns: 1fr;
+        }
+        
+        .podcast-content-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
         }
         
         .floating-quote {
@@ -571,6 +782,39 @@ schema:
 
         .no-posts-yet {
             padding: 40px 25px;
+        }
+
+        .podcast-content-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .latest-episode,
+        .podcast-platforms {
+            padding: 30px 25px;
+        }
+
+        .episode-title,
+        .platforms-title {
+            font-size: 1.5em;
+        }
+
+        .platform-link {
+            padding: 12px 15px;
+        }
+
+        .platform-icon {
+            width: 45px;
+            height: 45px;
+        }
+
+        .platform-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .platform-name {
+            font-size: 1em;
         }
     }
 </style>
