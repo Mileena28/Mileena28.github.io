@@ -6,7 +6,7 @@ category: "Community Stories"
 description: "A survivor shares their harrowing journey through childhood abuse within the Jehovah's Witness organization, domestic violence, and the 32-year path to finally cutting toxic family ties."
 excerpt: "Sometimes the most radical act of self-preservation is admitting that the people who were supposed to protect you became the ones you needed protection from. This is one survivor's story of cult trauma, childhood abuse, and the courage it took to choose freedom over family."
 tags: [jehovahs-witness, childhood-abuse, family-trauma, domestic-violence, cult-recovery, survivor-stories, religious-trauma]
-image: "/assets/images/mileena-rayne-author.jpg"
+image: "/assets/images/when-family-becomes-the-enemy.png"
 content-warning: true
 warning-text: "This post contains detailed descriptions of childhood physical abuse, domestic violence, religious trauma, and family estrangement. Please read with care for yourself."
 ---
