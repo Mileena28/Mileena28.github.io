@@ -6,7 +6,7 @@ category: "Community Stories"
 description: "A survivor shares her harrowing journey through domestic violence within the Jehovah's Witness organization—how she was failed by elders, abandoned by doctrine, and ultimately saved herself when no one else would."
 excerpt: "Sometimes the most devastating betrayal comes not from strangers, but from the very people who promised that following God meant following them. This is Shannon's story of surviving domestic violence within the Jehovah's Witness organization, and the brutal truth about what happens when protecting doctrine becomes more important than protecting lives."
 tags: [jehovahs-witness, domestic-violence, religious-trauma, elder-abuse, survivor-stories, spiritual-abuse]
-image: "/assets/images/mileena-rayne-author.jpg"
+image: "/assets/images/the-price-of-faith.png"
 content-warning: true
 warning-text: "This post contains detailed descriptions of domestic violence, physical abuse, religious trauma, child endangerment, and institutional betrayal. Please read with care for yourself."
 ---
