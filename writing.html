@@ -337,6 +337,54 @@ image: "/assets/images/EbookPic.jpg"
         color: #e0e0e0;
     }
 
+    /* Read More Functionality */
+    .read-more-btn {
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.9em;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .read-more-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 16px rgba(138, 159, 255, 0.3);
+    }
+
+    .read-more-content {
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .read-more-content.collapsed {
+        max-height: 150px;
+    }
+
+    .read-more-content.expanded {
+        max-height: none;
+    }
+
+    .read-more-gradient {
+        position: relative;
+    }
+
+    .read-more-gradient.collapsed::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background: linear-gradient(transparent, rgba(20, 20, 20, 0.8));
+        pointer-events: none;
+    }
+
     /* Mobile Responsive */
     @media (max-width: 1024px) {
         .featured-book {
@@ -493,18 +541,23 @@ image: "/assets/images/EbookPic.jpg"
                     <strong>A Note from the Historian</strong><br><br>
                     <em>Recorded by Tanneus G'Raja, Ashborn of the Wastes, who found purpose not in plunder, but in bearing witness so others might not repeat what was lost.</em><br><br>
                     
-                    I was not born with ink-stained hands or reverent eyes for scrolls. I was born in ash. Among the relic-hunters of the Godscarred Wastes, where bone and ruin are all that remain of divine war, my people search for fragments—shards of the past traded like coin, prized for power more than truth.<br><br>
-                    
-                    But I chose a different pursuit.<br><br>
-                    
-                    These are the tales whispered between stone and silence, lost beneath conquest and doctrine. The Lost Histories.<br><br>
-                    
-                    I have given my life to seeking them. In crumbling sanctuaries and blood-stained ruins, through forbidden texts and the dreams of the dying, I have gathered what remains. I know the danger in this work. To write history is to shape it. What I record may someday define the gods themselves in the minds of those who follow.<br><br>
-                    
-                    So I make this vow: I will not soften their cruelty, nor gild their virtues. I will not stitch fables to comfort, nor omit horrors to please. I will tell their stories as they were told to me—in truth, however fractured. In grief, in glory, in shadow.<br><br>
-                    
-                    Let the reader see them as they are.<br>
-                    Let the gods answer for themselves.
+                    <div class="read-more-gradient collapsed" id="historian-note-content">
+                        <div class="read-more-content collapsed" id="historian-note-text">
+                            I was not born with ink-stained hands or reverent eyes for scrolls. I was born in ash. Among the relic-hunters of the Godscarred Wastes, where bone and ruin are all that remain of divine war, my people search for fragments—shards of the past traded like coin, prized for power more than truth.<br><br>
+                            
+                            But I chose a different pursuit.<br><br>
+                            
+                            These are the tales whispered between stone and silence, lost beneath conquest and doctrine. The Lost Histories.<br><br>
+                            
+                            I have given my life to seeking them. In crumbling sanctuaries and blood-stained ruins, through forbidden texts and the dreams of the dying, I have gathered what remains. I know the danger in this work. To write history is to shape it. What I record may someday define the gods themselves in the minds of those who follow.<br><br>
+                            
+                            So I make this vow: I will not soften their cruelty, nor gild their virtues. I will not stitch fables to comfort, nor omit horrors to please. I will tell their stories as they were told to me—in truth, however fractured. In grief, in glory, in shadow.<br><br>
+                            
+                            Let the reader see them as they are.<br>
+                            Let the gods answer for themselves.
+                        </div>
+                    </div>
+                    <button class="read-more-btn" onclick="toggleReadMore('historian-note')">Read More</button>
                 </div>
 
                 <!-- Seven Days of Sun -->
@@ -514,17 +567,22 @@ image: "/assets/images/EbookPic.jpg"
                     
                     <div class="authors-note">
                         <strong>Author's Note</strong><br><br>
-                        This story reached me first as a song—fragmented, mournful, carried in the voices of ocean-bound bards who still sing to the dusk. They claimed it was older than the city of Atheria itself—passed down from the time when the land was still called Quenos, a quiet village by the sea where gods once walked beside mortals. The melody shifts from coast to coast, but the names never change.<br><br>
-                        
-                        Years later, on a windswept coast north of old Quenos, I found a weather-beaten shack nearly swallowed by sand and time. Inside, buried beneath a thick coat of dust and rotted canvas, was a journal. The pages, brittle and translucent, shimmered faintly—crystallized by salt and age. Most of the writing had long since vanished, devoured by moisture and silence. But the illustrations endured.<br><br>
-                        
-                        Dozens of women. Each different. Each the same.<br><br>
-                        
-                        One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her.<br><br>
-                        
-                        Pressed between two pages, I found sun daisies. Their color had nearly faded, but not completely. I cannot say with certainty whose hand once held that book. But I have not shaken the feeling since: that I touched something sacred. That I held the grief of a god who remembers every life she lived, and every time she loved him—before the end came again.<br><br>
-                        
-                        If that is true—if I have held the grief of a god—then no myth in this collection is more tender. Or more tragic. I write this account not for glory or acclaim, but because truth, however painful, deserves witness.
+                        <div class="read-more-gradient collapsed" id="seven-days-note-content">
+                            <div class="read-more-content collapsed" id="seven-days-note-text">
+                                This story reached me first as a song—fragmented, mournful, carried in the voices of ocean-bound bards who still sing to the dusk. They claimed it was older than the city of Atheria itself—passed down from the time when the land was still called Quenos, a quiet village by the sea where gods once walked beside mortals. The melody shifts from coast to coast, but the names never change.<br><br>
+                                
+                                Years later, on a windswept coast north of old Quenos, I found a weather-beaten shack nearly swallowed by sand and time. Inside, buried beneath a thick coat of dust and rotted canvas, was a journal. The pages, brittle and translucent, shimmered faintly—crystallized by salt and age. Most of the writing had long since vanished, devoured by moisture and silence. But the illustrations endured.<br><br>
+                                
+                                Dozens of women. Each different. Each the same.<br><br>
+                                
+                                One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her.<br><br>
+                                
+                                Pressed between two pages, I found sun daisies. Their color had nearly faded, but not completely. I cannot say with certainty whose hand once held that book. But I have not shaken the feeling since: that I touched something sacred. That I held the grief of a god who remembers every life she lived, and every time she loved him—before the end came again.<br><br>
+                                
+                                If that is true—if I have held the grief of a god—then no myth in this collection is more tender. Or more tragic. I write this account not for glory or acclaim, but because truth, however painful, deserves witness.
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleReadMore('seven-days-note')">Read More</button>
                     </div>
                     
                     <div class="chapter-excerpt">
@@ -549,17 +607,22 @@ image: "/assets/images/EbookPic.jpg"
                         <strong>Preface to the Sixth Account</strong><br><br>
                         <em>As recorded by Tanneus G'Raja, Ashborn of the Wastes—once taught to unearth what gods left behind, now using that same instinct to drag buried truth into light, even from the depths where few dare to look.</em><br><br>
                         
-                        I discovered this account sealed in a blackwood box, half-buried in a sea cave beneath the cliffs of old Quenos—where modern Atheria now gleams above, unaware. The cave mouth opens only at low tide, and even then, only long enough for the brave or the reckless to slip inside. I was both.<br><br>
-                        
-                        The scroll was wrapped in oilskin and bound with silver thread. Its script was mirrored—illegible by torchlight, but revealed in full beneath the rising moon. No title. No signature. Only the sharp, deliberate hand of someone who poured their sorrow into ink, never daring to speak it aloud.<br><br>
-                        
-                        Not far from where I found it lay a skeleton, folded as if the tide itself had tucked it into rest. I did not linger. The bones were old, almost hollow with time. A ring of silver thread still clung to one wrist. I have my theories, but none I'll speak aloud in a place like that.<br><br>
-                        
-                        This is not a tale you'll hear sung. Not in the markets of Atheria, nor in the sanctified halls that now bless its name.<br><br>
-                        
-                        But the wind remembers.<br>
-                        The sea remembers.<br>
-                        And some griefs are woven too deeply to ever stay buried.
+                        <div class="read-more-gradient collapsed" id="weaver-note-content">
+                            <div class="read-more-content collapsed" id="weaver-note-text">
+                                I discovered this account sealed in a blackwood box, half-buried in a sea cave beneath the cliffs of old Quenos—where modern Atheria now gleams above, unaware. The cave mouth opens only at low tide, and even then, only long enough for the brave or the reckless to slip inside. I was both.<br><br>
+                                
+                                The scroll was wrapped in oilskin and bound with silver thread. Its script was mirrored—illegible by torchlight, but revealed in full beneath the rising moon. No title. No signature. Only the sharp, deliberate hand of someone who poured their sorrow into ink, never daring to speak it aloud.<br><br>
+                                
+                                Not far from where I found it lay a skeleton, folded as if the tide itself had tucked it into rest. I did not linger. The bones were old, almost hollow with time. A ring of silver thread still clung to one wrist. I have my theories, but none I'll speak aloud in a place like that.<br><br>
+                                
+                                This is not a tale you'll hear sung. Not in the markets of Atheria, nor in the sanctified halls that now bless its name.<br><br>
+                                
+                                But the wind remembers.<br>
+                                The sea remembers.<br>
+                                And some griefs are woven too deeply to ever stay buried.
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleReadMore('weaver-note')">Read More</button>
                     </div>
                     
                     <div class="chapter-excerpt">
@@ -584,19 +647,24 @@ image: "/assets/images/EbookPic.jpg"
                         <strong>Author's Note</strong><br><br>
                         <em>As recorded by Tanneus G'Raja</em><br><br>
                         
-                        I find myself in the strange position of maintaining two records. One—the official archive—contains what I can substantiate through accepted archaeological methods: datable artifacts, cross-referenced accounts, inscriptions that still hold under scrutiny. That record will survive peer review. It is cautious, methodical, restrained.<br><br>
-                        
-                        This, however—this journal—is something else. It is the place I write what I believe beyond what I can prove. Not fantasy. Not projection. But the patterns that emerge just outside the edges of evidence. The echoes that refuse to be footnoted. The resonances that feel older than anything we've yet unearthed.<br><br>
-                        
-                        The story of Thainos is not merely a theological oddity or an unusually persistent myth. It is a lens—one that reshapes how we think about divinity, about hope, about the very nature of what it means to try to be good in a world so shaped by failure. Most gods demand reverence, fear, submission. This one demands something far more difficult: reflection.<br><br>
-                        
-                        What undoes me is not the idea that he failed. It's the idea that no one could rise to meet him. He became everything he was searching for—and we could not match him. Not once. Not in a thousand years.<br><br>
-                        
-                        I don't think it was our sins that broke him. Perhaps it was the way we excused them.<br><br>
-                        
-                        Do you think he left us because he, too, became afraid of what he had created? Or do you think—as I have sometimes dared to hope—that he scattered himself like seeds, that some fragment of his light remains, waiting for the day when we might finally prove worthy of his faith?<br><br>
-                        
-                        I do not know if he truly failed. I only know that he tried longer than anyone else would have. And perhaps—perhaps that is enough.
+                        <div class="read-more-gradient collapsed" id="god-wept-note-content">
+                            <div class="read-more-content collapsed" id="god-wept-note-text">
+                                I find myself in the strange position of maintaining two records. One—the official archive—contains what I can substantiate through accepted archaeological methods: datable artifacts, cross-referenced accounts, inscriptions that still hold under scrutiny. That record will survive peer review. It is cautious, methodical, restrained.<br><br>
+                                
+                                This, however—this journal—is something else. It is the place I write what I believe beyond what I can prove. Not fantasy. Not projection. But the patterns that emerge just outside the edges of evidence. The echoes that refuse to be footnoted. The resonances that feel older than anything we've yet unearthed.<br><br>
+                                
+                                The story of Thainos is not merely a theological oddity or an unusually persistent myth. It is a lens—one that reshapes how we think about divinity, about hope, about the very nature of what it means to try to be good in a world so shaped by failure. Most gods demand reverence, fear, submission. This one demands something far more difficult: reflection.<br><br>
+                                
+                                What undoes me is not the idea that he failed. It's the idea that no one could rise to meet him. He became everything he was searching for—and we could not match him. Not once. Not in a thousand years.<br><br>
+                                
+                                I don't think it was our sins that broke him. Perhaps it was the way we excused them.<br><br>
+                                
+                                Do you think he left us because he, too, became afraid of what he had created? Or do you think—as I have sometimes dared to hope—that he scattered himself like seeds, that some fragment of his light remains, waiting for the day when we might finally prove worthy of his faith?<br><br>
+                                
+                                I do not know if he truly failed. I only know that he tried longer than anyone else would have. And perhaps—perhaps that is enough.
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleReadMore('god-wept-note')">Read More</button>
                     </div>
                     
                     <div class="chapter-excerpt">
@@ -621,22 +689,27 @@ image: "/assets/images/EbookPic.jpg"
                         <strong>Author's Note</strong><br><br>
                         <em>As recorded by Tanneus G'Raja, Scholar of the Hollow Spire, who has learned that the most damning truths are often buried beneath the most beautiful lies</em><br><br>
                         
-                        I found this story in blood.<br><br>
-                        
-                        Not metaphorically—though there is blood enough in the telling. I mean literally, in the rusted stains that still mark the floorboards of a cabin deep in what locals call the Dark Forest. The pattern of it troubles me even now. Too much for violence alone. Too deliberate for accident. As if something profound and terrible had occurred in that small space, leaving its signature in crimson.<br><br>
-                        
-                        The trail began with a children's rhyme in Oakhaven, sung with the casual cruelty of those who've forgotten fear can have a source:<br><br>
-                        
-                        <em>"The demon dwells in darkest wood<br>
-                        Where light fears to fall<br>
-                        He feasts on those who trust too much<br>
-                        And darkness takes them all"</em><br><br>
-                        
-                        What I discovered challenged everything we think we know about demons and angels, about mercy and judgment, about the price of choosing compassion in a world that calls it weakness. This is not a tale of simple good conquering evil, nor of darkness consuming light. It asks harder questions: What does it mean to show mercy to those who seem undeserving? How do we judge actions taken in impossible circumstances? And when the divine walks among us, scarred by choices we cannot fathom, do we have the wisdom to recognize grace beneath the guilt?<br><br>
-                        
-                        I publish this account not because I've found all the answers, but because the questions themselves deserve better than children's rhymes and comfortable lies. Because blood on floorboards might tell a different story than the one we've inherited. Because sometimes what we name as demons are simply those who choose mercy in a world that counts it as sin.<br><br>
-                        
-                        And sometimes, the greatest mercy is the one that damns us.
+                        <div class="read-more-gradient collapsed" id="sin-mercy-note-content">
+                            <div class="read-more-content collapsed" id="sin-mercy-note-text">
+                                I found this story in blood.<br><br>
+                                
+                                Not metaphorically—though there is blood enough in the telling. I mean literally, in the rusted stains that still mark the floorboards of a cabin deep in what locals call the Dark Forest. The pattern of it troubles me even now. Too much for violence alone. Too deliberate for accident. As if something profound and terrible had occurred in that small space, leaving its signature in crimson.<br><br>
+                                
+                                The trail began with a children's rhyme in Oakhaven, sung with the casual cruelty of those who've forgotten fear can have a source:<br><br>
+                                
+                                <em>"The demon dwells in darkest wood<br>
+                                Where light fears to fall<br>
+                                He feasts on those who trust too much<br>
+                                And darkness takes them all"</em><br><br>
+                                
+                                What I discovered challenged everything we think we know about demons and angels, about mercy and judgment, about the price of choosing compassion in a world that calls it weakness. This is not a tale of simple good conquering evil, nor of darkness consuming light. It asks harder questions: What does it mean to show mercy to those who seem undeserving? How do we judge actions taken in impossible circumstances? And when the divine walks among us, scarred by choices we cannot fathom, do we have the wisdom to recognize grace beneath the guilt?<br><br>
+                                
+                                I publish this account not because I've found all the answers, but because the questions themselves deserve better than children's rhymes and comfortable lies. Because blood on floorboards might tell a different story than the one we've inherited. Because sometimes what we name as demons are simply those who choose mercy in a world that counts it as sin.<br><br>
+                                
+                                And sometimes, the greatest mercy is the one that damns us.
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleReadMore('sin-mercy-note')">Read More</button>
                     </div>
                     
                     <div class="chapter-excerpt">
@@ -661,21 +734,26 @@ image: "/assets/images/EbookPic.jpg"
                         <strong>Author's Note</strong><br><br>
                         <em>As recorded by Tanneus G'Raja, Scholar of the Hollow Spire</em><br><br>
                         
-                        I first encountered this tale not in scrolls or songs, but carved into stone.<br><br>
-                        
-                        Deep within the stone sanctuary near what was once High Pass, I found a mural that took my breath away. Ancient beyond reckoning, its lines worn soft by countless years, it depicted a story I thought I knew: a radiant Vaelari wielding a blade of pure light, striking down a shadowed figure who glowed with ethereal darkness. Below them, a human figure reached toward the fallen god. The standard tale—Light conquering Dark, balance restored through sacrifice.<br><br>
-                        
-                        For years, I accepted this version. It aligned perfectly with every official record, every teaching about the dangers of unchecked darkness and the necessity of the Light's dominion.<br><br>
-                        
-                        Then I found Captain Morris's journal, buried deep within his family's private archives and sealed away as if it contained a disgrace too dangerous to confront—its weathered pages revealing a story entirely different from the one the world had been told.<br><br>
-                        
-                        His private account of the deaths at High Pass. Blood patterns that didn't match testimonies. Defensive wounds on the wrong person. The precision of a blade between ribs that spoke not of desperate struggle, but of calculated murder.<br><br>
-                        
-                        The official investigation records, when I finally unearthed them from a magistrate's sealed files, confirmed my growing suspicion. The reports had been... edited. Revised. Purchased. A hefty donation to the High Pass Widows and Orphans Fund had transformed murder into mythology.<br><br>
-                        
-                        The mural I had studied with such reverence was not a record of divine justice, but a monument to mortal lies. The "corrupted Vaelari" and the "dark witch" were simply two people who had loved each other, killed by a jealous princess whose family had enough gold to rewrite history.<br><br>
-                        
-                        Let those who read this remember: the stones we carve our stories into are no more truthful than the hands that wield the chisel.
+                        <div class="read-more-gradient collapsed" id="blood-stone-note-content">
+                            <div class="read-more-content collapsed" id="blood-stone-note-text">
+                                I first encountered this tale not in scrolls or songs, but carved into stone.<br><br>
+                                
+                                Deep within the stone sanctuary near what was once High Pass, I found a mural that took my breath away. Ancient beyond reckoning, its lines worn soft by countless years, it depicted a story I thought I knew: a radiant Vaelari wielding a blade of pure light, striking down a shadowed figure who glowed with ethereal darkness. Below them, a human figure reached toward the fallen god. The standard tale—Light conquering Dark, balance restored through sacrifice.<br><br>
+                                
+                                For years, I accepted this version. It aligned perfectly with every official record, every teaching about the dangers of unchecked darkness and the necessity of the Light's dominion.<br><br>
+                                
+                                Then I found Captain Morris's journal, buried deep within his family's private archives and sealed away as if it contained a disgrace too dangerous to confront—its weathered pages revealing a story entirely different from the one the world had been told.<br><br>
+                                
+                                His private account of the deaths at High Pass. Blood patterns that didn't match testimonies. Defensive wounds on the wrong person. The precision of a blade between ribs that spoke not of desperate struggle, but of calculated murder.<br><br>
+                                
+                                The official investigation records, when I finally unearthed them from a magistrate's sealed files, confirmed my growing suspicion. The reports had been... edited. Revised. Purchased. A hefty donation to the High Pass Widows and Orphans Fund had transformed murder into mythology.<br><br>
+                                
+                                The mural I had studied with such reverence was not a record of divine justice, but a monument to mortal lies. The "corrupted Vaelari" and the "dark witch" were simply two people who had loved each other, killed by a jealous princess whose family had enough gold to rewrite history.<br><br>
+                                
+                                Let those who read this remember: the stones we carve our stories into are no more truthful than the hands that wield the chisel.
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleReadMore('blood-stone-note')">Read More</button>
                     </div>
                     
                     <div class="chapter-excerpt">
@@ -709,73 +787,78 @@ image: "/assets/images/EbookPic.jpg"
                         <strong>Final Testament</strong><br><br>
                         <em>As recorded by Tanneus G'Raja of the Hollow Spire, who has learned that some questions should never be answered</em><br><br>
                         
-                        I am seventy-three years old, and I am dying of truth.<br><br>
-                        
-                        Not the gentle death of age that claims most scholars—surrounded by their books, comforted by their certainties, secure in the knowledge that their work mattered. No, I am dying the death of those who learn too late that their greatest enemy was their own heart. When every conviction you held sacred turns to poison in your hands. When truth itself becomes the enemy of everything you once called good.<br><br>
-                        
-                        I have spent fifty-one years asking why the gods don't speak to us.<br><br>
-                        
-                        Fifty-one years cataloguing our desperate prayers, our reaching hands, our broken hearts crying out to a heaven that seemed deaf to our suffering. I raged against their silence. I condemned their absence. I built my entire scholarly identity on the foundation of one burning question: <em>Why don't they answer?</em><br><br>
-                        
-                        Now I know.<br><br>
-                        
-                        And the knowing has murdered everything I was.<br><br>
-                        
-                        The gods are not absent. They are not deaf. They are not indifferent to our suffering. They are right here—closer than our own breath, nearer than our heartbeat—holding themselves back with a restraint so absolute it looks like abandonment. Every moment of every day, they love us enough to remain silent. To stand at the very edge of intervention and choose, again and again and again, not to speak.<br><br>
-                        
-                        Because they learned—through apocalypse, through the unmaking of stars, through watching reality itself crack beneath the weight of their good intentions—that divine words reshape existence. That every blessing becomes a curse in time. That every gift, no matter how lovingly given, becomes a weapon in mortal hands. That love expressed directly from the infinite to the finite doesn't elevate; it incinerates.<br><br>
-                        
-                        The Wild Gods were everything I believed divinity should be. Compassionate. Present. Active in mortal affairs. They walked among us, loved us, protected us with fierce devotion. They gave us everything I spent my life insisting we deserved.<br><br>
-                        
-                        And they destroyed the world with their kindness.<br><br>
-                        
-                        I have seen the records—not the sanitized versions, but the raw testimonies written in blood and madness. I have traced the cascade of consequences that began with a single act of divine mercy and ended with reality itself coming undone. The Wild Gods loved us the way I always said gods should love. Without restraint. Without distance. Without the cold wisdom that keeps the infinite from overwhelming the finite.<br><br>
-                        
-                        The First Gods—those distant, hierarchical beings I spent decades condemning—were right. Their cruelty was kindness. Their distance was love. They understood what I, in my progressive arrogance, could not: that some chasms are not meant to be bridged. That some silences are not meant to be broken. That some loves are too vast to be safely expressed.<br><br>
-                        
-                        Do you understand what it means to discover this? To realize that every prayer you've documented, every plea for divine presence you've preserved, was a request for catastrophe? To be a truth-seeker who has discovered that truth can be more evil than any lie?<br><br>
-                        
-                        The generations before us, the ones after—they all cry out the same question: <em>Why don't you answer?</em> And the gods, in their terrible mercy, continue their silence. Not because they don't care. But because they care too much to risk speaking. Because they learned, through losses that would break mortal minds to contemplate, that true love sometimes means letting the beloved believe themselves abandoned rather than destroying them with presence.<br><br>
-                        
-                        What remains of them now speaks only in sacred spaces—those few sanctuaries where divine words can be contained, where the infinite can whisper without shattering the finite. Even there, their voices are muffled, careful, wrapped in so many layers of restraint that hearing them requires a lifetime of preparation. The rest? Dead or in hiding. But here's the question that haunts me: do they hide because they love us, or because they've learned to fear what they created?<br><br>
-                        
-                        For we are no longer the helpless mortals of ancient days. The Bloodmarked walk among us now, carrying within them the power to kill gods. Divine blood spills as readily as mortal when the right blade finds its mark.<br><br>
-                        
-                        Perhaps they hide to protect the world from the catastrophe of their love unleashed. Or perhaps—and this thought chills me more than any other—they hide because they've discovered that their greatest creation has become capable of their destruction. Love and fear, intertwined like lovers in the dark, each feeding the other until even gods cannot say where one ends and the other begins.<br><br>
-                        
-                        The Wild Gods who survived the war didn't ascend to some distant plane. They buried themselves in the deep places of the world, in caves that echo with unspoken words, in forests where no mortal foot has trod for millennia. They made themselves into living tombs, conscious and aware but forever separate, forever silent save for those rare moments in those rarer places where communication won't crack the cosmos.<br><br>
-                        
-                        And I—fool that I am, romantic that I was—I spent my life trying to make them speak. To draw them out. To end their isolation.<br><br>
-                        
-                        I sit here in the ruins of my convictions, surrounded by scrolls that document divine atrocities committed in the name of love, and still—still—some treacherous part of my heart whispers: <em>Maybe it didn't have to be this way.</em> The scholar's curse is not just seeing patterns across time. It's seeing those patterns and still believing, against all evidence, that the next iteration might be different. That knowledge might transform us. That understanding might redeem us. That if we just knew <em>why</em>, we could somehow make it right.<br><br>
-                        
-                        But I know why now. And the knowing has made nothing right. It has only revealed that what I called wrong was the only right we could survive.<br><br>
-                        
-                        The Wild Gods are still here, scattered and broken, maintaining their distance not out of indifference but out of a love so profound it accepts being reviled rather than risk our destruction. They endure our curses, our accusations of abandonment, our bitter prayers—because explaining their silence would require speaking. And speaking would begin the cascade again.<br><br>
-                        
-                        Tomorrow, if tomorrow comes, someone will find these notes. But should they? Should I burn these pages before my strength fails, let this terrible understanding die with me? For fifty-one years I sought this answer. I raged at heaven for it. I would have given anything to know <em>why</em>.<br><br>
-                        
-                        Now I wonder if ignorance wasn't its own blessing. If the question that burns in every mortal heart—<em>Why don't the gods answer?</em>—is bearable only because we don't know. The not-knowing lets us hope. Lets us believe in eventual reunion, in divine intervention just beyond the horizon, in a love that might someday speak our names again.<br><br>
-                        
-                        But I am a scholar. Even dying, even broken, I cannot bring myself to destroy truth. So these words will remain, and someone will read them, and they will carry this poison I've carried. They will know what I know. They will understand what I understand.<br><br>
-                        
-                        And perhaps, like me, they will wish they had never asked.<br><br>
-                        
-                        Now, at least, one man knows why the gods don't answer.<br><br>
-                        
-                        And the knowing has killed everything he was, leaving only enough life to write this warning:<br><br>
-                        
-                        Some questions should never be answered.<br>
-                        Some silences should never be broken.<br>
-                        Some loves are too vast for the beloved to survive.<br><br>
-                        
-                        The gods' silence is their greatest gift.<br>
-                        Pray they never love us enough to speak again.<br><br>
-                        
-                        <em>—Tanneus G'Raja</em><br>
-                        <em>Scholar of Lost Histories</em><br>
-                        <em>Seeker of Buried Truths</em><br>
-                        <em>Dying of what he found</em>
+                        <div class="read-more-gradient collapsed" id="final-testament-content">
+                            <div class="read-more-content collapsed" id="final-testament-text">
+                                I am seventy-three years old, and I am dying of truth.<br><br>
+                                
+                                Not the gentle death of age that claims most scholars—surrounded by their books, comforted by their certainties, secure in the knowledge that their work mattered. No, I am dying the death of those who learn too late that their greatest enemy was their own heart. When every conviction you held sacred turns to poison in your hands. When truth itself becomes the enemy of everything you once called good.<br><br>
+                                
+                                I have spent fifty-one years asking why the gods don't speak to us.<br><br>
+                                
+                                Fifty-one years cataloguing our desperate prayers, our reaching hands, our broken hearts crying out to a heaven that seemed deaf to our suffering. I raged against their silence. I condemned their absence. I built my entire scholarly identity on the foundation of one burning question: <em>Why don't they answer?</em><br><br>
+                                
+                                Now I know.<br><br>
+                                
+                                And the knowing has murdered everything I was.<br><br>
+                                
+                                The gods are not absent. They are not deaf. They are not indifferent to our suffering. They are right here—closer than our own breath, nearer than our heartbeat—holding themselves back with a restraint so absolute it looks like abandonment. Every moment of every day, they love us enough to remain silent. To stand at the very edge of intervention and choose, again and again and again, not to speak.<br><br>
+                                
+                                Because they learned—through apocalypse, through the unmaking of stars, through watching reality itself crack beneath the weight of their good intentions—that divine words reshape existence. That every blessing becomes a curse in time. That every gift, no matter how lovingly given, becomes a weapon in mortal hands. That love expressed directly from the infinite to the finite doesn't elevate; it incinerates.<br><br>
+                                
+                                The Wild Gods were everything I believed divinity should be. Compassionate. Present. Active in mortal affairs. They walked among us, loved us, protected us with fierce devotion. They gave us everything I spent my life insisting we deserved.<br><br>
+                                
+                                And they destroyed the world with their kindness.<br><br>
+                                
+                                I have seen the records—not the sanitized versions, but the raw testimonies written in blood and madness. I have traced the cascade of consequences that began with a single act of divine mercy and ended with reality itself coming undone. The Wild Gods loved us the way I always said gods should love. Without restraint. Without distance. Without the cold wisdom that keeps the infinite from overwhelming the finite.<br><br>
+                                
+                                The First Gods—those distant, hierarchical beings I spent decades condemning—were right. Their cruelty was kindness. Their distance was love. They understood what I, in my progressive arrogance, could not: that some chasms are not meant to be bridged. That some silences are not meant to be broken. That some loves are too vast to be safely expressed.<br><br>
+                                
+                                Do you understand what it means to discover this? To realize that every prayer you've documented, every plea for divine presence you've preserved, was a request for catastrophe? To be a truth-seeker who has discovered that truth can be more evil than any lie?<br><br>
+                                
+                                The generations before us, the ones after—they all cry out the same question: <em>Why don't you answer?</em> And the gods, in their terrible mercy, continue their silence. Not because they don't care. But because they care too much to risk speaking. Because they learned, through losses that would break mortal minds to contemplate, that true love sometimes means letting the beloved believe themselves abandoned rather than destroying them with presence.<br><br>
+                                
+                                What remains of them now speaks only in sacred spaces—those few sanctuaries where divine words can be contained, where the infinite can whisper without shattering the finite. Even there, their voices are muffled, careful, wrapped in so many layers of restraint that hearing them requires a lifetime of preparation. The rest? Dead or in hiding. But here's the question that haunts me: do they hide because they love us, or because they've learned to fear what they created?<br><br>
+                                
+                                For we are no longer the helpless mortals of ancient days. The Bloodmarked walk among us now, carrying within them the power to kill gods. Divine blood spills as readily as mortal when the right blade finds its mark.<br><br>
+                                
+                                Perhaps they hide to protect the world from the catastrophe of their love unleashed. Or perhaps—and this thought chills me more than any other—they hide because they've discovered that their greatest creation has become capable of their destruction. Love and fear, intertwined like lovers in the dark, each feeding the other until even gods cannot say where one ends and the other begins.<br><br>
+                                
+                                The Wild Gods who survived the war didn't ascend to some distant plane. They buried themselves in the deep places of the world, in caves that echo with unspoken words, in forests where no mortal foot has trod for millennia. They made themselves into living tombs, conscious and aware but forever separate, forever silent save for those rare moments in those rarer places where communication won't crack the cosmos.<br><br>
+                                
+                                And I—fool that I am, romantic that I was—I spent my life trying to make them speak. To draw them out. To end their isolation.<br><br>
+                                
+                                I sit here in the ruins of my convictions, surrounded by scrolls that document divine atrocities committed in the name of love, and still—still—some treacherous part of my heart whispers: <em>Maybe it didn't have to be this way.</em> The scholar's curse is not just seeing patterns across time. It's seeing those patterns and still believing, against all evidence, that the next iteration might be different. That knowledge might transform us. That understanding might redeem us. That if we just knew <em>why</em>, we could somehow make it right.<br><br>
+                                
+                                But I know why now. And the knowing has made nothing right. It has only revealed that what I called wrong was the only right we could survive.<br><br>
+                                
+                                The Wild Gods are still here, scattered and broken, maintaining their distance not out of indifference but out of a love so profound it accepts being reviled rather than risk our destruction. They endure our curses, our accusations of abandonment, our bitter prayers—because explaining their silence would require speaking. And speaking would begin the cascade again.<br><br>
+                                
+                                Tomorrow, if tomorrow comes, someone will find these notes. But should they? Should I burn these pages before my strength fails, let this terrible understanding die with me? For fifty-one years I sought this answer. I raged at heaven for it. I would have given anything to know <em>why</em>.<br><br>
+                                
+                                Now I wonder if ignorance wasn't its own blessing. If the question that burns in every mortal heart—<em>Why don't the gods answer?</em>—is bearable only because we don't know. The not-knowing lets us hope. Lets us believe in eventual reunion, in divine intervention just beyond the horizon, in a love that might someday speak our names again.<br><br>
+                                
+                                But I am a scholar. Even dying, even broken, I cannot bring myself to destroy truth. So these words will remain, and someone will read them, and they will carry this poison I've carried. They will know what I know. They will understand what I understand.<br><br>
+                                
+                                And perhaps, like me, they will wish they had never asked.<br><br>
+                                
+                                Now, at least, one man knows why the gods don't answer.<br><br>
+                                
+                                And the knowing has killed everything he was, leaving only enough life to write this warning:<br><br>
+                                
+                                Some questions should never be answered.<br>
+                                Some silences should never be broken.<br>
+                                Some loves are too vast for the beloved to survive.<br><br>
+                                
+                                The gods' silence is their greatest gift.<br>
+                                Pray they never love us enough to speak again.<br><br>
+                                
+                                <em>—Tanneus G'Raja</em><br>
+                                <em>Scholar of Lost Histories</em><br>
+                                <em>Seeker of Buried Truths</em><br>
+                                <em>Dying of what he found</em>
+                            </div>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleReadMore('final-testament')">Read More</button>
                     </div>
                     
                     <div class="chapter-excerpt">
@@ -883,3 +966,30 @@ image: "/assets/images/EbookPic.jpg"
 }
 </script>
 </section>
+
+<script>
+function toggleReadMore(sectionId) {
+    const content = document.getElementById(sectionId + '-content');
+    const text = document.getElementById(sectionId + '-text');
+    const button = content.nextElementSibling;
+    
+    if (content.classList.contains('collapsed')) {
+        // Expand
+        content.classList.remove('collapsed');
+        content.classList.add('expanded');
+        text.classList.remove('collapsed');
+        text.classList.add('expanded');
+        button.textContent = 'Read Less';
+    } else {
+        // Collapse
+        content.classList.remove('expanded');
+        content.classList.add('collapsed');
+        text.classList.remove('expanded');
+        text.classList.add('collapsed');
+        button.textContent = 'Read More';
+        
+        // Scroll back to the beginning of the section
+        content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+</script>
