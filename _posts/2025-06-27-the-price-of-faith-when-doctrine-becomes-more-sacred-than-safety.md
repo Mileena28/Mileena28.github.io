@@ -108,7 +108,7 @@ Shannon was temporarily employed with Kelly Services, finding some measure of in
 
 Her husband's response was anything but reasonable.
 
-> *"You're such a piece of sh*t," he spat.*
+> *"You're such a piece of shit," he spat.*
 
 As Shannon retreated to bathe their children—five and three years old—he found fault even there, shoving her aside and mocking her: *"You can't even bathe our kids right."*
 
