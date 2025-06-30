@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When Your First Fight Was Just to Breathe: A Journey Through Unthinkable Trauma"
-date: 2025-06-30 05:00:00 -0500
+date: 2025-06-30 08:00:00 -0500
 category: "Community Stories"
 description: "At 21, Benji has survived more trauma than most people could imagine—premature birth, heart surgery, severe neglect, abandonment, abuse, and ongoing medical challenges. His story is proof of the incredible resilience of the human spirit."
 excerpt: "I never know what to expect when someone sends me their painful story, and each time I'm so honored they entrust me with it. When this story reached me, I felt a sinking feeling in my chest. As a mother of two, I read the unthinkable."
@@ -59,11 +59,11 @@ I keep reading this part of Benji's story and feeling something inside me break 
 
 > *"I was never fed properly only given formula even at that age and I was kept in a car seat day and night. Because of that, I couldn't walk. I needed therapy just to learn how to use my legs."*
 
-This detail haunts me. A three-year-old who couldn't walk because he had been confined to a car seat for so long that his body forgot how to develop normally. Physical therapy just to learn what most children master naturally—another layer of trauma disguised as medical necessity.
+This detail haunts me. A three-year-old who couldn't walk because he had been confined to a car seat for so long that his body forgot how to develop normally. Physical therapy just to learn what most children master naturally: another layer of trauma disguised as medical necessity.
 
 > *"I remember my teeth were black because no one ever took care of me. No one brushed them. No one cared."*
 
-The specificity of this memory—black teeth as evidence of total neglect—speaks to something I see in many trauma survivors: the way certain details become seared into memory, becoming proof that yes, it really was that bad. That the neglect was real, total, and devastating.
+The specificity of this memory (black teeth as evidence of total neglect) speaks to something I see in many trauma survivors: the way certain details become seared into memory, becoming proof that yes, it really was that bad. That the neglect was real, total, and devastating.
 
 When the police found them in that park, they weren't just rescuing two children from immediate danger. They were interrupting what would likely have been a death sentence, delivered by the very people who should have died protecting them instead.
 
@@ -89,9 +89,9 @@ For many survivors, there's a narrative that once you're rescued, once you're sa
 
 > *"I was also SA when I was 14 and again when I was 19 it was terrible as well as having my one dog who meant the world to me die in my arms when I was 20."*
 
-The way Benji mentions these additional traumas—sexual assault at fourteen and nineteen, the devastating loss of his beloved dog—speaks to something I recognize in many survivors: the weary acceptance that trauma seems to find them, that they've become somehow magnetized to experiences that most people never endure even once.
+The way Benji mentions these additional traumas (sexual assault at fourteen and nineteen, the devastating loss of his beloved dog) speaks to something I recognize in many survivors: the weary acceptance that trauma seems to find them, that they've become somehow magnetized to experiences that most people never endure even once.
 
-There's a particular cruelty in the way trauma can compound. As if surviving the first waves wasn't enough, as if having already proven your resilience somehow makes you a target for more testing. The loss of his dog—likely one of the few sources of unconditional love and comfort in his life—at twenty years old adds another layer of grief to an already heavy load.
+There's a particular cruelty in the way trauma can compound. As if surviving the first waves wasn't enough, as if having already proven your resilience somehow makes you a target for more testing. The loss of his dog (likely one of the few sources of unconditional love and comfort in his life) at twenty years old adds another layer of grief to an already heavy load.
 
 That he can acknowledge these experiences as "terrible" while still maintaining his determination to live shows a level of emotional honesty that many people never achieve. He's not minimizing his pain or pretending it doesn't matter. He's simply stating facts: these things happened, they were awful, and he survived them too.
 
@@ -101,7 +101,7 @@ That he can acknowledge these experiences as "terrible" while still maintaining 
 
 > *"I'm autistic and I live with severe anxiety and POTS (Postural Orthostatic Tachycardia Syndrome). Life hasn't been easy for me not even from the very beginning."*
 
-Benji's physical and neurological challenges add layers of complexity to his trauma recovery that can't be overlooked. POTS—a condition where the heart rate increases dramatically when standing up—means his body is already in a constant state of stress response. For someone with extensive trauma history, this creates a perfect storm where psychological and physiological triggers compound each other.
+Benji's physical and neurological challenges add layers of complexity to his trauma recovery that can't be overlooked. POTS (a condition where the heart rate increases dramatically when standing up) means his body is already in a constant state of stress response. For someone with extensive trauma history, this creates a perfect storm where psychological and physiological triggers compound each other.
 
 Being autistic in a world that often feels overwhelming and unpredictable must have made his early trauma even more devastating. Research shows that autistic individuals wake up each morning with anxiety levels that non-autistic people typically reach only at the end of their most stressful days. Autistic people live with incredibly high levels of anxiety as their baseline. Add to that the sensory processing differences, difficulty with changes in routine, challenges in reading social cues—all of these neurological realities would have made the chaos and violence of his early years exponentially more traumatic.
 
@@ -139,7 +139,7 @@ This is the kind of boundary-setting that takes enormous strength and self-aware
 
 These words carry such power, such quiet strength. There's no self-pity here, no demand for sympathy, no attempt to minimize or dramatize. Just the simple, profound truth: this is what happened, it was awful, and I survived it.
 
-The acknowledgment that he still struggles daily—with anxiety, medical challenges, sensory overload—is crucial. Benji isn't presenting himself as someone who has "overcome" his trauma and now lives happily ever after. He's honest about the ongoing nature of healing, the way trauma effects ripple through every day, the constant work required to manage symptoms and triggers.
+The acknowledgment that he still struggles daily with anxiety, medical challenges, and sensory overload is crucial. Benji isn't presenting himself as someone who has "overcome" his trauma and now lives happily ever after. He's honest about the ongoing nature of healing, the way trauma effects ripple through every day, the constant work required to manage symptoms and triggers.
 
 But he's also clear about something essential: he made it. Against all odds, despite every attempt by genetics, circumstances, and other people to break him, he is still here. Still choosing to wake up each day. Still believing his story matters enough to share it.
 
@@ -155,7 +155,7 @@ Benji, when you decided to share your story with me, you said you hoped it might
 
 Your biological parents failed you in ways that should never happen to any child. They were supposed to protect you, nurture you, keep you safe, and instead they chose addiction, violence, and abandonment. None of that was your fault. Not the abuse, not the neglect, not being locked in closets or left in parks. You were a child who deserved love, and the failure to provide it was entirely theirs.
 
-Your grandparents saw a traumatized four-year-old and chose to become your heroes. They proved that while some people fail catastrophically in their most sacred responsibilities, others rise to meet challenges they never expected to face. They saved you, but you saved yourself too—by choosing to trust them, by doing the hard work of learning to walk and heal and grow despite everything you'd endured.
+Your grandparents saw a traumatized four-year-old and chose to become your heroes. They proved that while some people fail catastrophically in their most sacred responsibilities, others rise to meet challenges they never expected to face. They saved you, but you saved yourself too: by choosing to trust them, by doing the hard work of learning to walk and heal and grow despite everything you'd endured.
 
 The sexual assaults you survived as a teenager and young adult—those weren't your fault either. Trauma survivors often blame themselves for subsequent violations, as if having been hurt before somehow makes them responsible for being hurt again. That's not how it works. You were victimized by people who chose to cause harm, and their choices had nothing to do with anything you did or didn't do.
 
@@ -163,9 +163,9 @@ Living with autism, POTS, and severe anxiety while carrying all this trauma hist
 
 You mentioned feeling your childhood fear and loneliness in your chest even now. That's trauma living in your body, and acknowledging it shows incredible self-awareness. Many people spend decades in denial about how early experiences continue to affect them. You're twenty-one and already understand something that takes others a lifetime to recognize.
 
-Your choice to maintain distance from your biological mother isn't cruel or ungrateful—it's wise. You've learned to distinguish between biological relationships and healthy relationships, between obligation and genuine care. That wisdom will protect you and help you build the life you deserve.
+Your choice to maintain distance from your biological mother isn't cruel or ungrateful. It's wise. You've learned to distinguish between biological relationships and healthy relationships, between obligation and genuine care. That wisdom will protect you and help you build the life you deserve.
 
-The fact that you can articulate your story with such clarity, that you can see your own resilience while acknowledging ongoing struggles, that you can offer hope to others while still processing your own pain—these things speak to a level of emotional intelligence that's genuinely remarkable.
+The fact that you can articulate your story with such clarity, that you can see your own resilience while acknowledging ongoing struggles, that you can offer hope to others while still processing your own pain: these things speak to a level of emotional intelligence that's genuinely remarkable.
 
 You said you made it, and you're right. But it's more than that. You've transformed your survival into something that matters beyond yourself. You've turned your pain into a bridge for others. You've proven that even when everything and everyone fails you, something indestructible inside you can choose to keep going.
 
