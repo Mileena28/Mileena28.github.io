@@ -1,161 +1,44 @@
-<!-- Content-Type Specific Related Posts -->
-{% comment %}
-This version keeps diary posts and writing chapters completely separate:
-- Diary posts only recommend other diary posts
-- Writing chapters only recommend other writing chapters
-- Each has intelligent matching within its own content type
-{% endcomment %}
-
-{% comment %} Determine content type {% endcomment %}
-{% if page.collection == 'writing' or page.layout == 'chapter' or page.category contains 'Writing' %}
-  {% assign content_type = 'writing' %}
-{% else %}
-  {% assign content_type = 'diary' %}
-{% endif %}
-
-{% comment %} Get appropriate content pool {% endcomment %}
-{% if content_type == 'writing' %}
-  {% comment %} Only writing chapters/content {% endcomment %}
-  {% assign content_pool = site.posts | where_exp: "post", "post.url != page.url and (post.category contains 'Writing' or post.layout == 'chapter')" %}
-  {% if site.writing %}
-    {% assign writing_chapters = site.writing | where_exp: "chapter", "chapter.url != page.url" %}
-    {% assign content_pool = content_pool | concat: writing_chapters %}
-  {% endif %}
-{% else %}
-  {% comment %} Only diary posts (exclude writing content) {% endcomment %}
-  {% assign content_pool = site.posts | where_exp: "post", "post.url != page.url and post.category != 'Writing' and post.layout != 'chapter'" %}
-{% endif %}
-
-{% assign related_content = '' | split: '' %}
-
-{% if content_type == 'writing' %}
-  {% comment %} WRITING CONTENT MATCHING {% endcomment %}
-  
-  {% comment %} Priority 1: Same book/series {% endcomment %}
-  {% if page.book_title or page.series %}
-    {% for content_item in content_pool %}
-      {% if (page.book_title and content_item.book_title == page.book_title) or (page.series and content_item.series == page.series) %}
-        {% assign related_content = related_content | push: content_item %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-  
-  {% comment %} Priority 2: Same tags (genre, themes) {% endcomment %}
-  {% if related_content.size < 3 and page.tags.size > 0 %}
-    {% for content_item in content_pool %}
-      {% unless related_content contains content_item %}
-        {% if content_item.tags %}
-          {% assign common_tags = page.tags | where_exp: "tag", "content_item.tags contains tag" %}
-          {% if common_tags.size > 0 %}
-            {% assign related_content = related_content | push: content_item %}
-          {% endif %}
-        {% endif %}
-      {% endunless %}
-    {% endfor %}
-  {% endif %}
-  
-  {% comment %} Priority 3: Recent chapters {% endcomment %}
-  {% if related_content.size < 3 %}
-    {% assign recent_content = content_pool | sort: "date" | reverse %}
-    {% for content_item in recent_content %}
-      {% unless related_content contains content_item %}
-        {% assign related_content = related_content | push: content_item %}
-      {% endunless %}
-      {% if related_content.size >= 3 %}{% break %}{% endif %}
-    {% endfor %}
-  {% endif %}
-
-{% else %}
-  {% comment %} DIARY POST MATCHING {% endcomment %}
-  
-  {% comment %} Priority 1: Same tags (topics like trauma, recovery, mental health) {% endcomment %}
-  {% if page.tags.size > 0 %}
-    {% for content_item in content_pool %}
-      {% if content_item.tags %}
-        {% assign common_tags = page.tags | where_exp: "tag", "content_item.tags contains tag" %}
-        {% if common_tags.size > 0 %}
-          {% assign related_content = related_content | push: content_item %}
-        {% endif %}
-      {% endif %}
-    {% endfor %}
-  {% endif %}
-  
-  {% comment %} Priority 2: Same category {% endcomment %}
-  {% if related_content.size < 3 and page.category %}
-    {% for content_item in content_pool %}
-      {% unless related_content contains content_item %}
-        {% if content_item.category == page.category %}
-          {% assign related_content = related_content | push: content_item %}
-        {% endif %}
-      {% endunless %}
-    {% endfor %}
-  {% endif %}
-  
-  {% comment %} Priority 3: Recent diary entries {% endcomment %}
-  {% if related_content.size < 3 %}
-    {% assign recent_content = content_pool | sort: "date" | reverse %}
-    {% for content_item in recent_content %}
-      {% unless related_content contains content_item %}
-        {% assign related_content = related_content | push: content_item %}
-      {% endunless %}
-      {% if related_content.size >= 3 %}{% break %}{% endif %}
-    {% endfor %}
-  {% endif %}
-{% endif %}
-
-{% comment %} Display related content {% endcomment %}
-{% if related_content.size > 0 %}
+<!-- DEBUG: Simple Related Posts Test -->
 <section class="related-posts-section">
   <div class="related-posts-container">
-    {% if content_type == 'writing' %}
-      <h3 class="related-posts-title">More Stories to Explore</h3>
-    {% else %}
-      <h3 class="related-posts-title">Related Diary Entries</h3>
-    {% endif %}
+    <h3 class="related-posts-title">DEBUG: Testing Related Posts</h3>
     
-    <div class="related-posts-grid">
-      {% for content_item in related_content limit:3 %}
-        <article class="related-post-card">
-          <div class="related-post-meta">
-            {{ content_item.date | date: "%B %d, %Y" }} • 
-            {% if content_type == 'writing' %}
-              {% if content_item.book_title %}{{ content_item.book_title }}{% else %}Writing{% endif %}
-            {% else %}
-              {{ content_item.category | default: "Diary Entry" }}
-            {% endif %}
-          </div>
-          
-          <h4 class="related-post-title">
-            <a href="{{ content_item.url }}">
-              {% if content_type == 'writing' and content_item.chapter_number %}
-                Chapter {{ content_item.chapter_number }}: {{ content_item.title }}
-              {% else %}
-                {{ content_item.title }}
-              {% endif %}
-            </a>
-          </h4>
-          
-          <p class="related-post-excerpt">
-            {{ content_item.excerpt | strip_html | truncate: 120 }}
-          </p>
-          
-          <a href="{{ content_item.url }}" class="related-post-link">
-            {% if content_type == 'writing' %}
-              {% if content_item.chapter_number %}Read Chapter →{% else %}Read Story →{% endif %}
-            {% else %}
-              Continue Reading →
-            {% endif %}
-          </a>
-        </article>
-      {% endfor %}
+    <!-- Debug info -->
+    <div style="background: rgba(255,0,0,0.2); padding: 20px; margin: 20px 0; border-radius: 10px;">
+      <p><strong>Current page:</strong> {{ page.title }}</p>
+      <p><strong>Page layout:</strong> {{ page.layout }}</p>
+      <p><strong>Page category:</strong> {{ page.category }}</p>
+      <p><strong>Page collection:</strong> {{ page.collection }}</p>
+      <p><strong>Total posts found:</strong> {{ site.posts.size }}</p>
+      
+      {% if page.tags %}
+        <p><strong>Page tags:</strong> {{ page.tags | join: ", " }}</p>
+      {% endif %}
     </div>
-    
-    {% comment %} Content-specific call-to-action {% endcomment %}
-    <div class="related-posts-footer">
-      {% if content_type == 'writing' %}
-        <a href="/writing/" class="explore-more-link">Explore All Stories</a>
+
+    <!-- Show recent posts regardless of type -->
+    <div class="related-posts-grid">
+      {% assign recent_posts = site.posts | where_exp: "post", "post.url != page.url" | sort: "date" | reverse %}
+      
+      {% if recent_posts.size > 0 %}
+        {% for post in recent_posts limit:3 %}
+          <article class="related-post-card">
+            <div class="related-post-meta">
+              {{ post.date | date: "%B %d, %Y" }} • {{ post.category | default: "No Category" }}
+            </div>
+            <h4 class="related-post-title">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h4>
+            <p class="related-post-excerpt">
+              {{ post.excerpt | strip_html | truncate: 120 }}
+            </p>
+            <a href="{{ post.url }}" class="related-post-link">Continue Reading →</a>
+          </article>
+        {% endfor %}
       {% else %}
-        <a href="/diary/" class="explore-more-link">Browse All Diary Entries</a>
+        <p style="color: #ff6b6b; text-align: center; font-size: 1.2em;">
+          No other posts found! You may need more posts for related content to show.
+        </p>
       {% endif %}
     </div>
   </div>
@@ -187,7 +70,6 @@ This version keeps diary posts and writing chapters completely separate:
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  margin-bottom: 40px;
 }
 
 .related-post-card {
@@ -249,31 +131,6 @@ This version keeps diary posts and writing chapters completely separate:
   border-bottom-color: #8a9fff;
 }
 
-.related-posts-footer {
-  text-align: center;
-  padding-top: 30px;
-  border-top: 1px solid #333;
-}
-
-.explore-more-link {
-  display: inline-block;
-  padding: 12px 30px;
-  background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
-  border: 1px solid rgba(138, 159, 255, 0.3);
-  color: #8a9fff;
-  text-decoration: none;
-  border-radius: 25px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.explore-more-link:hover {
-  background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(138, 159, 255, 0.15));
-  border-color: #8a9fff;
-  transform: translateY(-2px);
-}
-
 @media (max-width: 768px) {
   .related-posts-grid {
     grid-template-columns: 1fr;
@@ -289,4 +146,3 @@ This version keeps diary posts and writing chapters completely separate:
   }
 }
 </style>
-{% endif %}
