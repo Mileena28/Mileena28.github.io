@@ -39,3 +39,59 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
+
+// Social Share Buttons
+function addSocialShare() {
+    // Only add to posts and chapters
+    const content = document.querySelector('.post-body, .chapter-content');
+    if (!content) return;
+    
+    // Create share container
+    const shareDiv = document.createElement('div');
+    shareDiv.style.cssText = `
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin: 30px 0;
+        padding: 20px;
+        background: rgba(30, 30, 30, 0.8);
+        border-radius: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+    `;
+    
+    shareDiv.innerHTML = `
+        <span style="color: #999; font-size: 0.9em; margin-right: 10px;">Share:</span>
+        <a href="#" class="share-twitter" style="background: #1da1f2; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em;">Twitter</a>
+        <a href="#" class="share-facebook" style="background: #3b5998; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em;">Facebook</a>
+        <a href="#" class="share-reddit" style="background: #ff4500; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em;">Reddit</a>
+    `;
+    
+    // Add to content
+    const firstP = content.querySelector('p');
+    if (firstP) {
+        firstP.after(shareDiv);
+    }
+    
+    // Add click handlers
+    shareDiv.addEventListener('click', function(e) {
+        if (e.target.classList.contains('share-twitter')) {
+            e.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, 'share', 'width=600,height=400');
+        } else if (e.target.classList.contains('share-facebook')) {
+            e.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, 'share', 'width=600,height=400');
+        } else if (e.target.classList.contains('share-reddit')) {
+            e.preventDefault();
+            const url = encodeURIComponent(window.location.href);
+            const title = encodeURIComponent(document.title);
+            window.open(`https://reddit.com/submit?url=${url}&title=${title}`, 'share', 'width=600,height=400');
+        }
+    });
+}
+
+// Initialize social share
+addSocialShare();
