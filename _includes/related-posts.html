@@ -170,7 +170,7 @@ Fixed version that properly uses site.chapters collection
               {{ content_item.date | date: "%B %d, %Y" }} • 
             {% endif %}
             {% if content_type == 'writing' %}
-              {% if content_item.book_title %}{{ content_item.book_title }}{% else %}Writing{% endif %}
+              {% if content_item.story_title %}{{ content_item.story_title }}{% elsif content_item.book_title %}{{ content_item.book_title }}{% else %}Writing{% endif %}
             {% else %}
               {{ content_item.category | default: "Diary Entry" }}
             {% endif %}
@@ -179,7 +179,13 @@ Fixed version that properly uses site.chapters collection
           <h4 class="related-post-title">
             <a href="{{ content_item.url }}">
               {% if content_type == 'writing' and content_item.chapter_number %}
-                Chapter {{ content_item.chapter_number }}: {{ content_item.title }}
+                {% if content_item.subtitle %}
+                  Chapter {{ content_item.chapter_number }}: {{ content_item.subtitle }}
+                {% elsif content_item.story_title %}
+                  Chapter {{ content_item.chapter_number }}: {{ content_item.story_title }}
+                {% else %}
+                  {{ content_item.title }}
+                {% endif %}
               {% else %}
                 {{ content_item.title }}
               {% endif %}
@@ -189,6 +195,10 @@ Fixed version that properly uses site.chapters collection
           <p class="related-post-excerpt">
             {% if content_item.excerpt %}
               {{ content_item.excerpt | strip_html | truncate: 120 }}
+            {% elsif content_item.story_title and content_item.subtitle %}
+              {{ content_item.story_title }} - {{ content_item.subtitle }}
+            {% elsif content_item.story_title %}
+              {{ content_item.story_title }}
             {% elsif content_item.subtitle %}
               {{ content_item.subtitle }}
             {% else %}
