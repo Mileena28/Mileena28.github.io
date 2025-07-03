@@ -1,33 +1,39 @@
-<!-- Content-Type Specific Related Posts - GitHub Pages Compatible -->
+<!-- Content-Type Specific Related Posts - Fixed for _chapters Collection -->
 {% comment %}
-Simplified version that works with GitHub Pages Jekyll 3.10.0
-Keeps diary posts and writing chapters completely separate
+Fixed version that properly uses site.chapters collection
 {% endcomment %}
 
 {% comment %} Determine content type {% endcomment %}
 {% assign content_type = 'diary' %}
-{% if page.collection == 'writing' or page.layout == 'chapter' %}
+{% if page.collection == 'chapters' or page.layout == 'chapter' %}
   {% assign content_type = 'writing' %}
 {% endif %}
 {% if page.category contains 'Writing' %}
   {% assign content_type = 'writing' %}
 {% endif %}
 
-{% comment %} Get all posts except current {% endcomment %}
-{% assign all_other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
-
-{% comment %} Filter by content type {% endcomment %}
+{% comment %} Get content pools {% endcomment %}
 {% assign content_pool = '' | split: '' %}
 
 {% if content_type == 'writing' %}
-  {% comment %} Only writing content {% endcomment %}
+  {% comment %} Get writing posts {% endcomment %}
+  {% assign all_other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
   {% for post in all_other_posts %}
     {% if post.category contains 'Writing' or post.layout == 'chapter' %}
       {% assign content_pool = content_pool | push: post %}
     {% endif %}
   {% endfor %}
   
-  {% comment %} Add writing collection if it exists {% endcomment %}
+  {% comment %} Get other chapters from _chapters collection {% endcomment %}
+  {% if site.chapters %}
+    {% for chapter in site.chapters %}
+      {% if chapter.url != page.url %}
+        {% assign content_pool = content_pool | push: chapter %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  
+  {% comment %} Get any other writing collections {% endcomment %}
   {% if site.writing %}
     {% for chapter in site.writing %}
       {% if chapter.url != page.url %}
@@ -37,6 +43,7 @@ Keeps diary posts and writing chapters completely separate
   {% endif %}
 {% else %}
   {% comment %} Only diary posts (exclude writing) {% endcomment %}
+  {% assign all_other_posts = site.posts | where_exp: "post", "post.url != page.url" %}
   {% for post in all_other_posts %}
     {% unless post.category contains 'Writing' or post.layout == 'chapter' %}
       {% assign content_pool = content_pool | push: post %}
@@ -49,30 +56,31 @@ Keeps diary posts and writing chapters completely separate
 {% if content_type == 'writing' %}
   {% comment %} WRITING CONTENT MATCHING {% endcomment %}
   
-  {% comment %} Priority 1: Same book/series {% endcomment %}
+  {% comment %} Priority 1: Same book title {% endcomment %}
   {% if page.book_title %}
     {% for content_item in content_pool %}
-      {% if content_item.book_title == page.book_title %}
+      {% if content_item.book_title == page.book_title and related_content.size < 3 %}
         {% assign related_content = related_content | push: content_item %}
       {% endif %}
     {% endfor %}
   {% endif %}
   
+  {% comment %} Priority 2: Same series {% endcomment %}
   {% if page.series and related_content.size < 3 %}
     {% for content_item in content_pool %}
       {% unless related_content contains content_item %}
-        {% if content_item.series == page.series %}
+        {% if content_item.series == page.series and related_content.size < 3 %}
           {% assign related_content = related_content | push: content_item %}
         {% endif %}
       {% endunless %}
     {% endfor %}
   {% endif %}
   
-  {% comment %} Priority 2: Same tags {% endcomment %}
+  {% comment %} Priority 3: Same tags {% endcomment %}
   {% if page.tags.size > 0 and related_content.size < 3 %}
     {% for content_item in content_pool %}
       {% unless related_content contains content_item %}
-        {% if content_item.tags.size > 0 %}
+        {% if content_item.tags.size > 0 and related_content.size < 3 %}
           {% assign found_match = false %}
           {% for page_tag in page.tags %}
             {% if content_item.tags contains page_tag %}
@@ -88,13 +96,13 @@ Keeps diary posts and writing chapters completely separate
     {% endfor %}
   {% endif %}
   
-  {% comment %} Priority 3: Recent chapters {% endcomment %}
+  {% comment %} Priority 4: Any other chapters {% endcomment %}
   {% if related_content.size < 3 %}
-    {% assign recent_content = content_pool | sort: "date" | reverse %}
-    {% for content_item in recent_content %}
+    {% for content_item in content_pool %}
       {% unless related_content contains content_item %}
-        {% assign related_content = related_content | push: content_item %}
-        {% if related_content.size >= 3 %}{% break %}{% endif %}
+        {% if related_content.size < 3 %}
+          {% assign related_content = related_content | push: content_item %}
+        {% endif %}
       {% endunless %}
     {% endfor %}
   {% endif %}
@@ -105,7 +113,7 @@ Keeps diary posts and writing chapters completely separate
   {% comment %} Priority 1: Same tags {% endcomment %}
   {% if page.tags.size > 0 %}
     {% for content_item in content_pool %}
-      {% if content_item.tags.size > 0 %}
+      {% if content_item.tags.size > 0 and related_content.size < 3 %}
         {% assign found_match = false %}
         {% for page_tag in page.tags %}
           {% if content_item.tags contains page_tag %}
@@ -124,7 +132,7 @@ Keeps diary posts and writing chapters completely separate
   {% if page.category and related_content.size < 3 %}
     {% for content_item in content_pool %}
       {% unless related_content contains content_item %}
-        {% if content_item.category == page.category %}
+        {% if content_item.category == page.category and related_content.size < 3 %}
           {% assign related_content = related_content | push: content_item %}
         {% endif %}
       {% endunless %}
@@ -136,8 +144,9 @@ Keeps diary posts and writing chapters completely separate
     {% assign recent_content = content_pool | sort: "date" | reverse %}
     {% for content_item in recent_content %}
       {% unless related_content contains content_item %}
-        {% assign related_content = related_content | push: content_item %}
-        {% if related_content.size >= 3 %}{% break %}{% endif %}
+        {% if related_content.size < 3 %}
+          {% assign related_content = related_content | push: content_item %}
+        {% endif %}
       {% endunless %}
     {% endfor %}
   {% endif %}
@@ -157,7 +166,9 @@ Keeps diary posts and writing chapters completely separate
       {% for content_item in related_content limit:3 %}
         <article class="related-post-card">
           <div class="related-post-meta">
-            {{ content_item.date | date: "%B %d, %Y" }} • 
+            {% if content_item.date %}
+              {{ content_item.date | date: "%B %d, %Y" }} • 
+            {% endif %}
             {% if content_type == 'writing' %}
               {% if content_item.book_title %}{{ content_item.book_title }}{% else %}Writing{% endif %}
             {% else %}
@@ -176,7 +187,13 @@ Keeps diary posts and writing chapters completely separate
           </h4>
           
           <p class="related-post-excerpt">
-            {{ content_item.excerpt | strip_html | truncate: 120 }}
+            {% if content_item.excerpt %}
+              {{ content_item.excerpt | strip_html | truncate: 120 }}
+            {% elsif content_item.subtitle %}
+              {{ content_item.subtitle }}
+            {% else %}
+              Explore this chapter...
+            {% endif %}
           </p>
           
           <a href="{{ content_item.url }}" class="related-post-link">
