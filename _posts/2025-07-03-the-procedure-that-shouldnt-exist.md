@@ -25,7 +25,7 @@ Today, I'm documenting two of these accounts that have come to me, not because t
 
 In 2023, a practicing pediatric urologist said something to a medical journalist that should have made headlines. Dr. Anthony Caldamone, speaking on the record about voiding cystourethrograms (VCUGs), admitted something remarkable:
 
-*"With or without sedation, we just don't have the data. We don't know how many children are affected."*
+> *"With or without sedation, we just don't have the data. We don't know how many children are affected."*
 
 This wasn't an admission about some experimental treatment. This was about a procedure performed on hundreds of thousands of children annually, a procedure that medical websites describe as "uncomfortable but not painful," a procedure that, according to medical literature, has never been studied for long-term psychological effects.
 
@@ -41,7 +41,9 @@ In 1994, researchers needed to study how children retain memories of traumatic e
 
 Read that again. In 1994, researchers explicitly stated that VCUG procedures resemble sexual abuse. They used these children as proxies for abuse victims in their studies.
 
-In 2004, UC Davis psychology professor Dr. Gail Goodman conducted another study using VCUG patients. *"I was studying it because it was a traumatic stressor for a lot of children,"* she explained. *"Some of the kids didn't seem too hurt by it, but others were just screaming."*
+In 2004, UC Davis psychology professor Dr. Gail Goodman conducted another study using VCUG patients. 
+
+> *"I was studying it because it was a traumatic stressor for a lot of children. Some of the kids didn't seem too hurt by it, but others were just screaming."*
 
 Dr. Goodman's team filmed children's reactions during these procedures. What they saw was so disturbing that when she tried to share the footage at a medical conference, *"the people in the audience couldn't even watch the videotape."* She described the experience as *"traumatizing for us researchers."*
 
@@ -67,19 +69,25 @@ That's what her three-year-old brain understood: she would clean a doll.
 
 What actually happened was something entirely different.
 
-*"I'm strapped down to the table with the bright light shining on me—completely naked, legs spread and strapped open... A bunch of nurses and doctors came into the room, some male and some female, and they shone the light directly at my private parts. I had been potty trained for a while now, and had always been very modest, so this felt weird at best. But I knew my dad had told me that 'no one could ever look at or touch my girl parts', and that I had to say 'no' if anyone ever tried to. But for some reason, I couldn't speak right now."*
+> *"I'm strapped down to the table with the bright light shining on me—completely naked, legs spread and strapped open... A bunch of nurses and doctors came into the room, some male and some female, and they shone the light directly at my private parts. I had been potty trained for a while now, and had always been very modest, so this felt weird at best. But I knew my dad had told me that 'no one could ever look at or touch my girl parts', and that I had to say 'no' if anyone ever tried to. But for some reason, I couldn't speak right now."*
 
 She describes the "red soap" that wasn't soap at all but antiseptic solution that burned her skin. The strangers touching her. The catheter insertion that felt like being stabbed. The male doctor who asked "Mind if I take a peek?" before examining her genitals while she lay paralyzed with fear.
 
-*"I couldn't scream, couldn't cry, couldn't do anything but just lay there and stare at the ceiling."*
+> *"I couldn't scream, couldn't cry, couldn't do anything but just lay there and stare at the ceiling."*
 
 When it was over and she tried to walk, she couldn't take more than two steps because of the burning pain. At home, she discovered blood in her underwear and was terrified they had damaged something inside her.
 
-*"I knew I couldn't let my mom see, or she might make me go back."*
+> *"I knew I couldn't let my mom see, or she might make me go back."*
 
 But perhaps the most devastating part of her account is what happened afterward. When her father asked if it hurt, *"I lied and said no, because I knew it wasn't supposed to hurt, and everyone told me that it wouldn't, so it was probably something wrong with me."* A three-year-old was already learning to blame herself for medical trauma, already internalizing the message that her pain didn't matter if it contradicted what adults said should happen.
 
-Even the medical staff reinforced this gaslighting. After the burning antiseptic procedure, the nurse told her: *"See? that didn't even hurt!"* The child wanted to tell her mother that it did hurt, but found herself voiceless: *"I couldn't do anything. I was just frozen, watching this whole thing unfold."*
+Even the medical staff reinforced this gaslighting. After the burning antiseptic procedure, the nurse told her: 
+
+> *"See? that didn't even hurt!"* 
+
+The child wanted to tell her mother that it did hurt, but found herself voiceless: 
+
+> *"I couldn't do anything. I was just frozen, watching this whole thing unfold."*
 
 Twenty-two years later, she's been diagnosed with PTSD and vaginismus from this procedure. She requires trauma-informed pelvic floor physical therapy and still flinches when touched. She also has what's been described as a "catheter injury" from that day in 2006.
 
@@ -87,35 +95,39 @@ Twenty-two years later, she's been diagnosed with PTSD and vaginismus from this 
 
 The second account comes from someone who endured this procedure not once, but yearly from age two to ten: eight times total. Eight annual appointments with terror.
 
-*"I really fear coming across as unreasonable or dramatic here, but I can't emphasize enough how false this is. It was incredibly painful."*
+> *"I really fear coming across as unreasonable or dramatic here, but I can't emphasize enough how false this is. It was incredibly painful."*
 
 She's responding to those ubiquitous hospital websites that describe VCUGs as "uncomfortable but not painful." Her lived experience directly contradicts every official medical description of what this procedure feels like.
 
-*"I have VIVID memories of every aspect of this test. The discomfort and fear I experienced spreading my legs in front of a room of 3-5 nurses/technologists. The dreaded question: did I want my legs in frog position or butterfly position? (I quickly learned to pray for a technologist who allowed frog position, because whenever I had to do butterfly, two nurses/aides would stand on either side of me and hold my knees down flat on the table so I couldn't fold them up... I never even fought, but for some reason children needed to be restrained just to make it easier?)"*
+> *"I have VIVID memories of every aspect of this test. The discomfort and fear I experienced spreading my legs in front of a room of 3-5 nurses/technologists. The dreaded question: did I want my legs in frog position or butterfly position? (I quickly learned to pray for a technologist who allowed frog position, because whenever I had to do butterfly, two nurses/aides would stand on either side of me and hold my knees down flat on the table so I couldn't fold them up... I never even fought, but for some reason children needed to be restrained just to make it easier?)"*
 
 But what devastates me most about her account is the confusion she felt about her parents' role in this violation:
 
-*"One of my parents was always in the room for it, so it was really confusing for me as a kid to understand how this person who was supposed to protect me could allow strangers to hurt me in such an invasive, intimate way and just stand by."*
+> *"One of my parents was always in the room for it, so it was really confusing for me as a kid to understand how this person who was supposed to protect me could allow strangers to hurt me in such an invasive, intimate way and just stand by."*
 
 She's careful to add that she knows they thought they were doing what was best for her health. But the trauma of feeling abandoned by the very people meant to protect her compounds the medical trauma exponentially.
 
-*"I felt so violated every time, and it quickly became clear to me that my body was not mine to control."*
+> *"I felt so violated every time, and it quickly became clear to me that my body was not mine to control."*
 
 The psychological impact was so severe that this child began planning her own death:
 
-*"I would spend the months before the procedure planning and plotting how I could get out of it this time, and then I would spend the months after the procedure with a renewed sense of powerlessness I've never been able to shake. It got to the point where, as an older child (about 7-10), I became very suicidal, and often considered killing myself just to avoid another VCUG. I used to pray for God to just let me die in my sleep on the nights leading up to the test. One time, the night before the test, I even climbed out on my roof and tried to convince myself to jump, but I just couldn't do it."*
+> *"I would spend the months before the procedure planning and plotting how I could get out of it this time, and then I would spend the months after the procedure with a renewed sense of powerlessness I've never been able to shake. It got to the point where, as an older child (about 7-10), I became very suicidal, and often considered killing myself just to avoid another VCUG. I used to pray for God to just let me die in my sleep on the nights leading up to the test. One time, the night before the test, I even climbed out on my roof and tried to convince myself to jump, but I just couldn't do it."*
 
-Making matters worse, the trauma itself prevented the procedure from working properly: *"I actually was never able to complete this part... I would just lie there trying not to cry until they finally pulled the catheter out and allowed me to pee into a cup. I didn't know it at the time, but it turns out this actually means a major part of the procedure was missing and they couldn't even really effectively monitor what they were looking for."*
+Making matters worse, the trauma itself prevented the procedure from working properly: 
+
+> *"I actually was never able to complete this part... I would just lie there trying not to cry until they finally pulled the catheter out and allowed me to pee into a cup. I didn't know it at the time, but it turns out this actually means a major part of the procedure was missing and they couldn't even really effectively monitor what they were looking for."*
 
 So not only was she being traumatized annually, the trauma itself was making the procedure medically ineffective. They were hurting her for no diagnostic benefit whatsoever.
 
 The long-term consequences persist today. She's now twenty-three and vomits before doctor's appointments. She cannot be intimate with partners. She has vulvodynia (chronic pelvic pain often associated with sexual trauma) and vaginismus that makes penetration nearly impossible. At age eleven, years after her final VCUG, she began experiencing *"an intense, near-constant burning soreness in my whole pubic region."* She was too embarrassed to tell anyone. It took twelve years for her to successfully insert a tampon, and even now she can only use small ones with moderate pain.
 
-When she finally allowed a PAP smear last year, she dissociated afterward and found herself in a parking lot with no memory of how she got there. *"I was still too suicidal to trust myself driving home, so I went to sleep in the parking lot for a while."*
+When she finally allowed a PAP smear last year, she dissociated afterward and found herself in a parking lot with no memory of how she got there. 
+
+> *"I was still too suicidal to trust myself driving home, so I went to sleep in the parking lot for a while."*
 
 Perhaps most heartbreaking is how the trauma shaped her relationship with medical care:
 
-*"I become very compliant/meek and 'small' in any medical setting, and I find it impossible to voice any of my concerns, because I just want to be 'good' and an easy patient and not be perceived as dramatic."*
+> *"I become very compliant/meek and 'small' in any medical setting, and I find it impossible to voice any of my concerns, because I just want to be 'good' and an easy patient and not be perceived as dramatic."*
 
 This is what medical trauma does to children: it teaches them that their pain doesn't matter, that questioning medical authority makes them "difficult," that being "good" means enduring harm without complaint. She learned these lessons so thoroughly that even as an adult, she cannot advocate for herself when she needs medical care most.
 
@@ -139,7 +151,7 @@ But here's the crucial detail: that study only looked at two weeks. Not two year
 
 Andrea McDonald, a graduate student at the University of Pennsylvania, struggled to get funding for her research on long-term VCUG effects. In 2022, she managed to conduct a small pilot study with twenty-one participants that suggested VCUG patients were more likely than control groups to experience depression and PTSD symptoms.
 
-*"If we want to do anything serious in public health, I want to see the money show up,"* McDonald said. *"We need to get more people and institutions invested."*
+> *"If we want to do anything serious in public health, I want to see the money show up. We need to get more people and institutions invested."*
 
 The money isn't showing up because the medical establishment doesn't want the answers. They've built an entire diagnostic framework around a procedure that systematically traumatizes children, and admitting that would require massive systemic change.
 
@@ -212,7 +224,9 @@ They describe:
 
 This isn't rare. This isn't a few sensitive children who "overreacted." This is a predictable pattern of harm that the medical establishment has chosen to ignore because acknowledging it would be inconvenient.
 
-Ellen Lonnquist, a family and trauma therapist, explains why this trauma is so profound: *"It's an experience that your body and brain can't possibly process in the moment. There is the messaging we appropriately give children around protecting themselves and their bodies. So, with the VCUG and lots of other medical procedures, it can be harmful if no one is working with the child to help them understand what's happening."*
+Ellen Lonnquist, a family and trauma therapist, explains why this trauma is so profound: 
+
+> *"It's an experience that your body and brain can't possibly process in the moment. There is the messaging we appropriately give children around protecting themselves and their bodies. So, with the VCUG and lots of other medical procedures, it can be harmful if no one is working with the child to help them understand what's happening."*
 
 Children are taught that their bodies belong to them, that they should say no to unwanted touching, that trusted adults will protect them. Then they're brought to a medical facility where all those protections are stripped away and they're told this violation is "for your own good."
 
