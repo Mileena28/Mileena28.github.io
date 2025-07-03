@@ -37,7 +37,9 @@ This isn't medical ignorance. This is medical negligence. And I'm done pretendin
 
 ## The Timeline of Betrayal
 
-In 1994, researchers needed to study how children retain memories of traumatic experiences. They chose children who had undergone VCUGs as their research subjects, specifically because—in their own words—*"this invasive procedure is similar in many respects to incidents of sexual abuse."*
+In 1994, researchers needed to study how children retain memories of traumatic experiences. They chose children who had undergone VCUGs as their research subjects, specifically because—in their own words:
+
+> *"This invasive procedure is similar in many respects to incidents of sexual abuse."*
 
 Read that again. In 1994, researchers explicitly stated that VCUG procedures resemble sexual abuse. They used these children as proxies for abuse victims in their studies.
 
