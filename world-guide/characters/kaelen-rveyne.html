@@ -1,0 +1,592 @@
+---
+layout: default
+title: "Kaelen R'Veyne - The Silver Hunter | Blood of the Wild Gods"
+description: "Meet Kaelen R'Veyne, the Silver Hunter from Mileena Rayne's dark fantasy series Blood of the Wild Gods. A complex Bloodmarked warrior struggling with self-acceptance, trauma, and the transformative power of love."
+image: "/assets/images/kaelen-rveyne-character-art.jpg"
+---
+
+<style>
+    /* Character Page Styles */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
+
+    .character-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .character-tagline {
+        font-size: 1.4em;
+        color: #8a9fff;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .series-breadcrumb {
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #8a9fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(138, 159, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .character-content {
+        padding: 80px 0;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .character-portrait {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    .portrait-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .character-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1));
+        border: 2px solid #c0c0c0;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c0c0c0;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(192, 192, 192, 0.1) 0%, transparent 70%);
+        animation: shimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); }
+    }
+
+    .character-stats {
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #8a9fff;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .stat-value {
+        color: #ddd;
+        margin-top: 5px;
+    }
+
+    .character-info {
+        
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 25px;
+        font-weight: 400;
+        border-bottom: 2px solid #8a9fff;
+        padding-bottom: 10px;
+    }
+
+    .character-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .character-quote {
+        background: rgba(138, 159, 255, 0.05);
+        border-left: 4px solid #8a9fff;
+        padding: 25px 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+    }
+
+    .character-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 3em;
+        color: #8a9fff;
+        opacity: 0.3;
+    }
+
+    .quote-source {
+        text-align: right;
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 15px;
+        font-style: normal;
+    }
+
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .trait-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+        border-color: #8a9fff;
+        transform: translateY(-5px);
+    }
+
+    .trait-title {
+        color: #8a9fff;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .trait-description {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    .transformations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .transformation-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .transformation-card:hover {
+        border-color: #8a9fff;
+        transform: translateY(-5px);
+    }
+
+    .transformation-card.bloodmarked {
+        border-left: 4px solid #cc0000;
+    }
+
+    .transformation-card.divine {
+        border-left: 4px solid #ffd700;
+    }
+
+    .transformation-card.human {
+        border-left: 4px solid #8a9fff;
+    }
+
+    .transformation-title {
+        color: #8a9fff;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .transformation-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .related-characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .related-character {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .related-character:hover {
+        border-color: #8a9fff;
+        transform: translateY(-5px);
+    }
+
+    .related-avatar {
+        width: 60px;
+        height: 60px;
+        background: rgba(138, 159, 255, 0.2);
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8a9fff;
+        font-weight: bold;
+    }
+
+    .related-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .related-role {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    .read-more-section {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+        border: 1px solid #8a9fff;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+    .cta-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(138, 159, 255, 0.4);
+    }
+
+    .cta-button.secondary {
+        background: rgba(138, 159, 255, 0.2);
+        color: #8a9fff;
+        border: 1px solid #8a9fff;
+    }
+
+    .cta-button.secondary:hover {
+        background: rgba(138, 159, 255, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .character-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .character-portrait {
+            position: static;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .character-title {
+            font-size: 2.2em;
+        }
+        
+        .character-tagline {
+            font-size: 1.2em;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .transformations-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← Blood of the Wild Gods World Guide</a>
+        <h1 class="character-title">Kaelen R'Veyne</h1>
+        <p class="character-tagline">"The Silver Hunter"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Silver hair, cold grey eyes<br>Weathered by the Wastes</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">Blood of the Wild Gods: The Silence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human (Ashborn tribe), Formerly Bloodmarked</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Location</div>
+                            <div class="stat-value">Godscarred Wastes → Verdant Veil</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Weapon</div>
+                            <div class="stat-value">Silver-plated sword</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Conflict</div>
+                            <div class="stat-value">Self-loathing vs. Self-acceptance</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Powers severed, fully human</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Man Behind the Legend</h2>
+                    <div class="character-description">
+                        <p>In the Godscarred Wastes, they whisper of the Silver Hunter—a man who stalks the most dangerous Beastborn with cold precision and unbreakable will. But legends rarely capture the full truth, and Kaelen R'Veyne is far more complex than the stories suggest.</p>
+                        
+                        <p>Kaelen is a man at war with himself. Born to the pragmatic Ashborn tribes but marked by divine blood he never wanted, he embodies the struggle between accepting who we are and hating what we've become. His journey isn't about gaining power—it's about learning that true strength sometimes means choosing love over solitude, connection over safety, and humanity over godhood.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        I won't let anything happen to you.
+                        <div class="quote-source">— Kaelen's core promise to Elowen</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">Personality & Core Traits</h2>
+                    <div class="character-description">
+                        <p>Kaelen's personality is shaped by years of isolation and trauma, creating a man who has built walls so high even he sometimes forgets what lies beneath them. Yet those walls also protect a capacity for fierce loyalty and unexpected tenderness.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Stoic Protector</div>
+                            <div class="trait-description">Guards his emotions carefully but will sacrifice everything for those he cares about. His protection comes through action, not words.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Pragmatic Survivor</div>
+                            <div class="trait-description">Shaped by harsh desert life, he makes decisions based on brutal practicality rather than idealism.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Self-Loathing Warrior</div>
+                            <div class="trait-description">Hates his Bloodmarked nature so deeply that accepting love and connection becomes his greatest challenge.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Hidden Vulnerability</div>
+                            <div class="trait-description">Beneath the stoic exterior lies deep pain from his mother's death and terror of losing anyone else he loves.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Perhaps... you are simply wrong.
+                        <div class="quote-source">— Kaelen's quiet challenge to Mordain's certainty</div>
+                    </div>
+                </section>
+
+                <!-- Transformations & Powers -->
+                <section class="section">
+                    <h2 class="section-title">Three Forms, One Journey</h2>
+                    <div class="character-description">
+                        <p>Kaelen's relationship with power is central to his character arc. From cursed Bloodmarked to divine warrior to chosen humanity, each transformation represents a different stage of his journey toward self-acceptance.</p>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card bloodmarked">
+                            <div class="transformation-title">The Bloodmarked Beast</div>
+                            <div class="transformation-description">
+                                <strong>Triggered by:</strong> Extreme emotion, especially rage or terror<br>
+                                <strong>Form:</strong> Monstrous creature with clawed hands, fangs, burning silver eyes<br>
+                                <strong>Burden:</strong> Crushing shame and self-hatred after each transformation<br>
+                                <strong>Symbolizes:</strong> Everything he believes makes him unworthy of love
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card divine">
+                            <div class="transformation-title">The Eclipse God</div>
+                            <div class="transformation-description">
+                                <strong>Source:</strong> Eclipse Pendant in desperate moment to save Elowen<br>
+                                <strong>Power:</strong> Divine strength, cosmic energy, reality-bending abilities<br>
+                                <strong>Danger:</strong> Divine power threatens to consume his humanity<br>
+                                <strong>Symbolizes:</strong> Power corrupts, even when used to protect
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card human">
+                            <div class="transformation-title">Chosen Humanity</div>
+                            <div class="transformation-description">
+                                <strong>Result:</strong> Elowen's healing severs all supernatural abilities<br>
+                                <strong>Gift:</strong> Freedom from both curse and divine corruption<br>
+                                <strong>Challenge:</strong> Finding worth without power or special abilities<br>
+                                <strong>Symbolizes:</strong> Love matters more than power
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Key Relationships</h2>
+                    <div class="character-description">
+                        <p>For a man who spent years alone, Kaelen's relationships become the crucible that transforms him from hunter to protector to loving partner.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="/world-guide/characters/elowen-faerwyn/" class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Elowen Faerwyn</div>
+                            <div class="related-role">Beloved, His Healing</div>
+                        </a>
+                        <a href="/world-guide/characters/ryx-shadowclaw/" class="related-character">
+                            <div class="related-avatar">R</div>
+                            <div class="related-name">Ryx Shadowclaw</div>
+                            <div class="related-role">Ward, Son Figure</div>
+                        </a>
+                        <a href="/world-guide/characters/mordain-ashcroft/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mordain Ashcroft</div>
+                            <div class="related-role">Unlikely Ally</div>
+                        </a>
+                        <a href="/world-guide/characters/the-silent-god/" class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">The Silent God</div>
+                            <div class="related-role">Cosmic Enemy</div>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Follow Kaelen's Journey</h2>
+            <p class="cta-description">
+                Witness the Silver Hunter's transformation from isolated warrior to devoted protector. 
+                Kaelen's story explores trauma, healing, and the courage it takes to choose love over fear.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-silence/chapter-01/" class="cta-button">Read The Silence</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
