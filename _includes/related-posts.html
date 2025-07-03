@@ -1,0 +1,138 @@
+<!-- Related Posts Section -->
+{% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" %}
+
+{% if page.tags.size > 0 %}
+  {% assign related_posts = related_posts | where_exp: "post", "post.tags and post.tags != empty" %}
+  {% assign related_posts = related_posts | sort: "date" | reverse %}
+{% elsif page.category %}
+  {% assign related_posts = related_posts | where: "category", page.category %}
+{% else %}
+  {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | sort: "date" | reverse %}
+{% endif %}
+
+{% if related_posts.size > 0 %}
+<section class="related-posts-section">
+  <div class="related-posts-container">
+    <h3 class="related-posts-title">You Might Also Like</h3>
+    <div class="related-posts-grid">
+      {% for post in related_posts limit:3 %}
+        <article class="related-post-card">
+          <div class="related-post-meta">
+            {{ post.date | date: "%B %d, %Y" }} • {{ post.category | default: "Diary Entry" }}
+          </div>
+          <h4 class="related-post-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h4>
+          <p class="related-post-excerpt">
+            {{ post.excerpt | strip_html | truncate: 120 }}
+          </p>
+          <a href="{{ post.url }}" class="related-post-link">Continue Reading →</a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.related-posts-section {
+  background: rgba(10, 10, 20, 0.6);
+  padding: 60px 0;
+  margin: 80px 0 0 0;
+}
+
+.related-posts-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.related-posts-title {
+  color: #f0f0f0;
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.related-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.related-post-card {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #333;
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.related-post-card:hover {
+  transform: translateY(-10px);
+  border-color: #8a9fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.related-post-meta {
+  color: #8a9fff;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.related-post-title {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.related-post-title a {
+  color: #f0f0f0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.related-post-title a:hover {
+  color: #8a9fff;
+}
+
+.related-post-excerpt {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95em;
+}
+
+.related-post-link {
+  color: #8a9fff;
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease;
+  font-size: 0.9em;
+}
+
+.related-post-link:hover {
+  border-bottom-color: #8a9fff;
+}
+
+@media (max-width: 768px) {
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .related-post-card {
+    padding: 25px;
+  }
+  
+  .related-posts-title {
+    font-size: 1.8em;
+  }
+}
+</style>
+{% endif %}
