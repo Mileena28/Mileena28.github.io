@@ -1,0 +1,375 @@
+---
+layout: default
+title: "Blood of the Wild Gods World Guide | Complete Universe Guide"
+description: "Explore the complete world of Blood of the Wild Gods by Mileena Rayne. Meet characters, discover locations, learn about magic systems, and dive deep into the lore."
+image: "/assets/images/world-guide-main.jpg"
+---
+
+<style>
+    .world-header {
+        padding: 100px 0 80px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.15) 0%, rgba(138, 159, 255, 0.05) 100%);
+        position: relative;
+    }
+
+    .world-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/assets/images/world-background.jpg') center/cover;
+        opacity: 0.1;
+        z-index: -1;
+    }
+
+    .world-title {
+        font-size: 3.5em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 3px;
+    }
+
+    .world-subtitle {
+        font-size: 1.4em;
+        color: #8a9fff;
+        font-style: italic;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .world-description {
+        font-size: 1.1em;
+        color: #ccc;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    .guide-sections {
+        padding: 100px 0;
+    }
+
+    .sections-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .guide-section {
+        background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.8));
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .guide-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .guide-section:hover {
+        border-color: #8a9fff;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .guide-section:hover::before {
+        left: 100%;
+    }
+
+    .section-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 25px;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        color: #8a9fff;
+        border: 3px solid rgba(138, 159, 255, 0.5);
+        transition: all 0.3s ease;
+    }
+
+    .guide-section:hover .section-icon {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
+    }
+
+    .section-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .section-description {
+        color: #ccc;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .section-link {
+        display: inline-block;
+        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+        color: #000;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .section-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(138, 159, 255, 0.4);
+    }
+
+    .featured-content {
+        padding: 80px 0;
+        background: rgba(10, 10, 20, 0.6);
+    }
+
+    .featured-title {
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 60px;
+        color: #f0f0f0;
+        font-weight: 300;
+    }
+
+    .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .featured-card {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .featured-card:hover {
+        border-color: #8a9fff;
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-label {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .card-title {
+        color: #f0f0f0;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .card-description {
+        color: #ccc;
+        line-height: 1.6;
+        font-size: 0.95em;
+    }
+
+    @media (max-width: 768px) {
+        .world-title {
+            font-size: 2.5em;
+        }
+        
+        .world-subtitle {
+            font-size: 1.2em;
+        }
+        
+        .sections-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .guide-section {
+            padding: 30px;
+        }
+    }
+</style>
+
+<!-- World Header -->
+<section class="world-header">
+    <div class="container">
+        <h1 class="world-title">World Guide</h1>
+        <p class="world-subtitle">
+            "Where gods wage war in silence, where love defies time itself, and where mercy becomes the greatest sin."
+        </p>
+        <div class="world-description">
+            <p>Welcome to the complete guide to the Blood of the Wild Gods universe. Explore the characters who shape destiny, the places where legends are born, and the magic that flows through mortal veins like divine blood. This is a world where uncomfortable truths lurk beneath beautiful lies, and where the greatest strength is often choosing humanity over power.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Guide Sections -->
+<section class="guide-sections">
+    <div class="container">
+        <div class="sections-grid">
+            
+            <div class="guide-section">
+                <div class="section-icon">👥</div>
+                <h2 class="section-title">Characters</h2>
+                <div class="section-description">
+                    Meet the complex souls who walk between light and shadow. From the Silver Hunter to divine beings erased from history, each character carries their own darkness and light.
+                </div>
+                <a href="/world-guide/characters/" class="section-link">Explore Characters</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">🗺️</div>
+                <h2 class="section-title">Locations</h2>
+                <div class="section-description">
+                    Discover the places where legends are forged—from the Godscarred Wastes to the Verdant Veil, each location holds secrets that shape the fate of mortals and gods alike.
+                </div>
+                <a href="/world-guide/locations/" class="section-link">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">⚡</div>
+                <h2 class="section-title">Magic & Powers</h2>
+                <div class="section-description">
+                    Understand the divine blood that flows through mortal veins, the price of wielding godlike power, and why some gifts become the greatest curses.
+                </div>
+                <a href="/world-guide/magic/" class="section-link">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">📚</div>
+                <h2 class="section-title">History & Lore</h2>
+                <div class="section-description">
+                    Uncover the buried truths about the Divine War, the creation of the Bloodmarked, and why the gods maintain their terrifying silence.
+                </div>
+                <a href="/world-guide/lore/" class="section-link">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">👹</div>
+                <h2 class="section-title">Creatures & Beings</h2>
+                <div class="section-description">
+                    From the monstrous Beastborn to divine entities that shape reality itself, explore the beings that inhabit this world of gods and mortals.
+                </div>
+                <a href="/world-guide/creatures/" class="section-link">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">🏛️</div>
+                <h2 class="section-title">Organizations</h2>
+                <div class="section-description">
+                    Learn about the factions, tribes, and institutions that shape the political and spiritual landscape of a world recovering from divine war.
+                </div>
+                <a href="/world-guide/organizations/" class="section-link">Coming Soon</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Featured Content -->
+<section class="featured-content">
+    <div class="container">
+        <h2 class="featured-title">Start Your Journey</h2>
+        <div class="featured-grid">
+            
+            <a href="/world-guide/characters/kaelen-rveyne/" class="featured-card">
+                <div class="card-label">Featured Character</div>
+                <div class="card-title">Kaelen R'Veyne</div>
+                <div class="card-description">
+                    The Silver Hunter whose journey from isolation to love becomes a testament to choosing humanity over power.
+                </div>
+            </a>
+
+            <a href="/chapters/the-silence/chapter-01/" class="featured-card">
+                <div class="card-label">Start Reading</div>
+                <div class="card-title">The Silence: Chapter 1</div>
+                <div class="card-description">
+                    Begin the epic journey that started it all—where five mortals discover they've been chosen by a god erased from history.
+                </div>
+            </a>
+
+            <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="featured-card">
+                <div class="card-label">Standalone Story</div>
+                <div class="card-title">Seven Days of Sun</div>
+                <div class="card-description">
+                    A tragic love story of a god cursed to watch his beloved die again and again through endless incarnations.
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Blood of the Wild Gods World Guide",
+  "description": "Complete guide to the Blood of the Wild Gods universe by Mileena Rayne, featuring characters, locations, magic systems, and lore.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Dark Fantasy World Building"
+    },
+    {
+      "@type": "Thing",
+      "name": "Character Guides"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fantasy Literature"
+    }
+  ],
+  "mainEntity": {
+    "@type": "CreativeWork",
+    "name": "Blood of the Wild Gods",
+    "author": {
+      "@type": "Person",
+      "name": "Mileena Rayne"
+    },
+    "genre": "Dark Fantasy"
+  }
+}
+</script>
