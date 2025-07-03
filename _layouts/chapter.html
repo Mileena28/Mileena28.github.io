@@ -3,6 +3,19 @@ layout: default
 ---
 
 <style>
+    /* Reading Progress Bar */
+    .reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 3px;
+        background: linear-gradient(90deg, #8a9fff, #a8b5ff);
+        transition: width 0.1s ease;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(138, 159, 255, 0.3);
+    }
+
     .chapter-container {
         max-width: 800px;
         margin: 0 auto;
@@ -44,6 +57,65 @@ layout: default
         color: #ddd;
         font-weight: 300;
         font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    /* Reading Meta Information */
+    .reading-meta {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        padding: 15px 30px;
+        background: rgba(138, 159, 255, 0.1);
+        border-radius: 25px;
+        border: 1px solid rgba(138, 159, 255, 0.3);
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #8a9fff;
+        font-size: 0.9em;
+        font-weight: 500;
+    }
+
+    .meta-icon {
+        font-size: 1.1em;
+    }
+
+    .meta-value {
+        color: #ddd;
+    }
+
+    /* Chapter Progress Indicator */
+    .chapter-progress {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(138, 159, 255, 0.2);
+        border-radius: 3px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #8a9fff, #a8b5ff);
+        border-radius: 3px;
+        transition: width 0.3s ease;
+        box-shadow: 0 0 10px rgba(138, 159, 255, 0.5);
+    }
+
+    .progress-text {
+        color: #999;
+        font-size: 0.85em;
+        font-style: italic;
     }
 
     .chapter-content {
@@ -84,6 +156,8 @@ layout: default
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 
     .nav-link {
@@ -93,6 +167,7 @@ layout: default
         padding: 10px 20px;
         border: 1px solid transparent;
         border-radius: 25px;
+        white-space: nowrap;
     }
 
     .nav-link:hover {
@@ -101,6 +176,7 @@ layout: default
         background: rgba(138, 159, 255, 0.1);
     }
 
+    /* Mobile Responsive */
     @media (max-width: 768px) {
         .chapter-title {
             font-size: 2em;
@@ -121,8 +197,42 @@ layout: default
         .chapter-content p:first-of-type::first-letter {
             font-size: 3em;
         }
+
+        .reading-meta {
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px 20px;
+        }
+
+        .meta-item {
+            justify-content: center;
+        }
+
+        .navigation {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .nav-link {
+            min-width: 200px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .reading-meta {
+            gap: 8px;
+            padding: 12px 15px;
+        }
+
+        .meta-item {
+            font-size: 0.8em;
+        }
     }
 </style>
+
+<!-- Reading Progress Bar -->
+<div class="reading-progress" id="reading-progress"></div>
 
 <article class="chapter-container">
     <div class="chapter-header">
@@ -136,9 +246,42 @@ layout: default
         {% if page.subtitle %}
         <div class="chapter-subtitle">{{ page.subtitle }}</div>
         {% endif %}
+
+        <!-- Reading Meta Information -->
+        <div class="reading-meta">
+            <div class="meta-item">
+                <span class="meta-icon">📄</span>
+                <span class="meta-value" id="word-count">...</span>
+                <span>words</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-icon">⏱️</span>
+                <span class="meta-value" id="read-time">...</span>
+                <span>min read</span>
+            </div>
+            {% if page.chapter_number and page.total_chapters %}
+            <div class="meta-item">
+                <span class="meta-icon">📖</span>
+                <span class="meta-value">Chapter {{ page.chapter_number }} of {{ page.total_chapters }}</span>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Chapter Progress (if part of a series) -->
+        {% if page.chapter_number and page.total_chapters %}
+        <div class="chapter-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: {{ page.chapter_number | times: 100 | divided_by: page.total_chapters }}%"></div>
+            </div>
+            <div class="progress-text">
+                Chapter {{ page.chapter_number }} of {{ page.total_chapters }} • 
+                {{ page.chapter_number | times: 100 | divided_by: page.total_chapters }}% complete
+            </div>
+        </div>
+        {% endif %}
     </div>
 
-    <div class="chapter-content">
+    <div class="chapter-content" id="chapter-content">
         {{ content }}
     </div>
 
@@ -158,3 +301,76 @@ layout: default
         {% endif %}
     </div>
 </article>
+
+<script>
+// Calculate word count and reading time
+function calculateReadingStats() {
+    const content = document.getElementById('chapter-content');
+    const text = content.textContent || content.innerText || '';
+    
+    // Count words (split by whitespace and filter empty strings)
+    const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+    const wordCount = words.length;
+    
+    // Calculate reading time (average 200 words per minute)
+    const readingTime = Math.ceil(wordCount / 200);
+    
+    // Update the display
+    document.getElementById('word-count').textContent = wordCount.toLocaleString();
+    document.getElementById('read-time').textContent = readingTime;
+}
+
+// Update reading progress bar
+function updateReadingProgress() {
+    const article = document.querySelector('.chapter-container');
+    const progressBar = document.getElementById('reading-progress');
+    
+    if (!article || !progressBar) return;
+    
+    // Get the article's position and dimensions
+    const articleTop = article.offsetTop;
+    const articleHeight = article.offsetHeight;
+    const articleBottom = articleTop + articleHeight;
+    
+    // Get current scroll position
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    
+    // Calculate progress
+    const scrollStart = articleTop - windowHeight * 0.1; // Start when article is 10% visible
+    const scrollEnd = articleBottom - windowHeight * 0.9; // End when article is 90% past
+    
+    if (scrollTop < scrollStart) {
+        progressBar.style.width = '0%';
+    } else if (scrollTop > scrollEnd) {
+        progressBar.style.width = '100%';
+    } else {
+        const progress = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100;
+        progressBar.style.width = Math.min(Math.max(progress, 0), 100) + '%';
+    }
+}
+
+// Smooth scroll to top when clicking progress bar
+function addProgressBarInteraction() {
+    const progressBar = document.getElementById('reading-progress');
+    if (progressBar) {
+        progressBar.style.cursor = 'pointer';
+        progressBar.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+}
+
+// Initialize everything when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    calculateReadingStats();
+    updateReadingProgress();
+    addProgressBarInteraction();
+});
+
+// Update progress on scroll
+window.addEventListener('scroll', updateReadingProgress);
+
+// Recalculate on window resize
+window.addEventListener('resize', updateReadingProgress);
+</script>
