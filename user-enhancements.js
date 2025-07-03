@@ -65,9 +65,9 @@ function addSocialShare() {
     
     shareDiv.innerHTML = `
         <span style="color: #999; font-size: 0.9em; margin-right: 10px;">Share:</span>
-        <a href="#" class="share-twitter" style="background: #1da1f2; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em; transition: all 0.3s ease;">Twitter</a>
-        <a href="#" class="share-facebook" style="background: #3b5998; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em; transition: all 0.3s ease;">Facebook</a>
-        <a href="#" class="share-reddit" style="background: #ff4500; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em; transition: all 0.3s ease;">Reddit</a>
+        <a href="#" class="share-twitter" style="background: #1da1f2; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em;">Twitter</a>
+        <a href="#" class="share-facebook" style="background: #3b5998; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em;">Facebook</a>
+        <a href="#" class="share-reddit" style="background: #ff4500; color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-size: 0.9em;">Reddit</a>
     `;
     
     // Add to content
@@ -75,18 +75,6 @@ function addSocialShare() {
     if (firstP) {
         firstP.after(shareDiv);
     }
-    
-    // Add hover effects
-    shareDiv.querySelectorAll('a').forEach(link => {
-        link.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-2px)';
-            this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-        });
-        link.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = 'none';
-        });
-    });
     
     // Add click handlers
     shareDiv.addEventListener('click', function(e) {
