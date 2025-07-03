@@ -81,7 +81,11 @@ When it was over and she tried to walk, she couldn't take more than two steps be
 
 > *"I knew I couldn't let my mom see, or she might make me go back."*
 
-But perhaps the most devastating part of her account is what happened afterward. When her father asked if it hurt, *"I lied and said no, because I knew it wasn't supposed to hurt, and everyone told me that it wouldn't, so it was probably something wrong with me."* A three-year-old was already learning to blame herself for medical trauma, already internalizing the message that her pain didn't matter if it contradicted what adults said should happen.
+But perhaps the most devastating part of her account is what happened afterward. When her father asked if it hurt:
+
+> *"I lied and said no, because I knew it wasn't supposed to hurt, and everyone told me that it wouldn't, so it was probably something wrong with me."* 
+
+A three-year-old was already learning to blame herself for medical trauma, already internalizing the message that her pain didn't matter if it contradicted what adults said should happen.
 
 Even the medical staff reinforced this gaslighting. After the burning antiseptic procedure, the nurse told her: 
 
@@ -163,7 +167,9 @@ The money isn't showing up because the medical establishment doesn't want the an
 
 Look at how medical institutions describe VCUGs to parents:
 
-The National Kidney Foundation: *"The test is not painful, but the child may have some stress and short-term discomfort."*
+The National Kidney Foundation: 
+
+> *"The test is not painful, but the child may have some stress and short-term discomfort."*
 
 Hospital websites universally describe the procedure as "uncomfortable but not painful."
 
