@@ -1,0 +1,380 @@
+---
+layout: default
+title: "Characters | Blood of the Wild Gods World Guide"
+description: "Meet the complex characters from Mileena Rayne's Blood of the Wild Gods series. From the Silver Hunter to divine beings, explore their stories, relationships, and journeys."
+image: "/assets/images/world-guide-characters.jpg"
+---
+
+<style>
+    .page-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+    }
+
+    .page-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .page-subtitle {
+        font-size: 1.2em;
+        color: #bbb;
+        max-width: 600px;
+        margin: 0 auto;
+        font-style: italic;
+    }
+
+    .series-breadcrumb {
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #8a9fff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(138, 159, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .characters-section {
+        padding: 80px 0;
+    }
+
+    .book-section {
+        margin-bottom: 80px;
+        background: rgba(20, 20, 20, 0.6);
+        border-radius: 20px;
+        padding: 50px;
+        border: 1px solid #333;
+    }
+
+    .book-title {
+        font-size: 2.2em;
+        color: #8a9fff;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .book-description {
+        color: #ccc;
+        text-align: center;
+        margin-bottom: 40px;
+        font-style: italic;
+    }
+
+    .characters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .character-card {
+        background: rgba(30, 30, 30, 0.8);
+        border: 1px solid #444;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+        backdrop-filter: blur(10px);
+    }
+
+    .character-card:hover {
+        border-color: #8a9fff;
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .character-avatar {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8a9fff;
+        font-weight: bold;
+        font-size: 1.5em;
+        border: 3px solid rgba(138, 159, 255, 0.5);
+    }
+
+    .character-name {
+        color: #f0f0f0;
+        font-size: 1.3em;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .character-title {
+        color: #8a9fff;
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        font-style: italic;
+    }
+
+    .character-preview {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .character-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .character-tag {
+        background: rgba(138, 159, 255, 0.2);
+        color: #8a9fff;
+        padding: 4px 12px;
+        border-radius: 12px;
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+
+    /* Special character types */
+    .character-card.protagonist .character-avatar {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2));
+        border-color: rgba(255, 215, 0, 0.5);
+        color: #ffd700;
+    }
+
+    .character-card.antagonist .character-avatar {
+        background: linear-gradient(135deg, rgba(204, 0, 0, 0.3), rgba(204, 0, 0, 0.2));
+        border-color: rgba(204, 0, 0, 0.5);
+        color: #cc0000;
+    }
+
+    .character-card.divine .character-avatar {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2));
+        border-color: rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        .page-title {
+            font-size: 2.2em;
+        }
+        
+        .book-section {
+            padding: 30px;
+        }
+        
+        .characters-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <h1 class="page-title">Characters</h1>
+        <p class="page-subtitle">
+            Meet the souls who walk between light and shadow, carrying the weight of divine blood and mortal choices.
+        </p>
+    </div>
+</section>
+
+<!-- Characters Section -->
+<section class="characters-section">
+    <div class="container">
+        
+        <!-- The Silence Characters -->
+        <div class="book-section">
+            <h2 class="book-title">Blood of the Wild Gods: The Silence</h2>
+            <p class="book-description">Five mortals chosen by the Silent God, each carrying their own darkness and light.</p>
+            
+            <div class="characters-grid">
+                <a href="/world-guide/characters/kaelen-rveyne/" class="character-card protagonist">
+                    <div class="character-avatar">K</div>
+                    <div class="character-name">Kaelen R'Veyne</div>
+                    <div class="character-title">"The Silver Hunter"</div>
+                    <div class="character-preview">
+                        A Bloodmarked warrior who hates what he is more than the monsters he hunts. His journey from isolation to love becomes a testament to choosing humanity over power.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Bloodmarked</div>
+                        <div class="character-tag">Ashborn</div>
+                        <div class="character-tag">Protector</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/elowen-faerwyn/" class="character-card protagonist">
+                    <div class="character-avatar">E</div>
+                    <div class="character-name">Elowen Faerwyn</div>
+                    <div class="character-title">"The Healer of Verdant Veil"</div>
+                    <div class="character-preview">
+                        A healer whose touch can mend bodies and souls, learning that some wounds can only be healed through love and acceptance rather than power.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Healer</div>
+                        <div class="character-tag">Empathic</div>
+                        <div class="character-tag">Verdant Veil</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/ryx-shadowclaw/" class="character-card protagonist">
+                    <div class="character-avatar">R</div>
+                    <div class="character-name">Ryx Shadowclaw</div>
+                    <div class="character-title">"The Young Beastborn"</div>
+                    <div class="character-preview">
+                        A boy caught between human and beast, learning that family isn't about blood—it's about those who choose to love you as you are.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Beastborn</div>
+                        <div class="character-tag">Shapeshifter</div>
+                        <div class="character-tag">Found Family</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/mordain-ashcroft/" class="character-card">
+                    <div class="character-avatar">M</div>
+                    <div class="character-name">Mordain Ashcroft</div>
+                    <div class="character-title">"The Scholar Priest"</div>
+                    <div class="character-preview">
+                        A man of faith whose certainty becomes his greatest weakness, learning that wisdom lies in questioning rather than proclaiming absolute truth.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Scholar</div>
+                        <div class="character-tag">Priest</div>
+                        <div class="character-tag">Atheria</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/sera-nightwhisper/" class="character-card">
+                    <div class="character-avatar">S</div>
+                    <div class="character-name">Sera Nightwhisper</div>
+                    <div class="character-title">"The Shadow Walker"</div>
+                    <div class="character-preview">
+                        A rogue who lives in the spaces between light and darkness, discovering that true freedom means choosing your own path rather than running from your past.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Rogue</div>
+                        <div class="character-tag">Shadow Magic</div>
+                        <div class="character-tag">Free Spirit</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/the-silent-god/" class="character-card antagonist divine">
+                    <div class="character-avatar">※</div>
+                    <div class="character-name">The Silent God</div>
+                    <div class="character-title">"The Erased One"</div>
+                    <div class="character-preview">
+                        A divine being erased from history, whose whispers threaten to unravel reality itself. Neither fully evil nor good, but something far more dangerous.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Divine</div>
+                        <div class="character-tag">Erased</div>
+                        <div class="character-tag">Corruption</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- The Chosen Characters -->
+        <div class="book-section">
+            <h2 class="book-title">Blood of the Wild Gods: The Chosen</h2>
+            <p class="book-description">Five years after The Silence, new voices emerge in a world learning to breathe again.</p>
+            
+            <div class="characters-grid">
+                <a href="/world-guide/characters/mira-roehart/" class="character-card protagonist">
+                    <div class="character-avatar">M</div>
+                    <div class="character-name">Mira Roehart</div>
+                    <div class="character-title">"The Reluctant Chosen"</div>
+                    <div class="character-preview">
+                        A young woman who finds solace in wild places, forced to confront what it means to belong when the world demands she be something she's not.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Coastal</div>
+                        <div class="character-tag">Nature-bound</div>
+                        <div class="character-tag">Questioning</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/lucien-altheris/" class="character-card antagonist">
+                    <div class="character-avatar">L</div>
+                    <div class="character-name">Lucien Altheris</div>
+                    <div class="character-title">"The Light-Bearer"</div>
+                    <div class="character-preview">
+                        A charismatic leader who brings promises of order and light to a broken world—but what happens when salvation wears a halo?
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Leader</div>
+                        <div class="character-tag">Charismatic</div>
+                        <div class="character-tag">Light Magic</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Lost Histories Characters -->
+        <div class="book-section">
+            <h2 class="book-title">The Lost Histories</h2>
+            <p class="book-description">Divine beings and mortals from forgotten tales, whose stories reveal the true nature of gods and humanity.</p>
+            
+            <div class="characters-grid">
+                <a href="/world-guide/characters/elodias/" class="character-card divine">
+                    <div class="character-avatar">E</div>
+                    <div class="character-name">Elodias</div>
+                    <div class="character-title">"The Sun-Touched God"</div>
+                    <div class="character-preview">
+                        A god cursed to watch his beloved die through endless incarnations, learning that love transcends time but cannot escape tragedy.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Divine</div>
+                        <div class="character-tag">Cursed</div>
+                        <div class="character-tag">Eternal Love</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/thainos/" class="character-card divine">
+                    <div class="character-avatar">T</div>
+                    <div class="character-name">Thainos</div>
+                    <div class="character-title">"The God Who Wept"</div>
+                    <div class="character-preview">
+                        A god who descended to walk among mortals for 1000 years, searching for one human untouched by cruelty—and learning that the search itself was the answer.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Divine</div>
+                        <div class="character-tag">Philosopher</div>
+                        <div class="character-tag">Seeker</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/malritha/" class="character-card divine">
+                    <div class="character-avatar">M</div>
+                    <div class="character-name">Malritha</div>
+                    <div class="character-title">"The Weaver of Sorrows"</div>
+                    <div class="character-preview">
+                        A goddess whose jealousy wove the curse that binds Elodias and Senia, proving that divine emotions can be just as destructive as mortal ones.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Divine</div>
+                        <div class="character-tag">Fate Weaver</div>
+                        <div class="character-tag">Jealous</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
