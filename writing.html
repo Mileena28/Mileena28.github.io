@@ -13,6 +13,361 @@ image: "/assets/images/EbookPic.jpg"
         background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
     }
 
+<style>
+    /* Table of Contents */
+    .toc-container {
+        position: fixed;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .toc-container.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .toc {
+        background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 15, 0.98));
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+        min-width: 280px;
+        max-width: 350px;
+        max-height: 60vh;
+        overflow-y: auto;
+        backdrop-filter: blur(20px);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .toc-title {
+        color: #f0f0f0;
+        font-size: 1.1em;
+        font-weight: 600;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(138, 159, 255, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .toc-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .toc-icon svg {
+        width: 12px;
+        height: 12px;
+        fill: #8a9fff;
+    }
+
+    .toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .toc-item {
+        margin-bottom: 8px;
+    }
+
+    .toc-link {
+        display: block;
+        color: #ccc;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        font-size: 0.9em;
+        line-height: 1.4;
+        border-left: 3px solid transparent;
+    }
+
+    .toc-link:hover {
+        color: #8a9fff;
+        background: rgba(138, 159, 255, 0.1);
+        border-left-color: #8a9fff;
+        transform: translateX(3px);
+    }
+
+    .toc-link.active {
+        color: #a8b5ff;
+        background: rgba(138, 159, 255, 0.15);
+        border-left-color: #a8b5ff;
+        font-weight: 500;
+    }
+
+    .toc-toggle {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        z-index: 1001;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.9), rgba(168, 181, 255, 0.8));
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toc-toggle:hover {
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+    }
+
+    .toc-toggle svg {
+        width: 24px;
+        height: 24px;
+        fill: #000;
+        transition: transform 0.3s ease;
+    }
+
+    .toc-toggle.open svg {
+        transform: rotate(180deg);
+    }
+
+    /* Hide scrollbar but keep functionality */
+    .toc::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .toc::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+    }
+
+    .toc::-webkit-scrollbar-thumb {
+        background: rgba(138, 159, 255, 0.5);
+        border-radius: 2px;
+    }
+
+    .toc::-webkit-scrollbar-thumb:hover {
+        background: rgba(138, 159, 255, 0.7);
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 1200px) {
+        .toc-container {
+            right: 20px;
+        }
+        
+        .toc {
+            min-width: 260px;
+            max-width: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .toc-container {
+            position: fixed;
+            top: 80px;
+            right: 10px;
+            left: 10px;
+            transform: none;
+            max-height: calc(100vh - 100px);
+        }
+        
+        .toc {
+            min-width: auto;
+            max-width: none;
+            width: 100%;
+        }
+        
+        .toc-toggle {
+            top: 90px;
+            right: 20px;
+            transform: none;
+        }
+        
+        .toc-toggle:hover {
+            transform: scale(1.1);
+        }
+    }
+</style>
+
+<!-- Table of Contents Toggle Button -->
+<button class="toc-toggle" id="tocToggle" aria-label="Toggle Table of Contents">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z"/>
+    </svg>
+</button>
+
+<!-- Table of Contents -->
+<div class="toc-container" id="tocContainer">
+    <nav class="toc">
+        <div class="toc-title">
+            <div class="toc-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                </svg>
+            </div>
+            Contents
+        </div>
+        <ul class="toc-list" id="tocList">
+            <!-- Generated by JavaScript -->
+        </ul>
+    </nav>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const tocContainer = document.getElementById('tocContainer');
+    const tocToggle = document.getElementById('tocToggle');
+    const tocList = document.getElementById('tocList');
+    let isVisible = false;
+
+    // Generate TOC from headings
+    function generateTOC() {
+        const headings = document.querySelectorAll('h2, h3');
+        const tocItems = [];
+
+        headings.forEach((heading, index) => {
+            // Create an ID if it doesn't exist
+            if (!heading.id) {
+                heading.id = `toc-heading-${index}`;
+            }
+
+            // Skip if heading is empty
+            if (!heading.textContent.trim()) return;
+
+            const level = heading.tagName.toLowerCase();
+            const text = heading.textContent.trim();
+            const id = heading.id;
+
+            tocItems.push({ level, text, id, element: heading });
+        });
+
+        // Build TOC HTML
+        let tocHTML = '';
+        tocItems.forEach(item => {
+            const indent = item.level === 'h3' ? 'margin-left: 15px;' : '';
+            tocHTML += `
+                <li class="toc-item">
+                    <a href="#${item.id}" class="toc-link" style="${indent}" data-target="${item.id}">
+                        ${item.text}
+                    </a>
+                </li>
+            `;
+        });
+
+        tocList.innerHTML = tocHTML;
+
+        // Add click handlers
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('data-target');
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        return tocItems;
+    }
+
+    // Toggle TOC visibility
+    function toggleTOC() {
+        isVisible = !isVisible;
+        tocContainer.classList.toggle('visible', isVisible);
+        tocToggle.classList.toggle('open', isVisible);
+    }
+
+    // Show TOC after scrolling down a bit
+    function checkScroll() {
+        const scrollY = window.scrollY;
+        const shouldShow = scrollY > 300;
+        
+        if (shouldShow) {
+            tocToggle.style.opacity = '1';
+            tocToggle.style.visibility = 'visible';
+        } else {
+            tocToggle.style.opacity = '0';
+            tocToggle.style.visibility = 'hidden';
+            if (isVisible) {
+                toggleTOC();
+            }
+        }
+    }
+
+    // Highlight current section
+    function highlightCurrentSection() {
+        const headings = document.querySelectorAll('h2, h3');
+        const tocLinks = document.querySelectorAll('.toc-link');
+        
+        let current = '';
+        
+        headings.forEach(heading => {
+            const rect = heading.getBoundingClientRect();
+            if (rect.top <= 100) {
+                current = heading.id;
+            }
+        });
+
+        tocLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-target') === current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    // Initialize
+    const tocItems = generateTOC();
+    
+    // Only show TOC if there are enough headings
+    if (tocItems.length < 3) {
+        tocToggle.style.display = 'none';
+        return;
+    }
+
+    // Event listeners
+    tocToggle.addEventListener('click', toggleTOC);
+    window.addEventListener('scroll', function() {
+        checkScroll();
+        highlightCurrentSection();
+    });
+
+    // Close TOC when clicking outside
+    document.addEventListener('click', function(e) {
+        if (isVisible && !tocContainer.contains(e.target) && !tocToggle.contains(e.target)) {
+            toggleTOC();
+        }
+    });
+
+    // Initial setup
+    tocToggle.style.opacity = '0';
+    tocToggle.style.visibility = 'hidden';
+    checkScroll();
+});
+</script>
+
     /* Writing Philosophy */
     .philosophy-section {
         padding: 80px 0;
