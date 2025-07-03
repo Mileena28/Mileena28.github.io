@@ -12,6 +12,401 @@ image: "/assets/images/mileena-rayne-author.jpg"
         background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
     }
 
+<style>
+    /* Search Container */
+    .search-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 40px auto;
+        max-width: 900px;
+        backdrop-filter: blur(10px);
+    }
+
+    .search-header {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .search-title {
+        color: #f0f0f0;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        font-weight: 300;
+    }
+
+    .search-subtitle {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    /* Search Input */
+    .search-input-container {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 15px 50px 15px 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid #444;
+        border-radius: 25px;
+        color: #e8e8e8;
+        font-size: 1em;
+        transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #8a9fff;
+        box-shadow: 0 0 20px rgba(138, 159, 255, 0.3);
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        fill: #666;
+        transition: fill 0.3s ease;
+    }
+
+    .search-input:focus + .search-icon {
+        fill: #8a9fff;
+    }
+
+    /* Filters */
+    .search-filters {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .filter-button {
+        padding: 8px 16px;
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 20px;
+        color: #8a9fff;
+        text-decoration: none;
+        font-size: 0.85em;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .filter-button:hover,
+    .filter-button.active {
+        background: rgba(138, 159, 255, 0.2);
+        border-color: #8a9fff;
+        color: #a8b5ff;
+        transform: translateY(-1px);
+    }
+
+    /* Search Results */
+    .search-results {
+        margin-top: 30px;
+    }
+
+    .search-stats {
+        color: #999;
+        font-size: 0.9em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .search-results-grid {
+        display: grid;
+        gap: 25px;
+    }
+
+    .search-result {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .search-result:hover {
+        transform: translateY(-3px);
+        border-color: #8a9fff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .search-result-meta {
+        color: #8a9fff;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .search-result-title {
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+
+    .search-result-title a {
+        color: #f0f0f0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .search-result-title a:hover {
+        color: #8a9fff;
+    }
+
+    .search-result-excerpt {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .search-result-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .search-result-tag {
+        background: rgba(138, 159, 255, 0.15);
+        color: #8a9fff;
+        padding: 4px 10px;
+        border-radius: 12px;
+        font-size: 0.8em;
+        border: 1px solid rgba(138, 159, 255, 0.3);
+    }
+
+    /* Highlight search terms */
+    .highlight {
+        background: rgba(138, 159, 255, 0.3);
+        color: #a8b5ff;
+        padding: 2px 4px;
+        border-radius: 3px;
+    }
+
+    /* No results */
+    .no-results {
+        text-align: center;
+        padding: 60px 20px;
+        color: #999;
+    }
+
+    .no-results-icon {
+        width: 60px;
+        height: 60px;
+        fill: #666;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
+    .no-results-title {
+        color: #ccc;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    .no-results-text {
+        line-height: 1.6;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+        .search-container {
+            margin: 20px 10px;
+            padding: 20px;
+        }
+
+        .search-filters {
+            justify-content: flex-start;
+        }
+
+        .filter-button {
+            font-size: 0.8em;
+            padding: 6px 12px;
+        }
+    }
+</style>
+
+<!-- Search Container -->
+<div class="search-container">
+    <div class="search-header">
+        <h2 class="search-title">Search Diary Entries</h2>
+        <p class="search-subtitle">Find entries by title, content, or category</p>
+    </div>
+
+    <div class="search-input-container">
+        <input 
+            type="text" 
+            class="search-input" 
+            id="searchInput"
+            placeholder="Search for thoughts, experiences, or specific topics..."
+            autocomplete="off"
+        >
+        <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+        </svg>
+    </div>
+
+    <div class="search-filters">
+        <button class="filter-button active" data-filter="all">All Entries</button>
+        <button class="filter-button" data-filter="Diary Entry">Personal Thoughts</button>
+        <button class="filter-button" data-filter="Community Stories">Community</button>
+        <button class="filter-button" data-filter="Writing">Creative Writing</button>
+        <button class="filter-button" data-filter="Music">Music & Songs</button>
+    </div>
+
+    <div class="search-results" id="searchResults">
+        <div class="search-stats" id="searchStats">
+            <span id="totalResults">0</span> entries found
+        </div>
+        <div class="search-results-grid" id="resultsGrid">
+            <!-- Results will be populated by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<!-- Create JSON index for search -->
+<script>
+// Generate search index from Jekyll posts
+window.searchIndex = [
+    {% for post in site.posts %}
+    {
+        "title": {{ post.title | jsonify }},
+        "url": {{ post.url | jsonify }},
+        "date": {{ post.date | date: "%B %d, %Y" | jsonify }},
+        "category": {{ post.category | default: "Diary Entry" | jsonify }},
+        "content": {{ post.content | strip_html | strip_newlines | truncate: 300 | jsonify }},
+        "excerpt": {{ post.excerpt | strip_html | strip_newlines | truncate: 200 | jsonify }},
+        "tags": {{ post.tags | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+];
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const searchStats = document.getElementById('searchStats');
+    const totalResults = document.getElementById('totalResults');
+    const resultsGrid = document.getElementById('resultsGrid');
+    const filterButtons = document.querySelectorAll('.filter-button');
+    
+    let currentFilter = 'all';
+    let currentQuery = '';
+
+    // Initialize with all posts
+    displayResults(window.searchIndex);
+
+    // Search functionality
+    function performSearch(query, filter = 'all') {
+        currentQuery = query.toLowerCase();
+        currentFilter = filter;
+        
+        let results = window.searchIndex;
+
+        // Filter by category
+        if (filter !== 'all') {
+            results = results.filter(post => post.category === filter);
+        }
+
+        // Filter by search query
+        if (query.trim()) {
+            results = results.filter(post => {
+                const searchText = `${post.title} ${post.content} ${post.excerpt}`.toLowerCase();
+                const tags = (post.tags || []).join(' ').toLowerCase();
+                return searchText.includes(currentQuery) || tags.includes(currentQuery);
+            });
+        }
+
+        displayResults(results);
+    }
+
+    // Display search results
+    function displayResults(results) {
+        totalResults.textContent = results.length;
+        
+        if (results.length === 0) {
+            resultsGrid.innerHTML = `
+                <div class="no-results">
+                    <svg class="no-results-icon" viewBox="0 0 24 24">
+                        <path d="M15.5,14H14.71L14.43,13.73C15.41,12.59 16,11.11 16,9.5A6.5,6.5 0 0,0 9.5,3A6.5,6.5 0 0,0 3,9.5A6.5,6.5 0 0,0 9.5,16C11.11,16 12.59,15.41 13.73,14.43L14,14.71V15.5L19,20.5L20.5,19L15.5,14M9.5,14C7,14 5,12 5,9.5C5,7 7,5 9.5,5C12,5 14,7 14,9.5C14,12 12,14 9.5,14M6.47,10.82L8,12.35L9.53,10.82L10.94,12.23L9.41,13.76L10.94,15.29L9.53,16.7L8,15.17L6.47,16.7L5.06,15.29L6.59,13.76L5.06,12.23L6.47,10.82Z"/>
+                    </svg>
+                    <div class="no-results-title">No entries found</div>
+                    <div class="no-results-text">
+                        Try adjusting your search terms or filters.<br>
+                        ${currentQuery ? `No results for "${currentQuery}"` : 'No entries in this category yet.'}
+                    </div>
+                </div>
+            `;
+            return;
+        }
+
+        resultsGrid.innerHTML = results.map(post => {
+            const highlightedTitle = highlightText(post.title, currentQuery);
+            const highlightedExcerpt = highlightText(post.excerpt, currentQuery);
+            const tags = (post.tags || []).map(tag => `<span class="search-result-tag">${tag}</span>`).join('');
+            
+            return `
+                <article class="search-result">
+                    <div class="search-result-meta">${post.date} • ${post.category}</div>
+                    <h3 class="search-result-title">
+                        <a href="${post.url}">${highlightedTitle}</a>
+                    </h3>
+                    <div class="search-result-excerpt">${highlightedExcerpt}</div>
+                    ${tags ? `<div class="search-result-tags">${tags}</div>` : ''}
+                </article>
+            `;
+        }).join('');
+    }
+
+    // Highlight search terms
+    function highlightText(text, query) {
+        if (!query.trim()) return text;
+        
+        const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+        return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+    // Escape regex special characters
+    function escapeRegex(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // Event listeners
+    searchInput.addEventListener('input', function() {
+        performSearch(this.value, currentFilter);
+    });
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Update active filter
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            performSearch(currentQuery, filter);
+        });
+    });
+
+    // Handle URL search parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchParam = urlParams.get('search');
+    if (searchParam) {
+        searchInput.value = searchParam;
+        performSearch(searchParam, currentFilter);
+    }
+});
+</script>
+
     .blog-title {
         font-size: 3em;
         font-weight: 300;
