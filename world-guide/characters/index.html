@@ -72,6 +72,27 @@ image: "/assets/images/world-guide-characters.jpg"
         font-style: italic;
     }
 
+    .substory-section {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid #444;
+    }
+
+    .substory-title {
+        font-size: 1.6em;
+        color: #b8860b;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .substory-description {
+        color: #aaa;
+        text-align: center;
+        margin-bottom: 25px;
+        font-style: italic;
+        font-size: 0.95em;
+    }
+
     .characters-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -181,6 +202,12 @@ image: "/assets/images/world-guide-characters.jpg"
         color: #ffffff;
     }
 
+    .character-card.historian .character-avatar {
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.3), rgba(184, 134, 11, 0.2));
+        border-color: rgba(184, 134, 11, 0.5);
+        color: #b8860b;
+    }
+
     @media (max-width: 768px) {
         .page-title {
             font-size: 2.2em;
@@ -245,6 +272,20 @@ image: "/assets/images/world-guide-characters.jpg"
                     </div>
                 </a>
 
+                <a href="/world-guide/characters/dain-solarius/" class="character-card antagonist">
+                    <div class="character-avatar">D</div>
+                    <div class="character-name">Dain Solarius</div>
+                    <div class="character-title">"The Fireborn Prince"</div>
+                    <div class="character-preview">
+                        A beloved Solarian prince whose legitimate desires for recognition and love were systematically corrupted by cosmic evil, transforming him from charming heir to cosmic tyrant.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Corrupted</div>
+                        <div class="character-tag">Fire Magic</div>
+                        <div class="character-tag">Tragic Fall</div>
+                    </div>
+                </a>
+
                 <a href="/world-guide/characters/ryx-shadowclaw/" class="character-card protagonist">
                     <div class="character-avatar">R</div>
                     <div class="character-name">Ryx Shadowclaw</div>
@@ -270,20 +311,6 @@ image: "/assets/images/world-guide-characters.jpg"
                         <div class="character-tag">Scholar</div>
                         <div class="character-tag">Priest</div>
                         <div class="character-tag">Redeemed</div>
-                    </div>
-                </a>
-
-                <a href="/world-guide/characters/dain-solarius/" class="character-card antagonist">
-                    <div class="character-avatar">D</div>
-                    <div class="character-name">Dain Solarius</div>
-                    <div class="character-title">"The Fireborn Prince"</div>
-                    <div class="character-preview">
-                        A beloved Solarian prince whose legitimate desires for recognition and love were systematically corrupted by cosmic evil, transforming him from charming heir to cosmic tyrant.
-                    </div>
-                    <div class="character-tags">
-                        <div class="character-tag">Corrupted</div>
-                        <div class="character-tag">Fire Magic</div>
-                        <div class="character-tag">Tragic Fall</div>
                     </div>
                 </a>
 
@@ -323,6 +350,20 @@ image: "/assets/images/world-guide-characters.jpg"
                     </div>
                 </a>
 
+                <a href="/world-guide/characters/katalina-petari/" class="character-card protagonist">
+                    <div class="character-avatar">K</div>
+                    <div class="character-name">Katalina (Kat) Petari</div>
+                    <div class="character-title">"The Fierce Heart"</div>
+                    <div class="character-preview">
+                        A determined warrior whose loyalty and courage burn as bright as her temper, learning to balance strength with wisdom.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Warrior</div>
+                        <div class="character-tag">Loyal</div>
+                        <div class="character-tag">Fierce</div>
+                    </div>
+                </a>
+
                 <a href="/world-guide/characters/lucien-altheris/" class="character-card antagonist">
                     <div class="character-avatar">L</div>
                     <div class="character-name">Lucien Altheris</div>
@@ -336,56 +377,455 @@ image: "/assets/images/world-guide-characters.jpg"
                         <div class="character-tag">Light Magic</div>
                     </div>
                 </a>
+
+                <a href="/world-guide/characters/elias-roehart/" class="character-card">
+                    <div class="character-avatar">E</div>
+                    <div class="character-name">Elias Roehart</div>
+                    <div class="character-title">"The Protective Brother"</div>
+                    <div class="character-preview">
+                        Mira's steadfast brother who would move mountains to keep his family safe, discovering that sometimes protection means letting go.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Family</div>
+                        <div class="character-tag">Protector</div>
+                        <div class="character-tag">Devoted</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/meridia/" class="character-card">
+                    <div class="character-avatar">M</div>
+                    <div class="character-name">Meridia</div>
+                    <div class="character-title">"The Mystic Guide"</div>
+                    <div class="character-preview">
+                        A mysterious figure whose connection to ancient powers guides the chosen through trials that will test their very souls.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Mystic</div>
+                        <div class="character-tag">Ancient</div>
+                        <div class="character-tag">Guide</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/mordekai/" class="character-card">
+                    <div class="character-avatar">M</div>
+                    <div class="character-name">Mordekai</div>
+                    <div class="character-title">"The Shadow Walker"</div>
+                    <div class="character-preview">
+                        A figure who moves between light and darkness, carrying secrets that could change the fate of the chosen.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Shadow</div>
+                        <div class="character-tag">Mysterious</div>
+                        <div class="character-tag">Secrets</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/the-forsaken/" class="character-card antagonist">
+                    <div class="character-avatar">F</div>
+                    <div class="character-name">The Forsaken</div>
+                    <div class="character-title">"The Abandoned One"</div>
+                    <div class="character-preview">
+                        A force born from rejection and abandonment, whose very existence challenges the chosen to confront what they fear to become.
+                    </div>
+                    <div class="character-tags">
+                        <div class="character-tag">Forsaken</div>
+                        <div class="character-tag">Dark</div>
+                        <div class="character-tag">Abandoned</div>
+                    </div>
+                </a>
             </div>
         </div>
 
         <!-- Lost Histories Characters -->
         <div class="book-section">
             <h2 class="book-title">The Lost Histories</h2>
-            <p class="book-description">Divine beings and mortals from forgotten tales, whose stories reveal the true nature of gods and humanity.</p>
+            <p class="book-description">Ancient tales of gods and mortals, woven together by the Historian who remembers what others have forgotten.</p>
             
+            <!-- Main Lost Histories Character -->
             <div class="characters-grid">
-                <a href="/world-guide/characters/elodias/" class="character-card divine">
-                    <div class="character-avatar">E</div>
-                    <div class="character-name">Elodias</div>
-                    <div class="character-title">"The Sun-Touched God"</div>
-                    <div class="character-preview">
-                        A god cursed to watch his beloved die through endless incarnations, learning that love transcends time but cannot escape tragedy.
-                    </div>
-                    <div class="character-tags">
-                        <div class="character-tag">Divine</div>
-                        <div class="character-tag">Cursed</div>
-                        <div class="character-tag">Eternal Love</div>
-                    </div>
-                </a>
-
-                <a href="/world-guide/characters/thainos/" class="character-card divine">
+                <a href="/world-guide/characters/tanneus-graja/" class="character-card historian">
                     <div class="character-avatar">T</div>
-                    <div class="character-name">Thainos</div>
-                    <div class="character-title">"The God Who Wept"</div>
+                    <div class="character-name">Tanneus G'Raja</div>
+                    <div class="character-title">"The Historian"</div>
                     <div class="character-preview">
-                        A god who descended to walk among mortals for 1000 years, searching for one human untouched by cruelty—and learning that the search itself was the answer.
+                        The keeper of lost stories and forgotten truths, who weaves together the threads of divine history to reveal patterns that shape the present.
                     </div>
                     <div class="character-tags">
-                        <div class="character-tag">Divine</div>
-                        <div class="character-tag">Philosopher</div>
-                        <div class="character-tag">Seeker</div>
+                        <div class="character-tag">Historian</div>
+                        <div class="character-tag">Keeper</div>
+                        <div class="character-tag">Truth-Seeker</div>
                     </div>
                 </a>
+            </div>
 
-                <a href="/world-guide/characters/malritha/" class="character-card divine">
-                    <div class="character-avatar">M</div>
-                    <div class="character-name">Malritha</div>
-                    <div class="character-title">"The Weaver of Sorrows"</div>
-                    <div class="character-preview">
-                        A goddess whose jealousy wove the curse that binds Elodias and Senia, proving that divine emotions can be just as destructive as mortal ones.
-                    </div>
-                    <div class="character-tags">
-                        <div class="character-tag">Divine</div>
-                        <div class="character-tag">Fate Weaver</div>
-                        <div class="character-tag">Jealous</div>
-                    </div>
-                </a>
+            <!-- Seven Days of Sun -->
+            <div class="substory-section">
+                <h3 class="substory-title">Seven Days of Sun</h3>
+                <p class="substory-description">The eternal love between a god and a mortal, cursed to repeat across time.</p>
+                
+                <div class="characters-grid">
+                    <a href="/world-guide/characters/elodias/" class="character-card divine">
+                        <div class="character-avatar">E</div>
+                        <div class="character-name">Elodias</div>
+                        <div class="character-title">"The Sun-Touched God"</div>
+                        <div class="character-preview">
+                            A god cursed to watch his beloved die through endless incarnations, learning that love transcends time but cannot escape tragedy.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Cursed</div>
+                            <div class="character-tag">Eternal Love</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/senia/" class="character-card">
+                        <div class="character-avatar">S</div>
+                        <div class="character-name">Senia</div>
+                        <div class="character-title">"The Beloved"</div>
+                        <div class="character-preview">
+                            A mortal woman whose love for a god spans lifetimes, each incarnation bringing new joy and inevitable heartbreak.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Mortal</div>
+                            <div class="character-tag">Reincarnated</div>
+                            <div class="character-tag">Beloved</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Weaver of Sorrows -->
+            <div class="substory-section">
+                <h3 class="substory-title">The Weaver of Sorrows</h3>
+                <p class="substory-description">The jealous goddess who wove the curse that binds divine love to eternal tragedy.</p>
+                
+                <div class="characters-grid">
+                    <a href="/world-guide/characters/malritha/" class="character-card divine">
+                        <div class="character-avatar">M</div>
+                        <div class="character-name">Malritha</div>
+                        <div class="character-title">"The Weaver of Sorrows"</div>
+                        <div class="character-preview">
+                            A goddess whose jealousy wove the curse that binds Elodias and Senia, proving that divine emotions can be just as destructive as mortal ones.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Fate Weaver</div>
+                            <div class="character-tag">Jealous</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The God Who Wept -->
+            <div class="substory-section">
+                <h3 class="substory-title">The God Who Wept</h3>
+                <p class="substory-description">A divine quest to find goodness in mortal hearts, spanning a thousand years of wandering.</p>
+                
+                <div class="characters-grid">
+                    <a href="/world-guide/characters/thainos/" class="character-card divine">
+                        <div class="character-avatar">T</div>
+                        <div class="character-name">Thainos</div>
+                        <div class="character-title">"The God Who Wept"</div>
+                        <div class="character-preview">
+                            A god who descended to walk among mortals for 1000 years, searching for one human untouched by cruelty—and learning that the search itself was the answer.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Philosopher</div>
+                            <div class="character-tag">Seeker</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/leika/" class="character-card divine">
+                        <div class="character-avatar">L</div>
+                        <div class="character-name">Leika</div>
+                        <div class="character-title">"Mother of Mountains"</div>
+                        <div class="character-preview">
+                            The earth goddess whose children are the mountain peaks, offering wisdom about patience and the slow strength of stone.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Earth</div>
+                            <div class="character-tag">Mother</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/libros/" class="character-card divine">
+                        <div class="character-avatar">L</div>
+                        <div class="character-name">Libros</div>
+                        <div class="character-title">"The Lawgiver"</div>
+                        <div class="character-preview">
+                            The god of justice and order, whose rigid adherence to law often conflicts with mercy and compassion.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Justice</div>
+                            <div class="character-tag">Order</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/archadeus/" class="character-card divine">
+                        <div class="character-avatar">A</div>
+                        <div class="character-name">Archadeus</div>
+                        <div class="character-title">"The War God"</div>
+                        <div class="character-preview">
+                            The fierce god of battle and conflict, creator of the Beastman races, whose strength is tempered by unexpected wisdom about necessary struggle.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">War</div>
+                            <div class="character-tag">Creator</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/atonia/" class="character-card divine">
+                        <div class="character-avatar">A</div>
+                        <div class="character-name">Atonia</div>
+                        <div class="character-title">"The Gentle Voice"</div>
+                        <div class="character-preview">
+                            A goddess whose soft wisdom offers counterpoint to divine conflicts, teaching that sometimes the smallest voice carries the greatest truth.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Gentle</div>
+                            <div class="character-tag">Wisdom</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/verites/" class="character-card divine">
+                        <div class="character-avatar">V</div>
+                        <div class="character-name">Verites</div>
+                        <div class="character-title">"The Truth-Speaker"</div>
+                        <div class="character-preview">
+                            The god of truth whose honesty cuts through deception, revealing uncomfortable realities that gods and mortals alike would prefer to ignore.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Divine</div>
+                            <div class="character-tag">Truth</div>
+                            <div class="character-tag">Honest</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/forest-elder/" class="character-card">
+                        <div class="character-avatar">F</div>
+                        <div class="character-name">The Forest Elder</div>
+                        <div class="character-title">"Keeper of Ancient Ways"</div>
+                        <div class="character-preview">
+                            An ancient mortal who guards the old wisdom of the forests, teaching that some knowledge transcends divine understanding.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Elder</div>
+                            <div class="character-tag">Wisdom</div>
+                            <div class="character-tag">Forest</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/the-abbot/" class="character-card">
+                        <div class="character-avatar">A</div>
+                        <div class="character-name">The Abbot</div>
+                        <div class="character-title">"Servant of Faith"</div>
+                        <div class="character-preview">
+                            A humble monk whose simple devotion challenges divine expectations about worship and reveals the power of authentic faith.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Monk</div>
+                            <div class="character-tag">Faith</div>
+                            <div class="character-tag">Humble</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/governor-verin/" class="character-card">
+                        <div class="character-avatar">V</div>
+                        <div class="character-name">Governor Verin</div>
+                        <div class="character-title">"The Corrupt Ruler"</div>
+                        <div class="character-preview">
+                            A political leader whose corruption and cruelty exemplify the worst of mortal nature, testing divine patience and understanding.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Political</div>
+                            <div class="character-tag">Corrupt</div>
+                            <div class="character-tag">Cruel</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/marra-free-people/" class="character-card">
+                        <div class="character-avatar">M</div>
+                        <div class="character-name">Marra and The Free People</div>
+                        <div class="character-title">"The Resilient Community"</div>
+                        <div class="character-preview">
+                            A group of escaped slaves who build a new life in freedom, demonstrating the strength found in community and shared struggle.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Freedom</div>
+                            <div class="character-tag">Community</div>
+                            <div class="character-tag">Resilient</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Sin of Mercy -->
+            <div class="substory-section">
+                <h3 class="substory-title">The Sin of Mercy</h3>
+                <p class="substory-description">An angel's fall from grace through the act of mercy, and the mortal consequences of divine compassion.</p>
+                
+                <div class="characters-grid">
+                    <a href="/world-guide/characters/valiel-azrael/" class="character-card divine">
+                        <div class="character-avatar">V</div>
+                        <div class="character-name">Valiel/Azrael</div>
+                        <div class="character-title">"The Fallen Angel"</div>
+                        <div class="character-preview">
+                            An angel cast down for showing mercy when commanded to destroy, learning that sometimes the greatest sin is choosing compassion over obedience.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Angel</div>
+                            <div class="character-tag">Fallen</div>
+                            <div class="character-tag">Mercy</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/rynn/" class="character-card">
+                        <div class="character-avatar">R</div>
+                        <div class="character-name">Rynn</div>
+                        <div class="character-title">"The Innocent"</div>
+                        <div class="character-preview">
+                            A mortal whose purity and innocence move an angel to defy divine command, becoming the catalyst for celestial rebellion.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Innocent</div>
+                            <div class="character-tag">Pure</div>
+                            <div class="character-tag">Catalyst</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/hope/" class="character-card">
+                        <div class="character-avatar">H</div>
+                        <div class="character-name">Hope</div>
+                        <div class="character-title">"The Living Virtue"</div>
+                        <div class="character-preview">
+                            More than a name, Hope embodies the concept itself, proving that some things transcend even divine judgment.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Virtue</div>
+                            <div class="character-tag">Transcendent</div>
+                            <div class="character-tag">Living Concept</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/villagers-oakhaven/" class="character-card">
+                        <div class="character-avatar">O</div>
+                        <div class="character-name">The Villagers of Oakhaven</div>
+                        <div class="character-title">"The Condemned Community"</div>
+                        <div class="character-preview">
+                            A simple village marked for divine destruction, whose ordinary lives and small kindnesses challenge the nature of justice itself.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Community</div>
+                            <div class="character-tag">Ordinary</div>
+                            <div class="character-tag">Condemned</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Song of Blood and Stone -->
+            <div class="substory-section">
+                <h3 class="substory-title">The Song of Blood and Stone</h3>
+                <p class="substory-description">Ancient powers clash in a tale of kingdoms, honor, and the price of wielding forces beyond mortal understanding.</p>
+                
+                <div class="characters-grid">
+                    <a href="/world-guide/characters/khali/" class="character-card">
+                        <div class="character-avatar">K</div>
+                        <div class="character-name">Khali</div>
+                        <div class="character-title">"The Blood-Singer"</div>
+                        <div class="character-preview">
+                            A warrior whose connection to ancient blood magic carries both power and terrible cost, learning that some songs should never be sung.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Blood Magic</div>
+                            <div class="character-tag">Warrior</div>
+                            <div class="character-tag">Ancient Power</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/princess-jade/" class="character-card">
+                        <div class="character-avatar">J</div>
+                        <div class="character-name">Princess Jade of Moradim</div>
+                        <div class="character-title">"The Stone Heart"</div>
+                        <div class="character-preview">
+                            A princess whose kingdom is built on stone and tradition, facing choices that will crack the very foundations of her world.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Royalty</div>
+                            <div class="character-tag">Stone Magic</div>
+                            <div class="character-tag">Tradition</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/eshuah/" class="character-card">
+                        <div class="character-avatar">E</div>
+                        <div class="character-name">Eshuah</div>
+                        <div class="character-title">"The Vaelari of Fayespire"</div>
+                        <div class="character-preview">
+                            A mystical figure from the ethereal realm of Fayespire, bridging the gap between mortal ambition and fae wisdom.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Vaelari</div>
+                            <div class="character-tag">Fayespire</div>
+                            <div class="character-tag">Mystical</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Divine War -->
+            <div class="substory-section">
+                <h3 class="substory-title">The Divine War</h3>
+                <p class="substory-description">Mortals caught in the crossfire of divine conflict, where choosing sides may determine the fate of reality itself.</p>
+                
+                <div class="characters-grid">
+                    <a href="/world-guide/characters/astrid/" class="character-card">
+                        <div class="character-avatar">A</div>
+                        <div class="character-name">Astrid</div>
+                        <div class="character-title">"The Divine Warrior"</div>
+                        <div class="character-preview">
+                            A mortal champion chosen to fight in a war between gods, discovering that some battles cannot be won through strength alone.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Champion</div>
+                            <div class="character-tag">Divine War</div>
+                            <div class="character-tag">Chosen</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/natalia/" class="character-card">
+                        <div class="character-avatar">N</div>
+                        <div class="character-name">Natalia</div>
+                        <div class="character-title">"The Torn Heart"</div>
+                        <div class="character-preview">
+                            Caught between loyalties in a divine conflict, she embodies the mortal cost of godly ambition and celestial pride.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Torn</div>
+                            <div class="character-tag">Loyalty</div>
+                            <div class="character-tag">Sacrifice</div>
+                        </div>
+                    </a>
+
+                    <a href="/world-guide/characters/eamon/" class="character-card">
+                        <div class="character-avatar">E</div>
+                        <div class="character-name">Eamon</div>
+                        <div class="character-title">"The Peacemaker"</div>
+                        <div class="character-preview">
+                            A mortal who dares to stand between warring gods, believing that peace is worth any personal cost, even when the gods themselves have forgotten mercy.
+                        </div>
+                        <div class="character-tags">
+                            <div class="character-tag">Peacemaker</div>
+                            <div class="character-tag">Brave</div>
+                            <div class="character-tag">Mediator</div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
 
