@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mira Roehart - The Violet-Eyed | The Chosen Series</title>
+    <meta name="description" content="Meet Mira Roehart, the half-Nimwe protagonist from The Chosen series. A complex character struggling with identity, trauma, and the transformative power of maternal love.">
+</head>
+<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #16213e 100%); color: #ddd; font-family: 'Georgia', serif; line-height: 1.6;">
+
+<style>
+    /* Character Page Styles */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(138, 43, 226, 0.05) 100%);
+    }
+
+    .character-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .character-tagline {
+        font-size: 1.4em;
+        color: #8a2be2;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .series-breadcrumb {
+        background: rgba(138, 43, 226, 0.1);
+        border: 1px solid rgba(138, 43, 226, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #8a2be2;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(138, 43, 226, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .character-content {
+        padding: 80px 0;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .character-portrait {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    .portrait-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .character-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+        border: 2px solid #8a2be2;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8a2be2;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+        animation: shimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); }
+    }
+
+    .character-stats {
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #8a2be2;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .stat-value {
+        color: #ddd;
+        margin-top: 5px;
+    }
+
+    .character-info {
+        
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 25px;
+        font-weight: 400;
+        border-bottom: 2px solid #8a2be2;
+        padding-bottom: 10px;
+    }
+
+    .character-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .character-quote {
+        background: rgba(138, 43, 226, 0.05);
+        border-left: 4px solid #8a2be2;
+        padding: 25px 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+    }
+
+    .character-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 3em;
+        color: #8a2be2;
+        opacity: 0.3;
+    }
+
+    .quote-source {
+        text-align: right;
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 15px;
+        font-style: normal;
+    }
+
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .trait-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+        border-color: #8a2be2;
+        transform: translateY(-5px);
+    }
+
+    .trait-title {
+        color: #8a2be2;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .trait-description {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    .transformations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .transformation-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .transformation-card:hover {
+        border-color: #8a2be2;
+        transform: translateY(-5px);
+    }
+
+    .transformation-card.naive {
+        border-left: 4px solid #87ceeb;
+    }
+
+    .transformation-card.broken {
+        border-left: 4px solid #cc0000;
+    }
+
+    .transformation-card.awakened {
+        border-left: 4px solid #8a2be2;
+    }
+
+    .transformation-card.maternal {
+        border-left: 4px solid #ffd700;
+    }
+
+    .transformation-title {
+        color: #8a2be2;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .transformation-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .related-characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .related-character {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .related-character:hover {
+        border-color: #8a2be2;
+        transform: translateY(-5px);
+    }
+
+    .related-avatar {
+        width: 60px;
+        height: 60px;
+        background: rgba(138, 43, 226, 0.2);
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #8a2be2;
+        font-weight: bold;
+    }
+
+    .related-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .related-role {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    .character-summary {
+        padding: 60px 0;
+        background: rgba(10, 10, 20, 0.6);
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    .summary-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .summary-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 40px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .summary-content {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .summary-content p {
+        margin-bottom: 25px;
+    }
+
+    .summary-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .read-more-section {
+        background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(138, 43, 226, 0.1));
+        border: 1px solid #8a2be2;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+    .cta-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #8a2be2, #9932cc);
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4);
+    }
+
+    .cta-button.secondary {
+        background: rgba(138, 43, 226, 0.2);
+        color: #8a2be2;
+        border: 1px solid #8a2be2;
+    }
+
+    .cta-button.secondary:hover {
+        background: rgba(138, 43, 226, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .character-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .character-portrait {
+            position: static;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .character-title {
+            font-size: 2.2em;
+        }
+        
+        .character-tagline {
+            font-size: 1.2em;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .transformations-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
+        <h1 class="character-title">Mira Roehart</h1>
+        <p class="character-tagline">"The Violet-Eyed"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Violet eyes like amethyst flames<br>Dark hair, awakened powers</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Chosen: Chapter 1</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Half-Human, Half-Nimwe</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Location</div>
+                            <div class="stat-value">Rivenglade → Forsaken Sanctuary</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Powers</div>
+                            <div class="stat-value">Void manipulation, Light disruption</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Conflict</div>
+                            <div class="stat-value">Survival vs. Belonging</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Fugitive, awakened, sanctuary seeker</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Bridge Between Worlds</h2>
+                    <div class="character-description">
+                        <p>Mira Roehart walks the knife's edge between worlds, belonging fully to neither yet carrying the potential to bridge them all. Born to a human father and mysterious Nimwe mother, she spent her youth believing herself entirely human until traumatic circumstances awakened powers that would make her the most valuable—and dangerous—person in her world.</p>
+                        
+                        <p>Her violet eyes mark her as different, her void-touched abilities disrupt the very foundations of religious control, and her awakened heritage represents the intersection of human understanding and otherworldly power. Yet beneath the supernatural significance lies a young woman fighting for the most basic of human needs: the right to choose her own path, to love without manipulation, and to forge her own destiny in a world that sees her only as a weapon.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        The world has balance. Light and shadow, joy and sorrow, creation and destruction, good and evil... they have to coexist.
+                        <div class="quote-source">— Mira's philosophical understanding to Kat</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">Personality & Core Traits</h2>
+                    <div class="character-description">
+                        <p>Mira's personality has been forged in the crucible of systematic abuse, awakened powers, and the fierce protective love of impending motherhood. She embodies the tension between vulnerability and strength, doubt and certainty, the desperate need for belonging and the hard-won wisdom to recognize manipulation.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Truth Seeker</div>
+                            <div class="trait-description">Questions authority and seeks authentic understanding, even when the truth brings danger. Her natural skepticism often conflicts with her desire to belong.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Fierce Liberator</div>
+                            <div class="trait-description">Uses her void powers to free others from mental manipulation, seeing her own suffering reflected in their captivity and choosing healing over revenge.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Empathetic Healer</div>
+                            <div class="trait-description">Uses her powers to free others from mental manipulation, seeing her own suffering reflected in their captivity and choosing liberation over revenge.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Strategic Survivor</div>
+                            <div class="trait-description">Learning to navigate dangerous political situations while protecting vital secrets. Trauma has taught her to evaluate trust carefully but not abandon hope for genuine connection.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Father... why am I so... different from everyone else? Why do I never... seem to belong?
+                        <div class="quote-source">— Mira's early questioning of her identity</div>
+                    </div>
+                </section>
+
+                <!-- Transformations & Journey -->
+                <section class="section">
+                    <h2 class="section-title">Four Stages of Becoming</h2>
+                    <div class="character-description">
+                        <p>Mira's character arc represents a harrowing journey from naive questioning to empowered protection, each stage teaching her painful but necessary lessons about power, love, and the courage required to choose her own path.</p>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card naive">
+                            <div class="transformation-title">The Questioning Daughter</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Free-spirited girl in Rivenglade questioning religious authority<br>
+                                <strong>Catalyst:</strong> Father's conversion to Zenithianism and Lucien's arrival<br>
+                                <strong>Lesson:</strong> Innocence is no protection against systematic manipulation<br>
+                                <strong>Loss:</strong> Childhood safety and unquestioning trust in authority
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card broken">
+                            <div class="transformation-title">The Shattered Bride</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Trapped in forced marriage, enduring systematic abuse<br>
+                                <strong>Catalyst:</strong> Lucien's escalating control and sexual violence<br>
+                                <strong>Lesson:</strong> Survival sometimes requires seeming surrender while protecting core self<br>
+                                <strong>Loss:</strong> Trust in love, faith in rescue, belief in her own worth
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card awakened">
+                            <div class="transformation-title">The Void-Touched Fugitive</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Powers awakened at suicide attempt, violent escape from captivity<br>
+                                <strong>Catalyst:</strong> Nimwe intervention at the hidden waterfall<br>
+                                <strong>Lesson:</strong> True power comes from choosing life and embracing her authentic nature<br>
+                                <strong>Gain:</strong> Understanding of heritage, ability to resist control, path to freedom
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card maternal">
+                            <div class="transformation-title">The Strategic Liberator</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Learning to navigate faction politics while maintaining her independence<br>
+                                <strong>Catalyst:</strong> Understanding her value to multiple groups and the need for careful alliances<br>
+                                <strong>Lesson:</strong> True power lies in freeing others while protecting her own autonomy<br>
+                                <strong>Gain:</strong> Purpose beyond personal survival, ability to see through manipulation while building genuine connections
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Powers & Abilities -->
+                <section class="section">
+                    <h2 class="section-title">Void Heritage & Abilities</h2>
+                    <div class="character-description">
+                        <p>Mira's half-Nimwe heritage grants her powers that disrupt the very foundation of Zenithian control, making her both invaluable ally and dangerous asset to any faction seeking to use her abilities.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Light Disruption</div>
+                            <div class="trait-description">Can break Zenithian mind control and spiritual manipulation through touch, freeing others from the "haze" of forced conversion.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Void Manifestation</div>
+                            <div class="trait-description">Black spectral tendrils emerge during extreme stress, providing both offensive capability and protective barrier against attacks.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Blood Magic Source</div>
+                            <div class="trait-description">Her void-infused blood can be extracted to create amulets that grant others resistance to Zenithian control.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Prophetic Reception</div>
+                            <div class="trait-description">Receives warnings and guidance through dreams, often featuring lost friends or mysterious protectors connected to Nimwe heritage.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Key Relationships</h2>
+                    <div class="character-description">
+                        <p>Mira's relationships reflect her journey from naive trust through systematic betrayal to the careful hope of finding genuine allies who see her as person rather than weapon.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="/world-guide/characters/mordekai/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mordekai</div>
+                            <div class="related-role">Trusted Ally, Secret Keeper</div>
+                        </a>
+                        <a href="/world-guide/characters/lucien-altheris/" class="related-character">
+                            <div class="related-avatar">L</div>
+                            <div class="related-name">Lucien Altheris</div>
+                            <div class="related-role">Abuser, Child's Father</div>
+                        </a>
+                        <a href="/world-guide/characters/meridia/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Meridia</div>
+                            <div class="related-role">Manipulative Protector</div>
+                        </a>
+                        <a href="/world-guide/characters/elias-roehart/" class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Elias Roehart</div>
+                            <div class="related-role">Beloved Father, Betrayer</div>
+                        </a>
+                        <a href="/world-guide/characters/katalina-petari/" class="related-character">
+                            <div class="related-avatar">K</div>
+                            <div class="related-name">Katalina "Kat"</div>
+                            <div class="related-role">Lost Best Friend</div>
+                        </a>
+                        <a href="/world-guide/characters/wren/" class="related-character">
+                            <div class="related-avatar">W</div>
+                            <div class="related-name">Wren</div>
+                            <div class="related-role">Rescuer, Uncertain Ally</div>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Bridge Who Chose Freedom</h2>
+                <div class="summary-content">
+                    <p>Mira Roehart embodies the transformative power of love over hatred, balance over extremism, and authentic connection over manipulation. Her journey from powerless victim to fierce liberator illustrates how the greatest strength often emerges from our deepest wounds, and how choosing to heal others—especially when that healing stems from personal trauma—can become the most radical act of resistance against systems designed to break the human spirit.</p>
+
+                    <p>Born between worlds yet belonging fully to neither, Mira represents the possibility of bridge-building in a reality torn apart by religious and political extremism. Her half-Nimwe heritage grants her powers that disrupt the foundations of Zenithian control, while her human upbringing provides the emotional grounding to use those abilities for liberation rather than revenge. The violet eyes that mark her as different also reflect the depth of her capacity for authentic connection despite repeated betrayals.</p>
+
+                    <p>Her awakening to her true nature becomes the catalyst for her transformation from survivor to liberator, proving that identity can indeed be reclaimed from even the darkest circumstances. The powers she carries—void manipulation that breaks mental control and frees others from spiritual oppression—represent not just the convergence of bloodlines, but the hope for a future where balance replaces extremism and understanding transcends fear. Through her growing sense of purpose, Mira discovers that true protection comes not from building walls but from the courage to remain open to genuine connection while learning to recognize and resist manipulation.</p>
+
+                    <p>Her abilities to break mental control and free others from spiritual manipulation reflect her own journey toward psychological liberation. Rather than becoming another zealot fighting fire with fire, she chooses the more difficult path of healing—both for herself and for those trapped in systems of control. Her story demonstrates that true revolution begins not with armies or ideology, but with individual hearts choosing compassion over hatred, even when hatred would be justified.</p>
+
+                    <p>Mira's ultimate significance lies in her refusal to be defined by others' agendas while maintaining her capacity for growth and connection. In a world where everyone seeks to use her for their own ends, her greatest act of rebellion is choosing to love fiercely while protecting herself wisely. She proves that healing is possible, cycles can be broken, and sometimes the most profound power lies not in grand gestures but in the quiet courage to choose hope over despair, one day at a time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Follow Mira's Journey</h2>
+            <p class="cta-description">
+                Witness the violet-eyed girl's transformation from naive questioner to empowered liberator. 
+                Mira's story explores identity, trauma, and the courage it takes to choose healing over hatred.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
