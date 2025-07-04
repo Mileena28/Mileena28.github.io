@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wren - The Rescuer | The Chosen</title>
+    <meta name="description" content="Meet Wren from The Chosen series. A practical field operative of the Forsaken resistance who rescues the desperate and protects the vulnerable through competent action and quiet heroism.">
+</head>
+<body style="margin: 0; padding: 0; background: #0a0a0a; color: #f0f0f0; font-family: 'Georgia', serif; line-height: 1.6;">
+
+<style>
+    /* Character Page Styles */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(0, 100, 50, 0.1) 0%, rgba(0, 100, 50, 0.05) 100%);
+    }
+
+    .character-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .character-tagline {
+        font-size: 1.4em;
+        color: #4a9960;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .series-breadcrumb {
+        background: rgba(0, 100, 50, 0.1);
+        border: 1px solid rgba(0, 100, 50, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #4a9960;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(0, 100, 50, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .character-content {
+        padding: 80px 0;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .character-portrait {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    .portrait-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .character-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(0, 100, 50, 0.2), rgba(0, 100, 50, 0.1));
+        border: 2px solid #4a9960;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4a9960;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0, 100, 50, 0.1) 0%, transparent 70%);
+        animation: shimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); }
+    }
+
+    .character-stats {
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #4a9960;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .stat-value {
+        color: #ddd;
+        margin-top: 5px;
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 25px;
+        font-weight: 400;
+        border-bottom: 2px solid #4a9960;
+        padding-bottom: 10px;
+    }
+
+    .character-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .character-quote {
+        background: rgba(0, 100, 50, 0.05);
+        border-left: 4px solid #4a9960;
+        padding: 25px 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+    }
+
+    .character-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 3em;
+        color: #4a9960;
+        opacity: 0.3;
+    }
+
+    .quote-source {
+        text-align: right;
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 15px;
+        font-style: normal;
+    }
+
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .trait-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+        border-color: #4a9960;
+        transform: translateY(-5px);
+    }
+
+    .trait-title {
+        color: #4a9960;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .trait-description {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .skill-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+        border-color: #4a9960;
+        transform: translateY(-5px);
+    }
+
+    .skill-card.stealth {
+        border-left: 4px solid #2d5a3d;
+    }
+
+    .skill-card.rescue {
+        border-left: 4px solid #4a9960;
+    }
+
+    .skill-card.community {
+        border-left: 4px solid #6bb26e;
+    }
+
+    .skill-title {
+        color: #4a9960;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .skill-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .related-characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .related-character {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .related-character:hover {
+        border-color: #4a9960;
+        transform: translateY(-5px);
+    }
+
+    .related-avatar {
+        width: 60px;
+        height: 60px;
+        background: rgba(74, 153, 96, 0.2);
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4a9960;
+        font-weight: bold;
+    }
+
+    .related-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .related-role {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    .mission-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .mission-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .mission-card:hover {
+        border-color: #4a9960;
+        transform: translateY(-5px);
+    }
+
+    .mission-title {
+        color: #4a9960;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .mission-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .rescue-section {
+        background: rgba(0, 100, 50, 0.05);
+        border: 1px solid rgba(0, 100, 50, 0.3);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 40px 0;
+    }
+
+    .rescue-title {
+        color: #4a9960;
+        font-size: 1.4em;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .rescue-description {
+        color: #ccc;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .speech-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    .speech-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #444;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .speech-title {
+        color: #4a9960;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .speech-text {
+        color: #ddd;
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    .speech-context {
+        color: #aaa;
+        font-size: 0.9em;
+    }
+
+    .character-summary {
+        padding: 60px 0;
+        background: rgba(10, 20, 15, 0.6);
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    .summary-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .summary-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 40px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .summary-content {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .summary-content p {
+        margin-bottom: 25px;
+    }
+
+    .summary-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .read-more-section {
+        background: linear-gradient(135deg, rgba(0, 100, 50, 0.2), rgba(0, 100, 50, 0.1));
+        border: 1px solid #4a9960;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+    .cta-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #4a9960, #6bb26e);
+        color: #000;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(74, 153, 96, 0.4);
+    }
+
+    .cta-button.secondary {
+        background: rgba(74, 153, 96, 0.2);
+        color: #4a9960;
+        border: 1px solid #4a9960;
+    }
+
+    .cta-button.secondary:hover {
+        background: rgba(74, 153, 96, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .character-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .character-portrait {
+            position: static;
+        }
+        
+        .speech-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .character-title {
+            font-size: 2.2em;
+        }
+        
+        .character-tagline {
+            font-size: 1.2em;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
+        <h1 class="character-title">Wren</h1>
+        <p class="character-tagline">"The Rescuer"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Middle-aged woman with practical bearing,<br>weathered by field operations and forest work</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human, Forsaken by Zenith</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Location</div>
+                            <div class="stat-value">Hidden Forsaken Sanctuary</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Age</div>
+                            <div class="stat-value">Around 40 years old</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Specialization</div>
+                            <div class="stat-value">Rescue Operations & Field Work</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Trait</div>
+                            <div class="stat-value">Practical Competence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Active Field Operative</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Forest Shadow Who Saves Lives</h2>
+                    <div class="character-description">
+                        <p>In the dangerous borderlands where the Zenithian Inquisition hunts the Forsaken, Wren moves like a shadow between the ancient trees, appearing when hope seems lost and disappearing before pursuit can follow. A middle-aged woman with the weathered competence of someone who has spent years operating in hostile territory, she represents the practical, field-experienced wing of the resistance—the ones who risk everything to pull desperate souls from the jaws of persecution.</p>
+                        
+                        <p>Her rescue of Mira from both Lucien's relentless pursuit and a void-corrupted Beastborn demonstrates the twin pillars of her character: unshakeable competence in dangerous situations and an unwavering protective instinct that drives her to intervene when others need help. Where some resist through grand strategy or explosive confrontation, Wren embodies quiet heroism—the steady reliability of someone who simply shows up when it matters most.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Oi… psst… I can get ya outta here. 'Less ya wanna take on that beast—an' trust me, ya don't—or let that righteous mob drag ya back to Rivenglade, I'm the best shot ya got.
+                        <div class="quote-source">— Wren's first words to Mira during her forest rescue</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">Practical Heart, Protective Soul</h2>
+                    <div class="character-description">
+                        <p>Wren's strength lies not in supernatural abilities or political brilliance, but in her unshakeable reliability and natural protective instincts. Her direct, no-nonsense approach strips away the complexity that can paralyze others in crisis, focusing instead on immediate, actionable solutions that save lives.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Practical Competence</div>
+                            <div class="trait-description">Approaches dangerous situations with calm professionalism, cutting through chaos to focus on what needs to be done. Prefers effective action over elaborate planning.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Protective Instinct</div>
+                            <div class="trait-description">Natural inclination to help those in danger, especially the vulnerable. Takes personal responsibility for the safety of sanctuary members like Ezzie.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Direct Communication</div>
+                            <div class="trait-description">Speaks plainly and honestly without pretense. Uses informal dialect and colloquial expressions that make her approachable despite her competence.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Community Minded</div>
+                            <div class="trait-description">Balances dangerous field work with quiet care for sanctuary members, serving as informal caretaker for those who need protection or understanding.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        She's… well, she's not quite right in the head, if ya catch my drift. She ain't mean ya no harm. Just… a bit touched by the Void, poor lass.
+                        <div class="quote-source">— Wren gently explaining Ezzie's condition while protecting her from misunderstanding</div>
+                    </div>
+                </section>
+
+                <!-- Skills & Capabilities -->
+                <section class="section">
+                    <h2 class="section-title">Ghost in the Greenwood</h2>
+                    <div class="character-description">
+                        <p>Years of field operations have honed Wren into a master of practical survival skills, from moving unseen through hostile territory to making split-second tactical decisions that mean the difference between rescue and capture.</p>
+                    </div>
+
+                    <div class="skills-grid">
+                        <div class="skill-card stealth">
+                            <div class="skill-title">Forest Stealth</div>
+                            <div class="skill-description">
+                                <strong>Natural Camouflage:</strong> "Almost invisible against the ancient trees, blending seamlessly into the dappled darkness"<br>
+                                <strong>Silent Movement:</strong> Can traverse undergrowth without detection, avoiding both human pursuit and supernatural threats<br>
+                                <strong>Environmental Knowledge:</strong> Intimate understanding of local wilderness, safe routes, and natural dangers
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card rescue">
+                            <div class="skill-title">Rescue Operations</div>
+                            <div class="skill-description">
+                                <strong>Situational Assessment:</strong> Rapid evaluation of multiple simultaneous threats and escape opportunities<br>
+                                <strong>Emergency Extraction:</strong> Specialized in getting people out of dangerous situations quickly and safely<br>
+                                <strong>Quick Decision Making:</strong> Capable of split-second tactical choices under extreme pressure
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card community">
+                            <div class="skill-title">Community Support</div>
+                            <div class="skill-description">
+                                <strong>Vulnerable Member Care:</strong> Informal guardian and advocate for those who struggle with social situations<br>
+                                <strong>Conflict Resolution:</strong> Calm intervention to prevent misunderstandings from escalating<br>
+                                <strong>Practical Problem Solving:</strong> Addresses day-to-day sanctuary issues with straightforward approach
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Mira Rescue -->
+                <section class="rescue-section">
+                    <h2 class="rescue-title">The Forest Rescue That Defined Her</h2>
+                    <div class="rescue-description">
+                        Wren's rescue of Mira from the wilderness showcases every aspect of her character—her operational competence, protective instincts, and ability to assess complex threats while maintaining focus on immediate action. The mission required her to navigate three distinct dangers simultaneously.
+                    </div>
+
+                    <div class="speech-grid">
+                        <div class="speech-card">
+                            <div class="speech-title">Threat Assessment</div>
+                            <div class="speech-text">"'Less ya wanna take on that beast—an' trust me, ya don't—or let that righteous mob drag ya back to Rivenglade..."</div>
+                            <div class="speech-context">Instantly evaluated void-corrupted Beastborn, Zenithian pursuit, and Mira's capabilities to determine best course of action.</div>
+                        </div>
+                        
+                        <div class="speech-card">
+                            <div class="speech-title">Tactical Direction</div>
+                            <div class="speech-text">"Alright then, get movin'. Keep up, now."</div>
+                            <div class="speech-context">Clear, direct commands that prioritized speed and efficiency during the escape, demonstrating leadership under pressure.</div>
+                        </div>
+                    </div>
+
+                    <div class="rescue-description">
+                        Her success stemmed not from overwhelming force or elaborate strategy, but from practical competence—knowing the terrain, understanding the threats, and having the experience to act decisively when lives hung in the balance.
+                    </div>
+                </section>
+
+                <!-- Mission Types & Operations -->
+                <section class="section">
+                    <h2 class="section-title">The Dangerous Work She Does</h2>
+                    <div class="character-description">
+                        <p>As Meridia's most reliable field operative, Wren handles the external missions that keep the Forsaken sanctuary operational and its people safe. Her work takes her into hostile territory where competence means survival.</p>
+                    </div>
+
+                    <div class="mission-grid">
+                        <div class="mission-card">
+                            <div class="mission-title">Emergency Rescue</div>
+                            <div class="mission-description">Extraction of Forsaken from active persecution, requiring stealth movement through dangerous territory and split-second tactical decisions.</div>
+                        </div>
+                        <div class="mission-card">
+                            <div class="mission-title">Intelligence Gathering</div>
+                            <div class="mission-description">Surveillance of Zenithian activities and threat assessment, providing crucial information for sanctuary security planning.</div>
+                        </div>
+                        <div class="mission-card">
+                            <div class="mission-title">Supply Acquisition</div>
+                            <div class="mission-description">Procurement of resources necessary for sanctuary operations, often requiring interaction with hostile or suspicious contacts.</div>
+                        </div>
+                        <div class="mission-card">
+                            <div class="mission-title">Route Scouting</div>
+                            <div class="mission-description">Mapping safe passages for sanctuary members and identifying potential threats or opportunities in surrounding areas.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">The People She Protects</h2>
+                    <div class="character-description">
+                        <p>Wren's relationships reflect her dual role as field operative and community caretaker. She connects with others through action rather than words, building trust through consistent protection and practical help.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <div class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mira Roehart</div>
+                            <div class="related-role">Rescue Subject</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Ezzie</div>
+                            <div class="related-role">Protected Community Member</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Meridia</div>
+                            <div class="related-role">Strategic Commander</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">L</div>
+                            <div class="related-name">Lucien</div>
+                            <div class="related-role">Operational Threat</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Quiet Hero of Practical Action</h2>
+                <div class="summary-content">
+                    <p>Wren embodies the unsung heroism that keeps resistance movements alive—the steady, reliable competence of those who risk everything to help others without seeking recognition or authority. Her character demonstrates that true strength often lies not in supernatural power or political brilliance, but in the willingness to act decisively when lives hang in the balance.</p>
+
+                    <p>Her rescue of Mira showcases the essential skills that make her invaluable to the Forsaken sanctuary: the ability to move unseen through hostile territory, assess multiple threats simultaneously, and make split-second decisions that save lives. But equally important is her gentle care for vulnerable community members like Ezzie, showing that the same protective instincts that drive her dangerous field work also create the human connections that make communities worth protecting.</p>
+
+                    <p>Through her informal, direct communication style and no-nonsense approach to complex problems, Wren represents the practical wisdom that complements more strategic or political approaches to resistance. She understands that survival often depends not on grand plans but on immediate, competent action—getting people out of danger, providing what they need, and standing between them and harm.</p>
+
+                    <p>Her character serves as a crucial reminder that resistance movements need people who focus on direct help rather than grand strategy. While others plan and debate, Wren acts—moving through the shadows to pull desperate souls from the jaws of persecution, providing the practical support that keeps hope alive in dark times.</p>
+
+                    <p>In Wren, we see the quiet heroism of those who choose to make the world safer through personal action rather than public proclamation. Her story proves that sometimes the most important victories are measured not in territory gained or enemies defeated, but in lives saved and vulnerable people protected by someone who simply chose to show up when it mattered most.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Follow the Shadow Who Saves</h2>
+            <p class="cta-description">
+                Witness the quiet heroism of a woman who moves through hostile territory to rescue the desperate and protect the vulnerable. 
+                Wren's story proves that true strength protects rather than dominates.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/" class="cta-button">Read The Chosen</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
