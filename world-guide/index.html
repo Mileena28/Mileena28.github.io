@@ -101,19 +101,54 @@ image: "/assets/images/world-guide-main.jpg"
         height: 80px;
         margin: 0 auto 25px;
         background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
-        border-radius: 50%;
+        border-radius: 18px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2em;
-        color: #8a9fff;
-        border: 3px solid rgba(138, 159, 255, 0.5);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 
+            0 8px 32px rgba(138, 159, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .section-icon:hover::before {
+        left: 100%;
+    }
+
+    .section-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: #8a9fff;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         transition: all 0.3s ease;
     }
 
     .guide-section:hover .section-icon {
-        transform: scale(1.1);
-        box-shadow: 0 10px 20px rgba(138, 159, 255, 0.3);
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 
+            0 20px 40px rgba(138, 159, 255, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .guide-section:hover .section-icon svg {
+        fill: #a8b5ff;
     }
 
     .section-title {
@@ -241,7 +276,13 @@ image: "/assets/images/world-guide-main.jpg"
         <div class="sections-grid">
             
             <div class="guide-section">
-                <div class="section-icon">👥</div>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2c0 1.11-.89 2-2 2s-2-.89-2-2zM4 18v-4.5c0-.83.67-1.5 1.5-1.5S7 12.67 7 13.5V18h2.5c.28 0 .5.22.5.5s-.22.5-.5.5H4.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5H4zM12.5 11.5c.83 0 1.5.67 1.5 1.5V18h2.5c.28 0 .5.22.5.5s-.22.5-.5.5H11.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5H12v-4.5c0-.83-.67-1.5-1.5-1.5h-1c-.83 0-1.5.67-1.5 1.5V18h1.5c.28 0 .5.22.5.5s-.22.5-.5.5H6.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5H8v-4.5c0-1.38 1.12-2.5 2.5-2.5h1c1.38 0 2.5 1.12 2.5 2.5z"/>
+                        <circle cx="9" cy="9" r="1.5"/>
+                        <circle cx="15" cy="9" r="1.5"/>
+                    </svg>
+                </div>
                 <h2 class="section-title">Characters</h2>
                 <div class="section-description">
                     Meet the complex souls who walk between light and shadow. From the Silver Hunter to divine beings erased from history, each character carries their own darkness and light.
@@ -250,7 +291,11 @@ image: "/assets/images/world-guide-main.jpg"
             </div>
 
             <div class="guide-section">
-                <div class="section-icon">🗺️</div>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.5,3L20.34,3.03L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5A0.5,0.5 0 0,0 3.5,21L3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19.03 21,18.85 21,18.62V3.5A0.5,0.5 0 0,0 20.5,3M10,5.47L14,6.87V18.53L10,17.13V5.47M5,6.46L8,5.45V17.15L5,18.31V6.46M16,18.55L19,17.54V5.84L16,6.85V18.55Z"/>
+                    </svg>
+                </div>
                 <h2 class="section-title">Locations</h2>
                 <div class="section-description">
                     Discover the places where legends are forged—from the Godscarred Wastes to the Verdant Veil, each location holds secrets that shape the fate of mortals and gods alike.
@@ -259,7 +304,11 @@ image: "/assets/images/world-guide-main.jpg"
             </div>
 
             <div class="guide-section">
-                <div class="section-icon">⚡</div>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                    </svg>
+                </div>
                 <h2 class="section-title">Magic & Powers</h2>
                 <div class="section-description">
                     Understand the divine blood that flows through mortal veins, the price of wielding godlike power, and why some gifts become the greatest curses.
@@ -268,7 +317,11 @@ image: "/assets/images/world-guide-main.jpg"
             </div>
 
             <div class="guide-section">
-                <div class="section-icon">📚</div>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
+                    </svg>
+                </div>
                 <h2 class="section-title">History & Lore</h2>
                 <div class="section-description">
                     Uncover the buried truths about the Divine War, the creation of the Bloodmarked, and why the gods maintain their terrifying silence.
@@ -277,7 +330,14 @@ image: "/assets/images/world-guide-main.jpg"
             </div>
 
             <div class="guide-section">
-                <div class="section-icon">👹</div>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,1.5C10.11,1.5 8.5,3.11 8.5,5V6.5C8.5,8.39 10.11,10 12,10C13.89,10 15.5,8.39 15.5,6.5V5C15.5,3.11 13.89,1.5 12,1.5M7,9V11A5,5 0 0,0 12,16A5,5 0 0,0 17,11V9C18.66,9 20,10.34 20,12V16C20,17.66 18.66,19 17,19H16V21A2,2 0 0,1 14,23H10A2,2 0 0,1 8,21V19H7C5.34,19 4,17.66 4,16V12C4,10.34 5.34,9 7,9Z"/>
+                        <circle cx="10" cy="6" r="1"/>
+                        <circle cx="14" cy="6" r="1"/>
+                        <path d="M9,7.5L10.5,8.5L12,7.5L13.5,8.5L15,7.5"/>
+                    </svg>
+                </div>
                 <h2 class="section-title">Creatures & Beings</h2>
                 <div class="section-description">
                     From the monstrous Beastborn to divine entities that shape reality itself, explore the beings that inhabit this world of gods and mortals.
@@ -286,7 +346,13 @@ image: "/assets/images/world-guide-main.jpg"
             </div>
 
             <div class="guide-section">
-                <div class="section-icon">🏛️</div>
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21,10H15L13.5,7.5C13.1,6.9 12.4,6.5 11.7,6.5H5C3.9,6.5 3,7.4 3,8.5V17.5C3,18.6 3.9,19.5 5,19.5H19C20.1,19.5 21,18.6 21,17.5V12C21,10.9 20.1,10 19,10M19,17.5H5V8.5H11.7L13.2,11H19V17.5Z"/>
+                        <path d="M12,3V1.5A0.5,0.5 0 0,0 11.5,1A0.5,0.5 0 0,0 11,1.5V3H8.5A0.5,0.5 0 0,0 8,3.5A0.5,0.5 0 0,0 8.5,4H11V5.5A0.5,0.5 0 0,0 11.5,6A0.5,0.5 0 0,0 12,5.5V4H13.5A0.5,0.5 0 0,0 14,3.5A0.5,0.5 0 0,0 13.5,3H12Z"/>
+                        <path d="M6,13V15H8V13H6M9,13V15H11V13H9M12,13V15H14V13H12M15,13V15H17V13H15"/>
+                    </svg>
+                </div>
                 <h2 class="section-title">Organizations</h2>
                 <div class="section-description">
                     Learn about the factions, tribes, and institutions that shape the political and spiritual landscape of a world recovering from divine war.
