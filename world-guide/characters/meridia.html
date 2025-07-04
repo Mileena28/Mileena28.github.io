@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridia - The Maternal Manipulator | The Chosen Series</title>
+    <meta name="description" content="Meet Meridia from The Chosen series. A complex Forsaken leader whose protective sanctuary masks strategic exploitation, representing the moral ambiguity of resistance movements.">
+</head>
+<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a14 0%, #2e1a1a 50%, #1a1a2e 100%); color: #ddd; font-family: 'Georgia', serif; line-height: 1.6;">
+
+<style>
+    /* Character Page Styles */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(139, 69, 19, 0.05) 100%);
+    }
+
+    .character-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .character-tagline {
+        font-size: 1.4em;
+        color: #cd853f;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .series-breadcrumb {
+        background: rgba(139, 69, 19, 0.1);
+        border: 1px solid rgba(139, 69, 19, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #cd853f;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(139, 69, 19, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .character-content {
+        padding: 80px 0;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .character-portrait {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    .portrait-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .character-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(139, 69, 19, 0.1));
+        border: 2px solid #cd853f;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #cd853f;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(139, 69, 19, 0.1) 0%, transparent 70%);
+        animation: shimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); }
+    }
+
+    .character-stats {
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #cd853f;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .stat-value {
+        color: #ddd;
+        margin-top: 5px;
+    }
+
+    .character-info {
+        
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 25px;
+        font-weight: 400;
+        border-bottom: 2px solid #cd853f;
+        padding-bottom: 10px;
+    }
+
+    .character-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .character-quote {
+        background: rgba(139, 69, 19, 0.05);
+        border-left: 4px solid #cd853f;
+        padding: 25px 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+    }
+
+    .character-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 3em;
+        color: #cd853f;
+        opacity: 0.3;
+    }
+
+    .quote-source {
+        text-align: right;
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 15px;
+        font-style: normal;
+    }
+
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .trait-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+        border-color: #cd853f;
+        transform: translateY(-5px);
+    }
+
+    .trait-title {
+        color: #cd853f;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .trait-description {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    .transformations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .transformation-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .transformation-card:hover {
+        border-color: #cd853f;
+        transform: translateY(-5px);
+    }
+
+    .transformation-card.victim {
+        border-left: 4px solid #4682b4;
+    }
+
+    .transformation-card.survivor {
+        border-left: 4px solid #ffa500;
+    }
+
+    .transformation-card.builder {
+        border-left: 4px solid #cd853f;
+    }
+
+    .transformation-card.commander {
+        border-left: 4px solid #8b0000;
+    }
+
+    .transformation-title {
+        color: #cd853f;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .transformation-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .related-characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .related-character {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .related-character:hover {
+        border-color: #cd853f;
+        transform: translateY(-5px);
+    }
+
+    .related-avatar {
+        width: 60px;
+        height: 60px;
+        background: rgba(139, 69, 19, 0.2);
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #cd853f;
+        font-weight: bold;
+    }
+
+    .related-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .related-role {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    .character-summary {
+        padding: 60px 0;
+        background: rgba(10, 10, 20, 0.6);
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    .summary-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .summary-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 40px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .summary-content {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .summary-content p {
+        margin-bottom: 25px;
+    }
+
+    .summary-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .read-more-section {
+        background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(139, 69, 19, 0.1));
+        border: 1px solid #cd853f;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+    .cta-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #cd853f, #daa520);
+        color: #000;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 69, 19, 0.4);
+    }
+
+    .cta-button.secondary {
+        background: rgba(139, 69, 19, 0.2);
+        color: #cd853f;
+        border: 1px solid #cd853f;
+    }
+
+    .cta-button.secondary:hover {
+        background: rgba(139, 69, 19, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .character-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .character-portrait {
+            position: static;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .character-title {
+            font-size: 2.2em;
+        }
+        
+        .character-tagline {
+            font-size: 1.2em;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .transformations-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
+        <h1 class="character-title">Meridia</h1>
+        <p class="character-tagline">"The Maternal Manipulator"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Gray hair, sharp eyes<br>Blood-stained hands, commanding presence</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Chosen: Chapter 23</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human, Forsaken</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Location</div>
+                            <div class="stat-value">Hidden Forsaken Sanctuary</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Powers</div>
+                            <div class="stat-value">Blood Magic, Strategic Leadership</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Conflict</div>
+                            <div class="stat-value">Protection vs. Exploitation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Resistance leader, sanctuary keeper</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Corrupted Protector</h2>
+                    <div class="character-description">
+                        <p>Meridia embodies the moral complexity of revolutionary leadership under extreme circumstances, representing both the necessity and the danger of resistance movements. As the calculating leader of a hidden Forsaken sanctuary, she has evolved from victim to strategist, creating a refuge for the desperate while orchestrating a shadow war against Zenithian oppression.</p>
+                        
+                        <p>Her sanctuary, built within ancient temple ruins soaked in the blood of the Wild God Khali, serves as both genuine haven for outcasts and staging ground for her larger ambitions. With her weathered hands stained from blood magic rituals and her sharp eyes that assess every person's strategic value, Meridia walks the razor's edge between protection and exploitation, maternal care and calculated manipulation.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Welcome, Mira. Welcome to our sanctuary. You will stay here. Regain your strength.
+                        <div class="quote-source">— Meridia's deceptively warm welcome</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Revolutionary's Burden</h2>
+                    <div class="character-description">
+                        <p>Meridia's personality reflects the dangerous evolution of the oppressed—someone who has stared into the abyss of systematic persecution long enough to adopt some of its methods in service of what she believes is a greater good. Her moral framework has been reshaped by survival and leadership necessity.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Calculating Pragmatist</div>
+                            <div class="trait-description">Views every person and situation through the lens of strategic advantage. Evaluates Mira not as a person in need, but as the ultimate weapon against Zenith.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Maternal Facade</div>
+                            <div class="trait-description">Projects nurturing warmth and protective concern while pursuing ruthless agenda of exploitation. Masters the art of making manipulation feel like care.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Revolutionary Zealot</div>
+                            <div class="trait-description">Absolutely committed to destroying Zenithian power regardless of personal cost or moral compromise. Believes ends justify any means necessary.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Historical Fatalist</div>
+                            <div class="trait-description">Uses knowledge of past cycles to justify extreme measures. Believes current conflict requires abandoning traditional ethics for cosmic necessity.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        She's valuable, whether we like it or not. And when the time comes to make a move—when the walls close in—she's our ace card.
+                        <div class="quote-source">— Meridia's strategic assessment of Mira</div>
+                    </div>
+                </section>
+
+                <!-- Transformation Journey -->
+                <section class="section">
+                    <h2 class="section-title">From Victim to Manipulator</h2>
+                    <div class="character-description">
+                        <p>Meridia's character arc traces a tragic descent from idealistic victim to corrupted leader, each stage stripping away another layer of moral clarity until she becomes uncomfortably similar to the forces she opposes.</p>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card victim">
+                            <div class="transformation-title">The Forsaken Victim</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Branded by Zenith, cast out from society and previous life<br>
+                                <strong>Experience:</strong> Lost home, family, identity to systematic persecution<br>
+                                <strong>Learning:</strong> Discovered the brutality of religious extremism firsthand<br>
+                                <strong>Trauma:</strong> Forced to abandon idealistic beliefs for survival necessity
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card survivor">
+                            <div class="transformation-title">The Underground Survivor</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Learning to exist as outcast without resources or protection<br>
+                                <strong>Skills:</strong> Developed stealth, resource scavenging, and network navigation<br>
+                                <strong>Evolution:</strong> Began abandoning moral principles for pragmatic strategies<br>
+                                <strong>Growth:</strong> Discovered natural leadership abilities and strategic thinking
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card builder">
+                            <div class="transformation-title">The Community Builder</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Gathering outcasts and establishing sanctuary infrastructure<br>
+                                <strong>Achievement:</strong> Created functional society providing purpose and belonging<br>
+                                <strong>Magic:</strong> Developed blood magic abilities for strategic advantage<br>
+                                <strong>Authority:</strong> Rose to leadership through competence and protection
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card commander">
+                            <div class="transformation-title">The Strategic Commander</div>
+                            <div class="transformation-description">
+                                <strong>Phase:</strong> Sophisticated leader orchestrating realm-wide resistance<br>
+                                <strong>Network:</strong> Coordinates multiple cells and resistance operations<br>
+                                <strong>Corruption:</strong> Views people primarily as assets rather than individuals<br>
+                                <strong>Danger:</strong> Risk of becoming the oppressive system she fights
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Blood Magic & Ancient Practices -->
+                <section class="section">
+                    <h2 class="section-title">Keeper of Forbidden Arts</h2>
+                    <div class="character-description">
+                        <p>Meridia's mastery of blood magic and ancient rituals makes her both protector and predator, using sacred practices to maintain her sanctuary while exploiting those she claims to protect.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Blood Magic Mastery</div>
+                            <div class="trait-description">Can extract and manipulate essence from subjects like Mira, creating amulets that break Zenithian control over others across the resistance network.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Sanctuary Maintenance</div>
+                            <div class="trait-description">Uses ritual work to maintain ancient wards and protections in the temple ruins, drawing power from Wild God Khali's spilled blood.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Historical Knowledge</div>
+                            <div class="trait-description">Preserves pre-Zenithian magical traditions and cosmic understanding, seeing current conflict as part of larger historical cycles.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Network Coordination</div>
+                            <div class="trait-description">Uses magical methods for secure communication with other resistance cells, distributing resources and coordinating strategy across the realm.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Assets and Instruments</h2>
+                    <div class="character-description">
+                        <p>Meridia's relationships reflect her fundamental inability to see people as individuals rather than strategic resources, viewing even genuine refugees primarily through the lens of tactical utility and revolutionary necessity.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="/world-guide/characters/mira-roehart/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mira Roehart</div>
+                            <div class="related-role">Ultimate Asset, Blood Source</div>
+                        </a>
+                        <a href="/world-guide/characters/mordekai/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mordekai</div>
+                            <div class="related-role">Converted Intelligence</div>
+                        </a>
+                        <a href="/world-guide/characters/dominic/" class="related-character">
+                            <div class="related-avatar">D</div>
+                            <div class="related-name">Dominic</div>
+                            <div class="related-role">Brutal Lieutenant</div>
+                        </a>
+                        <a href="/world-guide/characters/gerald/" class="related-character">
+                            <div class="related-avatar">G</div>
+                            <div class="related-name">Gerald</div>
+                            <div class="related-role">Paranoid Watchdog</div>
+                        </a>
+                        <a href="/world-guide/characters/wren/" class="related-character">
+                            <div class="related-avatar">W</div>
+                            <div class="related-name">Wren</div>
+                            <div class="related-role">Field Operative</div>
+                        </a>
+                        <a href="/world-guide/characters/lucien-altheris/" class="related-character">
+                            <div class="related-avatar">L</div>
+                            <div class="related-name">Lucien Altheris</div>
+                            <div class="related-role">Ultimate Enemy</div>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Price of Revolution</h2>
+                <div class="summary-content">
+                    <p>Meridia represents the profound moral complexity of revolutionary leadership under extreme circumstances, illustrating how the fight against oppression can corrupt even the most well-intentioned leaders. Her transformation from victim to strategist to potential oppressor demonstrates the cyclical nature of power and the difficulty of maintaining moral integrity while fighting for survival and justice in a world that offers no easy choices.</p>
+
+                    <p>Her sanctuary stands as both monument to her protective capabilities and potential prison for those seeking refuge. She genuinely provides safety and purpose for desperate Forsaken outcasts while simultaneously exploiting them as resources in her larger war against Zenith. This duality makes her neither purely altruistic savior nor cold-hearted villain, but something far more dangerous—a corrupted idealist who has adopted monstrous methods in service of what she believes is a noble cause.</p>
+
+                    <p>Her relationship with Mira serves as the ultimate test of her character, revealing how far she has fallen from her original principles. Where she once might have seen a traumatized young woman in need of genuine sanctuary, she now sees only the ultimate strategic asset—a living weapon whose half-Nimwe abilities could tip the balance of power. Her maternal facade masks a calculating mind that views individual suffering as acceptable collateral in service of larger liberation, illustrating how revolution can reproduce the very oppression it seeks to destroy.</p>
+
+                    <p>Through her mastery of blood magic and ancient rituals, Meridia has become both keeper of forgotten wisdom and practitioner of forbidden arts. Her willingness to extract Mira's essence against her consent, while maintaining the pretense of protection and care, demonstrates how easily sacred knowledge can be corrupted when wielded by those who have lost sight of individual dignity in pursuit of collective goals. She embodies the dangerous truth that sometimes those who fight monsters must adopt monstrous methods.</p>
+
+                    <p>Meridia's story serves as a warning about the seductive corruption of revolutionary power and the ease with which noble intentions can become indistinguishable from the tyranny they oppose. Her character challenges readers to consider whether the ends can ever truly justify the means, and whether it is possible to maintain moral purity while fighting against systematic oppression. She represents the tragic figure of the corrupted protector—someone whose genuine desire to liberate and serve has been twisted by necessity and trauma into something that threatens to perpetuate the very cycles of exploitation she once sought to break.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Explore the Moral Complexity</h2>
+            <p class="cta-description">
+                Witness the dangerous evolution of a protector into a manipulator, and the price of fighting monsters. 
+                Meridia's story explores how noble intentions can become corrupted by power and necessity.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
