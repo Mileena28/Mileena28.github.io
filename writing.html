@@ -69,6 +69,139 @@ image: "/assets/images/EbookPic.jpg"
         font-style: italic;
     }
 
+    /* Character Dropdown Styles */
+    .characters-navigation {
+        padding: 40px 0;
+        text-align: center;
+        background: rgba(10, 10, 20, 0.6);
+    }
+
+    .characters-nav-title {
+        color: #f0f0f0;
+        margin-bottom: 30px;
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    .book-characters {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    .characters-dropdown {
+        position: relative;
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .dropdown-toggle {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        color: #8a9fff;
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95em;
+    }
+
+    .dropdown-toggle:hover {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(138, 159, 255, 0.15));
+        border-color: #8a9fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(138, 159, 255, 0.2);
+    }
+
+    .dropdown-arrow {
+        width: 0;
+        height: 0;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #8a9fff;
+        transition: transform 0.3s ease;
+    }
+
+    .characters-dropdown.open .dropdown-arrow {
+        transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(30, 30, 30, 0.9));
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 15px;
+        padding: 15px 0;
+        min-width: 250px;
+        max-width: 320px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(20px);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-50%) translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        margin-top: 10px;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .characters-dropdown.open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown-item {
+        display: block;
+        padding: 12px 20px;
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border-left: 3px solid transparent;
+    }
+
+    .dropdown-item:hover {
+        background: rgba(138, 159, 255, 0.1);
+        color: #8a9fff;
+        border-left-color: #8a9fff;
+        transform: translateX(3px);
+    }
+
+    .character-name {
+        font-weight: 600;
+        margin-bottom: 2px;
+    }
+
+    .character-subtitle {
+        font-size: 0.85em;
+        color: #999;
+        font-style: italic;
+    }
+
+    .dropdown-section-title {
+        color: #8a9fff;
+        font-size: 0.8em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 8px 20px 5px;
+        margin: 10px 0 5px;
+        border-bottom: 1px solid rgba(138, 159, 255, 0.2);
+    }
+
+    .dropdown-section-title:first-child {
+        margin-top: 0;
+    }
+
     /* Featured Book */
     .featured-book-section {
         padding: 80px 0;
@@ -176,6 +309,48 @@ image: "/assets/images/EbookPic.jpg"
 
     .book-link.secondary:hover {
         background: rgba(138, 159, 255, 0.3);
+    }
+
+    /* Featured Book Section - Add character buttons */
+    .book-characters-section {
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid #444;
+    }
+
+    .characters-label {
+        color: #8a9fff;
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .quick-character-links {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .quick-character-link {
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        color: #8a9fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.85em;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .quick-character-link:hover {
+        background: rgba(138, 159, 255, 0.2);
+        border-color: #8a9fff;
+        transform: translateY(-1px);
     }
 
     /* Current Projects Section */
@@ -579,6 +754,32 @@ image: "/assets/images/EbookPic.jpg"
             flex-direction: column;
         }
 
+        .characters-dropdown {
+            display: block;
+            margin: 10px 0;
+        }
+        
+        .dropdown-toggle {
+            width: 100%;
+            justify-content: center;
+        }
+        
+        .dropdown-menu {
+            min-width: 280px;
+            left: 50%;
+            right: auto;
+        }
+        
+        .quick-character-links {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .quick-character-link {
+            min-width: 200px;
+            text-align: center;
+        }
+
         .toc-container {
             position: fixed;
             top: 80px;
@@ -641,6 +842,130 @@ image: "/assets/images/EbookPic.jpg"
     </div>
 </section>
 
+<!-- Character Navigation -->
+<section class="characters-navigation">
+    <div class="container">
+        <h3 class="characters-nav-title">Explore Characters by Book</h3>
+        
+        <div class="book-characters">
+            <!-- The Silence Characters -->
+            <div class="characters-dropdown">
+                <div class="dropdown-toggle">
+                    <span>The Silence Characters</span>
+                    <div class="dropdown-arrow"></div>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section-title">Main Characters</div>
+                    <a href="/world-guide/characters/kaelen-rveyne/" class="dropdown-item">
+                        <div class="character-name">Kaelen R'Veyne</div>
+                        <div class="character-subtitle">The Silver Hunter</div>
+                    </a>
+                    <a href="/world-guide/characters/elowen-faerwyn/" class="dropdown-item">
+                        <div class="character-name">Elowen Faerwyn</div>
+                        <div class="character-subtitle">The Healer</div>
+                    </a>
+                    <a href="/world-guide/characters/dain-solarius/" class="dropdown-item">
+                        <div class="character-name">Dain Solarius</div>
+                        <div class="character-subtitle">The Light Warrior</div>
+                    </a>
+                    <a href="/world-guide/characters/ryx-shadowclaw/" class="dropdown-item">
+                        <div class="character-name">Ryx Shadowclaw</div>
+                        <div class="character-subtitle">The Young Beastborn</div>
+                    </a>
+                    <a href="/world-guide/characters/mordain-ashcroft/" class="dropdown-item">
+                        <div class="character-name">Mordain Ashcroft</div>
+                        <div class="character-subtitle">The Scholar Priest</div>
+                    </a>
+                    <div class="dropdown-section-title">Antagonists</div>
+                    <a href="/world-guide/characters/the-silent-god/" class="dropdown-item">
+                        <div class="character-name">The Silent God</div>
+                        <div class="character-subtitle">The Erased One</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Chosen Characters -->
+            <div class="characters-dropdown">
+                <div class="dropdown-toggle">
+                    <span>The Chosen Characters</span>
+                    <div class="dropdown-arrow"></div>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section-title">Main Characters</div>
+                    <a href="/world-guide/characters/mira-roehart/" class="dropdown-item">
+                        <div class="character-name">Mira Roehart</div>
+                        <div class="character-subtitle">The Reluctant Chosen</div>
+                    </a>
+                    <a href="/world-guide/characters/katalina-petari/" class="dropdown-item">
+                        <div class="character-name">Katalina (Kat) Petari</div>
+                        <div class="character-subtitle">The Fierce Protector</div>
+                    </a>
+                    <a href="/world-guide/characters/elias-roehart/" class="dropdown-item">
+                        <div class="character-name">Elias Roehart</div>
+                        <div class="character-subtitle">The Brother</div>
+                    </a>
+                    <a href="/world-guide/characters/meridia/" class="dropdown-item">
+                        <div class="character-name">Meridia</div>
+                        <div class="character-subtitle">The Wise Guide</div>
+                    </a>
+                    <a href="/world-guide/characters/mordekai/" class="dropdown-item">
+                        <div class="character-name">Mordekai</div>
+                        <div class="character-subtitle">The Ancient Watcher</div>
+                    </a>
+                    <div class="dropdown-section-title">Antagonists</div>
+                    <a href="/world-guide/characters/lucien-altheris/" class="dropdown-item">
+                        <div class="character-name">Lucien Altheris</div>
+                        <div class="character-subtitle">The Light-Bearer</div>
+                    </a>
+                    <a href="/world-guide/characters/the-forsaken/" class="dropdown-item">
+                        <div class="character-name">The Forsaken</div>
+                        <div class="character-subtitle">The Fallen</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lost Histories Characters -->
+            <div class="characters-dropdown">
+                <div class="dropdown-toggle">
+                    <span>Lost Histories Characters</span>
+                    <div class="dropdown-arrow"></div>
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-section-title">The Historian</div>
+                    <a href="/world-guide/characters/tanneus-graja/" class="dropdown-item">
+                        <div class="character-name">Tanneus G'Raja</div>
+                        <div class="character-subtitle">Scholar of Lost Truths</div>
+                    </a>
+                    <div class="dropdown-section-title">Seven Days of Sun</div>
+                    <a href="/world-guide/characters/elodias/" class="dropdown-item">
+                        <div class="character-name">Elodias</div>
+                        <div class="character-subtitle">The Sun-Touched God</div>
+                    </a>
+                    <a href="/world-guide/characters/senia/" class="dropdown-item">
+                        <div class="character-name">Senia</div>
+                        <div class="character-subtitle">The Eternal Beloved</div>
+                    </a>
+                    <div class="dropdown-section-title">The God Who Wept</div>
+                    <a href="/world-guide/characters/thainos/" class="dropdown-item">
+                        <div class="character-name">Thainos</div>
+                        <div class="character-subtitle">The Wandering God</div>
+                    </a>
+                    <div class="dropdown-section-title">The Sin of Mercy</div>
+                    <a href="/world-guide/characters/valiel-azrael/" class="dropdown-item">
+                        <div class="character-name">Valiel/Azrael</div>
+                        <div class="character-subtitle">The Merciful Demon</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- All Characters Link -->
+            <a href="/world-guide/characters/" class="dropdown-toggle" style="text-decoration: none;">
+                <span>View All Characters</span>
+            </a>
+        </div>
+    </div>
+</section>
+
 <!-- Published Book -->
 <section class="featured-book-section" id="featured-book">
     <div class="container">
@@ -671,6 +996,18 @@ image: "/assets/images/EbookPic.jpg"
                     <a href="https://a.co/d/4jmp1tc" class="book-link secondary" onclick="gtag('event', 'book_purchase_click', {'book_format': 'paperback', 'book_title': 'Blood of Wild Gods Silence', 'value': 15.99});">Paperback</a>
                     <a href="https://a.co/d/4wzxoA6" class="book-link secondary" onclick="gtag('event', 'book_purchase_click', {'book_format': 'hardcover', 'book_title': 'Blood of Wild Gods Silence', 'value': 25.99});">Hardcover</a>
                     <a href="/chapters/the-silence/chapter-01/" class="book-link secondary">Read Chapter 1</a>
+                </div>
+
+                <!-- Character Links for The Silence -->
+                <div class="book-characters-section">
+                    <div class="characters-label">Meet the Characters</div>
+                    <div class="quick-character-links">
+                        <a href="/world-guide/characters/kaelen-rveyne/" class="quick-character-link">Kaelen R'Veyne</a>
+                        <a href="/world-guide/characters/elowen-faerwyn/" class="quick-character-link">Elowen Faerwyn</a>
+                        <a href="/world-guide/characters/dain-solarius/" class="quick-character-link">Dain Solarius</a>
+                        <a href="/world-guide/characters/ryx-shadowclaw/" class="quick-character-link">Ryx Shadowclaw</a>
+                        <a href="/world-guide/characters/mordain-ashcroft/" class="quick-character-link">Mordain Ashcroft</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -734,6 +1071,17 @@ image: "/assets/images/EbookPic.jpg"
                 <a href="/chapters/the-chosen/chapter-01/" class="book-link secondary">Read Chapter 1</a>
                 <a href="/chapters/the-chosen/chapter-02/" class="book-link secondary">Read Chapter 2</a>
                 <a href="/chapters/the-chosen/chapter-03/" class="book-link secondary">Read Chapter 3</a>
+            </div>
+
+            <!-- Character Links for The Chosen -->
+            <div class="book-characters-section">
+                <div class="characters-label">Meet the Characters</div>
+                <div class="quick-character-links">
+                    <a href="/world-guide/characters/mira-roehart/" class="quick-character-link">Mira Roehart</a>
+                    <a href="/world-guide/characters/katalina-petari/" class="quick-character-link">Katalina (Kat) Petari</a>
+                    <a href="/world-guide/characters/lucien-altheris/" class="quick-character-link">Lucien Altheris</a>
+                    <a href="/world-guide/characters/elias-roehart/" class="quick-character-link">Elias Roehart</a>
+                </div>
             </div>
         </div>
 
@@ -1204,6 +1552,51 @@ function toggleReadMore(sectionId) {
         content.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 }
+
+// Character dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.characters-dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        
+        if (toggle && menu) {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('open');
+                    }
+                });
+                
+                // Toggle current dropdown
+                dropdown.classList.toggle('open');
+            });
+        }
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.characters-dropdown')) {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('open');
+            });
+        }
+    });
+    
+    // Close dropdowns on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('open');
+            });
+        }
+    });
+});
 
 // Table of Contents JavaScript
 document.addEventListener('DOMContentLoaded', function() {
