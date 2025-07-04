@@ -74,9 +74,10 @@ image: "/assets/images/world-guide-characters.jpg"
 
     .characters-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
         margin-top: 40px;
+        justify-items: center;
     }
 
     .character-card {
@@ -89,6 +90,12 @@ image: "/assets/images/world-guide-characters.jpg"
         text-decoration: none;
         color: inherit;
         backdrop-filter: blur(10px);
+        width: 100%;
+        max-width: 320px;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .character-card:hover {
@@ -138,15 +145,21 @@ image: "/assets/images/world-guide-characters.jpg"
         flex-wrap: wrap;
         gap: 8px;
         justify-content: center;
+        align-items: center;
+        margin-top: auto;
     }
 
     .character-tag {
         background: rgba(138, 159, 255, 0.2);
         color: #8a9fff;
-        padding: 4px 12px;
+        padding: 6px 14px;
         border-radius: 12px;
         font-size: 0.8em;
         font-weight: 500;
+        white-space: nowrap;
+        min-width: fit-content;
+        text-align: center;
+        flex-shrink: 0;
     }
 
     /* Special character types */
@@ -241,7 +254,7 @@ image: "/assets/images/world-guide-characters.jpg"
                     </div>
                     <div class="character-tags">
                         <div class="character-tag">Beastman</div>
-                        <div class="character-tag">Shapeshifter</div>
+                        <div class="character-tag">Protector</div>
                         <div class="character-tag">Found Family</div>
                     </div>
                 </a>
