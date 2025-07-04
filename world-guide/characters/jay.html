@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jay - The Young Bomber | The Chosen Series</title>
+    <meta name="description" content="Meet Jay from The Chosen series. A young resistance operative whose technical expertise and maintained enthusiasm represent hope for the next generation of Forsaken fighters.">
+</head>
+<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a14 0%, #2e1a0a 50%, #1a1a2e 100%); color: #ddd; font-family: 'Georgia', serif; line-height: 1.6;">
+
+<style>
+    /* Character Page Styles */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 140, 0, 0.05) 100%);
+    }
+
+    .character-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+    }
+
+    .character-tagline {
+        font-size: 1.4em;
+        color: #ff8c00;
+        font-style: italic;
+        margin-bottom: 30px;
+    }
+
+    .series-breadcrumb {
+        background: rgba(255, 140, 0, 0.1);
+        border: 1px solid rgba(255, 140, 0, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #ff8c00;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(255, 140, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .character-content {
+        padding: 80px 0;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .character-portrait {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    .portrait-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .character-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1));
+        border: 2px solid #ff8c00;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff8c00;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+        animation: shimmer 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(180deg); }
+    }
+
+    .character-stats {
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #ff8c00;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .stat-value {
+        color: #ddd;
+        margin-top: 5px;
+    }
+
+    .character-info {
+        
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 25px;
+        font-weight: 400;
+        border-bottom: 2px solid #ff8c00;
+        padding-bottom: 10px;
+    }
+
+    .character-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .character-quote {
+        background: rgba(255, 140, 0, 0.05);
+        border-left: 4px solid #ff8c00;
+        padding: 25px 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+    }
+
+    .character-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 3em;
+        color: #ff8c00;
+        opacity: 0.3;
+    }
+
+    .quote-source {
+        text-align: right;
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 15px;
+        font-style: normal;
+    }
+
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .trait-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+        border-color: #ff8c00;
+        transform: translateY(-5px);
+    }
+
+    .trait-title {
+        color: #ff8c00;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .trait-description {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    .transformations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .transformation-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .transformation-card:hover {
+        border-color: #ff8c00;
+        transform: translateY(-5px);
+    }
+
+    .transformation-card.forsaken {
+        border-left: 4px solid #cd5c5c;
+    }
+
+    .transformation-card.refuge {
+        border-left: 4px solid #cd853f;
+    }
+
+    .transformation-card.operative {
+        border-left: 4px solid #ff8c00;
+    }
+
+    .transformation-title {
+        color: #ff8c00;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .transformation-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .related-characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .related-character {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .related-character:hover {
+        border-color: #ff8c00;
+        transform: translateY(-5px);
+    }
+
+    .related-avatar {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 140, 0, 0.2);
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ff8c00;
+        font-weight: bold;
+    }
+
+    .related-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .related-role {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    .character-summary {
+        padding: 60px 0;
+        background: rgba(10, 10, 20, 0.6);
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    .summary-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .summary-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 40px;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .summary-content {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .summary-content p {
+        margin-bottom: 25px;
+    }
+
+    .summary-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .read-more-section {
+        background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1));
+        border: 1px solid #ff8c00;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 60px 0;
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+    }
+
+    .cta-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #ff8c00, #ffa500);
+        color: #000;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(255, 140, 0, 0.4);
+    }
+
+    .cta-button.secondary {
+        background: rgba(255, 140, 0, 0.2);
+        color: #ff8c00;
+        border: 1px solid #ff8c00;
+    }
+
+    .cta-button.secondary:hover {
+        background: rgba(255, 140, 0, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .character-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .character-portrait {
+            position: static;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .character-title {
+            font-size: 2.2em;
+        }
+        
+        .character-tagline {
+            font-size: 1.2em;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .transformations-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
+        <h1 class="character-title">Jay</h1>
+        <p class="character-tagline">"The Young Bomber"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Soot-streaked face, youthful energy<br>Explosive expertise, maintained hope</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Chosen: Chapter 25</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human, Forsaken</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Age</div>
+                            <div class="stat-value">Mid-twenties</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Specialty</div>
+                            <div class="stat-value">Explosives, Sabotage</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Trait</div>
+                            <div class="stat-value">Enthusiastic Competence</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Active operative, mission partner</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">Hope in the Shadows</h2>
+                    <div class="character-description">
+                        <p>Jay represents the younger generation of Forsaken resistance fighters—enthusiastic, capable, and driven by the energy of someone who has found genuine purpose in dangerous missions against Zenithian oppression. As Dominic's mission partner, he embodies the operational effectiveness of the resistance movement while maintaining an almost youthful excitement about successful sabotage operations that sets him apart from his more traumatized elders.</p>
+                        
+                        <p>His involvement in the successful bombing of Zenithian Hall demonstrates both his technical competence with explosives and his willingness to undertake high-risk missions that strike directly at the heart of their oppressors' power. Unlike the grizzled cynicism of older resistance members, Jay brings a sense of accomplishment and even celebration to their victories, representing hope that the next generation hasn't been completely hardened by their circumstances.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        The bombs… they worked great.
+                        <div class="quote-source">— Jay's enthusiastic mission report</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">Technical Fire and Youthful Spirit</h2>
+                    <div class="character-description">
+                        <p>Jay's personality reflects the combination of technical expertise and maintained optimism that makes him invaluable to resistance operations. His enthusiasm for successful missions and pride in his explosive skills demonstrate someone who has found meaning and identity through competent service to the cause.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Mission Enthusiasm</div>
+                            <div class="trait-description">Genuine excitement about successful resistance operations. Takes pride in technical achievements and finds satisfaction in striking back at Zenithian oppression.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Explosive Expertise</div>
+                            <div class="trait-description">Skilled bomb-maker and sabotage specialist. Successfully destroyed Zenithian Hall with precisely placed explosives, demonstrating both technical competence and operational courage.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Quick Intelligence</div>
+                            <div class="trait-description">Rapidly grasps connections between different events and circumstances. Immediately understood the link between Mira's pursuit and their own escape timing.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Collaborative Spirit</div>
+                            <div class="trait-description">Works effectively with partners like Dominic on dangerous, coordinated missions. Represents the teamwork and mutual support that makes resistance operations successful.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Oh, man, that mob… they were after you, weren't they?
+                        <div class="quote-source">— Jay quickly recognizing patterns and connections</div>
+                    </div>
+                </section>
+
+                <!-- Development Journey -->
+                <section class="section">
+                    <h2 class="section-title">From Outcast to Operative</h2>
+                    <div class="character-description">
+                        <p>Jay's transformation from branded outcast to skilled operative represents hope that the younger generation can channel their persecution into constructive resistance rather than being consumed by trauma and rage like their elders.</p>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card forsaken">
+                            <div class="transformation-title">The Young Forsaken</div>
+                            <div class="transformation-description">
+                                <strong>Background:</strong> Branded and cast out at relatively young age<br>
+                                <strong>Experience:</strong> Persecution before full adult identity formation<br>
+                                <strong>Advantage:</strong> Adaptability and resilience of youth<br>
+                                <strong>Foundation:</strong> Less entrenched in pre-Forsaking identity
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card refuge">
+                            <div class="transformation-title">The Sanctuary Seeker</div>
+                            <div class="transformation-description">
+                                <strong>Arrival:</strong> Found safety and purpose in Forsaken community<br>
+                                <strong>Integration:</strong> Quickly adapted to underground lifestyle<br>
+                                <strong>Learning:</strong> Absorbed skills and values of resistance culture<br>
+                                <strong>Growth:</strong> Developed technical expertise and operational confidence
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card operative">
+                            <div class="transformation-title">The Skilled Operative</div>
+                            <div class="transformation-description">
+                                <strong>Specialization:</strong> Mastered explosives and sabotage techniques<br>
+                                <strong>Partnership:</strong> Effective collaboration with experienced fighters like Dominic<br>
+                                <strong>Success:</strong> Proven track record with high-risk, high-value missions<br>
+                                <strong>Future:</strong> Represents hope for next generation of resistance leadership
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Operational Role -->
+                <section class="section">
+                    <h2 class="section-title">The Art of Calculated Destruction</h2>
+                    <div class="character-description">
+                        <p>Jay's specialized skills in explosives and sabotage make him essential for operations that require technical precision and significant operational risk. His success demonstrates the resistance's capability to train effective operatives despite resource constraints.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Bomb-Making Mastery</div>
+                            <div class="trait-description">Skilled in creating and placing explosive devices for maximum effectiveness against Zenithian infrastructure while minimizing detection risk.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Infiltration Ability</div>
+                            <div class="trait-description">Successfully penetrated Zenithian security to plant explosives in heavily guarded Hall without capture or raising alarms.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Mission Endurance</div>
+                            <div class="trait-description">Capable of sustained physical exertion during extended, dangerous field operations requiring stealth and rapid movement.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Strategic Recognition</div>
+                            <div class="trait-description">Understands broader implications of missions beyond immediate tactical objectives, recognizing how operations fit into larger resistance campaign.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds of Purpose and Partnership</h2>
+                    <div class="character-description">
+                        <p>Jay's relationships reflect his role as an integrated and valued member of the resistance community, working effectively with experienced fighters while maintaining the energy and optimism that represent hope for the movement's future.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="/world-guide/characters/dominic/" class="related-character">
+                            <div class="related-avatar">D</div>
+                            <div class="related-name">Dominic</div>
+                            <div class="related-role">Mission Partner, Mentor</div>
+                        </a>
+                        <a href="/world-guide/characters/meridia/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Meridia</div>
+                            <div class="related-role">Sanctuary Leader</div>
+                        </a>
+                        <a href="/world-guide/characters/mira-roehart/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mira Roehart</div>
+                            <div class="related-role">Curious Interest</div>
+                        </a>
+                        <a href="/world-guide/characters/forsaken-community/" class="related-character">
+                            <div class="related-avatar">F</div>
+                            <div class="related-name">Forsaken Community</div>
+                            <div class="related-role">Protected Family</div>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Fire of the Future</h2>
+                <div class="summary-content">
+                    <p>Jay represents the technical competence and maintained enthusiasm of the younger generation within the Forsaken resistance, embodying hope that the movement will continue with energy and skill into the future. His successful partnership with Dominic on dangerous sabotage operations demonstrates both his explosive expertise and his ability to work effectively under pressure while maintaining excitement about striking back at their oppressors.</p>
+
+                    <p>Unlike older resistance members who may be driven primarily by trauma and revenge, Jay embodies a more forward-looking energy—someone who has found genuine purpose and satisfaction in developing specialized skills that serve the larger cause. His post-mission excitement and pride in successful operations suggest someone who hasn't been completely hardened by resistance life, who still finds authentic satisfaction in accomplishment and effective action against tyranny.</p>
+
+                    <p>His quick grasp of the connection between Mira's pursuit and their own escape timing shows strategic thinking that goes beyond simple technical execution. This combination of operational skill, intellectual agility, and collaborative effectiveness makes him valuable both as a field operative and as proof that the resistance can successfully train the next generation of fighters without losing their essential humanity to bitterness and trauma.</p>
+
+                    <p>Through Jay, the story demonstrates that the Forsaken community includes capable, committed younger members who bring both skills and optimism to the fight against Zenithian oppression. His character suggests that effective resistance movements require not just anger and trauma, but also technical competence, collaborative spirit, and the kind of maintained purpose that can sustain long-term opposition to systematic persecution while preserving hope for a better future.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Witness the Next Generation</h2>
+            <p class="cta-description">
+                Follow the journey of a young operative who brings technical skill and maintained hope to dangerous resistance missions. 
+                Jay's story represents the future of the fight against oppression.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
