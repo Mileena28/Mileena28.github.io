@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucien Altheris - The Corrupted Divine | The Chosen Series</title>
+    <meta name="description" content="Meet Lucien Altheris from The Chosen series. A Vaelari antagonist whose supernatural beauty masks profound corruption, representing the intersection of divine power, racial supremacy, and religious extremism.">
+</head>
+<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a14 0%, #2e2e3e 50%, #1a1a2e 100%); color: #ddd; font-family: 'Georgia', serif; line-height: 1.6;">
+
+<style>
+    /* Character Page Styles */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    }
+
+    .character-title {
+        font-size: 3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        letter-spacing: 2px;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+
+    .character-tagline {
+        font-size: 1.4em;
+        color: #ffd700;
+        font-style: italic;
+        margin-bottom: 30px;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+    }
+
+    .series-breadcrumb {
+        background: rgba(255, 215, 0, 0.1);
+        border: 1px solid rgba(255, 215, 0, 0.3);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #ffd700;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .series-breadcrumb:hover {
+        background: rgba(255, 215, 0, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+    }
+
+    .character-content {
+        padding: 80px 0;
+    }
+
+    .character-grid {
+        display: grid;
+        grid-template-columns: 350px 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .character-portrait {
+        position: sticky;
+        top: 100px;
+        align-self: start;
+    }
+
+    .portrait-container {
+        background: rgba(20, 20, 20, 0.8);
+        border: 1px solid #333;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.1);
+    }
+
+    .character-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 255, 255, 0.1));
+        border: 2px solid #ffd700;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffd700;
+        font-style: italic;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: inset 0 0 20px rgba(255, 215, 0, 0.1);
+    }
+
+    .character-image::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+        animation: divine-shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes divine-shimmer {
+        0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+        50% { transform: rotate(90deg) scale(1.1); opacity: 0.6; }
+    }
+
+    .character-stats {
+        text-align: left;
+    }
+
+    .stat-item {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #333;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+
+    .stat-label {
+        color: #ffd700;
+        font-weight: 600;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .stat-value {
+        color: #ddd;
+        margin-top: 5px;
+    }
+
+    .character-info {
+        
+    }
+
+    .section {
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        color: #f0f0f0;
+        margin-bottom: 25px;
+        font-weight: 400;
+        border-bottom: 2px solid #ffd700;
+        padding-bottom: 10px;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.2);
+    }
+
+    .character-description {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .character-quote {
+        background: rgba(255, 215, 0, 0.05);
+        border-left: 4px solid #ffd700;
+        padding: 25px 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #ddd;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+        box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
+    }
+
+    .character-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 3em;
+        color: #ffd700;
+        opacity: 0.3;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    }
+
+    .quote-source {
+        text-align: right;
+        color: #999;
+        font-size: 0.9em;
+        margin-top: 15px;
+        font-style: normal;
+    }
+
+    .traits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .trait-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .trait-card:hover {
+        border-color: #ffd700;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+    }
+
+    .trait-title {
+        color: #ffd700;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .trait-description {
+        color: #ccc;
+        font-size: 0.95em;
+    }
+
+    .transformations-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin: 30px 0;
+    }
+
+    .transformation-card {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .transformation-card:hover {
+        border-color: #ffd700;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+    }
+
+    .transformation-card.divine {
+        border-left: 4px solid #ffd700;
+    }
+
+    .transformation-card.corrupted {
+        border-left: 4px solid #ff6b6b;
+    }
+
+    .transformation-card.predator {
+        border-left: 4px solid #dc143c;
+    }
+
+    .transformation-card.challenged {
+        border-left: 4px solid #8a2be2;
+    }
+
+    .transformation-title {
+        color: #ffd700;
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .transformation-description {
+        color: #ccc;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    .related-characters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+
+    .related-character {
+        background: rgba(20, 20, 20, 0.6);
+        border: 1px solid #333;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .related-character:hover {
+        border-color: #ffd700;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+    }
+
+    .related-avatar {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 215, 0, 0.2);
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffd700;
+        font-weight: bold;
+    }
+
+    .related-name {
+        color: #f0f0f0;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .related-role {
+        color: #999;
+        font-size: 0.9em;
+    }
+
+    .character-summary {
+        padding: 60px 0;
+        background: rgba(10, 10, 20, 0.6);
+        border-top: 1px solid #333;
+        border-bottom: 1px solid #333;
+    }
+
+    .summary-container {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .summary-title {
+        font-size: 2.2em;
+        color: #f0f0f0;
+        margin-bottom: 40px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    }
+
+    .summary-content {
+        color: #ccc;
+        font-size: 1.1em;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .summary-content p {
+        margin-bottom: 25px;
+    }
+
+    .summary-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .read-more-section {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+        border: 1px solid #ffd700;
+        border-radius: 20px;
+        padding: 40px;
+        text-align: center;
+        margin: 60px 0;
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.1);
+    }
+
+    .cta-title {
+        font-size: 1.8em;
+        color: #f0f0f0;
+        margin-bottom: 15px;
+        text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+    }
+
+    .cta-description {
+        color: #ccc;
+        margin-bottom: 30px;
+        font-size: 1.1em;
+    }
+
+    .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-button {
+        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        color: #000;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+        text-shadow: none;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+    }
+
+    .cta-button.secondary {
+        background: rgba(255, 215, 0, 0.2);
+        color: #ffd700;
+        border: 1px solid #ffd700;
+    }
+
+    .cta-button.secondary:hover {
+        background: rgba(255, 215, 0, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .character-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .character-portrait {
+            position: static;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .character-title {
+            font-size: 2.2em;
+        }
+        
+        .character-tagline {
+            font-size: 1.2em;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .transformations-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
+        <h1 class="character-title">Lucien Altheris</h1>
+        <p class="character-tagline">"The Corrupted Divine"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Luminous blue eyes, divine radiance<br>Beautiful corruption, fallen light</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Chosen: Chapter 2</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Vaelari (Half-Elf, Half-Angel)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Origin</div>
+                            <div class="stat-value">The Sommer Isle</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Powers</div>
+                            <div class="stat-value">Divine Light, Mind Control</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Conflict</div>
+                            <div class="stat-value">Supremacy vs. Resistance</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Zealous leader, pursuing Mira</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">Beauty Masking Corruption</h2>
+                    <div class="character-description">
+                        <p>Lucien Altheris represents the most dangerous form of evil—one that wears the mask of divine beauty and righteous purpose while concealing profound corruption beneath. His Vaelari heritage grants him supernatural perfection that transcends mortal standards, yet this celestial blessing has been twisted into something monstrous through pride, supremacy, and the systematic abuse of divine power.</p>
+                        
+                        <p>With his luminous blue eyes that glow with angelic light and his otherworldly presence that commands both awe and terror, Lucien embodies the intersection of divine authority and racial supremacy. His arrival from the mysterious Sommer Isle brings not salvation, but a foreign religious colonialism that seeks to destroy indigenous traditions and remake entire cultures in his image.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        You are different, Mira. You feel it, don't you? That persistent pull, that subtle separation from the... rest? That feeling of being... other, somehow—adrift and untethered in a world that doesn't quite... fit?
+                        <div class="quote-source">— Lucien manipulating Mira's sense of otherness</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Fallen Divine</h2>
+                    <div class="character-description">
+                        <p>Lucien's personality reflects the catastrophic corruption of angelic nature, where divine gifts become weapons of oppression and celestial beauty masks predatory cruelty. His supernatural arrogance blinds him to his own moral blindness.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Corrupted Righteousness</div>
+                            <div class="trait-description">Uses concepts of purity and divine will to justify acts of profound evil. His twisted angelic nature allows him to commit atrocities while believing in his own righteousness.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Supernatural Supremacist</div>
+                            <div class="trait-description">Views his Vaelari heritage as proof of inherent superiority over mortals. Believes different species exist in a natural hierarchy with him at the apex.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Predatory Intelligence</div>
+                            <div class="trait-description">Combines centuries of experience with superhuman tactical thinking. Plans decades ahead, viewing mortals as chess pieces in his cosmic game.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Messianic Complex</div>
+                            <div class="trait-description">Genuinely believes he was sent to "purify" and "enlighten" mortal realms. Cannot conceive that his mission might be anything but divinely mandated.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        You will never walk alone, for where you go, I will follow, and where I lead, you will come willingly, for we are one flesh, one spirit, bound by Zenith's will for all eternity.
+                        <div class="quote-source">— Lucien's wedding vows revealing his possessive control</div>
+                    </div>
+                </section>
+
+                <!-- Vaelari Heritage & Powers -->
+                <section class="section">
+                    <h2 class="section-title">Divine Heritage Corrupted</h2>
+                    <div class="character-description">
+                        <p>Lucien's Vaelari nature combines the worst aspects of both angelic and elven supremacy, creating a being of terrible beauty whose supernatural gifts have been twisted into instruments of oppression and control.</p>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card divine">
+                            <div class="transformation-title">Angelic Light Manipulation</div>
+                            <div class="transformation-description">
+                                <strong>Divine Radiance:</strong> Channels blinding white light for branding and intimidation<br>
+                                <strong>Mind Control:</strong> Uses supernatural authority to override mortal will<br>
+                                <strong>Spiritual Branding:</strong> Burns permanent marks that scar both flesh and soul<br>
+                                <strong>Aura of Command:</strong> His presence naturally compels obedience
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card corrupted">
+                            <div class="transformation-title">Elven Grace Weaponized</div>
+                            <div class="transformation-description">
+                                <strong>Supernatural Charisma:</strong> Charm that transcends normal social dynamics<br>
+                                <strong>Enhanced Manipulation:</strong> Can read and exploit psychological vulnerabilities<br>
+                                <strong>Ageless Patience:</strong> Plans that unfold over decades or centuries<br>
+                                <strong>Tactical Genius:</strong> Superhuman strategic thinking and adaptability
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card predator">
+                            <div class="transformation-title">Systematic Abuse Tactics</div>
+                            <div class="transformation-description">
+                                <strong>Isolation Techniques:</strong> Removes support systems to increase dependency<br>
+                                <strong>Gaslighting Mastery:</strong> Makes victims doubt their own perceptions<br>
+                                <strong>Escalating Control:</strong> Gradually increases dominance until escape seems impossible<br>
+                                <strong>Sacred Violence:</strong> Uses religious authority to justify brutality
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card challenged">
+                            <div class="transformation-title">Void Vulnerability</div>
+                            <div class="transformation-description">
+                                <strong>Power Failure:</strong> His light-based abilities cannot affect Nimwe nature<br>
+                                <strong>Existential Crisis:</strong> Mira's resistance challenges his fundamental worldview<br>
+                                <strong>Rage Response:</strong> When authority is challenged, loses tactical control<br>
+                                <strong>Obsessive Pursuit:</strong> Cannot accept that any being could resist his dominance
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Colonial Symbolism -->
+                <section class="section">
+                    <h2 class="section-title">The Sommer Isle Invasion</h2>
+                    <div class="character-description">
+                        <p>Lucien's arrival represents more than individual evil—he embodies supernatural colonialism, using divine authority to justify the systematic destruction of indigenous cultures and the imposition of foreign religious supremacy.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Cultural Destroyer</div>
+                            <div class="trait-description">Systematically replaces local Wild God traditions with Sommer Isle theology, viewing indigenous beliefs as primitive obstacles to overcome.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Religious Colonizer</div>
+                            <div class="trait-description">Uses supernatural charisma and divine authority to convert entire communities, destroying cultural heritage in pursuit of spiritual dominance.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Racial Supremacist</div>
+                            <div class="trait-description">Views local humans as inferior beings requiring "guidance," believing his Vaelari heritage grants him the right to rule over mortal realms.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Imperial Expansion</div>
+                            <div class="trait-description">Rivenglade is merely the first target in a broader conquest. His ultimate goal is establishing Zenithian dominance beyond just one community.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds of Domination and Resistance</h2>
+                    <div class="character-description">
+                        <p>Lucien's relationships reflect his fundamental inability to connect authentically with others, viewing all interactions through the lens of dominance, control, and the gratification of his supernatural ego.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="/world-guide/characters/mira-roehart/" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mira Roehart</div>
+                            <div class="related-role">Obsession, Escaped Victim</div>
+                        </a>
+                        <a href="/world-guide/characters/elias-roehart/" class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Elias Roehart</div>
+                            <div class="related-role">Manipulated Convert</div>
+                        </a>
+                        <a href="/world-guide/characters/katalina-petari/" class="related-character">
+                            <div class="related-avatar">K</div>
+                            <div class="related-name">Katalina Petari</div>
+                            <div class="related-role">Zealous Follower</div>
+                        </a>
+                        <a href="/world-guide/characters/zenithian-hierarchy/" class="related-character">
+                            <div class="related-avatar">Z</div>
+                            <div class="related-name">Zenithian Hierarchy</div>
+                            <div class="related-role">Devoted Servants</div>
+                        </a>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Divine Made Monstrous</h2>
+                <div class="summary-content">
+                    <p>Lucien Altheris represents the terrifying reality of corrupted divine power—how celestial gifts can be twisted into instruments of oppression when wielded by beings consumed with supremacist ideology and predatory control. His Vaelari heritage grants him beauty that transcends mortal understanding and abilities that border on the godlike, yet these very gifts have become weapons in service of a profoundly evil agenda that destroys everything it touches.</p>
+
+                    <p>His systematic abuse of Mira reflects not just personal cruelty, but the broader violence of religious colonialism and racial supremacy. Through manipulation, isolation, and escalating brutality, he embodies how sacred authority can be weaponized to justify the most heinous acts. His inability to accept that his divine powers fail against her Nimwe nature triggers an existential crisis that reveals the fragility beneath his supernatural arrogance—his entire worldview depends on the assumption of his own invincibility and inherent superiority.</p>
+
+                    <p>The cosmic implications of his conflict with Mira extend far beyond personal obsession. Her resistance to his authority challenges not just his individual control, but the fundamental premise of his mission from the Sommer Isle. If a "mere" void creature can nullify his angelic powers, it threatens everything he believes about divine hierarchy, racial superiority, and his own destiny as a purifying force in the mortal realms. This transforms their struggle from domestic abuse into a battle between competing cosmic forces.</p>
+
+                    <p>His character serves as a warning about the seductive power of movements that combine religious authority with racial supremacy, offering belonging and purpose in exchange for unquestioning devotion to charismatic leaders. His supernatural beauty and divine heritage make him infinitely more dangerous than ordinary abusers—he possesses not just personal magnetism, but otherworldly abilities that can override rational thought and spiritual resistance. Yet his ultimate vulnerability to void powers suggests that even the most corrupted divine authority has limits.</p>
+
+                    <p>Lucien's story illustrates how power without wisdom, beauty without compassion, and authority without humility inevitably corrupt even the most exalted beings. His fall from whatever grace he once possessed serves as a cautionary tale about the destinations of supremacist ideology—whether personal, racial, or religious—and the way such beliefs transform even divine gifts into instruments of darkness disguised as light.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Confront the Corruption</h2>
+            <p class="cta-description">
+                Face the terrifying beauty of divine power corrupted by supremacist ideology. 
+                Lucien's story explores how sacred authority can become the most dangerous form of evil.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+</body>
+</html>
