@@ -112,16 +112,15 @@
             background: 
                 radial-gradient(circle at 25% 25%, rgba(34, 139, 34, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 75% 75%, rgba(50, 205, 50, 0.2) 0%, transparent 50%),
-                linear-gradient(45deg, transparent 45%, rgba(144, 238, 144, 0.1) 50%, transparent 55%),
-                linear-gradient(-45deg, transparent 45%, rgba(34, 139, 34, 0.1) 50%, transparent 55%);
-            animation: verdantFlow 20s ease-in-out infinite;
+                linear-gradient(45deg, transparent 45%, rgba(144, 238, 144, 0.1) 50%, transparent 55%);
+            animation: verdantFlow 15s ease-in-out infinite;
         }
 
         @keyframes verdantFlow {
-            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
-            25% { transform: rotate(30deg) scale(1.1); opacity: 0.7; }
-            50% { transform: rotate(60deg) scale(0.9); opacity: 0.3; }
-            75% { transform: rotate(90deg) scale(1.05); opacity: 0.8; }
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+            25% { transform: rotate(15deg) scale(1.1); opacity: 0.6; }
+            50% { transform: rotate(30deg) scale(0.9); opacity: 0.2; }
+            75% { transform: rotate(45deg) scale(1.05); opacity: 0.7; }
         }
 
         .character-stats {
@@ -279,51 +278,6 @@
         }
 
         .power-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .transformations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .transformation-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .transformation-card:hover {
-            border-color: #228b22;
-            transform: translateY(-5px);
-        }
-
-        .transformation-card.princess {
-            border-left: 4px solid #228b22;
-        }
-
-        .transformation-card.corrupted {
-            border-left: 4px solid #cc0000;
-        }
-
-        .transformation-card.sacrificed {
-            border-left: 4px solid #ffd700;
-        }
-
-        .transformation-title {
-            color: #228b22;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .transformation-description {
             color: #ccc;
             font-size: 0.95em;
             line-height: 1.6;
@@ -558,21 +512,6 @@
             margin-bottom: 10px;
         }
 
-        .agency-box {
-            background: rgba(34, 139, 34, 0.1);
-            border: 1px solid rgba(34, 139, 34, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #f5f5f5;
-        }
-
-        .agency-title {
-            color: #228b22;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             .character-grid {
@@ -599,7 +538,7 @@
                 align-items: center;
             }
             
-            .powers-grid, .transformations-grid {
+            .powers-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -672,8 +611,6 @@
                         <p>Princess Elowen Faerwyn embodies the eternal struggle between duty imposed and love freely chosen, between the weight of royal obligation and the fierce pull of personal agency. Known throughout the Verdant Veil as "The Blooming Whisper," she possesses a luminous beauty that captivates without demanding attention—deep emerald eyes that hold depths beyond their serene surface, dark hair perpetually adorned with wildflowers and living vines that respond to her emotional state, moving with the fluid grace of one who belongs to the forest itself.</p>
                         
                         <p>Yet beneath her gentle demeanor lies a core of steel forged in the heartwood of ancient oaks. Her smile can illuminate the darkest corners of the Veil, radiating a calming presence that soothes troubled spirits and nurtures the very air around her. But Elowen's journey is not one of gaining power—it is the far more dangerous path of learning to wield the most revolutionary force of all: the freedom to choose one's own sacrifices rather than accept those imposed by duty.</p>
-
-                        <p>Her story asks the fundamental question that defines her existence: what happens when someone who has always lived for others finally discovers what it means to live for herself? Through trials that strip away everything she thought defined her—royal titles, magical gifts, divine expectations—she must discover whether true strength lies in the power to heal the world, or in the courage to choose love over obligation.</p>
                     </div>
 
                     <div class="character-quote">
@@ -692,19 +629,19 @@
                     <div class="traits-grid">
                         <div class="trait-card">
                             <div class="trait-title">Gentle Authority</div>
-                            <div class="trait-description">Possesses serene grace concealing unbreakable resolve. Can be soft-spoken yet unyielding when moved by injustice or the need to protect others, demonstrating quiet strength that commands respect without demanding it.</div>
+                            <div class="trait-description">Possesses serene grace concealing unbreakable resolve. Can be soft-spoken yet unyielding when moved by injustice or the need to protect others.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Empathic Healer</div>
-                            <div class="trait-description">Her healing transcends physical wounds to mend spiritual and emotional trauma. She sees pain others carry and responds with profound compassion, often at great personal cost.</div>
+                            <div class="trait-description">Her healing transcends physical wounds to mend spiritual and emotional trauma. She sees pain others carry and responds with profound compassion.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Diplomatic Wisdom</div>
-                            <div class="trait-description">Skilled at navigating complex political situations while maintaining Dawnseeker values. Serves as bridge between elven and human worlds, finding harmony amid conflict.</div>
+                            <div class="trait-description">Skilled at navigating complex political situations while maintaining Dawnseeker values. Serves as bridge between elven and human worlds.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Self-Sacrificing Nature</div>
-                            <div class="trait-description">Her greatest flaw and strength—inability to refuse helping others even at great personal cost. This compassion makes her vulnerable to corruption but ultimately enables her greatest triumph.</div>
+                            <div class="trait-description">Her greatest flaw and strength—inability to refuse helping others even at great personal cost. This compassion makes her vulnerable to corruption.</div>
                         </div>
                     </div>
 
@@ -728,7 +665,7 @@
                                 <strong>Physical Restoration:</strong> Mends wounds, sets bones, and repairs bodily damage with emerald light<br>
                                 <strong>Spiritual Healing:</strong> Can address emotional trauma and soul wounds through compassionate touch<br>
                                 <strong>Overextension Risk:</strong> Pushing beyond safe limits threatens her own life force and spiritual stability<br>
-                                <strong>Bloodmarked Enhancement:</strong> Can channel raw Wild God power in extreme circumstances for transcendent healing
+                                <strong>Bloodmarked Enhancement:</strong> Can channel raw Wild God power in extreme circumstances
                             </div>
                         </div>
                         
@@ -748,23 +685,23 @@
                                 <strong>Astral Projection:</strong> Projects spirit across distances for reconnaissance and communication<br>
                                 <strong>Wild God Connection:</strong> Receives guidance and strength from ancient divine spirits<br>
                                 <strong>Diplomatic Magic:</strong> Uses natural charm and magical presence for inter-kingdom relations<br>
-                                <strong>Leadership Aura:</strong> Inspires loyalty and calm through supernatural charisma and genuine compassion
+                                <strong>Leadership Aura:</strong> Inspires loyalty and calm through supernatural charisma
                             </div>
                         </div>
                         
                         <div class="power-card bloodmarked">
-                            <div class="power-title">Bloodmarked Legacy</div>
+                            <div class="power-title">Ultimate Sacrifice</div>
                             <div class="power-description">
                                 <strong>Luminous Energy:</strong> Manifests verdant light that can become emerald flames under extreme stress<br>
                                 <strong>Raw Power Access:</strong> Can tap into untamed Bloodmarked abilities for crisis situations<br>
                                 <strong>Divine Resistance:</strong> Bloodmarked heritage provides some protection against corruption<br>
-                                <strong>Ultimate Sacrifice:</strong> Capable of expending all magical essence to heal divine corruption in others
+                                <strong>Magic Depletion:</strong> Expends all magical essence to heal Kaelen's divine corruption
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Character Evolution -->
+                <!-- The Journey of Agency -->
                 <section class="section">
                     <h2 class="section-title">The Journey from Duty to Choice</h2>
                     <div class="character-description">
@@ -791,60 +728,23 @@
                         
                         <div class="timeline-phase">
                             <div class="phase-label">Trial of Agency</div>
-                            <div class="phase-description">Awakening Tomb forces confrontation with her greatest fear—losing all choice and being trapped in endless obligated sacrifice without agency.</div>
+                            <div class="phase-description">Awakening Tomb forces confrontation with her greatest fear—losing all choice and being trapped in endless obligated sacrifice.</div>
                         </div>
                         
                         <div class="timeline-phase">
                             <div class="phase-label">Love's Discovery</div>
-                            <div class="phase-description">Relationship with Kaelen teaches her the difference between giving because she must and giving because she chooses to—love as liberation.</div>
+                            <div class="phase-description">Relationship with Kaelen teaches her the difference between giving because she must and giving because she chooses to.</div>
                         </div>
                         
                         <div class="timeline-phase">
                             <div class="phase-label">Chosen Sacrifice</div>
                             <div class="phase-description">Ultimate decision to sacrifice magic for Kaelen's soul demonstrates agency—she chooses her own sacrifice with full understanding and love.</div>
                         </div>
-                        
-                        <div class="timeline-phase">
-                            <div class="phase-label">Human Fulfillment</div>
-                            <div class="phase-description">Finds meaning and strength in ordinary life guided by love rather than divine obligation, proving that connection matters more than power.</div>
-                        </div>
-                    </div>
-
-                    <div class="transformations-grid">
-                        <div class="transformation-card princess">
-                            <div class="transformation-title">The Dutiful Princess</div>
-                            <div class="transformation-description">
-                                <strong>Identity:</strong> Defined by royal obligations and others' expectations<br>
-                                <strong>Power:</strong> Confident in Dawnseeker magic but feels constrained by duty<br>
-                                <strong>Relationships:</strong> Diplomatic and healing-focused, serves others before self<br>
-                                <strong>Fear:</strong> Failing in her responsibilities to her people and the Veil
-                            </div>
-                        </div>
-                        
-                        <div class="transformation-card corrupted">
-                            <div class="transformation-title">The Tempted Healer</div>
-                            <div class="transformation-description">
-                                <strong>Whisper:</strong> "Emerge" beyond natural limits for unlimited healing power<br>
-                                <strong>Vulnerability:</strong> Compassion turned against her through promises to save everyone<br>
-                                <strong>Resistance:</strong> Wild God connection and inner strength help maintain boundaries<br>
-                                <strong>Growth:</strong> Learns that unlimited power corrupts even the most compassionate intentions
-                            </div>
-                        </div>
-                        
-                        <div class="transformation-card sacrificed">
-                            <div class="transformation-title">The Liberated Beloved</div>
-                            <div class="transformation-description">
-                                <strong>Choice:</strong> Sacrifices all magic to heal Kaelen's divine corruption<br>
-                                <strong>Freedom:</strong> Discovers that choosing her own sacrifice grants true agency<br>
-                                <strong>Love:</strong> Finds fulfillment in connection rather than magical ability<br>
-                                <strong>Wisdom:</strong> Understands that love freely given transcends all other power
-                            </div>
-                        </div>
                     </div>
 
                     <div class="corruption-box">
                         <div class="corruption-title">The Silent God's "Emerge" Whisper</div>
-                        The corruption targeted Elowen's greatest strength—her compassionate healing nature. The whisper promised unlimited power to "emerge beyond measure" and eliminate all suffering, exploiting her inability to refuse helping others. "Why merely mend a broken branch, little healer, when you could command the very roots of the world?" The seductive promise of transcendent healing power nearly corrupted her compassion into destructive excess, until she realized that unlimited power removes the element of choice that makes healing meaningful.
+                        The corruption targeted Elowen's greatest strength—her compassionate healing nature. The whisper promised unlimited power to "emerge beyond measure" and eliminate all suffering, exploiting her inability to refuse helping others. "Why merely mend a broken branch, little healer, when you could command the very roots of the world?" The seductive promise nearly corrupted her compassion into destructive excess, until she realized that unlimited power removes the element of choice that makes healing meaningful.
                     </div>
 
                     <div class="character-quote">
@@ -863,33 +763,28 @@
                     <div class="trials-grid">
                         <div class="trial-card">
                             <div class="trial-title">The Awakening Tomb</div>
-                            <div class="trial-description">Forced to choose between magic and saving those she loves, discovers her greatest fear is losing agency—being trapped in endless sacrifice without choice. Realizes that choosing her sacrifice freely grants more power than any magic.</div>
+                            <div class="trial-description">Forced to choose between magic and saving those she loves, discovers her greatest fear is losing agency—being trapped in endless sacrifice without choice.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Hollow Spire Capture</div>
-                            <div class="trial-description">Demonstrates courage and resourcefulness through astral projection, proving she's more than a healer—she's a strategist, survivor, and leader who adapts to impossible circumstances.</div>
+                            <div class="trial-description">Demonstrates courage and resourcefulness through astral projection, proving she's more than a healer—she's a strategist and survivor.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Silent God's Corruption</div>
-                            <div class="trial-description">Resists seductive promises of unlimited healing power by recognizing that true healing comes from connection and choice, not domination over others through overwhelming force.</div>
+                            <div class="trial-description">Resists seductive promises of unlimited healing power by recognizing that true healing comes from connection and choice, not domination.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Love's Test</div>
-                            <div class="trial-description">Relationship with Kaelen teaches her to distinguish between service demanded by others and love freely chosen, showing that vulnerability and connection create stronger bonds than duty.</div>
+                            <div class="trial-description">Relationship with Kaelen teaches her to distinguish between service demanded by others and love freely chosen, showing vulnerability creates stronger bonds.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">The Ultimate Choice</div>
-                            <div class="trial-description">Sacrificing all magical abilities to save Kaelen's soul proves that love freely given is more powerful than any divine gift, completing her journey from obligation to agency.</div>
+                            <div class="trial-description">Sacrificing all magical abilities to save Kaelen's soul proves that love freely given is more powerful than any divine gift.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Ordinary Grace</div>
-                            <div class="trial-description">Learning to find meaning and strength in human life without magic, discovering that connection and choice matter more than supernatural ability or royal status.</div>
+                            <div class="trial-description">Learning to find meaning and strength in human life without magic, discovering that connection and choice matter more than supernatural ability.</div>
                         </div>
-                    </div>
-
-                    <div class="agency-box">
-                        <div class="agency-title">The Freedom of Chosen Sacrifice</div>
-                        Elowen's ultimate triumph lies not in gaining power but in discovering agency—the revolutionary understanding that choosing her own sacrifices, even at great cost, grants more freedom than unlimited magical ability constrained by others' expectations. Her journey proves that love freely given transcends all external validation, that vulnerability chosen creates stronger bonds than invulnerability imposed, and that ordinary humanity guided by love holds more meaning than divine power guided by duty.
                     </div>
                 </section>
 
@@ -898,11 +793,6 @@
                     <h2 class="section-title">Hearts That Shape Her Journey</h2>
                     <div class="character-description">
                         <p>For someone who spent her life serving others, Elowen's relationships become the crucible where she learns to distinguish between duty imposed upon her and love freely chosen. Each connection teaches her something essential about agency, belonging, and what makes existence truly meaningful.</p>
-                    </div>
-
-                    <div class="character-quote">
-                        Kaelen… why do you hold back?
-                        <div class="quote-source">— Elowen questioning emotional walls, seeking deeper connection</div>
                     </div>
 
                     <div class="related-characters">
@@ -925,7 +815,7 @@
                             <div class="related-avatar">M</div>
                             <div class="related-name">Mordain Ashcroft</div>
                             <div class="related-role">Enemy to Ally, Redemption</div>
-                        </div>
+                        </a>
                         <div class="related-character">
                             <div class="related-avatar">W</div>
                             <div class="related-name">Wild Gods</div>
@@ -936,14 +826,6 @@
                             <div class="related-name">Silent God</div>
                             <div class="related-role">Corruptor, Testing Force</div>
                         </a>
-                    </div>
-
-                    <div class="character-description">
-                        <p><strong>With Kaelen R'Veyne:</strong> Their relationship evolves from professional respect to profound love, teaching Elowen the difference between giving because she must and giving because she chooses to. He sees through her stoic facade to her vulnerability, while she recognizes his hidden pain beneath his protective walls. Their love is forged through shared trials and mutual understanding, culminating in her willing sacrifice of magic to save his soul—proving that connection matters more than power.</p>
-
-                        <p><strong>With Ryx Shadowclaw:</strong> Elowen offers him belonging, family, and acceptance despite his past, while he helps her understand different perspectives on being Bloodmarked. Their maternal bond shows her capacity for unconditional love without obligation, as she validates his worth as an individual and supports his eventual choice to forge his own path in the world.</p>
-
-                        <p><strong>With Prince Dain Solarius:</strong> Represents the difference between love demanded and love freely given. She recognizes his charm but feels no romantic attraction, maintaining diplomatic politeness while establishing clear boundaries. His obsessive pursuit demonstrates how duty and expectation can corrupt even well-intentioned affection, contrasting sharply with the freedom she finds in choosing Kaelen.</p>
                     </div>
                 </section>
 
@@ -959,13 +841,9 @@
 
                     <p>Throughout her story, Elowen grapples with the fundamental question that defines her existence: what happens when someone who has always lived for others finally discovers what it means to live for herself? Her gentle exterior conceals a core of steel forged in the heartwood of ancient oaks—an unbreakable will that becomes both her greatest strength and most dangerous weakness when it drives her to sacrifice everything for those she loves. Yet this very flaw becomes her salvation when she learns to distinguish between sacrifice imposed by duty and sacrifice chosen by love.</p>
 
-                    <p>Her relationship with divine power serves as a metaphor for her growth toward agency. Initially confident in her Dawnseeker abilities, she learns that true healing comes not from magical force but from connection and understanding. When the Silent God whispers "Emerge" beyond her natural limits, promising unlimited power to save everyone, she ultimately recognizes that such absolute power corrupts even the most compassionate intentions by removing the element of choice that makes healing meaningful. Her resistance to this corruption demonstrates her deep understanding that love without agency becomes control, no matter how benevolent the intention.</p>
-
-                    <p>The relationship between Elowen and Kaelen becomes the crucible where she discovers the transformative difference between giving because she must and giving because she chooses to. Their love develops through shared vulnerability and mutual recognition of hidden pain, teaching her that connection based on choice creates stronger bonds than any obligation based on duty. When she ultimately sacrifices all magical abilities to heal his divine corruption, she does so with full agency rather than royal obligation, proving that love freely given transcends any divine gift or magical power.</p>
+                    <p>Her relationship with divine power serves as a metaphor for her growth toward agency. Initially confident in her Dawnseeker abilities, she learns that true healing comes not from magical force but from connection and understanding. When the Silent God whispers "Emerge" beyond her natural limits, promising unlimited power to save everyone, she ultimately recognizes that such absolute power corrupts even the most compassionate intentions by removing the element of choice that makes healing meaningful.</p>
 
                     <p>Elowen's ultimate transformation from the Living Heart of the Veil to a woman who finds fulfillment in ordinary human love showcases the revolutionary power of choice, agency, and connection in the face of cosmic darkness. Her story proves that the greatest magic isn't the power to change the world—it's the courage to choose love over duty, vulnerability over strength, and humanity over godhood. Through her journey, we learn that sometimes the most profound transformation comes not from gaining power, but from the wisdom to let it go in service of something more meaningful than any divine gift: love freely chosen and courageously given.</p>
-
-                    <p>Her legacy lies not in the magic she wielded or the royal title she bore, but in her demonstration that true freedom comes from choosing one's own sacrifices rather than accepting those imposed by others. She becomes a living testament to the truth that ordinary humanity guided by love holds more meaning than divine power constrained by obligation, and that the courage to be vulnerable by choice creates deeper connection than any strength imposed by duty. In a world where power often defines worth, Elowen proves that the greatest strength lies in knowing when to let power go.</p>
                 </div>
             </div>
         </section>
