@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<style>
+    :root {
+        /* Default colors - override these in page front matter */
+        --primary-color: {{ page.primary_color | default: '#8a9fff' }};
+        --primary-light: {{ page.primary_light | default: 'rgba(138, 159, 255, 0.2)' }};
+        --primary-dark: {{ page.primary_dark | default: 'rgba(138, 159, 255, 0.05)' }};
+        --secondary-color: {{ page.secondary_color | default: '#c0c0c0' }};
+    }
+
+    /* ALL your consistent character profile CSS here */
+    .character-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .character-header {
+        padding: 80px 0 60px;
+        text-align: center;
+        background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-dark) 100%);
+    }
+
+    .character-tagline {
+        color: var(--primary-color);
+        /* etc... */
+    }
+
+    /* All the rest of your character profile CSS using CSS variables */
+</style>
+
+<!-- Your character profile HTML structure -->
+<section class="character-header">
+    <!-- etc -->
+</section>
