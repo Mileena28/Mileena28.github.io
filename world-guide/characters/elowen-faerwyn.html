@@ -1,478 +1,647 @@
----
-layout: default
-title: "Elowen Faerwyn - The Healer of Verdant Veil | Blood of the Wild Gods"
-description: "Meet Princess Elowen Faerwyn from Mileena Rayne's dark fantasy series Blood of the Wild Gods. A Dawnseeker princess who embodies the struggle between duty and choice, ultimately sacrificing everything for love."
-image: "/assets/images/elowen-faerwyn-character-art.jpg"
----
-
-<style>
-    /* Character Page Styles */
-    .character-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .character-header {
-        padding: 80px 0 60px;
-        text-align: center;
-        background: linear-gradient(135deg, rgba(34, 139, 34, 0.1) 0%, rgba(34, 139, 34, 0.05) 100%);
-    }
-
-    .character-title {
-        font-size: 3em;
-        font-weight: 300;
-        margin-bottom: 10px;
-        color: #f0f0f0;
-        letter-spacing: 2px;
-    }
-
-    .character-tagline {
-        font-size: 1.4em;
-        color: #228b22;
-        font-style: italic;
-        margin-bottom: 30px;
-    }
-
-    .series-breadcrumb {
-        background: rgba(34, 139, 34, 0.1);
-        border: 1px solid rgba(34, 139, 34, 0.3);
-        border-radius: 25px;
-        padding: 8px 20px;
-        display: inline-block;
-        font-size: 0.9em;
-        color: #228b22;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .series-breadcrumb:hover {
-        background: rgba(34, 139, 34, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .character-content {
-        padding: 80px 0;
-    }
-
-    .character-grid {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
-    }
-
-    .character-portrait {
-        position: sticky;
-        top: 100px;
-        align-self: start;
-    }
-
-    .portrait-container {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 30px;
-        text-align: center;
-        backdrop-filter: blur(10px);
-    }
-
-    .character-image {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(34, 139, 34, 0.1));
-        border: 2px solid #228b22;
-        border-radius: 15px;
-        margin-bottom: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #228b22;
-        font-style: italic;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .character-image::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(34, 139, 34, 0.1) 0%, transparent 70%);
-        animation: shimmer 4s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(180deg); }
-    }
-
-    .character-stats {
-        text-align: left;
-    }
-
-    .stat-item {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #333;
-    }
-
-    .stat-item:last-child {
-        border-bottom: none;
-    }
-
-    .stat-label {
-        color: #228b22;
-        font-weight: 600;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .stat-value {
-        color: #ddd;
-        margin-top: 5px;
-    }
-
-    .character-info {
-        
-    }
-
-    .section {
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        font-size: 2em;
-        color: #f0f0f0;
-        margin-bottom: 25px;
-        font-weight: 400;
-        border-bottom: 2px solid #228b22;
-        padding-bottom: 10px;
-    }
-
-    .character-description {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        margin-bottom: 30px;
-    }
-
-    .character-quote {
-        background: rgba(34, 139, 34, 0.05);
-        border-left: 4px solid #228b22;
-        padding: 25px 30px;
-        margin: 30px 0;
-        font-style: italic;
-        color: #ddd;
-        border-radius: 0 15px 15px 0;
-        position: relative;
-    }
-
-    .character-quote::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 3em;
-        color: #228b22;
-        opacity: 0.3;
-    }
-
-    .quote-source {
-        text-align: right;
-        color: #999;
-        font-size: 0.9em;
-        margin-top: 15px;
-        font-style: normal;
-    }
-
-    .traits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .trait-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .trait-card:hover {
-        border-color: #228b22;
-        transform: translateY(-5px);
-    }
-
-    .trait-title {
-        color: #228b22;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .trait-description {
-        color: #ccc;
-        font-size: 0.95em;
-    }
-
-    .transformations-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-    }
-
-    .transformation-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-    }
-
-    .transformation-card:hover {
-        border-color: #228b22;
-        transform: translateY(-5px);
-    }
-
-    .transformation-card.dawnseeker {
-        border-left: 4px solid #228b22;
-    }
-
-    .transformation-card.corrupted {
-        border-left: 4px solid #cc0000;
-    }
-
-    .transformation-card.sacrificed {
-        border-left: 4px solid #ffd700;
-    }
-
-    .transformation-title {
-        color: #228b22;
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-    }
-
-    .transformation-description {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    .related-characters {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .related-character {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .related-character:hover {
-        border-color: #228b22;
-        transform: translateY(-5px);
-    }
-
-    .related-avatar {
-        width: 60px;
-        height: 60px;
-        background: rgba(34, 139, 34, 0.2);
-        border-radius: 50%;
-        margin: 0 auto 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #228b22;
-        font-weight: bold;
-    }
-
-    .related-name {
-        color: #f0f0f0;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    .related-role {
-        color: #999;
-        font-size: 0.9em;
-    }
-
-    .trials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .trial-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .trial-card:hover {
-        border-color: #228b22;
-        transform: translateY(-5px);
-    }
-
-    .trial-title {
-        color: #228b22;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .trial-description {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    .character-summary {
-        padding: 60px 0;
-        background: rgba(10, 10, 20, 0.6);
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
-    }
-
-    .summary-container {
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .summary-title {
-        font-size: 2.2em;
-        color: #f0f0f0;
-        margin-bottom: 40px;
-        font-weight: 300;
-        letter-spacing: 1px;
-    }
-
-    .summary-content {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        text-align: left;
-    }
-
-    .summary-content p {
-        margin-bottom: 25px;
-    }
-
-    .summary-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    .read-more-section {
-        background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(34, 139, 34, 0.1));
-        border: 1px solid #228b22;
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        margin: 60px 0;
-    }
-
-    .cta-title {
-        font-size: 1.8em;
-        color: #f0f0f0;
-        margin-bottom: 15px;
-    }
-
-    .cta-description {
-        color: #ccc;
-        margin-bottom: 30px;
-        font-size: 1.1em;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cta-button {
-        background: linear-gradient(135deg, #228b22, #32cd32);
-        color: #000;
-        text-decoration: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(34, 139, 34, 0.4);
-    }
-
-    .cta-button.secondary {
-        background: rgba(34, 139, 34, 0.2);
-        color: #228b22;
-        border: 1px solid #228b22;
-    }
-
-    .cta-button.secondary:hover {
-        background: rgba(34, 139, 34, 0.3);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 1024px) {
-        .character-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elowen Faerwyn - The Living Heart of the Veil | Blood of the Wild Gods</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a1a0a 0%, #1a2d1a 50%, #2d4a2d 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
         }
-        
-        .character-portrait {
-            position: static;
-        }
-    }
 
-    @media (max-width: 768px) {
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.1) 0%, rgba(34, 139, 34, 0.05) 100%);
+        }
+
         .character-title {
-            font-size: 2.2em;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
         }
-        
+
         .character-tagline {
+            font-size: 1.4em;
+            color: #228b22;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(34, 139, 34, 0.1);
+            border: 1px solid rgba(34, 139, 34, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #228b22;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(34, 139, 34, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(50, 205, 50, 0.1));
+            border: 2px solid #228b22;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #228b22;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(34, 139, 34, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(50, 205, 50, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(144, 238, 144, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(34, 139, 34, 0.1) 50%, transparent 55%);
+            animation: verdantFlow 20s ease-in-out infinite;
+        }
+
+        @keyframes verdantFlow {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(30deg) scale(1.1); opacity: 0.7; }
+            50% { transform: rotate(60deg) scale(0.9); opacity: 0.3; }
+            75% { transform: rotate(90deg) scale(1.05); opacity: 0.8; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #228b22;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #228b22;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(34, 139, 34, 0.05);
+            border-left: 4px solid #228b22;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #228b22;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #228b22;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #228b22;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #228b22;
+            transform: translateY(-5px);
+        }
+
+        .power-card.healing {
+            border-left: 4px solid #228b22;
+        }
+
+        .power-card.nature {
+            border-left: 4px solid #32cd32;
+        }
+
+        .power-card.astral {
+            border-left: 4px solid #90ee90;
+        }
+
+        .power-card.bloodmarked {
+            border-left: 4px solid #ffd700;
+        }
+
+        .power-title {
+            color: #228b22;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .transformation-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .transformation-card:hover {
+            border-color: #228b22;
+            transform: translateY(-5px);
+        }
+
+        .transformation-card.princess {
+            border-left: 4px solid #228b22;
+        }
+
+        .transformation-card.corrupted {
+            border-left: 4px solid #cc0000;
+        }
+
+        .transformation-card.sacrificed {
+            border-left: 4px solid #ffd700;
+        }
+
+        .transformation-title {
+            color: #228b22;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .transformation-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+            justify-items: center;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            width: 100%;
+            max-width: 220px;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .related-character:hover {
+            border-color: #228b22;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(34, 139, 34, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #228b22;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .trials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trial-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trial-card:hover {
+            border-color: #228b22;
+            transform: translateY(-5px);
+        }
+
+        .trial-title {
+            color: #228b22;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trial-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(10, 20, 10, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(34, 139, 34, 0.2), rgba(34, 139, 34, 0.1));
+            border: 1px solid #228b22;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #228b22, #32cd32);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(34, 139, 34, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(34, 139, 34, 0.2);
+            color: #228b22;
+            border: 1px solid #228b22;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(34, 139, 34, 0.3);
+        }
+
+        .evolution-timeline {
+            background: rgba(10, 20, 10, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #228b22;
+            font-weight: 600;
+            margin-bottom: 20px;
             font-size: 1.2em;
         }
-        
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
+
+        .timeline-phase {
+            border-left: 3px solid #228b22;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
         }
-        
-        .transformations-grid {
-            grid-template-columns: 1fr;
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #228b22;
+            border-radius: 50%;
         }
-    }
-</style>
+
+        .phase-label {
+            color: #228b22;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .corruption-box {
+            background: rgba(139, 34, 34, 0.1);
+            border: 1px solid rgba(139, 34, 34, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .corruption-title {
+            color: #cc4444;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .agency-box {
+            background: rgba(34, 139, 34, 0.1);
+            border: 1px solid rgba(34, 139, 34, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .agency-title {
+            color: #228b22;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+            
+            .related-characters {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid, .transformations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .related-characters {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .related-character {
+                max-width: none;
+                min-height: 120px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .related-characters {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
 
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <a href="/world-guide/" class="series-breadcrumb">← Blood of the Wild Gods World Guide</a>
         <h1 class="character-title">Elowen Faerwyn</h1>
-        <p class="character-tagline">"The Healer of Verdant Veil"</p>
+        <p class="character-tagline">"The Living Heart of the Veil"</p>
     </div>
 </section>
 
@@ -486,33 +655,37 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
                 <div class="portrait-container">
                     <div class="character-image">
                         [Character Art Coming Soon]<br>
-                        <small>Emerald eyes, dark hair adorned<br>with wildflowers and living vines</small>
+                        <small>Emerald eyes like dappled sunlight,<br>dark hair adorned with living vines<br>and wildflowers that never wilt</small>
                     </div>
                     
                     <div class="character-stats">
                         <div class="stat-item">
                             <div class="stat-label">First Appears</div>
-                            <div class="stat-value">Blood of the Wild Gods: The Silence</div>
+                            <div class="stat-value">The Silence</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Heritage</div>
                             <div class="stat-value">Elf/Elfkind, Dawnseeker, Bloodmarked lineage</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Location</div>
-                            <div class="stat-value">The Verdant Veil (homeland)</div>
+                            <div class="stat-label">Homeland</div>
+                            <div class="stat-value">The Verdant Veil (Princess of the Dawnseekers)</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Abilities</div>
-                            <div class="stat-value">Nature magic, healing, astral projection</div>
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">The Blooming Whisper, Living Heart of the Veil</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Core Conflict</div>
                             <div class="stat-value">Duty vs. Choice, Agency vs. Obligation</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Status</div>
-                            <div class="stat-value">Magic sacrificed, living in chosen love</div>
+                            <div class="stat-label">Silent God Whisper</div>
+                            <div class="stat-value">"Emerge" - Corruption through unlimited power</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Ultimate Fate</div>
+                            <div class="stat-value">Magic sacrificed for love, living in chosen humanity</div>
                         </div>
                     </div>
                 </div>
@@ -523,42 +696,44 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
                 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">The Living Heart of the Veil</h2>
+                    <h2 class="section-title">The Princess Who Chose Her Crown</h2>
                     <div class="character-description">
-                        <p>Princess Elowen Faerwyn embodies the eternal struggle between duty and desire, between the weight of royal obligation and the fierce pull of personal agency. Known throughout the Verdant Veil as "The Blooming Whisper," she possesses a luminous beauty that captivates without demanding attention—emerald eyes that hold depths beyond their serene surface, dark hair perpetually adorned with wildflowers and living vines, moving with the fluid grace of one who belongs to the forest itself.</p>
+                        <p>Princess Elowen Faerwyn embodies the eternal struggle between duty imposed and love freely chosen, between the weight of royal obligation and the fierce pull of personal agency. Known throughout the Verdant Veil as "The Blooming Whisper," she possesses a luminous beauty that captivates without demanding attention—deep emerald eyes that hold depths beyond their serene surface, dark hair perpetually adorned with wildflowers and living vines that respond to her emotional state, moving with the fluid grace of one who belongs to the forest itself.</p>
                         
-                        <p>Yet beneath her gentle demeanor lies a core of steel forged in the heartwood of ancient oaks. Elowen's journey is not one of gaining power, but of learning to wield the most dangerous force of all: the freedom to choose one's own sacrifices. Her story asks the fundamental question—what happens when someone who has always lived for others finally discovers what it means to live for herself?</p>
+                        <p>Yet beneath her gentle demeanor lies a core of steel forged in the heartwood of ancient oaks. Her smile can illuminate the darkest corners of the Veil, radiating a calming presence that soothes troubled spirits and nurtures the very air around her. But Elowen's journey is not one of gaining power—it is the far more dangerous path of learning to wield the most revolutionary force of all: the freedom to choose one's own sacrifices rather than accept those imposed by duty.</p>
+
+                        <p>Her story asks the fundamental question that defines her existence: what happens when someone who has always lived for others finally discovers what it means to live for herself? Through trials that strip away everything she thought defined her—royal titles, magical gifts, divine expectations—she must discover whether true strength lies in the power to heal the world, or in the courage to choose love over obligation.</p>
                     </div>
 
                     <div class="character-quote">
                         Living a life with no love… that is not living at all. That is just… existing.
-                        <div class="quote-source">— Elowen's core truth about meaning and connection</div>
+                        <div class="quote-source">— Elowen's fundamental truth about meaning and connection</div>
                     </div>
                 </section>
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">The Princess Behind the Crown</h2>
+                    <h2 class="section-title">Gentle Steel and Hidden Fire</h2>
                     <div class="character-description">
-                        <p>Elowen radiates a calming presence that soothes troubled spirits and nurtures the very air around her. Her smile can illuminate the darkest corners of the Veil, yet her true strength lies not in her healing magic, but in her unbreakable will—a determination that becomes both her greatest gift and most dangerous weakness.</p>
+                        <p>Elowen radiates an ethereal grace that makes her seem part of the forest itself, yet her true strength lies not in her magical abilities but in her unbreakable will—a determination that becomes both her greatest gift and most dangerous weakness. Her compassionate nature drives her to push her healing powers beyond safe limits, making her uniquely vulnerable to corruption that exploits her selfless instincts.</p>
                     </div>
 
                     <div class="traits-grid">
                         <div class="trait-card">
-                            <div class="trait-title">Gentle Steel</div>
-                            <div class="trait-description">Possesses serene grace that conceals an core of unbreakable will. She can be resolute and unyielding when moved by injustice or the need to protect others.</div>
+                            <div class="trait-title">Gentle Authority</div>
+                            <div class="trait-description">Possesses serene grace concealing unbreakable resolve. Can be soft-spoken yet unyielding when moved by injustice or the need to protect others, demonstrating quiet strength that commands respect without demanding it.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Empathic Healer</div>
-                            <div class="trait-description">Her healing goes beyond physical wounds to mend spiritual and emotional trauma, seeing the pain others carry and responding with profound compassion.</div>
+                            <div class="trait-description">Her healing transcends physical wounds to mend spiritual and emotional trauma. She sees pain others carry and responds with profound compassion, often at great personal cost.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Diplomatic Wisdom</div>
-                            <div class="trait-description">Skilled at navigating complex political situations while maintaining her values, serving as ambassador between the Dawnseeker elves and human kingdoms.</div>
+                            <div class="trait-description">Skilled at navigating complex political situations while maintaining Dawnseeker values. Serves as bridge between elven and human worlds, finding harmony amid conflict.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Self-Sacrificing Nature</div>
-                            <div class="trait-description">Her greatest flaw—the inability to refuse helping others even at great personal cost, leading to her ultimate willing sacrifice of everything for love.</div>
+                            <div class="trait-description">Her greatest flaw and strength—inability to refuse helping others even at great personal cost. This compassion makes her vulnerable to corruption but ultimately enables her greatest triumph.</div>
                         </div>
                     </div>
 
@@ -568,40 +743,142 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
                     </div>
                 </section>
 
-                <!-- Powers & Sacrifice -->
+                <!-- Powers & Abilities -->
                 <section class="section">
                     <h2 class="section-title">From Divine Gift to Chosen Sacrifice</h2>
                     <div class="character-description">
-                        <p>Elowen's magical abilities stem from her connection to the Wild Gods and her Dawnseeker heritage. Her power manifests as luminous emerald energy that can heal wounds, manipulate nature, and even project her spirit across vast distances. Yet her story becomes one of power relinquished rather than power gained.</p>
+                        <p>Elowen's magical abilities stem from her deep connection to the Wild Gods and her Bloodmarked heritage. Her power manifests as luminous emerald energy that can heal wounds, manipulate nature, and even project her spirit across vast distances. Yet her story becomes one of power relinquished rather than power gained—a princess who discovers that love freely given is more powerful than any divine gift.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card healing">
+                            <div class="power-title">Dawnseeker Healing</div>
+                            <div class="power-description">
+                                <strong>Physical Restoration:</strong> Mends wounds, sets bones, and repairs bodily damage with emerald light<br>
+                                <strong>Spiritual Healing:</strong> Can address emotional trauma and soul wounds through compassionate touch<br>
+                                <strong>Overextension Risk:</strong> Pushing beyond safe limits threatens her own life force and spiritual stability<br>
+                                <strong>Bloodmarked Enhancement:</strong> Can channel raw Wild God power in extreme circumstances for transcendent healing
+                            </div>
+                        </div>
+                        
+                        <div class="power-card nature">
+                            <div class="power-title">Nature Manipulation</div>
+                            <div class="power-description">
+                                <strong>Plant Control:</strong> Commands roots, vines, and thorns as natural weapons and tools<br>
+                                <strong>Wind Mastery:</strong> Creates powerful vortexes and directs air currents for offense and defense<br>
+                                <strong>Forest Communion:</strong> Speaks with trees and woodland spirits for information and aid<br>
+                                <strong>Environmental Harmony:</strong> Makes the forest itself an ally in combat and crisis situations
+                            </div>
+                        </div>
+                        
+                        <div class="power-card astral">
+                            <div class="power-title">Advanced Abilities</div>
+                            <div class="power-description">
+                                <strong>Astral Projection:</strong> Projects spirit across distances for reconnaissance and communication<br>
+                                <strong>Wild God Connection:</strong> Receives guidance and strength from ancient divine spirits<br>
+                                <strong>Diplomatic Magic:</strong> Uses natural charm and magical presence for inter-kingdom relations<br>
+                                <strong>Leadership Aura:</strong> Inspires loyalty and calm through supernatural charisma and genuine compassion
+                            </div>
+                        </div>
+                        
+                        <div class="power-card bloodmarked">
+                            <div class="power-title">Bloodmarked Legacy</div>
+                            <div class="power-description">
+                                <strong>Luminous Energy:</strong> Manifests verdant light that can become emerald flames under extreme stress<br>
+                                <strong>Raw Power Access:</strong> Can tap into untamed Bloodmarked abilities for crisis situations<br>
+                                <strong>Divine Resistance:</strong> Bloodmarked heritage provides some protection against corruption<br>
+                                <strong>Ultimate Sacrifice:</strong> Capable of expending all magical essence to heal divine corruption in others
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Character Evolution -->
+                <section class="section">
+                    <h2 class="section-title">The Journey from Duty to Choice</h2>
+                    <div class="character-description">
+                        <p>Elowen's transformation represents one of the most profound character arcs in the series—a journey from dutiful princess constrained by expectations to a woman who discovers that true freedom comes not from power, but from the courage to choose one's own sacrifices. Her path is marked by trials that test not her magical abilities, but her understanding of agency, love, and what makes existence truly meaningful.</p>
+                    </div>
+
+                    <div class="evolution-timeline">
+                        <div class="timeline-title">Evolution of Agency and Love</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Dutiful Princess</div>
+                            <div class="phase-description">Living for others through royal obligation, skilled in magic but constrained by endless expectations and "shoulds" that define her existence.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Questioning Heart</div>
+                            <div class="phase-description">Meeting Kaelen sparks questions about duty versus desire, beginning to distinguish between service imposed upon her and love freely chosen.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Silent God Temptation</div>
+                            <div class="phase-description">Corruption attempts exploit her compassion through promises of unlimited healing power, testing her understanding of healthy boundaries.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Trial of Agency</div>
+                            <div class="phase-description">Awakening Tomb forces confrontation with her greatest fear—losing all choice and being trapped in endless obligated sacrifice without agency.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Love's Discovery</div>
+                            <div class="phase-description">Relationship with Kaelen teaches her the difference between giving because she must and giving because she chooses to—love as liberation.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Chosen Sacrifice</div>
+                            <div class="phase-description">Ultimate decision to sacrifice magic for Kaelen's soul demonstrates agency—she chooses her own sacrifice with full understanding and love.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Human Fulfillment</div>
+                            <div class="phase-description">Finds meaning and strength in ordinary life guided by love rather than divine obligation, proving that connection matters more than power.</div>
+                        </div>
                     </div>
 
                     <div class="transformations-grid">
-                        <div class="transformation-card dawnseeker">
-                            <div class="transformation-title">Dawnseeker Princess</div>
+                        <div class="transformation-card princess">
+                            <div class="transformation-title">The Dutiful Princess</div>
                             <div class="transformation-description">
-                                <strong>Abilities:</strong> Advanced healing magic, plant manipulation, wind control, communion with forest spirits<br>
-                                <strong>Manifestation:</strong> Emerald light, living vines, nature responding to her will<br>
-                                <strong>Burden:</strong> Royal duty and endless expectations to serve others before herself
+                                <strong>Identity:</strong> Defined by royal obligations and others' expectations<br>
+                                <strong>Power:</strong> Confident in Dawnseeker magic but feels constrained by duty<br>
+                                <strong>Relationships:</strong> Diplomatic and healing-focused, serves others before self<br>
+                                <strong>Fear:</strong> Failing in her responsibilities to her people and the Veil
                             </div>
                         </div>
                         
                         <div class="transformation-card corrupted">
-                            <div class="transformation-title">Silent God's Temptation</div>
+                            <div class="transformation-title">The Tempted Healer</div>
                             <div class="transformation-description">
-                                <strong>Whisper:</strong> "Emerge" beyond her natural limits for unlimited healing power<br>
-                                <strong>Danger:</strong> Corruption of her compassionate nature into destructive excess<br>
-                                <strong>Resistance:</strong> Her connection to Wild Gods and inner strength help her resist
+                                <strong>Whisper:</strong> "Emerge" beyond natural limits for unlimited healing power<br>
+                                <strong>Vulnerability:</strong> Compassion turned against her through promises to save everyone<br>
+                                <strong>Resistance:</strong> Wild God connection and inner strength help maintain boundaries<br>
+                                <strong>Growth:</strong> Learns that unlimited power corrupts even the most compassionate intentions
                             </div>
                         </div>
                         
                         <div class="transformation-card sacrificed">
-                            <div class="transformation-title">The Ultimate Choice</div>
+                            <div class="transformation-title">The Liberated Beloved</div>
                             <div class="transformation-description">
-                                <strong>Sacrifice:</strong> All magical abilities to heal Kaelen's divine corruption<br>
-                                <strong>Gift:</strong> True agency and the freedom to choose love over duty<br>
-                                <strong>Meaning:</strong> Finding strength in ordinary humanity and chosen connection
+                                <strong>Choice:</strong> Sacrifices all magic to heal Kaelen's divine corruption<br>
+                                <strong>Freedom:</strong> Discovers that choosing her own sacrifice grants true agency<br>
+                                <strong>Love:</strong> Finds fulfillment in connection rather than magical ability<br>
+                                <strong>Wisdom:</strong> Understands that love freely given transcends all other power
                             </div>
                         </div>
+                    </div>
+
+                    <div class="corruption-box">
+                        <div class="corruption-title">The Silent God's "Emerge" Whisper</div>
+                        The corruption targeted Elowen's greatest strength—her compassionate healing nature. The whisper promised unlimited power to "emerge beyond measure" and eliminate all suffering, exploiting her inability to refuse helping others. "Why merely mend a broken branch, little healer, when you could command the very roots of the world?" The seductive promise of transcendent healing power nearly corrupted her compassion into destructive excess, until she realized that unlimited power removes the element of choice that makes healing meaningful.
+                    </div>
+
+                    <div class="character-quote">
+                        I don't care if I never pass your trial! I don't care if I lose everything! I will stand here and heal them!
+                        <div class="quote-source">— Elowen choosing to heal despite losing magic, discovering true agency</div>
                     </div>
                 </section>
 
@@ -609,26 +886,39 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
                 <section class="section">
                     <h2 class="section-title">Trials That Forge the Soul</h2>
                     <div class="character-description">
-                        <p>Elowen's journey is marked by trials that strip away everything she thought defined her, revealing the unbreakable core of who she truly is beneath royal titles and magical gifts.</p>
+                        <p>Elowen's trials strip away everything external—royal titles, magical abilities, divine expectations—to reveal the unbreakable core of who she truly is beneath all roles and obligations. Each challenge forces her to confront the difference between duty imposed upon her and love she freely chooses to give.</p>
                     </div>
 
                     <div class="trials-grid">
                         <div class="trial-card">
                             <div class="trial-title">The Awakening Tomb</div>
-                            <div class="trial-description">Forced to choose between her magic and saving those she loves, she discovers her greatest fear is losing agency—being forced into endless sacrifice without choice.</div>
+                            <div class="trial-description">Forced to choose between magic and saving those she loves, discovers her greatest fear is losing agency—being trapped in endless sacrifice without choice. Realizes that choosing her sacrifice freely grants more power than any magic.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Hollow Spire Capture</div>
-                            <div class="trial-description">Demonstrates courage and resourcefulness through astral projection, showing she's more than just a healer—she's a strategist and survivor.</div>
+                            <div class="trial-description">Demonstrates courage and resourcefulness through astral projection, proving she's more than a healer—she's a strategist, survivor, and leader who adapts to impossible circumstances.</div>
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Silent God's Corruption</div>
-                            <div class="trial-description">Resists the seductive promise of unlimited power by recognizing that true healing comes from connection, not domination over others.</div>
+                            <div class="trial-description">Resists seductive promises of unlimited healing power by recognizing that true healing comes from connection and choice, not domination over others through overwhelming force.</div>
                         </div>
                         <div class="trial-card">
-                            <div class="trial-title">The Final Sacrifice</div>
-                            <div class="trial-description">Chooses to give up all magical abilities to save Kaelen's soul, finding that love freely given is more powerful than any divine gift.</div>
+                            <div class="trial-title">Love's Test</div>
+                            <div class="trial-description">Relationship with Kaelen teaches her to distinguish between service demanded by others and love freely chosen, showing that vulnerability and connection create stronger bonds than duty.</div>
                         </div>
+                        <div class="trial-card">
+                            <div class="trial-title">The Ultimate Choice</div>
+                            <div class="trial-description">Sacrificing all magical abilities to save Kaelen's soul proves that love freely given is more powerful than any divine gift, completing her journey from obligation to agency.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Ordinary Grace</div>
+                            <div class="trial-description">Learning to find meaning and strength in human life without magic, discovering that connection and choice matter more than supernatural ability or royal status.</div>
+                        </div>
+                    </div>
+
+                    <div class="agency-box">
+                        <div class="agency-title">The Freedom of Chosen Sacrifice</div>
+                        Elowen's ultimate triumph lies not in gaining power but in discovering agency—the revolutionary understanding that choosing her own sacrifices, even at great cost, grants more freedom than unlimited magical ability constrained by others' expectations. Her journey proves that love freely given transcends all external validation, that vulnerability chosen creates stronger bonds than invulnerability imposed, and that ordinary humanity guided by love holds more meaning than divine power guided by duty.
                     </div>
                 </section>
 
@@ -636,30 +926,53 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
                 <section class="section">
                     <h2 class="section-title">Hearts That Shape Her Journey</h2>
                     <div class="character-description">
-                        <p>For someone who spent her life serving others, Elowen's relationships become the crucible where she learns to distinguish between duty imposed upon her and love freely chosen.</p>
+                        <p>For someone who spent her life serving others, Elowen's relationships become the crucible where she learns to distinguish between duty imposed upon her and love freely chosen. Each connection teaches her something essential about agency, belonging, and what makes existence truly meaningful.</p>
                     </div>
 
                     <div class="related-characters">
-                        <a href="/world-guide/characters/kaelen-rveyne/" class="related-character">
+                        <a href="/world-guide/characters/kaelen-rveyne.html" class="related-character">
                             <div class="related-avatar">K</div>
                             <div class="related-name">Kaelen R'Veyne</div>
-                            <div class="related-role">Beloved, Her Choice</div>
+                            <div class="related-role">Beloved, Chosen Love</div>
                         </a>
-                        <a href="/world-guide/characters/ryx-shadowclaw/" class="related-character">
+                        <a href="/world-guide/characters/ryx-shadowclaw.html" class="related-character">
                             <div class="related-avatar">R</div>
                             <div class="related-name">Ryx Shadowclaw</div>
-                            <div class="related-role">Found Son, Protected</div>
+                            <div class="related-role">Found Son, Maternal Bond</div>
                         </a>
-                        <div class="related-character">
+                        <a href="/world-guide/characters/dain-solarius.html" class="related-character">
                             <div class="related-avatar">D</div>
                             <div class="related-name">Prince Dain Solarius</div>
-                            <div class="related-role">Unwanted Suitor</div>
-                        </div>
-                        <a href="/world-guide/characters/mordain-ashcroft/" class="related-character">
+                            <div class="related-role">Unwanted Suitor, Duty's Demand</div>
+                        </a>
+                        <a href="/world-guide/characters/mordain-ashcroft.html" class="related-character">
                             <div class="related-avatar">M</div>
                             <div class="related-name">Mordain Ashcroft</div>
-                            <div class="related-role">Enemy to Ally</div>
+                            <div class="related-role">Enemy to Ally, Redemption</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">W</div>
+                            <div class="related-name">Wild Gods</div>
+                            <div class="related-role">Spiritual Guides, Divine Heritage</div>
+                        </div>
+                        <a href="/world-guide/characters/the-silent-god.html" class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">Silent God</div>
+                            <div class="related-role">Corruptor, Testing Force</div>
                         </a>
+                    </div>
+
+                    <div class="character-quote">
+                        Kaelen… why do you hold back?
+                        <div class="quote-source">— Elowen questioning emotional walls, seeking deeper connection</div>
+                    </div>
+
+                    <div class="character-description">
+                        <p><strong>With Kaelen R'Veyne:</strong> Their relationship evolves from professional respect to profound love, teaching Elowen the difference between giving because she must and giving because she chooses to. He sees through her stoic facade to her vulnerability, while she recognizes his hidden pain beneath his protective walls. Their love is forged through shared trials and mutual understanding, culminating in her willing sacrifice of magic to save his soul—proving that connection matters more than power.</p>
+
+                        <p><strong>With Ryx Shadowclaw:</strong> Elowen offers him belonging, family, and acceptance despite his past, while he helps her understand different perspectives on being Bloodmarked. Their maternal bond shows her capacity for unconditional love without obligation, as she validates his worth as an individual and supports his eventual choice to forge his own path in the world.</p>
+
+                        <p><strong>With Prince Dain Solarius:</strong> Represents the difference between love demanded and love freely given. She recognizes his charm but feels no romantic attraction, maintaining diplomatic politeness while establishing clear boundaries. His obsessive pursuit demonstrates how duty and expectation can corrupt even well-intentioned affection, contrasting sharply with the freedom she finds in choosing Kaelen.</p>
                     </div>
                 </section>
 
@@ -671,15 +984,17 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
             <div class="summary-container">
                 <h2 class="summary-title">The Princess Who Chose Her Crown</h2>
                 <div class="summary-content">
-                    <p>Princess Elowen Faerwyn represents the journey from dutiful service to chosen sacrifice, from constrained royalty to liberated love. Her character arc demonstrates that true strength lies not in magical power or royal obligation, but in the agency to choose one's own path and the courage to sacrifice everything for love. She embodies the Dawnseeker ideals of balance, healing, and harmony while evolving beyond the limitations of duty-bound existence.</p>
+                    <p>Princess Elowen Faerwyn represents the journey from dutiful service to chosen sacrifice, from constrained royalty to liberated love. Her character arc demonstrates that true strength lies not in magical power or royal obligation, but in the agency to choose one's own path and the courage to sacrifice everything for love. She embodies the Dawnseeker ideals of balance, healing, and harmony while evolving beyond the limitations of duty-bound existence to discover the revolutionary power of personal choice.</p>
 
-                    <p>Throughout her story, Elowen grapples with the fundamental question that defines her: what happens when someone who has always lived for others finally discovers what it means to live for herself? Her gentle exterior conceals a core of steel forged in the heartwood of ancient oaks—an unbreakable will that becomes both her greatest strength and most dangerous weakness when it drives her to sacrifice everything for those she loves.</p>
+                    <p>Throughout her story, Elowen grapples with the fundamental question that defines her existence: what happens when someone who has always lived for others finally discovers what it means to live for herself? Her gentle exterior conceals a core of steel forged in the heartwood of ancient oaks—an unbreakable will that becomes both her greatest strength and most dangerous weakness when it drives her to sacrifice everything for those she loves. Yet this very flaw becomes her salvation when she learns to distinguish between sacrifice imposed by duty and sacrifice chosen by love.</p>
 
-                    <p>Her relationship with divine power serves as a metaphor for her growth. Initially confident in her Dawnseeker abilities, she learns that true healing comes not from magical force but from connection and understanding. When the Silent God whispers "Emerge" beyond her natural limits, she ultimately recognizes that unlimited power corrupts even the most compassionate intentions. Her resistance to this corruption demonstrates her deep understanding that some gifts become curses when they remove the element of choice.</p>
+                    <p>Her relationship with divine power serves as a metaphor for her growth toward agency. Initially confident in her Dawnseeker abilities, she learns that true healing comes not from magical force but from connection and understanding. When the Silent God whispers "Emerge" beyond her natural limits, promising unlimited power to save everyone, she ultimately recognizes that such absolute power corrupts even the most compassionate intentions by removing the element of choice that makes healing meaningful. Her resistance to this corruption demonstrates her deep understanding that love without agency becomes control, no matter how benevolent the intention.</p>
 
-                    <p>Elowen's ultimate sacrifice of all magical abilities to heal Kaelen's divine corruption represents the pinnacle of both her character growth and her understanding that love freely given is more powerful than any divine gift. This choice—made with full agency rather than royal obligation—transforms her from a princess defined by what she can do for others into a woman who finds fulfillment in who she chooses to be.</p>
+                    <p>The relationship between Elowen and Kaelen becomes the crucible where she discovers the transformative difference between giving because she must and giving because she chooses to. Their love develops through shared vulnerability and mutual recognition of hidden pain, teaching her that connection based on choice creates stronger bonds than any obligation based on duty. When she ultimately sacrifices all magical abilities to heal his divine corruption, she does so with full agency rather than royal obligation, proving that love freely given transcends any divine gift or magical power.</p>
 
-                    <p>Her journey from the Living Heart of the Veil to a woman who finds fulfillment in ordinary human love showcases the transformative power of choice, agency, and connection in the face of cosmic darkness. Through Elowen, we learn that the greatest magic isn't the power to change the world—it's the courage to choose love over duty, vulnerability over strength, and humanity over godhood. Her story proves that sometimes the most profound transformation comes not from gaining power, but from the wisdom to let it go.</p>
+                    <p>Elowen's ultimate transformation from the Living Heart of the Veil to a woman who finds fulfillment in ordinary human love showcases the revolutionary power of choice, agency, and connection in the face of cosmic darkness. Her story proves that the greatest magic isn't the power to change the world—it's the courage to choose love over duty, vulnerability over strength, and humanity over godhood. Through her journey, we learn that sometimes the most profound transformation comes not from gaining power, but from the wisdom to let it go in service of something more meaningful than any divine gift: love freely chosen and courageously given.</p>
+
+                    <p>Her legacy lies not in the magic she wielded or the royal title she bore, but in her demonstration that true freedom comes from choosing one's own sacrifices rather than accepting those imposed by others. She becomes a living testament to the truth that ordinary humanity guided by love holds more meaning than divine power constrained by obligation, and that the courage to be vulnerable by choice creates deeper connection than any strength imposed by duty. In a world where power often defines worth, Elowen proves that the greatest strength lies in knowing when to let power go.</p>
                 </div>
             </div>
         </section>
@@ -700,3 +1015,6 @@ image: "/assets/images/elowen-faerwyn-character-art.jpg"
 
     </div>
 </main>
+
+</body>
+</html>
