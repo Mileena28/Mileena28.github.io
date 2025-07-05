@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marra & The Free People - The Unbowed | The Lost Histories</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f15 0%, #1a1a26 50%, #2a2a3e 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(34, 139, 34, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #8b4513;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(139, 69, 19, 0.1);
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #8b4513;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(139, 69, 19, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(34, 139, 34, 0.1));
+            border: 2px solid #8b4513;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b4513;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(139, 69, 19, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(34, 139, 34, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(139, 69, 19, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(34, 139, 34, 0.1) 50%, transparent 55%);
+            animation: earthSpirit 20s ease-in-out infinite;
+        }
+
+        @keyframes earthSpirit {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(8deg) scale(1.03); opacity: 0.7; }
+            50% { transform: rotate(16deg) scale(0.97); opacity: 0.3; }
+            75% { transform: rotate(12deg) scale(1.01); opacity: 0.8; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #8b4513;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(139, 69, 19, 0.05);
+            border-left: 4px solid #8b4513;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #8b4513;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #8b4513;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #8b4513;
+            transform: translateY(-5px);
+        }
+
+        .power-card.spiritual {
+            border-left: 4px solid #8b4513;
+        }
+
+        .power-card.community {
+            border-left: 4px solid #228b22;
+        }
+
+        .power-card.wilderness {
+            border-left: 4px solid #a0522d;
+        }
+
+        .power-card.wisdom {
+            border-left: 4px solid #daa520;
+        }
+
+        .power-title {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #8b4513;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(139, 69, 19, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b4513;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(15, 15, 21, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.2), rgba(139, 69, 19, 0.1));
+            border: 1px solid #8b4513;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #8b4513, #a0522d);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(139, 69, 19, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(139, 69, 19, 0.2);
+            color: #8b4513;
+            border: 1px solid #8b4513;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(139, 69, 19, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(15, 15, 21, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #8b4513;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #8b4513;
+            border-radius: 50%;
+        }
+
+        .phase-label {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .wisdom-box {
+            background: rgba(139, 69, 19, 0.1);
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .wisdom-title {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Lost Histories World Guide</a>
+        <h1 class="character-title">Marra & The Free People</h1>
+        <p class="character-tagline">"The Unbowed"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Eyes that burn with vision-smoke fire<br>Voices of earth and wind and ancient wisdom</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The God Who Wept</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Mortal Status</div>
+                            <div class="stat-value">Human Community, Free & Unbowed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Domain</div>
+                            <div class="stat-value">Eastern Wilderness, Sacred Sites</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">Elder, Voice of Wilderness, Smoke-Seer</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Community</div>
+                            <div class="stat-value">~30 Souls, Multi-Generational</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Authority</div>
+                            <div class="stat-value">Spiritual Wisdom, Collective Consensus</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Sacred Gift</div>
+                            <div class="stat-value">Truth-Seeing Through Vision-Smoke</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">Guardians of Older Truths</h2>
+                    <div class="character-description">
+                        <p>In the hidden valleys where ancient oaks split by lightning still reach skyward, where sacred smoke reveals truths that political authority cannot perceive or control, Marra and the Free People stand as living proof that human dignity needs no external sanction and spiritual wisdom transcends material power. As descendants of forest peoples who never submitted to imperial rule, they represent an alternative way of being—community without hierarchy, freedom without chaos, spiritual connection without institutional mediation.</p>
+                        
+                        <p>Marra herself embodies the wisdom that comes from choosing dangerous independence over safe subjugation, her weathered face lined by hardship and resilience, her grey-streaked hair flowing unbound like wind through trees. Her sharp, searching gaze misses nothing, penetrating beyond surface appearances to deeper truths through practices passed down across generations of resistance and spiritual seeking.</p>
+
+                        <p>Their vision-smoke ceremonies represent more than ritual—they are acts of collective truth-seeking that pierce veils of deception and reveal essential realities hidden from ordinary perception. Through these sacred practices, they recognized Thainos not as a wandering stranger but as a being "made of light," demonstrating that spiritual wisdom can perceive divine presence even when it comes disguised as mortality and exile.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Who are you? Not what you are called. Not what you do. WHO... ARE... YOU?
+                        <div class="quote-source">— Marra during the vision-smoke ceremony</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">Community of the Unbroken Spirit</h2>
+                    <div class="character-description">
+                        <p>The Free People embody the possibility of human society organized around freedom, spiritual connection, and collective wisdom rather than hierarchy and domination. Their community represents living proof that alternative ways of organizing human life are not only possible but more sustainable and fulfilling than the systems that claim to civilize through control and subjugation.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Fierce Independence</div>
+                            <div class="trait-description">Complete rejection of external authority, believing freedom is an inherent right rather than granted privilege. Choose dangerous liberty over safe subjugation.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Spiritual Wisdom</div>
+                            <div class="trait-description">Deep connection to practices that reveal truth beyond appearance. Marra's vision-smoke abilities pierce veils of deception to show essential realities.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Collective Harmony</div>
+                            <div class="trait-description">Community decision-making through consensus rather than hierarchy. Strong bonds without rigid authority structures or imposed control.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Traditional Keepers</div>
+                            <div class="trait-description">Living repository of ancient knowledge preserved through oral tradition. Guardians of wisdom that industrial society has abandoned.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        We are not 'tribes,' soldier. We are the Free People. We bow to no governor's edicts, nor do we acknowledge the legitimacy of laws imposed by distant strangers.
+                        <div class="quote-source">— Marra to Governor Verin's forces</div>
+                    </div>
+                </section>
+
+                <!-- Powers & Spiritual Practices -->
+                <section class="section">
+                    <h2 class="section-title">Voices of Earth and Ancient Wisdom</h2>
+                    <div class="character-description">
+                        <p>The Free People's abilities reflect their deep connection to both natural world and spiritual dimensions—powers rooted in traditional practices that reveal truth, maintain community harmony, and provide guidance for collective decision-making. Their greatest strength lies not in individual magic but in collective wisdom and shared spiritual practices that connect them to realities beyond material perception.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card spiritual">
+                            <div class="power-title">Vision-Smoke Mastery</div>
+                            <div class="power-description">
+                                <strong>Truth-Seeing:</strong> Ability to perceive others' essential nature beneath surface appearances and deceptions<br>
+                                <strong>Sacred Herbalism:</strong> Expert preparation of consciousness-altering plants that reveal hidden truths<br>
+                                <strong>Collective Ceremony:</strong> Community rituals that create shared altered consciousness and spiritual understanding<br>
+                                <strong>Divine Recognition:</strong> Capacity to identify sacred presence even when disguised as ordinary mortality
+                            </div>
+                        </div>
+                        
+                        <div class="power-card community">
+                            <div class="power-title">Collective Wisdom</div>
+                            <div class="power-description">
+                                <strong>Consensus Leadership:</strong> Group decision-making that honors diverse viewpoints while maintaining unity<br>
+                                <strong>Conflict Resolution:</strong> Traditional methods for maintaining harmony and healing community divisions<br>
+                                <strong>Cultural Preservation:</strong> Living transmission of knowledge through stories, songs, and ceremonial practices<br>
+                                <strong>Spiritual Protection:</strong> Community bonds that provide natural resistance to corruption and manipulation
+                            </div>
+                        </div>
+                        
+                        <div class="power-card wilderness">
+                            <div class="power-title">Wilderness Mastery</div>
+                            <div class="power-description">
+                                <strong>Stealth Movement:</strong> Entire community can vanish into wilderness, traveling undetected across vast distances<br>
+                                <strong>Survival Expertise:</strong> Complete self-sufficiency in food gathering, shelter construction, and tool making<br>
+                                <strong>Sacred Site Knowledge:</strong> Understanding of spiritual significance in landscape features and holy places<br>
+                                <strong>Environmental Harmony:</strong> Sustainable relationship with natural world, taking only what's needed for survival
+                            </div>
+                        </div>
+                        
+                        <div class="power-card wisdom">
+                            <div class="power-title">Traditional Knowledge</div>
+                            <div class="power-description">
+                                <strong>Oral Tradition:</strong> Living library of songs, stories, and wisdom preserved across generations<br>
+                                <strong>Healing Arts:</strong> Deep understanding of medicinal plants and spiritual healing practices<br>
+                                <strong>Ritual Leadership:</strong> Ceremonies that connect community to deeper spiritual realities and ancestral guidance<br>
+                                <strong>Memory Keeping:</strong> Preservation of essential knowledge that mainstream civilization has forgotten or rejected
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Sacred Encounter -->
+                <section class="section">
+                    <h2 class="section-title">When Ancient Wisdom Meets Divine Truth</h2>
+                    <div class="character-description">
+                        <p>The encounter between the Free People and Thainos represents the meeting of traditional spiritual wisdom with divine presence, demonstrating how authentic spiritual practices can recognize and honor the sacred even when it appears in unexpected forms. Their vision-smoke ceremony becomes a moment of revelation that transcends the boundaries between mortal and divine, human and sacred.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">The Lightning Oak Encounter</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Sacred Ground</div>
+                            <div class="phase-description">First contact at Lightning Oak shrine, where Marra challenged stranger at sacred site while recognizing potential significance.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Cautious Welcome</div>
+                            <div class="phase-description">Provisional hospitality offered based on assessment of Thainos's character and genuine exile status.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Vision-Smoke Preparation</div>
+                            <div class="phase-description">Decision to conduct truth-seeing ceremony to understand the stranger's essential nature and purpose.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Divine Revelation</div>
+                            <div class="phase-description">Community vision of Thainos as "made of light," recognition of his divine nature beneath mortal appearance.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Violent Interruption</div>
+                            <div class="phase-description">Governor Verin's soldiers disrupting ceremony, forcing confrontation between spiritual wisdom and political authority.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Sacred Witness</div>
+                            <div class="phase-description">Seeing Thainos surrender himself to protect their community, final recognition of his sacrificial nature.</div>
+                        </div>
+                    </div>
+
+                    <div class="wisdom-box">
+                        <div class="wisdom-title">The Vision-Smoke Truth</div>
+                        Through the sacred smoke, the Free People saw what political authority could never perceive—that divine presence walks among mortals, that sacred purpose often appears in humble form, and that spiritual wisdom can recognize truth that material power cannot comprehend or control. Their ceremony demonstrated the power of collective spiritual practice to pierce veils of ordinary perception.
+                    </div>
+
+                    <div class="character-quote">
+                        The smoke shows what words cannot. It reveals not who you claim to be—but who you are beneath the naming. Beneath the forgetting.
+                        <div class="quote-source">— Marra explaining vision-smoke ceremony</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds of Freedom and Sacred Truth</h2>
+                    <div class="character-description">
+                        <p>The Free People's relationships reflect their values of freedom, spiritual connection, and collective wisdom—bonds based on mutual respect and shared commitment to traditional ways rather than hierarchy or external authority. Their connections span both their internal community harmony and their resistance to forces that would destroy their essential nature.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="thainos.html" class="related-character">
+                            <div class="related-avatar">T</div>
+                            <div class="related-name">Thainos</div>
+                            <div class="related-role">Light-Bringer, Sacred Guest</div>
+                        </a>
+                        <a href="governor-verin.html" class="related-character">
+                            <div class="related-avatar">V</div>
+                            <div class="related-name">Governor Verin</div>
+                            <div class="related-role">Authority Enemy, Freedom Threat</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">R</div>
+                            <div class="related-name">Roric</div>
+                            <div class="related-role">Vision-Smoke Keeper, Next Generation</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">CE</div>
+                            <div class="related-name">Community Elders</div>
+                            <div class="related-role">Wisdom Keepers, Tradition Guardians</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">CH</div>
+                            <div class="related-name">Community Children</div>
+                            <div class="related-role">Future Hope, Cultural Continuity</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">SS</div>
+                            <div class="related-name">Sacred Sites</div>
+                            <div class="related-role">Lightning Oak, Spiritual Anchors</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Freedom That Cannot Be Broken</h2>
+                <div class="summary-content">
+                    <p>Marra and the Free People represent the enduring power of traditional spiritual wisdom and human dignity that requires no external validation or institutional sanction. As descendants of forest peoples who never submitted to imperial rule, they embody living proof that alternative ways of organizing human society are not only possible but more sustainable and spiritually fulfilling than systems that claim to civilize through control and domination.</p>
+
+                    <p>Their vision-smoke ceremonies demonstrate the profound truth that authentic spiritual practices can pierce veils of deception and reveal essential realities hidden from ordinary perception. Through these sacred rituals, they recognized Thainos not as a wandering stranger but as a being "made of light," showing that collective spiritual wisdom can perceive divine presence even when it comes disguised as mortality and exile. Their ability to see truth beyond appearance represents hope that some communities will always maintain connection to deeper mysteries.</p>
+
+                    <p>The Free People's way of life offers an alternative model of human community that challenges the assumptions of both Governor Verin's authoritarian control and the broader imperial system. Their sustainable relationship with the natural world, collective decision-making through consensus rather than hierarchy, and preservation of traditional knowledge through oral tradition prove that human beings can thrive without external authority, rigid institutions, or material accumulation that comes at the cost of spiritual connection.</p>
+
+                    <p>Marra's recognition of Thainos as a "Light-bringer" and her integration of his story into their oral tradition demonstrates how wisdom communities serve as keepers of sacred truth, preserving essential knowledge for future generations even when the wider world rejects or fails to understand it. Her final warning about his fate reveals the prophetic insight that comes from genuine spiritual connection and her deep understanding of the forces that destroy what they cannot control or comprehend.</p>
+
+                    <p>Through their brief but profound encounter with the divine wanderer, Marra and the Free People become witnesses to sacred truth and guardians of a story that transcends the political boundaries and material concerns of their time. They represent the hope that traditional wisdom and spiritual freedom cannot be destroyed by external force—only surrendered from within—and that the human spirit's fundamental need for autonomy and dignity will always find expression in communities willing to choose dangerous independence over safe subjugation.</p>
+
+                    <p>Their story illustrates that true strength often lies not in military power or political authority, but in spiritual wisdom, community bonds, and the courage to live according to principles that transcend immediate safety or comfort. In a world of increasing control and materialism, they stand as guardians of older truths, proving that human dignity and spiritual freedom represent the most essential aspects of what it means to be truly alive and authentically human in connection with both each other and the sacred dimensions of existence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Walk the Ancient Paths of Freedom</h2>
+            <p class="cta-description">
+                Experience Marra and the Free People's journey of spiritual wisdom and unbroken independence. Their story explores the power of traditional truth over material authority.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-god-who-wept/chapter-01/" class="cta-button">Read The God Who Wept</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
