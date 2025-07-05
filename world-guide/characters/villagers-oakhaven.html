@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Villagers of Oakhaven - The Collective Fear | The Lost Histories</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f15 0%, #1a1a26 50%, #2a2a3e 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(160, 82, 45, 0.1) 0%, rgba(139, 69, 19, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #a0522d;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(160, 82, 45, 0.1);
+            border: 1px solid rgba(160, 82, 45, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #a0522d;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(160, 82, 45, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(160, 82, 45, 0.2), rgba(139, 69, 19, 0.1));
+            border: 2px solid #a0522d;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0522d;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(160, 82, 45, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(139, 69, 19, 0.1) 50%, transparent 55%);
+            animation: villageLife 22s ease-in-out infinite;
+        }
+
+        @keyframes villageLife {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+            25% { transform: rotate(4deg) scale(1.02); opacity: 0.6; }
+            50% { transform: rotate(8deg) scale(0.98); opacity: 0.2; }
+            75% { transform: rotate(6deg) scale(1.01); opacity: 0.7; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #a0522d;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #a0522d;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(160, 82, 45, 0.05);
+            border-left: 4px solid #a0522d;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #a0522d;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #a0522d;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #a0522d;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #a0522d;
+            transform: translateY(-5px);
+        }
+
+        .power-card.community {
+            border-left: 4px solid #a0522d;
+        }
+
+        .power-card.social {
+            border-left: 4px solid #8b4513;
+        }
+
+        .power-card.fear {
+            border-left: 4px solid #654321;
+        }
+
+        .power-card.tradition {
+            border-left: 4px solid #d2691e;
+        }
+
+        .power-title {
+            color: #a0522d;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #a0522d;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(160, 82, 45, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a0522d;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(15, 15, 21, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(160, 82, 45, 0.2), rgba(160, 82, 45, 0.1));
+            border: 1px solid #a0522d;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #a0522d, #8b4513);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(160, 82, 45, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(160, 82, 45, 0.2);
+            color: #a0522d;
+            border: 1px solid #a0522d;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(160, 82, 45, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(15, 15, 21, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #a0522d;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #a0522d;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #a0522d;
+            border-radius: 50%;
+        }
+
+        .phase-label {
+            color: #a0522d;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .folklore-box {
+            background: rgba(160, 82, 45, 0.1);
+            border: 1px solid rgba(160, 82, 45, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .folklore-title {
+            color: #a0522d;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Lost Histories World Guide</a>
+        <h1 class="character-title">The Villagers of Oakhaven</h1>
+        <p class="character-tagline">"The Collective Fear"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Faces weathered by tradition and fear<br>Voices bound by ancient superstitions</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Sin of Mercy</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Community Type</div>
+                            <div class="stat-value">Rural Crossroads Settlement</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Population</div>
+                            <div class="stat-value">100-200 Residents</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Location</div>
+                            <div class="stat-value">Deep Within the Dark Forest</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Primary Fear</div>
+                            <div class="stat-value">The Forest Demon Legend</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Social Hub</div>
+                            <div class="stat-value">The Weathered Willow Inn</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Collective Flaw</div>
+                            <div class="stat-value">Fear-Driven Judgment</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">When Good Intentions Turn Dangerous</h2>
+                    <div class="character-description">
+                        <p>In the crossroads settlement of Oakhaven, where stone cottages cluster around the Weathered Willow Inn deep within the Dark Forest's embrace, lives a community bound together by shared fears, ancient superstitions, and the dangerous certainty that outsiders bring trouble. They represent the complex interplay between protective instincts and destructive prejudice, between community safety and individual freedom, between the comfort of tradition and the terror of change.</p>
+                        
+                        <p>From Dennet the innkeeper with his gentle brown eyes and protective heart, to Clara Millwright whose sharp tongue cuts deeper than any blade, to young Thomas Wickham whose hot blood seeks simple solutions to complex problems—each villager possesses genuine human motivations wrapped in the collective fear that transforms protectors into destroyers. They embody the very human tendency to choose comfortable lies over difficult truths, to sacrifice the individual for the perceived good of the collective.</p>
+
+                        <p>Their tragedy lies not in pure evil, but in the very human failing of choosing safety over truth, conformity over compassion, and the familiar over the transformative. They demonstrate how even well-intentioned communities can become complicit in individual suffering when fear overrides empathy and tradition trumps understanding, showing us that the greatest monsters often wear the faces of those who claim to protect us.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        You're no saint chosen by heaven. There's nothing blessed about a bastard child.
+                        <div class="quote-source">— The collective voice of village judgment</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Heart That Fears What It Cannot Control</h2>
+                    <div class="character-description">
+                        <p>Oakhaven's collective personality reflects the dangerous power of fear-based thinking to transform genuine care into harmful judgment. Their close-knit bonds, forged by generations of shared struggle and mutual dependence, become weapons of social control when threatened by anything that challenges their carefully maintained worldview.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Fearfully Protective</div>
+                            <div class="trait-description">Fierce defense of community safety and traditional values, but protection that transforms into oppression when facing the unknown.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Collectively Judgmental</div>
+                            <div class="trait-description">Harsh enforcement of social conformity through gossip, shunning, and moral condemnation of anyone who deviates from established norms.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Traditionally Bound</div>
+                            <div class="trait-description">Deep resistance to change or challenge to established ways, viewing innovation as threat rather than opportunity for growth.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Superstiously Certain</div>
+                            <div class="trait-description">Quick to believe supernatural explanations for unexplained events, using fear-based folklore to guide important decisions.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        What are the odds your rescuer just happens to match our demon perfectly?
+                        <div class="quote-source">— Village suspicion of anything that challenges their beliefs</div>
+                    </div>
+                </section>
+
+                <!-- Community Dynamics & Social Powers -->
+                <section class="section">
+                    <h2 class="section-title">The Machinery of Social Control</h2>
+                    <div class="character-description">
+                        <p>Oakhaven's power lies not in individual strength but in collective force—the ability to shape reality through shared belief, to enforce conformity through social pressure, and to transform private judgments into public verdicts that carry the weight of divine authority. Their greatest weapon is the certainty that their way is the only way, their fear the only reasonable response to the unknown.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card community">
+                            <div class="power-title">Collective Enforcement</div>
+                            <div class="power-description">
+                                <strong>Social Pressure:</strong> Ability to isolate and punish non-conformists through shunning and public judgment<br>
+                                <strong>Mob Formation:</strong> Transforming individual fears into collective action when facing perceived threats<br>
+                                <strong>Moral Authority:</strong> Using religious and traditional values to justify harsh treatment of outsiders<br>
+                                <strong>Information Control:</strong> Spreading rumors and controlling narratives to shape community perception
+                            </div>
+                        </div>
+                        
+                        <div class="power-card social">
+                            <div class="power-title">Network Influence</div>
+                            <div class="power-description">
+                                <strong>Gossip Chains:</strong> Rapid information spread through Clara's networks and inn conversations<br>
+                                <strong>Economic Pressure:</strong> Using trade relationships and business dependence to enforce compliance<br>
+                                <strong>Gender Dynamics:</strong> Separate but coordinated masculine and feminine power structures<br>
+                                <strong>Generational Authority:</strong> Elder wisdom and youth energy combining to resist external change
+                            </div>
+                        </div>
+                        
+                        <div class="power-card fear">
+                            <div class="power-title">Terror as Weapon</div>
+                            <div class="power-description">
+                                <strong>Forest Demon Legend:</strong> Multi-generational story used to control behavior and movement patterns<br>
+                                <strong>Supernatural Enforcement:</strong> Religious fear and divine punishment as tools of social control<br>
+                                <strong>Scapegoat Creation:</strong> Blaming outsiders for local problems and tragic events<br>
+                                <strong>Children's Indoctrination:</strong> Teaching fear through rhymes, stories, and cautionary tales
+                            </div>
+                        </div>
+                        
+                        <div class="power-card tradition">
+                            <div class="power-title">Cultural Preservation</div>
+                            <div class="power-description">
+                                <strong>Oral Tradition:</strong> Preserving and transmitting stories that serve social control functions<br>
+                                <strong>Ritual Enforcement:</strong> Using religious observance and community customs to maintain order<br>
+                                <strong>Role Definition:</strong> Strict gender and social expectations that resist individual expression<br>
+                                <strong>Memory Revision:</strong> Transforming inconvenient truths into myths that support current power structures
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Tragic Evolution -->
+                <section class="section">
+                    <h2 class="section-title">From Protectors to Destroyers</h2>
+                    <div class="character-description">
+                        <p>Oakhaven's transformation from caring community to hostile mob illustrates the dangerous ease with which good intentions can become destructive when guided by fear rather than understanding. Their evolution reveals how collective terror can transform the very people who should offer sanctuary into the greatest threat to those seeking help and healing.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">The Path from Protection to Persecution</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Stable Fear</div>
+                            <div class="phase-description">Living with manageable supernatural terror, using forest demon legend to maintain social order and behavioral control.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Rising Disappearances</div>
+                            <div class="phase-description">Maria, Micah, and others vanishing, challenging established order and increasing community anxiety about external threats.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Pregnancy Scandal</div>
+                            <div class="phase-description">Rynn's unexplained pregnancy forcing community to confront questions about divine intervention and moral purity.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Supernatural Events</div>
+                            <div class="phase-description">Miraculous manifestations during pregnancy disrupting worldview and creating need for explanation that fits existing beliefs.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Death and Discovery</div>
+                            <div class="phase-description">Finding Rynn's body confirming worst fears about forest demon while missing baby creates perfect scapegoat narrative.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Myth Creation</div>
+                            <div class="phase-description">Transforming tragic events into cautionary legend that reinforces traditional values and supernatural fears.</div>
+                        </div>
+                    </div>
+
+                    <div class="folklore-box">
+                        <div class="folklore-title">The Forest Demon Rhyme</div>
+                        "The demon dwells in darkest wood / Where light fears to fall / He feasts on those who trust too much / And darkness takes them all" - A children's song that has shaped village behavior for generations, teaching fear as wisdom and isolation as safety. Each generation adds new verses, new warnings, new ways to maintain control through terror.
+                    </div>
+
+                    <div class="character-quote">
+                        Bad enough you won't name the father. Now you're going to blame it on spirits and demons?
+                        <div class="quote-source">— Community refusing to accept explanations that challenge their worldview</div>
+                    </div>
+                </section>
+
+                <!-- Key Villagers -->
+                <section class="section">
+                    <h2 class="section-title">Voices of Tradition and Fear</h2>
+                    <div class="character-description">
+                        <p>Each villager represents a different facet of community psychology—from Dennet's genuine compassion twisted by grief, to Clara's malicious gossip disguised as moral concern, to Thomas's rash courage that masks deep insecurity. Together, they form a collective entity greater and more dangerous than any individual member, their combined voices creating a moral authority that few dare challenge.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <div class="related-character">
+                            <div class="related-avatar">D</div>
+                            <div class="related-name">Dennet</div>
+                            <div class="related-role">Innkeeper, Protective Father</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">G</div>
+                            <div class="related-name">Garrett</div>
+                            <div class="related-role">Blacksmith, Masculine Authority</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">C</div>
+                            <div class="related-name">Clara</div>
+                            <div class="related-role">Gossip, Moral Enforcer</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">T</div>
+                            <div class="related-name">Thomas</div>
+                            <div class="related-role">Baker's Son, Village Hothead</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Martha</div>
+                            <div class="related-role">Baker's Wife, Traditional Values</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">H</div>
+                            <div class="related-name">Henrik</div>
+                            <div class="related-role">Grieving Father, Scapegoat Seeker</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Tragedy of Collective Fear</h2>
+                <div class="summary-content">
+                    <p>The villagers of Oakhaven represent one of the most insidious dangers in any community—the transformation of protective instincts into destructive fear, of caring neighbors into hostile judges, of collective wisdom into mob mentality. They embody the very human tendency to choose the comfort of familiar prejudices over the challenge of uncomfortable truths, demonstrating how even the most well-intentioned communities can become complicit in individual suffering when tradition trumps compassion.</p>
+
+                    <p>Their collective personality reveals the dangerous power of shared belief to shape reality, to transform rumors into truth through repetition, and to make cruelty feel like kindness when wrapped in the language of protection and moral concern. From the Weathered Willow Inn where Dennet's genuine care battles his protective instincts, to Clara's mill where gossip is ground into weapons of social control, every corner of Oakhaven reflects the tension between human decency and collective fear.</p>
+
+                    <p>Each villager possesses genuine human motivations—Garrett's desire to protect his community, Thomas's need to prove his courage, Martha's maternal concern for proper behavior, Henrik's grief over his lost daughter. Their tragedy lies not in individual evil but in the collective failing that transforms these natural human impulses into forces of judgment and exclusion. They demonstrate how quickly protectors can become threats when fear overrides empathy and certainty replaces curiosity.</p>
+
+                    <p>Their treatment of Rynn during her pregnancy reveals the community's fundamental inability to process information that challenges their established worldview. When faced with evidence of divine intervention and supernatural pregnancy, they choose to interpret events through the lens of familiar moral categories rather than expanding their understanding to accommodate new realities. Their insistence that "there's always a father" reflects the deep human need for explanations that fit existing frameworks, even when those frameworks prove inadequate.</p>
+
+                    <p>The forest demon legend that haunts their collective consciousness serves as perfect metaphor for how communities use fear to maintain control. Passed down through generations in children's rhymes and cautionary tales, the story shapes behavior, restricts movement, and provides ready-made explanations for any tragedy that might otherwise force uncomfortable questions about the community's own role in creating suffering. The demon becomes both scapegoat and enforcer, external threat and internal control mechanism.</p>
+
+                    <p>In the end, the villagers of Oakhaven serve as both Greek chorus and cautionary tale, their voices echoing across generations to remind us that the greatest monsters often wear the faces of those who claim to protect us. They represent the eternal human struggle between the safety of the known and the growth that comes from embracing mystery, between the comfort of tradition and the necessity of change, between the protection of the group and the rights of the individual. Their story warns us that when fear becomes wisdom and prejudice becomes protection, the community becomes its own greatest threat.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Face the Mirror of Human Nature</h2>
+            <p class="cta-description">
+                Experience how good intentions can become dangerous when guided by fear. The villagers' story explores the tragedy of collective judgment and the power of tradition to both protect and destroy.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-sin-of-mercy/chapter-01/" class="cta-button">Read The Sin of Mercy</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
