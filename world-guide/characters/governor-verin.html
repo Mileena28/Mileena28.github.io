@@ -24,7 +24,7 @@
         .character-header {
             padding: 80px 0 60px;
             text-align: center;
-            background: linear-gradient(135deg, rgba(112, 128, 144, 0.1) 0%, rgba(47, 79, 79, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(112, 128, 144, 0.1) 0%, rgba(112, 128, 144, 0.05) 100%);
         }
 
         .character-title {
@@ -112,15 +112,16 @@
             background: 
                 radial-gradient(circle at 25% 25%, rgba(112, 128, 144, 0.3) 0%, transparent 50%),
                 radial-gradient(circle at 75% 75%, rgba(70, 130, 180, 0.2) 0%, transparent 50%),
-                linear-gradient(45deg, transparent 45%, rgba(112, 128, 144, 0.1) 50%, transparent 55%);
-            animation: steelWatch 18s ease-in-out infinite;
+                linear-gradient(45deg, transparent 45%, rgba(112, 128, 144, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(112, 128, 144, 0.1) 50%, transparent 55%);
+            animation: steelWatch 15s ease-in-out infinite;
         }
 
         @keyframes steelWatch {
             0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
-            25% { transform: rotate(5deg) scale(1.02); opacity: 0.5; }
-            50% { transform: rotate(10deg) scale(0.98); opacity: 0.2; }
-            75% { transform: rotate(7deg) scale(1.01); opacity: 0.6; }
+            25% { transform: rotate(15deg) scale(1.1); opacity: 0.6; }
+            50% { transform: rotate(30deg) scale(0.9); opacity: 0.2; }
+            75% { transform: rotate(45deg) scale(1.05); opacity: 0.7; }
         }
 
         .character-stats {
@@ -735,31 +736,31 @@
                             <div class="related-avatar">T</div>
                             <div class="related-name">Thainos</div>
                             <div class="related-role">Unclassifiable Threat, Final Victim</div>
-                        </div>
+                        </a>
                         <div class="related-character">
-                            <div class="related-avatar">S</div>
+                            <div class="related-avatar">SC</div>
                             <div class="related-name">Scarred Captain</div>
                             <div class="related-role">Trusted Subordinate, Questioning Ally</div>
                         </div>
                         <div class="related-character">
-                            <div class="related-avatar">I</div>
-                            <div class="related-name">Intelligence Network</div>
-                            <div class="related-role">Information Sources, Surveillance Assets</div>
+                            <div class="related-avatar">MU</div>
+                            <div class="related-name">Military Units</div>
+                            <div class="related-role">Professional Soldiers, Order Maintainers</div>
                         </div>
                         <div class="related-character">
-                            <div class="related-avatar">R</div>
+                            <div class="related-avatar">IN</div>
+                            <div class="related-name">Intelligence Network</div>
+                            <div class="related-role">Informants, Surveillance Assets</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">RA</div>
                             <div class="related-name">Religious Authorities</div>
                             <div class="related-role">Uneasy Allies, Heresy Consultants</div>
                         </div>
                         <div class="related-character">
-                            <div class="related-avatar">C</div>
+                            <div class="related-avatar">CA</div>
                             <div class="related-name">Central Authority</div>
                             <div class="related-role">Higher Officials, Performance Evaluators</div>
-                        </div>
-                        <div class="related-character">
-                            <div class="related-avatar">P</div>
-                            <div class="related-name">Civilian Population</div>
-                            <div class="related-role">Protected Assets, Potential Threats</div>
                         </div>
                     </div>
                 </section>
