@@ -1,524 +1,586 @@
----
-layout: default
-title: "Ryx Shadowclaw - The Young Beastman | Blood of the Wild Gods"
-description: "Meet Ryx Shadowclaw from Mileena Rayne's dark fantasy series Blood of the Wild Gods. A young feline Beastman who transforms from sacrificial victim to fierce protector, discovering that family is chosen, not inherited."
-image: "/assets/images/ryx-shadowclaw-character-art.jpg"
----
-
-<style>
-    /* Character Page Styles */
-    .character-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .character-header {
-        padding: 80px 0 60px;
-        text-align: center;
-        background: linear-gradient(135deg, rgba(75, 0, 130, 0.1) 0%, rgba(75, 0, 130, 0.05) 100%);
-    }
-
-    .character-title {
-        font-size: 3em;
-        font-weight: 300;
-        margin-bottom: 10px;
-        color: #f0f0f0;
-        letter-spacing: 2px;
-    }
-
-    .character-tagline {
-        font-size: 1.4em;
-        color: #9370db;
-        font-style: italic;
-        margin-bottom: 30px;
-    }
-
-    .series-breadcrumb {
-        background: rgba(75, 0, 130, 0.1);
-        border: 1px solid rgba(75, 0, 130, 0.3);
-        border-radius: 25px;
-        padding: 8px 20px;
-        display: inline-block;
-        font-size: 0.9em;
-        color: #9370db;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .series-breadcrumb:hover {
-        background: rgba(75, 0, 130, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .character-content {
-        padding: 80px 0;
-    }
-
-    .character-grid {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
-    }
-
-    .character-portrait {
-        position: sticky;
-        top: 100px;
-        align-self: start;
-    }
-
-    .portrait-container {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 30px;
-        text-align: center;
-        backdrop-filter: blur(10px);
-    }
-
-    .character-image {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(75, 0, 130, 0.1));
-        border: 2px solid #9370db;
-        border-radius: 15px;
-        margin-bottom: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #9370db;
-        font-style: italic;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .character-image::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(75, 0, 130, 0.1) 0%, transparent 70%);
-        animation: shimmer 4s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(180deg); }
-    }
-
-    .character-stats {
-        text-align: left;
-    }
-
-    .stat-item {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #333;
-    }
-
-    .stat-item:last-child {
-        border-bottom: none;
-    }
-
-    .stat-label {
-        color: #9370db;
-        font-weight: 600;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .stat-value {
-        color: #ddd;
-        margin-top: 5px;
-    }
-
-    .section {
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        font-size: 2em;
-        color: #f0f0f0;
-        margin-bottom: 25px;
-        font-weight: 400;
-        border-bottom: 2px solid #9370db;
-        padding-bottom: 10px;
-    }
-
-    .character-description {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        margin-bottom: 30px;
-    }
-
-    .character-quote {
-        background: rgba(75, 0, 130, 0.05);
-        border-left: 4px solid #9370db;
-        padding: 25px 30px;
-        margin: 30px 0;
-        font-style: italic;
-        color: #ddd;
-        border-radius: 0 15px 15px 0;
-        position: relative;
-    }
-
-    .character-quote::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 3em;
-        color: #9370db;
-        opacity: 0.3;
-    }
-
-    .quote-source {
-        text-align: right;
-        color: #999;
-        font-size: 0.9em;
-        margin-top: 15px;
-        font-style: normal;
-    }
-
-    .traits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .trait-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .trait-card:hover {
-        border-color: #9370db;
-        transform: translateY(-5px);
-    }
-
-    .trait-title {
-        color: #9370db;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .trait-description {
-        color: #ccc;
-        font-size: 0.95em;
-    }
-
-    .transformations-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-    }
-
-    .transformation-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-    }
-
-    .transformation-card:hover {
-        border-color: #9370db;
-        transform: translateY(-5px);
-    }
-
-    .transformation-card.victim {
-        border-left: 4px solid #cc0000;
-    }
-
-    .transformation-card.beast {
-        border-left: 4px solid #ffd700;
-    }
-
-    .transformation-card.protector {
-        border-left: 4px solid #9370db;
-    }
-
-    .transformation-title {
-        color: #9370db;
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-    }
-
-    .transformation-description {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    .related-characters {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .related-character {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .related-character:hover {
-        border-color: #9370db;
-        transform: translateY(-5px);
-    }
-
-    .related-avatar {
-        width: 60px;
-        height: 60px;
-        background: rgba(147, 112, 219, 0.2);
-        border-radius: 50%;
-        margin: 0 auto 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #9370db;
-        font-weight: bold;
-    }
-
-    .related-name {
-        color: #f0f0f0;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    .related-role {
-        color: #999;
-        font-size: 0.9em;
-    }
-
-    .trials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .trial-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .trial-card:hover {
-        border-color: #9370db;
-        transform: translateY(-5px);
-    }
-
-    .trial-title {
-        color: #9370db;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .trial-description {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    .corruption-section {
-        background: rgba(75, 0, 130, 0.05);
-        border: 1px solid rgba(75, 0, 130, 0.3);
-        border-radius: 15px;
-        padding: 30px;
-        margin: 40px 0;
-    }
-
-    .corruption-title {
-        color: #9370db;
-        font-size: 1.4em;
-        margin-bottom: 20px;
-        font-weight: 600;
-    }
-
-    .corruption-description {
-        color: #ccc;
-        margin-bottom: 20px;
-        line-height: 1.6;
-    }
-
-    .whispers-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        margin: 20px 0;
-    }
-
-    .whisper-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #444;
-        border-radius: 10px;
-        padding: 20px;
-    }
-
-    .whisper-title {
-        color: #cc0000;
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-    }
-
-    .whisper-text {
-        color: #ddd;
-        font-style: italic;
-        margin-bottom: 10px;
-    }
-
-    .whisper-meaning {
-        color: #aaa;
-        font-size: 0.9em;
-    }
-
-    .character-summary {
-        padding: 60px 0;
-        background: rgba(10, 10, 20, 0.6);
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
-    }
-
-    .summary-container {
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .summary-title {
-        font-size: 2.2em;
-        color: #f0f0f0;
-        margin-bottom: 40px;
-        font-weight: 300;
-        letter-spacing: 1px;
-    }
-
-    .summary-content {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        text-align: left;
-    }
-
-    .summary-content p {
-        margin-bottom: 25px;
-    }
-
-    .summary-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    .read-more-section {
-        background: linear-gradient(135deg, rgba(75, 0, 130, 0.2), rgba(75, 0, 130, 0.1));
-        border: 1px solid #9370db;
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        margin: 60px 0;
-    }
-
-    .cta-title {
-        font-size: 1.8em;
-        color: #f0f0f0;
-        margin-bottom: 15px;
-    }
-
-    .cta-description {
-        color: #ccc;
-        margin-bottom: 30px;
-        font-size: 1.1em;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cta-button {
-        background: linear-gradient(135deg, #9370db, #ba55d3);
-        color: #000;
-        text-decoration: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(147, 112, 219, 0.4);
-    }
-
-    .cta-button.secondary {
-        background: rgba(147, 112, 219, 0.2);
-        color: #9370db;
-        border: 1px solid #9370db;
-    }
-
-    .cta-button.secondary:hover {
-        background: rgba(147, 112, 219, 0.3);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 1024px) {
-        .character-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryx Shadowclaw - The Young Beastman | Blood of the Wild Gods</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a0a1a 0%, #2d1a2d 50%, #4a2d4a 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
         }
-        
-        .character-portrait {
-            position: static;
-        }
-        
-        .whispers-grid {
-            grid-template-columns: 1fr;
-        }
-    }
 
-    @media (max-width: 768px) {
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.1) 0%, rgba(147, 112, 219, 0.05) 100%);
+        }
+
         .character-title {
-            font-size: 2.2em;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
         }
-        
+
         .character-tagline {
+            font-size: 1.4em;
+            color: #9370db;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(147, 112, 219, 0.1);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #9370db;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(147, 112, 219, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.2), rgba(186, 85, 211, 0.1));
+            border: 2px solid #9370db;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9370db;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(147, 112, 219, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(186, 85, 211, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(148, 0, 211, 0.1) 50%, transparent 55%);
+            animation: shadowFlow 15s ease-in-out infinite;
+        }
+
+        @keyframes shadowFlow {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+            25% { transform: rotate(15deg) scale(1.1); opacity: 0.6; }
+            50% { transform: rotate(30deg) scale(0.9); opacity: 0.2; }
+            75% { transform: rotate(45deg) scale(1.05); opacity: 0.7; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #9370db;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #9370db;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(147, 112, 219, 0.05);
+            border-left: 4px solid #9370db;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #9370db;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #9370db;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #9370db;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #9370db;
+            transform: translateY(-5px);
+        }
+
+        .power-card.transformation {
+            border-left: 4px solid #9370db;
+        }
+
+        .power-card.stealth {
+            border-left: 4px solid #8b008b;
+        }
+
+        .power-card.survival {
+            border-left: 4px solid #da70d6;
+        }
+
+        .power-card.bloodmarked {
+            border-left: 4px solid #ffd700;
+        }
+
+        .power-title {
+            color: #9370db;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #9370db;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(147, 112, 219, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9370db;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .trials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trial-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trial-card:hover {
+            border-color: #9370db;
+            transform: translateY(-5px);
+        }
+
+        .trial-title {
+            color: #9370db;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trial-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(20, 10, 20, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.2), rgba(147, 112, 219, 0.1));
+            border: 1px solid #9370db;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #9370db, #ba55d3);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(147, 112, 219, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(147, 112, 219, 0.2);
+            color: #9370db;
+            border: 1px solid #9370db;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(147, 112, 219, 0.3);
+        }
+
+        .evolution-timeline {
+            background: rgba(20, 10, 20, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #9370db;
+            font-weight: 600;
+            margin-bottom: 20px;
             font-size: 1.2em;
         }
-        
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
+
+        .timeline-phase {
+            border-left: 3px solid #9370db;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
         }
-        
-        .transformations-grid {
-            grid-template-columns: 1fr;
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #9370db;
+            border-radius: 50%;
         }
-    }
-</style>
+
+        .phase-label {
+            color: #9370db;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .corruption-box {
+            background: rgba(139, 34, 34, 0.1);
+            border: 1px solid rgba(139, 34, 34, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .corruption-title {
+            color: #cc4444;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .whispers-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .whisper-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .whisper-title {
+            color: #cc0000;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .whisper-text {
+            color: #ddd;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .whisper-meaning {
+            color: #aaa;
+            font-size: 0.9em;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+            
+            .whispers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
 
 <!-- Header -->
 <section class="character-header">
@@ -539,33 +601,37 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                 <div class="portrait-container">
                     <div class="character-image">
                         [Character Art Coming Soon]<br>
-                        <small>Small feline form with sleek black fur<br>and piercing yellow eyes</small>
+                        <small>Small feline form with sleek black fur<br>and piercing yellow eyes that reflect<br>his emotions with startling clarity</small>
                     </div>
                     
                     <div class="character-stats">
                         <div class="stat-item">
                             <div class="stat-label">First Appears</div>
-                            <div class="stat-value">Blood of the Wild Gods: The Silence</div>
+                            <div class="stat-value">The Silence</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Heritage</div>
                             <div class="stat-value">Feline Beastman, Bloodfang Clan, Bloodmarked</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Location</div>
-                            <div class="stat-value">Crimson Tundra → Wandering Protector</div>
+                            <div class="stat-label">Homeland</div>
+                            <div class="stat-value">Crimson Tundra (Bloodfang Territory)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">The Stray, The Black Lion, Little Cub</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Transformation</div>
-                            <div class="stat-value">Colossal Black Lion</div>
+                            <div class="stat-value">Colossal Black Lion with obsidian claws</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Core Conflict</div>
-                            <div class="stat-value">Belonging vs. Independence</div>
+                            <div class="stat-label">Silent God Whispers</div>
+                            <div class="stat-value">"Flee" and "Return" - Exploiting loneliness</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Status</div>
-                            <div class="stat-value">Independent guardian, chosen family</div>
+                            <div class="stat-label">Current Status</div>
+                            <div class="stat-value">Independent guardian, hunting corrupted Beastborn</div>
                         </div>
                     </div>
                 </div>
@@ -578,14 +644,16 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                 <section class="section">
                     <h2 class="section-title">From Sacrifice to Protector</h2>
                     <div class="character-description">
-                        <p>In the brutal Crimson Tundra, Ryx Shadowclaw was born into a destiny he never chose—marked by divine blood to be sacrificed to the War God by his own clan. Small even by feline Beastman standards, with sleek black fur and piercing yellow eyes that betray every emotion, he appears vulnerable yet harbors the power to transform into a colossal Black Lion of nightmare proportions.</p>
+                        <p>In the brutal Crimson Tundra, Ryx Shadowclaw was born into a destiny he never chose—marked by divine blood to be sacrificed to the War God by his own clan. Small even by feline Beastman standards, with sleek black fur that seems to absorb light and bright yellow eyes that reflect his emotions with startling clarity, he appears vulnerable yet harbors the power to transform into a colossal Black Lion of nightmare proportions.</p>
                         
                         <p>But Ryx's true story isn't about the power that flows through his veins—it's about discovering that family isn't determined by blood but by choice, that true strength protects rather than dominates, and that even the most traumatic beginnings can lead to purposeful, meaningful lives. His journey from frightened sacrifice to confident guardian proves that love can heal any wound and transform any victim into a protector.</p>
+
+                        <p>Through his evolution from terrified runaway to independent guardian, Ryx embodies the transformative power of chosen family and unconditional acceptance. His quest to create "the good kind" of silence—peace rather than oppression—represents hope that cycles of violence can be broken through compassion and that the smallest among us can have the largest impact on the world.</p>
                     </div>
 
                     <div class="character-quote">
                         Really? You… you mean it, Elowen? I can… stay? With you? With… you both?
-                        <div class="quote-source">— Ryx discovering he has found a family</div>
+                        <div class="quote-source">— Ryx discovering he has found a family who accepts him</div>
                     </div>
                 </section>
 
@@ -593,97 +661,153 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                 <section class="section">
                     <h2 class="section-title">The Heart of a Protector</h2>
                     <div class="character-description">
-                        <p>Despite his youth and traumatic past, Ryx possesses an unbreakable core of loyalty and courage. His desperate hunger for belonging drives him to fierce devotion once trust is earned, while his natural protective instincts make him willing to face overwhelming odds to shield others from harm.</p>
+                        <p>Despite his youth and traumatic past, Ryx possesses an unbreakable core of loyalty and courage. His desperate hunger for belonging drives him to fierce devotion once trust is earned, while his natural protective instincts make him willing to face overwhelming odds to shield others from harm. His youthful enthusiasm and genuine honesty shine through even his darkest moments, revealing a spirit that refuses to be crushed by tragedy.</p>
                     </div>
 
                     <div class="traits-grid">
                         <div class="trait-card">
                             <div class="trait-title">Loyal to the End</div>
-                            <div class="trait-description">Fiercely devoted to those who earn his trust, willing to die for his chosen pack. Once he accepts someone as family, that bond becomes unbreakable.</div>
+                            <div class="trait-description">Fiercely devoted to those who earn his trust, willing to die for his chosen pack. Once he accepts someone as family, that bond becomes unbreakable and defines his moral compass.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Brave Beyond Size</div>
-                            <div class="trait-description">Faces overwhelming odds when protecting others, despite his small stature. His courage comes not from fearlessness but from love stronger than fear.</div>
+                            <div class="trait-description">Faces overwhelming odds when protecting others, despite his small stature. His courage comes not from fearlessness but from love stronger than fear and determination to honor his mother's sacrifice.</div>
                         </div>
                         <div class="trait-card">
                             <div class="trait-title">Seeking Belonging</div>
-                            <div class="trait-description">Desperate hunger for family connection drives many decisions. His greatest joy is finding people who accept him exactly as he is.</div>
+                            <div class="trait-description">Desperate hunger for family connection drives many decisions. His greatest joy is finding people who accept him exactly as he is, scars and transformation included.</div>
                         </div>
                         <div class="trait-card">
-                            <div class="trait-title">Survivor's Guilt</div>
-                            <div class="trait-description">Carries heavy burden of responsibility for his mother's sacrifice and father's death, motivating his protective mission but sometimes paralyzing him with self-doubt.</div>
+                            <div class="trait-title">Survivor's Burden</div>
+                            <div class="trait-description">Carries heavy responsibility for his mother's sacrifice and father's death, motivating his protective mission but sometimes paralyzing him with guilt and self-doubt.</div>
                         </div>
                     </div>
 
                     <div class="character-quote">
                         I will make the world… safer. So that maybe… someday… there will be silence, but not the bad kind. A good kind. A peaceful kind.
-                        <div class="quote-source">— Ryx's mission statement as he chooses his path</div>
+                        <div class="quote-source">— Ryx's mission statement as he chooses his path forward</div>
                     </div>
                 </section>
 
-                <!-- Transformations & Journey -->
+                <!-- Powers & Abilities -->
+                <section class="section">
+                    <h2 class="section-title">The Black Lion's Gift</h2>
+                    <div class="character-description">
+                        <p>Ryx's Bloodmarked heritage grants him abilities that transcend his small feline form, with the terrifying Black Lion transformation serving as both his greatest weapon and most feared aspect of himself. His journey involves learning to master these gifts not as tools of domination, but as instruments of protection for those who cannot protect themselves.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card transformation">
+                            <div class="power-title">Black Lion Transformation</div>
+                            <div class="power-description">
+                                <strong>Colossal Form:</strong> Transforms into massive lion dwarfing even adult Ursine Beastmen<br>
+                                <strong>Obsidian Claws:</strong> Scimitar-like claws capable of cutting through bone and armor<br>
+                                <strong>Crimson Fire Eyes:</strong> Eyes burn with unholy fire, radiating primal terror<br>
+                                <strong>Evolution:</strong> From uncontrolled terror-trigger to conscious protective tool<br>
+                                <strong>Divine Strength:</strong> Godlike power, speed, and durability transcending natural limits
+                            </div>
+                        </div>
+                        
+                        <div class="power-card stealth">
+                            <div class="power-title">Stealth & Agility</div>
+                            <div class="power-description">
+                                <strong>Silent Movement:</strong> Can move completely soundlessly, becoming one with shadows<br>
+                                <strong>Enhanced Senses:</strong> Supernatural hearing, smell, and sight surpassing typical Beastman abilities<br>
+                                <strong>Natural Grace:</strong> Fluid, cat-like movements allowing incredible agility and balance<br>
+                                <strong>Shadow Blending:</strong> Instinctive ability to use environment for concealment and surprise attacks
+                            </div>
+                        </div>
+                        
+                        <div class="power-card survival">
+                            <div class="power-title">Survival Mastery</div>
+                            <div class="power-description">
+                                <strong>Tundra Training:</strong> Bloodfang upbringing provides harsh-weather survival skills<br>
+                                <strong>Hunting Excellence:</strong> Instinctive tracking abilities honed by desperate survival<br>
+                                <strong>Danger Sensing:</strong> Preternatural awareness of threats and hostile intentions<br>
+                                <strong>Scavenging:</strong> Ability to find resources and sustenance in impossible conditions
+                            </div>
+                        </div>
+                        
+                        <div class="power-card bloodmarked">
+                            <div class="power-title">Divine Heritage</div>
+                            <div class="power-description">
+                                <strong>War God Blood:</strong> Divine inheritance marking him as sacred sacrifice turned protector<br>
+                                <strong>Empathic Sensitivity:</strong> Unusual ability to sense others' emotions and intentions<br>
+                                <strong>Regenerative Potential:</strong> Enhanced healing capabilities in Black Lion form<br>
+                                <strong>Sacred Purpose:</strong> Growing understanding that power exists to protect the innocent
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Character Evolution -->
                 <section class="section">
                     <h2 class="section-title">Three Lives, One Heart</h2>
                     <div class="character-description">
-                        <p>Ryx's character arc unfolds through three distinct phases, each representing a fundamental transformation not just of circumstance, but of understanding about himself and his place in the world.</p>
+                        <p>Ryx's character arc unfolds through three distinct phases, each representing a fundamental transformation not just of circumstance, but of understanding about himself and his place in the world. From victim to survivor to protector, his journey illustrates the power of love to transform even the most traumatic beginnings into purposeful, meaningful existence.</p>
                     </div>
 
-                    <div class="transformations-grid">
-                        <div class="transformation-card victim">
-                            <div class="transformation-title">Sacred Sacrifice</div>
-                            <div class="transformation-description">
-                                <strong>Origin:</strong> Bloodfang Clan's designated offering to the War God<br>
-                                <strong>Reality:</strong> Terrified child fleeing brutal tradition with mother's desperate help<br>
-                                <strong>Trauma:</strong> Mother's death in his place, father's pursuit, complete loss of identity<br>
-                                <strong>Symbolizes:</strong> Victims of tradition and inherited violence
-                            </div>
+                    <div class="evolution-timeline">
+                        <div class="timeline-title">Journey from Victim to Guardian</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Sacred Sacrifice</div>
+                            <div class="phase-description">Born as Bloodfang Clan's designated offering to War God, marked for ritual death despite being just a child with divine blood.</div>
                         </div>
                         
-                        <div class="transformation-card beast">
-                            <div class="transformation-title">The Black Lion</div>
-                            <div class="transformation-description">
-                                <strong>Trigger:</strong> Extreme emotion—terror, rage, grief, or protective fury<br>
-                                <strong>Form:</strong> Colossal lion with obsidian claws, crimson fire eyes, thunderous roar<br>
-                                <strong>Evolution:</strong> From uncontrolled terror to conscious protective tool<br>
-                                <strong>Symbolizes:</strong> Power used to protect rather than dominate
-                            </div>
+                        <div class="timeline-phase">
+                            <div class="phase-label">Mother's Escape</div>
+                            <div class="phase-description">Lyra's desperate plan to save him by dying in his place, launching him into the blizzard as frightened runaway fleeing destiny.</div>
                         </div>
                         
-                        <div class="transformation-card protector">
-                            <div class="transformation-title">Chosen Guardian</div>
-                            <div class="transformation-description">
-                                <strong>Mission:</strong> Independent protector hunting corrupted Beastborn<br>
-                                <strong>Growth:</strong> From desperate belonging to confident purpose<br>
-                                <strong>Legacy:</strong> Creating a world where silence means peace, not oppression<br>
-                                <strong>Symbolizes:</strong> Healing trauma through service to others
-                            </div>
+                        <div class="timeline-phase">
+                            <div class="phase-label">Lost Wanderer</div>
+                            <div class="phase-description">Desperate survival in tundra, discovering mother's sacrifice, vulnerable to Silent God's whispers promising belonging.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Father's Death</div>
+                            <div class="phase-description">Killing Korgath in self-defense during pursuit, first full Black Lion transformation, permanent break from Bloodfang past.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Found Family</div>
+                            <div class="phase-description">Meeting Kaelen and Elowen, learning that acceptance doesn't require perfection and love doesn't demand sacrifice.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Proven Loyalty</div>
+                            <div class="phase-description">Hollow Spire rescue mission demonstrating unwavering devotion to chosen family despite crushing guilt over initial failure.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Independent Guardian</div>
+                            <div class="phase-description">Choosing dangerous mission to protect innocent communities while maintaining bonds with those who gave him belonging.</div>
                         </div>
                     </div>
-                </section>
 
-                <!-- Silent God Corruption -->
-                <section class="corruption-section">
-                    <h2 class="corruption-title">The Whispers That Almost Led Him Home</h2>
-                    <div class="corruption-description">
-                        The Silent God's corruption of Ryx was particularly insidious because it targeted his deepest wound—his desperate longing for home and family. The whispers came in two phases, each exploiting different aspects of his trauma and need for belonging.
+                    <div class="corruption-box">
+                        <div class="corruption-title">The Silent God's Manipulation</div>
+                        The corruption targeted Ryx's deepest wound—his desperate longing for home and family. The whispers came in two phases: "Flee" reinforced his sense of being unwanted, building despair and isolation, while "Return" exploited his homesickness and guilt, making the ancient battleground seem like guidance toward Bloodfang reunion rather than service to the void. His resistance came from his mother's love, his growing understanding of genuine acceptance with Kaelen and Elowen, and recognition that true family supports growth rather than demanding sacrifice.
                     </div>
 
                     <div class="whispers-grid">
                         <div class="whisper-card">
                             <div class="whisper-title">"Flee"</div>
                             <div class="whisper-text">"Run, little Stray. You are unwanted even by your own kind."</div>
-                            <div class="whisper-meaning">Reinforced his sense of being an outcast, deepening despair and isolation to make him more vulnerable to false promises.</div>
+                            <div class="whisper-meaning">Reinforced isolation and outcast status to deepen vulnerability to false promises of belonging.</div>
                         </div>
                         
                         <div class="whisper-card">
                             <div class="whisper-title">"Return"</div>
                             <div class="whisper-text">"Return… for family… return to belonging… return… home."</div>
-                            <div class="whisper-meaning">Exploited his homesickness and guilt, making the ancient battleground seem like guidance toward Bloodfang reunion rather than corruption.</div>
+                            <div class="whisper-meaning">Exploited homesickness and guilt, disguising corruption as guidance toward clan reunion.</div>
                         </div>
                     </div>
 
-                    <div class="corruption-description">
-                        His resistance came from his mother's love, his growing understanding of what genuine acceptance felt like with Kaelen and Elowen, and his recognition that true family supports your growth rather than demanding your sacrifice.
+                    <div class="character-quote">
+                        Thank you… brother.
+                        <div class="quote-source">— Ryx to the Beastman acolyte who helped him rescue his family</div>
                     </div>
                 </section>
 
@@ -691,7 +815,7 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                 <section class="section">
                     <h2 class="section-title">Forged by Fire, Tempered by Love</h2>
                     <div class="character-description">
-                        <p>Every trial Ryx faces strips away another layer of his victim identity, revealing the protector beneath. His greatest challenges come not from external enemies but from learning to value himself enough to accept love.</p>
+                        <p>Every trial Ryx faces strips away another layer of his victim identity, revealing the protector beneath. His greatest challenges come not from external enemies but from learning to value himself enough to accept love and trust that he deserves the belonging he so desperately craves.</p>
                     </div>
 
                     <div class="trials-grid">
@@ -701,15 +825,23 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                         </div>
                         <div class="trial-card">
                             <div class="trial-title">Father's Death</div>
-                            <div class="trial-description">Killing Korgath in self-defense during pursuit, experiencing the full weight of his Black Lion transformation and permanently severing ties to his past.</div>
+                            <div class="trial-description">Killing Korgath in self-defense during pursuit, experiencing the full weight of his Black Lion transformation and permanently severing ties to his brutal past.</div>
                         </div>
                         <div class="trial-card">
-                            <div class="trial-title">Finding Family</div>
-                            <div class="trial-description">Learning to trust Kaelen and Elowen, discovering that acceptance doesn't require perfection and love doesn't demand sacrifice in return.</div>
+                            <div class="trial-title">Learning Trust</div>
+                            <div class="trial-description">Cautiously accepting Kaelen and Elowen's offer of belonging, discovering that acceptance doesn't require perfection and love doesn't demand sacrifice in return.</div>
                         </div>
                         <div class="trial-card">
-                            <div class="trial-title">The Rescue Mission</div>
-                            <div class="trial-description">Infiltrating Hollow Spire to save his captured family, proving his loyalty and capability while overcoming crushing guilt over his initial failure as a guard.</div>
+                            <div class="trial-title">Guard Duty Failure</div>
+                            <div class="trial-description">Distraction by firefly leading to family's capture, crushing guilt over perceived failure driving desperate rescue mission to prove his loyalty and worth.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Hollow Spire Rescue</div>
+                            <div class="trial-description">Infiltrating bone-white labyrinth to save captured family, proving his courage and capability while overcoming paralyzing guilt through successful action.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Choosing Independence</div>
+                            <div class="trial-description">Deciding to leave the safety of Verdant Veil for dangerous guardian mission, balancing need for belonging with drive to protect others.</div>
                         </div>
                     </div>
                 </section>
@@ -718,16 +850,16 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                 <section class="section">
                     <h2 class="section-title">The Family He Chose</h2>
                     <div class="character-description">
-                        <p>Ryx's relationships become the foundation for his transformation from victim to protector. Through chosen family, he learns that love doesn't require earning—it's freely given to those who accept it.</p>
+                        <p>Ryx's relationships become the foundation for his transformation from victim to protector. Through chosen family, he learns that love doesn't require earning—it's freely given to those who accept it. Each connection teaches him something essential about belonging, loyalty, and what makes existence truly meaningful.</p>
                     </div>
 
                     <div class="related-characters">
-                        <a href="/world-guide/characters/kaelen-rveyne/" class="related-character">
+                        <a href="/world-guide/characters/kaelen-rveyne.html" class="related-character">
                             <div class="related-avatar">K</div>
                             <div class="related-name">Kaelen R'Veyne</div>
                             <div class="related-role">Father Figure, Mentor</div>
                         </a>
-                        <a href="/world-guide/characters/elowen-faerwyn/" class="related-character">
+                        <a href="/world-guide/characters/elowen-faerwyn.html" class="related-character">
                             <div class="related-avatar">E</div>
                             <div class="related-name">Elowen Faerwyn</div>
                             <div class="related-role">Maternal Figure, Healer</div>
@@ -737,10 +869,20 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
                             <div class="related-name">Lyra Shadowclaw</div>
                             <div class="related-role">Mother, Sacred Memory</div>
                         </div>
-                        <a href="/world-guide/characters/mordain-ashcroft/" class="related-character">
+                        <a href="/world-guide/characters/mordain-ashcroft.html" class="related-character">
                             <div class="related-avatar">M</div>
                             <div class="related-name">Mordain Ashcroft</div>
-                            <div class="related-role">Unlikely Ally</div>
+                            <div class="related-role">Unlikely Ally, Understanding</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">K</div>
+                            <div class="related-name">Korgath Shadowclaw</div>
+                            <div class="related-role">Father, Tragic Enemy</div>
+                        </div>
+                        <a href="/world-guide/characters/the-silent-god.html" class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">Silent God</div>
+                            <div class="related-role">Corruptor, False Promise</div>
                         </a>
                     </div>
                 </section>
@@ -753,15 +895,15 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
             <div class="summary-container">
                 <h2 class="summary-title">The Heart of Transformation</h2>
                 <div class="summary-content">
-                    <p>Ryx Shadowclaw embodies the triumph of love over fear, choice over destiny, and hope over despair. Born into a culture that valued his divine blood only as a sacrifice to their War God, he represents the possibility of transformation—not just the physical metamorphosis into the Black Lion, but the deeper change from victim to protector, from outcast to chosen family member, from surviving to thriving.</p>
+                    <p>Ryx Shadowclaw embodies the triumph of love over fear, choice over destiny, and hope over despair. Born into a culture that valued his divine blood only as a sacrifice to their War God, he represents the possibility of transformation—not just the physical metamorphosis into the Black Lion, but the deeper change from victim to protector, from outcast to chosen family member, from surviving to thriving. His story proves that even the smallest among us can have the largest impact when guided by love and purpose.</p>
 
-                    <p>His journey illustrates that family is not determined by blood but by choice, that true strength protects rather than dominates, and that even the most traumatic beginnings can lead to purposeful, meaningful lives. Through his relationships with Kaelen and Elowen, he learns that acceptance doesn't require perfection, that love doesn't demand sacrifice, and that belonging can be earned through loyalty and compassion rather than inherited through birth.</p>
+                    <p>His journey illustrates that family is not determined by blood but by choice, that true strength protects rather than dominates, and that even the most traumatic beginnings can lead to purposeful, meaningful lives. Through his relationships with Kaelen and Elowen, he learns that acceptance doesn't require perfection, that love doesn't demand sacrifice, and that belonging can be earned through loyalty and compassion rather than inherited through birth or proven through suffering.</p>
 
-                    <p>The Black Lion transformation serves as both literal and metaphorical representation of his growth—initially a terrifying loss of control triggered by trauma, it becomes a conscious tool for protection, symbolizing how our greatest fears and perceived weaknesses can become our most powerful assets when guided by love and purpose.</p>
+                    <p>The Black Lion transformation serves as both literal and metaphorical representation of his growth—initially a terrifying loss of control triggered by trauma, it becomes a conscious tool for protection, symbolizing how our greatest fears and perceived weaknesses can become our most powerful assets when guided by love and purpose. His evolution from fearing his own power to embracing it as a sacred duty demonstrates the healing that comes from understanding one's true purpose.</p>
 
-                    <p>Ryx's ultimate choice to leave the safety of the Verdant Veil for a dangerous mission of protection demonstrates the completion of his character arc. No longer the frightened cub fleeing sacrifice, he has become a confident guardian choosing his own purpose while maintaining the bonds of love that sustain him. His story proves that sometimes the smallest among us can have the largest impact, and that the love of a chosen family can heal even the deepest wounds while inspiring us to become our best selves in service of others.</p>
+                    <p>Ryx's ultimate choice to leave the safety of the Verdant Veil for a dangerous mission of protection demonstrates the completion of his character arc. No longer the frightened cub fleeing sacrifice, he has become a confident guardian choosing his own purpose while maintaining the bonds of love that sustain him. His decision represents the perfect balance between the belonging he desperately needed and the independence he courageously chose, proving that true family supports each other's growth even when it means accepting separation.</p>
 
-                    <p>His final words about creating "the good kind" of silence—peace rather than oppression—capture the essence of his transformation from victim of brutal tradition to architect of compassionate future. Through Ryx, we see that redemption is possible for anyone willing to choose love over fear, purpose over survival, and hope over despair.</p>
+                    <p>His final words about creating "the good kind" of silence—peace rather than oppression—capture the essence of his transformation from victim of brutal tradition to architect of compassionate future. Through Ryx, we see that redemption is possible for anyone willing to choose love over fear, purpose over survival, and hope over despair. His story demonstrates that the love of a chosen family can heal even the deepest wounds while inspiring us to become our best selves in service of others, and that sometimes the most profound strength comes not from dominating others but from protecting those who cannot protect themselves.</p>
                 </div>
             </div>
         </section>
@@ -782,3 +924,6 @@ image: "/assets/images/ryx-shadowclaw-character-art.jpg"
 
     </div>
 </main>
+
+</body>
+</html>
