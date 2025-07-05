@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senia - Goddess of the Sun | Seven Days of Sun</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 50%, #3e2116 100%);
+            color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.1) 0%, rgba(255, 159, 138, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #ff9f8a;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(255, 159, 138, 0.1);
+            border: 1px solid rgba(255, 159, 138, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #ff9f8a;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(255, 159, 138, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 204, 102, 0.2), rgba(255, 159, 138, 0.1));
+            border: 2px solid #ffcc66;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffcc66;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 204, 102, 0.2) 0%, transparent 70%);
+            animation: sunShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes sunShimmer {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+            25% { transform: rotate(90deg) scale(1.2); opacity: 0.6; }
+            50% { transform: rotate(180deg) scale(1.1); opacity: 0.4; }
+            75% { transform: rotate(270deg) scale(1.3); opacity: 0.7; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #ff9f8a;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #ff9f8a;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(255, 159, 138, 0.05);
+            border-left: 4px solid #ff9f8a;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #ff9f8a;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #ff9f8a;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #ff9f8a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .incarnations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .incarnation-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .incarnation-card:hover {
+            border-color: #ff9f8a;
+            transform: translateY(-5px);
+        }
+
+        .incarnation-card.royal {
+            border-left: 4px solid #ffd700;
+        }
+
+        .incarnation-card.common {
+            border-left: 4px solid #8b7355;
+        }
+
+        .incarnation-card.artistic {
+            border-left: 4px solid #ff6b9d;
+        }
+
+        .incarnation-card.current {
+            border-left: 4px solid #ff9f8a;
+            box-shadow: 0 0 15px rgba(255, 159, 138, 0.2);
+        }
+
+        .incarnation-title {
+            color: #ff9f8a;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .incarnation-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #ff9f8a;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 159, 138, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff9f8a;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(20, 10, 10, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.2), rgba(255, 159, 138, 0.1));
+            border: 1px solid #ff9f8a;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff9f8a, #ffb59a);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 159, 138, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(255, 159, 138, 0.2);
+            color: #ff9f8a;
+            border: 1px solid #ff9f8a;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 159, 138, 0.3);
+        }
+
+        .cycle-timeline {
+            background: rgba(20, 10, 10, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #ff9f8a;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-day {
+            border-left: 3px solid #ff9f8a;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-day::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #ff9f8a;
+            border-radius: 50%;
+        }
+
+        .day-label {
+            color: #ff9f8a;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .day-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .memory-phases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .memory-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .memory-card:hover {
+            border-color: #ff9f8a;
+            transform: translateY(-5px);
+        }
+
+        .memory-card.mortal {
+            border-left: 4px solid #8b7355;
+        }
+
+        .memory-card.awakening {
+            border-left: 4px solid #ff9f8a;
+        }
+
+        .memory-card.divine {
+            border-left: 4px solid #ffd700;
+        }
+
+        .memory-title {
+            color: #ff9f8a;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .memory-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .incarnations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← Seven Days of Sun World Guide</a>
+        <h1 class="character-title">Senia</h1>
+        <p class="character-tagline">"The Sun Incarnate"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Auburn hair like liquid copper<br>Eyes that burn with inner fire</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">Seven Days of Sun</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Divine Nature</div>
+                            <div class="stat-value">Goddess of the Sun</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Current Form</div>
+                            <div class="stat-value">Market Girl of Quenos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Domains</div>
+                            <div class="stat-value">Sunlight, Growth, Life, Warmth</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Eternal Bond</div>
+                            <div class="stat-value">Elodias, God of the Moon</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Tragedy</div>
+                            <div class="stat-value">Dies upon divine awakening</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Reincarnating, Seven-day cycles</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">Light Reborn in Endless Dawn</h2>
+                    <div class="character-description">
+                        <p>In markets across Quenos, there lives a girl whose smile seems to carry sunshine itself. She doesn't know that her laughter once rang through celestial halls, or that her auburn hair holds the memory of solar flame. To her, she is simply Senia—a market vendor who finds joy in small things and warmth in simple human connection. She has no idea that she is the sun incarnate, cursed to live and love and die in seven-day cycles that span eternity.</p>
+                        
+                        <p>Once, Senia was the Goddess of the Sun, divine partner to Elodias in maintaining cosmic balance. Her radiance brought life to worlds, her warmth nurtured growth across the universe. Together with her moon-lord beloved, she kept the fundamental rhythms of existence in perfect harmony. Their love was meant to be eternal partnership—light and shadow, warmth and coolness, creation and contemplation dancing together across infinity.</p>
+
+                        <p>The curse that binds her transforms divine eternity into mortal fragments. Each life begins fresh, unmarked by accumulated grief, filled with the innocent capacity for wonder and love. Yet within each incarnation burns the same essential fire—the generous spirit that gives warmth without reservation, the radiant heart that brightens everything it touches. She is the sun that always rises, no matter how dark the night that preceded it.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Find me again... no matter how long it takes... no matter where I'm reborn...
+                        <div class="quote-source">— Senia's final words in each cycle</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Radiant Heart</h2>
+                    <div class="character-description">
+                        <p>Across every incarnation, certain truths remain constant about Senia's nature. Whether born to royalty or poverty, whether artist or soldier, scholar or dancer, the essential core of who she is shines through unchanged. She is warmth personified, love given form, the generous soul that illuminates darkness wherever it exists.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Naturally Radiant</div>
+                            <div class="trait-description">Brings warmth and light to every interaction without effort or calculation. Her presence brightens rooms and lifts spirits through simple authenticity.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Instinctively Kind</div>
+                            <div class="trait-description">Default response to others is compassion and understanding. Sees the best in people and helps them see it in themselves.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Gracefully Strong</div>
+                            <div class="trait-description">Possesses quiet confidence and inner strength disguised as gentle softness. Nobility that transcends social circumstances.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Unconsciously Noble</div>
+                            <div class="trait-description">Carries herself with inherent dignity regardless of station. Divine grace manifests even in the humblest circumstances.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        I chose this... chose you... and would do so again... in every lifetime yet to come...
+                        <div class="quote-source">— Senia accepting her divine destiny</div>
+                    </div>
+                </section>
+
+                <!-- Memory & Transformation -->
+                <section class="section">
+                    <h2 class="section-title">From Innocence to Transcendence</h2>
+                    <div class="character-description">
+                        <p>Senia's journey in each life follows the same profound arc—from mortal innocence through divine awakening to transcendent acceptance. This progression represents both her greatest gift and her ultimate tragedy, as each awakening to her true nature brings her closer to the death that ends every incarnation.</p>
+                    </div>
+
+                    <div class="memory-phases">
+                        <div class="memory-card mortal">
+                            <div class="memory-title">Mortal Innocence</div>
+                            <div class="memory-description">
+                                <strong>State:</strong> Complete amnesia of divine nature<br>
+                                <strong>Experience:</strong> Fresh wonder, untainted by grief<br>
+                                <strong>Recognition:</strong> Inexplicable attraction to Elodias<br>
+                                <strong>Gift:</strong> Ability to love without fear of loss
+                            </div>
+                        </div>
+                        
+                        <div class="memory-card awakening">
+                            <div class="memory-title">Divine Awakening</div>
+                            <div class="memory-description">
+                                <strong>Trigger:</strong> Day 5 of each cycle<br>
+                                <strong>Process:</strong> Memories flooding back in overwhelming waves<br>
+                                <strong>Physical:</strong> Growing luminosity and translucency<br>
+                                <strong>Emotional:</strong> Joy of recognition mixed with dread of approaching death
+                            </div>
+                        </div>
+                        
+                        <div class="memory-card divine">
+                            <div class="memory-title">Transcendent Wisdom</div>
+                            <div class="memory-description">
+                                <strong>Understanding:</strong> Cosmic perspective on eternal pattern<br>
+                                <strong>Acceptance:</strong> Peace with necessity of sacrifice<br>
+                                <strong>Love:</strong> Choosing connection despite consequences<br>
+                                <strong>Legacy:</strong> Promise to return, to love again
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Incarnations Across Time -->
+                <section class="section">
+                    <h2 class="section-title">Lives Across Lifetimes</h2>
+                    <div class="character-description">
+                        <p>Through countless incarnations, Senia has lived as queen and commoner, artist and warrior, each life shaped by different circumstances but carrying the same essential radiance. Her various incarnations demonstrate that nobility of spirit transcends social station, that grace exists independent of privilege.</p>
+                    </div>
+
+                    <div class="incarnations-grid">
+                        <div class="incarnation-card current">
+                            <div class="incarnation-title">Market Girl of Quenos</div>
+                            <div class="incarnation-description">
+                                <strong>Current Life:</strong> Auburn-haired vendor with gentle humor<br>
+                                <strong>Traits:</strong> Practical warmth, unconscious nobility<br>
+                                <strong>Recognition:</strong> Instant connection with mysterious stranger<br>
+                                <strong>Destiny:</strong> Seven days of perfect love before transcendence
+                            </div>
+                        </div>
+                        
+                        <div class="incarnation-card royal">
+                            <div class="incarnation-title">The Crowned Queen</div>
+                            <div class="incarnation-description">
+                                <strong>Status:</strong> Ruler with jeweled crown and commanding presence<br>
+                                <strong>Traits:</strong> Deliberate speech, natural authority<br>
+                                <strong>Constant:</strong> Grace in power, warmth despite ceremony<br>
+                                <strong>Death:</strong> At sunset, watching light fade from palace heights
+                            </div>
+                        </div>
+                        
+                        <div class="incarnation-card common">
+                            <div class="incarnation-title">The Tavern Girl</div>
+                            <div class="incarnation-description">
+                                <strong>Station:</strong> Server in threadbare cloak, humble circumstances<br>
+                                <strong>Spirit:</strong> Smiled through exhaustion, dignity in poverty<br>
+                                <strong>Light:</strong> Brightened the darkest corners of common rooms<br>
+                                <strong>Love:</strong> Found Elodias even in life's hardest moments
+                            </div>
+                        </div>
+                        
+                        <div class="incarnation-card artistic">
+                            <div class="incarnation-title">The Painter & Dancer</div>
+                            <div class="incarnation-description">
+                                <strong>Artist:</strong> Smudged sleeves, focused intensity on beauty<br>
+                                <strong>Dancer:</strong> Joyful expression in wildflower fields<br>
+                                <strong>Vision:</strong> Captured light and movement in creative works<br>
+                                <strong>Essence:</strong> Celebrated life and beauty in all its forms
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Why does this always happen...
+                        <div class="quote-source">— Senia's unconscious recognition of eternal patterns</div>
+                    </div>
+                </section>
+
+                <!-- The Seven-Day Journey -->
+                <section class="section">
+                    <h2 class="section-title">Seven Days of Sun</h2>
+                    <div class="character-description">
+                        <p>Each cycle follows the same beautiful and tragic arc. From innocent meeting through growing love to divine awakening and transcendent death, these seven days contain lifetimes of emotion compressed into moments of perfect intensity.</p>
+                    </div>
+
+                    <div class="cycle-timeline">
+                        <div class="timeline-title">The Pattern of Love and Loss</div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Days 1-2: Innocent Attraction</div>
+                            <div class="day-description">Meeting Elodias as a stranger, feeling instant connection without understanding why. Joy unburdened by knowledge of approaching tragedy.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Days 3-4: Deepening Bond</div>
+                            <div class="day-description">Falling in love with surprising intensity. Beginning to sense something larger about their connection while dismissing strange recognitions as coincidence.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Day 5: The Remembrance</div>
+                            <div class="day-description">Divine memories flood back, overwhelming mortal consciousness. Pain of infinite awareness crushing finite mind, joy of recognition mixed with terror of understanding.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Days 6-7: Transcendent Death</div>
+                            <div class="day-description">Mortal form failing under divine consciousness. Growing translucency as essence prepares for separation. Final moments of perfect love before return to cosmic cycle.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Beyond: Rebirth Awaits</div>
+                            <div class="day-description">Divine essence scatters to be born anew elsewhere. The sun sets only to rise again, love ends only to begin fresh, unmarked by previous sorrows.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds That Transcend Death</h2>
+                    <div class="character-description">
+                        <p>Senia's relationships span the mortal and divine realms, from the eternal bond that defines her existence to the fleeting but meaningful connections of each incarnated life. Love, in all its forms, remains the constant thread through every transformation.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="elodias.html" class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Elodias</div>
+                            <div class="related-role">Eternal Beloved, Her Moon</div>
+                        </div>
+                        <a href="malritha.html" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Malritha</div>
+                            <div class="related-role">The Curse's Creator</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Sun That Always Rises</h2>
+                <div class="summary-content">
+                    <p>Senia embodies the eternal promise of renewal, the light that returns no matter how dark the night. As the sun goddess cursed into cycles of mortal reincarnation, she represents both the tragedy of interrupted eternity and the triumph of love that transcends death itself. Her story illuminates the profound truth that some forces are too essential to be permanently destroyed—they can only be transformed, scattered, and reborn with each new dawn.</p>
+
+                    <p>What makes Senia's character particularly poignant is her innocence. Unlike Elodias, who carries the weight of perfect memory across all cycles, she begins each life fresh and unmarked by accumulated grief. This amnesia serves as both mercy and cruelty—allowing her to experience pure joy while unknowingly walking toward inevitable tragedy. Her repeated willingness to love Elodias despite the ultimate consequences speaks not to ignorance but to the fundamental nature of her being. She is love incarnate, warmth given form, the generous spirit that gives light without reservation or fear.</p>
+
+                    <p>Through her various incarnations—queen and commoner, artist and soldier, each shaped by different circumstances yet carrying the same essential radiance—Senia demonstrates that nobility of spirit transcends social station, that grace exists independent of privilege or power. Whether commanding authority from a throne or brightening a humble tavern with her smile, she brings the same warmth, the same instinctive kindness, the same unconscious dignity that marks her divine nature.</p>
+
+                    <p>Her relationship with divine awakening presents a beautiful paradox. The moment she remembers her true nature—experiences the joy of recognition and the cosmic perspective of her eternal bond with Elodias—becomes the beginning of her death. Divine consciousness proves too vast for mortal vessels to contain, yet this limitation creates the very poignancy that defines their love story. She must choose between remaining safely mortal or embracing the divine truth that will destroy her physical form.</p>
+
+                    <p>Senia's consistent choice of love over safety, made fresh in each lifetime without memory of previous consequences, suggests that their connection transcends conscious decision. It is written into the fabric of reality itself, a cosmic truth too fundamental to be altered by curses or fear. Her peaceful acceptance of death in each cycle reflects not resignation but recognition—understanding that some loves are worth any cost, that transcendence requires sacrifice, that the sun must set to make room for night.</p>
+
+                    <p>In the end, Senia represents hope in its purest form. She is proof that what is essential cannot be truly lost, only transformed. Her story suggests that consciousness, once awakened to perfect love, will always find its way back to that love regardless of the obstacles placed in its path. She is the eternal return, the light that always comes back, the promise that love—true love—writes itself into existence so deeply that not even divine curses can fully erase it. Through death and rebirth, through endless cycles of meeting and parting, she remains what she has always been: the sun incarnate, forever rising to warm a world that desperately needs her light.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Follow the Sun's Journey</h2>
+            <p class="cta-description">
+                Witness Senia's eternal cycle of love, loss, and rebirth. Her story explores the transcendent power of love that survives death, the beauty of innocence renewed, and the price of divine connection.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/seven-days-of-sun/chapter-01/" class="cta-button">Read Seven Days of Sun</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
