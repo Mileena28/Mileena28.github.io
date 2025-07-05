@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leika - Mother of Mountains | The Lost Histories</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1612 0%, #2d2420 50%, #3d2e26 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(139, 115, 85, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #8b7355;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(139, 115, 85, 0.1);
+            border: 1px solid rgba(139, 115, 85, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #8b7355;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(139, 115, 85, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(160, 82, 45, 0.1));
+            border: 2px solid #8b7355;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b7355;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 115, 85, 0.3) 0%, transparent 70%);
+            animation: mountainShift 15s ease-in-out infinite;
+        }
+
+        @keyframes mountainShift {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
+            25% { transform: scale(1.05) rotate(15deg); opacity: 0.4; }
+            50% { transform: scale(0.95) rotate(30deg); opacity: 0.3; }
+            75% { transform: scale(1.1) rotate(45deg); opacity: 0.5; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #8b7355;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #8b7355;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(139, 115, 85, 0.05);
+            border-left: 4px solid #8b7355;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #8b7355;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #8b7355;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #8b7355;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #8b7355;
+            transform: translateY(-5px);
+        }
+
+        .power-card.geological {
+            border-left: 4px solid #8b7355;
+        }
+
+        .power-card.divine {
+            border-left: 4px solid #a0522d;
+        }
+
+        .power-card.authority {
+            border-left: 4px solid #696969;
+        }
+
+        .power-card.temporal {
+            border-left: 4px solid #2f4f4f;
+        }
+
+        .power-title {
+            color: #8b7355;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #8b7355;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(139, 115, 85, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b7355;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(20, 18, 12, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(139, 115, 85, 0.1));
+            border: 1px solid #8b7355;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #8b7355, #a0522d);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(139, 115, 85, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(139, 115, 85, 0.2);
+            color: #8b7355;
+            border: 1px solid #8b7355;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(139, 115, 85, 0.3);
+        }
+
+        .foundation-timeline {
+            background: rgba(20, 18, 12, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #8b7355;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-era {
+            border-left: 3px solid #8b7355;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-era::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #8b7355;
+            border-radius: 50%;
+        }
+
+        .era-label {
+            color: #8b7355;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .era-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .authority-box {
+            background: rgba(139, 115, 85, 0.1);
+            border: 1px solid rgba(139, 115, 85, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #d2b48c;
+        }
+
+        .authority-title {
+            color: #8b7355;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Lost Histories World Guide</a>
+        <h1 class="character-title">Leika</h1>
+        <p class="character-tagline">"Mother of Mountains"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Living stone and crystalline formations<br>Hair that flows like molten lava</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The God Who Wept</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Divine Status</div>
+                            <div class="stat-value">First God, Primordial Creator</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Domain</div>
+                            <div class="stat-value">Mountains, Earth, Foundations</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">Shaper of Worlds, Foundation-Bearer</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Political Role</div>
+                            <div class="stat-value">Conservative Faction Leader</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Philosophy</div>
+                            <div class="stat-value">Stability through Strength</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Active Divine Ruler</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">Foundation of Reality</h2>
+                    <div class="character-description">
+                        <p>Before there were worlds, before there was form, there was Leika—the divine architect who sang mountains from the void and gave reality its unshakeable foundations. As one of the First Gods who shaped existence itself, she embodies the eternal principles of strength, stability, and endurance that have anchored the cosmos since creation's dawn. Her very presence warps space through gravitational authority, each word carrying the weight of mountains, each step sending hairline fractures through matter that has existed since time began.</p>
+                        
+                        <p>Part woman, part living landscape of impossible beauty and terrible majesty, Leika represents divine traditionalism in its purest form. Her crystalline formations jut from shoulders and limbs like armor forged in the earth's heart, while her hair flows like molten lava—slow, unstoppable, geological patience given fluid grace. She thinks in epochs rather than moments, judges worth by endurance rather than innovation, and views change as a threat to the cosmic order she has spent eternity perfecting.</p>
+
+                        <p>As leader of the conservative divine faction, she stands as the immovable object facing the irresistible force of cosmic change. Her authority rests not on cruelty but on absolute certainty—the bone-deep conviction that hierarchy, tradition, and divine supremacy are the bedrock upon which all existence depends. Yet this very certainty may prove her undoing, for mountains, no matter how mighty, can be worn down by patient winds and persistent rain.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Stone endures, Thainos. Clay crumbles.
+                        <div class="quote-source">— Leika dismissing mortal potential</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Immutable Authority</h2>
+                    <div class="character-description">
+                        <p>Leika's personality reflects the very mountains she commands—patient, enduring, and utterly resistant to change. Her geological perspective grants her incredible wisdom about the long view of existence, but blinds her to the immediate needs of those who live in shorter timescales. She sees strength only in what can endure unchanged, missing the resilience that comes from flexibility and adaptation.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Immutable Authority</div>
+                            <div class="trait-description">Represents unchanging divine law and cosmic stability. Believes that authority exists to preserve order, not to serve those beneath it.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Geological Patience</div>
+                            <div class="trait-description">Thinks in epochs and geological ages. Values endurance over quick solutions, permanence over adaptation, stability over growth.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Conservative Traditionalist</div>
+                            <div class="trait-description">Fierce defender of established order and ancient ways. Views innovation as threat to perfected systems that have worked since creation.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Aristocratic Detachment</div>
+                            <div class="trait-description">Views mortals as ephemeral creatures beneath divine concern. Cannot understand perspectives radically different from eternal experience.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Mortals die. It is their nature. If they cannot adapt to new predators, perhaps they deserve extinction.
+                        <div class="quote-source">— Leika's pragmatic dismissal of mortal suffering</div>
+                    </div>
+                </section>
+
+                <!-- Divine Powers & Geological Mastery -->
+                <section class="section">
+                    <h2 class="section-title">Architect of Creation's Foundation</h2>
+                    <div class="character-description">
+                        <p>Leika wields power over the fundamental forces that keep reality coherent—the bedrock stability that prevents cosmic dissolution, the gravitational authority that shapes space itself, and the geological patience that has outlasted countless ages. Her abilities reflect her role as creation's foundation, providing the stable structure upon which all other existence depends.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card geological">
+                            <div class="power-title">Mountain Shaper</div>
+                            <div class="power-description">
+                                <strong>Creation:</strong> Lifted entire mountain ranges from oceanic depths through divine breath<br>
+                                <strong>Foundation:</strong> Formed the basic geological structure supporting all terrestrial life<br>
+                                <strong>Authority:</strong> Commands tectonic movement and continental drift<br>
+                                <strong>Legacy:</strong> Every stone and crystal formation responds to her will
+                            </div>
+                        </div>
+                        
+                        <div class="power-card divine">
+                            <div class="power-title">Reality Anchor</div>
+                            <div class="power-description">
+                                <strong>Stability:</strong> Provides foundational coherence that prevents cosmic dissolution<br>
+                                <strong>Permanence:</strong> Maintains unchanging structures across geological time<br>
+                                <strong>Gravity:</strong> Warps space through pure mass and ancient authority<br>
+                                <strong>Endurance:</strong> Virtually indestructible due to connection with reality's foundations
+                            </div>
+                        </div>
+                        
+                        <div class="power-card authority">
+                            <div class="power-title">Seismic Command</div>
+                            <div class="power-description">
+                                <strong>Earthquakes:</strong> Her emotions cause tremors that ripple through reality's foundations<br>
+                                <strong>Volcanic Force:</strong> Can trigger eruptions and reshape landscapes at will<br>
+                                <strong>Stone Army:</strong> Capable of animating mountains themselves as warriors<br>
+                                <strong>Crushing Power:</strong> Generates gravitational forces that compress matter into new forms
+                            </div>
+                        </div>
+                        
+                        <div class="power-card temporal">
+                            <div class="power-title">Geological Perspective</div>
+                            <div class="power-description">
+                                <strong>Temporal Vision:</strong> Sees patterns across epochs and geological ages<br>
+                                <strong>Crystalline Prophecy:</strong> Reads future in mineral formations and stone growth<br>
+                                <strong>Ancient Memory:</strong> Remembers every moment since creation's first breath<br>
+                                <strong>Deep Time:</strong> Thinks in terms of millions of years rather than moments
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Divine History & Political Evolution -->
+                <section class="section">
+                    <h2 class="section-title">From Creator to Conservative</h2>
+                    <div class="character-description">
+                        <p>Leika's evolution from primordial creator to conservative faction leader reflects the gradual calcification of divine authority faced with unprecedented challenges. Each era has seen her positions harden further, her resistance to change grow more absolute, as she defends an order she helped create against forces she cannot understand.</p>
+                    </div>
+
+                    <div class="foundation-timeline">
+                        <div class="timeline-title">Ages of Divine Authority</div>
+                        
+                        <div class="timeline-era">
+                            <div class="era-label">Creation Era</div>
+                            <div class="era-description">Original architect of reality's foundations, proud of cosmic stability achieved through divine cooperation and geological patience.</div>
+                        </div>
+                        
+                        <div class="timeline-era">
+                            <div class="era-label">Early Divine Society</div>
+                            <div class="era-description">Established hierarchical order serving as model for all subsequent authority. Believed divine supremacy was natural and beneficial.</div>
+                        </div>
+                        
+                        <div class="timeline-era">
+                            <div class="era-label">Thainos Conflict</div>
+                            <div class="era-description">Opposed his mortal-loving philosophy as dangerous idealism that would undermine cosmic stability and divine purpose.</div>
+                        </div>
+                        
+                        <div class="timeline-era">
+                            <div class="era-label">Azrael Crisis</div>
+                            <div class="era-description">Viewed his exile as necessary example of consequences for challenging established order and divine authority.</div>
+                        </div>
+                        
+                        <div class="timeline-era">
+                            <div class="era-label">Wild God Emergence</div>
+                            <div class="era-description">Faces unprecedented threat to traditional divine authority from gods who embrace mortal perspectives and democratic ideals.</div>
+                        </div>
+                        
+                        <div class="timeline-era">
+                            <div class="era-label">Conservative Leadership</div>
+                            <div class="era-description">Currently leads divine faction defending traditional hierarchy against mounting pressure for reform and adaptation.</div>
+                        </div>
+                    </div>
+
+                    <div class="authority-box">
+                        <div class="authority-title">The Paradox of Strength</div>
+                        Leika's greatest strength—her absolute unchanging nature—has become her greatest vulnerability. In a cosmos demanding adaptation, her refusal to bend may ultimately cause her to break. The very foundations she built to last forever may need to evolve or risk collapse under the weight of their own rigidity.
+                    </div>
+
+                    <div class="character-quote">
+                        Divine beings are not bound by mortal constraints. Your brother exercised the prerogative of the strong.
+                        <div class="quote-source">— Leika defending divine supremacy over mortal rights</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Foundations and Fractures</h2>
+                    <div class="character-description">
+                        <p>Leika's relationships reflect the deep fractures beginning to appear in the divine order—old alliances strained by new philosophies, traditional authority questioned by emerging ideals, and the growing recognition that the very foundations she has built may need to change or crumble.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="thainos.html" class="related-character">
+                            <div class="related-avatar">T</div>
+                            <div class="related-name">Thainos</div>
+                            <div class="related-role">Fellow First God, Philosophical Opponent</div>
+                        </a>
+                        <a href="libros.html" class="related-character">
+                            <div class="related-avatar">L</div>
+                            <div class="related-name">Libros</div>
+                            <div class="related-role">The Lawgiver, Natural Ally</div>
+                        </a>
+                        <a href="archadeus.html" class="related-character">
+                            <div class="related-avatar">A</div>
+                            <div class="related-name">Archadeus</div>
+                            <div class="related-role">The Hunter, Strength Respects Strength</div>
+                        </a>
+                        <a href="azrael.html" class="related-character">
+                            <div class="related-avatar">Az</div>
+                            <div class="related-name">Azrael</div>
+                            <div class="related-role">The Kinslayer, Revolutionary Threat</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">W</div>
+                            <div class="related-name">The Wild Gods</div>
+                            <div class="related-role">Naive Idealists, Dangerous Change</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">⛰</div>
+                            <div class="related-name">The Young Gods</div>
+                            <div class="related-role">Her Protégés in Hierarchy</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Mountain That Cannot Bend</h2>
+                <div class="summary-content">
+                    <p>Leika represents the tragic nobility of ancient authority faced with unprecedented challenges to its fundamental assumptions. As the Mother of Mountains and architect of reality's foundations, she embodies the strength and stability that has anchored existence since creation's dawn, yet her very nature makes her constitutionally incapable of adapting to the transformative demands of a changing cosmos. Her geological perspective grants incredible patience and wisdom about eternal patterns, but blinds her to immediate needs and the resilience that comes from flexibility.</p>
+
+                    <p>Her contempt for mortal concerns stems not from mere callousness but from a fundamental inability to comprehend perspectives radically different from her own mountain-deep certainty. She sees strength only in terms of what can endure unchanged, missing the adaptive resilience that allows life to flourish in challenging conditions. Her defense of divine privilege reflects sincere belief that hierarchy and stability are necessary for existence itself, making her neither villain nor hero but something more complex—a force of nature whose virtues have calcified into obstacles.</p>
+
+                    <p>As leader of the conservative divine faction, Leika faces the ultimate test of her philosophy: whether the foundations she has built can withstand the pressure for change, or whether her refusal to adapt will cause catastrophic collapse. Her relationships with other gods reveal deep fractures in divine society—traditional alliances strained by new challenges, young gods choosing between her hierarchical certainty and the Wild Gods' democratic idealism, the possibility that even bedrock can be worn away by persistent pressure.</p>
+
+                    <p>Her conflict with Thainos epitomizes the clash between stability and growth, permanence and adaptation. Where he chose to descend and understand mortality through experience, she remains aloof and dismissive, convinced that divine separation is both natural and necessary. Yet his sacrifice and scattered essence among mortals represents exactly the kind of change she cannot comprehend—power that grows through distribution rather than concentration, strength that increases through service rather than domination.</p>
+
+                    <p>Leika's ultimate fate may determine whether the cosmos moves toward adaptive growth or catastrophic stagnation. Her story explores the dark side of strength without wisdom, authority without empathy, and the danger of allowing good intentions to calcify into oppressive certainty. She stands at the center of a conflict between preservation and transformation, representing those who would rather break than bend, who choose destruction over adaptation when faced with challenges to their fundamental assumptions.</p>
+
+                    <p>Through Leika, we see that even the most well-intentioned authority can become tyrannical when it refuses to evolve, that strength divorced from compassion becomes mere force, and that the very foundations meant to support life can become prisons when they resist necessary change. Her character challenges us to consider whether true permanence comes through rigid preservation or adaptive endurance, whether the greatest strength lies in what cannot be moved or in what learns to flow with changing currents while maintaining its essential nature.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Witness the Divine Fracture</h2>
+            <p class="cta-description">
+                Follow Leika's struggle to preserve cosmic order against forces demanding change. Her story explores the conflict between stability and growth, tradition and adaptation, divine authority and democratic idealism.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-god-who-wept/chapter-01/" class="cta-button">Read The God Who Wept</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
