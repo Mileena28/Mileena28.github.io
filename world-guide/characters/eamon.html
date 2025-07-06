@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eamon Wolfcry - The Steadfast Protector | The Lost Histories</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2d 50%, #2a2a3d 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15, 82, 186, 0.15) 0%, rgba(65, 105, 225, 0.1) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #4169e1;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(15, 82, 186, 0.1);
+            border: 1px solid rgba(15, 82, 186, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #4169e1;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(15, 82, 186, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #1e3a8a;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(15, 82, 186, 0.2), rgba(65, 105, 225, 0.1));
+            border: 2px solid #4169e1;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4169e1;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(15, 82, 186, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(65, 105, 225, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(15, 82, 186, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(65, 105, 225, 0.1) 50%, transparent 55%);
+            animation: steadfastFlow 14s ease-in-out infinite;
+        }
+
+        @keyframes steadfastFlow {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(-2deg) scale(1.01); opacity: 0.7; }
+            50% { transform: rotate(-4deg) scale(0.99); opacity: 0.3; }
+            75% { transform: rotate(-3deg) scale(1.02); opacity: 0.8; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #1e3a8a;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #4169e1;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #4169e1;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(15, 82, 186, 0.05);
+            border-left: 4px solid #4169e1;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #4169e1;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #1e3a8a;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #4169e1;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #4169e1;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #1e3a8a;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #4169e1;
+            transform: translateY(-5px);
+        }
+
+        .power-card.labor {
+            border-left: 4px solid #4169e1;
+        }
+
+        .power-card.protection {
+            border-left: 4px solid #6495ed;
+        }
+
+        .power-card.practical {
+            border-left: 4px solid #1e90ff;
+        }
+
+        .power-card.emotional {
+            border-left: 4px solid #0f52ba;
+        }
+
+        .power-title {
+            color: #4169e1;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #1e3a8a;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #4169e1;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(15, 82, 186, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4169e1;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(10, 10, 26, 0.6);
+            border-top: 1px solid #1e3a8a;
+            border-bottom: 1px solid #1e3a8a;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(15, 82, 186, 0.2), rgba(15, 82, 186, 0.1));
+            border: 1px solid #4169e1;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #4169e1, #6495ed);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(15, 82, 186, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(15, 82, 186, 0.2);
+            color: #4169e1;
+            border: 1px solid #4169e1;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(15, 82, 186, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(10, 10, 26, 0.4);
+            border: 1px solid #1e3a8a;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #4169e1;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #4169e1;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #4169e1;
+            border-radius: 50%;
+        }
+
+        .phase-label {
+            color: #4169e1;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .choice-box {
+            background: rgba(15, 82, 186, 0.1);
+            border: 1px solid rgba(15, 82, 186, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .choice-title {
+            color: #4169e1;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .work-in-progress {
+            background: rgba(15, 82, 186, 0.1);
+            border: 1px solid rgba(15, 82, 186, 0.4);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #4169e1;
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Lost Histories World Guide</a>
+        <h1 class="character-title">Eamon Wolfcry</h1>
+        <p class="character-tagline">"The Steadfast Protector"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Striking green eyes that reflect deep emotion<br>Scarred hands from honest labor</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Divine War</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human, The Free People</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Role</div>
+                            <div class="stat-value">Village Laborer, Multi-Trade Worker</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">The Laborer, The Refused</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Beloved</div>
+                            <div class="stat-value">Astrid Ravenscroft</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Divine Choice</div>
+                            <div class="stat-value">Refused Silas's Power Offer</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Nature</div>
+                            <div class="stat-value">Remains Purely Human</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <div class="work-in-progress">
+                    ⚠️ This profile is based on The Divine War, which is currently a work in progress. Character details may evolve as the story develops.
+                </div>
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Human Heart in a Divine Storm</h2>
+                    <div class="character-description">
+                        <p>In the forge-heated spaces between hammer and anvil, where honest sweat mingles with the scent of molten metal and human determination shapes raw materials into tools of survival, Eamon Wolfcry stands as a testament to the enduring power of purely mortal love and practical wisdom. Born of The Free People—those humans who maintained their dignity and independence despite divine oppression—he carries within himself both the stubborn pride of a culture that refuses complete submission and the deep craft knowledge that comes from generations of adapting to whatever challenges arise.</p>
+                        
+                        <p>As a versatile laborer whose calloused hands speak to mastery of multiple trades, he embodies the human capacity for adaptation and resourcefulness that allows communities to survive when supernatural powers fail them. His striking green eyes reflect the full spectrum of mortal emotion—fierce protective love for Astrid, bone-deep terror of losing her to divine predation or transformation, and the quiet determination of someone who chooses to face reality honestly even when that reality offers no comfortable solutions.</p>
+
+                        <p>His relationship with Astrid serves as both anchor and trial, grounding him in the immediate, physical world of shared labor and domestic comfort while simultaneously challenging him to love someone who is fundamentally changing beyond mortal limitations. The divine blood now coursing through her veins makes her the first Bloodmarked ever created, transforming their partnership from a simple love story into a test case for whether human devotion can bridge the growing gap between mortal and divine consciousness.</p>
+
+                        <p>When Silas the Trickster offered him divine power—the strength to truly protect those he loves from supernatural threats—Eamon's refusal became more than personal choice; it became a statement about the value of remaining human even when humanity seems inadequate to the task. His decision to maintain his moral integrity rather than accept divine enhancement ensures that he remains purely mortal in a world increasingly dominated by supernatural forces, making him both vulnerable and irreplaceable as the human heart that grounds divine transformation in authentic, earthly love.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        No. I refuse your offer. Whatever you're really after, I won't be part of it.
+                        <div class="quote-source">— Eamon rejecting Silas's divine power</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Strength That Chooses Love Over Power</h2>
+                    <div class="character-description">
+                        <p>Eamon represents the courage required to remain vulnerably human when divine power offers apparent solutions to impossible problems. His character demonstrates both the nobility and the terror of loving someone completely while being fundamentally unable to protect them from forces beyond mortal comprehension. His heritage as one of The Free People provides the backbone of independence and dignity that allows him to refuse divine temptation, even when that refusal might cost him everything he holds dear.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Fiercely Protective</div>
+                            <div class="trait-description">Willing to risk everything for Astrid's safety, though learning to distinguish between protection and control as she transforms.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Principled Refuser</div>
+                            <div class="trait-description">Maintains moral integrity even when offered power that could solve his problems, choosing human limitations over divine corruption.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Fear-Driven Harsh</div>
+                            <div class="trait-description">Terror for loved ones can make him cruel in moments of panic, saying things that wound when he's most afraid of losing them.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Adaptively Skilled</div>
+                            <div class="trait-description">Master of multiple trades whose versatility reflects human ability to solve problems through knowledge and determination rather than magic.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        I'm sorry. I'm so sorry. I was terrified when I realized you weren't home yet. When I saw you out there with that... thing... I thought I was going to lose you too.
+                        <div class="quote-source">— Eamon recognizing how fear corrupted his love</div>
+                    </div>
+                </section>
+
+                <!-- Powers & Human Abilities -->
+                <section class="section">
+                    <h2 class="section-title">The Strength of Mortal Hands and Heart</h2>
+                    <div class="character-description">
+                        <p>Eamon's abilities demonstrate the power of human adaptability and practical knowledge, showing how versatility and dedication can create their own form of strength even without supernatural enhancement. His skills reflect The Free People's tradition of maintaining independence through self-reliance and the wisdom to use whatever tools and knowledge are available to meet challenges as they arise.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card labor">
+                            <div class="power-title">Master of Multiple Trades</div>
+                            <div class="power-description">
+                                <strong>Versatile Craftsmanship:</strong> Skilled in metalwork, construction, repair, and other essential village trades<br>
+                                <strong>Adaptive Learning:</strong> Quick to apply existing knowledge to new problems and master unfamiliar skills<br>
+                                <strong>Tool Mastery:</strong> Proficient with various implements that can serve as weapons or problem-solving devices<br>
+                                <strong>Community Essential:</strong> Valuable across multiple village needs due to broad knowledge base
+                            </div>
+                        </div>
+                        
+                        <div class="power-card protection">
+                            <div class="power-title">Protective Instincts</div>
+                            <div class="power-description">
+                                <strong>Crisis Response:</strong> Capable of quick, decisive action under extreme pressure when loved ones are threatened<br>
+                                <strong>Physical Strength:</strong> Enhanced by years of hard labor, able to carry adult weight while running<br>
+                                <strong>Threat Assessment:</strong> Natural ability to recognize and respond to dangers, especially those targeting Astrid<br>
+                                <strong>Emotional Resilience:</strong> Functions through fear and trauma when others depend on his strength
+                            </div>
+                        </div>
+                        
+                        <div class="power-card practical">
+                            <div class="power-title">Free People Heritage</div>
+                            <div class="power-description">
+                                <strong>Independence Spirit:</strong> Cultural backbone that allows him to refuse divine authority and maintain autonomy<br>
+                                <strong>Practical Wisdom:</strong> Values concrete solutions over abstract ideals, focusing on what actually works<br>
+                                <strong>Honest Labor:</strong> Identity rooted in useful work and community service rather than power or status<br>
+                                <strong>Reality Acceptance:</strong> Willing to face harsh truths without illusion or false comfort
+                            </div>
+                        </div>
+                        
+                        <div class="power-card emotional">
+                            <div class="power-title">Human Emotional Range</div>
+                            <div class="power-description">
+                                <strong>Deep Love:</strong> Capacity for sustaining, grounding affection that anchors others through transformation<br>
+                                <strong>Honest Communication:</strong> Direct expression of difficult truths, even when they cause pain<br>
+                                <strong>Fear Recognition:</strong> Acknowledges terror without letting it completely control his choices<br>
+                                <strong>Moral Consistency:</strong> Maintains principles across changing circumstances and divine temptation
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Divine Choice -->
+                <section class="section">
+                    <h2 class="section-title">When Love Refuses Power</h2>
+                    <div class="character-description">
+                        <p>Eamon's encounter with Silas represents the fundamental choice that defines his character and his relationship with Astrid: accept divine enhancement to better protect those he loves, or maintain human integrity even when that choice leaves him vulnerable to forces beyond his control. His refusal becomes both a statement of principle and a test of whether purely mortal love can sustain relationships when one partner transcends human limitations.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">From Devoted Partner to Principled Refuser</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Free People Heritage</div>
+                            <div class="phase-description">Raised in culture valuing independence and dignity, learning to distrust divine authority and maintain human autonomy.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Versatile Laborer</div>
+                            <div class="phase-description">Mastering multiple trades and becoming essential to village survival through practical skills and adaptability.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Love with Astrid</div>
+                            <div class="phase-description">Deep partnership based on shared labor, domestic comfort, and mutual support through dangerous world.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Crisis Response</div>
+                            <div class="phase-description">Rescuing Astrid from divine predator and facing the reality of threats beyond human ability to control.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Divine Temptation</div>
+                            <div class="phase-description">Silas offering power to protect loved ones, creating choice between enhanced capability and moral integrity.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Principled Refusal</div>
+                            <div class="phase-description">Choosing to remain human despite cost, maintaining moral consistency while Astrid undergoes divine transformation.</div>
+                        </div>
+                    </div>
+
+                    <div class="choice-box">
+                        <div class="choice-title">The Laborer's Tools</div>
+                        Eamon's diverse tools represent more than practical capability—they symbolize human adaptability and the power to meet any challenge through skill, knowledge, and determination rather than supernatural enhancement. His choice to remain purely human ensures that his relationship with Astrid will test whether mortal love can bridge the gap between human and divine consciousness, whether the everyday heroism of honest work and faithful devotion can matter in a world increasingly dominated by supernatural forces.
+                    </div>
+
+                    <div class="character-quote">
+                        Because what else can we do? This is the world we live in. The gods take what they want from us mortals.
+                        <div class="quote-source">— Eamon's philosophical acceptance of harsh realities</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds of Love, Fear, and Steadfast Devotion</h2>
+                    <div class="character-description">
+                        <p>Eamon's relationships reveal the complexity of loving completely while being fundamentally unable to control the forces that threaten those connections. His bonds demonstrate both the grounding power of human affection and the way fear can corrupt the very love it seeks to protect, while his community ties show how individual relationships weave into the larger fabric of survival and mutual support.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="astrid.html" class="related-character">
+                            <div class="related-avatar">A</div>
+                            <div class="related-name">Astrid Ravenscroft</div>
+                            <div class="related-role">Beloved Partner, Divine Transformation</div>
+                        </a>
+                        <a href="natalia.html" class="related-character">
+                            <div class="related-avatar">N</div>
+                            <div class="related-name">Natalia DreamingOwl</div>
+                            <div class="related-role">Lost Friend, Grief Catalyst</div>
+                        </a>
+                        <a href="silas.html" class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">Silas the Trickster</div>
+                            <div class="related-role">Divine Tempter, Refused Power</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">R</div>
+                            <div class="related-name">Rowan</div>
+                            <div class="related-role">Village Blacksmith, Work Partner</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">VC</div>
+                            <div class="related-name">Village Community</div>
+                            <div class="related-role">Those He Serves and Protects</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">FP</div>
+                            <div class="related-name">The Free People</div>
+                            <div class="related-role">Cultural Heritage, Independence</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Human Love in a Divine World</h2>
+                <div class="summary-content">
+                    <p>Eamon Wolfcry represents the grounding force of purely human love and practical wisdom in a world increasingly dominated by divine power and supernatural transformation. As a versatile laborer whose heritage among The Free People taught him to value independence and dignity above safety or convenience, he embodies the stubborn courage required to remain vulnerably mortal when divine enhancement offers apparent solutions to impossible problems.</p>
+
+                    <p>His relationship with Astrid serves as the emotional center of his character development, demonstrating both the beauty and the terror of loving someone completely while being fundamentally unable to protect them from forces beyond mortal comprehension. Their partnership, built on shared labor and domestic comfort, becomes a test case for whether human devotion can bridge the growing gap between mortal and divine consciousness as she transforms into the first Bloodmarked ever created.</p>
+
+                    <p>The encounter with Silas the Trickster presents him with the fundamental choice that defines his character: accept divine power to better protect those he loves, or maintain human integrity even when that choice leaves him vulnerable to supernatural threats. His refusal demonstrates principled courage but also creates potential future conflict as Astrid's transformation progresses and new dangers emerge that his purely human capabilities cannot address.</p>
+
+                    <p>His heritage as one of The Free People provides the backbone that allows him to refuse divine temptation, drawing on generations of ancestors who maintained their dignity despite divine oppression. This cultural foundation explains his instinctive distrust of divine offers and his commitment to facing reality on purely human terms, even when those terms seem desperately inadequate to the cosmic forces arrayed against him.</p>
+
+                    <p>As a master of multiple trades, Eamon embodies human adaptability and resourcefulness—the ability to tackle whatever problems arise through diverse skills, accumulated knowledge, and determined effort rather than supernatural shortcuts. This makes him both essential to his community's survival and potentially inadequate against divine threats, creating internal conflict between pride in his abilities and fear of his limitations when protecting those he loves.</p>
+
+                    <p>His capacity for both fierce protection and fear-driven cruelty reveals the complex nature of human emotion under extreme stress. His harsh words to Astrid after Natalia's death demonstrate how terror can corrupt the very love it seeks to protect, while his immediate remorse and apology show his ability to recognize mistakes and choose vulnerability over defensive anger. This emotional honesty makes him both deeply human and capable of the growth necessary to love someone undergoing fundamental transformation.</p>
+
+                    <p>Through Eamon, the story explores whether purely mortal devotion can sustain relationships when one partner transcends human limitations, whether protection can exist without control, and whether the everyday heroism of honest work and faithful love can matter in a world of gods and monsters. His choice to remain human ensures that his journey will test the hypothesis that some forms of strength—emotional constancy, practical wisdom, and authentic care—cannot be enhanced by divine power because they derive their value from the very vulnerability and mortality that divine transformation would eliminate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Witness the Test of Human Love</h2>
+            <p class="cta-description">
+                Follow Eamon's journey as he navigates loving someone undergoing divine transformation. His story explores the courage to remain human, the strength found in vulnerability, and the power of refusing divine enhancement to preserve authentic connection.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-divine-war/chapter-01/" class="cta-button">Read The Divine War</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
