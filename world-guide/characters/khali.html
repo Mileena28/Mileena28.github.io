@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khali - The Dream Shepherd | The Lost Histories</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0f15 0%, #1a1a26 50%, #2a2a3e 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(152, 251, 152, 0.1) 0%, rgba(176, 196, 222, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #98fb98;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(152, 251, 152, 0.1);
+            border: 1px solid rgba(152, 251, 152, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #98fb98;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(152, 251, 152, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(152, 251, 152, 0.2), rgba(176, 196, 222, 0.1));
+            border: 2px solid #98fb98;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #98fb98;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(152, 251, 152, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(176, 196, 222, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(152, 251, 152, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(176, 196, 222, 0.1) 50%, transparent 55%);
+            animation: dreamFlow 17s ease-in-out infinite;
+        }
+
+        @keyframes dreamFlow {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(7deg) scale(1.05); opacity: 0.7; }
+            50% { transform: rotate(14deg) scale(0.95); opacity: 0.3; }
+            75% { transform: rotate(10deg) scale(1.02); opacity: 0.8; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #98fb98;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #98fb98;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(152, 251, 152, 0.05);
+            border-left: 4px solid #98fb98;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #98fb98;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #98fb98;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #98fb98;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #98fb98;
+            transform: translateY(-5px);
+        }
+
+        .power-card.dreams {
+            border-left: 4px solid #98fb98;
+        }
+
+        .power-card.healing {
+            border-left: 4px solid #b0c4de;
+        }
+
+        .power-card.divine {
+            border-left: 4px solid #e6e6fa;
+        }
+
+        .power-card.nature {
+            border-left: 4px solid #90ee90;
+        }
+
+        .power-title {
+            color: #98fb98;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #98fb98;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(152, 251, 152, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #98fb98;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(15, 15, 21, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(152, 251, 152, 0.2), rgba(152, 251, 152, 0.1));
+            border: 1px solid #98fb98;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #98fb98, #90ee90);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(152, 251, 152, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(152, 251, 152, 0.2);
+            color: #98fb98;
+            border: 1px solid #98fb98;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(152, 251, 152, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(15, 15, 21, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #98fb98;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #98fb98;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #98fb98;
+            border-radius: 50%;
+        }
+
+        .phase-label {
+            color: #98fb98;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .threshold-box {
+            background: rgba(152, 251, 152, 0.1);
+            border: 1px solid rgba(152, 251, 152, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .threshold-title {
+            color: #98fb98;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Lost Histories World Guide</a>
+        <h1 class="character-title">Khali</h1>
+        <p class="character-tagline">"The Dream Shepherd"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Pale green eyes with impossible depths<br>Dark hair catching light like spun shadow</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Song of Blood and Stone</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Divine Status</div>
+                            <div class="stat-value">Ancient Goddess, Mortal Disguise</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Domain</div>
+                            <div class="stat-value">Dreams, Sleep, Nightmare Healing</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">Goddess of the Threshold, River Witch</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Mortal Role</div>
+                            <div class="stat-value">Village Healer, Herb-Witch</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Love Interest</div>
+                            <div class="stat-value">Prince Eshuah of Fayespire</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Tragic End</div>
+                            <div class="stat-value">Murdered by Princess Jade</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">Guardian of the Liminal Realm</h2>
+                    <div class="character-description">
+                        <p>In the quiet spaces between waking and sleeping, where dreams dance with reality and nightmares lurk in shadow, Khali serves as gentle guardian and guide. An ancient goddess who chose to walk among mortals in humble disguise, she embodies divine compassion at its purest—power wielded not for dominion but for protection, wisdom shared not for worship but for healing. Her pale green eyes hold depths far greater than they should, speaking of eons spent shepherding vulnerable souls through the dangerous territories of sleep and dream.</p>
+                        
+                        <p>Living as a simple riverside healer, she tends herb gardens where plants orient toward her like their personal sun, crafts remedies that work on both physical and spiritual levels, and offers counsel to those plagued by nightmares and troubled sleep. Her dark hair catches light like spun shadow, and luminescence clings to her edges when she thinks no one is watching—small betrayals of a divine nature she works carefully to conceal beneath the familiar role of village wise woman.</p>
+
+                        <p>Her tragedy lies not just in her eventual murder, but in the corruption of her memory that follows. The gentle goddess who spent centuries protecting innocents from nightmares becomes posthumously painted as the very evil she fought against—a dark witch whose death was necessary to preserve the light. Her story reveals how power can rewrite even the most selfless sacrifice into propaganda that serves political necessity rather than truth.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Darkness is not corruption. Night is not the absence of day but its partner. We sleep in darkness, dream in darkness, grow in the darkness of the womb.
+                        <div class="quote-source">— Khali teaching the true nature of darkness</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Heart That Heals Through Love</h2>
+                    <div class="character-description">
+                        <p>Khali embodies divine compassion filtered through mortal experience, combining ancient wisdom with the vulnerability that comes from choosing to love. Her divine nature makes her naturally nurturing and protective, while her mortal disguise allows her to experience the full spectrum of human emotion—including the devastating capacity for jealousy and betrayal that ultimately destroys her.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Compassionately Divine</div>
+                            <div class="trait-description">Ancient goddess devoted to healing and protecting others, especially the vulnerable. Uses divine power for service rather than domination.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Gently Wise</div>
+                            <div class="trait-description">Possesses eons of knowledge but wears it lightly, never condescending. Teaches through patient guidance rather than authoritative proclamation.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Vulnerably Loving</div>
+                            <div class="trait-description">Divine loneliness makes her susceptible to mortal attachment. Experiences genuine love with Eshuah that makes her emotionally exposed.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Naively Trusting</div>
+                            <div class="trait-description">Believes in others' capacity for goodness even when evidence suggests otherwise. Cannot see the jealousy building in Princess Jade.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Knowledge hoarded is knowledge wasted. And you're far from foolish, Jade. Your questions show a sharp mind beneath all that courtly training.
+                        <div class="quote-source">— Khali encouraging Princess Jade's learning</div>
+                    </div>
+                </section>
+
+                <!-- Powers & Divine Heritage -->
+                <section class="section">
+                    <h2 class="section-title">Mistress of Dreams and Healing</h2>
+                    <div class="character-description">
+                        <p>Khali's abilities reflect her role as guardian of the threshold between consciousness and unconsciousness, wielding power over the realm where minds are most vulnerable and truth most fluid. Her divine nature allows her to walk in dreams, heal nightmares, and guide lost souls to safety, while her mortal disguise requires her to work through seemingly mundane methods like herbalism and counseling.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card dreams">
+                            <div class="power-title">Dream Realm Mastery</div>
+                            <div class="power-description">
+                                <strong>Dream Walking:</strong> Can enter and observe others' dreams, distinguish between anxiety dreams and true prophetic visions<br>
+                                <strong>Nightmare Healing:</strong> Ability to craft remedies and songs that grant peaceful sleep and protection from dark dreams<br>
+                                <strong>Vision Recognition:</strong> Distinguishes between psychological dreams and true prophecy, guides interpretation of important visions<br>
+                                <strong>Threshold Command:</strong> Masters the liminal space between consciousness and unconsciousness where truth and metaphor dance
+                            </div>
+                        </div>
+                        
+                        <div class="power-card healing">
+                            <div class="power-title">Sacred Healing Arts</div>
+                            <div class="power-description">
+                                <strong>Master Herbalism:</strong> Extensive knowledge of medicinal and mystical plants, especially those affecting sleep and dreams<br>
+                                <strong>Spiritual Medicine:</strong> Creates remedies that work on both physical ailments and psychological trauma<br>
+                                <strong>Therapeutic Counsel:</strong> Natural ability to guide people through emotional difficulties and process trauma<br>
+                                <strong>Memory Healing:</strong> Helps others process difficult experiences through dream work and spiritual guidance
+                            </div>
+                        </div>
+                        
+                        <div class="power-card divine">
+                            <div class="power-title">Hidden Divinity</div>
+                            <div class="power-description">
+                                <strong>Divine Song:</strong> Lullabies that can reshape reality, calm minds, and bridge the gap between waking and sleeping worlds<br>
+                                <strong>Protective Aura:</strong> Natural ability to soothe and comfort others, unconscious shielding of innocents in her vicinity<br>
+                                <strong>Truth Sensing:</strong> Can perceive emotional and spiritual realities beneath surface presentations<br>
+                                <strong>Ancient Memory:</strong> Recalls eons of protecting sleeping mortals, understands cosmic patterns and forces
+                            </div>
+                        </div>
+                        
+                        <div class="power-card nature">
+                            <div class="power-title">Natural Harmony</div>
+                            <div class="power-description">
+                                <strong>Plant Communion:</strong> Deep connection to growing things, especially herbs with dream-related properties<br>
+                                <strong>River Memory:</strong> Special bond with waterways that remember everything they touch<br>
+                                <strong>Animal Comfort:</strong> Creatures naturally trust and are calmed by her presence<br>
+                                <strong>Growth Enhancement:</strong> Plants and positive emotions flourish in her presence, gardens thrive under her care
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Tragic Love Story -->
+                <section class="section">
+                    <h2 class="section-title">When Divine Love Meets Mortal Betrayal</h2>
+                    <div class="character-description">
+                        <p>Khali's story represents the ultimate tragedy of divine love attempting to exist within mortal limitations. Her relationship with Eshuah offers the connection she had craved across centuries of isolation, while her friendship with Princess Jade demonstrates how even gods can be deceived by carefully maintained appearances. Her murder becomes not just the death of an individual, but the destruction of innocence itself.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">From Divine Service to Mortal Tragedy</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Ancient Service</div>
+                            <div class="phase-description">Eons of divine duty protecting mortals in sleep, shepherding vulnerable souls through nightmare territories with gentle guidance.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Chosen Exile</div>
+                            <div class="phase-description">Decision to live among mortals in disguise, trading divine isolation for the possibility of genuine connection and understanding.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Healing Practice</div>
+                            <div class="phase-description">Years of quiet service as village healer, building reputation for mysterious effectiveness with nightmares and sleep disorders.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Friendship with Jade</div>
+                            <div class="phase-description">Genuine bond with Princess Jade based on teaching herbalism and providing nightmare help, naive trust in her essential goodness.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Love with Eshuah</div>
+                            <div class="phase-description">Deep connection with half-divine prince who can recognize and appreciate her true nature, experiencing mortal love for the first time.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Betrayal and Death</div>
+                            <div class="phase-description">Murder by jealous Princess Jade, dying while trying to save her friend's soul even as Jade destroys her body.</div>
+                        </div>
+                    </div>
+
+                    <div class="threshold-box">
+                        <div class="threshold-title">The Ultimate Threshold</div>
+                        Khali's death represents the most tragic threshold of all—the boundary between divine service and mortal vulnerability. As goddess of the liminal space between waking and sleeping, she ultimately becomes trapped in the threshold between life and death, between truth and the lies that will follow. Her murder transforms her from protector of dreams into the nightmare of historical revision.
+                    </div>
+
+                    <div class="character-quote">
+                        You're making a mistake... This won't bring you happiness.
+                        <div class="quote-source">— Khali's final words, trying to save Jade's soul even as she dies</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds of Love, Trust, and Tragic Betrayal</h2>
+                    <div class="character-description">
+                        <p>Khali's relationships reflect the fundamental tragedy of divine beings seeking mortal connection—the goddess who protects others in their most vulnerable moments becomes vulnerable herself through love and trust. Her bonds demonstrate both the beauty and danger of opening divine hearts to mortal emotions, especially when those emotions become weapons in others' hands.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="eshuah.html" class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Prince Eshuah</div>
+                            <div class="related-role">True Love, Divine Recognition</div>
+                        </a>
+                        <a href="jade.html" class="related-character">
+                            <div class="related-avatar">J</div>
+                            <div class="related-name">Princess Jade</div>
+                            <div class="related-role">Trusted Friend, Ultimate Betrayer</div>
+                        </a>
+                        <a href="thainos.html" class="related-character">
+                            <div class="related-avatar">W</div>
+                            <div class="related-name">The Wanderer</div>
+                            <div class="related-role">Fellow Divine, Cryptic Guide</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">Sophia</div>
+                            <div class="related-role">Village Mother, Protected Innocent</div>
+                        </div>
+                        <a href="the-silent-god.html" class="related-character">
+                            <div class="related-avatar">V</div>
+                            <div class="related-name">Void Entity</div>
+                            <div class="related-role">Cosmic Horror, Divine Antithesis</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">VC</div>
+                            <div class="related-name">Village Community</div>
+                            <div class="related-role">Healing Clients, Hidden Service</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Divine Love, Mortal Tragedy</h2>
+                <div class="summary-content">
+                    <p>Khali represents the ultimate tragedy of divine love attempting to exist within mortal limitations, demonstrating how the greatest acts of service and sacrifice can be perverted by those who benefit from rewriting truth. As an ancient goddess who chose to live quietly among humans as a healer and dream shepherd, she embodies the highest ideals of divine compassion—power used for protection rather than domination, wisdom shared freely rather than hoarded for worship, love given without demanding recognition or return.</p>
+
+                    <p>Her mastery over the threshold between waking and sleeping reflects her role as guardian of humanity's most vulnerable moments, protecting innocents when consciousness fades and nightmares threaten to overwhelm fragile minds. For centuries, she walked in dreams, crafted remedies that healed both body and spirit, and guided lost souls to safety through the dangerous territories where reality and metaphor dance together in eternal partnership rather than eternal conflict.</p>
+
+                    <p>Her decision to experience mortal emotions—especially love with Prince Eshuah—transforms her from distant divine protector into invested participant in the mortal world. This vulnerability, which allows her to truly understand those she serves, also opens her to the jealousy and betrayal that ultimately destroys her. Her friendship with Princess Jade demonstrates how even divine wisdom can be deceived by carefully maintained appearances, showing that compassion without suspicion can become its own form of blindness.</p>
+
+                    <p>The manner of her death—murdered by a friend she trusted and nurtured, while trying to save that friend's soul even as her own body was being destroyed—epitomizes her character's core truth: that divine love serves others even unto death, that genuine compassion continues trying to heal even those who inflict mortal wounds. Her final words attempt to guide Jade away from the path of hatred that will ultimately destroy them both, proving that divine nature persists even in mortal extremity.</p>
+
+                    <p>Perhaps more tragic than her murder is the posthumous slander that transforms her from gentle healer into corrupting witch, from protector of innocents into the very evil she spent eons fighting. The revision of her story from divine sacrifice to political necessity reveals how power can corrupt even memory itself, turning victims into villains and martyrs into monsters when truth becomes inconvenient to those who shape historical narrative.</p>
+
+                    <p>Through Khali, we see that true divinity often walks quietly among us, asking nothing and giving everything, only to be destroyed by the very humanity it serves and then remembered as the enemy rather than the friend. Her story reminds us that in a world where murder can be painted as heroism and victims transformed into villains, the most sacred truths often survive only in hidden records and whispered memories—testimonies to the power of love and the eternal tragedy of its destruction by fear, jealousy, and the endless human capacity for self-deception in service of political convenience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Enter the Realm of Dreams and Nightmares</h2>
+            <p class="cta-description">
+                Experience Khali's journey from divine protector to tragic victim. Her story explores the cost of love when gods walk among mortals, and how truth can be corrupted by those who control the narrative.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-song-of-blood-and-stone/chapter-01/" class="cta-button">Read The Song of Blood and Stone</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
