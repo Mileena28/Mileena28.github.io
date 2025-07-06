@@ -4,443 +4,556 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katalina "Kat" Petari - The Lost Soul-Sister | The Chosen</title>
-    <meta name="description" content="Meet Katalina 'Kat' Petari from The Chosen series. A tragic character whose transformation from loving best friend to zealous convert explores the devastating cost of extremism on human relationships.">
-</head>
-<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #2e1a16 100%); color: #ddd; font-family: 'Georgia', serif; line-height: 1.6;">
-
-<style>
-    /* Character Page Styles */
-    .character-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .character-header {
-        padding: 80px 0 60px;
-        text-align: center;
-        background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(218, 165, 32, 0.05) 100%);
-    }
-
-    .character-title {
-        font-size: 3em;
-        font-weight: 300;
-        margin-bottom: 10px;
-        color: #f0f0f0;
-        letter-spacing: 2px;
-    }
-
-    .character-tagline {
-        font-size: 1.4em;
-        color: #daa520;
-        font-style: italic;
-        margin-bottom: 30px;
-    }
-
-    .series-breadcrumb {
-        background: rgba(218, 165, 32, 0.1);
-        border: 1px solid rgba(218, 165, 32, 0.3);
-        border-radius: 25px;
-        padding: 8px 20px;
-        display: inline-block;
-        font-size: 0.9em;
-        color: #daa520;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .series-breadcrumb:hover {
-        background: rgba(218, 165, 32, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .character-content {
-        padding: 80px 0;
-    }
-
-    .character-grid {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
-    }
-
-    .character-portrait {
-        position: sticky;
-        top: 100px;
-        align-self: start;
-    }
-
-    .portrait-container {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 30px;
-        text-align: center;
-        backdrop-filter: blur(10px);
-    }
-
-    .character-image {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(218, 165, 32, 0.1));
-        border: 2px solid #daa520;
-        border-radius: 15px;
-        margin-bottom: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #daa520;
-        font-style: italic;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .character-image::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
-        animation: shimmer 4s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(180deg); }
-    }
-
-    .character-stats {
-        text-align: left;
-    }
-
-    .stat-item {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #333;
-    }
-
-    .stat-item:last-child {
-        border-bottom: none;
-    }
-
-    .stat-label {
-        color: #daa520;
-        font-weight: 600;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .stat-value {
-        color: #ddd;
-        margin-top: 5px;
-    }
-
-    .character-info {
-        
-    }
-
-    .section {
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        font-size: 2em;
-        color: #f0f0f0;
-        margin-bottom: 25px;
-        font-weight: 400;
-        border-bottom: 2px solid #daa520;
-        padding-bottom: 10px;
-    }
-
-    .character-description {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        margin-bottom: 30px;
-    }
-
-    .character-quote {
-        background: rgba(218, 165, 32, 0.05);
-        border-left: 4px solid #daa520;
-        padding: 25px 30px;
-        margin: 30px 0;
-        font-style: italic;
-        color: #ddd;
-        border-radius: 0 15px 15px 0;
-        position: relative;
-    }
-
-    .character-quote::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 3em;
-        color: #daa520;
-        opacity: 0.3;
-    }
-
-    .quote-source {
-        text-align: right;
-        color: #999;
-        font-size: 0.9em;
-        margin-top: 15px;
-        font-style: normal;
-    }
-
-    .traits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .trait-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .trait-card:hover {
-        border-color: #daa520;
-        transform: translateY(-5px);
-    }
-
-    .trait-title {
-        color: #daa520;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .trait-description {
-        color: #ccc;
-        font-size: 0.95em;
-    }
-
-    .transformations-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-    }
-
-    .transformation-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-    }
-
-    .transformation-card:hover {
-        border-color: #daa520;
-        transform: translateY(-5px);
-    }
-
-    .transformation-card.childhood {
-        border-left: 4px solid #90ee90;
-    }
-
-    .transformation-card.questioning {
-        border-left: 4px solid #ffa500;
-    }
-
-    .transformation-card.convert {
-        border-left: 4px solid #ffffff;
-    }
-
-    .transformation-card.zealot {
-        border-left: 4px solid #cc0000;
-    }
-
-    .transformation-title {
-        color: #daa520;
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-    }
-
-    .transformation-description {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    .related-characters {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .related-character {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .related-character:hover {
-        border-color: #daa520;
-        transform: translateY(-5px);
-    }
-
-    .related-avatar {
-        width: 60px;
-        height: 60px;
-        background: rgba(218, 165, 32, 0.2);
-        border-radius: 50%;
-        margin: 0 auto 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #daa520;
-        font-weight: bold;
-    }
-
-    .related-name {
-        color: #f0f0f0;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    .related-role {
-        color: #999;
-        font-size: 0.9em;
-    }
-
-    .character-summary {
-        padding: 60px 0;
-        background: rgba(10, 10, 20, 0.6);
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
-    }
-
-    .summary-container {
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .summary-title {
-        font-size: 2.2em;
-        color: #f0f0f0;
-        margin-bottom: 40px;
-        font-weight: 300;
-        letter-spacing: 1px;
-    }
-
-    .summary-content {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        text-align: left;
-    }
-
-    .summary-content p {
-        margin-bottom: 25px;
-    }
-
-    .summary-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    .read-more-section {
-        background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(218, 165, 32, 0.1));
-        border: 1px solid #daa520;
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        margin: 60px 0;
-    }
-
-    .cta-title {
-        font-size: 1.8em;
-        color: #f0f0f0;
-        margin-bottom: 15px;
-    }
-
-    .cta-description {
-        color: #ccc;
-        margin-bottom: 30px;
-        font-size: 1.1em;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cta-button {
-        background: linear-gradient(135deg, #daa520, #ffd700);
-        color: #000;
-        text-decoration: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(218, 165, 32, 0.4);
-    }
-
-    .cta-button.secondary {
-        background: rgba(218, 165, 32, 0.2);
-        color: #daa520;
-        border: 1px solid #daa520;
-    }
-
-    .cta-button.secondary:hover {
-        background: rgba(218, 165, 32, 0.3);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 1024px) {
-        .character-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #3a3a3a 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
         }
-        
-        .character-portrait {
-            position: static;
-        }
-    }
 
-    @media (max-width: 768px) {
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        }
+
         .character-title {
-            font-size: 2.2em;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
         }
-        
+
         .character-tagline {
+            font-size: 1.4em;
+            color: #daa520;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(218, 165, 32, 0.1);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #daa520;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(218, 165, 32, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(255, 255, 255, 0.1));
+            border: 2px solid #daa520;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #daa520;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(218, 165, 32, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(218, 165, 32, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(255, 255, 255, 0.05) 50%, transparent 55%);
+            animation: lightFade 18s ease-in-out infinite;
+        }
+
+        @keyframes lightFade {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(3deg) scale(1.01); opacity: 0.7; }
+            50% { transform: rotate(6deg) scale(0.99); opacity: 0.2; }
+            75% { transform: rotate(4deg) scale(1.02); opacity: 0.6; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #daa520;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #daa520;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(218, 165, 32, 0.05);
+            border-left: 4px solid #daa520;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #daa520;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #daa520;
+            transform: translateY(-5px);
+        }
+
+        .trait-card.lost {
+            border-left: 4px solid #888;
+        }
+
+        .trait-card.transformed {
+            border-left: 4px solid #daa520;
+        }
+
+        .trait-title {
+            color: #daa520;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-title.lost {
+            color: #888;
+            text-decoration: line-through;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #daa520;
+            transform: translateY(-5px);
+        }
+
+        .power-card.artistic {
+            border-left: 4px solid #cd853f;
+        }
+
+        .power-card.spiritual {
+            border-left: 4px solid #daa520;
+        }
+
+        .power-card.emotional {
+            border-left: 4px solid #b8860b;
+        }
+
+        .power-card.missionary {
+            border-left: 4px solid #f5f5dc;
+        }
+
+        .power-title {
+            color: #daa520;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #daa520;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(218, 165, 32, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #daa520;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(26, 26, 26, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(218, 165, 32, 0.1));
+            border: 1px solid #daa520;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #daa520, #b8860b);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(218, 165, 32, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(218, 165, 32, 0.2);
+            color: #daa520;
+            border: 1px solid #daa520;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(218, 165, 32, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(26, 26, 26, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #daa520;
+            font-weight: 600;
+            margin-bottom: 20px;
             font-size: 1.2em;
         }
-        
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
+
+        .timeline-phase {
+            border-left: 3px solid #daa520;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
         }
-        
-        .transformations-grid {
-            grid-template-columns: 1fr;
+
+        .timeline-phase.lost {
+            border-left-color: #888;
         }
-    }
-</style>
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #daa520;
+            border-radius: 50%;
+        }
+
+        .timeline-phase.lost::before {
+            background: #888;
+        }
+
+        .phase-label {
+            color: #daa520;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-label.lost {
+            color: #888;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .wisdom-box {
+            background: rgba(218, 165, 32, 0.1);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .wisdom-title {
+            color: #daa520;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tragedy-box {
+            background: rgba(136, 136, 136, 0.1);
+            border: 1px solid rgba(136, 136, 136, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .tragedy-title {
+            color: #888;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
 
 <!-- Header -->
 <section class="character-header">
@@ -461,33 +574,37 @@
                 <div class="portrait-container">
                     <div class="character-image">
                         [Character Art Coming Soon]<br>
-                        <small>Hazel-green eyes, careful curls<br>Zealous light and hidden fear</small>
+                        <small>Hazel-green eyes shining with inner light<br>Hands that carved dreams in wood</small>
                     </div>
                     
                     <div class="character-stats">
                         <div class="stat-item">
                             <div class="stat-label">First Appears</div>
-                            <div class="stat-value">The Chosen: Chapter 1</div>
+                            <div class="stat-value">The Chosen</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Heritage</div>
-                            <div class="stat-value">Human from Rivenglade</div>
+                            <div class="stat-value">Human</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Location</div>
-                            <div class="stat-value">Rivenglade → Blackwater Falls</div>
+                            <div class="stat-label">Origin</div>
+                            <div class="stat-value">Rivenglade, Coastal Town</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Role</div>
-                            <div class="stat-value">Messenger of the Light</div>
+                            <div class="stat-label">Age</div>
+                            <div class="stat-value">Young Adult</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Core Conflict</div>
-                            <div class="stat-value">Love vs. Ideology</div>
+                            <div class="stat-label">Current Status</div>
+                            <div class="stat-value">Zenithian Missionary</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Status</div>
-                            <div class="stat-value">Converted, departed, fate unknown</div>
+                            <div class="stat-label">Current Location</div>
+                            <div class="stat-value">Blackwater Falls (Dangerous Mission)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Sacred Gift</div>
+                            <div class="stat-value">Artistic Creation, Loyal Devotion</div>
                         </div>
                     </div>
                 </div>
@@ -498,146 +615,198 @@
                 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">The Heart That Was Lost</h2>
+                    <h2 class="section-title">When Gentle Hearts Choose Extremes</h2>
                     <div class="character-description">
-                        <p>Katalina "Kat" Petari represents one of the most heartbreaking casualties in a world torn between extremes. Once Mira's soul-sister and closest companion, her transformation from gentle artist to zealous convert illustrates the devastating power of religious extremism to destroy not just individuals, but the precious bonds that give life meaning.</p>
+                        <p>In the tragedy of Katalina Petari lies one of the most heartbreaking truths about extremism—that sometimes the gentlest souls, the most loving hearts, become the most zealous converts. Once Mira's soul-sister and dearest companion, Kat embodied the perfect balance to Mira's wild questioning spirit. Where Mira burned with curiosity and rebellion, Kat provided calm wisdom and steady devotion. Together they explored the mysteries of their coastal town, carved gifts for forest spirits, and dreamed of adventures beyond Rivenglade's borders.</p>
                         
-                        <p>With her careful curls and hazel-green eyes that once sparkled with wonder and creativity, Kat embodied the artistic spirit and gentle wisdom that balanced Mira's fiery nature. Her skilled hands carved beauty from wood, her quiet faith found magic in forest traditions, and her loyal heart made her the most important relationship in Mira's young life. Until Zenith's Light changed everything.</p>
+                        <p>Her transformation from gentle, questioning friend to fervent Zenithian missionary represents more than personal tragedy—it illustrates how totalist movements specifically target those with the greatest capacity for love and sacrifice. Kat's natural spirituality, her desire to serve something greater than herself, and her deep empathy for others made her the ideal convert. Her eager embrace of Zenithian doctrine wasn't a betrayal of her nature but a corruption of her greatest virtues.</p>
+
+                        <p>The girl who once carved wooden starlings as symbols of shared dreams now carries the Light to dangerous frontiers, believing herself blessed with holy purpose while walking toward almost certain doom. Her departure for the void-corrupted wilderness of Blackwater Falls represents the ultimate sacrifice of authentic love for ideological certainty, leaving behind the person who needed her most in pursuit of a mission that may well destroy her.</p>
                     </div>
 
                     <div class="character-quote">
-                        I'm going to spread Light to the darkest corners of the world and save as many souls as I can.
-                        <div class="quote-source">— Kat's zealous mission statement</div>
+                        Oh, Mira! Can't you see? This is what we've been looking for all our lives. Purpose. Meaning. A chance to be part of something truly important.
+                        <div class="quote-source">— Kat trying to convince Mira to embrace Zenithian doctrine</div>
+                    </div>
+
+                    <div class="wisdom-box">
+                        <div class="wisdom-title">Story in Progress</div>
+                        The Chosen is an ongoing work, and character details may evolve as the story develops. This profile reflects Kat's journey as currently written, with potential for growth and change as her tale unfolds.
                     </div>
                 </section>
 
-                <!-- Personality & Core Traits -->
+                <!-- Personality & Transformation -->
                 <section class="section">
-                    <h2 class="section-title">Two Hearts, Two Souls</h2>
+                    <h2 class="section-title">The Heart That Chose Certainty Over Questions</h2>
                     <div class="character-description">
-                        <p>Kat's character represents a tragic duality—the gentle soul she was born to be and the zealous convert she chose to become. Understanding both versions is crucial to grasping the profound loss her transformation represents, not just for herself but for everyone who loved her.</p>
+                        <p>Kat's transformation reveals the terrible irony that some of our greatest strengths can become our most dangerous vulnerabilities when exploited by those who understand the human need for belonging and purpose. Her natural desire to serve, to love, to find meaning in life became the very tools used to reshape her into someone unrecognizable to those who knew her best.</p>
                     </div>
 
                     <div class="traits-grid">
-                        <div class="trait-card">
-                            <div class="trait-title">Gentle Artist (Original)</div>
-                            <div class="trait-description">Natural creativity expressed through woodcarving and aesthetic appreciation. Found deep meaning in creating beautiful, symbolic gifts for those she loved.</div>
+                        <div class="trait-card lost">
+                            <div class="trait-title lost">Questioning Wonder</div>
+                            <div class="trait-description">Once delighted in exploring mysteries and spiritual complexity. Now rejects questioning as weakness and embraces absolute certainty over nuanced understanding.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Zealous Missionary (Converted)</div>
-                            <div class="trait-description">Burning need to spread Zenithian doctrine to others, believing salvation can only come through converting the world to absolute truth.</div>
+                        <div class="trait-card lost">
+                            <div class="trait-title lost">Balanced Wisdom</div>
+                            <div class="trait-description">Previously provided grounded perspective to balance Mira's impulsiveness. Now sees moderation as compromise with evil and embraces extremist positions.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Loyal Companion (Original)</div>
-                            <div class="trait-description">Steadfast devotion to friendships, especially with Mira. Provided balance, wisdom, and unconditional support through life's challenges.</div>
+                        <div class="trait-card transformed">
+                            <div class="trait-title">Zealous Faith</div>
+                            <div class="trait-description">Burning conviction that replaces gentle devotion. Desperate need to spread Zenith's Light and convert others to the "truth" she has discovered.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Conditional Love (Converted)</div>
-                            <div class="trait-description">Relationships now filtered through religious orthodoxy. Love becomes dependent on others' willingness to embrace Zenithian doctrine.</div>
+                        <div class="trait-card transformed">
+                            <div class="trait-title">Conditional Love</div>
+                            <div class="trait-description">Relationships now filtered through religious orthodoxy. Even love for Mira becomes conditional on spiritual conformity and acceptance of doctrine.</div>
                         </div>
                     </div>
 
                     <div class="character-quote">
-                        Maybe you could talk to Lucien yourself? I think... I think it would be good for you.
-                        <div class="quote-source">— Kat encouraging Mira's conversion</div>
+                        I know it seems hard to understand now, but once you're Baptized, once you feel Zenith's Light flowing through you, you'll see. All those doubts will just... fade away.
+                        <div class="quote-source">— Kat describing her transformation to a reluctant Mira</div>
                     </div>
                 </section>
 
-                <!-- Transformation Journey -->
+                <!-- Abilities & Gifts -->
                 <section class="section">
-                    <h2 class="section-title">The Journey to Loss</h2>
+                    <h2 class="section-title">Hands That Shape Beauty and Belief</h2>
                     <div class="character-description">
-                        <p>Kat's transformation unfolds as a gradual tragedy, each stage stripping away another layer of her authentic self until the person Mira loved is lost beneath zealous certainty and missionary fervor.</p>
+                        <p>Kat's talents reflect both her original creative spirit and her transformed missionary zeal. Her artistic abilities, once expressions of personal wonder and love, now serve the Zenithian cause as tools of conversion and symbols of ideological purity. Her natural empathy and emotional intelligence, previously used to comfort and understand others, have been weaponized into recruitment techniques.</p>
                     </div>
 
-                    <div class="transformations-grid">
-                        <div class="transformation-card childhood">
-                            <div class="transformation-title">The Soul-Sister</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Childhood through early teens in Rivenglade<br>
-                                <strong>Essence:</strong> Gentle faith in Wild God traditions, shared adventures with Mira<br>
-                                <strong>Art:</strong> Carving gifts like the wooden starling, creating beauty with love<br>
-                                <strong>Loss:</strong> The innocence and balance that made their friendship magical
+                    <div class="powers-grid">
+                        <div class="power-card artistic">
+                            <div class="power-title">Creative Expression</div>
+                            <div class="power-description">
+                                <strong>Woodcarving Mastery:</strong> Creates beautiful, meaningful objects including symbolic gifts and decorative pieces<br>
+                                <strong>Aesthetic Vision:</strong> Natural eye for beauty and meaningful design in all forms of art<br>
+                                <strong>Symbolic Gifts:</strong> Crafts objects that carry deep emotional and spiritual significance<br>
+                                <strong>Artistic Legacy:</strong> Wooden starling represents shared dreams and enduring love despite separation
                             </div>
                         </div>
                         
-                        <div class="transformation-card questioning">
-                            <div class="transformation-title">The Seeker</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> First exposure to Zenithian doctrine through community pressure<br>
-                                <strong>Essence:</strong> Curious about new teachings but still connected to old ways<br>
-                                <strong>Conflict:</strong> Torn between loyalty to Mira and attraction to certainty<br>
-                                <strong>Loss:</strong> The ability to hold questions without needing absolute answers
+                        <div class="power-card spiritual">
+                            <div class="power-title">Spiritual Devotion</div>
+                            <div class="power-description">
+                                <strong>Deep Faith:</strong> Genuine spiritual hunger that seeks meaning and connection to divine purpose<br>
+                                <strong>Ritual Participation:</strong> Wholehearted engagement in religious ceremonies and practices<br>
+                                <strong>Missionary Fervor:</strong> Passionate desire to share beliefs and bring others into the faith<br>
+                                <strong>Sacrificial Commitment:</strong> Willingness to endure hardship and danger for religious mission
                             </div>
                         </div>
                         
-                        <div class="transformation-card convert">
-                            <div class="transformation-title">The Baptized</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Full conversion to Zenithian faith through baptism ritual<br>
-                                <strong>Essence:</strong> "Cleansed" of doubt and filled with zealous purpose<br>
-                                <strong>Change:</strong> Previous beliefs dismissed as demonic deceptions<br>
-                                <strong>Loss:</strong> The nuanced thinking that allowed for mystery and complexity
+                        <div class="power-card emotional">
+                            <div class="power-title">Empathetic Connection</div>
+                            <div class="power-description">
+                                <strong>Emotional Intelligence:</strong> Natural ability to understand and respond to others' feelings and needs<br>
+                                <strong>Comforting Presence:</strong> Provides stability and reassurance to those around her<br>
+                                <strong>Persuasive Care:</strong> Uses genuine concern to influence others toward her beliefs<br>
+                                <strong>Loyal Devotion:</strong> Fierce commitment to those she loves, even when filtered through ideology
                             </div>
                         </div>
                         
-                        <div class="transformation-card zealot">
-                            <div class="transformation-title">The Messenger</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Mission to Blackwater Falls as Zenithian representative<br>
-                                <strong>Essence:</strong> Complete dedication to spreading Light regardless of personal cost<br>
-                                <strong>Sacrifice:</strong> Abandons everything familiar for dangerous missionary work<br>
-                                <strong>Loss:</strong> The person who valued love above ideology
+                        <div class="power-card missionary">
+                            <div class="power-title">Conversion Ability</div>
+                            <div class="power-description">
+                                <strong>Perfect Example:</strong> Living proof of successful transformation that validates Zenithian methods<br>
+                                <strong>Recruitment Tool:</strong> Her conversion helps legitimize Zenithian influence in Rivenglade<br>
+                                <strong>Ideological Purity:</strong> Embodies complete dedication that inspires others to follow<br>
+                                <strong>Dangerous Mission:</strong> Willing to venture into void-corrupted territories to spread the Light
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- The Wooden Starling -->
+                <!-- The Transformation Journey -->
                 <section class="section">
-                    <h2 class="section-title">The Artist's Legacy</h2>
+                    <h2 class="section-title">From Soul-Sister to Zealous Convert</h2>
                     <div class="character-description">
-                        <p>Kat's woodcarving skill represents the creative soul that zealotry ultimately destroys. Her gifts, especially the wooden starling she carves for Mira, embody everything beautiful about who she was before conversion stripped away her artistic spirit.</p>
+                        <p>Kat's journey from beloved friend to lost missionary illustrates the insidious nature of extremist conversion. Each step seemed reasonable, even admirable, until the cumulative effect transformed her into someone unrecognizable to those who loved her most. Her tragedy lies not in malicious intent but in the sincere belief that she has found salvation while actually choosing a path toward probable destruction.</p>
                     </div>
 
-                    <div class="traits-grid">
-                        <div class="trait-card">
-                            <div class="trait-title">Symbolic Creation</div>
-                            <div class="trait-description">The wooden starling represents their shared dreams of freedom and flight, carved with love and hope for adventures they would never share.</div>
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">The Journey from Light to Extremism</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Gentle Soul-Sister</div>
+                            <div class="phase-description">Loving best friend who balanced Mira's wild energy with calm wisdom and creative expression.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Artistic Soul</div>
-                            <div class="trait-description">Natural eye for beauty and meaningful design. Found spiritual expression through creating objects that connected hearts and memories.</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Spiritual Seeker</div>
+                            <div class="phase-description">Natural spirituality and desire for meaning made her receptive to Zenithian doctrine and promises of purpose.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Lost Creativity</div>
-                            <div class="trait-description">Post-conversion, her artistry becomes utilitarian rather than expressive. Beauty serves ideology rather than love and wonder.</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Eager Convert</div>
+                            <div class="phase-description">Enthusiastic embrace of Zenithian teachings, abandoning previous beliefs as "demonic deceptions."</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Parting Gift</div>
-                            <div class="trait-description">The starling becomes her final act of authentic love—a tangible reminder that despite everything, their soul-sister bond transcends religious division.</div>
+                        
+                        <div class="timeline-phase lost">
+                            <div class="phase-label lost">Zealous Missionary</div>
+                            <div class="phase-description">Complete transformation into fervent believer who cannot understand resistance to obvious "truth."</div>
                         </div>
+                        
+                        <div class="timeline-phase lost">
+                            <div class="phase-label lost">Dangerous Mission</div>
+                            <div class="phase-description">Departure for void-corrupted Blackwater Falls, choosing ideological duty over personal safety and relationships.</div>
+                        </div>
+                        
+                        <div class="timeline-phase lost">
+                            <div class="phase-label lost">Unknown Fate</div>
+                            <div class="phase-description">Journey into darkness seeking to spread light, with uncertain but ominous prospects for survival.</div>
+                        </div>
+                    </div>
+
+                    <div class="tragedy-box">
+                        <div class="tragedy-title">The Price of Certainty</div>
+                        Kat's transformation reveals how extremist movements exploit the human need for belonging and purpose. Her gentle nature and spiritual hunger, once beautiful gifts, became the very qualities that made her vulnerable to ideological manipulation. Her departure for Blackwater Falls represents the ultimate tragedy—choosing perceived salvation over authentic love, certainty over complexity, mission over the person who needed her most.
+                    </div>
+
+                    <div class="character-quote">
+                        Don't you see? I'm going to help people. I'm going to bring Light to places that have only known darkness. This is my calling, Mira. This is why I was born.
+                        <div class="quote-source">— Kat explaining her mission with tragic conviction</div>
                     </div>
                 </section>
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Bonds Broken and Transformed</h2>
+                    <h2 class="section-title">Bonds Broken by Ideology</h2>
                     <div class="character-description">
-                        <p>Kat's relationships reflect the tragic cost of extremism—how ideology can poison love, turn loyalty into betrayal, and transform genuine care into conditional acceptance based on religious conformity.</p>
+                        <p>Kat's relationships reveal the devastating impact of extremist conversion on authentic human connections. Her transformation didn't just change her beliefs—it fundamentally altered her capacity for unconditional love and acceptance, filtering every relationship through the lens of religious orthodoxy and making genuine intimacy contingent upon ideological conformity.</p>
                     </div>
 
-                  <div class="related-characters">
+                    <div class="related-characters">
                         <a href="mira-roehart.html" class="related-character">
                             <div class="related-avatar">M</div>
                             <div class="related-name">Mira Roehart</div>
-                            <div class="related-role">Soul-Sister, Lost Friend</div>
+                            <div class="related-role">Lost Soul-Sister, Conversion Target</div>
                         </a>
                         <a href="lucien-altheris.html" class="related-character">
                             <div class="related-avatar">L</div>
                             <div class="related-name">Lucien Altheris</div>
-                            <div class="related-role">Spiritual Leader, Manipulator</div>
+                            <div class="related-role">Spiritual Leader, Conversion Agent</div>
                         </a>
+                        <div class="related-character">
+                            <div class="related-avatar">P</div>
+                            <div class="related-name">Her Parents</div>
+                            <div class="related-role">Left Behind, Worried Family</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">WG</div>
+                            <div class="related-name">Wild God Traditions</div>
+                            <div class="related-role">Abandoned Beliefs, "Demonic" Past</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">ZH</div>
+                            <div class="related-name">Zenithian Hierarchy</div>
+                            <div class="related-role">New Family, Ideological Purpose</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">BF</div>
+                            <div class="related-name">Blackwater Falls</div>
+                            <div class="related-role">Dangerous Destination, Ultimate Test</div>
+                        </div>
                     </div>
                 </section>
 
@@ -647,27 +816,28 @@
         <!-- Character Summary -->
         <section class="character-summary">
             <div class="summary-container">
-                <h2 class="summary-title">The Price of Certainty</h2>
+                <h2 class="summary-title">The Tragedy of Lost Innocence</h2>
                 <div class="summary-content">
-                    <p>Katalina Petari embodies one of the most profound tragedies in human experience—the loss of an authentic soul to the false promises of extremist ideology. Her transformation from gentle artist and loving friend to zealous missionary illustrates how totalist movements destroy not just individuals, but the relationships that give life its deepest meaning. Through her story, we witness the devastating cost of choosing ideological certainty over the messy, complex beauty of authentic human connection.</p>
+                    <p>Katalina Petari represents one of the most heartbreaking aspects of extremist conversion—the transformation of loving, gentle souls into zealous missionaries who sacrifice authentic relationships for ideological certainty. Her journey from soul-sister to lost convert illustrates how totalist movements specifically target those with the greatest capacity for love, service, and spiritual yearning, corrupting these beautiful qualities into tools of separation and control.</p>
 
-                    <p>Her original nature—the girl who carved wooden starlings and whispered wishes to forest spirits—represents everything beautiful about openness, creativity, and wonder. Her hands found spiritual expression through art, her heart found purpose through friendship, and her mind found meaning through questions rather than absolute answers. This was the Kat who balanced Mira's fire with gentle wisdom, who created beauty as an act of love, and who understood that some mysteries are more beautiful when left unsolved.</p>
+                    <p>Her original nature—the questioning wonder that delighted in mysteries, the balanced wisdom that complemented Mira's passionate spirit, the creative gifts that produced symbols of love and freedom—wasn't destroyed by her conversion but perverted into its opposite. Her spiritual hunger became zealous faith, her desire to serve became missionary fervor, her love became conditional upon conformity to doctrine. The girl who once carved wooden starlings as symbols of shared dreams now carries the Light into dangerous wilderness, believing herself blessed while walking toward probable doom.</p>
 
-                    <p>The baptized convert who emerges from Zenithian indoctrination appears happy and purposeful, yet represents a profound loss of human capacity. Her zealous certainty replaces nuanced thinking, her conditional love destroys unconditional friendship, and her missionary fervor consumes the artistic soul that once created meaning through beauty. The very traits that made her a loving companion—loyalty, devotion, spiritual seeking—become the weapons extremism uses to remake her into its image.</p>
+                    <p>The wooden starling she gave Mira stands as a tragic symbol of what was lost—the dreams of freedom and adventure they once shared, the authentic connection that transcended ideology, the creative expression that came from personal wonder rather than institutional purpose. That small carved bird represents everything beautiful about their friendship and everything that was sacrificed when Kat chose certainty over questions, mission over relationship, eternal salvation over temporal love.</p>
 
-                    <p>Her departure for the dangerous Blackwater Falls mission represents the ultimate sacrifice of love for ideology. At the moment when Mira needs her friendship most desperately, Kat chooses a perilous mission to spread Light to strangers over staying to support the person who had been her soul-sister. The wooden starling she leaves behind becomes a monument to everything lost—their shared dreams of freedom, their plans for adventure, their bond that transcended all differences until doctrine divided them.</p>
+                    <p>Her departure for Blackwater Falls embodies the ultimate cost of extremist conversion. Just when Mira most needed the support of her dearest friend, Kat chose to venture into void-corrupted wilderness on a mission that serves ideology rather than genuine human need. Her willingness to face almost certain death for abstract religious purpose reveals how completely her priorities were transformed, how thoroughly her capacity for practical love was subsumed into theoretical devotion.</p>
 
-                    <p>Kat's story serves as a warning about the seductive power of movements that promise simple answers to complex questions, that offer belonging in exchange for independent thought, and that demand the sacrifice of personal relationships for collective mission. Her tragedy lies not in what she gains—purpose, certainty, community—but in what she loses: the very qualities that made her capable of genuine love, authentic creativity, and the kind of friendship that honors the whole person rather than demanding their conversion.</p>
+                    <p>Kat's story serves as a warning about the seductive nature of extremist movements and their ability to recruit the very people most capable of love and sacrifice. Her genuine desire to serve something greater than herself, her natural empathy and spiritual hunger, her artistic gifts and emotional intelligence—all became vulnerabilities exploited by those who understood how to channel beautiful human qualities into destructive purposes.</p>
+
+                    <p>In the end, Katalina Petari's tragedy lies not in malicious intent but in sincere belief. She genuinely thinks she has found salvation while actually choosing separation from everything that gave her life authentic meaning. Her transformation from gentle soul-sister to zealous missionary illustrates that sometimes the greatest evil comes not from hatred but from love corrupted by ideology, service perverted by extremism, and faith that demands the sacrifice of the very relationships that make human existence worthwhile.</p>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action -->
         <section class="read-more-section">
-            <h2 class="cta-title">Witness the Tragedy</h2>
+            <h2 class="cta-title">Witness the Cost of Extremist Love</h2>
             <p class="cta-description">
-                Follow the heartbreaking transformation of Mira's beloved soul-sister from gentle artist to zealous convert. 
-                Kat's story explores the devastating cost of extremism on human relationships and individual authenticity.
+                Experience Kat's heartbreaking transformation from beloved soul-sister to zealous convert. Her story explores how the gentlest hearts can choose the most extreme paths.
             </p>
             <div class="cta-buttons">
                 <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
@@ -678,5 +848,6 @@
 
     </div>
 </main>
+
 </body>
 </html>
