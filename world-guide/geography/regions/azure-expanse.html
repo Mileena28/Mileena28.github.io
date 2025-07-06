@@ -1,0 +1,891 @@
+---
+layout: default
+title: "Azure Expanse | Blood of the Wild Gods World Guide"
+description: "The great sea that dominates Arcadia's eastern reaches, where waters hold divine memory and respond to cosmic emotion. Explore the depths where ancient leviathans dream."
+image: "/assets/images/azure-expanse.jpg"
+---
+
+<style>
+    .azure-header {
+        padding: 140px 0 120px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(0, 82, 204, 0.4) 0%, rgba(58, 123, 213, 0.3) 30%, rgba(138, 159, 255, 0.2) 70%, rgba(168, 181, 255, 0.1) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .azure-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/assets/images/ocean-waves.jpg') center/cover;
+        opacity: 0.2;
+        z-index: -1;
+        animation: gentle-wave 20s ease-in-out infinite;
+    }
+
+    @keyframes gentle-wave {
+        0%, 100% { transform: scale(1) translateX(0); }
+        50% { transform: scale(1.05) translateX(-20px); }
+    }
+
+    .floating-motes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .water-mote {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.8) 0%, rgba(168, 181, 255, 0.4) 70%, transparent 100%);
+        border-radius: 50%;
+        animation: float-drift 25s infinite linear;
+    }
+
+    @keyframes float-drift {
+        0% { transform: translateY(100vh) translateX(0) scale(0); opacity: 0; }
+        10% { opacity: 1; transform: translateY(90vh) translateX(10px) scale(1); }
+        90% { opacity: 1; transform: translateY(-5vh) translateX(50px) scale(1); }
+        100% { transform: translateY(-10vh) translateX(60px) scale(0); opacity: 0; }
+    }
+
+    .azure-title {
+        font-size: 4.5em;
+        font-weight: 200;
+        margin-bottom: 25px;
+        color: #e8f4ff;
+        letter-spacing: 5px;
+        text-shadow: 0 4px 20px rgba(0, 82, 204, 0.6);
+        position: relative;
+    }
+
+    .azure-subtitle {
+        font-size: 1.8em;
+        color: #a8c8ff;
+        font-style: italic;
+        margin-bottom: 40px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .azure-description {
+        font-size: 1.3em;
+        color: #d4e7ff;
+        max-width: 1000px;
+        margin: 0 auto;
+        line-height: 1.9;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .overview-section {
+        padding: 120px 0;
+        background: linear-gradient(180deg, rgba(5, 15, 35, 0.95) 0%, rgba(10, 25, 50, 0.9) 100%);
+        position: relative;
+    }
+
+    .overview-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        max-width: 1300px;
+        margin: 0 auto;
+        align-items: center;
+    }
+
+    .overview-content h2 {
+        font-size: 3em;
+        color: #e8f4ff;
+        margin-bottom: 30px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .overview-content p {
+        color: #b8d4ff;
+        line-height: 1.8;
+        font-size: 1.1em;
+        margin-bottom: 25px;
+    }
+
+    .overview-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .feature-tag {
+        background: linear-gradient(135deg, rgba(0, 82, 204, 0.3), rgba(58, 123, 213, 0.2));
+        border: 1px solid rgba(138, 159, 255, 0.4);
+        border-radius: 20px;
+        padding: 15px 20px;
+        text-align: center;
+        color: #a8c8ff;
+        font-weight: 500;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .feature-tag:hover {
+        border-color: #8a9fff;
+        background: linear-gradient(135deg, rgba(0, 82, 204, 0.4), rgba(58, 123, 213, 0.3));
+        transform: translateY(-2px);
+    }
+
+    .overview-visual {
+        position: relative;
+        height: 500px;
+        background: linear-gradient(135deg, rgba(0, 82, 204, 0.2), rgba(58, 123, 213, 0.1));
+        border-radius: 30px;
+        border: 2px solid rgba(138, 159, 255, 0.3);
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+    }
+
+    .ocean-waves {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        background: linear-gradient(180deg, transparent 0%, rgba(0, 82, 204, 0.3) 30%, rgba(0, 82, 204, 0.6) 100%);
+        animation: tide-flow 15s ease-in-out infinite;
+    }
+
+    @keyframes tide-flow {
+        0%, 100% { transform: translateY(0) scaleY(1); }
+        50% { transform: translateY(-20px) scaleY(1.1); }
+    }
+
+    .depth-layers {
+        padding: 100px 0;
+        background: linear-gradient(180deg, rgba(10, 25, 50, 0.9) 0%, rgba(5, 15, 35, 0.95) 100%);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .section-title {
+        font-size: 3.5em;
+        color: #e8f4ff;
+        margin-bottom: 25px;
+        font-weight: 300;
+        letter-spacing: 3px;
+    }
+
+    .section-description {
+        font-size: 1.3em;
+        color: #a8c8ff;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    .layers-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .depth-layer {
+        background: linear-gradient(135deg, rgba(0, 82, 204, 0.15), rgba(10, 25, 50, 0.2));
+        border: 1px solid rgba(138, 159, 255, 0.2);
+        border-radius: 25px;
+        padding: 40px;
+        margin-bottom: 30px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(15px);
+    }
+
+    .depth-layer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
+        transition: left 0.6s ease;
+    }
+
+    .depth-layer:hover {
+        border-color: #8a9fff;
+        transform: translateX(10px);
+        box-shadow: 0 20px 40px rgba(0, 82, 204, 0.3);
+    }
+
+    .depth-layer:hover::before {
+        left: 100%;
+    }
+
+    .layer-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .layer-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.4), rgba(168, 181, 255, 0.3));
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        box-shadow: 0 8px 25px rgba(138, 159, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .layer-icon svg {
+        width: 30px;
+        height: 30px;
+        fill: #e8f4ff;
+    }
+
+    .layer-name {
+        font-size: 1.8em;
+        color: #e8f4ff;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .layer-description {
+        color: #b8d4ff;
+        line-height: 1.7;
+        font-size: 1.05em;
+        margin-bottom: 20px;
+    }
+
+    .layer-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .layer-feature {
+        background: rgba(138, 159, 255, 0.2);
+        color: #a8c8ff;
+        padding: 6px 14px;
+        border-radius: 12px;
+        font-size: 0.9em;
+        border: 1px solid rgba(138, 159, 255, 0.3);
+    }
+
+    .phenomena-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, rgba(5, 15, 35, 0.95) 0%, rgba(20, 40, 80, 0.8) 100%);
+        position: relative;
+    }
+
+    .phenomena-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 40px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    .phenomenon-card {
+        background: linear-gradient(135deg, rgba(0, 82, 204, 0.2), rgba(10, 25, 50, 0.3));
+        border: 2px solid rgba(138, 159, 255, 0.3);
+        border-radius: 25px;
+        padding: 45px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(15px);
+    }
+
+    .phenomenon-card::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.05) 0%, transparent 70%);
+        animation: mystical-pulse 12s ease-in-out infinite;
+    }
+
+    @keyframes mystical-pulse {
+        0%, 100% { opacity: 0.3; transform: scale(1) rotate(0deg); }
+        50% { opacity: 0.7; transform: scale(1.1) rotate(180deg); }
+    }
+
+    .phenomenon-card:hover {
+        border-color: #8a9fff;
+        transform: translateY(-10px);
+        box-shadow: 
+            0 25px 50px rgba(0, 82, 204, 0.4),
+            0 0 60px rgba(138, 159, 255, 0.2);
+    }
+
+    .phenomenon-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .phenomenon-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.5), rgba(168, 181, 255, 0.4));
+        border-radius: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        box-shadow: 
+            0 10px 30px rgba(138, 159, 255, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .phenomenon-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: #fff;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    .phenomenon-name {
+        font-size: 1.7em;
+        color: #e8f4ff;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .phenomenon-subtitle {
+        color: #a8c8ff;
+        font-style: italic;
+        margin-bottom: 25px;
+    }
+
+    .phenomenon-description {
+        color: #d4e7ff;
+        line-height: 1.7;
+        font-size: 1.05em;
+    }
+
+    .inhabitants-section {
+        padding: 100px 0;
+        background: linear-gradient(180deg, rgba(20, 40, 80, 0.8) 0%, rgba(5, 15, 35, 0.95) 100%);
+    }
+
+    .inhabitants-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 35px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .inhabitant-card {
+        background: linear-gradient(135deg, rgba(10, 25, 50, 0.8), rgba(0, 82, 204, 0.2));
+        border: 1px solid rgba(138, 159, 255, 0.25);
+        border-radius: 20px;
+        padding: 35px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .inhabitant-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.15) 0%, transparent 70%);
+        transition: all 0.3s ease;
+    }
+
+    .inhabitant-card:hover {
+        border-color: rgba(138, 159, 255, 0.5);
+        transform: translateY(-8px);
+        box-shadow: 0 15px 30px rgba(0, 82, 204, 0.3);
+    }
+
+    .inhabitant-card:hover::before {
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.25) 0%, transparent 70%);
+    }
+
+    .inhabitant-name {
+        font-size: 1.5em;
+        color: #e8f4ff;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .inhabitant-type {
+        font-size: 0.9em;
+        color: #a8c8ff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .inhabitant-description {
+        color: #c8deff;
+        line-height: 1.6;
+        font-size: 1em;
+    }
+
+    .navigation-section {
+        padding: 80px 0;
+        background: rgba(5, 15, 35, 0.98);
+        border-top: 1px solid rgba(138, 159, 255, 0.2);
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .nav-card {
+        background: linear-gradient(135deg, rgba(20, 40, 80, 0.6), rgba(10, 25, 50, 0.8));
+        border: 1px solid rgba(138, 159, 255, 0.2);
+        border-radius: 18px;
+        padding: 25px;
+        text-align: center;
+        text-decoration: none;
+        color: #a8c8ff;
+        transition: all 0.3s ease;
+    }
+
+    .nav-card:hover {
+        border-color: #8a9fff;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.15), rgba(20, 40, 80, 0.7));
+        transform: translateY(-5px);
+        color: #d4e7ff;
+    }
+
+    .nav-card h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.2em;
+        font-weight: 600;
+    }
+
+    .nav-card p {
+        margin: 0;
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        .azure-title {
+            font-size: 3em;
+        }
+        
+        .azure-subtitle {
+            font-size: 1.4em;
+        }
+        
+        .overview-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        
+        .phenomena-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .phenomenon-card {
+            padding: 30px;
+        }
+        
+        .inhabitants-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<!-- Azure Header -->
+<section class="azure-header">
+    <div class="floating-motes">
+        <!-- Floating water motes for ambiance -->
+        <div class="water-mote" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="water-mote" style="left: 25%; animation-delay: 3s;"></div>
+        <div class="water-mote" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="water-mote" style="left: 55%; animation-delay: 9s;"></div>
+        <div class="water-mote" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="water-mote" style="left: 85%; animation-delay: 15s;"></div>
+        <div class="water-mote" style="left: 15%; animation-delay: 18s;"></div>
+        <div class="water-mote" style="left: 65%; animation-delay: 21s;"></div>
+    </div>
+    
+    <div class="container">
+        <h1 class="azure-title">Azure Expanse</h1>
+        <p class="azure-subtitle">
+            "The sea that remembers what mortals choose to forget"
+        </p>
+        <div class="azure-description">
+            <p>The great ocean that dominates Arcadia's eastern reaches, where waters hold divine memory and respond to cosmic emotion. Unlike mortal seas, the Azure Expanse serves as both barrier and bridge between realms, its tides controlled by divine feelings rather than celestial mechanics. Here, in the depths where ancient leviathans dream, truth persists even when the world above chooses denial.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Overview Section -->
+<section class="overview-section">
+    <div class="container">
+        <div class="overview-grid">
+            <div class="overview-content">
+                <h2>The Living Ocean</h2>
+                <p>The Azure Expanse operates as more than a body of water—it functions as a cosmic entity with its own consciousness and memory. When gods grieve, the ocean rises in supernatural storms that reshape coastlines. When divine beings achieve emotional equilibrium, rare phenomena like the Drowned Valleys become visible beneath its waves.</p>
+                <p>The sea's depths contain powers that predate the current age of gods—leviathans whose bones remember when they themselves held divine essence. These ancient creatures serve as unwitting archives of cosmic history, their dreams occasionally surfacing as prophecy or reality-altering disturbance.</p>
+                <p>Every wave carries the songs of loss across generations, every tide brings memories from distant shores, and every storm reflects the emotional state of beings whose feelings can unmake reality itself.</p>
+                
+                <div class="overview-features">
+                    <div class="feature-tag">Divine Memory Storage</div>
+                    <div class="feature-tag">Emotional Tides</div>
+                    <div class="feature-tag">Ancient Leviathans</div>
+                    <div class="feature-tag">Reality Preservation</div>
+                    <div class="feature-tag">Cosmic Consciousness</div>
+                    <div class="feature-tag">Truth Archive</div>
+                </div>
+            </div>
+            
+            <div class="overview-visual">
+                <div class="ocean-waves"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Depth Layers -->
+<section class="depth-layers">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">The Five Depths</h2>
+            <p class="section-description">
+                The Azure Expanse operates on multiple levels of reality, each depth revealing different aspects of cosmic truth and divine influence
+            </p>
+        </div>
+        
+        <div class="layers-container">
+            
+            <div class="depth-layer">
+                <div class="layer-header">
+                    <div class="layer-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.66,11.2C17.43,10.9 17.15,10.64 16.89,10.38C16.22,9.78 15.46,9.35 14.82,8.72C13.33,7.26 13,4.85 13.95,3C13.76,3 13.57,3 13.38,3.1C11.55,3.87 10.45,5.12 10.13,6.8C9.5,8.14 9.65,9.52 10.92,11.21C12.92,13.75 15.94,15.84 18.24,17.09C19.39,17.71 20.72,18.31 21.63,18.54C21.88,18.61 22.06,18.65 22.06,18.65C21.97,18.56 21.88,18.47 21.8,18.37C21.14,17.46 20.45,16.14 20.45,16.14C19.46,14.36 18.5,12.83 17.66,11.2M6.25,12.8C6,12.54 5.73,12.28 5.5,12C4.93,11.43 4.3,10.9 3.86,10.24C2.74,8.75 2.5,6.5 3.33,4.79C3.16,4.8 2.99,4.82 2.82,4.86C1.08,5.56 0.06,6.72 -0.22,8.31C-0.8,9.58 -0.68,10.9 0.5,12.5C2.37,14.9 5.15,16.84 7.34,18C8.44,18.57 9.7,19.11 10.57,19.32C10.8,19.38 10.97,19.42 10.97,19.42C10.89,19.34 10.81,19.26 10.74,19.17C10.13,18.32 9.5,17.07 9.5,17.07C8.57,15.39 7.67,13.94 6.25,12.8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="layer-name">Surface Waters</h3>
+                </div>
+                <p class="layer-description">
+                    The familiar realm where conventional marine life thrives and mortal shipping routes traverse. Here, fishing vessels harvest silver fish and exotic sea-creatures while carefully monitoring the emotional state of the deeper waters. Surface phenomena include normal lunar tides alongside supernatural surges triggered by divine psychological states.
+                </p>
+                <div class="layer-features">
+                    <span class="layer-feature">Conventional Marine Life</span>
+                    <span class="layer-feature">Mortal Trade Routes</span>
+                    <span class="layer-feature">Dual Tidal Systems</span>
+                    <span class="layer-feature">Weather Manifestation</span>
+                </div>
+            </div>
+
+            <div class="depth-layer">
+                <div class="layer-header">
+                    <div class="layer-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.4 6.35,17.41C9.37,20.43 14,20.54 17.33,17.97Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="layer-name">The Twilight Zone</h3>
+                </div>
+                <p class="layer-description">
+                    Where leviathan shadows first appear and reality begins to bend under the weight of ancient power. Light filters strangely here, taking on colors that have no names in mortal languages. The boundary between what is real and what is memory becomes increasingly fluid as divine influence grows stronger with depth.
+                </p>
+                <div class="layer-features">
+                    <span class="layer-feature">Reality Distortion</span>
+                    <span class="layer-feature">Leviathan Shadows</span>
+                    <span class="layer-feature">Color Phenomena</span>
+                    <span class="layer-feature">Memory Echoes</span>
+                </div>
+            </div>
+
+            <div class="depth-layer">
+                <div class="layer-header">
+                    <div class="layer-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,3V12.26C11.5,12.09 11,12 10.5,12C8,12 6,14 6,16.5C6,19 8,21 10.5,21C13,21 15,19 15,16.5V6H19V3H12Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="layer-name">The Singing Depths</h3>
+                </div>
+                <p class="layer-description">
+                    Oceanic trenches where ancient powers dream and their subconscious emanations rise as prophetic whispers. Here, the water itself carries melodies from lost civilizations, battle hymns from forgotten wars, and lullabies sung by mothers whose children died before learning the words. The songs grant visions to those who can survive the pressure.
+                </p>
+                <div class="layer-features">
+                    <span class="layer-feature">Prophetic Whispers</span>
+                    <span class="layer-feature">Ancient Melodies</span>
+                    <span class="layer-feature">Vision Granting</span>
+                    <span class="layer-feature">Dream Resonance</span>
+                </div>
+            </div>
+
+            <div class="depth-layer">
+                <div class="layer-header">
+                    <div class="layer-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12S6.48 22 12 22 22 17.52 22 12 17.52 2 12 2M7.07 18.28C7.5 17.38 10.12 16.5 12 16.5S16.5 17.38 16.93 18.28C15.57 19.36 13.86 20 12 20S8.43 19.36 7.07 18.28M18.36 16.83C16.93 15.09 13.46 14.5 12 14.5S7.07 15.09 5.64 16.83C4.62 15.5 4 13.82 4 12C4 7.59 7.59 4 12 4S20 7.59 20 12C20 13.82 19.38 15.5 18.36 16.83M12 6C10.06 6 8.5 7.56 8.5 9.5S10.06 13 12 13 15.5 11.44 15.5 9.5 13.94 6 12 6M12 11C11.17 11 10.5 10.33 10.5 9.5S11.17 8 12 8 13.5 8.67 13.5 9.5 12.83 11 12 11Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="layer-name">The Bone Gardens</h3>
+                </div>
+                <p class="layer-description">
+                    The deepest navigable reaches where leviathan skeletons serve as foundation for impossible coral cities. These bone structures retain fragments of their original consciousness, serving as living libraries of pre-creation knowledge. The gardens pulse with bioluminescent life forms that exist nowhere else in creation.
+                </p>
+                <div class="layer-features">
+                    <span class="layer-feature">Leviathan Skeletons</span>
+                    <span class="layer-feature">Living Bone Cities</span>
+                    <span class="layer-feature">Consciousness Fragments</span>
+                    <span class="layer-feature">Impossible Architecture</span>
+                </div>
+            </div>
+
+            <div class="depth-layer">
+                <div class="layer-header">
+                    <div class="layer-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="layer-name">The Void Depths</h3>
+                </div>
+                <p class="layer-description">
+                    Trenches that breach reality itself, leading to spaces between dimensions where the concept of existence becomes questionable. These abyssal reaches connect to the fundamental void from which all creation emerged. Only the most ancient leviathans dwell here, experiencing all possible versions of reality simultaneously.
+                </p>
+                <div class="layer-features">
+                    <span class="layer-feature">Reality Breach</span>
+                    <span class="layer-feature">Dimensional Gates</span>
+                    <span class="layer-feature">Void Interface</span>
+                    <span class="layer-feature">Existence Paradox</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Phenomena -->
+<section class="phenomena-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Oceanic Phenomena</h2>
+            <p class="section-description">
+                Supernatural manifestations that demonstrate the Azure Expanse's connection to divine consciousness and cosmic forces
+            </p>
+        </div>
+        
+        <div class="phenomena-grid">
+            
+            <div class="phenomenon-card">
+                <div class="phenomenon-header">
+                    <div class="phenomenon-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6,14L3,17L5,19L8,16L10,18L16,12L18,10L12,4L10,6L6,14M16.5,5.5L15.5,4.5L14.5,5.5L15.5,6.5L16.5,5.5M19.5,8.5L18.5,7.5L17.5,8.5L18.5,9.5L19.5,8.5M19.5,2.5L18.5,1.5L17.5,2.5L18.5,3.5L19.5,2.5M22.5,5.5L21.5,4.5L20.5,5.5L21.5,6.5L22.5,5.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="phenomenon-name">Divine Emotional Storms</h3>
+                    <div class="phenomenon-subtitle">Manifestations of Cosmic Grief</div>
+                </div>
+                <p class="phenomenon-description">
+                    When gods experience profound emotions, the Azure Expanse responds with supernatural tempests that defy natural law. Divine tears become literal tidal waves, sorrow transforms into winds that can level mountains, and despair reshapes entire coastlines. These storms have destroyed kingdoms and created new ones from their aftermath.
+                </p>
+            </div>
+
+            <div class="phenomenon-card">
+                <div class="phenomenon-header">
+                    <div class="phenomenon-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.5,12C7.33,12 8,12.67 8,13.5C8,14.33 7.33,15 6.5,15C5.67,15 5,14.33 5,13.5C5,12.67 5.67,12 6.5,12M9.5,8C10.33,8 11,8.67 11,9.5C11,10.33 10.33,11 9.5,11C8.67,11 8,10.33 8,9.5C8,8.67 8.67,8 9.5,8M14.5,16C15.33,16 16,16.67 16,17.5C16,18.33 15.33,19 14.5,19C13.67,19 13,18.33 13,17.5C13,16.67 13.67,16 14.5,16M17.5,12C18.33,12 19,12.67 19,13.5C19,14.33 18.33,15 17.5,15C16.67,15 16,14.33 16,13.5C16,12.67 16.67,12 17.5,12M12,1L21,5V10C21,16 16.65,21.09 12,22C7.35,21.09 3,16 3,10V5L12,1M12,3.18L5,6.3V10.5C5,15.26 8.22,19.65 12,20.5C15.78,19.65 19,15.26 19,10.5V6.3L12,3.18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="phenomenon-name">Drowned Valleys</h3>
+                    <div class="phenomenon-subtitle">Revealed During Cosmic Alignment</div>
+                </div>
+                <p class="phenomenon-description">
+                    Submerged regions that become visible only during rare cosmic alignments when multiple divine beings achieve emotional equilibrium simultaneously. These valleys contain the ruins of civilizations that existed before the current age, preserved in supernatural stasis beneath the waves, offering glimpses of forgotten histories.
+                </p>
+            </div>
+
+            <div class="phenomenon-card">
+                <div class="phenomenon-header">
+                    <div class="phenomenon-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,6A6,6 0 0,0 6,12C6,15.31 8.69,18 12.1,18C14.96,18 17.27,15.88 17.27,13.26C17.27,10.64 14.96,8.53 12.1,8.53C10.04,8.53 8.36,10.21 8.36,12.27C8.36,14.33 10.04,16 12.1,16C13.14,16 14.04,15.1 14.04,14.06C14.04,13.03 13.14,12.12 12.1,12.12C11.23,12.12 10.5,12.85 10.5,13.72C10.5,14.59 11.23,15.32 12.1,15.32"/>
+                        </svg>
+                    </div>
+                    <h3 class="phenomenon-name">Supernatural Stillness</h3>
+                    <div class="phenomenon-subtitle">When the Ocean Holds Its Breath</div>
+                </div>
+                <p class="phenomenon-description">
+                    During times of cosmic disturbance, the Azure Expanse can enter states of supernatural calm where all wave motion ceases entirely. This unnatural stillness creates mirror-like surfaces that reflect not the present sky but visions from other times and realms, serving as windows into alternate realities.
+                </p>
+            </div>
+
+            <div class="phenomenon-card">
+                <div class="phenomenon-header">
+                    <div class="phenomenon-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="phenomenon-name">Memory Tides</h3>
+                    <div class="phenomenon-subtitle">Waters That Preserve Truth</div>
+                </div>
+                <p class="phenomenon-description">
+                    The Azure Expanse's waters preserve memories and truth even when surface dwellers choose to forget. These memory-laden currents can bring visions of past events to those who know how to read them, serving as an archive of history that cannot be altered by political suppression or divine intervention.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Inhabitants -->
+<section class="inhabitants-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Denizens of the Deep</h2>
+            <p class="section-description">
+                The Azure Expanse harbors beings that range from familiar sea life to ancient powers that shaped reality itself
+            </p>
+        </div>
+        
+        <div class="inhabitants-grid">
+            
+            <div class="inhabitant-card">
+                <h3 class="inhabitant-name">Ancient Leviathans</h3>
+                <div class="inhabitant-type">Primordial Sea Gods</div>
+                <p class="inhabitant-description">
+                    Colossal beings that once held divine power but now exist in the deepest trenches. These creatures span distances that dwarf continents and experience all time periods simultaneously. Their dreams occasionally surface as prophecy, and their bones serve as conduits for the most potent magical workings.
+                </p>
+            </div>
+
+            <div class="inhabitant-card">
+                <h3 class="inhabitant-name">Tide-Touched Spirits</h3>
+                <div class="inhabitant-type">Consciousness Entities</div>
+                <p class="inhabitant-description">
+                    Beings that exist primarily as consciousness but can manifest physically during extreme oceanic conditions. They serve as communication links between distant locations and realms, retaining knowledge from multiple sources across vast time periods.
+                </p>
+            </div>
+
+            <div class="inhabitant-card">
+                <h3 class="inhabitant-name">Deep-Current Fishers</h3>
+                <div class="inhabitant-type">Specialized Mortals</div>
+                <p class="inhabitant-description">
+                    Brave souls who dive into the supernatural depths to gather rare materials where reality grows thin. These divers develop unique abilities to withstand the pressure of divine influence and navigate waters where normal physics become unreliable.
+                </p>
+            </div>
+
+            <div class="inhabitant-card">
+                <h3 class="inhabitant-name">Storm Fishers</h3>
+                <div class="inhabitant-type">Weather Specialists</div>
+                <p class="inhabitant-description">
+                    Coastal dwellers who have learned to predict and survive supernatural weather patterns by reading the emotional states of divine beings. They can navigate the treacherous waters during divine storms and know when the sea will respond to cosmic disturbances.
+                </p>
+            </div>
+
+            <div class="inhabitant-card">
+                <h3 class="inhabitant-name">Memory Speakers</h3>
+                <div class="inhabitant-type">Oracle Scholars</div>
+                <p class="inhabitant-description">
+                    Individuals gifted with the ability to interpret the memory-laden currents of the Azure Expanse. They serve as living libraries, able to access historical events preserved in the ocean's consciousness and translate them for mortal understanding.
+                </p>
+            </div>
+
+            <div class="inhabitant-card">
+                <h3 class="inhabitant-name">Void Swimmers</h3>
+                <div class="inhabitant-type">Dimensional Entities</div>
+                <p class="inhabitant-description">
+                    Mysterious beings that exist primarily as absence, visible only by the reality they displace. They inhabit the deepest trenches where the ocean breaches the boundaries between dimensions, serving as guardians of the void depths.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="navigation-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Explore More Realms</h2>
+        </div>
+        
+        <div class="nav-grid">
+            <a href="/world-guide/geography/regions/godscarred-wastes.html" class="nav-card">
+                <h3>Godscarred Wastes</h3>
+                <p>Where divine fury left permanent scars on reality itself</p>
+            </a>
+            
+            <a href="/world-guide/geography/regions/verdant-veil.html" class="nav-card">
+                <h3>Verdant Veil</h3>
+                <p>Ancient forest where nature and spirit realms intertwine</p>
+            </a>
+            
+            <a href="/world-guide/geography/regions/crimson-tundra.html" class="nav-card">
+                <h3>Crimson Tundra</h3>
+                <p>Frozen wasteland of eternal winter and fierce clans</p>
+            </a>
+            
+            <a href="/world-guide/geography/" class="nav-card">
+                <h3>All Regions</h3>
+                <p>Return to the complete geography guide</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Azure Expanse - Blood of the Wild Gods World Guide",
+  "description": "Explore the Azure Expanse, the great ocean of Arcadia where waters hold divine memory and respond to cosmic emotion. Discover the five depths and supernatural phenomena.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Azure Expanse"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fantasy Ocean"
+    },
+    {
+      "@type": "Thing",
+      "name": "Divine Memory"
+    }
+  ]
+}
+</script>
