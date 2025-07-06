@@ -57,9 +57,9 @@ image: "/assets/images/world-guide-main.jpg"
 
     .sections-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
-        max-width: 1200px;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        gap: 35px;
+        max-width: 1400px;
         margin: 0 auto;
     }
 
@@ -67,12 +67,15 @@ image: "/assets/images/world-guide-main.jpg"
         background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.8));
         border: 1px solid #333;
         border-radius: 20px;
-        padding: 40px;
+        padding: 35px;
         text-align: center;
         transition: all 0.3s ease;
         backdrop-filter: blur(10px);
         position: relative;
         overflow: hidden;
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
     }
 
     .guide-section::before {
@@ -97,11 +100,11 @@ image: "/assets/images/world-guide-main.jpg"
     }
 
     .section-icon {
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 25px;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
         background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
-        border-radius: 18px;
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -132,8 +135,8 @@ image: "/assets/images/world-guide-main.jpg"
     }
 
     .section-icon svg {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         fill: #8a9fff;
         filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         transition: all 0.3s ease;
@@ -152,16 +155,18 @@ image: "/assets/images/world-guide-main.jpg"
     }
 
     .section-title {
-        font-size: 1.8em;
+        font-size: 1.6em;
         color: #f0f0f0;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         font-weight: 600;
     }
 
     .section-description {
         color: #ccc;
-        line-height: 1.7;
+        line-height: 1.6;
         margin-bottom: 25px;
+        flex-grow: 1;
+        font-size: 0.95em;
     }
 
     .section-link {
@@ -169,15 +174,27 @@ image: "/assets/images/world-guide-main.jpg"
         background: linear-gradient(135deg, #8a9fff, #a8b5ff);
         color: #000;
         text-decoration: none;
-        padding: 12px 25px;
-        border-radius: 25px;
+        padding: 10px 20px;
+        border-radius: 20px;
         font-weight: 600;
         transition: all 0.3s ease;
+        margin-top: auto;
     }
 
     .section-link:hover {
         transform: translateY(-2px);
         box-shadow: 0 10px 20px rgba(138, 159, 255, 0.4);
+    }
+
+    .section-link.coming-soon {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.3));
+        color: #8a9fff;
+        cursor: default;
+    }
+
+    .section-link.coming-soon:hover {
+        transform: none;
+        box-shadow: none;
     }
 
     .featured-content {
@@ -252,7 +269,8 @@ image: "/assets/images/world-guide-main.jpg"
         }
         
         .guide-section {
-            padding: 30px;
+            padding: 25px;
+            min-height: 250px;
         }
     }
 </style>
@@ -291,14 +309,40 @@ image: "/assets/images/world-guide-main.jpg"
             <div class="guide-section">
                 <div class="section-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.5,3L20.34,3.03L15,5.1L9,3L3.36,4.9C3.15,4.97 3,5.15 3,5.38V20.5A0.5,0.5 0 0,0 3.5,21L3.66,20.97L9,18.9L15,21L20.64,19.1C20.85,19.03 21,18.85 21,18.62V3.5A0.5,0.5 0 0,0 20.5,3M10,5.47L14,6.87V18.53L10,17.13V5.47M5,6.46L8,5.45V17.15L5,18.31V6.46M16,18.55L19,17.54V5.84L16,6.85V18.55Z"/>
+                        <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Locations</h2>
+                <h2 class="section-title">Geography & Realms</h2>
                 <div class="section-description">
-                    Discover the places where legends are forged—from the Godscarred Wastes to the Verdant Veil, each location holds secrets that shape the fate of mortals and gods alike.
+                    Explore the diverse realms of Arcadia, from seas that remember divine tears to wastelands scarred by gods' rage. Each region tells stories of cosmic conflict and mortal resilience.
                 </div>
-                <a href="/world-guide/locations/" class="section-link">Coming Soon</a>
+                <a href="/world-guide/geography/" class="section-link">Discover Realms</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Kingdoms & Politics</h2>
+                <div class="section-description">
+                    Discover the rise and fall of kingdoms—from Atheria built on divine grief to Solara's golden rebirth. Political systems shaped by supernatural threats and cosmic consequences.
+                </div>
+                <a href="/world-guide/kingdoms/" class="section-link coming-soon">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Divine Realms & Cosmology</h2>
+                <div class="section-description">
+                    Journey to the Hall of Eternal Judgment and Celestial Gardens. Understand divine hierarchy, cosmic politics, and why the gods maintain their terrifying silence.
+                </div>
+                <a href="/world-guide/divine-realms/" class="section-link coming-soon">Coming Soon</a>
             </div>
 
             <div class="guide-section">
@@ -307,11 +351,24 @@ image: "/assets/images/world-guide-main.jpg"
                         <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Magic & Powers</h2>
+                <h2 class="section-title">Magic Systems</h2>
                 <div class="section-description">
-                    Understand the divine blood that flows through mortal veins, the price of wielding godlike power, and why some gifts become the greatest curses.
+                    Understand the complete six-element framework, Bloodmarked transformations, and the terrible price of wielding divine power. Magic where every blessing becomes a curse.
                 </div>
-                <a href="/world-guide/magic/" class="section-link">Coming Soon</a>
+                <a href="/world-guide/magic/" class="section-link coming-soon">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5,5H18A1,1 0 0,1 19,6V9H21V6A3,3 0 0,0 18,3H5A3,3 0 0,0 2,6V18A3,3 0 0,0 5,21H11V19H5A1,1 0 0,1 4,18V8H18V11H20V6A1,1 0 0,0 19,5H5M5,5V6H18V5H5M23,18L20.5,15.5L19,17L23,21L19,17L20.5,15.5L23,18Z"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Magical Materials & Artifacts</h2>
+                <div class="section-description">
+                    From crystallized moonlight to the Crown of Aetheris, discover the supernatural substances and legendary artifacts that shape the fate of gods and mortals alike.
+                </div>
+                <a href="/world-guide/artifacts/" class="section-link coming-soon">Coming Soon</a>
             </div>
 
             <div class="guide-section">
@@ -320,11 +377,24 @@ image: "/assets/images/world-guide-main.jpg"
                         <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
                     </svg>
                 </div>
-                <h2 class="section-title">History & Lore</h2>
+                <h2 class="section-title">History & Timeline</h2>
                 <div class="section-description">
-                    Uncover the buried truths about the Divine War, the creation of the Bloodmarked, and why the gods maintain their terrifying silence.
+                    Uncover the buried truths about the Divine Wars, the Great Withdrawal, and the Silent God Crisis. Discover why some histories are too dangerous to remember.
                 </div>
-                <a href="/world-guide/lore/" class="section-link">Coming Soon</a>
+                <a href="/world-guide/history/" class="section-link coming-soon">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Organizations & Societies</h2>
+                <div class="section-description">
+                    From Zenith's Chosen to the Forsaken Communities, explore the groups that shape society through faith, knowledge, and survival in a world touched by divine chaos.
+                </div>
+                <a href="/world-guide/organizations/" class="section-link coming-soon">Coming Soon</a>
             </div>
 
             <div class="guide-section">
@@ -344,44 +414,48 @@ image: "/assets/images/world-guide-main.jpg"
                 </div>
                 <h2 class="section-title">Creatures & Beings</h2>
                 <div class="section-description">
-                    From the monstrous Beastborn to divine entities that shape reality itself, explore the beings that inhabit this world of gods and mortals.
+                    From benevolent Nimwe to corrupted Beastborn, encounter the entities that inhabit a world where divine blood transforms innocence into nightmare and whispers guide the lost to safety.
                 </div>
-                <a href="/world-guide/creatures/" class="section-link">Coming Soon</a>
+                <a href="/world-guide/creatures/" class="section-link coming-soon">Coming Soon</a>
             </div>
 
             <div class="guide-section">
                 <div class="section-icon">
-                    <svg viewBox="0 0 496.777 496.778" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M496.777,496.521l-13.203-37.185L368.676,344.437c8.672-14.763,16.213-30.779,22.539-47.992
-		c16.408-44.655,24.729-97.457,24.729-156.938v-15.304h-15.305c-1.102,0-2.186-0.023-3.273-0.041l34.902-34.904
-		c1.172,0.896,2.297,1.878,3.367,2.951c10.375,10.372,12.498,25.867,6.387,38.347c12.354,5.694,27.467,3.454,37.648-6.727
-		c10.18-10.183,12.42-25.292,6.725-37.646c-12.479,6.111-27.973,3.987-38.346-6.388c-1.07-1.072-2.053-2.195-2.949-3.366
-		l27.252-27.255c7.689,5.341,21.105,0.592,23.48-1.784c3.674-3.674-3.691-16.99-16.445-29.741
-		c-12.754-12.757-26.07-20.12-29.742-16.448c-2.375,2.378-7.125,15.792-1.785,23.482l-27.252,27.251
-		c-1.172-0.896-2.299-1.878-3.371-2.947c-10.373-10.376-12.496-25.867-6.385-38.348c-12.352-5.694-27.467-3.455-37.645,6.726
-		c-10.182,10.183-12.422,25.294-6.727,37.647c12.479-6.112,27.971-3.988,38.344,6.384c1.072,1.071,2.057,2.2,2.949,3.37
-		l-53.596,53.594c-72.855-19.024-105.792-78.036-105.792-78.036s-32.188,59.185-105.703,78.121L89.004,64.766
-		c0.894-1.17,1.877-2.299,2.949-3.37c10.373-10.372,25.864-12.496,38.344-6.384c5.696-12.354,3.456-27.465-6.726-37.647
-		c-10.178-10.181-25.293-12.42-37.646-6.726c6.113,12.48,3.989,27.972-6.385,38.348c-1.071,1.069-2.198,2.052-3.37,2.947
-		L48.919,24.683c5.338-7.69,0.59-21.104-1.786-23.482C43.46-2.471,30.146,4.892,17.391,17.648
-		C4.636,30.399-2.727,43.716,0.945,47.39c2.377,2.376,15.793,7.125,23.481,1.784l27.252,27.255
-		c-0.896,1.171-1.879,2.294-2.949,3.366C38.355,90.17,22.863,92.294,10.383,86.183c-5.696,12.354-3.455,27.464,6.726,37.646
-		c10.181,10.181,25.294,12.421,37.647,6.727c-6.111-12.479-3.988-27.975,6.387-38.347c1.07-1.073,2.195-2.056,3.367-2.951
-		l34.904,34.904c-1.089,0.018-2.174,0.041-3.275,0.041H80.835v15.304c0,59.48,8.319,112.282,24.728,156.938
-		c6.325,17.213,13.865,33.229,22.538,47.992L13.203,459.336L0,496.521l37.696-12.688l110.278-110.278
-		c4.201,5.304,8.583,10.388,13.152,15.233c40.774,43.255,82.084,53.161,83.823,53.563l3.437,0.79l3.437-0.79
-		c1.737-0.402,43.051-10.31,83.825-53.563c4.568-4.849,8.951-9.934,13.152-15.233L459.08,483.833L496.777,496.521z M313.377,367.792
-		c-27.588,29.264-55.354,40.464-64.99,43.682c-9.636-3.218-37.401-14.418-64.987-43.682c-20.673-21.931-37.195-49.487-49.106-81.903
-		c-13.81-37.584-21.419-81.79-22.666-131.589c66.949-4.482,111.436-37.471,136.926-64.252
-		c25.653,26.715,70.26,59.717,136.598,64.241c-1.248,49.8-8.855,94.014-22.668,131.599
-		C350.572,318.304,334.051,345.86,313.377,367.792z"/>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Kingdoms & Cultures</h2>
+                <h2 class="section-title">Daily Life & Culture</h2>
                 <div class="section-description">
-                    Explore the diverse realms and societies that shape the world—from the Ashborn tribes of the Wastes to the coastal kingdoms, each culture carries its own traditions, beliefs, and ways of surviving in a world touched by divine blood.
+                    Understand how mortals survive under divine predation, the social structures born from supernatural threats, and the cultural adaptations that define life in Arcadia.
                 </div>
-                <a href="/world-guide/kingdoms/" class="section-link">Coming Soon</a>
+                <a href="/world-guide/daily-life/" class="section-link coming-soon">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3,4A1,1 0 0,0 2,5V19A1,1 0 0,0 3,20H21A1,1 0 0,0 22,19V5A1,1 0 0,0 21,4H3M3,6H21V14H3V6M4,7V13H6V7H4M7,7V13H9V7H7M10,7V13H14V7H10M15,7V13H17V7H15M18,7V13H20V7H18M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16Z"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Environmental Magic & Phenomena</h2>
+                <div class="section-description">
+                    Witness divine emotional storms, corruption zones, and the growing Silence that threatens to consume meaning itself. Environmental magic where consciousness shapes reality.
+                </div>
+                <a href="/world-guide/environmental-magic/" class="section-link coming-soon">Coming Soon</a>
+            </div>
+
+            <div class="guide-section">
+                <div class="section-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                    </svg>
+                </div>
+                <h2 class="section-title">Scholarly Research & Contemporary Crisis</h2>
+                <div class="section-description">
+                    Explore revolutionary research methodologies and the post-Silence world. New threats emerge as scholars uncover truths too dangerous for conventional academia.
+                </div>
+                <a href="/world-guide/research/" class="section-link coming-soon">Coming Soon</a>
             </div>
 
         </div>
