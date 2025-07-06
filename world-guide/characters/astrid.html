@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrid Ravenscroft - The Bloodmarked | The Lost Histories</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1a0f0a 0%, #2d1f1a 50%, #3d2f2a 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(178, 34, 34, 0.1) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #ff8c00;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(255, 140, 0, 0.1);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #ff8c00;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(255, 140, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #8b4513;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(178, 34, 34, 0.1));
+            border: 2px solid #ff8c00;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff8c00;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255, 140, 0, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(178, 34, 34, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(255, 140, 0, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(178, 34, 34, 0.1) 50%, transparent 55%);
+            animation: sunsetFlow 18s ease-in-out infinite;
+        }
+
+        @keyframes sunsetFlow {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(5deg) scale(1.03); opacity: 0.7; }
+            50% { transform: rotate(10deg) scale(0.97); opacity: 0.3; }
+            75% { transform: rotate(7deg) scale(1.01); opacity: 0.8; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #8b4513;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #ff8c00;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #ff8c00;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(255, 140, 0, 0.05);
+            border-left: 4px solid #ff8c00;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #ff8c00;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #8b4513;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #ff8c00;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #ff8c00;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #8b4513;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #ff8c00;
+            transform: translateY(-5px);
+        }
+
+        .power-card.bloodmarked {
+            border-left: 4px solid #ff8c00;
+        }
+
+        .power-card.natural {
+            border-left: 4px solid #ff6347;
+        }
+
+        .power-card.leadership {
+            border-left: 4px solid #daa520;
+        }
+
+        .power-card.emotional {
+            border-left: 4px solid #cd853f;
+        }
+
+        .power-title {
+            color: #ff8c00;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #8b4513;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #ff8c00;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 140, 0, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff8c00;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(26, 15, 10, 0.6);
+            border-top: 1px solid #8b4513;
+            border-bottom: 1px solid #8b4513;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1));
+            border: 1px solid #ff8c00;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #ff8c00, #ff6347);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(255, 140, 0, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(255, 140, 0, 0.2);
+            color: #ff8c00;
+            border: 1px solid #ff8c00;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 140, 0, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(26, 15, 10, 0.4);
+            border: 1px solid #8b4513;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #ff8c00;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #ff8c00;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #ff8c00;
+            border-radius: 50%;
+        }
+
+        .phase-label {
+            color: #ff8c00;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .transformation-box {
+            background: rgba(255, 140, 0, 0.1);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .transformation-title {
+            color: #ff8c00;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .work-in-progress {
+            background: rgba(255, 140, 0, 0.1);
+            border: 1px solid rgba(255, 140, 0, 0.4);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #ff8c00;
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Lost Histories World Guide</a>
+        <h1 class="character-title">Astrid Ravenscroft</h1>
+        <p class="character-tagline">"The Bloodmarked"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Dark eyes that reflect light like captured stars<br>Face marked by grief and growing power</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Divine War</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human, The Free People</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Transformation</div>
+                            <div class="stat-value">First Bloodmarked Ever Created</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Divine Source</div>
+                            <div class="stat-value">Silas the Trickster's Blood</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Current Status</div>
+                            <div class="stat-value">Learning to Control New Powers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Beloved</div>
+                            <div class="stat-value">Eamon</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Lost Friend</div>
+                            <div class="stat-value">Natalia (drives her transformation)</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <div class="work-in-progress">
+                    ⚠️ This profile is based on The Divine War, which is currently a work in progress. Character details may evolve as the story develops.
+                </div>
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">From Sunset Watcher to Divine Warrior</h2>
+                    <div class="character-description">
+                        <p>In the twilight spaces between mortal vulnerability and divine power, where grief transforms into determination and love becomes the fuel for transformation, Astrid Ravenscroft stands as a testament to what ordinary people will become to protect those they cherish. Born of The Free People—those humans who maintained their connection to nature and independence despite divine oppression—she carries within her the heritage of those who refused to bow completely, even when bowing meant survival.</p>
+                        
+                        <p>Her transformation from thoughtful village woman to Bloodmarked champion began with the simplest of desires: five more minutes to watch a sunset with her best friend Natalia, five minutes to see beauty without fear, to feel free in a world that demanded constant hiding from divine predators. That moment of longing for something beautiful and natural—so perfectly aligned with her Free People heritage—cascaded into tragedy when Natalia paid the ultimate price for those stolen moments of wonder and freedom.</p>
+
+                        <p>The divine blood of Silas the Trickster now burns through her veins like liquid fire, making her the first Bloodmarked ever created—a being that bridges mortal and divine in ways no one, including herself, fully understands. This transformation fundamentally alters her nature and grants her power she never sought but desperately needs. Her dark eyes, once simply expressive, now reflect light like captured stars, speaking of depths that grow more profound with each passing day. Yet with this unprecedented transformation comes the terrible question that haunts every choice: will she become strong enough to protect those she loves, or will the very power meant to save them ultimately corrupt her into something they cannot recognize or trust?</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Just a few more minutes? Look at it, Nat. The way the light turns the river to molten gold, how the trees look like they're on fire... When do we ever get to see the sunset anymore?
+                        <div class="quote-source">— Astrid's fateful request that led to tragedy</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Heart That Chose Power Over Helplessness</h2>
+                    <div class="character-description">
+                        <p>Astrid embodies the courage of ordinary people pushed beyond their limits by extraordinary circumstances, carrying within herself both the natural wisdom of The Free People and the crushing weight of survivor's guilt. Her connection to nature and beauty—inherited from her culture's deep bond with the living world—wars constantly with the divine power that burns through her system, changing her into something that may no longer be fully human.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Fiercely Protective</div>
+                            <div class="trait-description">Natural instinct to shield others from harm, especially those she loves. This drive led her to accept divine transformation despite the risks.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Burden-Bearer</div>
+                            <div class="trait-description">Takes responsibility for outcomes beyond her control, carrying crushing guilt over Natalia's death and fear of future consequences.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Naturally Defiant</div>
+                            <div class="trait-description">Heritage of The Free People gives her instinctive resistance to unjust authority and refusal to accept helpless positions.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Transformation-Torn</div>
+                            <div class="trait-description">Struggling with fundamental changes to her nature while trying to maintain connection to humanity and those she loves.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        We just wanted to see the sunset... just once. Just once in our lives to watch something beautiful without being afraid. I asked for five more minutes. That's all. Five minutes.
+                        <div class="quote-source">— Astrid's raw confession of guilt at Natalia's funeral</div>
+                    </div>
+                </section>
+
+                <!-- Powers & Transformation -->
+                <section class="section">
+                    <h2 class="section-title">Divine Blood and Natural Heritage</h2>
+                    <div class="character-description">
+                        <p>Astrid's abilities reflect the volatile fusion of divine power with her natural heritage as one of The Free People, creating a combination that honors both her connection to nature and her new status as something beyond mortal. Her powers are still emerging, raw and unpredictable, reflecting both the Trickster nature of Silas's blood and her own fierce determination to protect those she loves regardless of personal cost.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card bloodmarked">
+                            <div class="power-title">Silas's Divine Blood</div>
+                            <div class="power-description">
+                                <strong>Enhanced Vitality:</strong> Divine blood fundamentally altering her physical and spiritual nature<br>
+                                <strong>Heightened Awareness:</strong> World appears more vivid and immediate, perceiving layers of reality previously hidden<br>
+                                <strong>Growing Power:</strong> Sense of vast potential waiting to be discovered and controlled<br>
+                                <strong>Reality Manipulation:</strong> Possible Trickster-related abilities involving change, possibility, and challenging established order
+                            </div>
+                        </div>
+                        
+                        <div class="power-card natural">
+                            <div class="power-title">Free People Heritage</div>
+                            <div class="power-description">
+                                <strong>Nature Connection:</strong> Deep bond with living world inherited from culture intertwined with nature<br>
+                                <strong>Natural Wisdom:</strong> Intuitive understanding of natural cycles and organic systems<br>
+                                <strong>Independence Spirit:</strong> Cultural heritage of maintaining dignity despite divine oppression<br>
+                                <strong>Beauty Recognition:</strong> Ability to find wonder and meaning in natural phenomena like sunsets
+                            </div>
+                        </div>
+                        
+                        <div class="power-card leadership">
+                            <div class="power-title">Natural Leadership</div>
+                            <div class="power-description">
+                                <strong>Strategic Thinking:</strong> Capable of seeing larger pictures and organizing solutions to complex problems<br>
+                                <strong>Inspiring Presence:</strong> Others naturally notice and respond to her ideas and convictions<br>
+                                <strong>Courage Under Pressure:</strong> Willing to face overwhelming odds when defending principles or people<br>
+                                <strong>Practical Solutions:</strong> Combines idealism with pragmatic understanding of what works
+                            </div>
+                        </div>
+                        
+                        <div class="power-card emotional">
+                            <div class="power-title">Emotional Intelligence</div>
+                            <div class="power-description">
+                                <strong>Deep Understanding:</strong> Profound insight into others' motivations, fears, and hidden feelings<br>
+                                <strong>Empathetic Connection:</strong> Natural ability to connect with others' pain and hope<br>
+                                <strong>Guilt Navigation:</strong> Learning to transform crushing responsibility into protective purpose<br>
+                                <strong>Love as Strength:</strong> Uses care for others as motivation rather than weakness
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Transformation Story -->
+                <section class="section">
+                    <h2 class="section-title">When Love Demands the Ultimate Price</h2>
+                    <div class="character-description">
+                        <p>Astrid's transformation from mortal to Bloodmarked represents the ultimate choice between helplessness and corruption, between accepting unjust systems and risking everything to change them. Her journey from wanting to watch a sunset to drinking divine blood reveals how small moments of beauty-seeking can cascade into world-changing consequences, especially when combined with the fierce protective love that drives ordinary people to extraordinary sacrifice.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">From Sunset to Transformation</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Free People Childhood</div>
+                            <div class="phase-description">Raised in culture that values nature connection and independence despite divine oppression, learning to find beauty amid fear.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Village Thoughtfulness</div>
+                            <div class="phase-description">Recognized as strategic thinker and natural leader, respected for ideas about community protection and organization.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">The Fatal Request</div>
+                            <div class="phase-description">Asking for five more minutes to watch sunset with Natalia, moment of longing for beauty that leads to divine predation.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Devastating Loss</div>
+                            <div class="phase-description">Natalia's brutal death and overwhelming guilt over role in tragedy, challenging faith in systems and divine justice.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Divine Encounter</div>
+                            <div class="phase-description">Meeting Silas the Trickster and accepting offer of power despite understanding the risks and potential corruption.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Blood Transformation</div>
+                            <div class="phase-description">Consuming divine blood and beginning fundamental alteration into something beyond human while learning to control new abilities.</div>
+                        </div>
+                    </div>
+
+                    <div class="transformation-box">
+                        <div class="transformation-title">The First of Her Kind</div>
+                        Astrid's transformation represents more than personal change—she has become the first Bloodmarked ever created, a entirely new form of being that bridges mortal and divine consciousness. Her request for "five more minutes" to watch the sunset with Natalia embodies the Free People's heritage of finding wonder and meaning in nature despite oppressive circumstances. That moment of connecting with the natural world's beauty, so fundamental to her cultural identity, becomes the catalyst for creating an unprecedented form of existence, showing how the very qualities that make us human can lead to evolutionary transformation beyond anything previously imagined.
+                    </div>
+
+                    <div class="character-quote">
+                        Of course I would [want the power to defend myself]. But... but...
+                        <div class="quote-source">— Astrid recognizing the appeal and danger of divine power</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds of Love, Loss, and Transformation</h2>
+                    <div class="character-description">
+                        <p>Astrid's relationships reveal the complex web of connection and responsibility that drives her transformation, showing how love can become both motivation for power and the very thing that power threatens to destroy. Her bonds demonstrate the courage required to change oneself in service of others, while raising the eternal question of whether we can protect what we love by becoming something it might not recognize.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="eamon.html" class="related-character">
+                            <div class="related-avatar">E</div>
+                            <div class="related-name">Eamon</div>
+                            <div class="related-role">Beloved Partner, Anchor to Humanity</div>
+                        </a>
+                        <a href="natalia.html" class="related-character">
+                            <div class="related-avatar">N</div>
+                            <div class="related-name">Natalia</div>
+                            <div class="related-role">Lost Best Friend, Driving Memory</div>
+                        </a>
+                        <a href="silas.html" class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">Silas the Trickster</div>
+                            <div class="related-role">Divine Benefactor, Unknown Agenda</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Elder Magnus</div>
+                            <div class="related-role">Village Leader, Traditional Faith</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">VC</div>
+                            <div class="related-name">Village Community</div>
+                            <div class="related-role">Those She Seeks to Protect</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">FP</div>
+                            <div class="related-name">The Free People</div>
+                            <div class="related-role">Cultural Heritage, Natural Connection</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Love Transformed by Divine Fire</h2>
+                <div class="summary-content">
+                    <p>Astrid Ravenscroft embodies the transformative power of love when pushed beyond mortal limitations, representing the courage of ordinary people who choose to become something extraordinary rather than accept helplessness in the face of injustice. As one of The Free People—a culture deeply intertwined with nature and committed to maintaining human dignity despite divine oppression—she carries within herself both the wisdom of those who find beauty in small moments and the fierce independence of those who refuse to bow completely, even when submission means survival.</p>
+
+                    <p>Her transformation from village woman to Bloodmarked champion began with the most natural desire imaginable for someone of her heritage: the wish to watch a sunset with her best friend, to experience beauty without fear, to connect with the natural world that defines her people's identity. That five minutes of longing for wonder and freedom—so fundamental to who she is and where she comes from—cascaded into tragedy when divine predators destroyed her friend Natalia, leaving Astrid with crushing guilt and the terrible recognition that traditional prayers and accepted helplessness offer no protection for those she loves.</p>
+
+                    <p>The divine blood of Silas the Trickster now burns through her system like liquid transformation, granting her power she never sought but desperately needs while fundamentally altering her nature in ways she cannot yet comprehend. Her heritage as one of The Free People provides both strength and conflict in this transformation—her natural connection to living systems and cycles helps her adapt to divine power, while her cultural commitment to maintaining humanity despite external pressure creates tension with the fundamental changes occurring within her.</p>
+
+                    <p>Her relationship with Eamon serves as both anchor and test case for her evolving nature. Their love represents the possibility that transformation need not mean loss of essential self, while simultaneously raising the heartbreaking question of whether she can protect what she loves by becoming something it might not recognize. Her guilt over Natalia's death drives every choice, transforming personal pain into protective purpose while threatening to overwhelm her judgment when the weight of responsibility becomes too great.</p>
+
+                    <p>The divine blood she accepted from Silas carries both promise and peril—the Trickster's nature suggests abilities related to change, possibility, and challenging established order, perfectly suited to someone whose Free People heritage already predisposes her toward questioning unjust authority. Yet trickster power is notoriously unpredictable, and her growing abilities remain largely mysterious, raising questions about whether she will become the protector she seeks to be or something far more dangerous.</p>
+
+                    <p>Her story explores fundamental questions about the price of power and the nature of transformation: Can someone wield divine abilities without losing their essential humanity? Does love justify the risk of corruption? How much of ourselves can we change in service of protecting others before we become the very threat we sought to fight? Her journey as one of The Free People—those who maintained their connection to nature and independence despite divine oppression—suggests that her cultural foundation may provide the wisdom necessary to navigate these treacherous waters.</p>
+
+                    <p>Ultimately, Astrid represents hope that transformation need not mean corruption, that ordinary people pushed to extraordinary measures can find ways to honor both their protective love and their essential nature. Her Free People heritage, with its deep connection to natural cycles and resistance to complete submission, may prove the key to wielding divine power without losing human heart. Through her evolving story, we see that sometimes the greatest courage lies not in accepting what we cannot change, but in risking everything—including ourselves—to transform what should not be tolerated, trusting that love can guide power toward justice rather than letting power corrupt love into something unrecognizable.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Witness the Birth of Divine Power</h2>
+            <p class="cta-description">
+                Follow Astrid's transformation from grief-stricken villager to Bloodmarked champion. Her story explores the price of power, the weight of guilt, and the courage to become something beyond human to protect those we love.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-divine-war/chapter-01/" class="cta-button">Read The Divine War</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
