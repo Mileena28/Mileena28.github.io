@@ -3,451 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dominic - The Rage of the Forsaken | The Chosen</title>
-    <meta name="description" content="Meet Dominic from The Chosen series. A brutal enforcer whose personal trauma has been weaponized into righteous fury, representing the dangerous transformation of victim into perpetrator.">
-</head>
-<body style="margin: 0; padding: 0; background: linear-gradient(135deg, #0a0a14 0%, #2e1a1a 50%, #1a0a0a 100%); color: #ddd; font-family: 'Georgia', serif; line-height: 1.6;">
-
-<style>
-    /* Character Page Styles */
-    .character-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .character-header {
-        padding: 80px 0 60px;
-        text-align: center;
-        background: linear-gradient(135deg, rgba(178, 34, 34, 0.1) 0%, rgba(178, 34, 34, 0.05) 100%);
-    }
-
-    .character-title {
-        font-size: 3em;
-        font-weight: 300;
-        margin-bottom: 10px;
-        color: #f0f0f0;
-        letter-spacing: 2px;
-    }
-
-    .character-tagline {
-        font-size: 1.4em;
-        color: #cd5c5c;
-        font-style: italic;
-        margin-bottom: 30px;
-    }
-
-    .series-breadcrumb {
-        background: rgba(178, 34, 34, 0.1);
-        border: 1px solid rgba(178, 34, 34, 0.3);
-        border-radius: 25px;
-        padding: 8px 20px;
-        display: inline-block;
-        font-size: 0.9em;
-        color: #cd5c5c;
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .series-breadcrumb:hover {
-        background: rgba(178, 34, 34, 0.2);
-        transform: translateY(-2px);
-    }
-
-    .character-content {
-        padding: 80px 0;
-    }
-
-    .character-grid {
-        display: grid;
-        grid-template-columns: 350px 1fr;
-        gap: 60px;
-        margin-bottom: 80px;
-    }
-
-    .character-portrait {
-        position: sticky;
-        top: 100px;
-        align-self: start;
-    }
-
-    .portrait-container {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 30px;
-        text-align: center;
-        backdrop-filter: blur(10px);
-    }
-
-    .character-image {
-        width: 100%;
-        height: 300px;
-        background: linear-gradient(135deg, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0.1));
-        border: 2px solid #cd5c5c;
-        border-radius: 15px;
-        margin-bottom: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #cd5c5c;
-        font-style: italic;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .character-image::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(178, 34, 34, 0.1) 0%, transparent 70%);
-        animation: shimmer 4s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0%, 100% { transform: rotate(0deg); }
-        50% { transform: rotate(180deg); }
-    }
-
-    .character-stats {
-        text-align: left;
-    }
-
-    .stat-item {
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #333;
-    }
-
-    .stat-item:last-child {
-        border-bottom: none;
-    }
-
-    .stat-label {
-        color: #cd5c5c;
-        font-weight: 600;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .stat-value {
-        color: #ddd;
-        margin-top: 5px;
-    }
-
-    .character-info {
-        
-    }
-
-    .section {
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        font-size: 2em;
-        color: #f0f0f0;
-        margin-bottom: 25px;
-        font-weight: 400;
-        border-bottom: 2px solid #cd5c5c;
-        padding-bottom: 10px;
-    }
-
-    .character-description {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        margin-bottom: 30px;
-    }
-
-    .character-quote {
-        background: rgba(178, 34, 34, 0.05);
-        border-left: 4px solid #cd5c5c;
-        padding: 25px 30px;
-        margin: 30px 0;
-        font-style: italic;
-        color: #ddd;
-        border-radius: 0 15px 15px 0;
-        position: relative;
-    }
-
-    .character-quote::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 3em;
-        color: #cd5c5c;
-        opacity: 0.3;
-    }
-
-    .quote-source {
-        text-align: right;
-        color: #999;
-        font-size: 0.9em;
-        margin-top: 15px;
-        font-style: normal;
-    }
-
-    .traits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .trait-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        transition: all 0.3s ease;
-    }
-
-    .trait-card:hover {
-        border-color: #cd5c5c;
-        transform: translateY(-5px);
-    }
-
-    .trait-title {
-        color: #cd5c5c;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-
-    .trait-description {
-        color: #ccc;
-        font-size: 0.95em;
-    }
-
-    .transformations-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        margin: 30px 0;
-    }
-
-    .transformation-card {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-    }
-
-    .transformation-card:hover {
-        border-color: #cd5c5c;
-        transform: translateY(-5px);
-    }
-
-    .transformation-card.family {
-        border-left: 4px solid #ffd700;
-    }
-
-    .transformation-card.exile {
-        border-left: 4px solid #696969;
-    }
-
-    .transformation-card.survivor {
-        border-left: 4px solid #cd853f;
-    }
-
-    .transformation-card.enforcer {
-        border-left: 4px solid #cd5c5c;
-    }
-
-    .transformation-title {
-        color: #cd5c5c;
-        font-weight: 600;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-    }
-
-    .transformation-description {
-        color: #ccc;
-        font-size: 0.95em;
-        line-height: 1.6;
-    }
-
-    .related-characters {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin: 30px 0;
-    }
-
-    .related-character {
-        background: rgba(20, 20, 20, 0.6);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 20px;
-        text-align: center;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .related-character:hover {
-        border-color: #cd5c5c;
-        transform: translateY(-5px);
-    }
-
-    .related-avatar {
-        width: 60px;
-        height: 60px;
-        background: rgba(178, 34, 34, 0.2);
-        border-radius: 50%;
-        margin: 0 auto 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #cd5c5c;
-        font-weight: bold;
-    }
-
-    .related-name {
-        color: #f0f0f0;
-        font-weight: 600;
-        margin-bottom: 5px;
-    }
-
-    .related-role {
-        color: #999;
-        font-size: 0.9em;
-    }
-
-    .character-summary {
-        padding: 60px 0;
-        background: rgba(10, 10, 20, 0.6);
-        border-top: 1px solid #333;
-        border-bottom: 1px solid #333;
-    }
-
-    .summary-container {
-        max-width: 900px;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .summary-title {
-        font-size: 2.2em;
-        color: #f0f0f0;
-        margin-bottom: 40px;
-        font-weight: 300;
-        letter-spacing: 1px;
-    }
-
-    .summary-content {
-        color: #ccc;
-        font-size: 1.1em;
-        line-height: 1.8;
-        text-align: left;
-    }
-
-    .summary-content p {
-        margin-bottom: 25px;
-    }
-
-    .summary-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    .read-more-section {
-        background: linear-gradient(135deg, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0.1));
-        border: 1px solid #cd5c5c;
-        border-radius: 20px;
-        padding: 40px;
-        text-align: center;
-        margin: 60px 0;
-    }
-
-    .cta-title {
-        font-size: 1.8em;
-        color: #f0f0f0;
-        margin-bottom: 15px;
-    }
-
-    .cta-description {
-        color: #ccc;
-        margin-bottom: 30px;
-        font-size: 1.1em;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .cta-button {
-        background: linear-gradient(135deg, #cd5c5c, #dc143c);
-        color: #fff;
-        text-decoration: none;
-        padding: 15px 30px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(178, 34, 34, 0.4);
-    }
-
-    .cta-button.secondary {
-        background: rgba(178, 34, 34, 0.2);
-        color: #cd5c5c;
-        border: 1px solid #cd5c5c;
-    }
-
-    .cta-button.secondary:hover {
-        background: rgba(178, 34, 34, 0.3);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 1024px) {
-        .character-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
+    <title>Dominic - The Forsaken Enforcer | The Chosen</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #2d1b1b 0%, #3d2222 50%, #4d2929 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
         }
-        
-        .character-portrait {
-            position: static;
-        }
-    }
 
-    @media (max-width: 768px) {
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(178, 34, 34, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
+            border-bottom: 1px solid rgba(178, 34, 34, 0.2);
+        }
+
         .character-title {
-            font-size: 2.2em;
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
         }
-        
+
         .character-tagline {
+            font-size: 1.4em;
+            color: #cd5c5c;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(178, 34, 34, 0.1);
+            border: 1px solid rgba(178, 34, 34, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #cd5c5c;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(178, 34, 34, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(178, 34, 34, 0.2), rgba(139, 0, 0, 0.1));
+            border: 2px solid #cd5c5c;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cd5c5c;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(178, 34, 34, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 0, 0, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(178, 34, 34, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(139, 0, 0, 0.1) 50%, transparent 55%);
+            animation: ragingFire 18s ease-in-out infinite;
+        }
+
+        @keyframes ragingFire {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.5; }
+            25% { transform: rotate(-6deg) scale(1.03); opacity: 0.8; }
+            50% { transform: rotate(-12deg) scale(0.97); opacity: 0.4; }
+            75% { transform: rotate(-9deg) scale(1.02); opacity: 0.9; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #cd5c5c;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #cd5c5c;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(178, 34, 34, 0.05);
+            border-left: 4px solid #cd5c5c;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #cd5c5c;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #cd5c5c;
+            transform: translateY(-5px);
+        }
+
+        .trait-card.rage {
+            border-left: 4px solid #cd5c5c;
+        }
+
+        .trait-card.protection {
+            border-left: 4px solid #b22222;
+        }
+
+        .trait-card.suspicion {
+            border-left: 4px solid #a52a2a;
+        }
+
+        .trait-card.trauma {
+            border-left: 4px solid #8b0000;
+        }
+
+        .trait-title {
+            color: #cd5c5c;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #cd5c5c;
+            transform: translateY(-5px);
+        }
+
+        .power-card.enforcer {
+            border-left: 4px solid #cd5c5c;
+        }
+
+        .power-card.operative {
+            border-left: 4px solid #b22222;
+        }
+
+        .power-card.interrogator {
+            border-left: 4px solid #a52a2a;
+        }
+
+        .power-card.guardian {
+            border-left: 4px solid #8b0000;
+        }
+
+        .power-title {
+            color: #cd5c5c;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #cd5c5c;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(178, 34, 34, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cd5c5c;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(45, 27, 27, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(178, 34, 34, 0.2), rgba(178, 34, 34, 0.1));
+            border: 1px solid #cd5c5c;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #cd5c5c, #b22222);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(178, 34, 34, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(178, 34, 34, 0.2);
+            color: #cd5c5c;
+            border: 1px solid #cd5c5c;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(178, 34, 34, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(45, 27, 27, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #cd5c5c;
+            font-weight: 600;
+            margin-bottom: 20px;
             font-size: 1.2em;
         }
-        
-        .cta-buttons {
-            flex-direction: column;
-            align-items: center;
+
+        .timeline-phase {
+            border-left: 3px solid #cd5c5c;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
         }
-        
-        .transformations-grid {
-            grid-template-columns: 1fr;
+
+        .timeline-phase.hardened {
+            border-left-color: #8b0000;
         }
-    }
-</style>
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #cd5c5c;
+            border-radius: 50%;
+        }
+
+        .timeline-phase.hardened::before {
+            background: #8b0000;
+        }
+
+        .phase-label {
+            color: #cd5c5c;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-label.hardened {
+            color: #8b0000;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .wisdom-box {
+            background: rgba(178, 34, 34, 0.1);
+            border: 1px solid rgba(178, 34, 34, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .wisdom-title {
+            color: #cd5c5c;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trauma-box {
+            background: rgba(139, 0, 0, 0.1);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .trauma-title {
+            color: #8b0000;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
 
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
         <h1 class="character-title">Dominic</h1>
-        <p class="character-tagline">"The Rage of the Forsaken"</p>
+        <p class="character-tagline">"The Forsaken Enforcer"</p>
     </div>
 </section>
 
@@ -461,33 +578,37 @@
                 <div class="portrait-container">
                     <div class="character-image">
                         [Character Art Coming Soon]<br>
-                        <small>Hardship-carved face, broad frame<br>Scarred hands, burning rage</small>
+                        <small>Face carved by years of hardship<br>Hands that remember violence</small>
                     </div>
                     
                     <div class="character-stats">
                         <div class="stat-item">
                             <div class="stat-label">First Appears</div>
-                            <div class="stat-value">The Chosen: Chapter 25</div>
+                            <div class="stat-value">The Chosen</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Heritage</div>
-                            <div class="stat-value">Human, Forsaken</div>
+                            <div class="stat-value">Human (Forsaken)</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Role</div>
+                            <div class="stat-label">Origin</div>
+                            <div class="stat-value">Unknown (Pre-Forsaking Identity Lost)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Age</div>
+                            <div class="stat-value">Early to Mid-Thirties</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Current Status</div>
                             <div class="stat-value">Meridia's Lieutenant, Enforcer</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Specialties</div>
-                            <div class="stat-value">Sabotage, Interrogation</div>
+                            <div class="stat-label">Current Location</div>
+                            <div class="stat-value">Forsaken Sanctuary</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Core Conflict</div>
-                            <div class="stat-value">Justice vs. Revenge</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-label">Status</div>
-                            <div class="stat-value">Resistance fighter, trauma voice</div>
+                            <div class="stat-label">Sacred Gift</div>
+                            <div class="stat-value">Brutal Efficiency, Protective Rage</div>
                         </div>
                     </div>
                 </div>
@@ -498,161 +619,198 @@
                 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">When Victims Become Weapons</h2>
+                    <h2 class="section-title">When Trauma Becomes a Weapon</h2>
                     <div class="character-description">
-                        <p>Dominic embodies the raw, unfiltered rage of the resistance movement—a man whose personal trauma has been weaponized into a blunt instrument against Zenithian oppression. Where Meridia calculates and manipulates, Dominic burns with the righteous fury of someone who has lost everything to systematic persecution and refuses to let that loss be forgotten or forgiven.</p>
+                        <p>Dominic embodies the raw, unfiltered rage of systematic oppression transformed into violent resistance—a man whose personal trauma has been weaponized into a blunt instrument against Zenithian persecution. As Meridia's lieutenant and enforcer, he represents the faction within the resistance that prioritizes immediate, brutal action over long-term strategic patience, driven not by ideology or grand vision but by the simple, burning need to make those who destroyed his life pay the same price.</p>
                         
-                        <p>Weathered by years of hardship and marked by the brutal realities of life as one of the Forsaken, he represents the faction within the resistance that prioritizes immediate, violent action over long-term strategy. His grizzled exterior and explosive temperament reflect a man who has learned that survival depends on constant vigilance and that trust is a luxury the Forsaken cannot afford.</p>
+                        <p>His grizzled exterior and suspicious nature reflect someone who has learned that survival depends on constant vigilance and that trust is a luxury the Forsaken cannot afford. Weathered by years of hardship and marked by the brutal realities of underground existence, he carries the collective wound of all who have been branded, exiled, and "forgotten" by Zenithian doctrine. When he speaks of families being "torn apart" and lives being "ripped away," he gives voice to trauma that extends far beyond his personal experience.</p>
+
+                        <p>Yet beneath his explosive temperament and willingness to employ brutal methods lies a man driven by fundamentally protective instincts. His violence, however excessive, springs from genuine desire to shield other Forsaken from experiencing the devastation he has endured. This creates the dangerous paradox of his character—someone who uses cruelty to defend gentleness, brutality to protect innocence, becoming the very monster his enemies painted him as in order to prevent others from suffering the same fate.</p>
                     </div>
 
                     <div class="character-quote">
-                        Worked like a charm, Meridia. The precious Zenithian Hall is probably still burnin' hotter than Solara's pyre as we speak.
-                        <div class="quote-source">— Dominic's triumphant report after successful bombing</div>
+                        Do you have ANY IDEA what it's like? To have your entire life—your family, your friends—ripped away like you never mattered?
+                        <div class="quote-source">— Dominic giving voice to the collective trauma of the Forsaken</div>
+                    </div>
+
+                    <div class="wisdom-box">
+                        <div class="wisdom-title">Story in Progress</div>
+                        The Chosen is an ongoing work, and character details may evolve as the story develops. This profile reflects Dominic's role as currently written, with potential for growth and change as his tale unfolds.
                     </div>
                 </section>
 
-                <!-- Personality & Core Traits -->
+                <!-- The Enforcer's Nature -->
                 <section class="section">
-                    <h2 class="section-title">Forged in Fire and Loss</h2>
+                    <h2 class="section-title">The Heart That Chose Violence Over Vulnerability</h2>
                     <div class="character-description">
-                        <p>Dominic's personality reflects the dangerous alchemy of legitimate grievance transformed into destructive rage. His character demonstrates how systematic oppression creates its own monsters—people so damaged by persecution that they become mirrors of what they fight against.</p>
+                        <p>Dominic's character illustrates the dangerous transformation that occurs when legitimate grievance is allowed to fester without healing, when survival requires abandoning moral complexity in favor of brutal simplicity. His evolution from whatever he was before Forsaking to the hardened enforcer he has become demonstrates how systematic oppression creates its own monsters—people so damaged by persecution that they mirror what they fight against.</p>
                     </div>
 
                     <div class="traits-grid">
-                        <div class="trait-card">
+                        <div class="trait-card rage">
                             <div class="trait-title">Burning Rage</div>
-                            <div class="trait-description">Fueled by deep, unhealed trauma from the destruction of his family and identity. His anger provides both strength for resistance and danger of losing moral direction.</div>
+                            <div class="trait-description">Fueled by deep, unhealed trauma from persecution and family destruction. Uses anger as both weapon and shield against further emotional vulnerability.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Protective Brutality</div>
-                            <div class="trait-description">Uses violence to defend the Forsaken community, genuinely wanting to protect others from experiencing what he endured. His cruelty stems from compassion twisted by trauma.</div>
+                        <div class="trait-card protection">
+                            <div class="trait-title">Fierce Loyalty</div>
+                            <div class="trait-description">Devoted to Forsaken community and protective of sanctuary. Genuinely wants to shield others from experiencing his own devastation and loss.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Suspicious Vigilance</div>
-                            <div class="trait-description">Constantly watching for threats, betrayal, and Zenithian infiltration. Views newcomers like Mira as potential security risks requiring immediate action.</div>
+                        <div class="trait-card suspicion">
+                            <div class="trait-title">Paranoid Vigilance</div>
+                            <div class="trait-description">Constantly watching for threats, betrayal, and infiltration. Views trust as dangerous luxury that could compromise sanctuary security.</div>
                         </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Traumatic Voice</div>
-                            <div class="trait-description">Speaks for the collective suffering of all Forsaken, giving voice to shared experiences of persecution, abandonment, and systematic dehumanization.</div>
+                        <div class="trait-card trauma">
+                            <div class="trait-title">Weaponized Pain</div>
+                            <div class="trait-description">Transforms personal suffering into tool for resistance operations. Speaks brutal truth about persecution's cost without emotional softening.</div>
                         </div>
+                    </div>
+
+                    <div class="character-quote">
+                        We can't trust her. We can't. She needs to be sent back out. Now. Her being here? It's a risk. A dangerous one. Our mission comes first.
+                        <div class="quote-source">— Dominic's suspicion of Mira as potential security threat</div>
+                    </div>
+                </section>
+
+                <!-- Powers & Methods -->
+                <section class="section">
+                    <h2 class="section-title">Instruments of Rage and Protection</h2>
+                    <div class="character-description">
+                        <p>Dominic's abilities stem from years of hardship, survival necessity, and the channeling of personal trauma into effective resistance operations. His skills serve dual purposes—protecting the Forsaken community he has adopted as family while inflicting the same pain on enemies that was once inflicted upon him. His methods, however brutal, emerge from genuine protective instincts corrupted by unprocessed grief.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card enforcer">
+                            <div class="power-title">Physical Intimidation</div>
+                            <div class="power-description">
+                                <strong>Size and Presence:</strong> Broad frame and aggressive demeanor used to control situations and extract compliance<br>
+                                <strong>Controlled Violence:</strong> Strategic application of brutality for maximum psychological impact<br>
+                                <strong>Fear Tactics:</strong> Uses threat and demonstration of violence to maintain sanctuary discipline<br>
+                                <strong>Territorial Defense:</strong> Protective aggression toward anything threatening community safety
+                            </div>
+                        </div>
+                        
+                        <div class="power-card operative">
+                            <div class="power-title">Mission Capabilities</div>
+                            <div class="power-description">
+                                <strong>Sabotage Expertise:</strong> Successful bombing of Zenithian Hall demonstrates skill with explosives and infiltration<br>
+                                <strong>Field Leadership:</strong> Can lead dangerous operations requiring confrontation and rapid decision-making<br>
+                                <strong>Combat Operations:</strong> Experienced in violent missions and tactical aggression<br>
+                                <strong>Resource Acquisition:</strong> Skilled at scavenging supplies and materials for resistance needs
+                            </div>
+                        </div>
+                        
+                        <div class="power-card interrogator">
+                            <div class="power-title">Information Extraction</div>
+                            <div class="power-description">
+                                <strong>Psychological Pressure:</strong> Uses trauma and ideological challenges to break Zenithian conditioning<br>
+                                <strong>Escalating Brutality:</strong> Progressive increase in violence until intervention or desired result achieved<br>
+                                <strong>Emotional Manipulation:</strong> Exploits prisoners' beliefs and attachments to destabilize mental defenses<br>
+                                <strong>Truth Through Pain:</strong> Believes brutal methods necessary to penetrate indoctrination and reach honesty
+                            </div>
+                        </div>
+                        
+                        <div class="power-card guardian">
+                            <div class="power-title">Community Protection</div>
+                            <div class="power-description">
+                                <strong>Threat Assessment:</strong> Immediately evaluates newcomers and situations for potential danger to sanctuary<br>
+                                <strong>Defensive Instincts:</strong> Attacks perceived threats before they can harm community members<br>
+                                <strong>Collective Voice:</strong> Speaks for shared Forsaken experience of persecution and abandonment<br>
+                                <strong>Survival Teaching:</strong> Passes on hard-learned lessons about underground existence and resistance
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Enforcer's Journey -->
+                <section class="section">
+                    <h2 class="section-title">From Victim to Weapon of Resistance</h2>
+                    <div class="character-description">
+                        <p>Dominic's transformation reveals how systematic persecution creates cycles of violence, how victims can become victimizers when survival requires moral compromise. His journey from whatever normal life he once lived to his current role as brutal enforcer demonstrates the price paid by those who sacrifice their own humanity to protect others from the same devastation they experienced.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">The Making of an Enforcer</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Unknown Origins</div>
+                            <div class="phase-description">Pre-Forsaking life with family connections and community belonging, now deliberately obscured by trauma and survival necessity.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Family Destruction</div>
+                            <div class="phase-description">Systematic Forsaking process that "tore apart" his family and destroyed all social connections and identity.</div>
+                        </div>
+                        
+                        <div class="timeline-phase hardened">
+                            <div class="phase-label hardened">Survival Learning</div>
+                            <div class="phase-description">Development of violence, suspicion, and underground skills necessary for continued existence as outcast.</div>
+                        </div>
+                        
+                        <div class="timeline-phase hardened">
+                            <div class="phase-label hardened">Community Integration</div>
+                            <div class="phase-description">Joining Forsaken sanctuary and rising to lieutenant position through competence and protective commitment.</div>
+                        </div>
+                        
+                        <div class="timeline-phase hardened">
+                            <div class="phase-label hardened">Mission Leadership</div>
+                            <div class="phase-description">Development of expertise in dangerous operations like Zenithian Hall bombing and brutal interrogation methods.</div>
+                        </div>
+                        
+                        <div class="timeline-phase hardened">
+                            <div class="phase-label hardened">Trauma Voice</div>
+                            <div class="phase-description">Current role as spokesman for collective Forsaken suffering and fierce guardian against further loss.</div>
+                        </div>
+                    </div>
+
+                    <div class="trauma-box">
+                        <div class="trauma-title">The Price of Protection</div>
+                        Dominic's brutality serves a fundamentally protective purpose—he has become a weapon so that others don't have to, absorbed the moral corruption of violence so that the vulnerable can remain innocent. Yet this sacrifice risks consuming him entirely, transforming protector into predator. His story demonstrates how oppression creates cycles of violence, how the fight against monsters often requires becoming monstrous, and how the line between justice and revenge can disappear in the face of systematic cruelty.
                     </div>
 
                     <div class="character-quote">
                         You tear apart families! You condemn us to die alone and afraid, cast out like vermin, like we ain't even human!
-                        <div class="quote-source">— Dominic's passionate testimony during interrogation</div>
-                    </div>
-                </section>
-
-                <!-- Transformation Journey -->
-                <section class="section">
-                    <h2 class="section-title">From Love to Rage</h2>
-                    <div class="character-description">
-                        <p>Dominic's character arc traces the tragic transformation of a man who once had family and community into a weapon of resistance, each stage stripping away more of his humanity while forging him into an instrument of righteous fury.</p>
-                    </div>
-
-                    <div class="transformations-grid">
-                        <div class="transformation-card family">
-                            <div class="transformation-title">The Family Man</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Before Forsaking, when he had normal community connections<br>
-                                <strong>Values:</strong> Love, belonging, protection of those close to him<br>
-                                <strong>Identity:</strong> Defined by relationships and social bonds<br>
-                                <strong>Loss:</strong> Family "torn apart" by Zenithian persecution
-                            </div>
-                        </div>
-                        
-                        <div class="transformation-card exile">
-                            <div class="transformation-title">The Branded Exile</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Immediate aftermath of Forsaking ritual and social death<br>
-                                <strong>Trauma:</strong> Systematic destruction of all social connections<br>
-                                <strong>Isolation:</strong> Cast out "like vermin" and abandoned by former community<br>
-                                <strong>Desperation:</strong> Learning to survive without support or resources
-                            </div>
-                        </div>
-                        
-                        <div class="transformation-card survivor">
-                            <div class="transformation-title">The Hardened Survivor</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Development of underground skills and resistance connections<br>
-                                <strong>Evolution:</strong> Trauma transformed into operational capability<br>
-                                <strong>Skills:</strong> Violence, sabotage, and brutal interrogation methods<br>
-                                <strong>Purpose:</strong> Finding meaning through resistance operations
-                            </div>
-                        </div>
-                        
-                        <div class="transformation-card enforcer">
-                            <div class="transformation-title">The Brutal Enforcer</div>
-                            <div class="transformation-description">
-                                <strong>Era:</strong> Current role as Meridia's lieutenant and sanctuary protector<br>
-                                <strong>Authority:</strong> Leadership through competence and intimidation<br>
-                                <strong>Mission:</strong> Successful operations like Zenithian Hall bombing<br>
-                                <strong>Danger:</strong> Risk of becoming the monster he once fought
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Operational Capabilities -->
-                <section class="section">
-                    <h2 class="section-title">The Enforcer's Arsenal</h2>
-                    <div class="character-description">
-                        <p>Dominic's operational skills make him invaluable to the resistance while also representing the moral compromises required for effective opposition to systematic oppression. His methods achieve results at the cost of ethical clarity.</p>
-                    </div>
-
-                    <div class="traits-grid">
-                        <div class="trait-card">
-                            <div class="trait-title">Sabotage Expert</div>
-                            <div class="trait-description">Successfully bombed Zenithian Hall with explosives, demonstrating expertise in infiltration and destruction of enemy infrastructure.</div>
-                        </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Brutal Interrogator</div>
-                            <div class="trait-description">Uses physical intimidation and psychological pressure to break Zenithian conditioning and extract information from captured enemies.</div>
-                        </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Security Chief</div>
-                            <div class="trait-description">Maintains sanctuary protection through aggressive threat assessment and elimination of potential infiltrators or spies.</div>
-                        </div>
-                        <div class="trait-card">
-                            <div class="trait-title">Mission Leader</div>
-                            <div class="trait-description">Can lead dangerous field operations requiring confrontation, rapid decision-making, and willingness to use lethal force.</div>
-                        </div>
+                        <div class="quote-source">— Dominic confronting a captured Zenithian with the reality of systematic persecution</div>
                     </div>
                 </section>
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Bonds of Trauma and Suspicion</h2>
+                    <h2 class="section-title">Bonds Forged in Fire and Blood</h2>
                     <div class="character-description">
-                        <p>Dominic's relationships reflect his journey from loving family connections through systematic betrayal to defensive alliances based on shared trauma and mutual protection rather than trust or affection.</p>
+                        <p>Dominic's relationships reflect his transformation from someone capable of family love to a man whose connections are filtered through survival necessity and protective aggression. His bonds demonstrate both his genuine care for the Forsaken community and his struggle to distinguish between legitimate threats and targets for displaced rage.</p>
                     </div>
 
-                  <div class="related-characters">
+                    <div class="related-characters">
                         <a href="meridia.html" class="related-character">
                             <div class="related-avatar">M</div>
                             <div class="related-name">Meridia</div>
-                            <div class="related-role">Leader, Strategic Partner</div>
+                            <div class="related-role">Sanctuary Leader, Strategic Restraint</div>
                         </a>
                         <a href="mira-roehart.html" class="related-character">
-                            <div class="related-avatar">M</div>
+                            <div class="related-avatar">MR</div>
                             <div class="related-name">Mira Roehart</div>
-                            <div class="related-role">Security Threat, Distrust</div>
+                            <div class="related-role">Security Threat, Power Stopper</div>
                         </a>
                         <a href="jay.html" class="related-character">
                             <div class="related-avatar">J</div>
                             <div class="related-name">Jay</div>
-                            <div class="related-role">Mission Partner</div>
+                            <div class="related-role">Mission Partner, Young Operative</div>
                         </a>
                         <a href="gerald.html" class="related-character">
                             <div class="related-avatar">G</div>
                             <div class="related-name">Gerald</div>
-                            <div class="related-role">Paranoid Ally</div>
+                            <div class="related-role">Paranoid Ally, Security Watchman</div>
                         </a>
-                        <a href="mordekai.html" class="related-character">
-                            <div class="related-avatar">M</div>
-                            <div class="related-name">Mordekai</div>
-                            <div class="related-role">Former Interrogation Target</div>
-                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">DF</div>
+                            <div class="related-name">Destroyed Family</div>
+                            <div class="related-role">Lost Love, Source of Rage</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">FC</div>
+                            <div class="related-name">Forsaken Community</div>
+                            <div class="related-role">New Family, Protected Charges</div>
+                        </div>
                     </div>
                 </section>
 
@@ -662,27 +820,28 @@
         <!-- Character Summary -->
         <section class="character-summary">
             <div class="summary-container">
-                <h2 class="summary-title">The Monster We Create</h2>
+                <h2 class="summary-title">The Price of Righteous Fury</h2>
                 <div class="summary-content">
-                    <p>Dominic represents the dangerous alchemy of legitimate grievance transformed into destructive rage, embodying the uncomfortable truth that systematic oppression creates its own monsters. His character demonstrates how persecution can corrupt even protective instincts, turning love into hatred and defenders into destroyers. Through his transformation from family man to brutal enforcer, the story explores the moral complexity of resistance movements and the price paid by those who sacrifice their humanity to protect others.</p>
+                    <p>Dominic represents the dangerous alchemy of legitimate grievance transformed into destructive rage, embodying the reality that systematic oppression creates its own monsters—people so damaged by persecution that they become mirrors of what they fight against. As Meridia's enforcer and the voice of collective Forsaken trauma, he demonstrates how the line between protector and predator can disappear when survival requires moral compromise and emotional numbness.</p>
 
-                    <p>As Meridia's lieutenant and the resistance's primary enforcer, Dominic serves as both invaluable asset and cautionary tale. His explosive temperament and willingness to employ brutal methods make him effective at achieving immediate tactical goals—his successful bombing of Zenithian Hall proves his operational competence. Yet his inability to distinguish between justice and revenge threatens to corrupt the very cause he serves, raising questions about whether the cure might become worse than the disease.</p>
+                    <p>His brutal methods serve genuinely protective purposes—he has absorbed the moral corruption of violence so that others don't have to, become a weapon so the vulnerable can remain innocent. Yet this sacrifice risks consuming his humanity entirely, transforming his defensive instincts into indiscriminate aggression. His story illustrates the uncomfortable truth that those who fight monsters often must adopt monstrous methods, and that the cure can become worse than the disease.</p>
 
-                    <p>His traumatic testimony during interrogations reveals the depth of wounds inflicted by Zenithian persecution—not just individual suffering, but the systematic destruction of human dignity, family bonds, and community belonging. When he speaks of being "torn apart" and treated "like vermin," he gives voice to the collective trauma that drives the entire Forsaken resistance movement. His rage, however destructive, springs from fundamentally human needs for dignity, belonging, and justice.</p>
+                    <p>Through his interactions with captured enemies and suspicious newcomers, Dominic reveals the depth of collective Forsaken wounds—not just anger at persecution, but grief for families destroyed, belonging severed, and fundamental human dignity stripped away by religious extremism. His explosive confrontations serve as both emotional release and strategic tool, using shared trauma as weapon against ideological conditioning while processing his own unhealed pain.</p>
 
-                    <p>Yet beneath his brutality lies a tragic paradox: his violence stems from a desire to protect others from experiencing what he endured, but his methods risk perpetuating cycles of dehumanization and cruelty. His suspicion of Mira reflects both legitimate security concerns and the paranoid distrust that persecution instills. His character asks whether there is a point where protective measures become indistinguishable from oppressive ones.</p>
+                    <p>His relationship with Mira exposes the tension between legitimate security concerns and displaced trauma. His suspicion of her stems partly from genuine protective instinct and partly from his inability to trust anyone who hasn't shared the Forsaken experience of systematic betrayal. His opposition to her presence reflects both tactical wisdom and emotional defensiveness, illustrating how trauma can make even rational caution indistinguishable from paranoid aggression.</p>
 
-                    <p>Dominic's ultimate significance lies in his representation of the moral crossroads faced by all resistance movements: whether to maintain humanity while fighting inhumane systems, or to adopt the enemy's methods in pursuit of victory. His trajectory will likely determine not just his own fate, but the ethical character of the entire struggle against oppression. He embodies both the necessity and the danger of violent resistance, proving that sometimes the greatest threat to liberation comes not from external enemies, but from the internal corruption that fighting monsters can inflict upon the fighters themselves.</p>
+                    <p>The success of operations like the Zenithian Hall bombing demonstrates that his brutal efficiency serves strategic purposes, that his willingness to employ violence achieves resistance goals that patience and diplomacy cannot. Yet his methods also risk drawing unwanted attention, escalating conflicts beyond manageable levels, and corrupting the moral foundation of the resistance movement itself.</p>
+
+                    <p>Ultimately, Dominic embodies the profound moral complexity of revolutionary violence and the question of whether noble ends can justify brutal means. His character asks whether there is a point where the resistance becomes indistinguishable from what it opposes, where the fight for human dignity requires abandoning humanity itself. Through his struggle between protective loyalty and destructive rage, he represents both the necessity and the danger of violent opposition to systematic oppression, proving that sometimes the greatest threat to a revolution's soul comes not from external enemies but from the moral compromises required for survival and victory.</p>
                 </div>
             </div>
         </section>
 
         <!-- Call to Action -->
         <section class="read-more-section">
-            <h2 class="cta-title">Confront the Rage</h2>
+            <h2 class="cta-title">Witness the Fury of the Forsaken</h2>
             <p class="cta-description">
-                Witness the transformation of victim into weapon, love into rage, protection into brutality. 
-                Dominic's story explores the dangerous price of fighting monsters and the thin line between justice and revenge.
+                Experience Dominic's world where trauma becomes weapon and protection requires brutality. His story explores the moral compromises of violent resistance.
             </p>
             <div class="cta-buttons">
                 <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
@@ -693,5 +852,6 @@
 
     </div>
 </main>
+
 </body>
 </html>
