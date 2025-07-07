@@ -35,6 +35,10 @@ collections:
   chapters:
     output: true
     permalink: /chapters/:path/
+  # Add world guide as a collection to ensure proper processing
+  world_guide:
+    output: true
+    permalink: /world-guide/:path/
 
 # Plugins
 plugins:
@@ -48,6 +52,16 @@ markdown: kramdown
 highlighter: rouge
 timezone: America/Chicago
 
+# Include files and directories that should be processed
+include:
+  - world-guide
+  - _pages
+
+# Keep these files during build
+keep_files:
+  - chapters
+  - world-guide
+
 # Exclude from processing
 exclude:
   - README.md
@@ -58,10 +72,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
-# Process all files, even in subdirectories
-keep_files:
-  - chapters
 
 # SEO Defaults
 defaults:
@@ -80,11 +90,17 @@ defaults:
       author: "Mileena Rayne"
       image: "/assets/images/book-cover-default.jpg"
   - scope:
+      path: "world-guide"
+    values:
+      layout: "default"
+      author: "Mileena Rayne"
+      image: "/assets/images/geography-main.jpg"
+  - scope:
       path: ""
     values:
       image: "/assets/images/mileena-rayne-default.jpg"
 
-      # Enhanced SEO settings
+# Enhanced SEO settings
 breadcrumbs: true
 
 # Rich snippets for organization
