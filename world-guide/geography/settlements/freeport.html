@@ -1,0 +1,1631 @@
+---
+layout: default
+title: "Freeport | Blood of the Wild Gods World Guide"
+description: "Explore Freeport, the resilient capital of Atheria built from the ruins of Quenos, where maritime culture thrives despite divine catastrophe and supernatural storms."
+image: "/assets/images/freeport.jpg"
+---
+
+<style>
+    .port-hero {
+        height: 100vh;
+        background: linear-gradient(135deg, rgba(25, 45, 60, 0.95) 0%, rgba(45, 75, 90, 0.85) 30%, rgba(180, 200, 220, 0.4) 70%, rgba(220, 235, 245, 0.6) 100%);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .port-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/assets/images/coastal-harbor-city.jpg') center/cover;
+        opacity: 0.2;
+        z-index: -2;
+        animation: harbor-drift 90s ease-in-out infinite;
+    }
+
+    @keyframes harbor-drift {
+        0%, 100% { transform: scale(1.05) translateX(0) translateY(0); filter: brightness(1) sepia(0.1); }
+        25% { transform: scale(1.08) translateX(-10px) translateY(-15px); filter: brightness(1.1) sepia(0.15); }
+        50% { transform: scale(1.02) translateX(20px) translateY(10px); filter: brightness(0.95) sepia(0.05); }
+        75% { transform: scale(1.12) translateX(-15px) translateY(5px); filter: brightness(1.15) sepia(0.2); }
+    }
+
+    .maritime-atmosphere {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 70%, rgba(45, 75, 90, 0.4) 0%, transparent 50%),
+            radial-gradient(circle at 80% 30%, rgba(180, 200, 220, 0.3) 0%, transparent 45%),
+            linear-gradient(225deg, transparent 0%, rgba(25, 45, 60, 0.3) 30%, rgba(180, 200, 220, 0.2) 70%, transparent 100%);
+        z-index: -1;
+        animation: sea-atmospheric 40s ease-in-out infinite;
+    }
+
+    @keyframes sea-atmospheric {
+        0%, 100% { opacity: 0.8; transform: rotate(0deg) scale(1); }
+        50% { opacity: 1; transform: rotate(3deg) scale(1.08); }
+    }
+
+    .floating-spray {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .sea-particle {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: radial-gradient(circle, rgba(180, 200, 220, 0.9) 0%, rgba(45, 75, 90, 0.5) 70%, transparent 100%);
+        border-radius: 50%;
+        animation: sea-spray-dance 50s infinite linear;
+        box-shadow: 0 0 12px rgba(180, 200, 220, 0.6);
+    }
+
+    .sea-particle::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: radial-gradient(circle, rgba(220, 235, 245, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        animation: spray-shimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes sea-spray-dance {
+        0% { transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.4); opacity: 0; }
+        12% { opacity: 1; transform: translateY(88vh) translateX(15px) rotate(45deg) scale(1); }
+        28% { transform: translateY(72vh) translateX(-10px) rotate(120deg) scale(1.3); }
+        44% { transform: translateY(56vh) translateX(25px) rotate(200deg) scale(0.8); }
+        60% { transform: translateY(40vh) translateX(-20px) rotate(280deg) scale(1.1); }
+        76% { transform: translateY(24vh) translateX(18px) rotate(360deg) scale(0.9); }
+        88% { opacity: 1; transform: translateY(12vh) translateX(-12px) rotate(420deg) scale(0.6); }
+        100% { transform: translateY(-8vh) translateX(30px) rotate(480deg) scale(0.3); opacity: 0; }
+    }
+
+    @keyframes spray-shimmer {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.5); }
+    }
+
+    .tide-sweep {
+        position: absolute;
+        width: 250px;
+        height: 100vh;
+        background: linear-gradient(20deg, transparent 0%, rgba(180, 200, 220, 0.12) 25%, rgba(220, 235, 245, 0.2) 45%, rgba(180, 200, 220, 0.12) 65%, transparent 100%);
+        transform: rotate(12deg);
+        animation: tidal-sweep 35s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes tidal-sweep {
+        0%, 100% { transform: translateX(-350px) rotate(12deg) scaleY(0.9); opacity: 0.4; }
+        50% { transform: translateX(calc(100vw + 150px)) rotate(12deg) scaleY(1.3); opacity: 0.8; }
+    }
+
+    .hero-content {
+        text-align: center;
+        z-index: 10;
+        position: relative;
+        max-width: 1000px;
+        padding: 0 20px;
+    }
+
+    .port-title {
+        font-size: 5.8em;
+        font-weight: 150;
+        margin-bottom: 30px;
+        color: #dceef8;
+        letter-spacing: 10px;
+        text-shadow: 
+            0 6px 25px rgba(25, 45, 60, 0.9),
+            0 0 45px rgba(45, 75, 90, 0.8),
+            0 0 70px rgba(180, 200, 220, 0.5);
+        animation: title-harbor-emergence 22s ease-in-out infinite;
+        position: relative;
+    }
+
+    .port-title::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(40deg, transparent 30%, rgba(220, 235, 245, 0.6) 50%, rgba(180, 200, 220, 0.4) 60%, transparent 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: harbor-shimmer 10s ease-in-out infinite;
+    }
+
+    @keyframes title-harbor-emergence {
+        0%, 88%, 100% { 
+            text-shadow: 
+                0 6px 25px rgba(25, 45, 60, 0.9),
+                0 0 45px rgba(45, 75, 90, 0.8),
+                0 0 70px rgba(180, 200, 220, 0.5);
+        }
+        44% { 
+            text-shadow: 
+                0 8px 35px rgba(25, 45, 60, 1),
+                0 0 55px rgba(45, 75, 90, 1),
+                0 0 90px rgba(180, 200, 220, 0.7),
+                0 0 120px rgba(220, 235, 245, 0.4);
+        }
+    }
+
+    @keyframes harbor-shimmer {
+        0%, 100% { transform: translateX(-100%); }
+        50% { transform: translateX(100%); }
+    }
+
+    .port-tagline {
+        font-size: 2.1em;
+        color: #7ba3c0;
+        font-style: italic;
+        margin-bottom: 40px;
+        text-shadow: 0 3px 15px rgba(0, 0, 0, 0.8);
+        animation: tagline-wave 7s ease-in-out infinite;
+    }
+
+    @keyframes tagline-wave {
+        0%, 100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-5px) scale(1.01); }
+    }
+
+    .port-essence {
+        background: rgba(45, 75, 90, 0.8);
+        border: 2px solid rgba(180, 200, 220, 0.6);
+        border-radius: 28px;
+        padding: 38px 48px;
+        backdrop-filter: blur(18px);
+        box-shadow: 
+            0 22px 45px rgba(0, 0, 0, 0.5),
+            inset 0 2px 0 rgba(255, 255, 255, 0.1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .port-essence::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(180, 200, 220, 0.12) 0%, transparent 60%);
+        animation: essence-tide-pulse 14s ease-in-out infinite;
+    }
+
+    @keyframes essence-tide-pulse {
+        0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+        50% { opacity: 0.7; transform: scale(1.25) rotate(180deg); }
+    }
+
+    .port-essence p {
+        color: #e8f4ff;
+        margin: 0;
+        font-size: 1.45em;
+        line-height: 1.85;
+        position: relative;
+        z-index: 2;
+    }
+
+    .scroll-indicator {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: rgba(180, 200, 220, 0.8);
+        animation: scroll-bounce 2s ease-in-out infinite;
+        z-index: 10;
+    }
+
+    @keyframes scroll-bounce {
+        0%, 100% { transform: translateX(-50%) translateY(0); }
+        50% { transform: translateX(-50%) translateY(-10px); }
+    }
+
+    .catastrophe-epic {
+        padding: 130px 0;
+        background: linear-gradient(45deg, rgba(15, 25, 35, 0.98) 0%, rgba(35, 55, 70, 0.95) 50%, rgba(55, 75, 90, 0.92) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .catastrophe-epic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(ellipse at 30% 20%, rgba(180, 200, 220, 0.2) 0%, transparent 50%),
+            radial-gradient(ellipse at 70% 80%, rgba(45, 75, 90, 0.3) 0%, transparent 55%);
+        animation: catastrophe-atmosphere 38s ease-in-out infinite;
+    }
+
+    @keyframes catastrophe-atmosphere {
+        0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+        50% { opacity: 1; transform: scale(1.12) rotate(2deg); }
+    }
+
+    .section-title-epic {
+        font-size: 4.2em;
+        color: #dceef8;
+        text-align: center;
+        margin-bottom: 28px;
+        font-weight: 250;
+        letter-spacing: 5px;
+        text-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+        position: relative;
+    }
+
+    .section-title-epic::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 220px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, rgba(180, 200, 220, 0.8), transparent);
+        animation: title-underline-tide 4s ease-in-out infinite;
+    }
+
+    @keyframes title-underline-tide {
+        0%, 100% { width: 220px; opacity: 0.6; }
+        50% { width: 320px; opacity: 1; }
+    }
+
+    .section-description-epic {
+        font-size: 1.4em;
+        color: #b5d2e8;
+        text-align: center;
+        max-width: 850px;
+        margin: 0 auto 85px;
+        line-height: 1.85;
+        position: relative;
+    }
+
+    .tragedy-showcase {
+        max-width: 1350px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 110px 1fr;
+        gap: 0;
+        position: relative;
+    }
+
+    .tragedy-divider {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    .divider-wave {
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(180deg, 
+            rgba(45, 75, 90, 0.6) 0%, 
+            rgba(180, 200, 220, 0.9) 25%, 
+            rgba(220, 235, 245, 1) 50%,
+            rgba(180, 200, 220, 0.9) 75%,
+            rgba(45, 75, 90, 0.6) 100%);
+        position: relative;
+        box-shadow: 0 0 20px rgba(180, 200, 220, 0.7);
+        animation: wave-pulse 7s ease-in-out infinite;
+    }
+
+    @keyframes wave-pulse {
+        0%, 100% { 
+            box-shadow: 0 0 20px rgba(180, 200, 220, 0.7);
+            transform: scaleX(1);
+        }
+        50% { 
+            box-shadow: 0 0 35px rgba(180, 200, 220, 1);
+            transform: scaleX(1.6);
+        }
+    }
+
+    .tide-marker {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 35px;
+        height: 35px;
+        background: radial-gradient(circle, rgba(220, 235, 245, 1) 0%, rgba(180, 200, 220, 0.8) 100%);
+        border: 3px solid rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        box-shadow: 
+            0 0 30px rgba(180, 200, 220, 0.9),
+            inset 0 2px 0 rgba(255, 255, 255, 0.4);
+        animation: marker-tide-glow 3.5s ease-in-out infinite;
+    }
+
+    @keyframes marker-tide-glow {
+        0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 30px rgba(180, 200, 220, 0.9), inset 0 2px 0 rgba(255, 255, 255, 0.4); }
+        50% { transform: translate(-50%, -50%) scale(1.35); box-shadow: 0 0 45px rgba(180, 200, 220, 1), inset 0 2px 0 rgba(255, 255, 255, 0.6); }
+    }
+
+    .tragedy-era {
+        position: relative;
+        overflow: hidden;
+        min-height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .era-destruction {
+        background: linear-gradient(135deg, 
+            rgba(25, 45, 60, 0.9) 0%, 
+            rgba(45, 75, 90, 0.7) 50%, 
+            rgba(55, 75, 90, 0.8) 100%);
+        border: 3px solid rgba(180, 200, 220, 0.4);
+        border-right: none;
+        border-radius: 32px 0 0 32px;
+        clip-path: polygon(0 0, 82% 0, 100% 50%, 82% 100%, 0 100%);
+    }
+
+    .era-renewal {
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.15) 0%, 
+            rgba(55, 75, 90, 0.8) 50%, 
+            rgba(35, 55, 70, 0.9) 100%);
+        border: 3px solid rgba(180, 200, 220, 0.6);
+        border-left: none;
+        border-radius: 0 32px 32px 0;
+        clip-path: polygon(18% 0, 100% 0, 100% 100%, 18% 100%, 0 50%);
+    }
+
+    .era-content {
+        padding: 65px 85px 65px 65px;
+        position: relative;
+        z-index: 5;
+    }
+
+    .era-renewal .era-content {
+        padding: 65px 65px 65px 85px;
+    }
+
+    .era-backdrop::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.1;
+        z-index: 1;
+    }
+
+    .era-destruction::before {
+        background: url('/assets/images/divine-storm-destruction.jpg') center/cover;
+    }
+
+    .era-renewal::before {
+        background: url('/assets/images/harbor-city-rebuilding.jpg') center/cover;
+    }
+
+    .era-title {
+        font-size: 2.6em;
+        margin-bottom: 18px;
+        font-weight: 550;
+        position: relative;
+        z-index: 10;
+    }
+
+    .era-destruction .era-title {
+        color: #dceef8;
+        text-shadow: 0 4px 20px rgba(25, 45, 60, 0.9);
+    }
+
+    .era-renewal .era-title {
+        color: #dceef8;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9);
+    }
+
+    .era-subtitle {
+        font-size: 1.25em;
+        font-style: italic;
+        margin-bottom: 32px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .era-destruction .era-subtitle {
+        color: #7ba3c0;
+    }
+
+    .era-renewal .era-subtitle {
+        color: #a8c8d8;
+    }
+
+    .era-description {
+        font-size: 1.15em;
+        line-height: 1.85;
+        position: relative;
+        z-index: 10;
+    }
+
+    .era-destruction .era-description {
+        color: #d2d2d2;
+    }
+
+    .era-renewal .era-description {
+        color: #c8c8c8;
+    }
+
+    .era-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+        gap: 16px;
+        margin-top: 32px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .era-feature {
+        padding: 13px 17px;
+        border-radius: 20px;
+        text-align: center;
+        font-size: 0.92em;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .era-destruction .era-feature {
+        background: rgba(45, 75, 90, 0.5);
+        border: 1px solid rgba(180, 200, 220, 0.4);
+        color: #d5d5d5;
+    }
+
+    .era-renewal .era-feature {
+        background: rgba(180, 200, 220, 0.2);
+        border: 1px solid rgba(180, 200, 220, 0.5);
+        color: #e8e8e8;
+    }
+
+    .era-feature:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .maritime-culture {
+        padding: 130px 0;
+        background: linear-gradient(135deg, 
+            rgba(55, 75, 90, 0.95) 0%, 
+            rgba(75, 95, 110, 0.9) 30%,
+            rgba(180, 200, 220, 0.12) 70%,
+            rgba(220, 235, 245, 0.18) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .maritime-culture::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(ellipse at 25% 30%, rgba(180, 200, 220, 0.25) 0%, transparent 50%),
+            radial-gradient(ellipse at 75% 70%, rgba(220, 235, 245, 0.2) 0%, transparent 60%);
+        animation: maritime-presence 28s ease-in-out infinite;
+    }
+
+    @keyframes maritime-presence {
+        0%, 100% { opacity: 0.7; transform: scale(1) rotate(0deg); }
+        50% { opacity: 1; transform: scale(1.18) rotate(1deg); }
+    }
+
+    .harbor-rays {
+        position: absolute;
+        top: -20%;
+        left: -12%;
+        right: -12%;
+        bottom: -20%;
+        background: conic-gradient(from 0deg at 50% 50%, 
+            transparent 0deg, 
+            rgba(180, 200, 220, 0.06) 35deg, 
+            transparent 70deg,
+            rgba(220, 235, 245, 0.08) 105deg,
+            transparent 140deg,
+            rgba(180, 200, 220, 0.06) 175deg,
+            transparent 210deg,
+            rgba(220, 235, 245, 0.07) 245deg,
+            transparent 280deg,
+            rgba(180, 200, 220, 0.07) 315deg,
+            transparent 350deg,
+            rgba(220, 235, 245, 0.06) 360deg);
+        animation: harbor-rotation 45s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes harbor-rotation {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .harbor-showcase {
+        max-width: 1250px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-architecture {
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.18) 0%, 
+            rgba(55, 75, 90, 0.9) 28%,
+            rgba(35, 55, 70, 0.95) 72%,
+            rgba(25, 45, 60, 0.98) 100%);
+        border: 3px solid rgba(180, 200, 220, 0.6);
+        border-radius: 42px;
+        padding: 85px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(28px);
+        box-shadow: 
+            0 32px 65px rgba(0, 0, 0, 0.6),
+            inset 0 3px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .harbor-architecture::before {
+        content: '';
+        position: absolute;
+        top: -110%;
+        left: -110%;
+        width: 320%;
+        height: 320%;
+        background: radial-gradient(circle, rgba(180, 200, 220, 0.08) 0%, transparent 38%);
+        animation: harbor-sanctity 28s ease-in-out infinite;
+    }
+
+    @keyframes harbor-sanctity {
+        0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+        50% { opacity: 0.85; transform: scale(1.28) rotate(180deg); }
+    }
+
+    .harbor-header {
+        text-align: center;
+        margin-bottom: 55px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-icon-epic {
+        width: 130px;
+        height: 130px;
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.9) 0%, 
+            rgba(220, 235, 245, 0.85) 50%,
+            rgba(180, 200, 220, 0.95) 100%);
+        border-radius: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 38px;
+        box-shadow: 
+            0 22px 55px rgba(180, 200, 220, 0.45),
+            inset 0 3px 0 rgba(255, 255, 255, 0.4);
+        animation: icon-harbor-pulse 9s ease-in-out infinite;
+        position: relative;
+    }
+
+    .harbor-icon-epic::before {
+        content: '';
+        position: absolute;
+        top: -12px;
+        left: -12px;
+        right: -12px;
+        bottom: -12px;
+        background: radial-gradient(circle, rgba(180, 200, 220, 0.35) 0%, transparent 70%);
+        border-radius: 55px;
+        animation: icon-tide-aura 7s ease-in-out infinite;
+    }
+
+    @keyframes icon-harbor-pulse {
+        0%, 100% { 
+            transform: scale(1); 
+            box-shadow: 0 22px 55px rgba(180, 200, 220, 0.45), inset 0 3px 0 rgba(255, 255, 255, 0.4);
+        }
+        50% { 
+            transform: scale(1.1); 
+            box-shadow: 0 32px 75px rgba(180, 200, 220, 0.65), inset 0 3px 0 rgba(255, 255, 255, 0.6);
+        }
+    }
+
+    @keyframes icon-tide-aura {
+        0%, 100% { opacity: 0.4; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.35); }
+    }
+
+    .harbor-icon-epic svg {
+        width: 65px;
+        height: 65px;
+        fill: #2a2a2a;
+        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+    }
+
+    .harbor-title-epic {
+        font-size: 3.3em;
+        color: #dceef8;
+        margin-bottom: 28px;
+        font-weight: 350;
+        letter-spacing: 3px;
+        text-shadow: 0 6px 28px rgba(0, 0, 0, 0.8);
+    }
+
+    .harbor-description-epic {
+        font-size: 1.35em;
+        color: #e0e0e0;
+        line-height: 1.85;
+        margin-bottom: 55px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+        gap: 28px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-feature-epic {
+        background: rgba(180, 200, 220, 0.15);
+        border: 2px solid rgba(180, 200, 220, 0.35);
+        border-radius: 22px;
+        padding: 28px 32px;
+        text-align: center;
+        color: #f0f0f0;
+        font-weight: 600;
+        font-size: 1.12em;
+        transition: all 0.45s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harbor-feature-epic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(180, 200, 220, 0.28), transparent);
+        transition: left 0.65s ease;
+    }
+
+    .harbor-feature-epic:hover {
+        background: rgba(180, 200, 220, 0.25);
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 18px 38px rgba(180, 200, 220, 0.25);
+        border-color: rgba(180, 200, 220, 0.6);
+    }
+
+    .harbor-feature-epic:hover::before {
+        left: 100%;
+    }
+
+    .resilience-realm {
+        padding: 130px 0;
+        background: linear-gradient(45deg, 
+            rgba(15, 25, 35, 0.98) 0%, 
+            rgba(25, 45, 60, 0.95) 30%,
+            rgba(45, 75, 90, 0.85) 70%,
+            rgba(55, 85, 100, 0.9) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .resilience-realm::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/assets/images/bustling-harbor-markets.jpg') center/cover;
+        opacity: 0.08;
+        z-index: -1;
+        animation: resilience-whisper 65s ease-in-out infinite;
+    }
+
+    @keyframes resilience-whisper {
+        0%, 100% { transform: scale(1.08) translateX(0); filter: brightness(1) contrast(1.1); }
+        50% { transform: scale(1.15) translateX(-20px); filter: brightness(1.25) contrast(1.2); }
+    }
+
+    .harbor-mist {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(ellipse at 12% 28%, rgba(45, 75, 90, 0.4) 0%, transparent 50%),
+            radial-gradient(ellipse at 88% 72%, rgba(180, 200, 220, 0.2) 0%, transparent 60%),
+            radial-gradient(ellipse at 50% 90%, rgba(55, 75, 90, 0.3) 0%, transparent 40%);
+        animation: harbor-flow 42s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes harbor-flow {
+        0%, 100% { opacity: 0.7; transform: rotate(0deg) scale(1); }
+        33% { opacity: 0.9; transform: rotate(1deg) scale(1.06); }
+        66% { opacity: 0.8; transform: rotate(-1deg) scale(1.03); }
+    }
+
+    .resilience-masonry {
+        max-width: 1350px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+        gap: 45px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .resilience-chamber {
+        background: linear-gradient(135deg, 
+            rgba(45, 75, 90, 0.8) 0%, 
+            rgba(15, 25, 35, 0.9) 50%,
+            rgba(35, 55, 70, 0.85) 100%);
+        border: 3px solid rgba(180, 200, 220, 0.45);
+        border-radius: 32px;
+        padding: 55px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.55s ease;
+        backdrop-filter: blur(22px);
+    }
+
+    .resilience-chamber::before {
+        content: '';
+        position: absolute;
+        top: -55%;
+        right: -55%;
+        width: 210%;
+        height: 210%;
+        background: radial-gradient(circle, rgba(180, 200, 220, 0.1) 0%, transparent 58%);
+        animation: chamber-tidal-energy 22s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes chamber-tidal-energy {
+        0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+        50% { opacity: 0.8; transform: scale(1.35) rotate(180deg); }
+    }
+
+    .resilience-chamber:hover {
+        transform: translateY(-18px) scale(1.02);
+        border-color: rgba(180, 200, 220, 0.7);
+        box-shadow: 
+            0 28px 55px rgba(0, 0, 0, 0.6),
+            0 0 75px rgba(180, 200, 220, 0.25);
+    }
+
+    .chamber-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 32px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .chamber-icon {
+        width: 85px;
+        height: 85px;
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.35) 0%, 
+            rgba(45, 75, 90, 0.7) 100%);
+        border-radius: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 28px;
+        box-shadow: 
+            0 14px 32px rgba(180, 200, 220, 0.35),
+            inset 0 2px 0 rgba(255, 255, 255, 0.1);
+        transition: all 0.4s ease;
+    }
+
+    .chamber-icon svg {
+        width: 42px;
+        height: 42px;
+        fill: #dceef8;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+    }
+
+    .resilience-chamber:hover .chamber-icon {
+        transform: scale(1.12) rotate(6deg);
+        box-shadow: 
+            0 22px 45px rgba(180, 200, 220, 0.5),
+            inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .chamber-title {
+        font-size: 2.1em;
+        color: #dceef8;
+        font-weight: 600;
+        margin: 0;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
+    }
+
+    .chamber-description {
+        color: #b5d2e8;
+        line-height: 1.85;
+        font-size: 1.18em;
+        position: relative;
+        z-index: 10;
+    }
+
+    .daily-harbor {
+        padding: 130px 0;
+        background: linear-gradient(135deg, 
+            rgba(35, 55, 70, 0.95) 0%, 
+            rgba(55, 75, 90, 0.9) 50%,
+            rgba(45, 65, 80, 0.95) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harbor-life-web {
+        max-width: 1250px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .life-facet {
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.1) 0%, 
+            rgba(55, 75, 90, 0.8) 100%);
+        border: 2px solid rgba(180, 200, 220, 0.35);
+        border-radius: 28px;
+        padding: 42px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.48s ease;
+        min-height: 270px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .life-facet::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(180, 200, 220, 0.7), 
+            transparent);
+        transform: translateX(-100%);
+        transition: transform 0.9s ease;
+    }
+
+    .life-facet:hover {
+        transform: translateY(-12px);
+        border-color: rgba(180, 200, 220, 0.65);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .life-facet:hover::after {
+        transform: translateX(0);
+    }
+
+    .facet-title {
+        font-size: 1.75em;
+        color: #dceef8;
+        margin-bottom: 22px;
+        font-weight: 600;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    }
+
+    .facet-description {
+        color: #c8d8e8;
+        line-height: 1.75;
+        font-size: 1.08em;
+    }
+
+    .harbor-depths {
+        padding: 130px 0;
+        background: linear-gradient(180deg, 
+            rgba(12, 22, 32, 0.98) 0%, 
+            rgba(22, 42, 57, 0.95) 50%,
+            rgba(8, 18, 28, 0.99) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harbor-depths::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/assets/images/deep-harbor-night.jpg') center/cover;
+        opacity: 0.08;
+        z-index: -1;
+        animation: depth-shift 75s ease-in-out infinite;
+    }
+
+    @keyframes depth-shift {
+        0%, 100% { transform: scale(1.1) translateY(0); filter: brightness(1); }
+        50% { transform: scale(1.18) translateY(-32px); filter: brightness(1.28); }
+    }
+
+    .harbor-mystery {
+        max-width: 1050px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-card-epic {
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.1) 0%, 
+            rgba(22, 42, 57, 0.9) 30%,
+            rgba(12, 22, 32, 0.95) 100%);
+        border: 3px solid rgba(180, 200, 220, 0.45);
+        border-radius: 42px;
+        padding: 85px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(28px);
+        box-shadow: 
+            0 45px 90px rgba(0, 0, 0, 0.8),
+            inset 0 3px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .harbor-card-epic::before {
+        content: '';
+        position: absolute;
+        top: -115%;
+        left: -115%;
+        width: 330%;
+        height: 330%;
+        background: radial-gradient(circle, rgba(180, 200, 220, 0.08) 0%, transparent 42%);
+        animation: harbor-ancient-power 32s ease-in-out infinite;
+    }
+
+    @keyframes harbor-ancient-power {
+        0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+        50% { opacity: 0.7; transform: scale(1.28) rotate(180deg); }
+    }
+
+    .harbor-title-epic {
+        font-size: 3.8em;
+        color: #dceef8;
+        margin-bottom: 38px;
+        font-weight: 250;
+        letter-spacing: 4px;
+        text-shadow: 0 6px 32px rgba(0, 0, 0, 0.9);
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-description-epic {
+        color: #e0e0e0;
+        line-height: 2.05;
+        font-size: 1.35em;
+        margin-bottom: 58px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-locations-epic {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+        margin-top: 65px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .harbor-location-epic {
+        background: rgba(180, 200, 220, 0.12);
+        border: 2px solid rgba(180, 200, 220, 0.4);
+        border-radius: 22px;
+        padding: 32px;
+        transition: all 0.48s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .harbor-location-epic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(180, 200, 220, 0.22), transparent);
+        transition: left 0.68s ease;
+    }
+
+    .harbor-location-epic:hover {
+        background: rgba(180, 200, 220, 0.2);
+        transform: translateY(-8px);
+        box-shadow: 0 22px 45px rgba(0, 0, 0, 0.6);
+        border-color: rgba(180, 200, 220, 0.7);
+    }
+
+    .harbor-location-epic:hover::before {
+        left: 100%;
+    }
+
+    .location-name-epic {
+        font-size: 1.55em;
+        color: #dceef8;
+        font-weight: 600;
+        margin-bottom: 16px;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    .location-description-epic {
+        color: #b5d2e8;
+        font-size: 1.08em;
+        line-height: 1.75;
+    }
+
+    .navigation-epic {
+        padding: 85px 0;
+        background: rgba(8, 18, 28, 0.99);
+        border-top: 3px solid rgba(180, 200, 220, 0.45);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .navigation-epic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(ellipse at 28% 28%, rgba(180, 200, 220, 0.12) 0%, transparent 50%),
+            radial-gradient(ellipse at 72% 72%, rgba(45, 75, 90, 0.18) 0%, transparent 50%);
+        animation: nav-atmosphere 28s ease-in-out infinite;
+    }
+
+    @keyframes nav-atmosphere {
+        0%, 100% { opacity: 0.7; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.12); }
+    }
+
+    .nav-grid-epic {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+        gap: 28px;
+        max-width: 950px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+    }
+
+    .nav-card-epic {
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.12) 0%, 
+            rgba(55, 75, 90, 0.9) 100%);
+        border: 2px solid rgba(180, 200, 220, 0.35);
+        border-radius: 22px;
+        padding: 28px;
+        text-align: center;
+        text-decoration: none;
+        color: #c8d8e8;
+        transition: all 0.48s ease;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-card-epic::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(180, 200, 220, 0.22), transparent);
+        transition: left 0.58s ease;
+    }
+
+    .nav-card-epic:hover {
+        border-color: rgba(180, 200, 220, 0.7);
+        background: linear-gradient(135deg, 
+            rgba(180, 200, 220, 0.18) 0%, 
+            rgba(75, 95, 110, 0.8) 100%);
+        transform: translateY(-8px) scale(1.02);
+        color: #dceef8;
+        box-shadow: 0 18px 38px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-card-epic:hover::before {
+        left: 100%;
+    }
+
+    .nav-card-epic h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.25em;
+        font-weight: 600;
+    }
+
+    .nav-card-epic p {
+        margin: 0;
+        font-size: 0.92em;
+        opacity: 0.8;
+    }
+
+    @media (max-width: 1200px) {
+        .tragedy-showcase {
+            grid-template-columns: 1fr;
+            gap: 55px;
+        }
+        
+        .tragedy-divider {
+            display: none;
+        }
+        
+        .era-destruction,
+        .era-renewal {
+            clip-path: none;
+            border-radius: 32px;
+            border: 3px solid;
+        }
+        
+        .era-content,
+        .era-renewal .era-content {
+            padding: 65px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .port-title {
+            font-size: 4.2em;
+            letter-spacing: 6px;
+        }
+        
+        .section-title-epic {
+            font-size: 3em;
+        }
+        
+        .resilience-masonry {
+            grid-template-columns: 1fr;
+        }
+        
+        .harbor-life-web {
+            grid-template-columns: 1fr;
+        }
+        
+        .harbor-locations-epic {
+            grid-template-columns: 1fr;
+        }
+        
+        .harbor-architecture {
+            padding: 55px;
+        }
+        
+        .harbor-card-epic {
+            padding: 55px;
+        }
+    }
+</style>
+
+<!-- Port Hero Section -->
+<section class="port-hero">
+    <div class="maritime-atmosphere"></div>
+    
+    <div class="floating-spray">
+        <!-- Dynamic sea particles -->
+        <div class="sea-particle" style="left: 6%; animation-delay: 0s;"></div>
+        <div class="sea-particle" style="left: 16%; animation-delay: 10s;"></div>
+        <div class="sea-particle" style="left: 26%; animation-delay: 20s;"></div>
+        <div class="sea-particle" style="left: 36%; animation-delay: 30s;"></div>
+        <div class="sea-particle" style="left: 46%; animation-delay: 40s;"></div>
+        <div class="sea-particle" style="left: 56%; animation-delay: 5s;"></div>
+        <div class="sea-particle" style="left: 66%; animation-delay: 15s;"></div>
+        <div class="sea-particle" style="left: 76%; animation-delay: 25s;"></div>
+        <div class="sea-particle" style="left: 86%; animation-delay: 35s;"></div>
+        <div class="sea-particle" style="left: 96%; animation-delay: 45s;"></div>
+    </div>
+    
+    <div class="tide-sweep"></div>
+    
+    <div class="hero-content">
+        <h1 class="port-title" data-text="Freeport">Freeport</h1>
+        <p class="port-tagline">Born from Divine Tears, Forged by Human Will</p>
+        
+        <div class="port-essence">
+            <p>Rising from the ruins of ancient Quenos, this bustling harbor capital stands as testament to humanity's unbreakable spirit. Where divine grief once reshaped coastlines, practical beauty now thrives—cobblestone streets wind between sturdy buildings while harbors filled with merchant vessels pulse with the determined heartbeat of commerce and survival.</p>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Catastrophe Epic Section -->
+<section class="catastrophe-epic">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-epic">The Quenos Catastrophe</h2>
+            <p class="section-description-epic">
+                From the ashes of divine grief arose a city that embodies both tragedy and triumph
+            </p>
+        </div>
+        
+        <div class="tragedy-showcase">
+            
+            <div class="tragedy-era era-destruction">
+                <div class="era-content">
+                    <h3 class="era-title">The Night of Divine Tears</h3>
+                    <div class="era-subtitle">When Gods Mourn, Mortals Perish</div>
+                    <div class="era-description">
+                        <p>Quenos was a prosperous fishing village known for skilled mariners and abundant harvests from the Azure Expanse. In a single night of cosmic grief, Elodias's overwhelming sorrow at losing her beloved Senia manifested as supernatural storms of unprecedented fury—waves towering higher than the tallest trees, winds screaming with divine anguish.</p>
+                        <p>The village wasn't simply destroyed—it was erased, its foundations scattered and reformed by the power of infinite grief. Survivors spoke of rain that fell upward before crashing down as crushing walls of water, of earth itself weeping as it was torn asunder by forces beyond mortal comprehension.</p>
+                    </div>
+                    <div class="era-features">
+                        <div class="era-feature">Divine Storms</div>
+                        <div class="era-feature">Tidal Devastation</div>
+                        <div class="era-feature">Complete Erasure</div>
+                        <div class="era-feature">Cosmic Grief</div>
+                        <div class="era-feature">Reality Reshaped</div>
+                        <div class="era-feature">Survivor Testimonies</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tragedy-divider">
+                <div class="divider-wave">
+                    <div class="tide-marker"></div>
+                </div>
+            </div>
+
+            <div class="tragedy-era era-renewal">
+                <div class="era-content">
+                    <h3 class="era-title">The Harbor Reborn</h3>
+                    <div class="era-subtitle">Resilience Through Pragmatic Beauty</div>
+                    <div class="era-description">
+                        <p>From the devastated coastline emerged Freeport—built by survivors and new settlers who recognized both danger and opportunity in the transformed landscape. The destruction had created new harbors, revealed mineral deposits, and left soil enriched by divine essence, providing foundation for unprecedented prosperity.</p>
+                        <p>Atherians developed their culture around the lesson of Quenos: that divine power, even unintentionally expressed, could reshape the world. They built with function over spectacle, creating architecture designed to withstand both coastal storms and the memory of divine emotional devastation, while maintaining an appreciation for both the beauty and terror of the ocean.</p>
+                    </div>
+                    <div class="era-features">
+                        <div class="era-feature">Strategic Rebuilding</div>
+                        <div class="era-feature">Practical Architecture</div>
+                        <div class="era-feature">Maritime Mastery</div>
+                        <div class="era-feature">Commercial Hub</div>
+                        <div class="era-feature">Coastal Adaptation</div>
+                        <div class="era-feature">Cultural Resilience</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Maritime Culture -->
+<section class="maritime-culture">
+    <div class="harbor-rays"></div>
+    
+    <div class="container">
+        <div class="harbor-showcase">
+            <div class="section-header">
+                <h2 class="section-title-epic">Heart of Maritime Atheria</h2>
+                <p class="section-description-epic">
+                    Where sea and commerce unite to create the breadbasket kingdom's beating heart
+                </p>
+            </div>
+            
+            <div class="harbor-architecture">
+                <div class="harbor-header">
+                    <div class="harbor-icon-epic">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3,3V11H11V3H3M5,5H9V9H5V5M13,13V21H21V13H13M15,15H19V19H15V15M3,13V21H11V13H3M5,15H9V19H5V15M13,3V11H21V3H13M15,5H19V9H15V5Z"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="harbor-title-epic">The Breadbasket's Harbor</h3>
+                </div>
+                
+                <div class="harbor-description-epic">
+                    <p>Freeport serves as both the beating heart of Atheria's maritime culture and the vital hub of the kingdom's identity as the "breadbasket of the east." Cobblestone streets wind between sturdy buildings of local stone, their practical beauty designed to withstand both coastal storms and the emotional weight of divine catastrophe.</p>
+                    <p>Bustling harbors filled with fishing vessels and merchant ships create a symphony of commerce, while marketplace squares throb with the determined energy of a people who have learned to transform tragedy into prosperity. The air carries both the salt tang of the Azure Expanse and the promise of abundance flowing from Atheria's fertile inland territories.</p>
+                </div>
+                
+                <div class="harbor-features-grid">
+                    <div class="harbor-feature-epic">Strategic Trade Hub</div>
+                    <div class="harbor-feature-epic">Maritime Excellence</div>
+                    <div class="harbor-feature-epic">Agricultural Export</div>
+                    <div class="harbor-feature-epic">Storm-Resistant Design</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resilience Realm -->
+<section class="resilience-realm">
+    <div class="harbor-mist"></div>
+    
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-epic">Pillars of Prosperity</h2>
+            <p class="section-description-epic">
+                The foundations upon which Freeport's success and Atheria's strength are built
+            </p>
+        </div>
+        
+        <div class="resilience-masonry">
+            
+            <div class="resilience-chamber">
+                <div class="chamber-header">
+                    <div class="chamber-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A7,7 0 0,1 19,9C19,14.25 12,22 12,22C12,22 5,14.25 5,9A7,7 0 0,1 12,2M9,9A3,3 0 0,0 12,12A3,3 0 0,0 15,9A3,3 0 0,0 12,6A3,3 0 0,0 9,9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="chamber-title">Strategic Maritime Position</h3>
+                </div>
+                <p class="chamber-description">
+                    Freeport's location along major trade routes between kingdoms provides unparalleled access to both oceanic commerce and inland agricultural wealth. The harbor naturally accommodates vessels of all sizes, while the city serves as the essential link between Atheria's fertile farmlands and distant markets hungry for the kingdom's abundant harvests.
+                </p>
+            </div>
+
+            <div class="resilience-chamber">
+                <div class="chamber-header">
+                    <div class="chamber-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="chamber-title">Pragmatic Architecture</h3>
+                </div>
+                <p class="chamber-description">
+                    Buildings throughout Freeport favor function over spectacle, constructed with local stone and designed to withstand both the fury of coastal storms and the psychological weight of living where divine emotion once reshaped reality. This practical beauty reflects Atherian values of durability, functionality, and quiet dignity in the face of cosmic uncertainty.
+                </p>
+            </div>
+
+            <div class="resilience-chamber">
+                <div class="chamber-header">
+                    <div class="chamber-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A6,6 0 0,1 18,8V9H19A2,2 0 0,1 21,11V21A2,2 0 0,1 19,23H5A2,2 0 0,1 3,21V11A2,2 0 0,1 5,9H6V8A6,6 0 0,1 12,2M12,4A4,4 0 0,0 8,8V9H16V8A4,4 0 0,0 12,4M12,13A2,2 0 0,1 14,15A2,2 0 0,1 12,17A2,2 0 0,1 10,15A2,2 0 0,1 12,13Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="chamber-title">Cultural Resilience</h3>
+                </div>
+                <p class="chamber-description">
+                    Atherians have developed a distinctive culture that appreciates both the beauty and terror of the ocean, viewing their relationship with the Azure Expanse as one of careful respect rather than worship or fear. This balanced perspective enables them to thrive in an environment shaped by divine emotional forces while maintaining their practical, industrious character.
+                </p>
+            </div>
+
+            <div class="resilience-chamber">
+                <div class="chamber-header">
+                    <div class="chamber-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11,15H13V17H11V15M11,7H13V13H11V7M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="chamber-title">Post-Silence Challenges</h3>
+                </div>
+                <p class="chamber-description">
+                    Though Freeport's cities survived the Silent God crisis physically intact, the kingdom bears deep scars. Agricultural heartlands suffered Beastborn attacks and void-corruption, straining the infrastructure and challenging Atheria's identity as the eastern breadbasket. The city now leads recovery efforts while adapting to a changed world.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Daily Harbor Life -->
+<section class="daily-harbor">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-epic">The Rhythm of Harbor Life</h2>
+            <p class="section-description-epic">
+                Daily existence in a city where commerce and survival dance to the tides
+            </p>
+        </div>
+        
+        <div class="harbor-life-web">
+            
+            <div class="life-facet">
+                <h3 class="facet-title">The Bustling Markets</h3>
+                <p class="facet-description">
+                    Marketplace squares throb with commercial energy as merchants hawk everything from fresh catches to surplus grain. The air fills with the calls of vendors, the clink of coins, and the constant negotiation that transforms Atheria's abundance into prosperity for distant kingdoms.
+                </p>
+            </div>
+
+            <div class="life-facet">
+                <h3 class="facet-title">Maritime Operations</h3>
+                <p class="facet-description">
+                    Harbors bustle with fishing vessels returning with silver catches and merchant ships loading grain for export. Skilled mariners maintain their reputation for weather-reading and ocean mastery, essential skills in waters influenced by divine emotion.
+                </p>
+            </div>
+
+            <div class="life-facet">
+                <h3 class="facet-title">Practical Craftsmanship</h3>
+                <p class="facet-description">
+                    Artisans work with local stone and sturdy materials, creating goods designed for durability over decoration. Their practical approach reflects Atherian values while maintaining the quiet beauty born from function meeting necessity.
+                </p>
+            </div>
+
+            <div class="life-facet">
+                <h3 class="facet-title">Grief-Tide Rituals</h3>
+                <p class="facet-description">
+                    Maritime traditions include elaborate rituals for appeasing grief-tides—supernatural storms that sweep the coastline when divine emotions run high. These ceremonies blend practical storm preparation with acknowledgment of cosmic forces.
+                </p>
+            </div>
+
+            <div class="life-facet">
+                <h3 class="facet-title">Trade Diplomacy</h3>
+                <p class="facet-description">
+                    Freeport serves as diplomatic hub where Atherians facilitate trade relationships between kingdoms. Their practical approach and maritime expertise make them essential intermediaries in inter-kingdom commerce.
+                </p>
+            </div>
+
+            <div class="life-facet">
+                <h3 class="facet-title">Coastal Adaptation</h3>
+                <p class="facet-description">
+                    Residents have learned to read both natural weather patterns and supernatural tidal anomalies. This knowledge, passed through generations, enables them to thrive despite the Azure Expanse's emotional responsiveness.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Harbor Depths -->
+<section class="harbor-depths">
+    <div class="container">
+        <div class="harbor-mystery">
+            <div class="harbor-card-epic">
+                <h2 class="harbor-title-epic">Architecture of Resilience</h2>
+                <p class="harbor-description-epic">
+                    Freeport stands as living testament to the marriage of necessity and beauty, where every cobblestone street and harbor pier tells the story of transformation from tragedy to triumph. The city's practical magnificence emerges from stone buildings designed to weather both storms and sorrow, while bustling commercial districts pulse with the determined heartbeat of a people who have learned to transform divine devastation into mortal prosperity. Here, function and beauty unite in structures that honor both the terror and promise of living where gods once wept.
+                </p>
+                
+                <div class="harbor-locations-epic">
+                    
+                    <div class="harbor-location-epic">
+                        <div class="location-name-epic">The Great Harbor</div>
+                        <p class="location-description-epic">
+                            Massive stone piers accommodate vessels from fishing boats to merchant galleons, while warehouses store Atheria's agricultural wealth. The harbor's design maximizes efficiency while providing protection from both natural and supernatural storms.
+                        </p>
+                    </div>
+
+                    <div class="harbor-location-epic">
+                        <div class="location-name-epic">Market Square District</div>
+                        <p class="location-description-epic">
+                            Cobblestone squares where vendors display everything from fresh seafood to surplus grain create the commercial heart of the city. These spaces buzz with constant activity as Atheria's abundance flows to distant markets.
+                        </p>
+                    </div>
+
+                    <div class="harbor-location-epic">
+                        <div class="location-name-epic">The Memory Quarter</div>
+                        <p class="location-description-epic">
+                            Streets built directly over ancient Quenos ruins, where foundations of local stone rest upon the transformed remnants of the original fishing village. Residents speak of hearing echoes on stormy nights.
+                        </p>
+                    </div>
+
+                    <div class="harbor-location-epic">
+                        <div class="location-name-epic">Windward Heights</div>
+                        <p class="location-description-epic">
+                            The elevated residential district where sea captains and successful merchants build homes designed to withstand supernatural storms while providing commanding views of both harbor and ocean approaches.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Epic Navigation -->
+<section class="navigation-epic">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-epic">Explore More Settlements</h2>
+        </div>
+        
+        <div class="nav-grid-epic">
+            <a href="/world-guide/geography/settlements/rivenglade/" class="nav-card-epic">
+                <h3>Rivenglade</h3>
+                <p>Coastal forest town</p>
+            </a>
+            
+            <a href="/world-guide/geography/settlements/hollow-spire/" class="nav-card-epic">
+                <h3>Hollow Spire</h3>
+                <p>Bone city fortress</p>
+            </a>
+            
+            <a href="/world-guide/geography/settlements/solara/" class="nav-card-epic">
+                <h3>Solara</h3>
+                <p>Devastated golden city</p>
+            </a>
+            
+            <a href="/world-guide/geography/" class="nav-card-epic">
+                <h3>Geography Guide</h3>
+                <p>Return to main geography</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Freeport - Blood of the Wild Gods World Guide",
+  "description": "Explore Freeport, the resilient capital of Atheria built from the ruins of Quenos, where maritime culture thrives despite divine catastrophe and supernatural storms.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Freeport"
+    },
+    {
+      "@type": "Thing",
+      "name": "Atheria"
+    },
+    {
+      "@type": "Thing",
+      "name": "Maritime Culture"
+    },
+    {
+      "@type": "Thing",
+      "name": "Divine Catastrophe"
+    }
+  ]
+}
+</script>
