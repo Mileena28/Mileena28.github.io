@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kingdoms & Politics | Blood of the Wild Gods World Guide</title>
+    <meta name="description" content="Explore the political landscape of Arcadia - from mighty kingdoms to religious movements, discover how supernatural threats have shaped every form of governance in the Blood of the Wild Gods universe.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #0f0f1a;
+            color: #e8e8e8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Royal Header */
+        .kingdoms-header {
+            padding: 120px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, 
+                rgba(75, 40, 130, 0.2) 0%, 
+                rgba(120, 60, 180, 0.15) 30%,
+                rgba(180, 120, 220, 0.1) 70%,
+                rgba(75, 40, 130, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kingdoms-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="royal" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23664488;stop-opacity:0.3"/><stop offset="100%" style="stop-color:%23332244;stop-opacity:0.1"/></radialGradient></defs><rect width="1000" height="1000" fill="url(%23royal)"/></svg>') center/cover;
+            opacity: 0.4;
+            z-index: -2;
+        }
+
+        /* Royal Banner Effects */
+        .royal-banners {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .banner-element {
+            position: absolute;
+            width: 200px;
+            height: 300px;
+            background: linear-gradient(180deg, 
+                rgba(180, 120, 220, 0.15) 0%, 
+                rgba(120, 60, 180, 0.2) 50%,
+                rgba(75, 40, 130, 0.25) 100%);
+            clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+            animation: banner-wave 8s ease-in-out infinite;
+            border: 1px solid rgba(180, 120, 220, 0.3);
+        }
+
+        .banner-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .banner-2 { top: 20%; right: 8%; animation-delay: 2s; }
+        .banner-3 { bottom: 15%; left: 12%; animation-delay: 4s; }
+        .banner-4 { bottom: 25%; right: 15%; animation-delay: 6s; }
+
+        @keyframes banner-wave {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            50% { transform: rotate(3deg) scale(1.05); opacity: 0.7; }
+        }
+
+        /* Torch Light Effects */
+        .torch-flames {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .torch-element {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle, 
+                rgba(255, 180, 100, 0.6) 0%, 
+                rgba(255, 140, 80, 0.4) 30%,
+                rgba(255, 100, 60, 0.2) 60%, 
+                transparent 100%);
+            border-radius: 50%;
+            filter: blur(8px);
+            animation: torch-glow 4s ease-in-out infinite;
+        }
+
+        .torch-1 { top: 15%; left: 15%; }
+        .torch-2 { top: 25%; right: 20%; }
+        .torch-3 { bottom: 30%; left: 25%; }
+        .torch-4 { bottom: 20%; right: 15%; }
+        .torch-5 { top: 35%; left: 8%; }
+        .torch-6 { top: 45%; right: 12%; }
+
+        @keyframes torch-glow {
+            0% { 
+                opacity: 0.3; 
+                transform: scale(1); 
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: scale(1.2); 
+            }
+            100% { 
+                opacity: 0.3; 
+                transform: scale(1); 
+            }
+        }
+
+        /* Add different animation delays for more natural variation */
+        .torch-1 { animation-delay: 0s; }
+        .torch-2 { animation-delay: 0.8s; }
+        .torch-3 { animation-delay: 1.6s; }
+        .torch-4 { animation-delay: 2.4s; }
+        .torch-5 { animation-delay: 3.2s; }
+        .torch-6 { animation-delay: 1.2s; }
+
+        .page-breadcrumb {
+            background: rgba(75, 40, 130, 0.2);
+            border: 1px solid rgba(180, 120, 220, 0.4);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #b478dc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .page-breadcrumb:hover {
+            background: rgba(75, 40, 130, 0.3);
+            transform: translateY(-2px);
+            color: #d4a4f4;
+        }
+
+        .kingdoms-title {
+            font-size: 4.5em;
+            font-weight: 200;
+            margin-bottom: 25px;
+            color: #f0f0f0;
+            letter-spacing: 6px;
+            text-shadow: 
+                0 0 30px rgba(180, 120, 220, 0.8),
+                0 8px 35px rgba(0, 0, 0, 0.9);
+            animation: royal-glow 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        .kingdoms-title::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -30px;
+            right: -30px;
+            bottom: -15px;
+            background: radial-gradient(ellipse, rgba(180, 120, 220, 0.1) 0%, transparent 70%);
+            animation: title-royal-aura 12s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes royal-glow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 30px rgba(180, 120, 220, 0.8),
+                    0 8px 35px rgba(0, 0, 0, 0.9);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 40px rgba(180, 120, 220, 1),
+                    0 8px 45px rgba(0, 0, 0, 1);
+            }
+        }
+
+        @keyframes title-royal-aura {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.1); }
+        }
+
+        .kingdoms-subtitle {
+            font-size: 1.8em;
+            color: #b478dc;
+            font-style: italic;
+            margin-bottom: 40px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            animation: subtitle-majesty 8s ease-in-out infinite;
+        }
+
+        @keyframes subtitle-majesty {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-3px); }
+        }
+
+        .kingdoms-description {
+            font-size: 1.3em;
+            color: #d4a4f4;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.9;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Political Sections */
+        .political-section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .political-section:nth-child(even) {
+            background: rgba(15, 10, 25, 0.8);
+        }
+
+        .political-section:nth-child(odd) {
+            background: rgba(25, 15, 35, 0.6);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3.2em;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(180, 120, 220, 0.8), transparent);
+            animation: section-underline 5s ease-in-out infinite;
+        }
+
+        @keyframes section-underline {
+            0%, 100% { width: 150px; opacity: 0.6; }
+            50% { width: 250px; opacity: 1; }
+        }
+
+        .section-description {
+            font-size: 1.2em;
+            color: #b478dc;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Kingdom Cards */
+        .kingdoms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .kingdom-card {
+            background: linear-gradient(135deg, 
+                rgba(75, 40, 130, 0.3) 0%, 
+                rgba(50, 25, 85, 0.8) 50%,
+                rgba(25, 15, 50, 0.9) 100%);
+            border: 2px solid rgba(180, 120, 220, 0.4);
+            border-radius: 25px;
+            padding: 45px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            cursor: pointer;
+        }
+
+        .kingdom-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(180, 120, 220, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .kingdom-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: #b478dc;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 60px rgba(180, 120, 220, 0.3);
+        }
+
+        .kingdom-card:hover::before {
+            left: 100%;
+        }
+
+        .kingdom-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .kingdom-crest {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.4) 0%, 
+                rgba(218, 165, 32, 0.6) 100%);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            box-shadow: 
+                0 10px 30px rgba(255, 215, 0, 0.3),
+                inset 0 2px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            border: 2px solid rgba(255, 215, 0, 0.5);
+        }
+
+        .kingdom-crest svg {
+            width: 40px;
+            height: 40px;
+            fill: #fff;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+        }
+
+        .kingdom-card:hover .kingdom-crest {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 
+                0 15px 40px rgba(255, 215, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .kingdom-name {
+            font-size: 1.9em;
+            color: #f0f0f0;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .kingdom-type {
+            font-size: 0.9em;
+            color: #b478dc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+        }
+
+        .kingdom-description {
+            color: #d4a4f4;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+        }
+
+        .kingdom-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .kingdom-tag {
+            background: rgba(180, 120, 220, 0.25);
+            color: #d4a4f4;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            border: 1px solid rgba(180, 120, 220, 0.4);
+            font-weight: 500;
+        }
+
+        .kingdom-link {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #b478dc, #d4a4f4);
+            color: #000;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 22px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .kingdom-link:hover {
+            transform: translateX(5px);
+            box-shadow: 0 8px 20px rgba(180, 120, 220, 0.4);
+        }
+
+        .kingdom-link svg {
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+            fill: currentColor;
+        }
+
+        /* Religious Movement Cards */
+        .religious-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .religious-card {
+            background: linear-gradient(135deg, 
+                rgba(120, 80, 160, 0.25) 0%, 
+                rgba(80, 50, 120, 0.8) 100%);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .religious-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 60%);
+            animation: divine-radiance 10s ease-in-out infinite;
+        }
+
+        @keyframes divine-radiance {
+            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.7; transform: scale(1.2) rotate(180deg); }
+        }
+
+        .religious-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .religious-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, 
+                rgba(255, 215, 0, 0.6) 0%, 
+                rgba(255, 255, 255, 0.4) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+        }
+
+        .religious-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: #000;
+        }
+
+        .religious-name {
+            font-size: 1.6em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .religious-description {
+            color: #d4a4f4;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+
+        .religious-link {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .religious-link:hover {
+            color: #fff;
+            transform: translateX(3px);
+        }
+
+        .religious-link svg {
+            width: 14px;
+            height: 14px;
+            margin-left: 5px;
+            fill: currentColor;
+        }
+
+        /* Tribal Cards */
+        .tribal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tribal-card {
+            background: linear-gradient(135deg, 
+                rgba(139, 69, 19, 0.3) 0%, 
+                rgba(101, 67, 33, 0.8) 100%);
+            border: 2px solid rgba(205, 133, 63, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tribal-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 25%, rgba(205, 133, 63, 0.1) 25%, rgba(205, 133, 63, 0.1) 50%, transparent 50%),
+                linear-gradient(-45deg, transparent 25%, rgba(139, 69, 19, 0.1) 25%, rgba(139, 69, 19, 0.1) 50%, transparent 50%);
+            background-size: 20px 20px;
+            opacity: 0.3;
+        }
+
+        .tribal-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(205, 133, 63, 0.7);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .tribal-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, 
+                rgba(205, 133, 63, 0.6) 0%, 
+                rgba(160, 82, 45, 0.8) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(205, 133, 63, 0.3);
+        }
+
+        .tribal-icon svg {
+            width: 35px;
+            height: 35px;
+            fill: #fff;
+        }
+
+        .tribal-name {
+            font-size: 1.7em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .tribal-description {
+            color: #deb887;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+
+        .tribal-link {
+            color: #daa520;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .tribal-link:hover {
+            color: #ffd700;
+            transform: translateX(3px);
+        }
+
+        .tribal-link svg {
+            width: 14px;
+            height: 14px;
+            margin-left: 5px;
+            fill: currentColor;
+        }
+
+        /* Organization Cards */
+        .organization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .organization-card {
+            background: linear-gradient(135deg, 
+                rgba(70, 130, 180, 0.25) 0%, 
+                rgba(25, 25, 112, 0.8) 100%);
+            border: 2px solid rgba(70, 130, 180, 0.4);
+            border-radius: 18px;
+            padding: 35px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .organization-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(70, 130, 180, 0.7);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .organization-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, 
+                rgba(70, 130, 180, 0.6) 0%, 
+                rgba(100, 149, 237, 0.8) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.3);
+        }
+
+        .organization-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+        }
+
+        .organization-name {
+            font-size: 1.4em;
+            color: #f0f0f0;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .organization-description {
+            color: #b0c4de;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .organization-link {
+            color: #87ceeb;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .organization-link:hover {
+            color: #add8e6;
+            transform: translateX(3px);
+        }
+
+        .organization-link svg {
+            width: 14px;
+            height: 14px;
+            margin-left: 5px;
+            fill: currentColor;
+        }
+
+        /* Navigation Footer */
+        .navigation-footer {
+            padding: 80px 0;
+            background: rgba(10, 5, 20, 0.95);
+            text-align: center;
+            border-top: 2px solid rgba(180, 120, 220, 0.3);
+        }
+
+        .nav-title {
+            font-size: 2.5em;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            background: rgba(75, 40, 130, 0.3);
+            border: 1px solid rgba(180, 120, 220, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #b478dc;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            border-color: #b478dc;
+            background: rgba(180, 120, 220, 0.2);
+            transform: translateY(-3px);
+            color: #d4a4f4;
+        }
+
+        @media (max-width: 768px) {
+            .kingdoms-title {
+                font-size: 3.2em;
+                letter-spacing: 3px;
+            }
+            
+            .kingdoms-subtitle {
+                font-size: 1.4em;
+            }
+            
+            .kingdoms-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .religious-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tribal-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .organization-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Royal Header -->
+<section class="kingdoms-header">
+    <!-- Royal Banner Effects -->
+    <div class="royal-banners">
+        <div class="banner-element banner-1"></div>
+        <div class="banner-element banner-2"></div>
+        <div class="banner-element banner-3"></div>
+        <div class="banner-element banner-4"></div>
+    </div>
+    
+    <!-- Torch Light Effects -->
+    <div class="torch-flames">
+        <div class="torch-element torch-1"></div>
+        <div class="torch-element torch-2"></div>
+        <div class="torch-element torch-3"></div>
+        <div class="torch-element torch-4"></div>
+        <div class="torch-element torch-5"></div>
+        <div class="torch-element torch-6"></div>
+    </div>
+    
+    <div class="container">
+        <a href="/world-guide/" class="page-breadcrumb">← World Guide</a>
+        <h1 class="kingdoms-title">Kingdoms & Politics</h1>
+        <p class="kingdoms-subtitle">Where Power Flows Through Divine Blood and Mortal Ambition</p>
+        
+        <div class="kingdoms-description">
+            <p>Explore the complex political landscape of Arcadia, where supernatural threats have shaped every form of governance. From mighty kingdoms built on divine tragedy to underground resistance movements, discover how mortals organize themselves in a world where gods' emotions can reshape coastlines and cosmic conflicts determine the fate of nations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Major Kingdoms -->
+<section class="political-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Major Kingdoms</h2>
+            <p class="section-description">
+                The great realms where crowned heads rule over territories shaped by divine intervention and cosmic consequence
+            </p>
+        </div>
+        
+        <div class="kingdoms-grid">
+            
+            <div class="kingdom-card">
+                <div class="kingdom-header">
+                    <div class="kingdom-crest">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,8L10.67,8.09C9.81,7.07 7.4,4.5 5,4.5C5,4.5 3.03,7.46 4.96,11.41C4.41,12.24 4.07,12.67 4,13.66L2.07,13.95L2.28,14.93L4.04,14.67L4.18,15.38L2.61,16.32L3.08,17.21L4.53,16.32C5.68,18.76 8.59,20 11.99,20C15.39,20 18.3,18.76 19.45,16.32L20.9,17.21L21.37,16.32L19.8,15.38L19.94,14.67L21.7,14.93L21.91,13.95L20,13.66C19.93,12.67 19.59,12.24 19.04,11.41C20.97,7.46 19,4.5 19,4.5C16.6,4.5 14.19,7.07 13.33,8.09L12,8M9,11A1,1 0 0,1 10,12A1,1 0 0,1 9,13A1,1 0 0,1 8,12A1,1 0 0,1 9,11M15,11A1,1 0 0,1 16,12A1,1 0 0,1 15,13A1,1 0 0,1 14,12A1,1 0 0,1 15,11M11,14H13L12.3,15.39C12.5,16.03 13.06,16.5 13.75,16.5A1.5,1.5 0 0,1 15.25,18A1.5,1.5 0 0,1 13.75,19.5C13.14,19.5 12.65,19.04 12.5,18.43L11,14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="kingdom-name">Kingdom of Atheria</h3>
+                </div>
+                <div class="kingdom-type">Maritime Kingdom</div>
+                <p class="kingdom-description">
+                    Built from the ruins of ancient Quenos, destroyed by divine grief when Elodias lost Senia. Now a prosperous coastal kingdom known as the "breadbasket of the east," where maritime culture and agricultural abundance create a society that has learned to thrive after cosmic tragedy.
+                </p>
+                <div class="kingdom-highlights">
+                    <span class="kingdom-tag">Maritime Trade</span>
+                    <span class="kingdom-tag">Agricultural Hub</span>
+                    <span class="kingdom-tag">Divine Resilience</span>
+                    <span class="kingdom-tag">Coastal Culture</span>
+                </div>
+                <a href="/world-guide/kingdoms/major-kingdoms/atheria/" class="kingdom-link">
+                    Explore Kingdom
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="kingdom-card">
+                <div class="kingdom-header">
+                    <div class="kingdom-crest">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.68,12.65 10.5,12.91V16H13.5V12.91C15.32,12.65 17,11 17,9A5,5 0 0,0 12,4Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="kingdom-name">Kingdom of Solara</h3>
+                </div>
+                <div class="kingdom-type">Golden Realm</div>
+                <p class="kingdom-description">
+                    Once the shining city transformed by the fallen Sun God Solarius, devastated during the Silent God crisis but slowly rebuilding. The golden architecture and fire magic traditions represent both divine blessing and the terrible cost of cosmic corruption.
+                </p>
+                <div class="kingdom-highlights">
+                    <span class="kingdom-tag">Divine Fire</span>
+                    <span class="kingdom-tag">Golden Architecture</span>
+                    <span class="kingdom-tag">Post-Crisis Recovery</span>
+                    <span class="kingdom-tag">Crown of Aetheris</span>
+                </div>
+                <a href="/world-guide/kingdoms/major-kingdoms/solara/" class="kingdom-link">
+                    Explore Kingdom
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="kingdom-card">
+                <div class="kingdom-header">
+                    <div class="kingdom-crest">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,16.5L18,9.5L16.59,8.09L11,13.67L7.91,10.59L6.5,12L11,16.5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="kingdom-name">Sommer Isle</h3>
+                </div>
+                <div class="kingdom-type">Elven Paradise</div>
+                <p class="kingdom-description">
+                    A tropical island paradise where Sommer Isle Elves practice spiritual superiority and Zenith-exclusive worship. Their pristine marble cities and rigid perfection mask the dangerous seduction of a flawed utopian vision that prioritizes order over growth.
+                </p>
+                <div class="kingdom-highlights">
+                    <span class="kingdom-tag">Elven Superiority</span>
+                    <span class="kingdom-tag">Tropical Paradise</span>
+                    <span class="kingdom-tag">Zenith Worship</span>
+                    <span class="kingdom-tag">Marble Architecture</span>
+                </div>
+                <a href="/world-guide/kingdoms/major-kingdoms/sommer-isle-governance/" class="kingdom-link">
+                    Explore Kingdom
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="kingdom-card">
+                <div class="kingdom-header">
+                    <div class="kingdom-crest">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="kingdom-name">Dawnseeker Democracy</h3>
+                </div>
+                <div class="kingdom-type">Nature-Guided Realm</div>
+                <p class="kingdom-description">
+                    The Verdant Veil's elven civilization governed through wisdom-keeper guided democracy where nature-speakers commune directly with the forest's consciousness. Their organic cities and living architecture represent harmony between governance and natural forces.
+                </p>
+                <div class="kingdom-highlights">
+                    <span class="kingdom-tag">Forest Democracy</span>
+                    <span class="kingdom-tag">Nature Communion</span>
+                    <span class="kingdom-tag">Living Architecture</span>
+                    <span class="kingdom-tag">Wisdom Keepers</span>
+                </div>
+                <a href="/world-guide/kingdoms/major-kingdoms/dawnseeker-democracy/" class="kingdom-link">
+                    Explore Kingdom
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="kingdom-card">
+                <div class="kingdom-header">
+                    <div class="kingdom-crest">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="kingdom-name">Eastern Reclamation Authority</h3>
+                </div>
+                <div class="kingdom-type">Military Administration</div>
+                <p class="kingdom-description">
+                    Ancient territories under rigid military-administrative control, focused on maintaining order through comprehensive monitoring and regulation. Their bureaucratic structures prioritize stability and predictability over individual freedom in post-war reconstruction.
+                </p>
+                <div class="kingdom-highlights">
+                    <span class="kingdom-tag">Military Rule</span>
+                    <span class="kingdom-tag">Bureaucratic Control</span>
+                    <span class="kingdom-tag">Order Through Classification</span>
+                    <span class="kingdom-tag">Surveillance State</span>
+                </div>
+                <a href="/world-guide/kingdoms/major-kingdoms/eastern-reclamation-authority/" class="kingdom-link">
+                    Explore Kingdom
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Religious-Political Movements -->
+<section class="political-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Religious-Political Movements</h2>
+            <p class="section-description">
+                Where faith becomes the foundation of power and divine mandate shapes governmental authority
+            </p>
+        </div>
+        
+        <div class="religious-grid">
+            
+            <div class="religious-card">
+                <div class="religious-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.68,12.65 10.5,12.91V16H13.5V12.91C15.32,12.65 17,11 17,9A5,5 0 0,0 12,4Z"/>
+                    </svg>
+                </div>
+                <h3 class="religious-name">Zenith's Chosen</h3>
+                <p class="religious-description">
+                    A powerful monotheistic organization seeking to replace traditional Wild God worship with absolute submission to Zenith's Light. Their hierarchical theocracy combines spiritual authority with political control through systematic conversion and social engineering.
+                </p>
+                <a href="/world-guide/kingdoms/religious-political-movements/zenith-chosen-theocracy/" class="religious-link">
+                    Study the Movement
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="religious-card">
+                <div class="religious-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,1L21,5V11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1M12,7C10.89,7 10,7.89 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9C14,7.89 13.11,7 12,7M9,13C8.45,13 8,13.45 8,14C8,14.55 8.45,15 9,15C9.55,15 10,14.55 10,14C10,13.45 9.55,13 9,13M12,13C11.45,13 11,13.45 11,14C11,14.55 11.45,15 12,15C12.55,15 13,14.55 13,14C13,13.45 12.55,13 12,13M15,13C14.45,13 14,13.45 14,14C14,14.55 14.45,15 15,15C15.55,15 16,14.55 16,14C16,13.45 15.55,13 15,13Z"/>
+                    </svg>
+                </div>
+                <h3 class="religious-name">Forsaken Resistance Networks</h3>
+                <p class="religious-description">
+                    Underground communities of those cast out by Zenith's Chosen, operating alternative governance structures focused on survival and mutual aid. Their hidden sanctuaries and resistance operations challenge absolute religious authority through solidarity and strategic action.
+                </p>
+                <a href="/world-guide/kingdoms/religious-political-movements/forsaken-resistance-networks/" class="religious-link">
+                    Join the Resistance
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="religious-card">
+                <div class="religious-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
+                    </svg>
+                </div>
+                <h3 class="religious-name">Temple Societies</h3>
+                <p class="religious-description">
+                    Traditional religious communities organized around service to divine beings, serving as intermediaries between mortal and supernatural realms. These societies maintain official knowledge while often suppressing dangerous truths, operating complex hierarchies based on spiritual development and political loyalty.
+                </p>
+                <a href="/world-guide/kingdoms/religious-political-movements/temple-societies/" class="religious-link">
+                    Enter the Temple
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Tribal Confederations -->
+<section class="political-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Tribal Confederations</h2>
+            <p class="section-description">
+                Societies organized around strength, survival, and adaptation to the harshest environments
+            </p>
+        </div>
+        
+        <div class="tribal-grid">
+            
+            <div class="tribal-card">
+                <div class="tribal-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/>
+                    </svg>
+                </div>
+                <h3 class="tribal-name">Bloodfang Clans</h3>
+                <p class="tribal-description">
+                    Beastmen societies of the Crimson Tundra organized around strength-based hierarchies and worship of primal violence. Their culture represents survival through embracing rather than avoiding the world's harsh realities, with complex clan systems based on pack hierarchies and seasonal hunts.
+                </p>
+                <a href="/world-guide/kingdoms/tribal-confederations/bloodfang-clans/" class="tribal-link">
+                    Join the Hunt
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="tribal-card">
+                <div class="tribal-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6,2A3,3 0 0,1 9,5C9,6.28 8.19,7.38 7.06,7.81C7.15,8.27 7.39,8.83 8,9.63C9,10.92 11,12.83 12,14.17C13,12.83 15,10.92 16,9.63C16.61,8.83 16.85,8.27 16.94,7.81C15.81,7.38 15,6.28 15,5A3,3 0 0,1 18,2A3,3 0 0,1 21,5C21,6.32 20.14,7.45 18.95,7.85C18.87,8.37 18.64,9 18,9.83C17,11.17 15,13.08 14,14.38C13.39,15.17 13.15,15.73 13.06,16.19C14.19,16.62 15,17.72 15,19A3,3 0 0,1 12,22A3,3 0 0,1 9,19C9,17.72 9.81,16.62 10.94,16.19C10.85,15.73 10.61,15.17 10,14.38C9,13.08 7,11.17 6,9.83C5.36,9 5.13,8.37 5.05,7.85C3.86,7.45 3,6.32 3,5A3,3 0 0,1 6,2M6,4A1,1 0 0,0 5,5A1,1 0 0,0 6,6A1,1 0 0,0 7,5A1,1 0 0,0 6,4M18,4A1,1 0 0,0 17,5A1,1 0 0,0 18,6A1,1 0 0,0 19,5A1,1 0 0,0 18,4M12,18A1,1 0 0,0 11,19A1,1 0 0,0 12,20A1,1 0 0,0 13,19A1,1 0 0,0 12,18Z"/>
+                    </svg>
+                </div>
+                <h3 class="tribal-name">Ashborn Tribes</h3>
+                <p class="tribal-description">
+                    Scattered survivors of the Free People, transformed by devastation into nomadic scavengers of the Godscarred Wastes. Their pragmatic society adapted to supernatural threats through fragmented tribal structures, relic hunting, and hard-won knowledge of surviving in divinely corrupted territories.
+                </p>
+                <a href="/world-guide/kingdoms/tribal-confederations/ashborn-tribes/" class="tribal-link">
+                    Walk the Wastes
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Specialized Organizations -->
+<section class="political-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Specialized Organizations</h2>
+            <p class="section-description">
+                Unique institutions that blend knowledge, commerce, and governance in response to supernatural challenges
+            </p>
+        </div>
+        
+        <div class="organization-grid">
+            
+            <div class="organization-card">
+                <div class="organization-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                    </svg>
+                </div>
+                <h3 class="organization-name">Chroniclers of Bone</h3>
+                <p class="organization-description">
+                    Scholar-militant order operating from the Hollow Spire, dedicated to studying and combating supernatural threats through systematic documentation and increasingly militant approaches to magical phenomena.
+                </p>
+                <a href="/world-guide/kingdoms/specialized-organizations/chroniclers-of-bone/" class="organization-link">
+                    Study the Order
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="organization-card">
+                <div class="organization-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,8L10.67,8.09C9.81,7.07 7.4,4.5 5,4.5C5,4.5 3.03,7.46 4.96,11.41C4.41,12.24 4.07,12.67 4,13.66L2.07,13.95L2.28,14.93L4.04,14.67L4.18,15.38L2.61,16.32L3.08,17.21L4.53,16.32C5.68,18.76 8.59,20 11.99,20C15.39,20 18.3,18.76 19.45,16.32L20.9,17.21L21.37,16.32L19.8,15.38L19.94,14.67L21.7,14.93L21.91,13.95L20,13.66C19.93,12.67 19.59,12.24 19.04,11.41C20.97,7.46 19,4.5 19,4.5C16.6,4.5 14.19,7.07 13.33,8.09L12,8M9,11A1,1 0 0,1 10,12A1,1 0 0,1 9,13A1,1 0 0,1 8,12A1,1 0 0,1 9,11M15,11A1,1 0 0,1 16,12A1,1 0 0,1 15,13A1,1 0 0,1 14,12A1,1 0 0,1 15,11M11,14H13L12.3,15.39C12.5,16.03 13.06,16.5 13.75,16.5A1.5,1.5 0 0,1 15.25,18A1.5,1.5 0 0,1 13.75,19.5C13.14,19.5 12.65,19.04 12.5,18.43L11,14Z"/>
+                    </svg>
+                </div>
+                <h3 class="organization-name">Coastal Trading Networks</h3>
+                <p class="organization-description">
+                    Maritime communities built around fishing, trade, and harvesting sea-based magical materials, developing distinctive cultures adapted to life at the intersection of mortal and supernatural realms.
+                </p>
+                <a href="/world-guide/kingdoms/specialized-organizations/coastal-trading-networks/" class="organization-link">
+                    Join the Fleet
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="organization-card">
+                <div class="organization-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5,5H18A1,1 0 0,1 19,6V9H21V6A3,3 0 0,0 18,3H5A3,3 0 0,0 2,6V18A3,3 0 0,0 5,21H11V19H5A1,1 0 0,1 4,18V8H18V11H20V6A1,1 0 0,0 19,5H5M5,5V6H18V5H5M23,18L20.5,15.5L19,17L23,21L19,17L20.5,15.5L23,18Z"/>
+                    </svg>
+                </div>
+                <h3 class="organization-name">Village Democracy</h3>
+                <p class="organization-description">
+                    Small communities organized around practical cooperation and collective decision-making, with informal hierarchies based on skill, experience, and social contribution rather than formal authority structures.
+                </p>
+                <a href="/world-guide/kingdoms/specialized-organizations/village-democracy/" class="organization-link">
+                    Study the System
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Footer -->
+<section class="navigation-footer">
+    <div class="container">
+        <h2 class="nav-title">Continue Your Political Journey</h2>
+        <div class="nav-grid">
+            <a href="/world-guide/geography/" class="nav-link">Geography & Realms</a>
+            <a href="/world-guide/magic/" class="nav-link">Magic Systems</a>
+            <a href="/world-guide/history/" class="nav-link">History & Timeline</a>
+            <a href="/world-guide/characters/" class="nav-link">Characters</a>
+            <a href="/world-guide/organizations/" class="nav-link">Organizations</a>
+            <a href="/world-guide/" class="nav-link">World Guide Home</a>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Kingdoms & Politics - Blood of the Wild Gods World Guide",
+  "description": "Explore the political landscape of Arcadia from mighty kingdoms to religious movements, discover how supernatural threats have shaped every form of governance.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Political Systems"
+    },
+    {
+      "@type": "Thing",
+      "name": "Fantasy Kingdoms"
+    },
+    {
+      "@type": "Thing",
+      "name": "Religious Movements"
+    },
+    {
+      "@type": "Thing",
+      "name": "Tribal Confederations"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
