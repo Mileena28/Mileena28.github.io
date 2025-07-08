@@ -1,0 +1,805 @@
+---
+layout: default
+title: "History & Timeline | Blood of the Wild Gods World Guide"
+description: "Journey through the complete timeline of Arcadia - from humanity's creation in the River of First Light to the rise of Zenith's Chosen, witness the tragic cycle of divine love and cosmic catastrophe."
+image: "/assets/images/history-timeline-main.jpg"
+---
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        background: #0a0a0f;
+        color: #e8e8e8;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Timeline Header */
+    .timeline-header {
+        padding: 120px 0 80px;
+        text-align: center;
+        background: linear-gradient(135deg, 
+            rgba(25, 25, 60, 0.9) 0%, 
+            rgba(15, 15, 40, 1) 100%);
+        position: relative;
+        overflow: hidden;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Flowing Time Effects */
+    .time-streams {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .time-particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(200, 220, 255, 0.6);
+        border-radius: 50%;
+        animation: time-flow 20s linear infinite;
+    }
+
+    @keyframes time-flow {
+        0% { 
+            transform: translateY(100vh) translateX(0px) scale(0); 
+            opacity: 0; 
+        }
+        5% { 
+            opacity: 1; 
+            transform: scale(1); 
+        }
+        95% { 
+            opacity: 1; 
+        }
+        100% { 
+            transform: translateY(-100px) translateX(50px) scale(0); 
+            opacity: 0; 
+        }
+    }
+
+    .page-breadcrumb {
+        background: rgba(25, 25, 60, 0.3);
+        border: 1px solid rgba(200, 220, 255, 0.4);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #c8dcff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+    }
+
+    .page-breadcrumb:hover {
+        background: rgba(25, 25, 60, 0.5);
+        transform: translateY(-2px);
+        color: #ffffff;
+        box-shadow: 0 8px 25px rgba(200, 220, 255, 0.2);
+    }
+
+    .timeline-title {
+        font-size: 4.5em;
+        font-weight: 200;
+        margin-bottom: 25px;
+        color: #ffffff;
+        letter-spacing: 6px;
+        text-shadow: 
+            0 0 40px rgba(200, 220, 255, 0.8),
+            0 8px 40px rgba(0, 0, 0, 0.9);
+        animation: title-glow 8s ease-in-out infinite;
+    }
+
+    @keyframes title-glow {
+        0%, 100% { 
+            text-shadow: 
+                0 0 40px rgba(200, 220, 255, 0.8),
+                0 8px 40px rgba(0, 0, 0, 0.9);
+        }
+        50% { 
+            text-shadow: 
+                0 0 60px rgba(200, 220, 255, 1),
+                0 8px 50px rgba(0, 0, 0, 1);
+        }
+    }
+
+    .timeline-subtitle {
+        font-size: 1.6em;
+        color: #c8dcff;
+        font-style: italic;
+        margin-bottom: 40px;
+        animation: subtitle-drift 10s ease-in-out infinite;
+    }
+
+    @keyframes subtitle-drift {
+        0%, 100% { transform: translateY(0); opacity: 0.8; }
+        50% { transform: translateY(-3px); opacity: 1; }
+    }
+
+    .timeline-description {
+        font-size: 1.2em;
+        color: #e0e8ff;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    /* Main Timeline Container */
+    .timeline-main {
+        position: relative;
+        padding: 0;
+    }
+
+    /* Timeline Spine */
+    .timeline-spine {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, 
+            transparent 0%,
+            rgba(200, 220, 255, 0.3) 10%,
+            rgba(200, 220, 255, 0.8) 50%,
+            rgba(200, 220, 255, 0.3) 90%,
+            transparent 100%);
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    /* Era Sections */
+    .era-section {
+        position: relative;
+        min-height: 100vh;
+        padding: 100px 0;
+        transition: all 1s ease;
+    }
+
+    /* Era Background Themes */
+    .era-primordial {
+        background: radial-gradient(ellipse at center, 
+            rgba(255, 215, 0, 0.1) 0%, 
+            rgba(255, 140, 0, 0.05) 40%,
+            rgba(10, 10, 15, 1) 100%);
+    }
+
+    .era-divine {
+        background: radial-gradient(ellipse at center, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            rgba(200, 220, 255, 0.05) 40%,
+            rgba(10, 10, 20, 1) 100%);
+    }
+
+    .era-catastrophe {
+        background: radial-gradient(ellipse at center, 
+            rgba(220, 20, 60, 0.1) 0%, 
+            rgba(139, 0, 0, 0.05) 40%,
+            rgba(15, 5, 5, 1) 100%);
+    }
+
+    .era-war {
+        background: radial-gradient(ellipse at center, 
+            rgba(255, 0, 0, 0.1) 0%, 
+            rgba(128, 0, 0, 0.05) 40%,
+            rgba(20, 5, 5, 1) 100%);
+    }
+
+    .era-withdrawal {
+        background: radial-gradient(ellipse at center, 
+            rgba(105, 105, 105, 0.1) 0%, 
+            rgba(75, 75, 75, 0.05) 40%,
+            rgba(10, 10, 10, 1) 100%);
+    }
+
+    .era-suppression {
+        background: radial-gradient(ellipse at center, 
+            rgba(70, 70, 90, 0.1) 0%, 
+            rgba(50, 50, 70, 0.05) 40%,
+            rgba(8, 8, 12, 1) 100%);
+    }
+
+    .era-modern {
+        background: radial-gradient(ellipse at center, 
+            rgba(138, 43, 226, 0.1) 0%, 
+            rgba(75, 0, 130, 0.05) 40%,
+            rgba(12, 8, 15, 1) 100%);
+    }
+
+    /* Timeline Events */
+    .timeline-event {
+        position: relative;
+        margin: 150px 0;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 1s ease;
+    }
+
+    .timeline-event.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .timeline-event.left {
+        text-align: right;
+        padding-right: calc(50% + 60px);
+    }
+
+    .timeline-event.right {
+        text-align: left;
+        padding-left: calc(50% + 60px);
+    }
+
+    /* Timeline Nodes */
+    .timeline-node {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        border: 4px solid;
+        transition: all 0.5s ease;
+    }
+
+    .timeline-node.primordial {
+        background: radial-gradient(circle, #ffd700, #ff8c00);
+        border-color: #ffd700;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    .timeline-node.divine {
+        background: radial-gradient(circle, #ffffff, #c8dcff);
+        border-color: #c8dcff;
+        box-shadow: 0 0 20px rgba(200, 220, 255, 0.6);
+    }
+
+    .timeline-node.catastrophe {
+        background: radial-gradient(circle, #dc143c, #8b0000);
+        border-color: #dc143c;
+        box-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    }
+
+    .timeline-node.war {
+        background: radial-gradient(circle, #ff0000, #800000);
+        border-color: #ff0000;
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+
+    .timeline-node.withdrawal {
+        background: radial-gradient(circle, #696969, #2f2f2f);
+        border-color: #696969;
+        box-shadow: 0 0 20px rgba(105, 105, 105, 0.4);
+    }
+
+    .timeline-node.suppression {
+        background: radial-gradient(circle, #483d8b, #2f2f4f);
+        border-color: #483d8b;
+        box-shadow: 0 0 20px rgba(72, 61, 139, 0.5);
+    }
+
+    .timeline-node.modern {
+        background: radial-gradient(circle, #8a2be2, #4b0082);
+        border-color: #8a2be2;
+        box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+    }
+
+    .timeline-event.visible .timeline-node {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+
+    /* Event Content */
+    .event-content {
+        background: rgba(20, 20, 30, 0.9);
+        border: 2px solid rgba(200, 220, 255, 0.3);
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(20px);
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+        transition: all 0.5s ease;
+    }
+
+    .timeline-event.left .event-content {
+        margin-left: 0;
+        margin-right: auto;
+    }
+
+    .timeline-event.right .event-content {
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .timeline-event.visible .event-content {
+        border-color: rgba(200, 220, 255, 0.6);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .event-year {
+        font-size: 1.1em;
+        color: #8a9fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+
+    .event-title {
+        font-size: 2.2em;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .event-description {
+        color: #e0e8ff;
+        line-height: 1.7;
+        font-size: 1.05em;
+        margin-bottom: 20px;
+    }
+
+    .event-details {
+        background: rgba(30, 30, 50, 0.7);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 20px;
+        border-left: 4px solid rgba(200, 220, 255, 0.5);
+    }
+
+    .event-details h4 {
+        color: #c8dcff;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .event-details p {
+        color: #b8c8ff;
+        font-size: 0.95em;
+        line-height: 1.6;
+    }
+
+    /* Special Era Decorations */
+    .era-decoration {
+        position: absolute;
+        pointer-events: none;
+        opacity: 0.1;
+        z-index: 0;
+    }
+
+    .primordial-symbols {
+        font-size: 120px;
+        color: #ffd700;
+        top: 20%;
+        right: 10%;
+        animation: float 15s ease-in-out infinite;
+    }
+
+    .divine-symbols {
+        font-size: 100px;
+        color: #c8dcff;
+        top: 30%;
+        left: 10%;
+        animation: float 12s ease-in-out infinite reverse;
+    }
+
+    .war-symbols {
+        font-size: 140px;
+        color: #dc143c;
+        top: 40%;
+        right: 15%;
+        animation: float 18s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .timeline-event.left,
+        .timeline-event.right {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .timeline-spine {
+            left: 20px;
+        }
+
+        .timeline-node {
+            left: 20px;
+        }
+
+        .event-content {
+            max-width: 100%;
+        }
+
+        .timeline-title {
+            font-size: 3em;
+        }
+
+        .event-title {
+            font-size: 1.8em;
+        }
+    }
+
+    /* Navigation Footer */
+    .navigation-footer {
+        padding: 80px 0;
+        background: rgba(10, 10, 15, 0.95);
+        text-align: center;
+        border-top: 2px solid rgba(200, 220, 255, 0.3);
+    }
+
+    .nav-title {
+        font-size: 2.4em;
+        color: #ffffff;
+        margin-bottom: 30px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        background: rgba(25, 25, 60, 0.3);
+        border: 1px solid rgba(200, 220, 255, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+        text-decoration: none;
+        color: #c8dcff;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .nav-link:hover {
+        border-color: #c8dcff;
+        background: rgba(200, 220, 255, 0.2);
+        transform: translateY(-3px);
+        color: #ffffff;
+    }
+</style>
+
+<!-- Timeline Header -->
+<section class="timeline-header">
+    <!-- Flowing Time Effects -->
+    <div class="time-streams">
+        <div class="time-particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="time-particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="time-particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="time-particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="time-particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="time-particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="time-particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="time-particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="time-particle" style="left: 90%; animation-delay: 16s;"></div>
+    </div>
+    
+    <div class="container">
+        <a href="/world-guide/" class="page-breadcrumb">← World Guide</a>
+        <h1 class="timeline-title">History & Timeline</h1>
+        <p class="timeline-subtitle">"Every age ends in catastrophe, every catastrophe births a new age"</p>
+        
+        <div class="timeline-description">
+            <p>Journey through the complete chronicle of Arcadia, where divine love becomes cosmic catastrophe and mortal hope persists despite overwhelming darkness. Witness the tragic cycle that transforms paradise into wasteland, again and again, as gods and mortals struggle to coexist in a universe too small for infinite love.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Timeline -->
+<section class="timeline-main">
+    <div class="timeline-spine"></div>
+    
+    <!-- Era 1: The River of First Light -->
+    <div class="era-section era-primordial">
+        <div class="era-decoration primordial-symbols">🌅</div>
+        <div class="timeline-event left">
+            <div class="timeline-node primordial"></div>
+            <div class="event-content">
+                <div class="event-year">The Beginning</div>
+                <h2 class="event-title">The River of First Light</h2>
+                <p class="event-description">
+                    In the primordial location where reality first took shape, the divine creators forged the mortal races from responsive clay beside cosmic waters that ran with color between dawn and dream. This celestial river flowed with unnamed hues—somewhere between hope and memory—where the boundary between potential and actualization was thinnest.
+                </p>
+                <div class="event-details">
+                    <h4>The Divine Creators</h4>
+                    <p>Here, consciousness could be breathed into waiting matter as the gods shaped their children: Thainos created Humans, Archadeus created the Beastmen races, Leika created the Nature Spirits, Libros created Angels, and Atonia created the Elves. Each race bore the mark of their creator's nature, embedding within mortal forms the capacity for both profound love and devastating cruelty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 2: The Age of Open Divine Presence -->
+    <div class="era-section era-divine">
+        <div class="era-decoration divine-symbols">👑</div>
+        <div class="timeline-event right">
+            <div class="timeline-node divine"></div>
+            <div class="event-content">
+                <div class="event-year">The Golden Age</div>
+                <h2 class="event-title">The Age of Open Divine Presence</h2>
+                <p class="event-description">
+                    The First Gods ruled from their celestial thrones, maintaining the sacred distance they believed essential between divine and mortal realms. Occasionally, they would walk the material plane in disguise, observing their creations while preserving cosmic hierarchy. Contact with mortals occurred primarily through chosen seers and sacred intermediaries.
+                </p>
+                <div class="event-details">
+                    <h4>Distant Divine Governance</h4>
+                    <p>This era represented divine rule through cosmic law rather than direct intervention. The gods maintained their heavenly duties while monitoring mortal affairs from above. Supernatural guidance came through visions, omens, and carefully chosen prophets who could safely channel divine communication without risking the corruption that direct contact might bring.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 3: The Quenos Catastrophe -->
+    <div class="era-section era-catastrophe">
+        <div class="timeline-event left">
+            <div class="timeline-node catastrophe"></div>
+            <div class="event-content">
+                <div class="event-year">First Tragedy</div>
+                <h2 class="event-title">The Quenos Catastrophe</h2>
+                <p class="event-description">
+                    The coastal village of Quenos became ground zero for divine tragedy when the eternal curse binding Elodias (god of moon and tides) and Senia (goddess of sun and life) reached its devastating climax. Cursed by the obsessed seer Malritha, Senia was condemned to endless reincarnation as a mortal who dies within seven days of remembering her divine nature.
+                </p>
+                <div class="event-details">
+                    <h4>The Eternal Cycle</h4>
+                    <p>Each time Senia remembered her true identity, her mortal form would dissolve into light, triggering Elodias's cosmic grief. His overwhelming sorrow manifested as supernatural storms that lasted three days, fundamentally reshaping the coastline and destroying the lower village entirely. Survivors rebuilt further inland, renaming their home Atheria—"carried from the sea"—and developed protective rituals without understanding their divine origins.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 4: The Guardian Angel System -->
+    <div class="era-section era-divine">
+        <div class="timeline-event right">
+            <div class="timeline-node divine"></div>
+            <div class="event-content">
+                <div class="event-year">The Protection Era</div>
+                <h2 class="event-title">The Guardian Angel System</h2>
+                <p class="event-description">
+                    Under Azrael's command, a sophisticated protective hierarchy was established to prevent divine exploitation of mortals while maintaining beneficial contact between realms. This system successfully regulated divine-mortal interactions through threat assessment networks, intervention hierarchies, and consent verification protocols.
+                </p>
+                <div class="event-details">
+                    <h4>The System's Breakdown</h4>
+                    <p>Angels underwent extensive preparation for protective roles, learning to manifest strength precisely without excess. However, when Azrael was exiled from the divine courts, the Guardian Angel System began to collapse, creating the very vulnerability that would lead desperate gods to attempt the direct intervention that shattered reality itself.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 5: The Wild Gods Catastrophe -->
+    <div class="era-section era-catastrophe">
+        <div class="timeline-event left">
+            <div class="timeline-node catastrophe"></div>
+            <div class="event-content">
+                <div class="event-year">The Failed Dream</div>
+                <h2 class="event-title">The Wild Gods Catastrophe</h2>
+                <p class="event-description">
+                    Following Thainos's example—despite his murder after a thousand-year quest—increasing numbers of gods began living among mortals, believing divine-mortal coexistence was possible. This idealistic movement led to cascading disasters as mortals repeatedly harmed the gods who trusted them, while divine-mortal crossbreeding created hybrid children whose uncontrolled power devastated entire communities.
+                </p>
+                <div class="event-details">
+                    <h4>The Cascade of Divine Victimization</h4>
+                    <p>Gods who walked among mortals faced systematic betrayal: Thainos murdered and left to die on a dead tree, Elodias and Senia cursed by the obsessed seer Malritha, Azrael demonized despite his protective service, Khali murdered in cold blood. Simultaneously, divine-mortal crossbreeding produced hybrid children—the Haelim, Vaelari, and Baelak—whose divine heritage made them living weapons unable to control their emotions or power, destroying villages in fits of uncontrolled rage and devastating the very communities the gods sought to protect.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 6: The Divine Wars -->
+    <div class="era-section era-war">
+        <div class="era-decoration war-symbols">⚔️</div>
+        <div class="timeline-event right">
+            <div class="timeline-node war"></div>
+            <div class="event-content">
+                <div class="event-year">Cosmic Civil War</div>
+                <h2 class="event-title">The Divine Wars</h2>
+                <p class="event-description">
+                    The philosophical conflict between the First Gods and Wild Gods erupted into cosmic civil war that threatened to unmake existence itself. Divine beings abandoned their heavenly duties to fight, creating a fundamental crisis of cosmic governance as traditionalists battled progressives across multiple realms of reality.
+                </p>
+                <div class="event-details">
+                    <h4>Silas's Dangerous Gambit</h4>
+                    <p>Silas The Trickster God warned the First Gods that their refusal to intervene in the systematic rape and murder of mortals by other gods would force the universe to seek balance—perhaps manifesting something powerful enough to kill gods. When the First Gods dismissed his warning and refused to act, the very next day Silas conducted a fateful experiment: making mortals consume divine blood to create potential god-killers. His creation of the first Bloodmarked proved his threat correct—they could indeed harm gods—but the power backfired catastrophically as mortals didn't understand the constraints, rules, and limitations of their new nature. Forever prone to corruption, the Bloodmarked became crazed from power they couldn't control, turning against their own people rather than their divine oppressors.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 7: The Great Withdrawal -->
+    <div class="era-section era-withdrawal">
+        <div class="timeline-event left">
+            <div class="timeline-node withdrawal"></div>
+            <div class="event-content">
+                <div class="event-year">The Silence Begins</div>
+                <h2 class="event-title">The Great Withdrawal</h2>
+                <p class="event-description">
+                    The surviving Wild Gods, recognizing the catastrophic consequences of their direct intervention, withdrew to the deep places of the world—caves that echo with unspoken words, forests where no mortal foot has trod for millennia. They made themselves into living tombs, conscious and aware but forever separate, forever silent.
+                </p>
+                <div class="event-details">
+                    <h4>The Ultimate Sacrifice</h4>
+                    <p>This withdrawal was not abandonment but the greatest act of love possible—divine beings choosing conscious isolation over the catastrophic affection that nearly unmade existence. Their silence became the invisible foundation upon which all mortal life depends, a truth too dangerous to ever speak aloud.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 8: The Era of Suppression -->
+    <div class="era-section era-suppression">
+        <div class="timeline-event right">
+            <div class="timeline-node suppression"></div>
+            <div class="event-content">
+                <div class="event-year">Truth Buried</div>
+                <h2 class="event-title">The Era of Suppression</h2>
+                <p class="event-description">
+                    Authorities began systematic efforts to erase evidence of divine-mortal conflicts and their consequences. This era prioritized stability over truth through historical revision, educational control, media manipulation, economic pressure, and legal frameworks that made discussion of certain topics illegal or socially unacceptable.
+                </p>
+                <div class="event-details">
+                    <h4>Knowledge Underground</h4>
+                    <p>Despite official suppression, networks of truth-seekers maintained forbidden information through scholar alliances, coded communication, oral tradition, and archaeological evidence. Folk preservation maintained accurate histories through carefully preserved stories, while artistic encoding hid dangerous truths in creative works.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 9: The Silent God Crisis -->
+    <div class="era-section era-catastrophe">
+        <div class="timeline-event left">
+            <div class="timeline-node catastrophe"></div>
+            <div class="event-content">
+                <div class="event-year">The Silence</div>
+                <h2 class="event-title">The Silence</h2>
+                <p class="event-description">
+                    The most recent cosmic catastrophe began with the Silent God's complete possession of Prince Dain Solarius, transforming Solara from the "Shining City" to chaos almost overnight. This crisis represented the closest the world has come to complete annihilation since the Divine Wars, as reality itself began to fade into consuming silence.
+                </p>
+                <div class="event-details">
+                    <h4>The Ultimate Sacrifice</h4>
+                    <p>The crisis was resolved through Mordain Ashcroft's complete self-sacrifice using the Element of Light ritual. His erasure from existence—so complete that even memory of him faded—created a shockwave of restorative power that pushed back the Void and stabilized reality. This also weakened the Silent God enough for Kaelen R'Veyne to kill his vessel, essentially defeating the Silent God, though the cosmic forces it represented were merely pushed back, not destroyed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Era 10: Rise of Zenith's Chosen -->
+    <div class="era-section era-modern">
+        <div class="timeline-event right">
+            <div class="timeline-node modern"></div>
+            <div class="event-content">
+                <div class="event-year">The Current Age</div>
+                <h2 class="event-title">The Rise of Zenith's Chosen</h2>
+                <p class="event-description">
+                    In the aftermath of The Silence, a powerful religious organization has gained significant influence by offering absolute certainty in an uncertain world. This monotheistic movement represents a fundamental challenge to the traditional Wild God pantheon, aggressively converting communities through salvation promises and social control.
+                </p>
+                <div class="event-details">
+                    <h4>Post-Silence Power</h4>
+                    <p>Operating through hierarchical systems and expansion strategies, Zenith's Chosen capitalizes on widespread fear and displacement. Their message of order and purity resonates with traumatized populations, while their systematic demonization of alternative spiritual paths creates new forms of persecution and control in communities struggling to rebuild.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Footer -->
+<section class="navigation-footer">
+    <div class="container">
+        <h2 class="nav-title">Continue Your Journey Through Time</h2>
+        <div class="nav-grid">
+            <a href="/world-guide/characters/" class="nav-link">Characters</a>
+            <a href="/world-guide/geography/" class="nav-link">Geography & Realms</a>
+            <a href="/world-guide/magic/" class="nav-link">Magic Systems</a>
+            <a href="/world-guide/divine-realms/" class="nav-link">Divine Realms</a>
+            <a href="/world-guide/kingdoms/" class="nav-link">Kingdoms & Politics</a>
+            <a href="/world-guide/" class="nav-link">World Guide Home</a>
+        </div>
+    </div>
+</section>
+
+<script>
+// Scroll-triggered timeline animations
+function checkTimelineElements() {
+    const events = document.querySelectorAll('.timeline-event');
+    
+    events.forEach(event => {
+        const rect = event.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Trigger when element is 70% visible
+        if (rect.top < windowHeight * 0.7) {
+            event.classList.add('visible');
+        }
+    });
+}
+
+// Progressive background changes based on scroll
+function updateEraBackgrounds() {
+    const sections = document.querySelectorAll('.era-section');
+    const scrollPercent = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+    
+    sections.forEach((section, index) => {
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // Add active class when section is in view
+        if (rect.top < windowHeight && rect.bottom > 0) {
+            section.style.opacity = '1';
+        }
+    });
+}
+
+// Event listeners
+window.addEventListener('scroll', () => {
+    checkTimelineElements();
+    updateEraBackgrounds();
+});
+
+window.addEventListener('load', () => {
+    checkTimelineElements();
+    updateEraBackgrounds();
+});
+
+// Initial check
+document.addEventListener('DOMContentLoaded', () => {
+    checkTimelineElements();
+    updateEraBackgrounds();
+});
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "History & Timeline - Blood of the Wild Gods World Guide",
+  "description": "Complete timeline of Arcadia from humanity's creation to the rise of Zenith's Chosen - witness the tragic cycle of divine love and cosmic catastrophe.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Fantasy Timeline"
+    },
+    {
+      "@type": "Thing",
+      "name": "Divine History"
+    },
+    {
+      "@type": "Thing",
+      "name": "Cosmic Events"
+    },
+    {
+      "@type": "Thing",
+      "name": "World History"
+    }
+  ]
+}
+</script>
