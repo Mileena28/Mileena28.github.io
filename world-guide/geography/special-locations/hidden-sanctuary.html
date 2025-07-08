@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Sanctuary | Blood of the Wild Gods World Guide</title>
+    <meta name="description" content="Discover the Hidden Sanctuary, Khali's blood-soaked temple where the Forsaken gather in shadows, where ancient lies are carved in stone and truth bleeds through the darkness.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: #0a0a0a;
+            color: #e8e8e8;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section - Underground Descent */
+        .sanctuary-hero {
+            height: 100vh;
+            background: linear-gradient(180deg, 
+                rgba(20, 5, 15, 0.98) 0%, 
+                rgba(40, 15, 25, 0.95) 30%,
+                rgba(60, 25, 35, 0.9) 70%,
+                rgba(15, 5, 10, 0.99) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sanctuary-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="stone" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23444;stop-opacity:0.3"/><stop offset="100%" style="stop-color:%23111;stop-opacity:0.8"/></radialGradient></defs><rect width="1000" height="1000" fill="url(%23stone)"/></svg>') center/cover;
+            opacity: 0.3;
+            z-index: -2;
+        }
+
+        /* Flickering Torch Effects */
+        .torch-glow {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(180, 60, 30, 0.4) 0%, rgba(120, 40, 20, 0.2) 40%, transparent 70%);
+            border-radius: 50%;
+            animation: torch-flicker 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .torch-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .torch-2 { top: 30%; right: 8%; animation-delay: 1s; }
+        .torch-3 { bottom: 25%; left: 12%; animation-delay: 2s; }
+        .torch-4 { bottom: 15%; right: 15%; animation-delay: 0.5s; }
+
+        @keyframes torch-flicker {
+            0%, 100% { 
+                opacity: 0.6; 
+                transform: scale(1); 
+                filter: blur(2px);
+            }
+            25% { 
+                opacity: 0.9; 
+                transform: scale(1.1); 
+                filter: blur(1px);
+            }
+            50% { 
+                opacity: 0.4; 
+                transform: scale(0.95); 
+                filter: blur(3px);
+            }
+            75% { 
+                opacity: 0.8; 
+                transform: scale(1.05); 
+                filter: blur(1.5px);
+            }
+        }
+
+        /* Floating Void Particles */
+        .void-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .void-mote {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(80, 40, 60, 0.8) 0%, rgba(40, 20, 30, 0.4) 70%, transparent 100%);
+            border-radius: 50%;
+            animation: void-drift 25s infinite linear;
+            box-shadow: 0 0 8px rgba(80, 40, 60, 0.6);
+        }
+
+        @keyframes void-drift {
+            0% { transform: translateY(110vh) translateX(0) rotate(0deg) scale(0.3); opacity: 0; }
+            10% { opacity: 1; transform: translateY(90vh) translateX(15px) rotate(45deg) scale(1); }
+            90% { opacity: 1; transform: translateY(-5vh) translateX(-20px) rotate(315deg) scale(0.8); }
+            100% { transform: translateY(-10vh) translateX(-30px) rotate(360deg) scale(0.2); opacity: 0; }
+        }
+
+        /* Blood Veins Effect */
+        .blood-veins {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 0%, rgba(120, 30, 40, 0.1) 2%, transparent 4%),
+                linear-gradient(135deg, transparent 0%, rgba(100, 25, 35, 0.15) 1%, transparent 3%),
+                linear-gradient(225deg, transparent 0%, rgba(90, 20, 30, 0.08) 1.5%, transparent 3.5%);
+            animation: blood-pulse 8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes blood-pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+            max-width: 1000px;
+            padding: 0 20px;
+        }
+
+        .sanctuary-title {
+            font-size: 5.5em;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #f5f5f5;
+            letter-spacing: 8px;
+            text-shadow: 
+                0 0 20px rgba(120, 30, 40, 0.8),
+                0 8px 30px rgba(0, 0, 0, 0.9),
+                0 0 40px rgba(80, 40, 60, 0.6);
+            animation: title-blood-glow 6s ease-in-out infinite;
+            position: relative;
+        }
+
+        .sanctuary-title::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            right: -20px;
+            bottom: -10px;
+            background: radial-gradient(ellipse, rgba(120, 30, 40, 0.1) 0%, transparent 70%);
+            animation: title-aura 12s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes title-blood-glow {
+            0%, 100% { 
+                text-shadow: 
+                    0 0 20px rgba(120, 30, 40, 0.8),
+                    0 8px 30px rgba(0, 0, 0, 0.9),
+                    0 0 40px rgba(80, 40, 60, 0.6);
+            }
+            50% { 
+                text-shadow: 
+                    0 0 30px rgba(120, 30, 40, 1),
+                    0 8px 40px rgba(0, 0, 0, 1),
+                    0 0 60px rgba(80, 40, 60, 0.8);
+            }
+        }
+
+        @keyframes title-aura {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.1); }
+        }
+
+        .sanctuary-subtitle {
+            font-size: 2em;
+            color: #c8a0a8;
+            font-style: italic;
+            margin-bottom: 40px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+            animation: subtitle-float 8s ease-in-out infinite;
+        }
+
+        @keyframes subtitle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .sanctuary-essence {
+            background: linear-gradient(135deg, 
+                rgba(60, 25, 35, 0.8) 0%, 
+                rgba(40, 15, 25, 0.9) 100%);
+            border: 2px solid rgba(120, 30, 40, 0.6);
+            border-radius: 25px;
+            padding: 40px 50px;
+            backdrop-filter: blur(20px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.7),
+                inset 0 2px 0 rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sanctuary-essence::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(120, 30, 40, 0.1) 0%, transparent 60%);
+            animation: essence-void-pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes essence-void-pulse {
+            0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.7; transform: scale(1.2) rotate(180deg); }
+        }
+
+        .sanctuary-essence p {
+            color: #e8e8e8;
+            margin: 0;
+            font-size: 1.3em;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Descent Section */
+        .sanctuary-descent {
+            padding: 120px 0;
+            background: linear-gradient(180deg, 
+                rgba(15, 5, 10, 0.99) 0%, 
+                rgba(25, 10, 15, 0.95) 50%,
+                rgba(35, 15, 20, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .descent-atmosphere {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 30%, rgba(120, 30, 40, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(80, 40, 60, 0.1) 0%, transparent 60%);
+            animation: descent-mood 40s ease-in-out infinite;
+        }
+
+        @keyframes descent-mood {
+            0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.9; transform: scale(1.15) rotate(2deg); }
+        }
+
+        .section-title-dark {
+            font-size: 3.5em;
+            color: #f5f5f5;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .section-title-dark::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(120, 30, 40, 0.8), transparent);
+            animation: title-underline-glow 5s ease-in-out infinite;
+        }
+
+        @keyframes title-underline-glow {
+            0%, 100% { width: 200px; opacity: 0.6; }
+            50% { width: 300px; opacity: 1; }
+        }
+
+        .section-description-dark {
+            font-size: 1.4em;
+            color: #c8a0a8;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .descent-path {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .descent-stage {
+            background: linear-gradient(135deg, 
+                rgba(35, 15, 20, 0.8) 0%, 
+                rgba(25, 10, 15, 0.9) 100%);
+            border: 2px solid rgba(120, 30, 40, 0.4);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .descent-stage::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(120, 30, 40, 0.2), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .descent-stage:hover {
+            border-color: rgba(120, 30, 40, 0.7);
+            transform: translateX(15px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .descent-stage:hover::before {
+            left: 100%;
+        }
+
+        .stage-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .stage-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(120, 30, 40, 0.6), rgba(80, 40, 60, 0.4));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            box-shadow: 0 8px 20px rgba(120, 30, 40, 0.3);
+        }
+
+        .stage-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: #f5f5f5;
+        }
+
+        .stage-title {
+            font-size: 1.6em;
+            color: #f5f5f5;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .stage-description {
+            color: #d0b0b8;
+            line-height: 1.7;
+            font-size: 1.1em;
+        }
+
+        /* Sacred Blood Section */
+        .sacred-blood {
+            padding: 120px 0;
+            background: linear-gradient(45deg, 
+                rgba(35, 15, 20, 0.9) 0%, 
+                rgba(45, 20, 25, 0.85) 50%,
+                rgba(55, 25, 30, 0.9) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blood-energy {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                conic-gradient(from 0deg at 50% 50%, 
+                    transparent 0deg, 
+                    rgba(120, 30, 40, 0.08) 45deg, 
+                    transparent 90deg,
+                    rgba(100, 25, 35, 0.1) 135deg,
+                    transparent 180deg,
+                    rgba(120, 30, 40, 0.08) 225deg,
+                    transparent 270deg,
+                    rgba(100, 25, 35, 0.1) 315deg,
+                    transparent 360deg);
+            animation: blood-rotation 45s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes blood-rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .blood-showcase {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .blood-chamber {
+            background: linear-gradient(135deg, 
+                rgba(120, 30, 40, 0.15) 0%, 
+                rgba(35, 15, 20, 0.9) 30%,
+                rgba(25, 10, 15, 0.95) 100%);
+            border: 3px solid rgba(120, 30, 40, 0.5);
+            border-radius: 30px;
+            padding: 70px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(25px);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.7),
+                inset 0 3px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .blood-chamber::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(120, 30, 40, 0.1) 0%, transparent 40%);
+            animation: blood-sanctity 25s ease-in-out infinite;
+        }
+
+        @keyframes blood-sanctity {
+            0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.8; transform: scale(1.3) rotate(180deg); }
+        }
+
+        .blood-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .blood-icon-epic {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, 
+                rgba(120, 30, 40, 0.8) 0%, 
+                rgba(100, 25, 35, 0.9) 100%);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 
+                0 20px 50px rgba(120, 30, 40, 0.4),
+                inset 0 3px 0 rgba(255, 255, 255, 0.1);
+            animation: blood-icon-pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes blood-icon-pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 20px 50px rgba(120, 30, 40, 0.4), inset 0 3px 0 rgba(255, 255, 255, 0.1);
+            }
+            50% { 
+                transform: scale(1.1); 
+                box-shadow: 0 30px 70px rgba(120, 30, 40, 0.6), inset 0 3px 0 rgba(255, 255, 255, 0.15);
+            }
+        }
+
+        .blood-icon-epic svg {
+            width: 60px;
+            height: 60px;
+            fill: #f5f5f5;
+        }
+
+        .blood-title-epic {
+            font-size: 3.2em;
+            color: #f5f5f5;
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .blood-description-epic {
+            font-size: 1.3em;
+            color: #d0b0b8;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .blood-properties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .blood-property {
+            background: rgba(120, 30, 40, 0.15);
+            border: 2px solid rgba(120, 30, 40, 0.4);
+            border-radius: 18px;
+            padding: 25px 30px;
+            text-align: center;
+            color: #e8e8e8;
+            font-weight: 500;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blood-property::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(120, 30, 40, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .blood-property:hover {
+            background: rgba(120, 30, 40, 0.25);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(120, 30, 40, 0.3);
+            border-color: rgba(120, 30, 40, 0.7);
+        }
+
+        .blood-property:hover::before {
+            left: 100%;
+        }
+
+        /* False Mural Section */
+        .false-mural {
+            padding: 120px 0;
+            background: linear-gradient(135deg, 
+                rgba(25, 10, 15, 0.95) 0%, 
+                rgba(35, 15, 20, 0.9) 50%,
+                rgba(20, 8, 12, 0.98) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mural-shadows {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 40%, rgba(120, 30, 40, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 60%, rgba(80, 40, 60, 0.08) 0%, transparent 50%);
+            animation: mural-atmosphere 35s ease-in-out infinite;
+        }
+
+        @keyframes mural-atmosphere {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        .mural-layout {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mural-content h2 {
+            font-size: 3.2em;
+            color: #f5f5f5;
+            margin-bottom: 25px;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .mural-content p {
+            color: #c8a0a8;
+            line-height: 1.8;
+            font-size: 1.15em;
+            margin-bottom: 20px;
+        }
+
+        .mural-visual {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, 
+                rgba(120, 30, 40, 0.2) 0%, 
+                rgba(35, 15, 20, 0.8) 100%);
+            border-radius: 25px;
+            border: 3px solid rgba(120, 30, 40, 0.4);
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .mural-carving {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: linear-gradient(45deg, 
+                rgba(60, 25, 35, 0.6) 0%, 
+                rgba(40, 15, 25, 0.8) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mural-figures {
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 30% 40%, rgba(255, 215, 180, 0.3) 0%, transparent 40%),
+                radial-gradient(ellipse at 70% 60%, rgba(40, 20, 30, 0.8) 0%, transparent 60%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #d0b0b8;
+            text-align: center;
+            font-style: italic;
+            animation: mural-candlelight 4s ease-in-out infinite;
+        }
+
+        @keyframes mural-candlelight {
+            0%, 100% { filter: brightness(0.8) contrast(1.1); }
+            50% { filter: brightness(1.2) contrast(1.3); }
+        }
+
+        /* Forsaken Community */
+        .forsaken-community {
+            padding: 120px 0;
+            background: linear-gradient(180deg, 
+                rgba(20, 8, 12, 0.98) 0%, 
+                rgba(30, 12, 18, 0.95) 50%,
+                rgba(15, 6, 10, 0.99) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .community-aspect {
+            background: linear-gradient(135deg, 
+                rgba(120, 30, 40, 0.12) 0%, 
+                rgba(35, 15, 20, 0.8) 100%);
+            border: 2px solid rgba(120, 30, 40, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .community-aspect::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(120, 30, 40, 0.7), 
+                transparent);
+            transform: translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+
+        .community-aspect:hover {
+            transform: translateY(-10px);
+            border-color: rgba(120, 30, 40, 0.6);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+
+        .community-aspect:hover::after {
+            transform: translateX(0);
+        }
+
+        .aspect-title {
+            font-size: 1.6em;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .aspect-description {
+            color: #c8a0a8;
+            line-height: 1.7;
+            font-size: 1.1em;
+        }
+
+        /* Navigation */
+        .navigation-dark {
+            padding: 80px 0;
+            background: rgba(15, 6, 10, 0.99);
+            border-top: 3px solid rgba(120, 30, 40, 0.4);
+        }
+
+        .nav-grid-dark {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-card-dark {
+            background: linear-gradient(135deg, 
+                rgba(120, 30, 40, 0.15) 0%, 
+                rgba(35, 15, 20, 0.9) 100%);
+            border: 2px solid rgba(120, 30, 40, 0.3);
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            text-decoration: none;
+            color: #c8a0a8;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card-dark::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(120, 30, 40, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .nav-card-dark:hover {
+            border-color: rgba(120, 30, 40, 0.6);
+            background: linear-gradient(135deg, 
+                rgba(120, 30, 40, 0.2) 0%, 
+                rgba(45, 20, 25, 0.8) 100%);
+            transform: translateY(-8px);
+            color: #e8e8e8;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-card-dark:hover::before {
+            left: 100%;
+        }
+
+        .nav-card-dark h3 {
+            margin: 0 0 12px 0;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .nav-card-dark p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 1200px) {
+            .mural-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sanctuary-title {
+                font-size: 4em;
+                letter-spacing: 4px;
+            }
+            
+            .section-title-dark {
+                font-size: 2.8em;
+            }
+            
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blood-chamber {
+                padding: 50px;
+            }
+            
+            .sanctuary-essence {
+                padding: 30px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero Section -->
+<section class="sanctuary-hero">
+    <!-- Torch Effects -->
+    <div class="torch-glow torch-1"></div>
+    <div class="torch-glow torch-2"></div>
+    <div class="torch-glow torch-3"></div>
+    <div class="torch-glow torch-4"></div>
+    
+    <!-- Blood Veins -->
+    <div class="blood-veins"></div>
+    
+    <!-- Void Particles -->
+    <div class="void-particles">
+        <div class="void-mote" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="void-mote" style="left: 25%; animation-delay: 5s;"></div>
+        <div class="void-mote" style="left: 40%; animation-delay: 10s;"></div>
+        <div class="void-mote" style="left: 55%; animation-delay: 15s;"></div>
+        <div class="void-mote" style="left: 70%; animation-delay: 20s;"></div>
+        <div class="void-mote" style="left: 85%; animation-delay: 2s;"></div>
+        <div class="void-mote" style="left: 15%; animation-delay: 7s;"></div>
+        <div class="void-mote" style="left: 65%; animation-delay: 12s;"></div>
+    </div>
+    
+    <div class="hero-content">
+        <h1 class="sanctuary-title">The Hidden Sanctuary</h1>
+        <p class="sanctuary-subtitle">Where Truth Bleeds Through Beautiful Lies</p>
+        
+        <div class="sanctuary-essence">
+            <p>Deep beneath ancient woodland, past curtains of moss-laden vines and through jagged wounds in stone, lies Khali's blood-soaked temple. Here, in the perpetual twilight of flickering torchlight, the Forsaken gather around carvings that tell beautiful lies while the metallic tang of divine blood preserves the terrible truth that history tried to bury.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Descent Section -->
+<section class="sanctuary-descent">
+    <div class="descent-atmosphere"></div>
+    
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-dark">The Descent Into Truth</h2>
+            <p class="section-description-dark">
+                Access to the sanctuary requires more than courage—it demands the willingness to leave the world of comfortable lies behind
+            </p>
+        </div>
+        
+        <div class="descent-path">
+            
+            <div class="descent-stage">
+                <div class="stage-header">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,6H13V14H11V6M11,16H13V18H11V16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">The Hidden Clearing</h3>
+                </div>
+                <p class="stage-description">
+                    The sanctuary appears as a natural clearing hidden behind curtains of thick, moss-laden vines and sharp, unforgiving rock. Those who seek it must possess both the knowledge of its location and the determination to find what others prefer remains lost. The ancient woodland guards its secrets well, and only those with true purpose can part the veils of nature's concealment.
+                </p>
+            </div>
+
+            <div class="descent-stage">
+                <div class="stage-header">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C6.48,2 2,6.48 2,12C2,17.52 6.48,22 12,22C17.52,22 22,17.52 22,12C22,6.48 17.52,2 12,2M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M16.59,7.58L10,14.17L7.41,11.59L6,13L10,17L18,9L16.59,7.58Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">The Jagged Wound</h3>
+                </div>
+                <p class="stage-description">
+                    Access requires descent through a narrow, claustrophobic fissure in the earth—a jagged wound that serves as the entrance to this underground domain. The passage forces travelers to abandon comfort and embrace the darkness, compressing both body and spirit until they emerge into the vast cavern beyond. This physical trial mirrors the psychological journey required to accept hidden truths.
+                </p>
+            </div>
+
+            <div class="descent-stage">
+                <div class="stage-header">
+                    <div class="stage-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9,10V12H7V10H9M13,10V12H11V10H13M17,10V12H15V10H17M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5C3.89,21 3,20.1 3,19V5A2,2 0 0,1 5,3H6V1H8V3H16V1H18V3H19M19,19V8H5V19H19M9,14V16H7V14H9M13,14V16H11V14H13M17,14V16H15V14H17Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="stage-title">The Ruined Temple</h3>
+                </div>
+                <p class="stage-description">
+                    The sanctuary centers around a vast, cavernous space—a ruined temple swallowed by time and reclaimed by stone and shadow. Flickering torches placed unevenly along the walls cast erratic, dancing light across the chamber, illuminating both ancient grandeur and slow decay. Here, in the marriage of divine architecture and natural cavern, the boundary between sacred and profane dissolves into something altogether more complex.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Sacred Blood Section -->
+<section class="sacred-blood">
+    <div class="blood-energy"></div>
+    
+    <div class="container">
+        <div class="blood-showcase">
+            <div class="blood-chamber">
+                <div class="blood-header">
+                    <div class="blood-icon-epic">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1L9,7V9H7V11H9L10,12V20H14V12L15,11H17V9H21M13,14A1,1 0 0,0 12,15A1,1 0 0,0 13,16A1,1 0 0,0 14,15A1,1 0 0,0 13,14Z"/>
+                        </svg>
+                    </div>
+                    
+                    <h3 class="blood-title-epic">Khali's Sacred Blood</h3>
+                </div>
+                
+                <div class="blood-description-epic">
+                    <p>The entire sanctuary is bathed in the blood of Khali, though the true story of her death has been deliberately obscured by historical revision. This divine blood has soaked into the stone itself, creating a space with unique magical properties that persist through the ages. The metallic tang of ancient blood permeates the air, and the sanctuary holds a memory of the void—it remembers how to find the spaces where Light is weakest, where its hold is superficial.</p>
+                    <p>Here, the very walls pulse with the preserved essence of a murdered goddess, transforming the sanctuary into a living memorial that contradicts every official account of her demise. The blood creates more than magical resonance—it creates a space where truth cannot be entirely suppressed, where the weight of lies becomes physically oppressive.</p>
+                </div>
+                
+                <div class="blood-properties">
+                    <div class="blood-property">Void Memory Preservation</div>
+                    <div class="blood-property">Light Weakness Detection</div>
+                    <div class="blood-property">Divine Essence Amplification</div>
+                    <div class="blood-property">Truth Resonance Fields</div>
+                    <div class="blood-property">Reality Anchor Points</div>
+                    <div class="blood-property">Historical Persistence</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- False Mural Section -->
+<section class="false-mural">
+    <div class="mural-shadows"></div>
+    
+    <div class="container">
+        <div class="mural-layout">
+            
+            <div class="mural-content">
+                <h2>The Beautiful Lie Carved in Stone</h2>
+                <p>Deep within the sanctuary lies a smaller, secluded chamber containing an ancient mural carved into stone that depicts a fabricated version of events. When illuminated by candlelight, the carving shows a radiant Vaelari wielding a blade of pure light, striking down a shadowed figure who appears to glow with dark ethereal energy.</p>
+                <p>This mural represents one of the most insidious examples of how history can be rewritten by those with sufficient wealth and political influence. The true story—of a jealous princess who murdered two lovers in cold blood—was transformed through bribery and political pressure into a heroic legend that serves the powerful while erasing the innocent.</p>
+                <p>The sanctuary itself has become a monument to this beautiful lie, while the actual victims are remembered only as the villain and the tragic hero of a fabricated tale. Yet here, in the presence of Khali's preserved blood, the weight of truth presses against the carved falsehood, creating a tension that visitors can feel in their bones.</p>
+            </div>
+
+            <div class="mural-visual">
+                <div class="mural-carving">
+                    <div class="mural-figures">
+                        "Here lies etched in stone<br/>
+                        the lie that serves power—<br/>
+                        light striking down shadow<br/>
+                        while truth bleeds in darkness"
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Forsaken Community -->
+<section class="forsaken-community">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-dark">Refuge of the Cast Out</h2>
+            <p class="section-description-dark">
+                In the sanctuary's perpetual twilight, those rejected by Zenith's Light build new communities from shadow and solidarity
+            </p>
+        </div>
+        
+        <div class="community-grid">
+            
+            <div class="community-aspect">
+                <h3 class="aspect-title">Living Arrangements</h3>
+                <p class="aspect-description">
+                    The sanctuary houses rough-hewn beds carved into the cavern walls, providing basic shelter for the Forsaken community. Storage areas contain scavenged supplies, while hidden chambers serve various purposes including magical workings and community gatherings. The perpetual twilight of the underground space is broken only by the flickering torchlight, creating an atmosphere of shadowed sanctuary removed from the world above.
+                </p>
+            </div>
+
+            <div class="community-aspect">
+                <h3 class="aspect-title">Void-Infused Craft</h3>
+                <p class="aspect-description">
+                    Ancient rituals practiced in the sanctuary allow for the creation of void-infused pendants using the blood of those touched by void energies. This process involves drawing blood while channeling void essence into crystalline amulets, creating artifacts capable of disrupting Zenith's Light and breaking divine mental conditioning. These pendants serve as lifelines for those seeking freedom from overwhelming luminous influence.
+                </p>
+            </div>
+
+            <div class="community-aspect">
+                <h3 class="aspect-title">Underground Networks</h3>
+                <p class="aspect-description">
+                    The Forsaken operate with pragmatic survival-focused leadership structures and maintain complex relationships with both supernatural forces and remnants of pre-Zenithian culture. They preserve knowledge of the Wild Gods and maintain ceremonial observances conducted in secret, adapting ancient traditions to their hidden circumstances while building networks of mutual support and resistance.
+                </p>
+            </div>
+
+            <div class="community-aspect">
+                <h3 class="aspect-title">Sacred Resistance</h3>
+                <p class="aspect-description">
+                    The sanctuary serves as more than mere refuge—it functions as a center for organized resistance against Zenith's Chosen. The Forsaken employ strategic terrorist attacks against Zenithian infrastructure, using their knowledge gained during their time as members to strike back against the organization that brought them trauma and persecution, demonstrating that Zenith's power is not invulnerable.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Navigation -->
+<section class="navigation-dark">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title-dark">Explore More Special Locations</h2>
+        </div>
+        
+        <div class="nav-grid-dark">
+            <a href="/world-guide/geography/special-locations/awakening-tomb/" class="nav-card-dark">
+                <h3>The Awakening Tomb</h3>
+                <p>Trial site beneath the Crimson Tundra</p>
+            </a>
+            
+            <a href="/world-guide/geography/regions/godscarred-wastes/" class="nav-card-dark">
+                <h3>Godscarred Wastes</h3>
+                <p>Where divine fury scarred reality</p>
+            </a>
+            
+            <a href="/world-guide/geography/regions/verdant-veil/" class="nav-card-dark">
+                <h3>Verdant Veil</h3>
+                <p>Ancient forest of spirits</p>
+            </a>
+            
+            <a href="/world-guide/geography/" class="nav-card-dark">
+                <h3>Geography Guide</h3>
+                <p>Return to main geography</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "The Hidden Sanctuary - Blood of the Wild Gods World Guide",
+  "description": "Discover the Hidden Sanctuary, Khali's blood-soaked temple where the Forsaken gather in shadows, where ancient lies are carved in stone and truth bleeds through the darkness.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Hidden Sanctuary"
+    },
+    {
+      "@type": "Thing",
+      "name": "Khali's Temple"
+    },
+    {
+      "@type": "Thing",
+      "name": "The Forsaken"
+    },
+    {
+      "@type": "Thing",
+      "name": "Underground Refuge"
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
