@@ -513,48 +513,47 @@ image: "/assets/images/verdant-veil.jpg"
         font-size: 1em;
     }
 
-    .navigation-section {
-        padding: 80px 0;
-        background: rgba(10, 25, 10, 0.98);
-        border-top: 1px solid rgba(173, 255, 47, 0.3);
+    .navigation-frost {
+        padding: 90px 0;
+        background: rgba(25, 12, 22, 0.99);
+        border-top: 4px solid rgba(120, 45, 65, 0.5);
     }
 
-    .nav-grid {
+    .nav-grid-frost {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 25px;
-        max-width: 1000px;
+        gap: 30px;
+        max-width: 1100px;
         margin: 0 auto;
+        position: relative;
+        z-index: 10;
     }
 
-    .nav-card {
-        background: linear-gradient(135deg, rgba(30, 50, 30, 0.6), rgba(20, 40, 20, 0.8));
-        border: 1px solid rgba(173, 255, 47, 0.3);
-        border-radius: 18px;
-        padding: 25px;
+    .nav-card-frost {
+        background: linear-gradient(135deg, 
+            rgba(120, 45, 65, 0.18) 0%, 
+            rgba(60, 30, 45, 0.9) 100%);
+        border: 2px solid rgba(120, 45, 65, 0.4);
+        border-radius: 20px;
+        padding: 30px;
         text-align: center;
         text-decoration: none;
-        color: #adff2f;
-        transition: all 0.3s ease;
+        color: #b8d8e8;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
     }
 
-    .nav-card:hover {
-        border-color: #adff2f;
-        background: linear-gradient(135deg, rgba(173, 255, 47, 0.15), rgba(30, 50, 30, 0.7));
-        transform: translateY(-5px);
-        color: #e6ffe6;
-    }
-
-    .nav-card h3 {
-        margin: 0 0 10px 0;
-        font-size: 1.2em;
+    .nav-card-frost h3 {
+        margin: 0 0 15px 0;
+        font-size: 1.3em;
         font-weight: 600;
     }
 
-    .nav-card p {
+    .nav-card-frost p {
         margin: 0;
-        font-size: 0.9em;
-        opacity: 0.8;
+        font-size: 0.95em;
+        opacity: 0.85;
     }
 
     @media (max-width: 768px) {
@@ -878,29 +877,29 @@ image: "/assets/images/verdant-veil.jpg"
 </section>
 
 <!-- Navigation -->
-<section class="navigation-section">
+<section class="navigation-frost">
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Explore More Realms</h2>
         </div>
         
-        <div class="nav-grid">
-            <a href="/world-guide/geography/regions/azure-expanse/" class="nav-card">
+        <div class="nav-grid-frost">
+            <a href="/world-guide/geography/regions/azure-expanse/" class="nav-card-frost">
                 <h3>Azure Expanse</h3>
                 <p>The ocean that remembers divine tears and cosmic sorrow</p>
             </a>
             
-            <a href="/world-guide/geography/regions/godscarred-wastes/" class="nav-card">
+            <a href="/world-guide/geography/regions/godscarred-wastes/" class="nav-card-frost">
                 <h3>Godscarred Wastes</h3>
                 <p>Where divine fury left permanent scars on reality itself</p>
             </a>
             
-            <a href="/world-guide/geography/regions/crimson-tundra/" class="nav-card">
+            <a href="/world-guide/geography/regions/crimson-tundra/" class="nav-card-frost">
                 <h3>Crimson Tundra</h3>
                 <p>Frozen wasteland of eternal winter and fierce clans</p>
             </a>
             
-            <a href="/world-guide/geography/" class="nav-card">
+            <a href="/world-guide/geography/" class="nav-card-frost">
                 <h3>All Regions</h3>
                 <p>Return to the complete geography guide</p>
             </a>
