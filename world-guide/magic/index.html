@@ -1,0 +1,1256 @@
+---
+layout: default
+title: "Magic Systems | Blood of the Wild Gods World Guide"
+description: "Explore the complete magical framework of Arcadia - from the six elemental forces to divine blood corruption, discover the price of power and the secrets hidden in shadow."
+image: "/assets/images/magic-systems-main.jpg"
+---
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        background: #0a0a15;
+        color: #e8e8e8;
+        overflow-x: hidden;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Magical Header */
+    .magic-header {
+        padding: 140px 0 120px;
+        text-align: center;
+        background: radial-gradient(ellipse at center, 
+            rgba(75, 40, 140, 0.8) 0%, 
+            rgba(45, 20, 80, 0.9) 40%,
+            rgba(15, 5, 30, 1) 100%);
+        position: relative;
+        overflow: hidden;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Floating Magical Particles */
+    .magic-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .particle {
+        position: absolute;
+        border-radius: 50%;
+        animation: float-magic 8s ease-in-out infinite;
+        opacity: 0.7;
+    }
+
+    .particle.fire {
+        background: radial-gradient(circle, #ff6b35, #ff4500);
+        box-shadow: 0 0 20px #ff6b35;
+        width: 4px;
+        height: 4px;
+    }
+
+    .particle.water {
+        background: radial-gradient(circle, #4a9eff, #1e90ff);
+        box-shadow: 0 0 15px #4a9eff;
+        width: 3px;
+        height: 3px;
+    }
+
+    .particle.earth {
+        background: radial-gradient(circle, #8b4513, #a0522d);
+        box-shadow: 0 0 12px #8b4513;
+        width: 5px;
+        height: 5px;
+    }
+
+    .particle.air {
+        background: radial-gradient(circle, #e6e6fa, #d3d3d3);
+        box-shadow: 0 0 18px #e6e6fa;
+        width: 2px;
+        height: 2px;
+    }
+
+    .particle.light {
+        background: radial-gradient(circle, #ffd700, #ffff00);
+        box-shadow: 0 0 25px #ffd700;
+        width: 6px;
+        height: 6px;
+    }
+
+    .particle.void {
+        background: radial-gradient(circle, #4b0082, #000000);
+        box-shadow: 0 0 20px #4b0082;
+        width: 4px;
+        height: 4px;
+    }
+
+    @keyframes float-magic {
+        0%, 100% { 
+            transform: translateY(0px) translateX(0px) rotate(0deg); 
+            opacity: 0.7; 
+        }
+        25% { 
+            transform: translateY(-20px) translateX(10px) rotate(90deg); 
+            opacity: 1; 
+        }
+        50% { 
+            transform: translateY(-40px) translateX(-5px) rotate(180deg); 
+            opacity: 0.8; 
+        }
+        75% { 
+            transform: translateY(-20px) translateX(-15px) rotate(270deg); 
+            opacity: 1; 
+        }
+    }
+
+    /* Elemental Circles */
+    .elemental-circles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .elemental-circle {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid;
+        animation: elemental-rotation 20s linear infinite;
+        opacity: 0.3;
+    }
+
+    .circle-fire {
+        width: 300px;
+        height: 300px;
+        border-color: #ff6b35;
+        top: 20%;
+        left: 10%;
+        animation-duration: 25s;
+    }
+
+    .circle-water {
+        width: 250px;
+        height: 250px;
+        border-color: #4a9eff;
+        top: 60%;
+        right: 15%;
+        animation-duration: 30s;
+        animation-direction: reverse;
+    }
+
+    .circle-earth {
+        width: 400px;
+        height: 400px;
+        border-color: #8b4513;
+        top: 40%;
+        left: 60%;
+        animation-duration: 35s;
+    }
+
+    .circle-air {
+        width: 200px;
+        height: 200px;
+        border-color: #e6e6fa;
+        top: 10%;
+        right: 20%;
+        animation-duration: 22s;
+        animation-direction: reverse;
+    }
+
+    .circle-light {
+        width: 350px;
+        height: 350px;
+        border-color: #ffd700;
+        top: 70%;
+        left: 20%;
+        animation-duration: 28s;
+    }
+
+    .circle-void {
+        width: 180px;
+        height: 180px;
+        border-color: #4b0082;
+        top: 30%;
+        right: 40%;
+        animation-duration: 33s;
+        animation-direction: reverse;
+    }
+
+    @keyframes elemental-rotation {
+        0% { 
+            transform: rotate(0deg) scale(1); 
+            opacity: 0.3; 
+        }
+        50% { 
+            opacity: 0.6; 
+            transform: scale(1.1); 
+        }
+        100% { 
+            transform: rotate(360deg) scale(1); 
+            opacity: 0.3; 
+        }
+    }
+
+    /* Magical Energy Flows */
+    .energy-streams {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .energy-stream {
+        position: absolute;
+        width: 400px;
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(138, 43, 226, 0.8) 20%, 
+            rgba(255, 215, 0, 0.9) 50%, 
+            rgba(75, 0, 130, 0.8) 80%, 
+            transparent 100%);
+        animation: magic-flow 15s linear infinite;
+        filter: blur(1px);
+    }
+
+    @keyframes magic-flow {
+        0% { transform: translateX(-450px) rotate(25deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateX(calc(100vw + 50px)) rotate(25deg); opacity: 0; }
+    }
+
+    .stream-1 { top: 25%; animation-delay: 0s; }
+    .stream-2 { top: 45%; animation-delay: 5s; }
+    .stream-3 { top: 65%; animation-delay: 10s; }
+    .stream-4 { top: 85%; animation-delay: 3s; }
+
+    /* Runic Symbols */
+    .runic-symbols {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .rune {
+        position: absolute;
+        color: rgba(138, 43, 226, 0.4);
+        font-size: 30px;
+        font-family: 'Times New Roman', serif;
+        font-weight: bold;
+        animation: rune-pulse 12s ease-in-out infinite;
+    }
+
+    @keyframes rune-pulse {
+        0%, 100% { 
+            opacity: 0.2; 
+            transform: scale(1) rotate(0deg); 
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+        }
+        50% { 
+            opacity: 0.8; 
+            transform: scale(1.2) rotate(180deg); 
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+        }
+    }
+
+    .rune-1 { top: 15%; left: 15%; animation-delay: 0s; }
+    .rune-2 { top: 25%; right: 20%; animation-delay: 2s; }
+    .rune-3 { top: 55%; left: 10%; animation-delay: 4s; }
+    .rune-4 { top: 75%; right: 15%; animation-delay: 6s; }
+    .rune-5 { top: 35%; left: 70%; animation-delay: 8s; }
+    .rune-6 { top: 65%; right: 60%; animation-delay: 10s; }
+
+    .page-breadcrumb {
+        background: rgba(75, 40, 140, 0.3);
+        border: 1px solid rgba(138, 43, 226, 0.5);
+        border-radius: 25px;
+        padding: 8px 20px;
+        display: inline-block;
+        font-size: 0.9em;
+        color: #c89bff;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+    }
+
+    .page-breadcrumb:hover {
+        background: rgba(75, 40, 140, 0.5);
+        transform: translateY(-2px);
+        color: #ffffff;
+        box-shadow: 0 8px 25px rgba(138, 43, 226, 0.3);
+    }
+
+    .magic-title {
+        font-size: 5em;
+        font-weight: 200;
+        margin-bottom: 25px;
+        color: #ffffff;
+        letter-spacing: 8px;
+        text-shadow: 
+            0 0 40px rgba(138, 43, 226, 0.9),
+            0 0 80px rgba(255, 215, 0, 0.6),
+            0 8px 40px rgba(0, 0, 0, 0.9);
+        animation: magic-title-glow 10s ease-in-out infinite;
+        position: relative;
+    }
+
+    .magic-title::before {
+        content: '';
+        position: absolute;
+        top: -30px;
+        left: -60px;
+        right: -60px;
+        bottom: -30px;
+        background: radial-gradient(ellipse, rgba(138, 43, 226, 0.2) 0%, transparent 70%);
+        animation: title-magic-aura 18s ease-in-out infinite;
+        z-index: -1;
+    }
+
+    @keyframes magic-title-glow {
+        0%, 100% { 
+            text-shadow: 
+                0 0 40px rgba(138, 43, 226, 0.9),
+                0 0 80px rgba(255, 215, 0, 0.6),
+                0 8px 40px rgba(0, 0, 0, 0.9);
+        }
+        50% { 
+            text-shadow: 
+                0 0 60px rgba(138, 43, 226, 1),
+                0 0 120px rgba(255, 215, 0, 0.9),
+                0 8px 50px rgba(0, 0, 0, 1);
+        }
+    }
+
+    @keyframes title-magic-aura {
+        0%, 100% { opacity: 0.4; transform: scale(1) rotate(0deg); }
+        33% { opacity: 0.7; transform: scale(1.3) rotate(120deg); }
+        66% { opacity: 0.5; transform: scale(1.1) rotate(240deg); }
+    }
+
+    .magic-subtitle {
+        font-size: 1.8em;
+        color: #c89bff;
+        font-style: italic;
+        margin-bottom: 40px;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        animation: subtitle-mystical 12s ease-in-out infinite;
+    }
+
+    @keyframes subtitle-mystical {
+        0%, 100% { transform: translateY(0); opacity: 0.8; }
+        50% { transform: translateY(-5px); opacity: 1; }
+    }
+
+    .magic-description {
+        font-size: 1.3em;
+        color: #e0e8ff;
+        max-width: 900px;
+        margin: 0 auto;
+        line-height: 1.9;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Section Styling */
+    .magic-section {
+        padding: 120px 0;
+        position: relative;
+    }
+
+    .magic-section:nth-child(even) {
+        background: rgba(15, 5, 30, 0.7);
+    }
+
+    .magic-section:nth-child(odd) {
+        background: rgba(20, 10, 40, 0.5);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+        position: relative;
+    }
+
+    .section-title {
+        font-size: 3.5em;
+        color: #ffffff;
+        margin-bottom: 20px;
+        font-weight: 300;
+        letter-spacing: 4px;
+        text-shadow: 
+            0 0 30px rgba(138, 43, 226, 0.7),
+            0 8px 25px rgba(0, 0, 0, 0.8);
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 3px;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(138, 43, 226, 0.8) 20%, 
+            rgba(255, 215, 0, 1) 50%, 
+            rgba(75, 0, 130, 0.8) 80%, 
+            transparent);
+        animation: section-magic-underline 8s ease-in-out infinite;
+    }
+
+    @keyframes section-magic-underline {
+        0%, 100% { width: 200px; opacity: 0.6; }
+        50% { width: 350px; opacity: 1; box-shadow: 0 0 20px rgba(138, 43, 226, 0.5); }
+    }
+
+    .section-description {
+        font-size: 1.2em;
+        color: #c89bff;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+    }
+
+    /* Magic System Cards */
+    .magic-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .magic-card {
+        background: linear-gradient(135deg, 
+            rgba(75, 40, 140, 0.4) 0%, 
+            rgba(45, 20, 80, 0.8) 50%,
+            rgba(25, 10, 50, 0.9) 100%);
+        border: 2px solid rgba(138, 43, 226, 0.4);
+        border-radius: 25px;
+        padding: 40px;
+        transition: all 0.5s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+        cursor: pointer;
+    }
+
+    .magic-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(138, 43, 226, 0.2), 
+            transparent);
+        transition: left 0.7s ease;
+    }
+
+    .magic-card:hover {
+        transform: translateY(-15px) scale(1.02);
+        border-color: #ffd700;
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.5),
+            0 0 60px rgba(138, 43, 226, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .magic-card:hover::before {
+        left: 100%;
+    }
+
+    .magic-header-content {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .magic-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, 
+            rgba(138, 43, 226, 0.5) 0%, 
+            rgba(255, 215, 0, 0.6) 50%,
+            rgba(75, 0, 130, 0.5) 100%);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        box-shadow: 
+            0 10px 30px rgba(138, 43, 226, 0.3),
+            inset 0 2px 0 rgba(255, 255, 255, 0.3);
+        transition: all 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .magic-icon::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 60%);
+        animation: icon-magic-glow 8s ease-in-out infinite;
+    }
+
+    @keyframes icon-magic-glow {
+        0%, 100% { opacity: 0.3; transform: rotate(0deg); }
+        50% { opacity: 0.7; transform: rotate(180deg); }
+    }
+
+    .magic-icon svg {
+        width: 40px;
+        height: 40px;
+        fill: #000;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        z-index: 1;
+        position: relative;
+    }
+
+    .magic-card:hover .magic-icon {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 
+            0 20px 40px rgba(138, 43, 226, 0.4),
+            inset 0 2px 0 rgba(255, 255, 255, 0.4);
+    }
+
+    .magic-name {
+        font-size: 1.8em;
+        color: #ffffff;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    .magic-type {
+        font-size: 0.9em;
+        color: #c89bff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+
+    .magic-description-card {
+        color: #e0e8ff;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        font-size: 1.05em;
+    }
+
+    .magic-link {
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(135deg, 
+            rgba(138, 43, 226, 0.8), 
+            rgba(255, 215, 0, 0.9));
+        color: #000;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-top: auto;
+        box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+    }
+
+    .magic-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(138, 43, 226, 0.4);
+        background: linear-gradient(135deg, #8a2be2, #ffd700);
+    }
+
+    .magic-link svg {
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+        fill: currentColor;
+    }
+
+    /* Special Cards for Hidden Knowledge */
+    .hidden-knowledge {
+        border-color: rgba(75, 0, 130, 0.6);
+        background: linear-gradient(135deg, 
+            rgba(25, 0, 50, 0.8) 0%, 
+            rgba(50, 20, 80, 0.9) 100%);
+    }
+
+    .hidden-knowledge:hover {
+        border-color: #4b0082;
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.6),
+            0 0 60px rgba(75, 0, 130, 0.5);
+    }
+
+    .forbidden-magic {
+        border-color: rgba(139, 0, 0, 0.6);
+        background: linear-gradient(135deg, 
+            rgba(50, 0, 0, 0.8) 0%, 
+            rgba(80, 20, 20, 0.9) 100%);
+    }
+
+    .forbidden-magic:hover {
+        border-color: #8b0000;
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.6),
+            0 0 60px rgba(139, 0, 0, 0.5);
+    }
+
+    /* Navigation Footer */
+    .navigation-footer {
+        padding: 80px 0;
+        background: rgba(10, 5, 25, 0.95);
+        text-align: center;
+        border-top: 2px solid rgba(138, 43, 226, 0.4);
+    }
+
+    .nav-title {
+        font-size: 2.5em;
+        color: #ffffff;
+        margin-bottom: 30px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
+
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .nav-link {
+        background: rgba(75, 40, 140, 0.3);
+        border: 1px solid rgba(138, 43, 226, 0.4);
+        border-radius: 15px;
+        padding: 20px;
+        text-decoration: none;
+        color: #c89bff;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .nav-link:hover {
+        border-color: #c89bff;
+        background: rgba(138, 43, 226, 0.2);
+        transform: translateY(-3px);
+        color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+        .magic-title {
+            font-size: 3.5em;
+            letter-spacing: 4px;
+        }
+        
+        .magic-subtitle {
+            font-size: 1.4em;
+        }
+        
+        .magic-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .magic-card {
+            padding: 30px;
+        }
+    }
+</style>
+
+<!-- Magical Header -->
+<section class="magic-header">
+    <!-- Floating Magical Particles -->
+    <div class="magic-particles">
+        <!-- Fire particles -->
+        <div class="particle fire" style="top: 15%; left: 10%; animation-delay: 0s;"></div>
+        <div class="particle fire" style="top: 65%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle fire" style="top: 45%; left: 25%; animation-delay: 4s;"></div>
+        <div class="particle fire" style="top: 85%; left: 60%; animation-delay: 6s;"></div>
+        
+        <!-- Water particles -->
+        <div class="particle water" style="top: 25%; left: 70%; animation-delay: 1s;"></div>
+        <div class="particle water" style="top: 75%; left: 15%; animation-delay: 3s;"></div>
+        <div class="particle water" style="top: 35%; left: 90%; animation-delay: 5s;"></div>
+        <div class="particle water" style="top: 55%; left: 5%; animation-delay: 7s;"></div>
+        
+        <!-- Earth particles -->
+        <div class="particle earth" style="top: 10%; left: 40%; animation-delay: 0.5s;"></div>
+        <div class="particle earth" style="top: 60%; left: 85%; animation-delay: 2.5s;"></div>
+        <div class="particle earth" style="top: 80%; left: 30%; animation-delay: 4.5s;"></div>
+        
+        <!-- Air particles -->
+        <div class="particle air" style="top: 20%; left: 60%; animation-delay: 1.5s;"></div>
+        <div class="particle air" style="top: 70%; left: 20%; animation-delay: 3.5s;"></div>
+        <div class="particle air" style="top: 40%; left: 75%; animation-delay: 5.5s;"></div>
+        <div class="particle air" style="top: 90%; left: 45%; animation-delay: 7.5s;"></div>
+        
+        <!-- Light particles -->
+        <div class="particle light" style="top: 30%; left: 50%; animation-delay: 2s;"></div>
+        <div class="particle light" style="top: 50%; left: 95%; animation-delay: 4s;"></div>
+        <div class="particle light" style="top: 85%; left: 10%; animation-delay: 6s;"></div>
+        
+        <!-- Void particles -->
+        <div class="particle void" style="top: 35%; left: 15%; animation-delay: 1s;"></div>
+        <div class="particle void" style="top: 65%; left: 65%; animation-delay: 3s;"></div>
+        <div class="particle void" style="top: 15%; left: 85%; animation-delay: 5s;"></div>
+    </div>
+    
+    <!-- Elemental Circles -->
+    <div class="elemental-circles">
+        <div class="elemental-circle circle-fire"></div>
+        <div class="elemental-circle circle-water"></div>
+        <div class="elemental-circle circle-earth"></div>
+        <div class="elemental-circle circle-air"></div>
+        <div class="elemental-circle circle-light"></div>
+        <div class="elemental-circle circle-void"></div>
+    </div>
+    
+    <!-- Magical Energy Streams -->
+    <div class="energy-streams">
+        <div class="energy-stream stream-1"></div>
+        <div class="energy-stream stream-2"></div>
+        <div class="energy-stream stream-3"></div>
+        <div class="energy-stream stream-4"></div>
+    </div>
+    
+    <!-- Runic Symbols -->
+    <div class="runic-symbols">
+        <div class="rune rune-1">⚹</div>
+        <div class="rune rune-2">⚡</div>
+        <div class="rune rune-3">🜂</div>
+        <div class="rune rune-4">🜁</div>
+        <div class="rune rune-5">☉</div>
+        <div class="rune rune-6">⚫</div>
+    </div>
+    
+    <div class="container">
+        <a href="/world-guide/" class="page-breadcrumb">← World Guide</a>
+        <h1 class="magic-title">Magic Systems</h1>
+        <p class="magic-subtitle">"Where every blessing becomes a curse, and power demands the ultimate price"</p>
+        
+        <div class="magic-description">
+            <p>Discover the complete magical framework that governs reality itself—from the six elemental forces that shape existence to the terrible price of divine blood. Here, magic is not mere tool but living force that transforms its wielders, where hidden knowledge lurks in shadow, and where the greatest power requires the ultimate sacrifice.</p>
+        </div>
+    </div>
+</section>
+
+<!-- The Six Elements -->
+<section class="magic-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">The Six Elements</h2>
+            <p class="section-description">
+                The complete cosmic framework that underlies all magical working—including the two forbidden elements
+            </p>
+        </div>
+        
+        <div class="magic-grid">
+            
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">The Complete Framework</h3>
+                </div>
+                <div class="magic-type">Cosmic Foundation</div>
+                <p class="magic-description-card">
+                    The true elemental system consists of six primordial forces: Earth, Air, Fire, Water, Spirit/Light, and Void. Knowledge of the complete system has been deliberately suppressed by theurgical orders who fear the destructive potential of understanding all cosmic elements.
+                </p>
+                <a href="/world-guide/magic/elemental-magic/the-six-elements.html" class="magic-link">
+                    Unlock the Elements
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,1L21,5V11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1M12,7C10.89,7 10,7.89 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9C14,7.89 13.11,7 12,7M9,13C8.45,13 8,13.45 8,14C8,14.55 8.45,15 9,15C9.55,15 10,14.55 10,14C10,13.45 9.55,13 9,13M12,13C11.45,13 11,13.45 11,14C11,14.55 11.45,15 12,15C12.55,15 13,14.55 13,14C13,13.45 12.55,13 12,13M15,13C14.45,13 14,13.45 14,14C14,14.55 14.45,15 15,15C15.55,15 16,14.55 16,14C16,13.45 15.55,13 15,13Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Elemental Angels</h3>
+                </div>
+                <div class="magic-type">Primordial Arbiters</div>
+                <p class="magic-description-card">
+                    Each element is governed by a primordial angel—ancient beings that represent pure, undiluted essence of their respective forces. These angels can be invoked through specific rituals requiring deep understanding of sacred texts and celestial alignments, but at terrible cost.
+                </p>
+                <a href="/world-guide/magic/elemental-magic/elemental-angels.html" class="magic-link">
+                    Meet the Angels
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card forbidden-magic">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">The Void Element</h3>
+                </div>
+                <div class="magic-type">Forbidden Knowledge</div>
+                <p class="magic-description-card">
+                    The element of silence, unmaking, and the space between thoughts. Knowledge of Void magic was systematically purged by theurgical orders who branded it heretical and demonic, driven by fear of its power to unmake creation itself.
+                </p>
+                <a href="/world-guide/magic/elemental-magic/the-void-element.html" class="magic-link">
+                    Enter the Void
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Divine Magic Systems -->
+<section class="magic-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Divine Magic Systems</h2>
+            <p class="section-description">
+                The supernatural forces that flow from divine essence—blessing and curse intertwined
+            </p>
+        </div>
+        
+        <div class="magic-grid">
+            
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Bloodmarked Transformation</h3>
+                </div>
+                <div class="magic-type">Living Weapons</div>
+                <p class="magic-description-card">
+                    Created as humanity's biological weapon against abusive gods, the Bloodmarked were designed for divine combat but became cursed within their own generation. Enhanced strength and reality resistance came at the cost of uncontrolled transformations and loss of humanity.
+                </p>
+                <a href="/world-guide/magic/divine-magic/bloodmarked-transformation.html" class="magic-link">
+                    Embrace the Blood
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Divine Blood Corruption</h3>
+                </div>
+                <div class="magic-type">Reality Scarring</div>
+                <p class="magic-description-card">
+                    When divine essence spills onto the material plane, it permanently alters reality's fundamental nature. Unlike other magical contamination, divine blood corruption intensifies with age, spreading through natural systems and transforming innocent life into nightmare.
+                </p>
+                <a href="/world-guide/magic/divine-magic/divine-blood-corruption.html" class="magic-link">
+                    Witness Corruption
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,8L10.67,8.09C9.81,7.07 7.4,4.5 5,4.5C5,4.5 3.03,7.46 4.96,11.41C4.41,12.24 4.07,12.67 4,13.66L2.07,13.95L2.28,14.93L4.04,14.67L4.18,15.38L2.61,16.32L3.08,17.21L4.53,16.32C5.68,18.76 8.59,20 11.99,20C15.39,20 18.3,18.76 19.45,16.32L20.9,17.21L21.37,16.32L19.8,15.38L19.94,14.67L21.7,14.93L21.91,13.95L20,13.66C19.93,12.67 19.59,12.24 19.04,11.41C20.97,7.46 19,4.5 19,4.5C16.6,4.5 14.19,7.07 13.33,8.09L12,8M9,11A1,1 0 0,1 10,12A1,1 0 0,1 9,13A1,1 0 0,1 8,12A1,1 0 0,1 9,11M15,11A1,1 0 0,1 16,12A1,1 0 0,1 15,13A1,1 0 0,1 14,12A1,1 0 0,1 15,11M11,14H13L12.3,15.39C12.5,16.03 13.06,16.5 13.75,16.5A1.5,1.5 0 0,1 15.25,18A1.5,1.5 0 0,1 13.75,19.5C13.14,19.5 12.65,19.04 12.5,18.43L11,14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Hybrid Manifestation</h3>
+                </div>
+                <div class="magic-type">Divine Offspring</div>
+                <p class="magic-description-card">
+                    Divine-mortal hybrid children possess power that exceeds their capacity for emotional development. Their abilities manifest without conscious control during childhood, growing stronger with emotional intensity and representing catastrophic potential in immature hands.
+                </p>
+                <a href="/world-guide/magic/divine-magic/hybrid-manifestation.html" class="magic-link">
+                    Understand Hybrids
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Scattered Divinity</h3>
+                </div>
+                <div class="magic-type">Distributed Essence</div>
+                <p class="magic-description-card">
+                    Following Thainos's transformation, divine potential scattered throughout humanity like seeds. Every mortal now carries fragments of divine essence that manifest through unconscious moral choices and emotional states, creating community-wide miracles through collective resonance.
+                </p>
+                <a href="/world-guide/magic/divine-magic/scattered-divinity.html" class="magic-link">
+                    Awaken the Divine
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Mortal Magical Arts -->
+<section class="magic-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Mortal Magical Arts</h2>
+            <p class="section-description">
+                The magical disciplines practiced by mortals who dare to channel cosmic forces
+            </p>
+        </div>
+        
+        <div class="magic-grid">
+            
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19M8,9A1,1 0 0,1 9,8A1,1 0 0,1 10,9V17A1,1 0 0,1 9,18A1,1 0 0,1 8,17V9M14,9A1,1 0 0,1 15,8A1,1 0 0,1 16,9V17A1,1 0 0,1 15,18A1,1 0 0,1 14,17V9M19,4A1,1 0 0,1 20,5A1,1 0 0,1 19,6H5A1,1 0 0,1 4,5A1,1 0 0,1 5,4H8.5L9.5,3H14.5L15.5,4H19Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Fate-Weaving</h3>
+                </div>
+                <div class="magic-type">Lunar Craft</div>
+                <p class="magic-description-card">
+                    The most sophisticated magical discipline, practiced by seers who harvest moonlight itself as tangible material. Different moon phases provide distinct energies for reshaping destiny patterns, but advanced techniques risk temporal threading and reality patching beyond mortal comprehension.
+                </p>
+                <a href="/world-guide/magic/mortal-magic/fate-weaving.html" class="magic-link">
+                    Weave Destiny
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card forbidden-magic">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Blood Magic</h3>
+                </div>
+                <div class="magic-type">Forbidden Arts</div>
+                <p class="magic-description-card">
+                    The forbidden arts that utilize the practitioner's life essence to power workings beyond normal magical limits. Unlike fate-weaving, blood magic draws directly from spiritual substance, enabling life drain capabilities and curse creation at the cost of the wielder's humanity.
+                </p>
+                <a href="/world-guide/magic/mortal-magic/blood-magic.html" class="magic-link">
+                    Spill the Essence
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.68,12.65 10.5,12.91V16H13.5V12.91C15.32,12.65 17,11 17,9A5,5 0 0,0 12,4Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Vision-Smoke Rituals</h3>
+                </div>
+                <div class="magic-type">Truth Revealing</div>
+                <p class="magic-description-card">
+                    Specialized magical practices using sacred herbs to reveal truth beneath surface appearances. These techniques can pierce through divine disguises and reveal essential natures, but require elaborate preparation and risk consciousness fragmentation during visions.
+                </p>
+                <a href="/world-guide/magic/mortal-magic/vision-smoke-rituals.html" class="magic-link">
+                    Breathe the Truth
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,1L21,5V11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1M12,7C10.89,7 10,7.89 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9C14,7.89 13.11,7 12,7M9,13C8.45,13 8,13.45 8,14C8,14.55 8.45,15 9,15C9.55,15 10,14.55 10,14C10,13.45 9.55,13 9,13M12,13C11.45,13 11,13.45 11,14C11,14.55 11.45,15 12,15C12.55,15 13,14.55 13,14C13,13.45 12.55,13 12,13M15,13C14.45,13 14,13.45 14,14C14,14.55 14.45,15 15,15C15.55,15 16,14.55 16,14C16,13.45 15.55,13 15,13Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Healing Magic</h3>
+                </div>
+                <div class="magic-type">Balance of Life</div>
+                <p class="magic-description-card">
+                    Advanced magical healing operates under cosmic laws of balance that exact precise prices for miraculous restoration. The most powerful healing draws on the practitioner's life essence, with extreme healing potentially severing Bloodmarked individuals from their divine lineage.
+                </p>
+                <a href="/world-guide/magic/mortal-magic/healing-magic.html" class="magic-link">
+                    Give Life Force
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Void and Shadow Magic -->
+<section class="magic-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Void & Shadow Magic</h2>
+            <p class="section-description">
+                The dangerous manipulation of absence, silence, and the spaces between reality
+            </p>
+        </div>
+        
+        <div class="magic-grid">
+            
+            <div class="magic-card hidden-knowledge">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Void Powers</h3>
+                </div>
+                <div class="magic-type">Animated Absence</div>
+                <p class="magic-description-card">
+                    Supernatural abilities manifested through contact with void energies, operating through manipulation of absence and silence. These powers typically manifest during extreme emotional distress, erupting as shadow tendrils and reality erosion beyond conscious control.
+                </p>
+                <a href="/world-guide/magic/void-magic/void-powers.html" class="magic-link">
+                    Touch the Void
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card hidden-knowledge">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8,12L6,10L4,12L6,14L8,12M10,21V19L12,17L14,19V21H10M10,3V5L12,7L14,5V3H10M16,12L18,10L20,12L18,14L16,12M12,8L10,6L12,4L14,6L12,8M12,20L10,18L12,16L14,18L12,20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">The Silence</h3>
+                </div>
+                <div class="magic-type">Reality Consumption</div>
+                <p class="magic-description-card">
+                    A growing cosmic phenomenon that represents more than the absence of sound—a creeping void that consumes meaning, purpose, and connection itself. During the Silent God crisis, it became actively malevolent, serving as communication medium for Void Wraiths.
+                </p>
+                <a href="/world-guide/magic/void-magic/the-silence.html" class="magic-link">
+                    Enter Silence
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card forbidden-magic">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2L13.09,8.26L22,9L14.74,13.09L17,22L12,16.74L7,22L9.26,13.09L2,9L10.91,8.26L12,2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Void-Infused Blood Magic</h3>
+                </div>
+                <div class="magic-type">Dangerous Fusion</div>
+                <p class="magic-description-card">
+                    Ancient magic practiced in Khali's sanctuary, combining blood magic with void energies to create reality-disrupting artifacts. These rituals create void-infused pendants capable of breaking Zenith's Light and lifting divine mental conditioning, but require void-touched blood and sacred spaces.
+                </p>
+                <a href="/world-guide/magic/void-magic/void-infused-blood-magic.html" class="magic-link">
+                    Fuse the Powers
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Environmental Magic -->
+<section class="magic-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Environmental & Cosmic Magic</h2>
+            <p class="section-description">
+                Where consciousness shapes reality at scales that dwarf mortal comprehension
+            </p>
+        </div>
+        
+        <div class="magic-grid">
+            
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6,14L8,16L6,18H4V14M18,14V18H16L18,16L16,14H18M7,3H5V5L7,3M19,3L17,5V3H19M12,1L15,4H9L12,1M12,23L9,20H15L12,23M20,12L23,9V15L20,12M1,12L4,15V9L1,12M6.31,6.9L7.75,5.46L9.19,6.9L7.75,8.34L6.31,6.9M14.81,6.9L16.25,8.34L14.81,9.78L13.37,8.34L14.81,6.9M14.81,15.22L13.37,13.78L14.81,12.34L16.25,13.78L14.81,15.22M6.31,15.22L7.75,13.78L9.19,15.22L7.75,16.66L6.31,15.22Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Divine Emotional Manifestation</h3>
+                </div>
+                <div class="magic-type">Reality Resonance</div>
+                <p class="magic-description-card">
+                    The direct correlation between divine psychological states and environmental conditions, where gods' grief becomes supernatural storms and divine conflicts extend seasons for years. The Azure Expanse can enter states of supernatural stillness when cosmic stress peaks.
+                </p>
+                <a href="/world-guide/magic/environmental-magic/divine-emotional-manifestation.html" class="magic-link">
+                    Feel Divine Pain
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.66,8C18.66,8 19.64,8.16 20.58,8.47C21.53,8.78 22.4,9.23 23.16,9.81L22.07,11.5C21.5,11.03 20.86,10.68 20.16,10.5C19.47,10.31 18.77,10.22 18.06,10.22C16.66,10.22 15.64,10.5 14.97,11.06C14.31,11.61 13.97,12.43 13.97,13.5C13.97,14.6 14.31,15.43 14.97,16C15.64,16.5 16.66,16.78 18.06,16.78C18.77,16.78 19.47,16.69 20.16,16.5C20.86,16.32 21.5,15.97 22.07,15.5L23.16,17.19C22.4,17.77 21.53,18.22 20.58,18.53C19.64,18.84 18.66,19 17.66,19C15.78,19 14.28,18.5 13.16,17.5C12.05,16.5 11.5,15.11 11.5,13.34C11.5,11.61 12.05,10.27 13.16,9.31C14.28,8.34 15.78,7.84 17.66,7.84V8M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Corruption Zones</h3>
+                </div>
+                <div class="magic-type">Contaminated Reality</div>
+                <p class="magic-description-card">
+                    Areas affected by divine blood corruption experience ongoing supernatural phenomena that follow predictable patterns while maintaining unpredictable manifestations. These zones require specialized knowledge to navigate, with contamination spreading through underground networks and biological vectors.
+                </p>
+                <a href="/world-guide/magic/environmental-magic/corruption-zones.html" class="magic-link">
+                    Map the Blight
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="magic-card">
+                <div class="magic-header-content">
+                    <div class="magic-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,1L21,5V11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1M12,7C10.89,7 10,7.89 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9C14,7.89 13.11,7 12,7M9,13C8.45,13 8,13.45 8,14C8,14.55 8.45,15 9,15C9.55,15 10,14.55 10,14C10,13.45 9.55,13 9,13M12,13C11.45,13 11,13.45 11,14C11,14.55 11.45,15 12,15C12.55,15 13,14.55 13,14C13,13.45 12.55,13 12,13M15,13C14.45,13 14,13.45 14,14C14,14.55 14.45,15 15,15C15.55,15 16,14.55 16,14C16,13.45 15.55,13 15,13Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="magic-name">Cosmic Boundary Events</h3>
+                </div>
+                <div class="magic-type">Realm Intersection</div>
+                <p class="magic-description-card">
+                    Supernatural phenomena that occur when divine realms intersect with the material plane, creating twilight convergences where reality becomes negotiable. These events amplify all magical workings while creating dangerous reality instability and entity migration.
+                </p>
+                <a href="/world-guide/magic/environmental-magic/cosmic-boundary-events.html" class="magic-link">
+                    Cross Boundaries
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Navigation Footer -->
+<section class="navigation-footer">
+    <div class="container">
+        <h2 class="nav-title">Continue Your Mystical Journey</h2>
+        <div class="nav-grid">
+            <a href="/world-guide/characters/" class="nav-link">Characters</a>
+            <a href="/world-guide/geography/" class="nav-link">Geography & Realms</a>
+            <a href="/world-guide/divine-realms/" class="nav-link">Divine Realms</a>
+            <a href="/world-guide/kingdoms/" class="nav-link">Kingdoms & Politics</a>
+            <a href="/world-guide/history/" class="nav-link">History & Timeline</a>
+            <a href="/world-guide/" class="nav-link">World Guide Home</a>
+        </div>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Magic Systems - Blood of the Wild Gods World Guide",
+  "description": "Explore the complete magical framework of Arcadia, from the six elemental forces to divine blood corruption, where every blessing becomes a curse and power demands the ultimate price.",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Magic Systems"
+    },
+    {
+      "@type": "Thing",
+      "name": "Elemental Magic"
+    },
+    {
+      "@type": "Thing",
+      "name": "Divine Magic"
+    },
+    {
+      "@type": "Thing",
+      "name": "Blood Magic"
+    },
+    {
+      "@type": "Thing",
+      "name": "Void Magic"
+    }
+  ]
+}
+</script>
