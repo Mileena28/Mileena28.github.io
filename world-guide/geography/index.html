@@ -383,6 +383,8 @@ image: "/assets/images/geography-main.jpg"
         height: 200%;
         background: radial-gradient(circle, rgba(138, 159, 255, 0.05) 0%, transparent 50%);
         animation: mystical-glow 8s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 1;
     }
 
     @keyframes mystical-glow {
@@ -464,6 +466,10 @@ image: "/assets/images/geography-main.jpg"
         font-weight: 600;
         transition: all 0.3s ease;
         box-shadow: 0 5px 15px rgba(138, 159, 255, 0.2);
+        position: relative;
+        z-index: 10;
+        pointer-events: auto;
+        cursor: pointer;
     }
 
     .sacred-link:hover {
