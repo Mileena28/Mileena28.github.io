@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanneus G'Raja - The Scholar of Lost Histories | Blood of the Wild Gods</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0f0a0a 0%, #1a1a0f 50%, #2d1a0f 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(210, 105, 30, 0.1) 0%, rgba(210, 105, 30, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #d2691e;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(210, 105, 30, 0.1);
+            border: 1px solid rgba(210, 105, 30, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #d2691e;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(210, 105, 30, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(210, 105, 30, 0.2), rgba(160, 82, 45, 0.1));
+            border: 2px solid #d2691e;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d2691e;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(210, 105, 30, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(160, 82, 45, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(139, 69, 19, 0.1) 50%, transparent 55%);
+            animation: scholarlyShimmer 15s ease-in-out infinite;
+        }
+
+        @keyframes scholarlyShimmer {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
+            25% { transform: rotate(15deg) scale(1.1); opacity: 0.6; }
+            50% { transform: rotate(30deg) scale(0.9); opacity: 0.2; }
+            75% { transform: rotate(45deg) scale(1.05); opacity: 0.7; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #d2691e;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #d2691e;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(210, 105, 30, 0.05);
+            border-left: 4px solid #d2691e;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #d2691e;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #d2691e;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #d2691e;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #d2691e;
+            transform: translateY(-5px);
+        }
+
+        .power-card.research {
+            border-left: 4px solid #d2691e;
+        }
+
+        .power-card.archaeology {
+            border-left: 4px solid #a0522d;
+        }
+
+        .power-card.analysis {
+            border-left: 4px solid #cd853f;
+        }
+
+        .power-card.corruption {
+            border-left: 4px solid #8b0000;
+        }
+
+        .power-title {
+            color: #d2691e;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #d2691e;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(210, 105, 30, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d2691e;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .trials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trial-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trial-card:hover {
+            border-color: #d2691e;
+            transform: translateY(-5px);
+        }
+
+        .trial-title {
+            color: #d2691e;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trial-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(15, 10, 5, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(210, 105, 30, 0.2), rgba(210, 105, 30, 0.1));
+            border: 1px solid #d2691e;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #d2691e, #ff8c00);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(210, 105, 30, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(210, 105, 30, 0.2);
+            color: #d2691e;
+            border: 1px solid #d2691e;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(210, 105, 30, 0.3);
+        }
+
+        .evolution-timeline {
+            background: rgba(15, 10, 5, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #d2691e;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #d2691e;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #d2691e;
+            border-radius: 50%;
+        }
+
+        .phase-label {
+            color: #d2691e;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .corruption-box {
+            background: rgba(139, 0, 0, 0.1);
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .corruption-title {
+            color: #ff6b6b;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .transformations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .transformation-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .transformation-card:hover {
+            border-color: #d2691e;
+            transform: translateY(-5px);
+        }
+
+        .transformation-card.idealistic {
+            border-left: 4px solid #4169e1;
+        }
+
+        .transformation-card.obsessed {
+            border-left: 4px solid #ff8c00;
+        }
+
+        .transformation-card.consumed {
+            border-left: 4px solid #8b0000;
+        }
+
+        .transformation-title {
+            color: #d2691e;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .transformation-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .empty-relationships {
+            background: rgba(20, 20, 20, 0.3);
+            border: 2px dashed #333;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid, .transformations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← Blood of the Wild Gods World Guide</a>
+        <h1 class="character-title">Tanneus G'Raja</h1>
+        <p class="character-tagline">"The Scholar of Lost Histories"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Ink-stained hands that shake when writing,<br>eyes that have seen too much truth,<br>weathered by forbidden knowledge</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Lost Histories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Ashborn of the Godscarred Wastes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Age at Death</div>
+                            <div class="stat-value">73 years (51 years of research)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Primary Location</div>
+                            <div class="stat-value">The Hollow Spire Archives</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Specialization</div>
+                            <div class="stat-value">Divine Histories & Suppressed Records</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Conflict</div>
+                            <div class="stat-value">Truth vs. Wisdom, Knowledge vs. Safety</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Final Fate</div>
+                            <div class="stat-value">Died "of truth" - consumed by knowledge</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Scholar Who Sought Too Much</h2>
+                    <div class="character-description">
+                        <p>Among the wind-carved spires and dusty archives of the academic world, no name carries more tragic weight than Tanneus G'Raja. Born to the pragmatic relic-hunters of the Godscarred Wastes, he chose knowledge over coin, truth over comfort, and revelation over safety. His transformation from idealistic young scholar to obsessed seeker of forbidden truths stands as both triumph and cautionary tale about the dangerous hunger that drives all great scholars.</p>
+                        
+                        <p>Tanneus embodied the insatiable need to understand, to uncover, to give voice to silenced histories. Yet his story reveals the shadow side of such noble pursuits, for there are truths that exist beyond mortal comprehension, knowledge that consumes rather than illuminates, and voices that were silenced not by malice but by mercy. His life's work proved his own heart was dangerous—spending decades documenting how divine love becomes divine catastrophe while loving knowledge in the same destructive way.</p>
+
+                        <p>His final testament serves as both masterwork and warning: proof that the greatest truths are too vast for mortal minds to safely contain, and that consciousness, once awakened to possibility, cannot choose ignorance even when ignorance would mean survival. Through his willing sacrifice of sanity and life, he ensured that future generations would have both the knowledge and the warnings needed to understand their own choices.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        Truth is not water. Truth is blood. And blood, once spilled, stains everything it touches.
+                        <div class="quote-source">— Tanneus G'Raja, final testament</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">The Scholar's Heart</h2>
+                    <div class="character-description">
+                        <p>Tanneus possessed the peculiar combination of methodical precision and reckless curiosity that marks the truly dangerous academic. His Ashborn heritage gave him the practical skills to uncover hidden things, while his chosen calling transformed those abilities into something far more perilous—the capacity to find truths that should remain buried. His character evolved from progressive idealist to tragic cautionary tale through the very pursuit of enlightenment.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Truth-Obsessed</div>
+                            <div class="trait-description">Driven by insatiable hunger for authentic history, regardless of personal cost or dangerous consequences. Unable to stop seeking knowledge even when it became destructive.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Methodical Researcher</div>
+                            <div class="trait-description">Combined traditional archaeological precision with unconventional investigation techniques, willing to break rules when truth was at stake.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Progressive Idealist</div>
+                            <div class="trait-description">Originally believed suppressed voices deserved hearing and traditional restrictions represented prejudice rather than protective wisdom.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Tragically Self-Aware</div>
+                            <div class="trait-description">Recognized his transformation into the cautionary tale he was documenting, but could not stop the process of being consumed by dangerous knowledge.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        I chose knowledge. I chose truth. I chose to dig. And in choosing those things, I chose this ending.
+                        <div class="quote-source">— Tanneus G'Raja, recognizing his fate</div>
+                    </div>
+                </section>
+
+                <!-- Powers & Abilities -->
+                <section class="section">
+                    <h2 class="section-title">Scholar, Seeker, Sacrifice</h2>
+                    <div class="character-description">
+                        <p>Tanneus's abilities evolved from traditional academic skills to supernatural insight born of dangerous knowledge. His research methods combined inherited Ashborn pragmatism with scholarly rigor, allowing him to uncover truths that safer approaches could never reach. Yet each discovery came at the cost of his humanity, transforming knowledge from tool into addiction.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card research">
+                            <div class="power-title">Historical Synthesis</div>
+                            <div class="power-description">
+                                <strong>Pattern Recognition:</strong> Extraordinary ability to trace connections across centuries and cultures<br>
+                                <strong>Cultural Navigation:</strong> Skilled at gaining access to restricted archives and suppressed records<br>
+                                <strong>Document Analysis:</strong> Expert at authenticating ancient texts and extracting truth from propaganda<br>
+                                <strong>Linguistic Mastery:</strong> Ability to read ancient scripts, including mirrored text and coded manuscripts<br>
+                                <strong>Methodical Precision:</strong> Maintains scholarly rigor even when pursuing unconventional sources
+                            </div>
+                        </div>
+                        
+                        <div class="power-card archaeology">
+                            <div class="power-title">Ashborn Heritage</div>
+                            <div class="power-description">
+                                <strong>Archaeological Intuition:</strong> Instinctive sense for where hidden knowledge lies buried<br>
+                                <strong>Relic Hunter Skills:</strong> Inherited practical abilities refined through scholarly application<br>
+                                <strong>Survival Instincts:</strong> Desert nomad background provides resilience for dangerous expeditions<br>
+                                <strong>Treasure Sense:</strong> Can identify valuable historical artifacts and their significance<br>
+                                <strong>Cultural Understanding:</strong> Deep knowledge of post-apocalyptic scavenger societies
+                            </div>
+                        </div>
+                        
+                        <div class="power-card analysis">
+                            <div class="power-title">Unconventional Methods</div>
+                            <div class="power-description">
+                                <strong>Ethical Flexibility:</strong> Willing to use bribery and breaking-and-entering when truth is at stake<br>
+                                <strong>Psychological Insight:</strong> Understands what motivates people to hide or preserve stories<br>
+                                <strong>Strategic Wealth Use:</strong> Employs resources to access sealed records and private archives<br>
+                                <strong>Local Networks:</strong> Builds connections with informants, innkeepers, and underground sources<br>
+                                <strong>Legend Following:</strong> Pursues children's rhymes and folk tales to uncover historical truth
+                            </div>
+                        </div>
+                        
+                        <div class="power-card corruption">
+                            <div class="power-title">Knowledge as Curse</div>
+                            <div class="power-description">
+                                <strong>Truth Addiction:</strong> Unable to stop seeking knowledge despite recognizing its dangers<br>
+                                <strong>Progressive Blindness:</strong> Idealism prevents recognition of wisdom in traditional restrictions<br>
+                                <strong>Intellectual Corruption:</strong> Becomes the cautionary tale he documents about dangerous love<br>
+                                <strong>Isolation Spiral:</strong> Knowledge alienates him from colleagues and human connection<br>
+                                <strong>Death by Truth:</strong> Metaphysical consumption by revelations too vast for mortal minds
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Character Evolution -->
+                <section class="section">
+                    <h2 class="section-title">Three Phases of Discovery</h2>
+                    <div class="character-description">
+                        <p>Tanneus's academic career follows a tragic arc from idealistic hope through uncomfortable revelation to ultimate corruption. Each phase represents not just intellectual development but spiritual transformation, as the pursuit of knowledge gradually consumed the man pursuing it, proving that love—even love of truth—can become destructive when taken beyond safe boundaries.</p>
+                    </div>
+
+                    <div class="evolution-timeline">
+                        <div class="timeline-title">Journey from Scholar to Sacrifice</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Ashborn Youth</div>
+                            <div class="phase-description">Born to relic-hunting family who valued divine artifacts for material worth rather than historical significance, choosing scholarship over profitable scavenging.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Idealistic Scholar</div>
+                            <div class="phase-description">Rejected family trade for noble pursuit of historical truth, believing suppressed voices were silenced by evil and deserved hearing.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Uncomfortable Discoveries</div>
+                            <div class="phase-description">Revelations that challenged progressive assumptions, suggesting traditional restrictions might contain wisdom rather than prejudice.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Obsessed Seeker</div>
+                            <div class="phase-description">Increasingly unconventional methods, academic isolation, growing spiritual corruption as dangerous knowledge consumed him from within.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Worldview Inversion</div>
+                            <div class="phase-description">Complete reversal of beliefs through devastating revelations about divine nature and the true reasons for divine silence as protective love.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Death by Truth</div>
+                            <div class="phase-description">Unable to stop seeking despite recognizing danger, becomes the cautionary tale he documented, dying of metaphysical consumption by forbidden knowledge.</div>
+                        </div>
+                    </div>
+
+                    <div class="transformations-grid">
+                        <div class="transformation-card idealistic">
+                            <div class="transformation-title">The Idealistic Scholar</div>
+                            <div class="transformation-description">
+                                <strong>Years 1-15:</strong> Rejected family relic-hunting trade for noble pursuit of historical truth<br>
+                                <strong>Belief:</strong> Suppressed voices were silenced by evil and deserved hearing<br>
+                                <strong>Methods:</strong> Traditional academic research with progressive interpretations<br>
+                                <strong>Goal:</strong> Give voice to history's forgotten victims and challenge unjust restrictions
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card obsessed">
+                            <div class="transformation-title">The Obsessed Seeker</div>
+                            <div class="transformation-description">
+                                <strong>Years 16-40:</strong> Uncomfortable discoveries that challenged progressive assumptions<br>
+                                <strong>Realization:</strong> Traditional restrictions might contain wisdom, not prejudice<br>
+                                <strong>Methods:</strong> Increasingly unconventional techniques, bribes, break-ins<br>
+                                <strong>Cost:</strong> Academic isolation and growing spiritual corruption from dangerous knowledge
+                            </div>
+                        </div>
+                        
+                        <div class="transformation-card consumed">
+                            <div class="transformation-title">The Consumed Scholar</div>
+                            <div class="transformation-description">
+                                <strong>Years 41-51:</strong> Complete inversion of worldview through devastating revelations<br>
+                                <strong>Understanding:</strong> Divine silence is love, not abandonment; truth can be malevolent<br>
+                                <strong>Fate:</strong> Unable to stop seeking despite recognizing the deadly danger<br>
+                                <strong>Legacy:</strong> Became the cautionary tale he was documenting about dangerous love
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="corruption-box">
+                        <div class="corruption-title">The Scholar's Paradox</div>
+                        Tanneus spent his career documenting how divine love becomes divine catastrophe while simultaneously loving knowledge in the same destructive way. His scholarly obsession paralleled the gods' romantic obsession—both caring so deeply about something beyond their ability to safely possess that the caring itself became lethal. He recognized this irony but could not stop himself, proving that consciousness, once awakened to possibility, cannot choose ignorance even when ignorance would mean survival.
+                    </div>
+
+                    <div class="character-quote">
+                        I have become a man whose life's work proves that his own heart was dangerous.
+                        <div class="quote-source">— Tanneus recognizing his transformation into his own research subject</div>
+                    </div>
+                </section>
+
+                <!-- Trials & Growth -->
+                <section class="section">
+                    <h2 class="section-title">The Price of Forbidden Knowledge</h2>
+                    <div class="character-description">
+                        <p>Each discovery in Tanneus's academic career stripped away another layer of comfortable assumptions, gradually revealing that his progressive idealism was exactly the mindset that had led to cosmic catastrophe. His trials were intellectual and spiritual, testing not his courage but his ability to accept truths that inverted everything he believed about knowledge, wisdom, and the nature of divine love.</p>
+                    </div>
+
+                    <div class="trials-grid">
+                        <div class="trial-card">
+                            <div class="trial-title">Choosing Scholarship</div>
+                            <div class="trial-description">Rejecting profitable family relic-hunting trade for unprofitable pursuit of historical truth, believing knowledge was inherently more valuable than material wealth.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">First Suppressions</div>
+                            <div class="trial-description">Discovering that respected institutions actively concealed historical records, reinforcing his belief that truth was being hidden by those who feared enlightenment.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Uncomfortable Revelations</div>
+                            <div class="trial-description">Finding evidence that some suppressed voices were silenced for good reasons, challenging his assumption that all restrictions represented prejudice rather than wisdom.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Academic Isolation</div>
+                            <div class="trial-description">Increasing alienation from colleagues as his methods became unacceptable and his discoveries too dangerous to share, leaving him alone with forbidden knowledge.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Divine Truth</div>
+                            <div class="trial-description">Uncovering the Lost Histories of divine-mortal love that led to cosmic catastrophe, realizing that divine silence is protective love rather than abandonment.</div>
+                        </div>
+                        <div class="trial-card">
+                            <div class="trial-title">Self-Recognition</div>
+                            <div class="trial-description">Understanding that he had become the cautionary tale he was documenting—consumed by love of knowledge just as the gods were consumed by love of mortals.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Scholarly Isolation</h2>
+                    <div class="character-description">
+                        <p>Tanneus's pursuit of forbidden knowledge led him down increasingly solitary paths. Unlike warriors who find strength in companions or lovers who discover themselves through connection, the scholar's journey demanded isolation. Truth, he learned, was not meant to be shared—at least not the truths he uncovered. His relationships became casualties of his obsession with dangerous knowledge.</p>
+                    </div>
+
+                    <div class="empty-relationships">
+                        "A scholar's greatest discoveries are made alone, in silence, with only ancient voices for company."<br><br>
+                        <em>Tanneus died as he lived in his final years—surrounded by his research but isolated from human connection. His pursuit of truth cost him not just his life, but his ability to maintain the relationships that make life meaningful. The dangerous knowledge he sought could only be safely pursued in solitude, making him both discoverer and victim of the truths he uncovered.</em>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Scholar's Paradox</h2>
+                <div class="summary-content">
+                    <p>Tanneus G'Raja embodies the tragic irony that knowledge, pursued without wisdom, becomes its own form of destruction. Born among the practical Ashborn who valued divine artifacts as trade goods, he chose instead to seek their historical significance, believing that truth and understanding were inherently noble pursuits. His transformation from idealistic academic to cautionary tale reveals the dangerous shadow cast by the scholarly calling when it becomes obsession rather than service.</p>
+
+                    <p>The profound tragedy of Tanneus lies not in his death, but in his gradual understanding that his life's work proved his own heart was dangerous. While documenting how divine love becomes divine catastrophe, he was simultaneously loving knowledge with the same destructive completeness. His scholarly obsession paralleled the gods' romantic obsession—both caring so deeply about something beyond their ability to safely possess that the caring itself became lethal, proving that love and knowledge are merely different expressions of the same cosmic force.</p>
+
+                    <p>Through decades of increasingly unconventional research, Tanneus uncovered the Lost Histories that revealed uncomfortable truths about divine nature and mortal limitations. His discoveries gradually inverted his worldview, transforming him from a progressive who believed suppressed voices deserved hearing into a conservative who understood that some silences are merciful. Yet even recognizing the danger, he could not stop seeking—the scholar's curse being that consciousness, once awakened to possibility, cannot choose ignorance even when ignorance would mean survival.</p>
+
+                    <p>His research methodology evolved from traditional academic approaches to dangerous boundary-crossing as he pursued truths that required breaking rules, bribing contacts, and following leads that respectable scholars would ignore. Each unconventional method brought him closer to the forbidden knowledge he sought, but also further from the human connections that might have anchored him to sanity. His growing isolation was both symptom and requirement of his pursuit—some truths can only be safely sought in solitude, if they can be safely sought at all.</p>
+
+                    <p>His final testament serves as both masterwork and warning: proof that the greatest truths are too vast for mortal minds to safely contain, and that consciousness itself is tragedy when it reaches beyond safe boundaries. In becoming the living embodiment of his own research, Tanneus demonstrated that some questions should never be answered, some silences should never be broken, and that the pursuit of absolute truth can transform the seeker into the very catastrophe they study. His willing sacrifice preserved dangerous knowledge for future generations while providing the warnings needed to understand its cost.</p>
+
+                    <p>Tanneus G'Raja achieved exactly what he sought—perfect understanding of divine nature and the reasons for their silence. That such achievement required his destruction was not an unfortunate side effect but an inevitable consequence, proving that some truths can only be possessed by becoming them. His life stands as proof that the greatest danger to consciousness is not ignorance but the insatiable hunger for understanding that drives scholars to dig too deep, seek too much, and love truth beyond the bounds of wisdom. In his death by truth, he became the final proof of his own discoveries about the lethal nature of love itself.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Discover the Lost Histories</h2>
+            <p class="cta-description">
+                Follow the tragic journey of a scholar whose pursuit of truth led to his ultimate transformation. 
+                Tanneus's story explores the dangerous price of forbidden knowledge and the weight of unbearable truths.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/lost-histories/ANoteFromtheHistorian/" class="cta-button">Read The Lost Histories</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>

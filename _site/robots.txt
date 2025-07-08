@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow important content
+Allow: /diary/
+Allow: /music/
+Allow: /writing/
+Allow: /chapters/
+Allow: /community/
+Allow: /about/
+Allow: /contact/
+
+# Block admin/technical folders if they exist
+Disallow: /admin/
+Disallow: /_drafts/
+Disallow: /vendor/
+Disallow: /node_modules/
+
+# Tell search engines where your sitemap is
+Sitemap: https://mileenarayne.com/sitemap.xml

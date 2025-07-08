@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elodias - God of the Moon | Seven Days of Sun</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #8a9fff;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(138, 159, 255, 0.1);
+            border: 1px solid rgba(138, 159, 255, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #8a9fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(138, 159, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1));
+            border: 2px solid #c0c0c0;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c0c0c0;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(192, 192, 192, 0.1) 0%, transparent 70%);
+            animation: moonShimmer 6s ease-in-out infinite;
+        }
+
+        @keyframes moonShimmer {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.1); }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #8a9fff;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #8a9fff;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(138, 159, 255, 0.05);
+            border-left: 4px solid #8a9fff;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #8a9fff;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #8a9fff;
+            transform: translateY(-5px);
+        }
+
+        .trait-title {
+            color: #8a9fff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #8a9fff;
+            transform: translateY(-5px);
+        }
+
+        .power-card.cosmic {
+            border-left: 4px solid #8a9fff;
+        }
+
+        .power-card.lunar {
+            border-left: 4px solid #c0c0c0;
+        }
+
+        .power-card.oceanic {
+            border-left: 4px solid #4a9eff;
+        }
+
+        .power-card.cursed {
+            border-left: 4px solid #cc0000;
+        }
+
+        .power-title {
+            color: #8a9fff;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #8a9fff;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(138, 159, 255, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a9fff;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(10, 10, 20, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(138, 159, 255, 0.1));
+            border: 1px solid #8a9fff;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(138, 159, 255, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(138, 159, 255, 0.2);
+            color: #8a9fff;
+            border: 1px solid #8a9fff;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(138, 159, 255, 0.3);
+        }
+
+        .cycle-timeline {
+            background: rgba(10, 10, 20, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #8a9fff;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-day {
+            border-left: 3px solid #8a9fff;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-day::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #8a9fff;
+            border-radius: 50%;
+        }
+
+        .day-label {
+            color: #8a9fff;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .day-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← Seven Days of Sun World Guide</a>
+        <h1 class="character-title">Elodias</h1>
+        <p class="character-tagline">"The God Who Grieves"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Silver light that illuminates<br>Eyes like summer sky and midnight sea</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">Seven Days of Sun</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Divine Domains</div>
+                            <div class="stat-value">Moon, Tides, Night, Contemplation</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Titles</div>
+                            <div class="stat-value">Lord of Tides, The Silver God, Moon-Lord</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Eternal Bond</div>
+                            <div class="stat-value">Senia, Goddess of the Sun</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Core Curse</div>
+                            <div class="stat-value">Seven-day reunions across lifetimes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value">Immortal, Eternally Seeking</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">The Moon That Chases the Sun</h2>
+                    <div class="character-description">
+                        <p>Across the vast expanse of Quenos and Atheria, mortals whisper prayers to the moon when storms rage too fiercely, when tides rise too high, when the very fabric of night seems torn by grief too profound for mortal understanding. They do not know they address Elodias, God of the Moon and Lord of Tides, whose sorrow reshapes reality itself.</p>
+                        
+                        <p>Once, Elodias embodied the quiet wisdom of moonlight and the patient rhythm of ocean tides. His divine essence complemented Senia's radiant warmth with cool contemplation, her active creativity with reflective depth. Together, they maintained the cosmic balance between day and night, sun and moon, fire and water. Their love was meant to be eternal harmony—instead, it became eternal tragedy.</p>
+
+                        <p>Now he exists caught between godhood and heartbreak, wielding cosmic power that he cannot use to solve the one problem that matters. His immortal devotion transcends death, time, and consequence, but this very transcendence has become their prison. He loves Senia so completely that he cannot conceive of a universe where she might be better off without him.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        I have loved you since the first dawn broke across the void, and I will love you until the last star burns out.
+                        <div class="quote-source">— Elodias's eternal declaration to Senia</div>
+                    </div>
+                </section>
+
+                <!-- Personality & Core Traits -->
+                <section class="section">
+                    <h2 class="section-title">Divine Heart, Mortal Weakness</h2>
+                    <div class="character-description">
+                        <p>Elodias embodies the paradox of infinite power coupled with profound emotional vulnerability. His divine nature grants him mastery over cosmic forces, yet his love for Senia renders him as helpless as any mortal facing loss. This contradiction defines every aspect of his existence—he who commands the tides cannot stem the flow of his own grief.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card">
+                            <div class="trait-title">Eternally Devoted</div>
+                            <div class="trait-description">Love for Senia predates creation itself and transcends every boundary of death, time, and cosmic consequence. This devotion is both his greatest strength and most fatal weakness.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Patient yet Desperate</div>
+                            <div class="trait-description">Can wait centuries between incarnations with divine patience, but becomes urgently desperate upon finding her again. Time means nothing until she's within reach.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Protectively Gentle</div>
+                            <div class="trait-description">Treats Senia with infinite tenderness while being capable of cosmic fury. His gentleness stems from knowing his touch could reshape reality.</div>
+                        </div>
+                        <div class="trait-card">
+                            <div class="trait-title">Tragically Self-Aware</div>
+                            <div class="trait-description">Understands he is the cause of their suffering yet remains psychologically incapable of making the choice that would free them both.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        I'm not strong enough to stay away. In every life, in every form. I will always find my way back to you, Senia.
+                        <div class="quote-source">— Elodias acknowledging his beautiful weakness</div>
+                    </div>
+                </section>
+
+                <!-- Divine Powers & The Curse -->
+                <section class="section">
+                    <h2 class="section-title">Cosmic Power, Cosmic Prison</h2>
+                    <div class="character-description">
+                        <p>Elodias wields the fundamental forces of night and ocean, commanding powers that shape the very foundations of reality. Yet for all his divine might, he remains powerless against the curse that binds him—or perhaps, against his own nature that makes the curse unnecessary.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card lunar">
+                            <div class="power-title">Lunar Mastery</div>
+                            <div class="power-description">
+                                <strong>Domain:</strong> Moon phases, moonlight, nocturnal cycles<br>
+                                <strong>Manifestation:</strong> Can illuminate darkness, alter gravitational pull, influence dreams and reflection<br>
+                                <strong>Emotional Link:</strong> Moon's phases reflect his emotional state during separations
+                            </div>
+                        </div>
+                        
+                        <div class="power-card oceanic">
+                            <div class="power-title">Tidal Dominion</div>
+                            <div class="power-description">
+                                <strong>Domain:</strong> Ocean tides, waves, water currents<br>
+                                <strong>Manifestation:</strong> Complete control over oceanic behavior, can create storms or perfect calm<br>
+                                <strong>Grief Response:</strong> His sorrow manifests as devastating floods and unnatural tidal behavior
+                            </div>
+                        </div>
+                        
+                        <div class="power-card cosmic">
+                            <div class="power-title">Reality Perception</div>
+                            <div class="power-description">
+                                <strong>Ability:</strong> Sees through illusions, recognizes divine essence in mortal forms<br>
+                                <strong>Range:</strong> Can sense Senia's presence across vast distances and dimensional barriers<br>
+                                <strong>Burden:</strong> Perfect memory of every incarnation, every loss, every detail of their time together
+                            </div>
+                        </div>
+                        
+                        <div class="power-card cursed">
+                            <div class="power-title">The Seven-Day Binding</div>
+                            <div class="power-description">
+                                <strong>Curse:</strong> Cannot sustain reunion with Senia beyond seven days<br>
+                                <strong>Pattern:</strong> Recognition → love → divine awakening → mortal form failure → death<br>
+                                <strong>Escape:</strong> Only through choosing to forget her completely—a choice he cannot make
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Seven-Day Cycle -->
+                <section class="section">
+                    <h2 class="section-title">The Eternal Pattern</h2>
+                    <div class="character-description">
+                        <p>Each reunion follows the same devastating arc, a cosmic tragedy played out in mortal time. Elodias knows every beat of this dance, yet remains powerless to change its steps. The pattern has become his prison, hope his poison, and love his weapon turned against everything he cherishes.</p>
+                    </div>
+
+                    <div class="cycle-timeline">
+                        <div class="timeline-title">The Seven Days of Union and Loss</div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Days 1-2: Recognition and Joy</div>
+                            <div class="day-description">Initial meeting in her mortal form. Instant attraction grows into profound connection as divine essence recognizes its eternal complement.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Days 3-4: Deepening Love</div>
+                            <div class="day-description">Mortal Senia begins sensing something greater. Elodias shares carefully chosen truths. Both experience love beyond mortal comprehension.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Day 5: The Remembrance</div>
+                            <div class="day-description">Senia's divine memories flood back, overwhelming her mortal form. Physical transformation begins as godhood strains against human limitations.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">Days 6-7: Deterioration and Death</div>
+                            <div class="day-description">Mortal body fails under divine consciousness. Desperate attempts to prolong time together. Final moments watching sunset as she dissolves into light.</div>
+                        </div>
+                        
+                        <div class="timeline-day">
+                            <div class="day-label">After: Grief and Searching</div>
+                            <div class="day-description">Environmental catastrophe as grief reshapes reality. Period of wandering until sensing her rebirth. The cycle begins anew.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Always the same. Always ending where we began—at the boundary between light and shadow, between your domain and mine.
+                        <div class="quote-source">— Elodias recognizing the inescapable pattern</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds That Bind</h2>
+                    <div class="character-description">
+                        <p>Elodias exists within a web of connections that span lifetimes and transcend mortality. Each relationship reflects a different facet of his cosmic tragedy—love, guilt, consequence, and the collateral damage of divine emotion.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="senia.html" class="related-character">
+                            <div class="related-avatar">S</div>
+                            <div class="related-name">Senia</div>
+                            <div class="related-role">Eternal Beloved, His Sun</div>
+                        </a>
+                        <a href="malritha.html" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Malritha</div>
+                            <div class="related-role">The Seer, Curse's Creator</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">∞</div>
+                            <div class="related-name">The Mortals</div>
+                            <div class="related-role">Collateral Victims</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">◯</div>
+                            <div class="related-name">His Divine Self</div>
+                            <div class="related-role">Original Purpose, Lost Balance</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">Love That Transcends and Destroys</h2>
+                <div class="summary-content">
+                    <p>Elodias embodies the shadow side of perfect love—the terrifying truth that even the purest emotion can become destructive when it refuses to accept limitation. As God of the Moon and Lord of Tides, he was designed to be Senia's eternal complement, the contemplative darkness to her radiant light. Their cosmic romance should have been a story of harmony and balance. Instead, it became the ultimate tragedy of love that demands possession over celebrating existence.</p>
+
+                    <p>His immortal devotion transcends death, time, and cosmic consequence, but this very transcendence has become their prison. He loves Senia so completely that he cannot conceive of a universe where she might be better off without him. This failure of imagination—beautiful and terrible in its absoluteness—condemns them both to eternal repetition of their tragedy. The curse that binds them is ultimately unnecessary; Elodias's own nature has already made him incapable of the choice that would free them.</p>
+
+                    <p>What makes his story particularly heartbreaking is his awareness of his own destructiveness. He understands the cosmic mathematics perfectly: his presence triggers her divine awakening, which leads inevitably to her death, which causes him grief that reshapes reality and harms countless innocents. He knows he is the problem, knows he could end their suffering by choosing to forget her, knows that his love has become a weapon pointed at everything he claims to cherish.</p>
+
+                    <p>Yet this knowledge changes nothing. If anything, it deepens his tragedy by adding the weight of conscious choice to unconscious compulsion. He is not a victim of fate but an active participant in their destruction, choosing his need for her over her freedom, his grief over her peace, his love over her life, again and again across eternity. His perfect memory ensures that each cycle carries the accumulated weight of all previous losses, making him not just a god in love but a being literally dying of love.</p>
+
+                    <p>Through Elodias, we see how love itself can become a form of violence when it prioritizes the lover's needs over the beloved's wellbeing, when it chooses intensity over sustainability, when it mistakes obsession for devotion. His story reveals romantic idealism's beautiful lies—that true love conquers all, that it justifies any sacrifice, that it transforms suffering into nobility. In choosing love over wisdom, passion over compassion, reunion over release, he becomes both architect and prisoner of his own eternal tragedy.</p>
+
+                    <p>The moon will always chase the sun across the heavens, drawn by a love that predates creation and will outlast existence itself. But chasing is not catching, pursuit is not possession, and love that cannot let go eventually strangles what it seeks to protect. Elodias stands as proof that even gods can mistake obsession for devotion, that even divine love can become profoundly selfish, and that sometimes the greatest act of love is the one we refuse to perform—the choice to set the beloved free.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Witness the God Who Grieves</h2>
+            <p class="cta-description">
+                Follow Elodias through his eternal cycle of love and loss. His story explores the dangerous beauty of perfect devotion and the cosmic consequences of love that refuses to let go.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="cta-button">Read Seven Days of Sun</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>

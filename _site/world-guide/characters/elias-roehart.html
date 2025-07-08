@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elias Roehart - The Secret Keeper | The Chosen</title>
+    <style>
+        /* Character Page Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1c1812 0%, #2d251a 50%, #3d342a 100%);
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+        }
+
+        .character-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .character-header {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(160, 82, 45, 0.1) 0%, rgba(139, 69, 19, 0.05) 100%);
+            border-bottom: 1px solid rgba(160, 82, 45, 0.2);
+        }
+
+        .character-title {
+            font-size: 3em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            color: #f0f0f0;
+            letter-spacing: 2px;
+        }
+
+        .character-tagline {
+            font-size: 1.4em;
+            color: #cd853f;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .series-breadcrumb {
+            background: rgba(160, 82, 45, 0.1);
+            border: 1px solid rgba(160, 82, 45, 0.3);
+            border-radius: 25px;
+            padding: 8px 20px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #cd853f;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .series-breadcrumb:hover {
+            background: rgba(160, 82, 45, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .character-content {
+            padding: 80px 0;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .character-portrait {
+            position: sticky;
+            top: 100px;
+            align-self: start;
+        }
+
+        .portrait-container {
+            background: rgba(20, 20, 20, 0.8);
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .character-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(160, 82, 45, 0.2), rgba(139, 69, 19, 0.1));
+            border: 2px solid #cd853f;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cd853f;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(160, 82, 45, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 69, 19, 0.2) 0%, transparent 50%),
+                linear-gradient(45deg, transparent 45%, rgba(160, 82, 45, 0.1) 50%, transparent 55%),
+                linear-gradient(-45deg, transparent 45%, rgba(139, 69, 19, 0.1) 50%, transparent 55%);
+            animation: scholarlyWisdom 22s ease-in-out infinite;
+        }
+
+        @keyframes scholarlyWisdom {
+            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
+            25% { transform: rotate(2deg) scale(1.01); opacity: 0.6; }
+            50% { transform: rotate(4deg) scale(0.99); opacity: 0.3; }
+            75% { transform: rotate(3deg) scale(1.01); opacity: 0.7; }
+        }
+
+        .character-stats {
+            text-align: left;
+        }
+
+        .stat-item {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        .stat-item:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: #cd853f;
+            font-weight: 600;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-value {
+            color: #ddd;
+            margin-top: 5px;
+        }
+
+        .character-info {
+            
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            font-weight: 400;
+            border-bottom: 2px solid #cd853f;
+            padding-bottom: 10px;
+        }
+
+        .character-description {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .character-quote {
+            background: rgba(160, 82, 45, 0.05);
+            border-left: 4px solid #cd853f;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #ddd;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+        }
+
+        .character-quote::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 3em;
+            color: #cd853f;
+            opacity: 0.3;
+        }
+
+        .quote-source {
+            text-align: right;
+            color: #999;
+            font-size: 0.9em;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .traits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .trait-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trait-card:hover {
+            border-color: #cd853f;
+            transform: translateY(-5px);
+        }
+
+        .trait-card.protective {
+            border-left: 4px solid #cd853f;
+        }
+
+        .trait-card.scholarly {
+            border-left: 4px solid #daa520;
+        }
+
+        .trait-card.tragic {
+            border-left: 4px solid #a0522d;
+        }
+
+        .trait-card.conflicted {
+            border-left: 4px solid #8b4513;
+        }
+
+        .trait-title {
+            color: #cd853f;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .trait-description {
+            color: #ccc;
+            font-size: 0.95em;
+        }
+
+        .powers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .power-card {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .power-card:hover {
+            border-color: #cd853f;
+            transform: translateY(-5px);
+        }
+
+        .power-card.paternal {
+            border-left: 4px solid #cd853f;
+        }
+
+        .power-card.knowledge {
+            border-left: 4px solid #daa520;
+        }
+
+        .power-card.secrets {
+            border-left: 4px solid #a0522d;
+        }
+
+        .power-card.wisdom {
+            border-left: 4px solid #8b4513;
+        }
+
+        .power-title {
+            color: #cd853f;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .power-description {
+            color: #ccc;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .related-characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .related-character {
+            background: rgba(20, 20, 20, 0.6);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-character:hover {
+            border-color: #cd853f;
+            transform: translateY(-5px);
+        }
+
+        .related-avatar {
+            width: 60px;
+            height: 60px;
+            background: rgba(160, 82, 45, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #cd853f;
+            font-weight: bold;
+        }
+
+        .related-name {
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .related-role {
+            color: #999;
+            font-size: 0.9em;
+        }
+
+        .character-summary {
+            padding: 60px 0;
+            background: rgba(28, 24, 18, 0.6);
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .summary-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .summary-content {
+            color: #ccc;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .summary-content p {
+            margin-bottom: 25px;
+        }
+
+        .summary-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .read-more-section {
+            background: linear-gradient(135deg, rgba(160, 82, 45, 0.2), rgba(160, 82, 45, 0.1));
+            border: 1px solid #cd853f;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+        }
+
+        .cta-description {
+            color: #ccc;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #cd853f, #a0522d);
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(160, 82, 45, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: rgba(160, 82, 45, 0.2);
+            color: #cd853f;
+            border: 1px solid #cd853f;
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(160, 82, 45, 0.3);
+        }
+
+        .analysis-timeline {
+            background: rgba(28, 24, 18, 0.4);
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline-title {
+            color: #cd853f;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .timeline-phase {
+            border-left: 3px solid #cd853f;
+            padding-left: 20px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-phase.tragic {
+            border-left-color: #8b4513;
+        }
+
+        .timeline-phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: #cd853f;
+            border-radius: 50%;
+        }
+
+        .timeline-phase.tragic::before {
+            background: #8b4513;
+        }
+
+        .phase-label {
+            color: #cd853f;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .phase-label.tragic {
+            color: #8b4513;
+        }
+
+        .phase-description {
+            color: #ccc;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .wisdom-box {
+            background: rgba(160, 82, 45, 0.1);
+            border: 1px solid rgba(160, 82, 45, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .wisdom-title {
+            color: #cd853f;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .tragedy-box {
+            background: rgba(139, 69, 19, 0.1);
+            border: 1px solid rgba(139, 69, 19, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            color: #f5f5f5;
+        }
+
+        .tragedy-title {
+            color: #8b4513;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .character-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .character-portrait {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .character-title {
+                font-size: 2.2em;
+            }
+            
+            .character-tagline {
+                font-size: 1.2em;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .powers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<section class="character-header">
+    <div class="container">
+        <a href="/world-guide/" class="series-breadcrumb">← The Chosen World Guide</a>
+        <h1 class="character-title">Elias Roehart</h1>
+        <p class="character-tagline">"The Secret Keeper"</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main class="character-content">
+    <div class="character-container">
+        <div class="character-grid">
+            
+            <!-- Character Portrait & Stats -->
+            <aside class="character-portrait">
+                <div class="portrait-container">
+                    <div class="character-image">
+                        [Character Art Coming Soon]<br>
+                        <small>Grey-blue eyes holding ancient secrets<br>Hands weathered by books and burden</small>
+                    </div>
+                    
+                    <div class="character-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">First Appears</div>
+                            <div class="stat-value">The Chosen</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Heritage</div>
+                            <div class="stat-value">Human</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Origin</div>
+                            <div class="stat-value">Rivenglade, Coastal Town</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Age</div>
+                            <div class="stat-value">Middle-aged</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Current Status</div>
+                            <div class="stat-value">Zenithian Missionary</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Current Location</div>
+                            <div class="stat-value">Atheria (Mission Work)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Sacred Gift</div>
+                            <div class="stat-value">Scholarly Wisdom, Protective Love</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Character Information -->
+            <div class="character-info">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2 class="section-title">When Love Becomes the Greatest Betrayal</h2>
+                    <div class="character-description">
+                        <p>Elias Roehart embodies one of the most heartbreaking truths about well-intentioned parenthood—that sometimes the deepest love can inflict the greatest harm when it chooses protection over preparation, secrecy over truth. As Mira's devoted father, he represents the anchor of stability and unconditional love that shaped her early years, calling her "little starling" with genuine tenderness that created lasting bonds of affection and trust.</p>
+                        
+                        <p>Yet beneath his quiet scholarly demeanor and protective devotion lies a man haunted by dangerous secrets. His knowledge of Mira's Nimwe heritage, understanding of her mother's mysterious departure, and awareness of the threats such knowledge represents have shaped every aspect of their relationship. His careful silences, protective lies, and deliberate withholding of crucial information stem from genuine love but ultimately leave Mira unprepared for the very dangers he sought to shield her from.</p>
+
+                        <p>His tragic arc from devoted father to zealous convert illustrates how extremist movements specifically target those carrying burdens of guilt, isolation, and unresolved grief. Lucien's manipulation exploited not just his loneliness but his desperate need for certainty after years of navigating impossible choices alone. His eventual departure for missionary work in Atheria represents the ultimate betrayal—abandoning the daughter who needs him most in pursuit of the false salvation that promises answers to questions he was never equipped to handle alone.</p>
+                    </div>
+
+                    <div class="character-quote">
+                        You are perfect, just as you are, my little starling. Never let anyone tell you otherwise.
+                        <div class="quote-source">— Elias to Mira, genuine love that tragically misses the deeper truth</div>
+                    </div>
+
+                    <div class="wisdom-box">
+                        <div class="wisdom-title">Story in Progress</div>
+                        The Chosen is an ongoing work, and character details may evolve as the story develops. This profile reflects Elias's journey as currently written, with potential for growth and change as his tale unfolds.
+                    </div>
+                </section>
+
+                <!-- The Burden of Secrets -->
+                <section class="section">
+                    <h2 class="section-title">The Heart That Chose Silence Over Truth</h2>
+                    <div class="character-description">
+                        <p>Elias's greatest strength—his protective love for Mira—becomes his most tragic flaw when filtered through fear and isolation. His decision to guard dangerous knowledge alone rather than prepare her for inevitable discovery demonstrates how even the most loving intentions can create devastating vulnerabilities when they prioritize immediate safety over long-term resilience.</p>
+                    </div>
+
+                    <div class="traits-grid">
+                        <div class="trait-card protective">
+                            <div class="trait-title">Fierce Paternal Love</div>
+                            <div class="trait-description">Unconditional devotion to Mira's wellbeing that shapes every decision. Willing to sacrifice his own happiness and authenticity to ensure her safety.</div>
+                        </div>
+                        <div class="trait-card scholarly">
+                            <div class="trait-title">Quiet Wisdom</div>
+                            <div class="trait-description">Deep love of books and knowledge, thoughtful approach to life's challenges. Represents old Rivenglade's scholarly traditions and independent thinking.</div>
+                        </div>
+                        <div class="trait-card tragic">
+                            <div class="trait-title">Secret Keeper</div>
+                            <div class="trait-description">Carries dangerous knowledge about Mira's Nimwe heritage and her mother's identity. Believes silence will protect her from those who would exploit her nature.</div>
+                        </div>
+                        <div class="trait-card conflicted">
+                            <div class="trait-title">Vulnerable to Manipulation</div>
+                            <div class="trait-description">Years of isolation and guilt make him susceptible to Lucien's influence. Seeks belonging and certainty after carrying impossible burdens alone.</div>
+                        </div>
+                    </div>
+
+                    <div class="character-quote">
+                        Some truths are too dangerous to speak, little starling. Sometimes love means bearing burdens alone so others can remain innocent.
+                        <div class="quote-source">— Elias justifying his protective silence</div>
+                    </div>
+                </section>
+
+                <!-- Gifts & Burdens -->
+                <section class="section">
+                    <h2 class="section-title">Wisdom Corrupted by Fear and Isolation</h2>
+                    <div class="character-description">
+                        <p>Elias's abilities as father and scholar are both his greatest gifts and his ultimate weaknesses. His capacity for deep love and careful thought, when combined with devastating secrets and years of isolation, create the perfect conditions for extremist manipulation. His genuine wisdom becomes distorted when filtered through fear of losing the only person who gives his life meaning.</p>
+                    </div>
+
+                    <div class="powers-grid">
+                        <div class="power-card paternal">
+                            <div class="power-title">Unconditional Love</div>
+                            <div class="power-description">
+                                <strong>Protective Instinct:</strong> Fierce devotion that prioritizes Mira's safety above all other considerations<br>
+                                <strong>Emotional Anchor:</strong> Provides stability and affection that shapes her core sense of self-worth<br>
+                                <strong>Gentle Guidance:</strong> Patient teaching and encouragement that nurtures her natural curiosity<br>
+                                <strong>Sacred Bond:</strong> "Little starling" endearment creates lasting connection despite eventual separation
+                            </div>
+                        </div>
+                        
+                        <div class="power-card knowledge">
+                            <div class="power-title">Scholarly Wisdom</div>
+                            <div class="power-description">
+                                <strong>Deep Learning:</strong> Extensive knowledge of books, history, and traditional wisdom<br>
+                                <strong>Critical Thinking:</strong> Ability to analyze complex situations and understand long-term consequences<br>
+                                <strong>Cultural Memory:</strong> Represents pre-Zenithian intellectual traditions and independent thought<br>
+                                <strong>Practical Judgment:</strong> Weathered by coastal life and shaped by real-world experience
+                            </div>
+                        </div>
+                        
+                        <div class="power-card secrets">
+                            <div class="power-title">Dangerous Knowledge</div>
+                            <div class="power-description">
+                                <strong>Nimwe Understanding:</strong> Knows or suspects Mira's true nature and the threats this knowledge represents<br>
+                                <strong>Mother's Identity:</strong> Possesses crucial information about Mira's parentage and why her mother left<br>
+                                <strong>Protective Deception:</strong> Constructed elaborate lies and silences to keep dangerous truths hidden<br>
+                                <strong>Historical Awareness:</strong> Likely understands more about void creatures and their place in the world
+                            </div>
+                        </div>
+                        
+                        <div class="power-card wisdom">
+                            <div class="power-title">Tragic Awareness</div>
+                            <div class="power-description">
+                                <strong>Truth's Weight:</strong> Understands that some knowledge can destroy as well as protect<br>
+                                <strong>Love's Limits:</strong> Recognizes the impossible position of loving someone he cannot fully prepare<br>
+                                <strong>Time's Pressure:</strong> Aware that secrets cannot be kept forever but unable to find safe revelation<br>
+                                <strong>Conversion Vulnerability:</strong> Isolation and guilt create openings for extremist manipulation
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- The Father's Journey -->
+                <section class="section">
+                    <h2 class="section-title">From Protective Love to Tragic Abandonment</h2>
+                    <div class="character-description">
+                        <p>Elias's transformation from devoted father to zealous missionary reveals how extremist movements exploit the deepest human vulnerabilities. His journey demonstrates that even the most thoughtful individuals can fall prey to manipulation when they carry unbearable burdens alone and seek certainty in an uncertain world.</p>
+                    </div>
+
+                    <div class="analysis-timeline">
+                        <div class="timeline-title">The Scholar's Fall</div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Devoted Father</div>
+                            <div class="phase-description">Years of loving single parenthood while guarding dangerous secrets about Mira's true nature and heritage.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Isolated Scholar</div>
+                            <div class="phase-description">Maintaining distance from community involvement while representing old Rivenglade's intellectual traditions.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Growing Pressure</div>
+                            <div class="phase-description">Zenithian influence increases in Rivenglade, creating pressure to conform while protecting family secrets.</div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-label">Lucien's Target</div>
+                            <div class="phase-description">Systematic manipulation exploiting his isolation, guilt, and desperate need for certainty and belonging.</div>
+                        </div>
+                        
+                        <div class="timeline-phase tragic">
+                            <div class="phase-label tragic">Zealous Convert</div>
+                            <div class="phase-description">Complete transformation into fervent believer who chooses missionary work over family responsibility.</div>
+                        </div>
+                        
+                        <div class="timeline-phase tragic">
+                            <div class="phase-label tragic">Ultimate Abandonment</div>
+                            <div class="phase-description">Departure for Atheria precisely when Mira needs his support most, contributing to her despair and isolation.</div>
+                        </div>
+                    </div>
+
+                    <div class="tragedy-box">
+                        <div class="tragedy-title">The Price of Protective Love</div>
+                        Elias's tragedy lies in the gap between intention and outcome. His genuine love for Mira drove him to protect her through secrecy, but this very protection left her vulnerable when the truth inevitably emerged. His conversion to Zenithianism offered false answers to impossible questions, while his departure removed the one person who might have helped her navigate the awakening of her true nature. His story demonstrates how isolation, guilt, and the burden of dangerous knowledge can corrupt even the most loving hearts.
+                    </div>
+
+                    <div class="character-quote">
+                        I am so proud of you. Of the strong woman you have become. Zenith's Light has shown me my true purpose—to spread His truth to those still lost in darkness.
+                        <div class="quote-source">— Elias's final words before departing for Atheria</div>
+                    </div>
+                </section>
+
+                <!-- Relationships -->
+                <section class="section">
+                    <h2 class="section-title">Bonds Broken by Secrets and False Salvation</h2>
+                    <div class="character-description">
+                        <p>Elias's relationships reveal the devastating impact of carrying dangerous knowledge alone and the way extremist movements exploit those burdened by isolation and unresolved grief. His connections demonstrate how even the deepest love can become destructive when filtered through fear and the desperate need for certainty.</p>
+                    </div>
+
+                    <div class="related-characters">
+                        <a href="mira-roehart.html" class="related-character">
+                            <div class="related-avatar">M</div>
+                            <div class="related-name">Mira Roehart</div>
+                            <div class="related-role">Beloved Daughter, Ultimate Betrayal</div>
+                        </a>
+                        <a href="lucien-altheris.html" class="related-character">
+                            <div class="related-avatar">L</div>
+                            <div class="related-name">Lucien Altheris</div>
+                            <div class="related-role">Manipulator, False Salvation</div>
+                        </a>
+                        <div class="related-character">
+                            <div class="related-avatar">MM</div>
+                            <div class="related-name">Mira's Mother</div>
+                            <div class="related-role">Lost Love, Source of Secrets</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">RC</div>
+                            <div class="related-name">Rivenglade Community</div>
+                            <div class="related-role">Former Neighbors, Left Behind</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">ZM</div>
+                            <div class="related-name">Zenithian Missionaries</div>
+                            <div class="related-role">New Brotherhood, False Purpose</div>
+                        </div>
+                        <div class="related-character">
+                            <div class="related-avatar">OT</div>
+                            <div class="related-name">Old Traditions</div>
+                            <div class="related-role">Scholarly Past, Abandoned Wisdom</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+        <!-- Character Summary -->
+        <section class="character-summary">
+            <div class="summary-container">
+                <h2 class="summary-title">The Tragedy of Love Without Truth</h2>
+                <div class="summary-content">
+                    <p>Elias Roehart represents one of the most heartbreaking aspects of parenthood—the way genuine love can become destructive when it chooses protection over preparation, secrecy over truth. His devotion to Mira was real and profound, creating the foundation of love and self-worth that sustained her through her darkest trials. Yet his decision to guard dangerous knowledge alone rather than prepare her for its eventual discovery ultimately left her vulnerable to the very forces he sought to protect her from.</p>
+
+                    <p>His scholarly nature and thoughtful wisdom, qualities that should have made him resistant to extremist manipulation, became vulnerabilities when combined with years of isolation and the crushing burden of impossible secrets. His knowledge of Mira's Nimwe heritage and understanding of her mother's mysterious departure created a gulf between them that love alone could not bridge—information too dangerous to share but too important to ignore.</p>
+
+                    <p>Lucien's manipulation of Elias reveals how extremist movements specifically target those carrying unbearable burdens alone. His guilt over keeping secrets, his isolation from community, and his desperate need for answers to impossible questions made him the perfect candidate for conversion. The false certainty offered by Zenithian doctrine provided relief from the terrible weight of making impossible choices without guidance or support.</p>
+
+                    <p>His departure for missionary work in Atheria represents the ultimate betrayal of parental love—choosing ideological certainty over his daughter's immediate needs. The timing of his abandonment, coming precisely when Mira faced her greatest challenges, demonstrates how extremist conversion destroys not just individuals but the relationships that give life meaning. His transformation from devoted father to zealous missionary illustrates the way totalist movements corrupt even the most beautiful human bonds.</p>
+
+                    <p>The tragedy of Elias lies not in malicious intent but in the gap between loving intention and devastating outcome. His protective silence, motivated by genuine care, left Mira unprepared for the awakening of her true nature. His conversion to extremism, driven by isolation and guilt, removed the one person who might have helped her navigate the discovery of her heritage. His story serves as a warning about the way secrecy, even when motivated by love, can create the very vulnerabilities it seeks to prevent.</p>
+
+                    <p>In the end, Elias Roehart embodies the profound truth that sometimes the greatest betrayals come not from enemies but from those who love us most. His journey from "little starling's" devoted father to absent zealot demonstrates how the burden of dangerous knowledge, the isolation of impossible choices, and the seductive promise of false certainty can corrupt even the most loving hearts. His story illustrates that preparation, even painful preparation, is often the truest form of protection—and that love without truth may ultimately prove more destructive than honest revelation of difficult realities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="read-more-section">
+            <h2 class="cta-title">Witness the Price of Protective Silence</h2>
+            <p class="cta-description">
+                Experience Elias's heartbreaking journey from devoted father to lost convert. His story explores how love without truth can become the greatest betrayal.
+            </p>
+            <div class="cta-buttons">
+                <a href="/chapters/the-chosen/chapter-01/" class="cta-button">Read The Chosen</a>
+                <a href="/writing/" class="cta-button secondary">Explore the Series</a>
+                <a href="/world-guide/" class="cta-button secondary">World Guide</a>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+</body>
+</html>
