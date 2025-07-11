@@ -6,11 +6,148 @@ image: "/assets/images/world-guide-main.jpg"
 ---
 
 <style>
-    .world-header {
-        padding: 100px 0 80px;
-        text-align: center;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.15) 0%, rgba(138, 159, 255, 0.05) 100%);
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Georgia', serif;
+        background: radial-gradient(ellipse at center, #0a0a2a 0%, #000000 100%);
+        color: #f0f0f0;
+        min-height: 100vh;
         position: relative;
+        overflow-x: hidden;
+    }
+
+    /* Enhanced Cosmic Background Effects */
+    .cosmic-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    .floating-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.3) 0%, transparent 70%);
+        animation: floatOrb 20s ease-in-out infinite;
+    }
+
+    .orb-1 {
+        width: 200px;
+        height: 200px;
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+    }
+
+    .orb-2 {
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        right: 10%;
+        background: radial-gradient(circle, rgba(201, 131, 255, 0.25) 0%, transparent 70%);
+        animation-delay: 7s;
+    }
+
+    .orb-3 {
+        width: 100px;
+        height: 100px;
+        top: 30%;
+        right: 30%;
+        background: radial-gradient(circle, rgba(159, 255, 138, 0.2) 0%, transparent 70%);
+        animation-delay: 14s;
+    }
+
+    @keyframes floatOrb {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.3;
+        }
+        33% {
+            transform: translate(30px, -40px) scale(1.1);
+            opacity: 0.5;
+        }
+        66% {
+            transform: translate(-20px, 30px) scale(0.9);
+            opacity: 0.4;
+        }
+    }
+
+    .stardust {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: twinkle 3s ease-in-out infinite;
+    }
+
+    .star-1 { top: 15%; left: 20%; animation-delay: 0s; }
+    .star-2 { top: 25%; left: 70%; animation-delay: 1s; }
+    .star-3 { top: 45%; left: 15%; animation-delay: 2s; }
+    .star-4 { top: 65%; left: 80%; animation-delay: 0.5s; }
+    .star-5 { top: 75%; left: 40%; animation-delay: 1.5s; }
+
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.5); }
+    }
+
+    .cosmic-wave {
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(138, 159, 255, 0.1) 25%, 
+            rgba(201, 131, 255, 0.15) 50%, 
+            rgba(138, 159, 255, 0.1) 75%, 
+            transparent 100%);
+        animation: waveFlow 25s linear infinite;
+    }
+
+    .wave-1 {
+        top: 20%;
+        animation-delay: 0s;
+    }
+
+    .wave-2 {
+        top: 70%;
+        animation-delay: 12s;
+        animation-direction: reverse;
+    }
+
+    @keyframes waveFlow {
+        0% {
+            transform: translateX(-100%) skewX(-5deg);
+            opacity: 0;
+        }
+        10%, 90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateX(100%) skewX(5deg);
+            opacity: 0;
+        }
+    }
+
+    .world-header {
+        padding: 120px 0 100px;
+        text-align: center;
+        background: 
+            radial-gradient(circle at 30% 70%, rgba(138, 159, 255, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(201, 131, 255, 0.12) 0%, transparent 50%),
+            linear-gradient(135deg, rgba(10, 10, 40, 0.9), rgba(15, 15, 30, 0.8));
+        position: relative;
+        z-index: 2;
     }
 
     .world-header::before {
@@ -20,62 +157,95 @@ image: "/assets/images/world-guide-main.jpg"
         left: 0;
         right: 0;
         bottom: 0;
-        background: url('/assets/images/world-background.jpg') center/cover;
-        opacity: 0.1;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="worldpattern" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="5" cy="5" r="1" fill="rgba(138,159,255,0.1)"/><circle cx="25" cy="15" r="0.5" fill="rgba(201,131,255,0.08)"/><circle cx="15" cy="25" r="0.8" fill="rgba(159,255,138,0.06)"/><path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23worldpattern)"/></svg>') center/cover;
+        opacity: 0.4;
         z-index: -1;
     }
 
     .world-title {
-        font-size: 3.5em;
-        font-weight: 300;
-        margin-bottom: 20px;
+        font-size: 4.2em;
+        font-weight: 200;
+        margin-bottom: 25px;
         color: #f0f0f0;
-        letter-spacing: 3px;
+        letter-spacing: 4px;
+        text-shadow: 
+            0 0 30px rgba(138, 159, 255, 0.6),
+            0 0 60px rgba(201, 131, 255, 0.3),
+            0 4px 8px rgba(0, 0, 0, 0.8);
+        position: relative;
+    }
+
+    .world-title::after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        width: 300px;
+        height: 4px;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(138, 159, 255, 0.8), 
+            rgba(255, 255, 255, 0.9), 
+            rgba(138, 159, 255, 0.8), 
+            transparent);
+        transform: translateX(-50%);
+        border-radius: 2px;
+        animation: titleGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes titleGlow {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
     }
 
     .world-subtitle {
-        font-size: 1.4em;
+        font-size: 1.6em;
         color: #8a9fff;
         font-style: italic;
         margin-bottom: 40px;
-        max-width: 700px;
+        max-width: 800px;
         margin-left: auto;
         margin-right: auto;
+        text-shadow: 0 0 20px rgba(138, 159, 255, 0.4);
     }
 
     .world-description {
-        font-size: 1.1em;
-        color: #ccc;
-        max-width: 800px;
+        font-size: 1.15em;
+        color: #ddd;
+        max-width: 900px;
         margin: 0 auto;
-        line-height: 1.8;
+        line-height: 1.9;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
     }
 
     .guide-sections {
-        padding: 100px 0;
+        padding: 120px 0;
+        position: relative;
+        z-index: 2;
     }
 
     .sections-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 35px;
-        max-width: 1400px;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 40px;
+        max-width: 1500px;
         margin: 0 auto;
     }
 
     .guide-section {
-        background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.8));
-        border: 1px solid #333;
-        border-radius: 20px;
-        padding: 35px;
+        background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+        border: 2px solid rgba(138, 159, 255, 0.2);
+        border-radius: 25px;
+        padding: 40px;
         text-align: center;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
+        transition: all 0.5s ease;
+        backdrop-filter: blur(15px);
         position: relative;
         overflow: hidden;
-        min-height: 280px;
+        min-height: 320px;
         display: flex;
         flex-direction: column;
+        cursor: pointer;
     }
 
     .guide-section::before {
@@ -85,36 +255,70 @@ image: "/assets/images/world-guide-main.jpg"
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
-        transition: left 0.5s ease;
+        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.15), transparent);
+        transition: left 0.8s ease;
+    }
+
+    .guide-section::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            rgba(138, 159, 255, 0.1) 60deg,
+            transparent 120deg,
+            rgba(201, 131, 255, 0.08) 180deg,
+            transparent 240deg,
+            rgba(159, 255, 138, 0.06) 300deg,
+            transparent 360deg
+        );
+        animation: sectionRotate 20s linear infinite;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    @keyframes sectionRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
     }
 
     .guide-section:hover {
         border-color: #8a9fff;
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.4),
+            0 0 80px rgba(138, 159, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
 
     .guide-section:hover::before {
         left: 100%;
     }
 
+    .guide-section:hover::after {
+        opacity: 1;
+    }
+
     .section-icon {
-        width: 70px;
-        height: 70px;
-        margin: 0 auto 20px;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
-        border-radius: 16px;
+        width: 90px;
+        height: 90px;
+        margin: 0 auto 25px;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.4), rgba(168, 181, 255, 0.3));
+        border-radius: 22px;
         display: flex;
         align-items: center;
         justify-content: center;
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.1);
         box-shadow: 
-            0 8px 32px rgba(138, 159, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease;
+            0 12px 40px rgba(138, 159, 255, 0.3),
+            inset 0 2px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
         position: relative;
         overflow: hidden;
     }
@@ -126,47 +330,72 @@ image: "/assets/images/world-guide-main.jpg"
         left: -100%;
         width: 100%;
         height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.8s ease;
     }
 
-    .section-icon:hover::before {
+    .section-icon::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .guide-section:hover .section-icon::before {
         left: 100%;
     }
 
+    .guide-section:hover .section-icon::after {
+        width: 120px;
+        height: 120px;
+    }
+
     .section-icon svg {
-        width: 35px;
-        height: 35px;
+        width: 45px;
+        height: 45px;
         fill: #8a9fff;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        transition: all 0.3s ease;
+        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
+        transition: all 0.5s ease;
+        z-index: 1;
+        position: relative;
     }
 
     .guide-section:hover .section-icon {
-        transform: translateY(-5px) scale(1.05);
+        transform: translateY(-8px) scale(1.1);
         box-shadow: 
-            0 20px 40px rgba(138, 159, 255, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.3),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            0 25px 50px rgba(138, 159, 255, 0.4),
+            inset 0 2px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.6), rgba(168, 181, 255, 0.5));
     }
 
     .guide-section:hover .section-icon svg {
-        fill: #a8b5ff;
+        fill: #ffffff;
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 15px rgba(138, 159, 255, 0.8));
     }
 
     .section-title {
-        font-size: 1.6em;
+        font-size: 1.8em;
         color: #f0f0f0;
-        margin-bottom: 12px;
+        margin-bottom: 15px;
         font-weight: 600;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     .section-description {
         color: #ccc;
-        line-height: 1.6;
-        margin-bottom: 25px;
+        line-height: 1.7;
+        margin-bottom: 30px;
         flex-grow: 1;
-        font-size: 0.95em;
+        font-size: 1em;
+        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
     }
 
     .section-link {
@@ -174,64 +403,117 @@ image: "/assets/images/world-guide-main.jpg"
         background: linear-gradient(135deg, #8a9fff, #a8b5ff);
         color: #000;
         text-decoration: none;
-        padding: 10px 20px;
-        border-radius: 20px;
+        padding: 12px 25px;
+        border-radius: 25px;
         font-weight: 600;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
         margin-top: auto;
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9em;
+    }
+
+    .section-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transition: left 0.6s ease;
+    }
+
+    .section-link:hover::before {
+        left: 100%;
     }
 
     .section-link:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(138, 159, 255, 0.4);
-    }
-
-    .section-link.coming-soon {
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.3));
-        color: #8a9fff;
-        cursor: default;
-    }
-
-    .section-link.coming-soon:hover {
-        transform: none;
-        box-shadow: none;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 
+            0 15px 30px rgba(138, 159, 255, 0.5),
+            0 0 25px rgba(138, 159, 255, 0.3);
+        background: linear-gradient(135deg, #a8b5ff, #c8d5ff);
     }
 
     .featured-content {
-        padding: 80px 0;
-        background: rgba(10, 10, 20, 0.6);
+        padding: 100px 0;
+        background: 
+            radial-gradient(circle at 20% 80%, rgba(138, 159, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(201, 131, 255, 0.06) 0%, transparent 50%),
+            linear-gradient(135deg, rgba(10, 10, 20, 0.9), rgba(15, 15, 25, 0.8));
+        position: relative;
+        z-index: 2;
     }
 
     .featured-title {
-        font-size: 2.5em;
+        font-size: 3em;
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 70px;
         color: #f0f0f0;
         font-weight: 300;
+        text-shadow: 
+            0 0 20px rgba(138, 159, 255, 0.4),
+            0 2px 10px rgba(0, 0, 0, 0.6);
+        position: relative;
+    }
+
+    .featured-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 150px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #8a9fff, transparent);
+        transform: translateX(-50%);
+        border-radius: 1px;
     }
 
     .featured-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        max-width: 1000px;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 35px;
+        max-width: 1100px;
         margin: 0 auto;
     }
 
     .featured-card {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 30px;
-        transition: all 0.3s ease;
+        background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(30, 30, 40, 0.8));
+        border: 2px solid rgba(138, 159, 255, 0.2);
+        border-radius: 20px;
+        padding: 35px;
+        transition: all 0.5s ease;
         text-decoration: none;
         color: inherit;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+    }
+
+    .featured-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
+        transition: left 0.8s ease;
+    }
+
+    .featured-card:hover::before {
+        left: 100%;
     }
 
     .featured-card:hover {
         border-color: #8a9fff;
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(138, 159, 255, 0.2);
     }
 
     .card-label {
@@ -239,41 +521,76 @@ image: "/assets/images/world-guide-main.jpg"
         font-size: 0.9em;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        font-weight: 500;
     }
 
     .card-title {
         color: #f0f0f0;
-        font-size: 1.3em;
+        font-size: 1.4em;
         margin-bottom: 15px;
         font-weight: 600;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
     .card-description {
         color: #ccc;
-        line-height: 1.6;
-        font-size: 0.95em;
+        line-height: 1.7;
+        font-size: 1em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     }
 
     @media (max-width: 768px) {
         .world-title {
-            font-size: 2.5em;
+            font-size: 3em;
         }
         
         .world-subtitle {
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
         
         .sections-grid {
             grid-template-columns: 1fr;
+            gap: 30px;
         }
         
         .guide-section {
-            padding: 25px;
-            min-height: 250px;
+            padding: 30px;
+            min-height: 280px;
+        }
+        
+        .section-icon {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .section-icon svg {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .featured-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
         }
     }
 </style>
+
+<!-- Cosmic Background Effects -->
+<div class="cosmic-background">
+    <div class="floating-orb orb-1"></div>
+    <div class="floating-orb orb-2"></div>
+    <div class="floating-orb orb-3"></div>
+    
+    <div class="stardust star-1"></div>
+    <div class="stardust star-2"></div>
+    <div class="stardust star-3"></div>
+    <div class="stardust star-4"></div>
+    <div class="stardust star-5"></div>
+    
+    <div class="cosmic-wave wave-1"></div>
+    <div class="cosmic-wave wave-2"></div>
+</div>
 
 <!-- World Header -->
 <section class="world-header">
@@ -329,7 +646,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Discover the rise and fall of kingdoms—from Atheria built on divine grief to Solara's golden rebirth. Political systems shaped by supernatural threats and cosmic consequences.
                 </div>
-                <a href="/world-guide/kingdoms/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/kingdoms/" class="section-link">Explore Kingdoms</a>
             </div>
 
             <div class="guide-section">
@@ -342,7 +659,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Journey to the Hall of Eternal Judgment and Celestial Gardens. Understand divine hierarchy, cosmic politics, and why the gods maintain their terrifying silence.
                 </div>
-                <a href="/world-guide/divine-realms/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/divine-realms/" class="section-link">Enter Divine Realms</a>
             </div>
 
             <div class="guide-section">
@@ -355,7 +672,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Understand the complete six-element framework, Bloodmarked transformations, and the terrible price of wielding divine power. Magic where every blessing becomes a curse.
                 </div>
-                <a href="/world-guide/magic/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/magic/" class="section-link">Learn Magic</a>
             </div>
 
             <div class="guide-section">
@@ -368,7 +685,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     From crystallized moonlight to the Crown of Aetheris, discover the supernatural substances and legendary artifacts that shape the fate of gods and mortals alike.
                 </div>
-                <a href="/world-guide/artifacts/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/artifacts/" class="section-link">Discover Artifacts</a>
             </div>
 
             <div class="guide-section">
@@ -381,7 +698,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Uncover the buried truths about the Divine Wars, the Great Withdrawal, and the Silent God Crisis. Discover why some histories are too dangerous to remember.
                 </div>
-                <a href="/world-guide/history/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/history/" class="section-link">Uncover History</a>
             </div>
 
             <div class="guide-section">
@@ -394,7 +711,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     From Zenith's Chosen to the Forsaken Communities, explore the groups that shape society through faith, knowledge, and survival in a world touched by divine chaos.
                 </div>
-                <a href="/world-guide/organizations/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/organizations/" class="section-link">Join Organizations</a>
             </div>
 
             <div class="guide-section">
@@ -416,7 +733,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     From benevolent Nimwe to corrupted Beastborn, encounter the entities that inhabit a world where divine blood transforms innocence into nightmare and whispers guide the lost to safety.
                 </div>
-                <a href="/world-guide/creatures/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/creatures/" class="section-link">Meet Creatures</a>
             </div>
 
             <div class="guide-section">
@@ -429,7 +746,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Understand how mortals survive under divine predation, the social structures born from supernatural threats, and the cultural adaptations that define life in Arcadia.
                 </div>
-                <a href="/world-guide/daily-life/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/daily-life/" class="section-link">Experience Life</a>
             </div>
 
             <div class="guide-section">
@@ -442,7 +759,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Witness divine emotional storms, corruption zones, and the growing Silence that threatens to consume meaning itself. Environmental magic where consciousness shapes reality.
                 </div>
-                <a href="/world-guide/environmental-magic/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/environmental-magic/" class="section-link">Witness Phenomena</a>
             </div>
 
             <div class="guide-section">
@@ -455,7 +772,7 @@ image: "/assets/images/world-guide-main.jpg"
                 <div class="section-description">
                     Explore revolutionary research methodologies and the post-Silence world. New threats emerge as scholars uncover truths too dangerous for conventional academia.
                 </div>
-                <a href="/world-guide/research/" class="section-link coming-soon">Coming Soon</a>
+                <a href="/world-guide/research/" class="section-link">Study Research</a>
             </div>
 
         </div>
@@ -495,6 +812,132 @@ image: "/assets/images/world-guide-main.jpg"
         </div>
     </div>
 </section>
+
+<script>
+    // Create additional floating orbs
+    function createFloatingOrb() {
+        const orb = document.createElement('div');
+        orb.className = 'floating-orb';
+        orb.style.width = (50 + Math.random() * 150) + 'px';
+        orb.style.height = orb.style.width;
+        orb.style.top = Math.random() * 100 + '%';
+        orb.style.left = Math.random() * 100 + '%';
+        orb.style.animationDelay = '0s';
+        orb.style.animationDuration = (15 + Math.random() * 10) + 's';
+        
+        const colors = [
+            'radial-gradient(circle, rgba(138, 159, 255, 0.2) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(201, 131, 255, 0.15) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(159, 255, 138, 0.1) 0%, transparent 70%)',
+            'radial-gradient(circle, rgba(255, 159, 138, 0.12) 0%, transparent 70%)'
+        ];
+        
+        orb.style.background = colors[Math.floor(Math.random() * colors.length)];
+        
+        document.querySelector('.cosmic-background').appendChild(orb);
+        
+        setTimeout(() => {
+            if (orb.parentNode) {
+                orb.parentNode.removeChild(orb);
+            }
+        }, 25000);
+    }
+
+    // Add orbs periodically
+    setInterval(createFloatingOrb, 8000);
+
+    // Initial orbs
+    for (let i = 0; i < 3; i++) {
+        setTimeout(createFloatingOrb, i * 3000);
+    }
+
+    // Enhanced section hover effects
+    document.querySelectorAll('.guide-section').forEach(section => {
+        section.addEventListener('mouseenter', function() {
+            const icon = this.querySelector('.section-icon');
+            if (icon) {
+                icon.style.transform = 'translateY(-8px) scale(1.1)';
+                icon.style.background = 'linear-gradient(135deg, rgba(138, 159, 255, 0.6), rgba(168, 181, 255, 0.5))';
+            }
+            
+            // Add cosmic energy effect
+            this.style.setProperty('--cosmic-energy', '1');
+        });
+        
+        section.addEventListener('mouseleave', function() {
+            const icon = this.querySelector('.section-icon');
+            if (icon) {
+                icon.style.transform = '';
+                icon.style.background = '';
+            }
+            
+            this.style.setProperty('--cosmic-energy', '0');
+        });
+    });
+
+    // Enhanced stardust twinkling
+    function createStardust() {
+        const star = document.createElement('div');
+        star.className = 'stardust';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        star.style.animationDuration = (2 + Math.random() * 2) + 's';
+        
+        document.querySelector('.cosmic-background').appendChild(star);
+        
+        setTimeout(() => {
+            if (star.parentNode) {
+                star.parentNode.removeChild(star);
+            }
+        }, 5000);
+    }
+
+    // Add stardust periodically
+    setInterval(createStardust, 2000);
+
+    // Intersection Observer for section animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                
+                // Stagger animation for child elements
+                const children = entry.target.querySelectorAll('.guide-section');
+                children.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.style.opacity = '1';
+                        child.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observe sections for animations
+    document.querySelectorAll('.guide-sections, .featured-content').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Enhanced title glow effect
+    const title = document.querySelector('.world-title');
+    if (title) {
+        setInterval(() => {
+            const intensity = 0.6 + Math.sin(Date.now() / 2000) * 0.4;
+            title.style.textShadow = `
+                0 0 ${30 * intensity}px rgba(138, 159, 255, ${0.6 * intensity}),
+                0 0 ${60 * intensity}px rgba(201, 131, 255, ${0.3 * intensity}),
+                0 4px 8px rgba(0, 0, 0, 0.8)
+            `;
+        }, 100);
+    }
+</script>
 
 <script type="application/ld+json">
 {
