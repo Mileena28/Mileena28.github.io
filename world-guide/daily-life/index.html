@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Life & Culture - Blood of the Wild Gods World Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a0f 0%, #0f0f0a 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated embers and ash particles */
+        .ember-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .ember {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ff8a47 0%, #ff6b47 50%, transparent 100%);
+            border-radius: 50%;
+            animation: emberDrift 20s infinite linear;
+            opacity: 0;
+        }
+
+        .ash {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(200, 200, 200, 0.3);
+            border-radius: 50%;
+            animation: ashFall 15s infinite linear;
+            opacity: 0;
+        }
+
+        @keyframes emberDrift {
+            0% {
+                transform: translateY(100vh) translateX(-50px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) translateX(50px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes ashFall {
+            0% {
+                transform: translateY(-100px) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(100vh) translateX(-20px);
+                opacity: 0;
+            }
+        }
+
+        .page-header {
+            padding: 140px 0 120px;
+            text-align: center;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 138, 71, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(138, 159, 255, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(30, 20, 10, 0.9), rgba(20, 15, 10, 0.8));
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="hearth" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="10" cy="10" r="1" fill="rgba(255,138,71,0.1)"/><circle cx="40" cy="25" r="0.5" fill="rgba(200,200,200,0.08)"/><circle cx="25" cy="40" r="0.8" fill="rgba(138,159,255,0.06)"/><rect x="20" y="20" width="2" height="2" fill="rgba(255,138,71,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23hearth)"/></svg>') center/cover;
+            opacity: 0.7;
+            z-index: -1;
+        }
+
+        .page-title {
+            font-size: 4.2em;
+            font-weight: 200;
+            margin-bottom: 25px;
+            color: #f0f0f0;
+            letter-spacing: 3px;
+            text-shadow: 
+                0 0 20px rgba(255, 138, 71, 0.4),
+                0 4px 8px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            width: 150px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff8a47, #d4af37, #ff8a47, transparent);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .page-subtitle {
+            font-size: 1.5em;
+            color: #d4af37;
+            font-style: italic;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .page-description {
+            font-size: 1.15em;
+            color: #ddd;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.9;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .life-aspects {
+            position: relative;
+            z-index: 2;
+        }
+
+        .aspect-section {
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .survival-section {
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(255, 107, 107, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(40, 15, 15, 0.9), rgba(30, 10, 10, 0.8));
+        }
+
+        .community-section {
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(159, 255, 138, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(20, 30, 15, 0.9), rgba(15, 25, 10, 0.8));
+        }
+
+        .family-section {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(255, 159, 138, 0.07) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(30, 20, 15, 0.9), rgba(25, 15, 10, 0.8));
+        }
+
+        .economic-section {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(25, 22, 10, 0.9), rgba(20, 18, 8, 0.8));
+        }
+
+        .cultural-section {
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(168, 181, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(15, 18, 30, 0.9), rgba(10, 12, 25, 0.8));
+        }
+
+        .aspect-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .aspect-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .aspect-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 30px;
+            animation: hearthGlow 4s ease-in-out infinite;
+        }
+
+        .survival-section .aspect-icon {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(255, 138, 138, 0.2));
+            box-shadow: 0 0 50px rgba(255, 107, 107, 0.2);
+        }
+
+        .survival-section .aspect-icon::before {
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.3) 0%, transparent 70%);
+        }
+
+        .community-section .aspect-icon {
+            background: linear-gradient(135deg, rgba(159, 255, 138, 0.3), rgba(138, 255, 159, 0.2));
+            box-shadow: 0 0 50px rgba(159, 255, 138, 0.2);
+        }
+
+        .community-section .aspect-icon::before {
+            background: radial-gradient(circle, rgba(159, 255, 138, 0.3) 0%, transparent 70%);
+        }
+
+        .family-section .aspect-icon {
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.3), rgba(255, 181, 168, 0.2));
+            box-shadow: 0 0 50px rgba(255, 159, 138, 0.2);
+        }
+
+        .family-section .aspect-icon::before {
+            background: radial-gradient(circle, rgba(255, 159, 138, 0.3) 0%, transparent 70%);
+        }
+
+        .economic-section .aspect-icon {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(255, 215, 0, 0.2));
+            box-shadow: 0 0 50px rgba(212, 175, 55, 0.2);
+        }
+
+        .economic-section .aspect-icon::before {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 70%);
+        }
+
+        .cultural-section .aspect-icon {
+            background: linear-gradient(135deg, rgba(168, 181, 255, 0.3), rgba(138, 159, 255, 0.2));
+            box-shadow: 0 0 50px rgba(168, 181, 255, 0.2);
+        }
+
+        .cultural-section .aspect-icon::before {
+            background: radial-gradient(circle, rgba(168, 181, 255, 0.3) 0%, transparent 70%);
+        }
+
+        @keyframes hearthGlow {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .aspect-icon svg {
+            width: 60px;
+            height: 60px;
+            fill: currentColor;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+            z-index: 1;
+            position: relative;
+        }
+
+        .aspect-title {
+            font-size: 3.2em;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .aspect-subtitle {
+            font-size: 1.3em;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .survival-section .aspect-subtitle { color: #ff6b6b; }
+        .community-section .aspect-subtitle { color: #9fff8a; }
+        .family-section .aspect-subtitle { color: #ff9f8a; }
+        .economic-section .aspect-subtitle { color: #d4af37; }
+        .cultural-section .aspect-subtitle { color: #a8b5ff; }
+
+        .aspect-description {
+            font-size: 1.1em;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        .life-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 50px auto 0;
+        }
+
+        .detail-card {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(30, 30, 30, 0.9));
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(15px);
+            cursor: pointer;
+        }
+
+        .detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .detail-card:hover::before {
+            left: 100%;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 138, 71, 0.1);
+        }
+
+        .survival-section .detail-card {
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .survival-section .detail-card:hover {
+            border-color: #ff6b6b;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 107, 107, 0.2);
+        }
+
+        .community-section .detail-card {
+            border: 2px solid rgba(159, 255, 138, 0.3);
+        }
+
+        .community-section .detail-card:hover {
+            border-color: #9fff8a;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(159, 255, 138, 0.2);
+        }
+
+        .family-section .detail-card {
+            border: 2px solid rgba(255, 159, 138, 0.3);
+        }
+
+        .family-section .detail-card:hover {
+            border-color: #ff9f8a;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 159, 138, 0.2);
+        }
+
+        .economic-section .detail-card {
+            border: 2px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .economic-section .detail-card:hover {
+            border-color: #d4af37;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .cultural-section .detail-card {
+            border: 2px solid rgba(168, 181, 255, 0.3);
+        }
+
+        .cultural-section .detail-card:hover {
+            border-color: #a8b5ff;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(168, 181, 255, 0.2);
+        }
+
+        .detail-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .detail-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .survival-section .detail-icon {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.4), rgba(255, 138, 138, 0.3));
+        }
+
+        .community-section .detail-icon {
+            background: linear-gradient(135deg, rgba(159, 255, 138, 0.4), rgba(138, 255, 159, 0.3));
+        }
+
+        .family-section .detail-icon {
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.4), rgba(255, 181, 168, 0.3));
+        }
+
+        .economic-section .detail-icon {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.4), rgba(255, 215, 0, 0.3));
+        }
+
+        .cultural-section .detail-icon {
+            background: linear-gradient(135deg, rgba(168, 181, 255, 0.4), rgba(138, 159, 255, 0.3));
+        }
+
+        .detail-card:hover .detail-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .detail-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+            filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        .detail-title {
+            font-size: 1.6em;
+            color: #f0f0f0;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .detail-description {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.02em;
+        }
+
+        .detail-examples {
+            background: linear-gradient(135deg, rgba(40, 40, 40, 0.6), rgba(50, 50, 50, 0.5));
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid;
+        }
+
+        .survival-section .detail-examples { border-left-color: #ff6b6b; }
+        .community-section .detail-examples { border-left-color: #9fff8a; }
+        .family-section .detail-examples { border-left-color: #ff9f8a; }
+        .economic-section .detail-examples { border-left-color: #d4af37; }
+        .cultural-section .detail-examples { border-left-color: #a8b5ff; }
+
+        .examples-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .survival-section .examples-title { color: #ff6b6b; }
+        .community-section .examples-title { color: #9fff8a; }
+        .family-section .examples-title { color: #ff9f8a; }
+        .economic-section .examples-title { color: #d4af37; }
+        .cultural-section .examples-title { color: #a8b5ff; }
+
+        .examples-list {
+            color: #ddd;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .examples-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .examples-list li {
+            margin-bottom: 8px;
+        }
+
+        .navigation-footer {
+            padding: 80px 20px;
+            background: rgba(5, 5, 15, 0.95);
+            text-align: center;
+            border-top: 1px solid rgba(255, 138, 71, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            background: rgba(25, 25, 35, 0.8);
+            border: 1px solid rgba(255, 138, 71, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #ff8a47;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            border-color: #ff8a47;
+            background: rgba(255, 138, 71, 0.1);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 3em;
+            }
+            
+            .page-subtitle {
+                font-size: 1.3em;
+            }
+            
+            .life-details {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .detail-card {
+                padding: 28px;
+            }
+            
+            .aspect-title {
+                font-size: 2.5em;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ember-field">
+        <div class="ember" style="left: 5%; animation-delay: 0s;"></div>
+        <div class="ash" style="left: 15%; animation-delay: 2s;"></div>
+        <div class="ember" style="left: 25%; animation-delay: 4s;"></div>
+        <div class="ash" style="left: 35%; animation-delay: 6s;"></div>
+        <div class="ember" style="left: 45%; animation-delay: 8s;"></div>
+        <div class="ash" style="left: 55%; animation-delay: 10s;"></div>
+        <div class="ember" style="left: 65%; animation-delay: 12s;"></div>
+        <div class="ash" style="left: 75%; animation-delay: 14s;"></div>
+        <div class="ember" style="left: 85%; animation-delay: 16s;"></div>
+        <div class="ash" style="left: 95%; animation-delay: 18s;"></div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Daily Life & Culture</h1>
+            <p class="page-subtitle">
+                "How mortals endure when gods hunt in darkness and survival becomes the highest art"
+            </p>
+            <div class="page-description">
+                <p>In Arcadia, every sunset brings terror and every dawn offers fragile hope. Mortal communities have learned to live under the shadow of divine predation, developing intricate survival strategies, protective traditions, and social bonds forged in the crucible of shared vulnerability. Here, culture emerges not from leisure but from necessity, and the deepest human connections are those that keep the darkness at bay.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="life-aspects">
+        <!-- Survival Under Divine Predation -->
+        <section class="aspect-section survival-section">
+            <div class="container">
+                <div class="aspect-header">
+                    <div class="aspect-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,6A3,3 0 0,0 9,9V15A3,3 0 0,0 12,18A3,3 0 0,0 15,15V9A3,3 0 0,0 12,6M12,2A7,7 0 0,1 19,9V15A7,7 0 0,1 12,22A7,7 0 0,1 5,15V9A7,7 0 0,1 12,2M12,4A5,5 0 0,0 7,9V15A5,5 0 0,0 12,20A5,5 0 0,0 17,15V9A5,5 0 0,0 12,4Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="aspect-title">Survival Under Divine Predation</h2>
+                    <p class="aspect-subtitle">When Gods Hunt Mortals for Sport</p>
+                    <p class="aspect-description">
+                        Mortal communities exist in perpetual terror, structuring their entire existence around avoiding divine attention. 
+                        Every aspect of daily life is calculated to survive in a world where gods view humans as prey rather than subjects 
+                        worthy of protection.
+                    </p>
+                </div>
+                
+                <div class="life-details">
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Daily Survival Protocols</h3>
+                        </div>
+                        <p class="detail-description">
+                            Communities operate under strict survival rules designed to minimize divine attention. All mortal activity must cease when darkness falls, as divine predators become active after dark. Simple pleasures like evening gatherings become dangerous luxuries that can cost lives.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Essential Protocols:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Sunset curfews enforced by community watch</li>
+                                    <li>Collective vigilance systems with warning signals</li>
+                                    <li>Fortress mentality in home design and settlement planning</li>
+                                    <li>Constant alertness where relaxation becomes potentially fatal</li>
+                                    <li>Emergency shelters prepared for supernatural threats</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Community Processing of Trauma</h3>
+                        </div>
+                        <p class="detail-description">
+                            Mortal communities have developed elaborate traditions for processing frequent violent deaths and supernatural threats. These systems transform individual tragedy into communal healing while maintaining hope despite evidence of divine abandonment.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Coping Mechanisms:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Pyre ceremonies with pine logs and ceremonial herbs</li>
+                                    <li>Collective mourning where entire villages share grief</li>
+                                    <li>Protective mythology that reframes deaths through religious language</li>
+                                    <li>Memorial protocols for locations associated with tragedies</li>
+                                    <li>Survivor support networks for processing guilt and randomness</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9,12L11,14L15,10L20,15V6H4V15L9,12M13,8.5A1.5,1.5 0 0,0 11.5,7A1.5,1.5 0 0,0 10,8.5A1.5,1.5 0 0,0 11.5,10A1.5,1.5 0 0,0 13,8.5Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Information Control & Psychological Defense</h3>
+                        </div>
+                        <p class="detail-description">
+                            Communities develop unconscious behaviors to protect themselves from overwhelming truths. Dangerous realities are transformed into manageable folklore, and community leaders manage information flow to prevent panic and despair.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Defense Systems:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Protective storytelling that converts horror into cautionary tales</li>
+                                    <li>Selective memory and collective agreement on "safe" versions of events</li>
+                                    <li>Symbolic displacement of true fears into less threatening superstitions</li>
+                                    <li>Cultural amnesia about the most traumatic experiences</li>
+                                    <li>Narrative control to preserve community sanity and hope</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Social Structures -->
+        <section class="aspect-section community-section">
+            <div class="container">
+                <div class="aspect-header">
+                    <div class="aspect-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="aspect-title">Community Social Structures</h2>
+                    <p class="aspect-subtitle">Bonds Forged in Shared Vulnerability</p>
+                    <p class="aspect-description">
+                        Small communities develop sophisticated social systems based on practical cooperation and collective decision-making. 
+                        These structures prioritize survival and mutual support while maintaining cultural identity despite external pressures 
+                        for conformity.
+                    </p>
+                </div>
+                
+                <div class="life-details">
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17,12C17,10.89 16.1,10 15,10C13.89,10 13,10.89 13,12A2,2 0 0,0 15,14A2,2 0 0,0 17,12M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Village Governance Systems</h3>
+                        </div>
+                        <p class="detail-description">
+                            Villages like Oakhaven operate through informal hierarchies based on skill, experience, and social contribution rather than formal authority. Decision-making occurs through gradual consensus building, with conflicts resolved through mediation rather than legal procedures.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Governance Elements:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Reputation systems based on community contributions</li>
+                                    <li>Collective decision-making through gradual consensus</li>
+                                    <li>Conflict resolution via mediation and community wisdom</li>
+                                    <li>Informal leadership based on demonstrated competence</li>
+                                    <li>Emergency protocols for rapid crisis response</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17,8H20V6H17V8M17,16H20V14H17V16M13,8H16V6H13V8M13,16H16V14H13V16M9,8H12V6H9V8M9,16H12V14H9V16M5,8H8V6H5V8M5,16H8V14H5V16M2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4A2,2 0 0,0 20,2H4A2,2 0 0,0 2,4Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Economic Foundations</h3>
+                        </div>
+                        <p class="detail-description">
+                            Village economies operate through integrated systems of mutual support and specialized expertise. Artisan guilds, agricultural cooperatives, and service networks create resilient economic structures that can adapt to supernatural disruptions.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Economic Systems:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Artisan guilds providing essential goods and training</li>
+                                    <li>Agricultural cooperatives sharing resources and coordination</li>
+                                    <li>Service networks maintaining infrastructure and labor</li>
+                                    <li>Trade liaisons facilitating exchange with outside communities</li>
+                                    <li>Knowledge specialists serving community needs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11,4A4,4 0 0,1 15,8A4,4 0 0,1 11,12A4,4 0 0,1 7,8A4,4 0 0,1 11,4M11,13C15.42,13 19,14.79 19,17V20H3V17C3,14.79 6.58,13 11,13Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Social Dynamics & Cultural Preservation</h3>
+                        </div>
+                        <p class="detail-description">
+                            Village life operates through informal networks of obligation, reputation, and mutual support. Communities maintain cultural identity through storytelling, apprenticeships, and shared traditions that preserve knowledge across generations.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Cultural Mechanisms:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Reputation systems determining social standing</li>
+                                    <li>Mutual aid networks for community support during difficulties</li>
+                                    <li>Cultural transmission through apprenticeship and storytelling</li>
+                                    <li>Ritualized processing of community experiences and trauma</li>
+                                    <li>Wisdom distillation into practical guidelines for survival</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marriage and Family Life -->
+        <section class="aspect-section family-section">
+            <div class="container">
+                <div class="aspect-header">
+                    <div class="aspect-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15,4A4,4 0 0,0 11,8A4,4 0 0,0 15,12A4,4 0 0,0 19,8A4,4 0 0,0 15,4M15,10A2,2 0 0,1 13,8A2,2 0 0,1 15,6A2,2 0 0,1 17,8A2,2 0 0,1 15,10M15,13C17.67,13 23,14.33 23,17V20H7V17C7,14.33 12.33,13 15,13M15,14.9C12.03,14.9 8.9,16.36 8.9,17V18.1H21.1V17C21.1,16.36 17.97,14.9 15,14.9M9,12A3,3 0 0,0 12,9A3,3 0 0,0 9,6A3,3 0 0,0 6,9A3,3 0 0,0 9,12M9,10A1,1 0 0,1 8,9A1,1 0 0,1 9,8A1,1 0 0,1 10,9A1,1 0 0,1 9,10M9,13C11.67,13 17,14.33 17,17V20H1V17C1,14.33 6.33,13 9,13M9,14.9C6.03,14.9 2.9,16.36 2.9,17V18.1H15.1V17C15.1,16.36 11.97,14.9 9,14.9Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="aspect-title">Marriage & Family Life</h2>
+                    <p class="aspect-subtitle">Intimacy Under Divine Surveillance</p>
+                    <p class="aspect-description">
+                        Marriage and family structures reflect the pressures of living under supernatural threats. From traditional village 
+                        partnerships forged in mutual protection to the controlled marriages of Zenith's Chosen, intimate relationships 
+                        become both refuge and vulnerability in a dangerous world.
+                    </p>
+                </div>
+                
+                <div class="life-details">
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Traditional Village Marriages</h3>
+                        </div>
+                        <p class="detail-description">
+                            In traditional communities, marriages are partnerships of mutual protection and shared survival. These unions are celebrated by the entire village and represent alliances between families that strengthen community bonds during supernatural threats.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Traditional Elements:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Partnerships based on mutual protection and shared survival skills</li>
+                                    <li>Community celebrations that strengthen village bonds</li>
+                                    <li>Family alliances that create extended support networks</li>
+                                    <li>Shared responsibilities in child-rearing and defense</li>
+                                    <li>Economic cooperation in farming, crafting, and trade</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Zenithian Marriage Control</h3>
+                        </div>
+                        <p class="detail-description">
+                            Under Zenith's Chosen, marriage becomes a tool of social control and organizational expansion. Ceremonies emphasize absolute submission, domestic surveillance, and the production of new generations of faithful followers.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Control Mechanisms:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Public spectacles emphasizing submission and obedience themes</li>
+                                    <li>Spousal surveillance and reporting on spiritual compliance</li>
+                                    <li>Economic dependency designed to prevent leaving marriages</li>
+                                    <li>Social isolation from relationships outside the faith community</li>
+                                    <li>Complete bodily autonomy surrender expected from wives</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9,13A3.5,3.5 0 0,0 5.5,16.5A3.5,3.5 0 0,0 9,20A3.5,3.5 0 0,0 12.5,16.5A3.5,3.5 0 0,0 9,13M9,15A1.5,1.5 0 0,1 10.5,16.5A1.5,1.5 0 0,1 9,18A1.5,1.5 0 0,1 7.5,16.5A1.5,1.5 0 0,1 9,15M15,13A3.5,3.5 0 0,0 11.5,16.5A3.5,3.5 0 0,0 15,20A3.5,3.5 0 0,0 18.5,16.5A3.5,3.5 0 0,0 15,13M15,15A1.5,1.5 0 0,1 16.5,16.5A1.5,1.5 0 0,1 15,18A1.5,1.5 0 0,1 13.5,16.5A1.5,1.5 0 0,1 15,15M12,4A3.5,3.5 0 0,0 8.5,7.5A3.5,3.5 0 0,0 12,11A3.5,3.5 0 0,0 15.5,7.5A3.5,3.5 0 0,0 12,4M12,6A1.5,1.5 0 0,1 13.5,7.5A1.5,1.5 0 0,1 12,9A1.5,1.5 0 0,1 10.5,7.5A1.5,1.5 0 0,1 12,6Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Child-Rearing Under Threat</h3>
+                        </div>
+                        <p class="detail-description">
+                            Raising children in Arcadia requires constant vigilance against supernatural threats while maintaining hope for the future. Parents must balance protecting innocence with preparing children for a dangerous world where divine predation is real.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Parenting Challenges:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Teaching survival skills without destroying childhood innocence</li>
+                                    <li>Protective storytelling that prepares without traumatizing</li>
+                                    <li>Community child-care during supernatural emergencies</li>
+                                    <li>Early recognition of potential Bloodmarked heritage</li>
+                                    <li>Balancing traditional values with adaptive survival strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Economic Life Under Supernatural Influence -->
+        <section class="aspect-section economic-section">
+            <div class="container">
+                <div class="aspect-header">
+                    <div class="aspect-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5,6H23V18H5V6M14,9A3,3 0 0,1 17,12A3,3 0 0,1 14,15A3,3 0 0,1 11,12A3,3 0 0,1 14,9M9,8A2,2 0 0,1 7,10V14A2,2 0 0,1 9,16H19A2,2 0 0,1 21,14V10A2,2 0 0,1 19,8H9Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="aspect-title">Economic Life Under Supernatural Influence</h2>
+                    <p class="aspect-subtitle">Commerce in the Shadow of Divine Chaos</p>
+                    <p class="aspect-description">
+                        Trade and commerce must account for divine emotional outbursts, magical contamination, and unpredictable supernatural 
+                        interference. Economic systems develop complex risk assessment methods and alternative markets to maintain prosperity 
+                        despite cosmic instability.
+                    </p>
+                </div>
+                
+                <div class="life-details">
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Supernatural Risk Assessment</h3>
+                        </div>
+                        <p class="detail-description">
+                            Merchants and traders develop sophisticated methods for evaluating supernatural threats to commerce. Route planning considers divine activity patterns, seasonal timing accounts for cosmic cycles, and insurance mechanisms help communities share losses from supernatural disasters.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Risk Management:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Trade route planning to avoid divine activity zones</li>
+                                    <li>Seasonal timing coordinated with cosmic cycles</li>
+                                    <li>Community-based insurance for supernatural disaster losses</li>
+                                    <li>Alternative market relationships for unsafe primary routes</li>
+                                    <li>Specialized traders charging premium for supernatural hazard navigation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Magical Economy Integration</h3>
+                        </div>
+                        <p class="detail-description">
+                            Commerce includes sophisticated markets for supernatural materials, specialized services, and protective magic. Component trading, service guilds, and artifact exchange create parallel economies that serve supernatural needs alongside mundane commerce.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Magical Commerce:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Component trading in supernatural materials for magical workings</li>
+                                    <li>Service guilds providing specialized supernatural labor</li>
+                                    <li>Protection contracts for defensive magic and ward maintenance</li>
+                                    <li>Information brokerage trading dangerous knowledge</li>
+                                    <li>Carefully regulated artifact exchange markets</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M19,17H22V19H19V17M19,7H22V9H19V7M20,12L17,15H19V23H21V15H23L20,12M9,13A2.5,2.5 0 0,0 6.5,15.5A2.5,2.5 0 0,0 9,18A2.5,2.5 0 0,0 11.5,15.5A2.5,2.5 0 0,0 9,13M9,4A2.5,2.5 0 0,0 6.5,6.5A2.5,2.5 0 0,0 9,9A2.5,2.5 0 0,0 11.5,6.5A2.5,2.5 0 0,0 9,4M15,13V19A2,2 0 0,1 13,21H3A2,2 0 0,1 1,19V5A2,2 0 0,1 3,3H13A2,2 0 0,1 15,5V11H13V5H3V19H13V13H15Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Post-Crisis Economic Adaptation</h3>
+                        </div>
+                        <p class="detail-description">
+                            Following major supernatural crises like the Silent God event, economic systems must rapidly adapt to changed circumstances. This includes reconstruction investment, population movement accommodation, and technological development driven by survival needs.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Crisis Adaptation:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Reconstruction investment prioritizing strategically important areas</li>
+                                    <li>Economic adjustments for refugee populations and migration</li>
+                                    <li>Technology development for supernatural detection and protection</li>
+                                    <li>Strengthened cooperation networks between communities</li>
+                                    <li>Resource reallocation shifting from luxury to survival priorities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cultural Adaptation & Traditions -->
+        <section class="aspect-section cultural-section">
+            <div class="container">
+                <div class="aspect-header">
+                    <div class="aspect-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="aspect-title">Cultural Adaptation & Traditions</h2>
+                    <p class="aspect-subtitle">Preserving Humanity While Embracing Change</p>
+                    <p class="aspect-description">
+                        Cultural traditions evolve to incorporate supernatural realities while preserving essential human connections. 
+                        From protective rituals to adaptive storytelling, communities develop sophisticated methods for maintaining 
+                        identity and meaning in a world where cosmic forces reshape daily existence.
+                    </p>
+                </div>
+                
+                <div class="life-details">
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2M7,19L8.09,15.26L15,15L8.09,14.74L7,11L5.91,14.74L1,15L5.91,15.26L7,19M19,19L20.09,15.26L24,15L20.09,14.74L19,11L17.91,14.74L14,15L17.91,15.26L19,19Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Protective Traditions & Rituals</h3>
+                        </div>
+                        <p class="detail-description">
+                            Communities develop protective practices that ward off supernatural threats while maintaining cultural continuity. These include ritualized responses to supernatural events, protective symbols, and seasonal observances that coincide with cosmic activity cycles.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Protective Practices:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Traditional practices that ward off specific dangers</li>
+                                    <li>Cultural taboos preventing entry into dangerous areas</li>
+                                    <li>Symbolic recognition incorporating protective symbols</li>
+                                    <li>Seasonal observances aligned with supernatural activity</li>
+                                    <li>Community organizations designed for crisis response</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M11,7V13L16.25,16.15L17.35,14.65L13,12V7H11Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Psychological Coping Mechanisms</h3>
+                        </div>
+                        <p class="detail-description">
+                            Cultural practices help communities maintain psychological health despite constant supernatural threats. These include ritualized trauma processing, normalized vigilance, and protective superstitions that provide comfort even when supernatural aid is uncertain.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Coping Systems:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Ritualized processing through community gatherings</li>
+                                    <li>Normalized vigilance maintaining alertness without panic</li>
+                                    <li>Shared responsibility distributing emotional burdens</li>
+                                    <li>Protective superstitions providing psychological comfort</li>
+                                    <li>Cultural resilience maintaining identity despite pressure</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-header">
+                            <div class="detail-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2Z"/>
+                                </svg>
+                            </div>
+                            <h3 class="detail-title">Religious & Spiritual Evolution</h3>
+                        </div>
+                        <p class="detail-description">
+                            Spiritual practices adapt to accommodate both traditional Wild God worship and new movements like Zenith's Chosen. Communities navigate between preserving ancient wisdom and embracing new forms of protection and meaning in an changing world.
+                        </p>
+                        <div class="detail-examples">
+                            <div class="examples-title">Spiritual Adaptation:</div>
+                            <div class="examples-list">
+                                <ul>
+                                    <li>Integration of traditional and new religious practices</li>
+                                    <li>Hidden preservation of Wild God traditions</li>
+                                    <li>Adaptive spiritual practices for supernatural protection</li>
+                                    <li>Community-based religious resistance and accommodation</li>
+                                    <li>Evolving interpretations of divine silence and intervention</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Footer -->
+    <section class="navigation-footer">
+        <div class="container">
+            <h2 class="nav-title">Continue Exploring Arcadia</h2>
+            <div class="nav-grid">
+                <a href="/world-guide/history/" class="nav-link">History & Timeline</a>
+                <a href="/world-guide/organizations/" class="nav-link">Organizations & Societies</a>
+                <a href="/world-guide/environmental-magic/" class="nav-link">Environmental Magic & Phenomena</a>
+                <a href="/world-guide/research/" class="nav-link">Scholarly Research & Contemporary Crisis</a>
+                <a href="/world-guide/characters/" class="nav-link">Characters</a>
+                <a href="/world-guide/" class="nav-link">World Guide Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add more embers and ash periodically
+        function addEmber() {
+            const ember = document.createElement('div');
+            ember.className = 'ember';
+            ember.style.left = Math.random() * 100 + '%';
+            ember.style.animationDelay = '0s';
+            ember.style.animationDuration = (15 + Math.random() * 10) + 's';
+            
+            document.querySelector('.ember-field').appendChild(ember);
+            
+            setTimeout(() => {
+                if (ember.parentNode) {
+                    ember.parentNode.removeChild(ember);
+                }
+            }, 25000);
+        }
+
+        function addAsh() {
+            const ash = document.createElement('div');
+            ash.className = 'ash';
+            ash.style.left = Math.random() * 100 + '%';
+            ash.style.animationDelay = '0s';
+            ash.style.animationDuration = (12 + Math.random() * 8) + 's';
+            
+            document.querySelector('.ember-field').appendChild(ash);
+            
+            setTimeout(() => {
+                if (ash.parentNode) {
+                    ash.parentNode.removeChild(ash);
+                }
+            }, 20000);
+        }
+
+        // Add particles periodically
+        setInterval(addEmber, 3000);
+        setInterval(addAsh, 2000);
+
+        // Initial particles
+        for (let i = 0; i < 6; i++) {
+            setTimeout(addEmber, i * 1000);
+            setTimeout(addAsh, i * 800);
+        }
+
+        // Enhanced card interactions
+        document.querySelectorAll('.detail-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.detail-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1.15) rotate(8deg)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.detail-icon');
+                if (icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+            });
+        });
+
+        // Section icons glow on scroll
+        const observerOptions = {
+            threshold: 0.4,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const icon = entry.target.querySelector('.aspect-icon');
+                    if (icon) {
+                        icon.style.animation = 'hearthGlow 3s ease-in-out 2';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.aspect-header').forEach(header => {
+            observer.observe(header);
+        });
+    </script>
+</body>
+</html>
