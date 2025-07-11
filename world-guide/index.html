@@ -279,6 +279,8 @@ image: "/assets/images/world-guide-main.jpg"
         animation: sectionRotate 20s linear infinite;
         opacity: 0;
         transition: opacity 0.5s ease;
+        pointer-events: none;
+        z-index: 0;
     }
 
     @keyframes sectionRotate {
@@ -413,6 +415,8 @@ image: "/assets/images/world-guide-main.jpg"
         text-transform: uppercase;
         letter-spacing: 1px;
         font-size: 0.9em;
+        z-index: 10;
+        pointer-events: auto;
     }
 
     .section-link::before {
