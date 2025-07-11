@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatures & Beings - Blood of the Wild Gods World Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: radial-gradient(ellipse at center, #0f0f1f 0%, #000000 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background creatures */
+        .creature-shadows {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .shadow-creature {
+            position: absolute;
+            opacity: 0.03;
+            animation: drift 25s infinite linear;
+        }
+
+        .shadow-creature.leviathan {
+            font-size: 120px;
+            color: #4a90e2;
+            animation-duration: 35s;
+        }
+
+        .shadow-creature.nimwe {
+            font-size: 60px;
+            color: #c983ff;
+            animation-duration: 20s;
+        }
+
+        .shadow-creature.beastborn {
+            font-size: 80px;
+            color: #ff6b6b;
+            animation-duration: 15s;
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translateX(-100px) translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.03;
+            }
+            90% {
+                opacity: 0.03;
+            }
+            100% {
+                transform: translateX(100px) translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .page-header {
+            padding: 140px 0 120px;
+            text-align: center;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(168, 181, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255, 138, 159, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(10, 10, 30, 0.9), rgba(20, 20, 40, 0.8));
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mystical" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="20" cy="20" r="1" fill="rgba(168,181,255,0.1)"/><circle cx="10" cy="10" r="0.5" fill="rgba(255,138,159,0.08)"/><circle cx="30" cy="35" r="0.8" fill="rgba(138,255,159,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23mystical)"/></svg>') center/cover;
+            opacity: 0.6;
+            z-index: -1;
+        }
+
+        .page-title {
+            font-size: 4.5em;
+            font-weight: 200;
+            margin-bottom: 25px;
+            color: #f0f0f0;
+            letter-spacing: 4px;
+            text-shadow: 0 0 30px rgba(168, 181, 255, 0.6);
+            position: relative;
+        }
+
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #a8b5ff, transparent);
+            transform: translateX(-50%);
+        }
+
+        .page-subtitle {
+            font-size: 1.6em;
+            color: #a8b5ff;
+            font-style: italic;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 0 15px rgba(168, 181, 255, 0.3);
+        }
+
+        .page-description {
+            font-size: 1.2em;
+            color: #ddd;
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.9;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .creatures-sections {
+            position: relative;
+            z-index: 2;
+        }
+
+        .creature-category {
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .category-benevolent {
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(201, 131, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(15, 5, 25, 0.9), rgba(25, 15, 35, 0.8));
+        }
+
+        .category-ancient {
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(5, 15, 25, 0.9), rgba(15, 25, 35, 0.8));
+        }
+
+        .category-corrupted {
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(25, 5, 5, 0.9), rgba(35, 15, 15, 0.8));
+        }
+
+        .category-hybrid {
+            background: 
+                radial-gradient(circle at 70% 30%, rgba(159, 255, 138, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(10, 20, 5, 0.9), rgba(20, 30, 15, 0.8));
+        }
+
+        .category-transformed {
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(255, 159, 138, 0.07) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(20, 10, 5, 0.9), rgba(30, 20, 15, 0.8));
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .category-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .category-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        .benevolent .category-icon {
+            background: linear-gradient(135deg, rgba(201, 131, 255, 0.3), rgba(168, 181, 255, 0.2));
+            box-shadow: 0 0 40px rgba(201, 131, 255, 0.3);
+        }
+
+        .benevolent .category-icon::before {
+            background: radial-gradient(circle, rgba(201, 131, 255, 0.2) 0%, transparent 70%);
+        }
+
+        .ancient .category-icon {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.3), rgba(138, 159, 255, 0.2));
+            box-shadow: 0 0 40px rgba(74, 144, 226, 0.3);
+        }
+
+        .ancient .category-icon::before {
+            background: radial-gradient(circle, rgba(74, 144, 226, 0.2) 0%, transparent 70%);
+        }
+
+        .corrupted .category-icon {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(255, 138, 138, 0.2));
+            box-shadow: 0 0 40px rgba(255, 107, 107, 0.3);
+        }
+
+        .corrupted .category-icon::before {
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
+        }
+
+        .hybrid .category-icon {
+            background: linear-gradient(135deg, rgba(159, 255, 138, 0.3), rgba(138, 255, 159, 0.2));
+            box-shadow: 0 0 40px rgba(159, 255, 138, 0.3);
+        }
+
+        .hybrid .category-icon::before {
+            background: radial-gradient(circle, rgba(159, 255, 138, 0.2) 0%, transparent 70%);
+        }
+
+        .transformed .category-icon {
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.3), rgba(255, 181, 168, 0.2));
+            box-shadow: 0 0 40px rgba(255, 159, 138, 0.3);
+        }
+
+        .transformed .category-icon::before {
+            background: radial-gradient(circle, rgba(255, 159, 138, 0.2) 0%, transparent 70%);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.1); opacity: 0.4; }
+        }
+
+        .category-icon svg {
+            width: 50px;
+            height: 50px;
+            fill: currentColor;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+            z-index: 1;
+            position: relative;
+        }
+
+        .category-title {
+            font-size: 3em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .category-subtitle {
+            font-size: 1.2em;
+            color: #aaa;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .category-description {
+            font-size: 1.1em;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .creatures-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 35px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 40px;
+        }
+
+        .creature-card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 25px;
+            padding: 40px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            cursor: pointer;
+        }
+
+        .creature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .creature-card:hover::before {
+            left: 100%;
+        }
+
+        .creature-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(168, 181, 255, 0.15);
+        }
+
+        .benevolent .creature-card {
+            border: 2px solid rgba(201, 131, 255, 0.3);
+        }
+
+        .benevolent .creature-card:hover {
+            border-color: #c983ff;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(201, 131, 255, 0.3);
+        }
+
+        .ancient .creature-card {
+            border: 2px solid rgba(74, 144, 226, 0.3);
+        }
+
+        .ancient .creature-card:hover {
+            border-color: #4a90e2;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(74, 144, 226, 0.3);
+        }
+
+        .corrupted .creature-card {
+            border: 2px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .corrupted .creature-card:hover {
+            border-color: #ff6b6b;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(255, 107, 107, 0.3);
+        }
+
+        .hybrid .creature-card {
+            border: 2px solid rgba(159, 255, 138, 0.3);
+        }
+
+        .hybrid .creature-card:hover {
+            border-color: #9fff8a;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(159, 255, 138, 0.3);
+        }
+
+        .transformed .creature-card {
+            border: 2px solid rgba(255, 159, 138, 0.3);
+        }
+
+        .transformed .creature-card:hover {
+            border-color: #ff9f8a;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(255, 159, 138, 0.3);
+        }
+
+        .creature-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .creature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .creature-icon::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .creature-card:hover .creature-icon::after {
+            opacity: 1;
+        }
+
+        .benevolent .creature-icon {
+            background: linear-gradient(135deg, rgba(201, 131, 255, 0.4), rgba(168, 181, 255, 0.3));
+        }
+
+        .benevolent .creature-icon::after {
+            background: linear-gradient(135deg, rgba(201, 131, 255, 0.6), rgba(168, 181, 255, 0.5));
+        }
+
+        .ancient .creature-icon {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.4), rgba(138, 159, 255, 0.3));
+        }
+
+        .ancient .creature-icon::after {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.6), rgba(138, 159, 255, 0.5));
+        }
+
+        .corrupted .creature-icon {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.4), rgba(255, 138, 138, 0.3));
+        }
+
+        .corrupted .creature-icon::after {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.6), rgba(255, 138, 138, 0.5));
+        }
+
+        .hybrid .creature-icon {
+            background: linear-gradient(135deg, rgba(159, 255, 138, 0.4), rgba(138, 255, 159, 0.3));
+        }
+
+        .hybrid .creature-icon::after {
+            background: linear-gradient(135deg, rgba(159, 255, 138, 0.6), rgba(138, 255, 159, 0.5));
+        }
+
+        .transformed .creature-icon {
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.4), rgba(255, 181, 168, 0.3));
+        }
+
+        .transformed .creature-icon::after {
+            background: linear-gradient(135deg, rgba(255, 159, 138, 0.6), rgba(255, 181, 168, 0.5));
+        }
+
+        .creature-card:hover .creature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .creature-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #fff;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+            z-index: 1;
+            position: relative;
+        }
+
+        .creature-info {
+            flex: 1;
+        }
+
+        .creature-name {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .creature-type {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .benevolent .creature-type { color: #c983ff; }
+        .ancient .creature-type { color: #4a90e2; }
+        .corrupted .creature-type { color: #ff6b6b; }
+        .hybrid .creature-type { color: #9fff8a; }
+        .transformed .creature-type { color: #ff9f8a; }
+
+        .creature-description {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1.05em;
+        }
+
+        .creature-traits {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .trait-tag {
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .benevolent .trait-tag {
+            background: rgba(201, 131, 255, 0.2);
+            color: #c983ff;
+            border: 1px solid rgba(201, 131, 255, 0.4);
+        }
+
+        .ancient .trait-tag {
+            background: rgba(74, 144, 226, 0.2);
+            color: #4a90e2;
+            border: 1px solid rgba(74, 144, 226, 0.4);
+        }
+
+        .corrupted .trait-tag {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            border: 1px solid rgba(255, 107, 107, 0.4);
+        }
+
+        .hybrid .trait-tag {
+            background: rgba(159, 255, 138, 0.2);
+            color: #9fff8a;
+            border: 1px solid rgba(159, 255, 138, 0.4);
+        }
+
+        .transformed .trait-tag {
+            background: rgba(255, 159, 138, 0.2);
+            color: #ff9f8a;
+            border: 1px solid rgba(255, 159, 138, 0.4);
+        }
+
+        .creature-card:hover .trait-tag {
+            transform: translateY(-2px);
+        }
+
+        .special-feature {
+            background: linear-gradient(135deg, rgba(30, 30, 40, 0.9), rgba(40, 40, 50, 0.8));
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 4px solid;
+        }
+
+        .benevolent .special-feature { border-left-color: #c983ff; }
+        .ancient .special-feature { border-left-color: #4a90e2; }
+        .corrupted .special-feature { border-left-color: #ff6b6b; }
+        .hybrid .special-feature { border-left-color: #9fff8a; }
+        .transformed .special-feature { border-left-color: #ff9f8a; }
+
+        .feature-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .benevolent .feature-title { color: #c983ff; }
+        .ancient .feature-title { color: #4a90e2; }
+        .corrupted .feature-title { color: #ff6b6b; }
+        .hybrid .feature-title { color: #9fff8a; }
+        .transformed .feature-title { color: #ff9f8a; }
+
+        .feature-description {
+            color: #ddd;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .navigation-footer {
+            padding: 80px 20px;
+            background: rgba(5, 5, 15, 0.95);
+            text-align: center;
+            border-top: 1px solid rgba(168, 181, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            background: rgba(25, 25, 35, 0.8);
+            border: 1px solid rgba(168, 181, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #a8b5ff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            border-color: #a8b5ff;
+            background: rgba(168, 181, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 3em;
+            }
+            
+            .page-subtitle {
+                font-size: 1.3em;
+            }
+            
+            .creatures-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .creature-card {
+                padding: 30px;
+            }
+            
+            .category-title {
+                font-size: 2.2em;
+            }
+            
+            .nav-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="creature-shadows">
+        <div class="shadow-creature leviathan" style="left: 5%; animation-delay: 0s;">🐋</div>
+        <div class="shadow-creature nimwe" style="left: 15%; animation-delay: 5s;">🦋</div>
+        <div class="shadow-creature beastborn" style="left: 25%; animation-delay: 10s;">🐺</div>
+        <div class="shadow-creature leviathan" style="left: 35%; animation-delay: 15s;">🐙</div>
+        <div class="shadow-creature nimwe" style="left: 45%; animation-delay: 20s;">✨</div>
+        <div class="shadow-creature beastborn" style="left: 55%; animation-delay: 25s;">🦅</div>
+        <div class="shadow-creature leviathan" style="left: 65%; animation-delay: 8s;">🐉</div>
+        <div class="shadow-creature nimwe" style="left: 75%; animation-delay: 12s;">🌙</div>
+        <div class="shadow-creature beastborn" style="left: 85%; animation-delay: 18s;">🐯</div>
+        <div class="shadow-creature leviathan" style="left: 95%; animation-delay: 22s;">🦈</div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Creatures & Beings</h1>
+            <p class="page-subtitle">
+                "From benevolent Nimwe to corrupted Beastborn, witness the entities that inhabit a world where divine blood transforms innocence into nightmare"
+            </p>
+            <div class="page-description">
+                <p>In Arcadia, consciousness shapes reality as much as reality shapes consciousness. Here dwell beings born from divine accident and mortal transformation, creatures that remember what they once were and entities that exist between the spaces of reality itself. Each represents a different facet of how divine power interacts with the mortal realm—sometimes as blessing, often as curse, always as fundamental change.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="creatures-sections">
+        <!-- Benevolent Entities -->
+        <section class="creature-category category-benevolent benevolent">
+            <div class="container">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2M7,19L8.09,15.26L15,15L8.09,14.74L7,11L5.91,14.74L1,15L5.91,15.26L7,19M19,19L20.09,15.26L24,15L20.09,14.74L19,11L17.91,14.74L14,15L17.91,15.26L19,19Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-title">Benevolent Entities</h2>
+                    <p class="category-subtitle">Guardians of Balance and Hope</p>
+                    <p class="category-description">
+                        These beings emerge from the void not as destroyers but as healers, seeking to restore balance 
+                        to a world increasingly dominated by unchecked light. They offer guidance without demanding worship, 
+                        healing without extracting payment, and hope without requiring surrender of free will.
+                    </p>
+                </div>
+                
+                <div class="creatures-grid">
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">The Nimwe</h3>
+                                <div class="creature-type">Void-Touched Spirits</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Ethereal beings with pale, ghost-white skin and luminous purple eyes, possessing fluffy white cat ears and flowing feline tails. They can shapeshift into small white cats and emerge from the void itself as creatures dwelling between worlds. The Nimwe speak with voices layered like a thousand whispers woven into harmonious song, calling troubled souls "little starling" with words that wrap around listeners in otherworldly embrace.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Prophetic Whispers</span>
+                            <span class="trait-tag">Void Affinity</span>
+                            <span class="trait-tag">Shapeshifting</span>
+                            <span class="trait-tag">Spiritual Healing</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Silver Feather Tokens</div>
+                            <div class="feature-description">
+                                When Nimwe depart, they leave behind impossibly delicate silver feathers that pulse faintly with otherworldly energy. These tokens serve as reminders of their presence and call to those with spiritual sensitivity or supernatural heritage.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ancient Powers -->
+        <section class="creature-category category-ancient ancient">
+            <div class="container">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.68,12.65 10.5,12.91V16H13.5V12.91C15.32,12.65 17,11 17,9A5,5 0 0,0 12,4Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-title">Ancient Powers</h2>
+                    <p class="category-subtitle">Primordial Consciousness from Before Creation</p>
+                    <p class="category-description">
+                        These beings represent an earlier phase of cosmic evolution, when raw elemental force dominated 
+                        over refined divine consciousness. They exist simultaneously as physical creatures and conscious 
+                        concepts, experiencing all time periods at once while maintaining perfect memory of every moment 
+                        since their first awakening.
+                    </p>
+                </div>
+                
+                <div class="creatures-grid">
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Ancient Leviathans</h3>
+                                <div class="creature-type">Primordial Sea Gods</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Primordial sea creatures that once held divine power but now exist in the deep trenches of the Azure Expanse. Individual leviathans can span distances that dwarf continents, their consciousness experiencing all time periods simultaneously while their dreams can spontaneously create new forms of reality. Their bones serve as conduits for the most potent magical workings.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Temporal Existence</span>
+                            <span class="trait-tag">Reality Anchoring</span>
+                            <span class="trait-tag">Dream Manifestation</span>
+                            <span class="trait-tag">Perfect Memory</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Living Knowledge Repositories</div>
+                            <div class="feature-description">
+                                Leviathans serve as living libraries of pre-creation information, their essence used in advanced magical workings. Contact between leviathans and humans requires extraordinary circumstances—deep ocean encounters, dream communication, or crisis intervention during threats to existence itself.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2.88,16.88L4.29,18.29L7.76,14.82L16.47,23.53C17.07,24.13 18.03,24.13 18.63,23.53C19.23,22.93 19.23,21.97 18.63,21.37L9.92,12.66L5.71,16.88H2.88M22.78,8.58L19.42,5.22C18.5,4.3 17.03,4.3 16.11,5.22L14,7.33L18.67,12L20.78,9.89C21.7,8.97 21.7,7.5 20.78,6.58L22.78,8.58M6.41,10.59L5,12L7.07,14.07L8.47,12.66L6.41,10.59M11.12,5.88L12.53,4.47L14.59,6.53L13.18,7.94L11.12,5.88Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Stillborn Oracles</h3>
+                                <div class="creature-type">Unborn Prophets</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Creatures that die before birth but whose remains retain prophetic power. Their unborn status grants perception of times they never experienced and ability to see potential futures that never manifested. They exist outside normal cause-and-effect relationships, serving as components for divination magic.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Temporal Awareness</span>
+                            <span class="trait-tag">Possibility Sight</span>
+                            <span class="trait-tag">Causal Independence</span>
+                            <span class="trait-tag">Truth Resonance</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Artifact Creation</div>
+                            <div class="feature-description">
+                                Their bones and tissues serve as components for the most powerful divination magic, retaining consciousness that can advise users and provide insights into events that exist outside normal temporal flow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Corrupted Beings -->
+        <section class="creature-category category-corrupted corrupted">
+            <div class="container">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-title">Corrupted Beings</h2>
+                    <p class="category-subtitle">Innocence Transformed by Divine Violence</p>
+                    <p class="category-description">
+                        These creatures represent the ongoing consequences of cosmic violence, transformed by exposure 
+                        to divine blood corruption. They retain enough of their original consciousness to remember what 
+                        they once were, making their monstrous nature a source of constant psychological torment that 
+                        drives their dangerous behavior.
+                    </p>
+                </div>
+                
+                <div class="creatures-grid">
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5.04,7.5L12,10.85L18.96,7.5L12,4.15Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">The Beastborn</h3>
+                                <div class="creature-type">Divinely Corrupted Animals</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Normal animals transformed by exposure to divine blood corruption, becoming monstrous versions of their original forms. They retain enough consciousness to remember their innocent past, creating constant psychological torment that manifests as uncontrolled aggression and specific hatred for humans as representatives of the world they can no longer inhabit.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Identity Confusion</span>
+                            <span class="trait-tag">Enhanced Hunting</span>
+                            <span class="trait-tag">Reality Disruption</span>
+                            <span class="trait-tag">Pack Coordination</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Major Classifications</div>
+                            <div class="feature-description">
+                                Ridgeback Stalkers (armored ambush predators), Gorefang Behemoths (massive tusked chargers), Razorwing Harpies (canyon-spanning flyers), Stonehide Titans (earth-shaking giants), Skywraiths (harbinger flocks), and the terrifying Virelith—shadow panthers that devour light itself and slip between reality's cracks.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Void Wraiths</h3>
+                                <div class="creature-type">Harbingers of Silence</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Entities manifested from growing influence of ancient void powers, appearing as humanoid shadows of living darkness with burning white eyes and eclipse symbols on their chests. They consume life force through contact, create zones of unnatural silence, and coordinate attacks with other supernatural entities as agents of cosmic unmaking.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Life Drain</span>
+                            <span class="trait-tag">Silence Emanation</span>
+                            <span class="trait-tag">Fear Projection</span>
+                            <span class="trait-tag">Reality Consumption</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Post-Crisis Status</div>
+                            <div class="feature-description">
+                                With the defeat of the Silent God, Void Wraiths vanished as suddenly as they appeared, dispersing like smoke. However, their presence left lasting scars on inhabited places, and survivors report lingering nightmares and the inexplicable sense of being watched by invisible eyes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hybrid Bloodlines -->
+        <section class="creature-category category-hybrid hybrid">
+            <div class="container">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2M7,19L8.09,15.26L15,15L8.09,14.74L7,11L5.91,14.74L1,15L5.91,15.26L7,19M19,19L20.09,15.26L24,15L20.09,14.74L19,11L17.91,14.74L14,15L17.91,15.26L19,19Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-title">Hybrid Bloodlines</h2>
+                    <p class="category-subtitle">Children of Two Worlds</p>
+                    <p class="category-description">
+                        Divine-mortal offspring represent the most dangerous and tragic supernatural beings in existence, 
+                        possessing power that exceeds their capacity for emotional or moral development. These beings 
+                        embody the dangerous poetry of divine longing made flesh, forever caught between immortal power 
+                        and mortal understanding.
+                    </p>
+                </div>
+                
+                <div class="creatures-grid">
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Vaelari</h3>
+                                <div class="creature-type">Celestial-Elven Hybrids</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Beings marked by luminous pale blue eyes that catch light like stars and hold the very echo of the sky. Their births are seen as powerful omens, stirring reverence among the spiritual and devout. The Vaelari possess distinctive physical markers of their dual heritage—neither fully elven nor angelic, but bearing the essence of both bloodlines.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Environmental Resonance</span>
+                            <span class="trait-tag">Temporal Perception</span>
+                            <span class="trait-tag">Artistic Compulsion</span>
+                            <span class="trait-tag">Emotional Amplification</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Celestial Heritage</div>
+                            <div class="feature-description">
+                                Their emotional states affect local weather and natural phenomena, while their ability to see past and future as clearly as the present often leads to difficulty forming lasting relationships due to fundamental differences from pure mortals.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Haelim</h3>
+                                <div class="creature-type">Divine-Human Hybrids</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Divine-human hybrids hidden among mortal populations, possessing natural ability to suppress their supernatural nature when necessary. They experience overwhelming awareness of others' emotional states and needs, combined with irresistible drive to protect innocents and fight injustice, though divine power burns through mortal bodies at accelerated rates.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Power Concealment</span>
+                            <span class="trait-tag">Empathic Sensitivity</span>
+                            <span class="trait-tag">Reality Stabilization</span>
+                            <span class="trait-tag">Moral Compulsion</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Hidden Among Mortals</div>
+                            <div class="feature-description">
+                                Their unconscious tendency to normalize supernatural phenomena around them makes them bridges between human and supernatural communities, though their shortened lifespans reflect the cost of containing divine power within mortal forms.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 48.839 48.839" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
+                    c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
+                    c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742
+                    c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181
+                    C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0
+                    S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971
+                    s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878
+                    c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z
+                     M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414
+                    S48.455,16.861,45.727,15.602z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Baelak</h3>
+                                <div class="creature-type">Divine Beastmen (Mythological)</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Divine beastmen combinations so rare they're considered mythological, possessing enhanced animal senses combined with divine intelligence. They demonstrate natural command over normal animals of their base species and supernatural knowledge of events within their claimed domain, with power levels fluctuating based on natural cycles and cosmic alignments.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Primal Instincts</span>
+                            <span class="trait-tag">Transformation Ability</span>
+                            <span class="trait-tag">Pack Leadership</span>
+                            <span class="trait-tag">Seasonal Cycling</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Legendary Rarity</div>
+                            <div class="feature-description">
+                                So rare that most scholars consider them mythological rather than real beings, these creatures represent the ultimate fusion of beast and divine consciousness, wielding powers that shift with natural cycles.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transformed Beings -->
+        <section class="creature-category category-transformed transformed">
+            <div class="container">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                        </svg>
+                    </div>
+                    <h2 class="category-title">Transformed Beings</h2>
+                    <p class="category-subtitle">Mortals Reshaped by Supernatural Forces</p>
+                    <p class="category-description">
+                        Mortals who have been changed by prolonged exposure to divine presence, powerful magical forces, 
+                        or deliberate supernatural intervention. These individuals often serve as bridges between human 
+                        and supernatural communities, though their transformations frequently come at the cost of their 
+                        original humanity.
+                    </p>
+                </div>
+                
+                <div class="creatures-grid">
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">The Bloodmarked</h3>
+                                <div class="creature-type">Divine Blood Warriors</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Descendants of Astrid Ravenscroft, the First Bloodmarked, created as biological weapons against gods during the Divine Wars. These transformed humans possess divine essence in their bloodline, granting enhanced strength, speed, and resilience, but struggle with involuntary transformations during emotional stress. Their power was designed for fighting immortal beings but proves dangerous when triggered unpredictably in normal life.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Divine Combat Abilities</span>
+                            <span class="trait-tag">Reality Resistance</span>
+                            <span class="trait-tag">Involuntary Transformation</span>
+                            <span class="trait-tag">Hereditary Power</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">The Weapon's Curse</div>
+                            <div class="feature-description">
+                                Originally designed as humanity's answer to divine tyranny, the Bloodmarked blessing became a curse within the same generation. Powers meant for gods trigger during normal emotional stress, creating living weapons who struggle to control abilities designed for cosmic warfare while trying to live mortal lives.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Divine-Touched</h3>
+                                <div class="creature-type">Blessed Mortals</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Humans granted supernatural abilities through direct divine contact, including Seers with prophetic sight at the cost of normal temporal perception, Healers with medical abilities but empathic overload, Oracles serving as communication channels, Guardians enhanced with protective powers but bound to specific duties, and Martyrs granted temporary divine power for usually fatal missions.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Prophetic Sight</span>
+                            <span class="trait-tag">Supernatural Healing</span>
+                            <span class="trait-tag">Divine Communication</span>
+                            <span class="trait-tag">Protective Enhancement</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">The Price of Divine Touch</div>
+                            <div class="feature-description">
+                                Each blessing comes with corresponding curse—prophets lose normal time perception, healers suffer overwhelming empathy, guardians become bound to locations, and martyrs face missions that typically end in sacrifice.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Scholar-Mages</h3>
+                                <div class="creature-type">Knowledge-Transformed</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Practitioners who have dedicated their lives to supernatural study, undergoing gradual transformation through knowledge absorption until magical information begins altering their fundamental nature. They develop reality perception that sees through illusions, temporal awareness that disconnects them from normal human experience, and cosmic perspective that views individual lives as insignificant.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Knowledge Absorption</span>
+                            <span class="trait-tag">Reality Perception</span>
+                            <span class="trait-tag">Temporal Awareness</span>
+                            <span class="trait-tag">Social Isolation</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">The Scholar's Burden</div>
+                            <div class="feature-description">
+                                As they accumulate magical knowledge, Scholar-Mages gradually lose their ability to relate to normal humans, gaining cosmic awareness at the cost of emotional connection and social understanding.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="creature-card">
+                        <div class="creature-header">
+                            <div class="creature-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,8.7 7.7,8 8.5,8C9.3,8 10,8.7 10,9.5M17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,9.5C14,8.7 14.7,8 15.5,8C16.3,8 17,8.7 17,9.5M12,17.23C10.25,17.23 8.71,16.5 7.81,15.42L9.23,14C9.68,14.72 10.75,15.23 12,15.23C13.25,15.23 14.32,14.72 14.77,14L16.19,15.42C15.29,16.5 13.75,17.23 12,17.23Z"/>
+                                </svg>
+                            </div>
+                            <div class="creature-info">
+                                <h3 class="creature-name">Deep-Dwelling Entities</h3>
+                                <div class="creature-type">Azure Expanse Inhabitants</div>
+                            </div>
+                        </div>
+                        <p class="creature-description">
+                            Inhabitants of the Azure Expanse's deepest reaches, including Void-Born Classifications like Null Swimmers (visible only by displaced reality), Concept Feeders (consuming abstract ideas), Time Parasites (feeding on temporal energy), and Tide-Touched Spirits that manifest physically only during extreme oceanic events while serving as communication links between distant realms.
+                        </p>
+                        <div class="creature-traits">
+                            <span class="trait-tag">Reality Displacement</span>
+                            <span class="trait-tag">Concept Consumption</span>
+                            <span class="trait-tag">Temporal Feeding</span>
+                            <span class="trait-tag">Dimensional Bridging</span>
+                        </div>
+                        <div class="special-feature">
+                            <div class="feature-title">Alien Existence</div>
+                            <div class="feature-description">
+                                These beings represent alien forms of existence that evolved in spaces between realms, serving as sources of magical components and indicators of cosmic health while operating according to laws that mortal minds struggle to comprehend.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Footer -->
+    <section class="navigation-footer">
+        <div class="container">
+            <h2 class="nav-title">Continue Exploring Arcadia</h2>
+            <div class="nav-grid">
+                <a href="/world-guide/characters/" class="nav-link">Characters</a>
+                <a href="/world-guide/magic/" class="nav-link">Magic Systems</a>
+                <a href="/world-guide/organizations/" class="nav-link">Organizations & Societies</a>
+                <a href="/world-guide/geography/" class="nav-link">Geography & Realms</a>
+                <a href="/world-guide/artifacts/" class="nav-link">Magical Materials & Artifacts</a>
+                <a href="/world-guide/" class="nav-link">World Guide Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add more floating creature shadows periodically
+        function addCreatureShadow() {
+            const creatures = ['🐋', '🦋', '🐺', '🐙', '✨', '🦅', '🐉', '🌙', '🐯', '🦈', '🦌', '🐴', '🦇', '🕷️'];
+            const types = ['leviathan', 'nimwe', 'beastborn'];
+            
+            const shadow = document.createElement('div');
+            shadow.className = `shadow-creature ${types[Math.floor(Math.random() * types.length)]}`;
+            shadow.textContent = creatures[Math.floor(Math.random() * creatures.length)];
+            shadow.style.left = Math.random() * 100 + '%';
+            shadow.style.animationDelay = '0s';
+            shadow.style.animationDuration = (15 + Math.random() * 20) + 's';
+            
+            document.querySelector('.creature-shadows').appendChild(shadow);
+            
+            // Remove shadow after animation
+            setTimeout(() => {
+                if (shadow.parentNode) {
+                    shadow.parentNode.removeChild(shadow);
+                }
+            }, 35000);
+        }
+
+        // Add shadows periodically
+        setInterval(addCreatureShadow, 4000);
+
+        // Add some initial shadows
+        for (let i = 0; i < 8; i++) {
+            setTimeout(addCreatureShadow, i * 1500);
+        }
+
+        // Enhanced hover effects for creature cards
+        document.querySelectorAll('.creature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.creature-icon');
+                const traits = this.querySelectorAll('.trait-tag');
+                
+                // Enhanced icon animation
+                if (icon) {
+                    icon.style.transform = 'scale(1.15) rotate(8deg)';
+                }
+                
+                // Staggered trait animations
+                traits.forEach((trait, index) => {
+                    setTimeout(() => {
+                        trait.style.transform = 'translateY(-3px) scale(1.05)';
+                    }, index * 50);
+                });
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.creature-icon');
+                const traits = this.querySelectorAll('.trait-tag');
+                
+                if (icon) {
+                    icon.style.transform = 'scale(1) rotate(0deg)';
+                }
+                
+                traits.forEach(trait => {
+                    trait.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+
+        // Category icon pulse on scroll
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const icon = entry.target.querySelector('.category-icon');
+                    if (icon) {
+                        icon.style.animation = 'pulse 2s ease-in-out 3';
+                    }
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.category-header').forEach(header => {
+            observer.observe(header);
+        });
+    </script>
+</body>
+</html>
