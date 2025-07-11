@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizations & Societies - Blood of the Wild Gods World Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: radial-gradient(ellipse at center, #0a0a1a 0%, #000000 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 159, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 138, 159, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(159, 255, 138, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-symbols {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .floating-symbol {
+            position: absolute;
+            color: rgba(138, 159, 255, 0.1);
+            font-size: 24px;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .page-header {
+            padding: 120px 0 100px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.15) 0%, rgba(138, 159, 255, 0.05) 100%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="cross" patternUnits="userSpaceOnUse" width="20" height="20"><path d="M10,2 L10,18 M2,10 L18,10" stroke="rgba(138,159,255,0.1)" stroke-width="0.5" fill="none"/></pattern></defs><rect width="100" height="100" fill="url(%23cross)"/></svg>') center/cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .page-title {
+            font-size: 4em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(138, 159, 255, 0.5);
+        }
+
+        .page-subtitle {
+            font-size: 1.4em;
+            color: #8a9fff;
+            font-style: italic;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-description {
+            font-size: 1.1em;
+            color: #ccc;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .organizations-grid {
+            padding: 100px 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-category {
+            margin-bottom: 80px;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .category-title {
+            font-size: 2.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .category-divider {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8a9fff, transparent);
+            margin: 20px auto;
+            position: relative;
+        }
+
+        .category-divider::before {
+            content: '⬟';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: #0a0a1a;
+            color: #8a9fff;
+            padding: 0 10px;
+            font-size: 1.2em;
+        }
+
+        .category-description {
+            font-size: 1.1em;
+            color: #bbb;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .organizations-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .organization-card {
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(30, 30, 30, 0.8));
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .organization-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .organization-card:hover {
+            border-color: #8a9fff;
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .organization-card:hover::before {
+            left: 100%;
+        }
+
+        .organization-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 10px 40px rgba(138, 159, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .organization-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .organization-card:hover .organization-icon {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 
+                0 20px 50px rgba(138, 159, 255, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .organization-card:hover .organization-icon::before {
+            left: 100%;
+        }
+
+        .organization-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #8a9fff;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+            transition: all 0.3s ease;
+        }
+
+        .organization-card:hover .organization-icon svg {
+            fill: #a8b5ff;
+        }
+
+        .organization-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .organization-type {
+            color: #8a9fff;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            text-align: center;
+            opacity: 0.8;
+        }
+
+        .organization-description {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            font-size: 0.95em;
+        }
+
+        .organization-details {
+            margin-top: auto;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+            font-size: 0.9em;
+        }
+
+        .detail-label {
+            color: #8a9fff;
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .detail-value {
+            color: #ddd;
+        }
+
+        .organization-tags {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(168, 181, 255, 0.1));
+            color: #a8b5ff;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            border: 1px solid rgba(138, 159, 255, 0.3);
+        }
+
+        .featured-box {
+            background: linear-gradient(135deg, rgba(255, 138, 159, 0.15), rgba(255, 168, 181, 0.1));
+            border: 2px solid rgba(255, 138, 159, 0.3);
+        }
+
+        .featured-box .organization-icon {
+            background: linear-gradient(135deg, rgba(255, 138, 159, 0.3), rgba(255, 168, 181, 0.2));
+        }
+
+        .featured-box .organization-icon svg {
+            fill: #ff8a9f;
+        }
+
+        .corrupted-box {
+            background: linear-gradient(135deg, rgba(80, 20, 20, 0.9), rgba(60, 15, 15, 0.8));
+            border: 2px solid rgba(150, 50, 50, 0.5);
+        }
+
+        .corrupted-box .organization-icon {
+            background: linear-gradient(135deg, rgba(150, 50, 50, 0.3), rgba(120, 40, 40, 0.2));
+        }
+
+        .corrupted-box .organization-icon svg {
+            fill: #ff6b6b;
+        }
+
+        .mysterious-box {
+            background: linear-gradient(135deg, rgba(80, 20, 80, 0.9), rgba(60, 15, 60, 0.8));
+            border: 2px solid rgba(150, 50, 150, 0.5);
+        }
+
+        .mysterious-box .organization-icon {
+            background: linear-gradient(135deg, rgba(150, 50, 150, 0.3), rgba(120, 40, 120, 0.2));
+        }
+
+        .mysterious-box .organization-icon svg {
+            fill: #c983ff;
+        }
+
+        .ancient-box {
+            background: linear-gradient(135deg, rgba(40, 60, 20, 0.9), rgba(30, 45, 15, 0.8));
+            border: 2px solid rgba(100, 150, 50, 0.5);
+        }
+
+        .ancient-box .organization-icon {
+            background: linear-gradient(135deg, rgba(100, 150, 50, 0.3), rgba(80, 120, 40, 0.2));
+        }
+
+        .ancient-box .organization-icon svg {
+            fill: #9fff83;
+        }
+
+        .relationship-network {
+            margin-top: 60px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(10, 10, 30, 0.9), rgba(20, 20, 40, 0.8));
+            border-radius: 25px;
+            border: 1px solid #333;
+            position: relative;
+        }
+
+        .network-title {
+            font-size: 2.2em;
+            color: #f0f0f0;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .relationship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .relationship-card {
+            background: rgba(20, 20, 20, 0.7);
+            border: 1px solid #444;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .relationship-card:hover {
+            border-color: #8a9fff;
+            transform: translateY(-5px);
+        }
+
+        .relationship-title {
+            color: #8a9fff;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .relationship-description {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5em;
+            }
+            
+            .organizations-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .organization-card {
+                padding: 30px;
+                min-height: 380px;
+            }
+
+            .category-title {
+                font-size: 2.2em;
+            }
+
+            .organizations-grid {
+                padding: 80px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-symbols">
+        <div class="floating-symbol" style="left: 10%; animation-delay: 0s;">⚔</div>
+        <div class="floating-symbol" style="left: 20%; animation-delay: 3s;">🏛</div>
+        <div class="floating-symbol" style="left: 30%; animation-delay: 6s;">⚖</div>
+        <div class="floating-symbol" style="left: 40%; animation-delay: 9s;">🌟</div>
+        <div class="floating-symbol" style="left: 50%; animation-delay: 12s;">⚔</div>
+        <div class="floating-symbol" style="left: 60%; animation-delay: 15s;">🏛</div>
+        <div class="floating-symbol" style="left: 70%; animation-delay: 18s;">⚖</div>
+        <div class="floating-symbol" style="left: 80%; animation-delay: 21s;">🌟</div>
+        <div class="floating-symbol" style="left: 90%; animation-delay: 24s;">⚔</div>
+    </div>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Organizations & Societies</h1>
+            <p class="page-subtitle">
+                "Where mortals gather, power flows—through faith, knowledge, blade, and blood"
+            </p>
+            <div class="page-description">
+                <p>In a world where divine silence shapes mortal destiny, where gods withdraw to deep places and leave their children to navigate cosmic forces alone, organizations become the vessels through which power, knowledge, and survival flow. From the militant certainty of Zenith's Chosen to the hidden wisdom of scholarly institutions, from the nomadic strength of the Ashborn Tribes to the systematic persecution of the Forsaken—these are the structures that define how mortals organize their lives in the shadow of sleeping gods.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="organizations-grid">
+        <!-- Religious Organizations -->
+        <div class="section-category">
+            <div class="category-header">
+                <h2 class="category-title">Religious Organizations</h2>
+                <div class="category-divider"></div>
+                <p class="category-description">
+                    In the absence of divine voices, mortal institutions interpret silence as scripture, 
+                    transforming withdrawal into worship and abandonment into absolute truth.
+                </p>
+            </div>
+            
+            <div class="organizations-row">
+                <div class="organization-card featured-box">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">Zenith's Chosen</h3>
+                    <div class="organization-type">Monotheistic Religious Movement</div>
+                    <div class="organization-description">
+                        A powerful religious organization that has gained explosive influence in the post-Silence world, offering absolute certainty through militant monotheism. Operating as both spiritual movement and political force, they seek to replace the complex Wild God pantheon with singular devotion to Zenith's Light. Their expansion combines spiritual conversion with practical aid, while their control mechanisms include surveillance, baptism rituals, and the brutal Forsaking of dissidents.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Primary Base:</span>
+                            <span class="detail-value">Rivenglade (expanding regionally)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Leadership:</span>
+                            <span class="detail-value">"The Son of Zenith" (Supreme Leader)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Conversion, Social Control, Persecution</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Influence:</span>
+                            <span class="detail-value">Growing rapidly post-Silence</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Zenithian Doctrine</span>
+                        <span class="tag">Baptism Rituals</span>
+                        <span class="tag">The Forsaking</span>
+                        <span class="tag">Post-Silence Power</span>
+                    </div>
+                </div>
+
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">Temple Societies</h3>
+                    <div class="organization-type">Traditional Religious Communities</div>
+                    <div class="organization-description">
+                        Religious communities organized around service and study of divine beings, serving as intermediaries between mortal and supernatural realms. Operating through complex hierarchical systems, they maintain official knowledge of divine matters while often suppressing the most dangerous truths. These societies function as educational centers, healing houses, legal arbiters, and cultural preservers within their communities.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Structure:</span>
+                            <span class="detail-value">Novices to Elders and Oracles</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Functions:</span>
+                            <span class="detail-value">Education, Healing, Legal Arbitration</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Notable:</span>
+                            <span class="detail-value">Temple of Solara (untouched by corruption)</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Divine Knowledge</span>
+                        <span class="tag">Institutional Control</span>
+                        <span class="tag">Community Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Underground & Resistance Organizations -->
+        <div class="section-category">
+            <div class="category-header">
+                <h2 class="category-title">Underground & Resistance</h2>
+                <div class="category-divider"></div>
+                <p class="category-description">
+                    In hidden sanctuaries and forgotten places, the cast-out and the truth-seekers 
+                    build new societies from the fragments of what was lost.
+                </p>
+            </div>
+            
+            <div class="organizations-row">
+                <div class="organization-card corrupted-box">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M7,7V17H9V13H13V17H15V7H13V11H9V7H7Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Forsaken Communities</h3>
+                    <div class="organization-type">Underground Exile Networks</div>
+                    <div class="organization-description">
+                        Underground networks of individuals cast out from Zenith's Chosen, marked with glowing white brands and condemned to social invisibility. These communities operate with pragmatic survival-focused leadership in hidden sanctuaries, maintaining fragments of pre-Zenithian traditions while developing new practices shaped by persecution. They often employ strategic terrorist attacks against Zenithian infrastructure, including successful bombings of Zenithian Halls.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Composition:</span>
+                            <span class="detail-value">Zenithian exiles, refugees, dissidents</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Leadership:</span>
+                            <span class="detail-value">Experienced survival specialists</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Hidden communities, guerrilla resistance</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">The Forsaken Mark</span>
+                        <span class="tag">Hidden Sanctuaries</span>
+                        <span class="tag">Resistance Operations</span>
+                        <span class="tag">Wild God Preservation</span>
+                    </div>
+                </div>
+
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">Scholarly Institutions</h3>
+                    <div class="organization-type">Knowledge Preservation Networks</div>
+                    <div class="organization-description">
+                        Organizations dedicated to the study and preservation of knowledge, including dangerous truths that other institutions prefer to forget. Operating in tension with official religious and political authorities, they develop sophisticated research methodologies, hidden archives, and methods to protect important knowledge from suppression efforts. They prioritize truth over comfort and maintain collaborative networks despite competition.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Methods:</span>
+                            <span class="detail-value">Archaeological investigation, textual analysis</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Philosophy:</span>
+                            <span class="detail-value">Truth over stability</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Resources:</span>
+                            <span class="detail-value">Hidden archives, coded documentation</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Suppression Resistance</span>
+                        <span class="tag">Hidden Archives</span>
+                        <span class="tag">Truth Preservation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Military & Political Organizations -->
+        <div class="section-category">
+            <div class="category-header">
+                <h2 class="category-title">Military & Political Orders</h2>
+                <div class="category-divider"></div>
+                <p class="category-description">
+                    Where blade and bureaucracy intersect, order emerges from chaos through 
+                    the disciplined application of authority, whether righteous or tyrannical.
+                </p>
+            </div>
+            
+            <div class="organizations-row">
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Eastern Reclamation Authority</h3>
+                    <div class="organization-type">Military-Administrative Control</div>
+                    <div class="organization-description">
+                        Military-administrative control system governing ancient territories transformed by cosmic conflicts. Operating through rigid bureaucratic structures, they maintain order through comprehensive monitoring, identity documentation, movement restrictions, and ideological indoctrination. Their governing philosophy prioritizes stability and predictability over individual freedom, viewing suspected deviation as potential threat requiring intervention.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Structure:</span>
+                            <span class="detail-value">Regional Governors to Investigation Teams</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Control Methods:</span>
+                            <span class="detail-value">Documentation, surveillance, rationing</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Territory:</span>
+                            <span class="detail-value">Pre-Divine War eastern regions</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Bureaucratic Control</span>
+                        <span class="tag">Ideological Conformity</span>
+                        <span class="tag">Movement Restriction</span>
+                    </div>
+                </div>
+
+                <div class="organization-card mysterious-box">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5,5H18A1,1 0 0,1 19,6V9H21V6A3,3 0 0,0 18,3H5A3,3 0 0,0 2,6V18A3,3 0 0,0 5,21H11V19H5A1,1 0 0,1 4,18V8H18V11H20V6A1,1 0 0,0 19,5H5M5,5V6H18V5H5M23,18L20.5,15.5L19,17L23,21L19,17L20.5,15.5L23,18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Chroniclers of Bone</h3>
+                    <div class="organization-type">Militant Scholarly Order</div>
+                    <div class="organization-description">
+                        Scholarly organization based in the Hollow Spire, dedicated to studying and combating supernatural forces unleashed by the Divine Wars. Operating from a city constructed entirely from the bleached bones of a fallen Titan, they maintain vast libraries while developing increasingly militant approaches to supernatural phenomena. They view most forms of magic and divine influence as potential threats requiring control or elimination.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Base:</span>
+                            <span class="detail-value">The Hollow Spire (Titan bone city)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Mission:</span>
+                            <span class="detail-value">Supernatural threat elimination</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Resources:</span>
+                            <span class="detail-value">Vast libraries, Bloodmarked genealogies</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Divine Wars Knowledge</span>
+                        <span class="tag">Supernatural Combat</span>
+                        <span class="tag">Bone Architecture</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tribal & Cultural Organizations -->
+        <div class="section-category">
+            <div class="category-header">
+                <h2 class="category-title">Tribal & Cultural Societies</h2>
+                <div class="category-divider"></div>
+                <p class="category-description">
+                    From the strength-ruled wastes to the harmony-seeking forests, 
+                    ancient peoples adapt their wisdom to a world forever changed by divine conflict.
+                </p>
+            </div>
+            
+            <div class="organizations-row">
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Ashborn Tribes</h3>
+                    <div class="organization-type">Post-Apocalyptic Nomads</div>
+                    <div class="organization-description">
+                        Scattered survivors of the Free People, transformed by the devastation of their homeland into pragmatic nomadic scavengers. Once dwelling in paradise, they now traverse the Godscarred Wastes, developing specialized skills for surviving divine corruption while carrying the burden of their Bloodmarked heritage—descendants of beings created as biological weapons against gods. They maintain fragments of pre-war wisdom through oral tradition.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Origin:</span>
+                            <span class="detail-value">Free People survivors</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Territory:</span>
+                            <span class="detail-value">Godscarred Wastes</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Specialization:</span>
+                            <span class="detail-value">Corruption detection, relic hunting</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Heritage:</span>
+                            <span class="detail-value">Bloodmarked weapon legacy</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Divine War Survivors</span>
+                        <span class="tag">Nomadic Lifestyle</span>
+                        <span class="tag">Bloodmarked Burden</span>
+                        <span class="tag">Wasteland Adaptation</span>
+                    </div>
+                </div>
+
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 48.839 48.839" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
+            c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
+            c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742
+            c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181
+            C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0
+            S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971
+            s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878
+            c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z
+             M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414
+            S48.455,16.861,45.727,15.602z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Bloodfang Clans</h3>
+                    <div class="organization-type">Beastmen Warrior Societies</div>
+                    <div class="organization-description">
+                        Beastmen societies of the Crimson Tundra organized around strength-based hierarchies and worship of primal violence. Their culture represents survival through embracing rather than avoiding the world's harsh realities. Composed of multiple species (Ursine, Lupine, Feline, Avian), they practice sacred traditions including Blood Moon ceremonies, Great Hunts, and Bloodmarked sacrifice to gain divine favor.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Territory:</span>
+                            <span class="detail-value">Crimson Tundra</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Composition:</span>
+                            <span class="detail-value">Multiple Beastmen species</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Structure:</span>
+                            <span class="detail-value">Strength-based pack hierarchies</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Worship:</span>
+                            <span class="detail-value">War God, primal violence</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Blood Moon Ceremonies</span>
+                        <span class="tag">Great Hunt</span>
+                        <span class="tag">Strength Trials</span>
+                        <span class="tag">Nomadic Adaptation</span>
+                    </div>
+                </div>
+
+                <div class="organization-card ancient-box">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">Dawnseeker Society</h3>
+                    <div class="organization-type">Elven Forest Guardians</div>
+                    <div class="organization-description">
+                        Elven guardians and stewards of the Verdant Veil, serving as protectors of the ancient forest realm where nature reigns supreme. Their entire civilization is built around preserving the delicate balance between nature and magic. Living in hidden villages and treetop havens, they practice democracy guided by wisdom-keepers and nature-speakers who can commune directly with the Veil's consciousness.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Territory:</span>
+                            <span class="detail-value">The Verdant Veil</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Governance:</span>
+                            <span class="detail-value">Democracy guided by wisdom-keepers</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Magic:</span>
+                            <span class="detail-value">Forest consciousness communion</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Architecture:</span>
+                            <span class="detail-value">Organic, grown rather than built</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Nature-Magic Balance</span>
+                        <span class="tag">Forest Consciousness</span>
+                        <span class="tag">Organic Architecture</span>
+                        <span class="tag">Post-Silence Recovery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Economic & Trade Organizations -->
+        <div class="section-category">
+            <div class="category-header">
+                <h2 class="category-title">Economic & Trade Networks</h2>
+                <div class="category-divider"></div>
+                <p class="category-description">
+                    Where coin and commerce flow between realms, crossing boundaries of species and creed 
+                    in the eternal pursuit of profit and survival.
+                </p>
+            </div>
+            
+            <div class="organizations-row">
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">Coastal Trading Communities</h3>
+                    <div class="organization-type">Maritime Commerce Networks</div>
+                    <div class="organization-description">
+                        Settlements built around fishing, maritime trade, and harvesting sea-based magical materials. These communities develop distinctive cultures adapted to life at the intersection of mortal and supernatural realms. They specialize in storm fishing, deep harvesting, current reading, and salt farming while maintaining fluid hierarchies and adaptive rituals based on divine activity levels.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Specializations:</span>
+                            <span class="detail-value">Storm fishing, deep harvesting</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Structure:</span>
+                            <span class="detail-value">Fluid hierarchies based on conditions</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Trade:</span>
+                            <span class="detail-value">Magical materials, maritime goods</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Divine Tidal Patterns</span>
+                        <span class="tag">Supernatural Navigation</span>
+                        <span class="tag">Magical Materials</span>
+                    </div>
+                </div>
+
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">Village Social Structures</h3>
+                    <div class="organization-type">Community Cooperation Networks</div>
+                    <div class="organization-description">
+                        Small communities like Oakhaven organized around practical cooperation and collective decision-making, with informal hierarchies based on skill, experience, and social contribution. These villages operate through integrated systems of mutual support, reputation-based social standing, and collective narrative processing that transforms traumatic events into manageable community folklore.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Decision Making:</span>
+                            <span class="detail-value">Gradual consensus building</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Economy:</span>
+                            <span class="detail-value">Artisan guilds, agricultural cooperatives</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Culture:</span>
+                            <span class="detail-value">Protective mythology, narrative consensus</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Mutual Aid Networks</span>
+                        <span class="tag">Reputation Systems</span>
+                        <span class="tag">Cultural Preservation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divine & Ancient Organizations -->
+        <div class="section-category">
+            <div class="category-header">
+                <h2 class="category-title">Divine & Ancient Orders</h2>
+                <div class="category-divider"></div>
+                <p class="category-description">
+                    Echoes of celestial governance and primordial protection systems, 
+                    where the memory of divine intervention lingers in institutional form.
+                </p>
+            </div>
+            
+            <div class="organizations-row">
+                <div class="organization-card ancient-box">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3,4A1,1 0 0,0 2,5V19A1,1 0 0,0 3,20H21A1,1 0 0,0 22,19V5A1,1 0 0,0 21,4H3M3,6H21V14H3V6M4,7V13H6V7H4M7,7V13H9V7H7M10,7V13H14V7H10M15,7V13H17V7H15M18,7V13H20V7H18M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Guardian Angel System</h3>
+                    <div class="organization-type">Divine Protective Hierarchy</div>
+                    <div class="organization-description">
+                        The protective hierarchy established under Azrael's command to prevent divine exploitation of mortals while maintaining beneficial contact between realms. Operating through sophisticated protocols designed to protect mortal autonomy, this system successfully regulated divine-mortal interactions for millennia through threat assessment networks, intervention hierarchies, and consent verification protocols.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Commander:</span>
+                            <span class="detail-value">Azrael (historical)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Function:</span>
+                            <span class="detail-value">Divine-mortal interaction regulation</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Success:</span>
+                            <span class="detail-value">Dramatic reduction in divine exploitation</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value">Historical (pre-Withdrawal)</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Mortal Protection</span>
+                        <span class="tag">Divine Regulation</span>
+                        <span class="tag">Consent Verification</span>
+                        <span class="tag">Historical System</span>
+                    </div>
+                </div>
+
+                <div class="organization-card">
+                    <div class="organization-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="organization-title">The Free People</h3>
+                    <div class="organization-type">Pre-War Ancestral Civilization</div>
+                    <div class="organization-description">
+                        The ancestral civilization that inhabited the lush territories now known as the Godscarred Wastes, representing the most advanced and harmonious society of the pre-war era. Built around principles of individual autonomy balanced with collective wisdom, they lived in perfect balance with their verdant environment until becoming the source of all Bloodmarked lineage through Astrid Ravenscroft's transformation.
+                    </div>
+                    <div class="organization-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Governance:</span>
+                            <span class="detail-value">Circle Councils, Truth Speakers</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Legacy:</span>
+                            <span class="detail-value">Bloodmarked heritage origin</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Fate:</span>
+                            <span class="detail-value">Destroyed in Divine Wars</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Descendants:</span>
+                            <span class="detail-value">Ashborn Tribes</span>
+                        </div>
+                    </div>
+                    <div class="organization-tags">
+                        <span class="tag">Paradise Lost</span>
+                        <span class="tag">Astrid Ravenscroft</span>
+                        <span class="tag">Bloodmarked Origin</span>
+                        <span class="tag">Divine War Catalyst</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Organizational Relationships -->
+        <div class="relationship-network">
+            <h2 class="network-title">Organizational Dynamics & Relationships</h2>
+            <div class="relationship-grid">
+                <div class="relationship-card">
+                    <h3 class="relationship-title">Religious Tensions</h3>
+                    <p class="relationship-description">
+                        Zenith's Chosen aggressively challenges traditional Temple Societies and persecutes Wild God worshippers, while the Forsaken Communities emerge as direct resistance to Zenithian expansion and control.
+                    </p>
+                </div>
+                
+                <div class="relationship-card">
+                    <h3 class="relationship-title">Knowledge Conflicts</h3>
+                    <p class="relationship-description">
+                        Scholarly Institutions operate in tension with both the Chroniclers of Bone's militant approach and official suppression efforts, while maintaining hidden networks for truth preservation.
+                    </p>
+                </div>
+                
+                <div class="relationship-card">
+                    <h3 class="relationship-title">Survival Alliances</h3>
+                    <p class="relationship-description">
+                        The Ashborn Tribes trade survival knowledge with Coastal Trading Communities, while both adapt to supernatural threats through practical cooperation rather than ideological unity.
+                    </p>
+                </div>
+                
+                <div class="relationship-card">
+                    <h3 class="relationship-title">Ancient Legacies</h3>
+                    <p class="relationship-description">
+                        The Guardian Angel System's historical protective protocols influence contemporary organizations, while the Free People's democratic ideals survive in Village Social Structures and Dawnseeker Society governance.
+                    </p>
+                </div>
+                
+                <div class="relationship-card">
+                    <h3 class="relationship-title">Post-Crisis Adaptation</h3>
+                    <p class="relationship-description">
+                        The Silent God crisis has accelerated religious conversion, refugee displacement, and the formation of new alliances between previously isolated communities facing shared supernatural threats.
+                    </p>
+                </div>
+                
+                <div class="relationship-card">
+                    <h3 class="relationship-title">Underground Networks</h3>
+                    <p class="relationship-description">
+                        Hidden connections link the Forsaken Communities with sympathetic elements in Scholar Institutions and Village Social Structures, creating covert resistance to both Zenithian expansion and authoritarian control.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Footer -->
+    <section class="navigation-footer">
+        <div class="container">
+            <h2 class="nav-title">Continue Exploring Arcadia</h2>
+            <div class="nav-grid">
+                <a href="/world-guide/kingdoms/" class="nav-link">Kingdoms & Politics</a>
+                <a href="/world-guide/divine-realms/" class="nav-link">Divine Realms & Cosmology</a>
+                <a href="/world-guide/artifacts/" class="nav-link">Magical Materials & Artifacts</a>
+                <a href="/world-guide/daily-life/" class="nav-link">Daily Life & Culture</a>
+                <a href="/world-guide/environmental-magic/" class="nav-link">Environmental Magic & Phenomena</a>
+                <a href="/world-guide/" class="nav-link">World Guide Home</a>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .navigation-footer {
+            padding: 80px 20px;
+            background: rgba(5, 5, 15, 0.95);
+            text-align: center;
+            border-top: 1px solid rgba(138, 159, 255, 0.2);
+        }
+
+        .nav-title {
+            font-size: 2em;
+            color: #f0f0f0;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .nav-link {
+            background: rgba(25, 25, 35, 0.8);
+            border: 1px solid rgba(138, 159, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #8a9fff;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            border-color: #8a9fff;
+            background: rgba(138, 159, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            .nav-title {
+                font-size: 1.8em;
+            }
+            
+            .navigation-footer {
+                padding: 60px 15px;
+            }
+        }
+    </style>
+
+    <script>
+        // Add floating symbols periodically
+        function addFloatingSymbol() {
+            const symbols = ['⚔', '🏛', '⚖', '🌟', '⭐', '🔮', '⚡', '🛡'];
+            const symbol = document.createElement('div');
+            symbol.className = 'floating-symbol';
+            symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            symbol.style.left = Math.random() * 100 + '%';
+            symbol.style.animationDelay = '0s';
+            symbol.style.animationDuration = (15 + Math.random() * 10) + 's';
+            
+            document.querySelector('.floating-symbols').appendChild(symbol);
+            
+            // Remove symbol after animation
+            setTimeout(() => {
+                if (symbol.parentNode) {
+                    symbol.parentNode.removeChild(symbol);
+                }
+            }, 25000);
+        }
+
+        // Add symbols periodically
+        setInterval(addFloatingSymbol, 3000);
+
+        // Add some initial symbols
+        for (let i = 0; i < 5; i++) {
+            setTimeout(addFloatingSymbol, i * 1000);
+        }
+
+        // Enhanced hover effects for organization cards
+        document.querySelectorAll('.organization-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
