@@ -1283,47 +1283,7 @@ image: "/assets/images/EbookPic.jpg"
             background: linear-gradient(to bottom, #a8b5ff, #6a00a0);
         }
 
-        /* Mobile Dropdown Overlay */
-        .mobile-dropdown-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 9998;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .mobile-dropdown-overlay.active {
-            display: block;
-            opacity: 1;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-dropdown-overlay {
-                display: block;
-                opacity: 0;
-                pointer-events: none;
-            }
-            
-            .mobile-dropdown-overlay.active {
-                opacity: 1;
-                pointer-events: auto;
-            }
-        }
-
-        /* Prevent body scroll when dropdown is open */
-        body.dropdown-open {
-            overflow: hidden;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            touch-action: none;
-        }
+        /* Mobile dropdown no longer needs overlay or body scroll lock */
 
         /* Mobile Responsive */
         @media (max-width: 1200px) {
@@ -1351,12 +1311,8 @@ image: "/assets/images/EbookPic.jpg"
             }
         }
 
-        /* Mobile Dropdown Fixes */
+        /* Mobile Dropdown Fixes - Simple Expandable List */
         @media (max-width: 768px) {
-            /* Reset dropdown behavior for mobile */
-            .characters-dropdown {
-                position: static !important;
-            }
             /* Prevent overscroll on mobile */
             html, body {
                 overflow-x: hidden;
@@ -1392,93 +1348,76 @@ image: "/assets/images/EbookPic.jpg"
                 gap: 15px;
             }
 
+            /* Simple expandable dropdown for mobile */
             .characters-dropdown {
                 display: block;
                 margin: 15px 0;
                 width: 100%;
                 max-width: 300px;
-                position: static;
-            }
-
-            .characters-dropdown.open {
-                z-index: 10000;
                 position: relative;
+                background: rgba(20, 20, 30, 0.6);
+                border: 1px solid rgba(138, 159, 255, 0.2);
+                border-radius: 15px;
+                overflow: hidden;
             }
             
             .dropdown-toggle {
                 width: 100%;
                 justify-content: center;
+                margin: 0;
+                border-radius: 15px;
             }
             
+            /* Simple slide-down menu */
             .dropdown-menu {
-                position: fixed !important;
-                top: 10% !important;
-                left: 10px !important;
-                right: 10px !important;
-                bottom: 10% !important;
+                position: static !important;
                 transform: none !important;
-                width: auto !important;
+                width: 100% !important;
                 max-width: none;
                 min-width: auto;
                 margin: 0;
-                z-index: 10001;
-                max-height: 80vh;
-                overflow-y: auto;
-                overflow-x: hidden;
-                -webkit-overflow-scrolling: touch;
-                overscroll-behavior: contain;
-                box-shadow: 
-                    0 20px 40px rgba(0, 0, 0, 0.8),
-                    0 0 0 1px rgba(138, 159, 255, 0.3);
-                background: rgba(20, 20, 30, 0.98);
-                border-radius: 15px;
-                padding: 15px 0;
+                z-index: auto;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease;
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                opacity: 1 !important;
+                visibility: visible !important;
+                box-shadow: none;
+                border-top: 1px solid rgba(138, 159, 255, 0.1);
             }
 
             .characters-dropdown.open .dropdown-menu {
-                opacity: 1 !important;
-                visibility: visible !important;
-                transform: none !important;
-                pointer-events: auto !important;
-                display: block !important;
+                max-height: 600px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 10px 0;
             }
             
-            /* Ensure dropdown items are clickable */
+            /* Simple dropdown items */
             .dropdown-menu .dropdown-item {
-                position: relative;
-                z-index: 10002;
-                -webkit-tap-highlight-color: rgba(138, 159, 255, 0.2);
-                cursor: pointer !important;
                 display: block !important;
                 text-decoration: none;
-                min-height: 48px;
-                padding: 16px 20px;
+                padding: 12px 20px;
                 background: transparent;
                 transition: background 0.2s ease;
-                pointer-events: auto !important;
-                -webkit-user-select: none;
-                user-select: none;
-                touch-action: manipulation;
+                border-radius: 0;
             }
             
             /* Touch feedback */
             .dropdown-menu .dropdown-item:active {
-                background: rgba(138, 159, 255, 0.2) !important;
+                background: rgba(138, 159, 255, 0.1) !important;
             }
             
-            /* Fix for iOS Safari */
-            .dropdown-menu {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-            
-            /* Ensure menu items aren't covered */
-            .dropdown-menu {
-                pointer-events: auto !important;
-            }
-            
-            .dropdown-menu * {
-                pointer-events: auto !important;
+            /* Mobile-specific dropdown styles */
+            .dropdown-section-title {
+                padding: 8px 20px !important;
+                color: #8a9fff !important;
+                font-size: 0.85em;
+                text-transform: uppercase;
+                letter-spacing: 1px;
             }
             
             /* Remove hover states on mobile */
@@ -1486,10 +1425,18 @@ image: "/assets/images/EbookPic.jpg"
                 display: none;
             }
             
-            /* Mobile-specific dropdown styles */
-            .dropdown-section-title {
-                padding: 10px 20px !important;
-                color: #8a9fff !important;
+            /* Hide mobile overlay - not needed for simple dropdown */
+            .mobile-dropdown-overlay {
+                display: none !important;
+            }
+            
+            /* Prevent body scroll lock */
+            body.dropdown-open {
+                overflow: auto !important;
+                position: static !important;
+                width: auto !important;
+                height: auto !important;
+                touch-action: auto !important;
             }
             
             .quick-character-links {
@@ -1646,8 +1593,7 @@ image: "/assets/images/EbookPic.jpg"
     
     <!-- Main Content Wrapper -->
     <div style="position: relative; overflow: hidden; min-height: 100vh; width: 100%;">
-        <!-- Mobile Dropdown Overlay -->
-        <div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
+        <!-- Mobile Dropdown Overlay (removed - not needed for simple dropdown) -->
 
         <!-- Loading Screen -->
         <div class="loading-screen" id="loadingScreen">
@@ -2446,23 +2392,24 @@ image: "/assets/images/EbookPic.jpg"
                 text.classList.add('collapsed');
                 button.textContent = 'Read More';
                 
-                // Scroll back to the beginning of the section
-                content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // On mobile, don't scroll - just collapse
+                if (window.innerWidth > 768) {
+                    // Only scroll on desktop
+                    content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
             }
         }
 
         // Character dropdown functionality
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.characters-dropdown');
-            const overlay = document.getElementById('mobileDropdownOverlay');
-            let scrollPosition = 0;
             
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 const menu = dropdown.querySelector('.dropdown-menu');
                 
                 if (toggle && menu) {
-                    // Toggle button click handler
+                    // Simple toggle button click handler
                     toggle.addEventListener('click', function(e) {
                         e.preventDefault();
                         e.stopPropagation();
@@ -2475,59 +2422,33 @@ image: "/assets/images/EbookPic.jpg"
                         });
                         
                         // Toggle current dropdown
-                        const wasOpen = dropdown.classList.contains('open');
                         dropdown.classList.toggle('open');
-                        
-                        // Handle mobile overlay and body scroll
-                        if (window.innerWidth <= 768) {
-                            if (!wasOpen) {
-                                // Store scroll position and lock body
-                                scrollPosition = window.pageYOffset;
-                                document.body.classList.add('dropdown-open');
-                                document.body.style.top = `-${scrollPosition}px`;
-                                overlay.classList.add('active');
-                                
-                                // Remove any inline styles that might conflict
-                                menu.style.removeProperty('position');
-                                menu.style.removeProperty('top');
-                                menu.style.removeProperty('bottom');
-                            } else {
-                                closeDropdown();
-                            }
-                        }
                     });
                     
                     // Add click handlers to dropdown items
                     const dropdownItems = menu.querySelectorAll('.dropdown-item');
                     dropdownItems.forEach(item => {
-                        // Use click event only for better reliability
-                        // Simple click handler for mobile
+                        // Simple click handler that works on all devices
                         item.addEventListener('click', function(e) {
-                            e.preventDefault();
-                            const href = this.getAttribute('href');
-                            if (href) {
-                                window.location.href = href;
+                            // Don't prevent default - let the link work naturally
+                            // This ensures better compatibility
+                            if (window.innerWidth <= 768) {
+                                // On mobile, close dropdown after click
+                                setTimeout(() => {
+                                    dropdown.classList.remove('open');
+                                }, 100);
                             }
                         });
                     });
                 }
             });
             
-            // Function to close dropdowns
+            // Simple function to close dropdowns
             function closeDropdown() {
                 dropdowns.forEach(dropdown => {
                     dropdown.classList.remove('open');
                 });
-                if (window.innerWidth <= 768) {
-                    document.body.classList.remove('dropdown-open');
-                    document.body.style.top = '';
-                    window.scrollTo(0, scrollPosition);
-                }
-                overlay.classList.remove('active');
             }
-            
-            // Close on overlay click
-            overlay.addEventListener('click', closeDropdown);
             
             // Close dropdowns when clicking outside
             document.addEventListener('click', function(e) {
@@ -2539,20 +2460,6 @@ image: "/assets/images/EbookPic.jpg"
             // Close on escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    closeDropdown();
-                }
-            });
-            
-            // Simple scroll handling for dropdown menus
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.addEventListener('touchmove', function(e) {
-                    e.stopPropagation();
-                }, { passive: false });
-            });
-            
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
                     closeDropdown();
                 }
             });
