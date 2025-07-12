@@ -9,7 +9,7 @@ image: "/assets/images/EbookPic.jpg"
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Dark Fantasy Books & Stories by Mileena Rayne | Blood of Wild Gods</title>
     <meta name="description" content="Read Blood of the Wild Gods series - dark fantasy exploring cults, trauma, and human nature. Published novels and work-in-progress stories about uncomfortable truths.">
     
@@ -30,6 +30,11 @@ image: "/assets/images/EbookPic.jpg"
             --deep-black: #0a0a0a;
         }
 
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
         body {
             background: #000;
             color: #f0f0f0;
@@ -37,6 +42,7 @@ image: "/assets/images/EbookPic.jpg"
             overflow-x: hidden;
             position: relative;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         /* Mystical Background Effects */
@@ -45,7 +51,7 @@ image: "/assets/images/EbookPic.jpg"
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             z-index: -2;
             background: 
                 radial-gradient(ellipse at top, rgba(138, 159, 255, 0.05) 0%, transparent 50%),
@@ -58,7 +64,7 @@ image: "/assets/images/EbookPic.jpg"
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
@@ -76,7 +82,27 @@ image: "/assets/images/EbookPic.jpg"
             0% {
                 opacity: 0;
                 transform: translateY(100vh) scale(0);
+            /* Dropdown styles on mobile */
+            .dropdown-item {
+                padding: 14px 20px;
+                background: transparent;
             }
+            
+            .dropdown-item:active,
+            .dropdown-item:hover {
+                background: rgba(138, 159, 255, 0.15);
+                color: #fff;
+                border-left-color: #8a9fff;
+            }
+            
+            .character-name {
+                color: #fff;
+            }
+            
+            .character-subtitle {
+                color: #aaa;
+            }
+        }
             10% {
                 opacity: 0.4;
             }
@@ -1276,7 +1302,8 @@ image: "/assets/images/EbookPic.jpg"
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(2px);
             z-index: 9998;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -1298,6 +1325,13 @@ image: "/assets/images/EbookPic.jpg"
                 opacity: 1;
                 pointer-events: auto;
             }
+        }
+
+        /* Prevent body scroll when dropdown is open */
+        body.dropdown-open {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
         }
 
         /* Mobile Responsive */
@@ -1327,6 +1361,18 @@ image: "/assets/images/EbookPic.jpg"
         }
 
         @media (max-width: 768px) {
+            /* Prevent overscroll on mobile */
+            html, body {
+                overflow-x: hidden;
+                position: relative;
+            }
+            
+            .cosmic-bg,
+            .floating-particles {
+                height: 100vh;
+                position: fixed;
+            }
+
             .page-title {
                 font-size: 2.5em;
             }
@@ -1380,14 +1426,15 @@ image: "/assets/images/EbookPic.jpg"
                 min-width: auto;
                 margin-top: 10px;
                 z-index: 10001;
-                max-height: 60vh;
+                max-height: 50vh;
                 overflow-y: auto;
+                overflow-x: hidden;
+                -webkit-overflow-scrolling: touch;
                 box-shadow: 
-                    0 30px 60px rgba(0, 0, 0, 0.9),
-                    0 10px 20px rgba(0, 0, 0, 0.8),
-                    0 0 0 1px rgba(138, 159, 255, 0.3),
-                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
-                background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(30, 30, 30, 0.98));
+                    0 20px 40px rgba(0, 0, 0, 0.8),
+                    0 0 0 1px rgba(138, 159, 255, 0.3);
+                background: rgba(35, 35, 35, 0.98);
+                backdrop-filter: blur(10px);
             }
 
             .characters-dropdown.open .dropdown-menu {
@@ -1548,19 +1595,21 @@ image: "/assets/images/EbookPic.jpg"
 <body class="no-js">
     <script>document.body.classList.remove('no-js');</script>
     
-    <!-- Mobile Dropdown Overlay -->
-    <div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
+    <!-- Main Content Wrapper -->
+    <div style="position: relative; overflow: hidden; min-height: 100vh; width: 100%;">
+        <!-- Mobile Dropdown Overlay -->
+        <div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
 
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="loading-text">Awakening the Stories...</div>
-    </div>
+        <!-- Loading Screen -->
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-text">Awakening the Stories...</div>
+        </div>
 
-    <!-- Cosmic Background -->
-    <div class="cosmic-bg"></div>
-    
-    <!-- Floating Particles -->
-    <div class="floating-particles" id="particlesContainer"></div>
+        <!-- Cosmic Background -->
+        <div class="cosmic-bg"></div>
+        
+        <!-- Floating Particles -->
+        <div class="floating-particles" id="particlesContainer"></div>
 
     <!-- Table of Contents Toggle Button -->
     <button class="toc-toggle" id="tocToggle" aria-label="Toggle Table of Contents">
@@ -1596,6 +1645,13 @@ image: "/assets/images/EbookPic.jpg"
             </p>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer style="background: #0a0a0a; padding: 40px 0; text-align: center; border-top: 1px solid rgba(138, 159, 255, 0.2); position: relative; z-index: 10; margin-top: 80px;">
+        <div class="container">
+            <p style="color: #666; margin: 0;">© 2024 Mileena Rayne. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Character Navigation -->
     <section class="characters-navigation">
@@ -2357,6 +2413,7 @@ image: "/assets/images/EbookPic.jpg"
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.characters-dropdown');
             const overlay = document.getElementById('mobileDropdownOverlay');
+            let scrollPosition = 0;
             
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -2378,16 +2435,23 @@ image: "/assets/images/EbookPic.jpg"
                         const wasOpen = dropdown.classList.contains('open');
                         dropdown.classList.toggle('open');
                         
-                        // Handle mobile overlay
+                        // Handle mobile overlay and body scroll
                         if (window.innerWidth <= 768) {
                             if (!wasOpen) {
+                                // Store scroll position and lock body
+                                scrollPosition = window.pageYOffset;
+                                document.body.classList.add('dropdown-open');
+                                document.body.style.top = `-${scrollPosition}px`;
                                 overlay.classList.add('active');
                             } else {
+                                // Restore scroll position and unlock body
+                                document.body.classList.remove('dropdown-open');
+                                document.body.style.top = '';
+                                window.scrollTo(0, scrollPosition);
                                 overlay.classList.remove('active');
                             }
                             
                             const rect = toggle.getBoundingClientRect();
-                            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                             
                             // Position the menu below the button
                             menu.style.position = 'fixed';
@@ -2408,12 +2472,37 @@ image: "/assets/images/EbookPic.jpg"
                 }
             });
             
+            // Prevent dropdown menu from closing when scrolling inside it
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.addEventListener('touchmove', function(e) {
+                    e.stopPropagation();
+                }, { passive: false });
+                
+                // Prevent scroll propagation to body when reaching boundaries
+                menu.addEventListener('scroll', function(e) {
+                    const scrollTop = this.scrollTop;
+                    const scrollHeight = this.scrollHeight;
+                    const offsetHeight = this.offsetHeight;
+                    
+                    if (scrollTop === 0) {
+                        this.scrollTop = 1;
+                    } else if (scrollTop + offsetHeight >= scrollHeight) {
+                        this.scrollTop = scrollHeight - offsetHeight - 1;
+                    }
+                }, { passive: false });
+            });
+            
             // Close dropdowns when clicking outside or on overlay
             document.addEventListener('click', function(e) {
                 if (!e.target.closest('.characters-dropdown') || e.target === overlay) {
                     dropdowns.forEach(dropdown => {
                         dropdown.classList.remove('open');
                     });
+                    if (window.innerWidth <= 768) {
+                        document.body.classList.remove('dropdown-open');
+                        document.body.style.top = '';
+                        window.scrollTo(0, scrollPosition);
+                    }
                     overlay.classList.remove('active');
                 }
             });
@@ -2424,6 +2513,11 @@ image: "/assets/images/EbookPic.jpg"
                     dropdowns.forEach(dropdown => {
                         dropdown.classList.remove('open');
                     });
+                    if (window.innerWidth <= 768) {
+                        document.body.classList.remove('dropdown-open');
+                        document.body.style.top = '';
+                        window.scrollTo(0, scrollPosition);
+                    }
                     overlay.classList.remove('active');
                 }
             });
@@ -2435,6 +2529,8 @@ image: "/assets/images/EbookPic.jpg"
                         dropdown.classList.remove('open');
                     }
                 });
+                document.body.classList.remove('dropdown-open');
+                document.body.style.top = '';
                 overlay.classList.remove('active');
             });
         });
@@ -2657,5 +2753,6 @@ image: "/assets/images/EbookPic.jpg"
             }
         });
     </script>
+    </div> <!-- End Main Content Wrapper -->
 </body>
 </html>
