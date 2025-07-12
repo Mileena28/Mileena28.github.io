@@ -1360,6 +1360,7 @@ image: "/assets/images/EbookPic.jpg"
             }
         }
 
+        /* Mobile Dropdown Fixes */
         @media (max-width: 768px) {
             /* Prevent overscroll on mobile */
             html, body {
@@ -1441,6 +1442,37 @@ image: "/assets/images/EbookPic.jpg"
                 opacity: 1;
                 visibility: visible;
                 transform: translateY(0) !important;
+            }
+            
+            /* Ensure dropdown items are clickable */
+            .dropdown-item {
+                position: relative;
+                z-index: 10002;
+                -webkit-tap-highlight-color: rgba(138, 159, 255, 0.2);
+                cursor: pointer;
+                display: block;
+                text-decoration: none;
+                min-height: 48px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 16px 20px;
+            }
+            
+            /* Fix for iOS Safari */
+            .dropdown-menu {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+            
+            /* Ensure menu items aren't covered */
+            .dropdown-menu * {
+                pointer-events: auto;
+            }
+            
+            /* Remove hover states on mobile */
+            .dropdown-item::after {
+                display: none;
             }
             
             .quick-character-links {
@@ -2420,6 +2452,7 @@ image: "/assets/images/EbookPic.jpg"
                 const menu = dropdown.querySelector('.dropdown-menu');
                 
                 if (toggle && menu) {
+                    // Toggle button click handler
                     toggle.addEventListener('click', function(e) {
                         e.preventDefault();
                         e.stopPropagation();
@@ -2443,95 +2476,106 @@ image: "/assets/images/EbookPic.jpg"
                                 document.body.classList.add('dropdown-open');
                                 document.body.style.top = `-${scrollPosition}px`;
                                 overlay.classList.add('active');
+                                
+                                // Position the menu
+                                const rect = toggle.getBoundingClientRect();
+                                menu.style.position = 'fixed';
+                                menu.style.top = (rect.bottom + 5) + 'px';
+                                
+                                // Ensure menu doesn't go off screen
+                                setTimeout(() => {
+                                    const menuBottom = menu.getBoundingClientRect().bottom;
+                                    const windowHeight = window.innerHeight;
+                                    if (menuBottom > windowHeight - 20) {
+                                        menu.style.top = 'auto';
+                                        menu.style.bottom = '20px';
+                                    }
+                                }, 10);
                             } else {
-                                // Restore scroll position and unlock body
-                                document.body.classList.remove('dropdown-open');
-                                document.body.style.top = '';
-                                window.scrollTo(0, scrollPosition);
-                                overlay.classList.remove('active');
+                                closeDropdown();
                             }
-                            
-                            const rect = toggle.getBoundingClientRect();
-                            
-                            // Position the menu below the button
-                            menu.style.position = 'fixed';
-                            menu.style.top = (rect.bottom + 5) + 'px';
-                            
-                            // Ensure menu doesn't go off screen bottom
-                            setTimeout(() => {
-                                const menuHeight = menu.offsetHeight;
-                                const windowHeight = window.innerHeight;
-                                if (rect.bottom + menuHeight + 10 > windowHeight) {
-                                    // Position above the button instead
-                                    menu.style.top = 'auto';
-                                    menu.style.bottom = (windowHeight - rect.top + 5) + 'px';
-                                }
-                            }, 10);
                         }
                     });
-                }
-            });
-            
-            // Prevent dropdown menu from closing when scrolling inside it
-            document.querySelectorAll('.dropdown-menu').forEach(menu => {
-                menu.addEventListener('touchmove', function(e) {
-                    e.stopPropagation();
-                }, { passive: false });
-                
-                // Prevent scroll propagation to body when reaching boundaries
-                menu.addEventListener('scroll', function(e) {
-                    const scrollTop = this.scrollTop;
-                    const scrollHeight = this.scrollHeight;
-                    const offsetHeight = this.offsetHeight;
                     
-                    if (scrollTop === 0) {
-                        this.scrollTop = 1;
-                    } else if (scrollTop + offsetHeight >= scrollHeight) {
-                        this.scrollTop = scrollHeight - offsetHeight - 1;
-                    }
-                }, { passive: false });
-            });
-            
-            // Close dropdowns when clicking outside or on overlay
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.characters-dropdown') || e.target === overlay) {
-                    dropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('open');
+                    // Add click handlers to dropdown items
+                    const dropdownItems = menu.querySelectorAll('.dropdown-item');
+                    dropdownItems.forEach(item => {
+                        // Use both click and touchend for better mobile support
+                        ['click', 'touchend'].forEach(eventType => {
+                            item.addEventListener(eventType, function(e) {
+                                if (eventType === 'touchend') {
+                                    e.preventDefault(); // Prevent ghost clicks
+                                }
+                                
+                                // Navigate to the link
+                                const href = this.getAttribute('href');
+                                if (href) {
+                                    window.location.href = href;
+                                }
+                            }, { passive: false });
+                        });
                     });
-                    if (window.innerWidth <= 768) {
-                        document.body.classList.remove('dropdown-open');
-                        document.body.style.top = '';
-                        window.scrollTo(0, scrollPosition);
-                    }
-                    overlay.classList.remove('active');
                 }
             });
             
-            // Close dropdowns on escape key
+            // Function to close dropdowns
+            function closeDropdown() {
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('open');
+                });
+                if (window.innerWidth <= 768) {
+                    document.body.classList.remove('dropdown-open');
+                    document.body.style.top = '';
+                    window.scrollTo(0, scrollPosition);
+                }
+                overlay.classList.remove('active');
+            }
+            
+            // Close on overlay click
+            overlay.addEventListener('click', closeDropdown);
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.characters-dropdown')) {
+                    closeDropdown();
+                }
+            });
+            
+            // Close on escape key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    dropdowns.forEach(dropdown => {
-                        dropdown.classList.remove('open');
-                    });
-                    if (window.innerWidth <= 768) {
-                        document.body.classList.remove('dropdown-open');
-                        document.body.style.top = '';
-                        window.scrollTo(0, scrollPosition);
-                    }
-                    overlay.classList.remove('active');
+                    closeDropdown();
                 }
             });
             
-            // Reposition dropdowns on window resize
-            window.addEventListener('resize', function() {
-                dropdowns.forEach(dropdown => {
-                    if (dropdown.classList.contains('open')) {
-                        dropdown.classList.remove('open');
+            // Prevent scroll propagation in dropdown menus
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                let startY = 0;
+                
+                menu.addEventListener('touchstart', function(e) {
+                    startY = e.touches[0].clientY;
+                }, { passive: true });
+                
+                menu.addEventListener('touchmove', function(e) {
+                    const scrollTop = this.scrollTop;
+                    const scrollHeight = this.scrollHeight;
+                    const height = this.offsetHeight;
+                    const deltaY = e.touches[0].clientY - startY;
+                    const isScrolledToTop = scrollTop === 0;
+                    const isScrolledToBottom = scrollTop + height >= scrollHeight;
+                    
+                    if ((isScrolledToTop && deltaY > 0) ||
+                        (isScrolledToBottom && deltaY < 0)) {
+                        e.preventDefault();
                     }
-                });
-                document.body.classList.remove('dropdown-open');
-                document.body.style.top = '';
-                overlay.classList.remove('active');
+                }, { passive: false });
+            });
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    closeDropdown();
+                }
             });
         });
 
