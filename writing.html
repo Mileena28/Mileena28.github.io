@@ -82,27 +82,7 @@ image: "/assets/images/EbookPic.jpg"
             0% {
                 opacity: 0;
                 transform: translateY(100vh) scale(0);
-            /* Dropdown styles on mobile */
-            .dropdown-item {
-                padding: 14px 20px;
-                background: transparent;
             }
-            
-            .dropdown-item:active,
-            .dropdown-item:hover {
-                background: rgba(138, 159, 255, 0.15);
-                color: #fff;
-                border-left-color: #8a9fff;
-            }
-            
-            .character-name {
-                color: #fff;
-            }
-            
-            .character-subtitle {
-                color: #aaa;
-            }
-        }
             10% {
                 opacity: 0.4;
             }
@@ -330,12 +310,14 @@ image: "/assets/images/EbookPic.jpg"
             margin-top: 10px;
             max-height: 400px;
             overflow-y: auto;
+            pointer-events: none;
         }
 
         .characters-dropdown.open .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
         }
 
         .dropdown-item {
@@ -1337,6 +1319,8 @@ image: "/assets/images/EbookPic.jpg"
             overflow: hidden;
             position: fixed;
             width: 100%;
+            height: 100%;
+            touch-action: none;
         }
 
         /* Mobile Responsive */
@@ -1433,7 +1417,7 @@ image: "/assets/images/EbookPic.jpg"
                 margin-top: 0;
                 z-index: 10001;
                 max-height: 70vh;
-                overflow-y: auto;
+                overflow-y: scroll;
                 overflow-x: hidden;
                 -webkit-overflow-scrolling: touch;
                 box-shadow: 
@@ -1441,12 +1425,14 @@ image: "/assets/images/EbookPic.jpg"
                     0 0 0 1px rgba(138, 159, 255, 0.3);
                 background: rgba(20, 20, 30, 0.98);
                 border-radius: 15px;
+                padding-bottom: 20px;
             }
 
             .characters-dropdown.open .dropdown-menu {
                 opacity: 1;
                 visibility: visible;
-                transform: translateY(0) !important;
+                transform: translateY(-50%) !important;
+                pointer-events: auto;
             }
             
             /* Ensure dropdown items are clickable */
@@ -1464,6 +1450,9 @@ image: "/assets/images/EbookPic.jpg"
                 padding: 16px 20px;
                 background: transparent;
                 transition: background 0.2s ease;
+                pointer-events: auto !important;
+                -webkit-user-select: none;
+                user-select: none;
             }
             
             /* Touch feedback */
@@ -1485,6 +1474,30 @@ image: "/assets/images/EbookPic.jpg"
             /* Remove hover states on mobile */
             .dropdown-item::after {
                 display: none;
+            }
+            
+            /* Mobile-specific dropdown styles */
+            .dropdown-section-title {
+                padding: 10px 20px !important;
+                pointer-events: none;
+                position: relative;
+                z-index: 10001;
+                color: #8a9fff !important;
+            }
+            
+            .dropdown-menu .dropdown-item {
+                pointer-events: auto !important;
+                position: relative;
+                z-index: 10002;
+                touch-action: manipulation;
+            }
+            
+            .dropdown-menu .character-name {
+                pointer-events: none;
+            }
+            
+            .dropdown-menu .character-subtitle {
+                pointer-events: none;
             }
             
             .quick-character-links {
@@ -2496,7 +2509,8 @@ image: "/assets/images/EbookPic.jpg"
                     const dropdownItems = menu.querySelectorAll('.dropdown-item');
                     dropdownItems.forEach(item => {
                         // Use click event only for better reliability
-                        item.addEventListener('click', function(e) {
+                        // Add both click and touchstart for better mobile support
+                        const handleItemClick = function(e) {
                             e.preventDefault();
                             e.stopPropagation();
                             
@@ -2510,6 +2524,12 @@ image: "/assets/images/EbookPic.jpg"
                                     window.location.href = href;
                                 }, 100);
                             }
+                        };
+                        
+                        item.addEventListener('click', handleItemClick, { passive: false });
+                        item.addEventListener('touchstart', function(e) {
+                            e.preventDefault();
+                            handleItemClick.call(this, e);
                         }, { passive: false });
                     });
                 }
@@ -2545,25 +2565,27 @@ image: "/assets/images/EbookPic.jpg"
                 }
             });
             
-            // Prevent scroll propagation in dropdown menus
+            // Enable scroll within dropdown menus on mobile
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 let startY = 0;
+                let startScrollTop = 0;
                 
                 menu.addEventListener('touchstart', function(e) {
                     startY = e.touches[0].clientY;
+                    startScrollTop = this.scrollTop;
                 }, { passive: true });
                 
                 menu.addEventListener('touchmove', function(e) {
-                    const scrollTop = this.scrollTop;
-                    const scrollHeight = this.scrollHeight;
-                    const height = this.offsetHeight;
-                    const deltaY = e.touches[0].clientY - startY;
-                    const isScrolledToTop = scrollTop === 0;
-                    const isScrolledToBottom = scrollTop + height >= scrollHeight;
-                    
-                    if ((isScrolledToTop && deltaY > 0) ||
-                        (isScrolledToBottom && deltaY < 0)) {
-                        e.preventDefault();
+                    e.stopPropagation();
+                    const currentY = e.touches[0].clientY;
+                    const deltaY = startY - currentY;
+                    this.scrollTop = startScrollTop + deltaY;
+                }, { passive: false });
+                
+                // Prevent body scroll when touching the menu
+                menu.addEventListener('touchmove', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.stopPropagation();
                     }
                 }, { passive: false });
             });
