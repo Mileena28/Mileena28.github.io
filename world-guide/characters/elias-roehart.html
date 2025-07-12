@@ -103,6 +103,14 @@
             overflow: hidden;
         }
 
+                .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+        }
+        
         .character-image::before {
             content: '';
             position: absolute;
@@ -577,8 +585,7 @@
             <aside class="character-portrait">
                 <div class="portrait-container">
                     <div class="character-image">
-                        [Character Art Coming Soon]<br>
-                        <small>Grey-blue eyes holding ancient secrets<br>Hands weathered by books and burden</small>
+                        <img src="/assets/images/elias.png" alt="Elias Roehart - The Secret Keeper" />
                     </div>
                     
                     <div class="character-stats">
