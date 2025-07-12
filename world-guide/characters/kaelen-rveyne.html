@@ -88,18 +88,18 @@
         .character-image {
             width: 100%;
             height: 300px;
-            background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(138, 159, 255, 0.1));
             border: 2px solid #c0c0c0;
             border-radius: 15px;
             margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #c0c0c0;
-            font-style: italic;
-            text-align: center;
             position: relative;
             overflow: hidden;
+        }
+        
+        .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .character-image::before {
@@ -532,8 +532,7 @@
             <aside class="character-portrait">
                 <div class="portrait-container">
                     <div class="character-image">
-                        [Character Art Coming Soon]<br>
-                        <small>Silver hair, cold grey eyes<br>Weathered by the Wastes and transformed by love</small>
+                        <img src="/assets/images/kaelen.jpg" alt="Kaelen R'Veyne - The Silver Hunter" />
                     </div>
                     
                     <div class="character-stats">
