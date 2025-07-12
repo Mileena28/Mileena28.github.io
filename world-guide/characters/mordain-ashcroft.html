@@ -102,6 +102,14 @@
             overflow: hidden;
         }
 
+                .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+        }
+        
         .character-image::before {
             content: '';
             position: absolute;
@@ -642,7 +650,8 @@
             <aside class="character-portrait">
                 <div class="portrait-container">
                     <div class="character-image">
-                        [Character Art Coming Soon]<br>
+                        <img src="/assets/images/mordain.jpg" alt="Mordain Ashcroft - The Repentant Inquisitor" />
+                    </div>
                         <small>Gaunt figure with piercing blue eyes<br>carrying a bone staff topped with<br>a carved skull that grins menacingly</small>
                     </div>
                     
