@@ -102,6 +102,14 @@
             overflow: hidden;
         }
 
+                .character-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 15px;
+        }
+        
         .character-image::before {
             content: '';
             position: absolute;
@@ -533,8 +541,7 @@
             <aside class="character-portrait">
                 <div class="portrait-container">
                     <div class="character-image">
-                        [Character Art Coming Soon]<br>
-                        <small>Violet eyes like amethyst flames<br>Shadow tendrils of ancient heritage</small>
+                        <img src="/assets/images/mira.jpg" alt="Mira Roehart - The Void-Touched" />
                     </div>
                     
                     <div class="character-stats">
