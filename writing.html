@@ -678,8 +678,10 @@ image: "/assets/images/EbookPic.jpg"
             margin-bottom: 50px;
             backdrop-filter: blur(20px);
             position: relative;
-            overflow: hidden;
+            overflow: visible;
             transition: all 0.4s ease;
+            opacity: 1;
+            visibility: visible;
         }
 
         .project-card::before {
@@ -789,6 +791,10 @@ image: "/assets/images/EbookPic.jpg"
             padding: 40px;
             margin-top: 30px;
             backdrop-filter: blur(10px);
+            opacity: 1;
+            visibility: visible;
+            display: block;
+            min-height: 100px;
         }
 
         .historian-note {
@@ -802,31 +808,16 @@ image: "/assets/images/EbookPic.jpg"
             position: relative;
         }
 
-        .historian-note::before {
-            content: '📜';
-            position: absolute;
-            top: 20px;
-            left: -15px;
-            font-size: 30px;
-            background: #1a1a2e;
-            padding: 5px;
-            border-radius: 50%;
-        }
-
         .story-section {
             margin-bottom: 60px;
             padding-bottom: 60px;
             border-bottom: 1px solid rgba(138, 159, 255, 0.1);
-            opacity: 0;
-            animation: fade-in-up 0.8s ease forwards;
-        }
-
-        .story-section:nth-child(odd) {
-            animation-delay: 0.2s;
-        }
-
-        .story-section:nth-child(even) {
-            animation-delay: 0.4s;
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.8s ease;
+            display: block;
+            visibility: visible;
+            min-height: 50px;
         }
 
         .story-section:last-child {
@@ -1277,36 +1268,36 @@ image: "/assets/images/EbookPic.jpg"
             background: linear-gradient(to bottom, #a8b5ff, #6a00a0);
         }
 
-        /* Loading Animation */
-        .loading-screen {
+        /* Mobile Dropdown Overlay */
+        .mobile-dropdown-overlay {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a0a0a;
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 1s ease;
-        }
-
-        .loading-screen.hidden {
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9998;
             opacity: 0;
-            pointer-events: none;
+            transition: opacity 0.3s ease;
         }
 
-        .loading-text {
-            font-size: 2em;
-            color: #8a9fff;
-            letter-spacing: 0.1em;
-            animation: loading-pulse 2s ease-in-out infinite;
+        .mobile-dropdown-overlay.active {
+            display: block;
+            opacity: 1;
         }
 
-        @keyframes loading-pulse {
-            0%, 100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
+        @media (max-width: 768px) {
+            .mobile-dropdown-overlay {
+                display: block;
+                opacity: 0;
+                pointer-events: none;
+            }
+            
+            .mobile-dropdown-overlay.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
         }
 
         /* Mobile Responsive */
@@ -1345,17 +1336,31 @@ image: "/assets/images/EbookPic.jpg"
             }
             
             .project-card {
-                padding: 30px;
+                padding: 25px 20px;
+                margin-bottom: 30px;
             }
 
             .chapter-links {
                 flex-direction: column;
             }
 
+            .book-characters {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
             .characters-dropdown {
                 display: block;
-                margin: 10px 0;
+                margin: 15px 0;
                 width: 100%;
+                max-width: 300px;
+                position: static;
+            }
+
+            .characters-dropdown.open {
+                z-index: 10000;
+                position: relative;
             }
             
             .dropdown-toggle {
@@ -1364,9 +1369,31 @@ image: "/assets/images/EbookPic.jpg"
             }
             
             .dropdown-menu {
-                min-width: 280px;
-                left: 50%;
-                right: auto;
+                position: fixed;
+                top: auto !important;
+                left: 10px !important;
+                right: 10px !important;
+                bottom: auto;
+                transform: none !important;
+                width: auto !important;
+                max-width: none;
+                min-width: auto;
+                margin-top: 10px;
+                z-index: 10001;
+                max-height: 60vh;
+                overflow-y: auto;
+                box-shadow: 
+                    0 30px 60px rgba(0, 0, 0, 0.9),
+                    0 10px 20px rgba(0, 0, 0, 0.8),
+                    0 0 0 1px rgba(138, 159, 255, 0.3),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(30, 30, 30, 0.98));
+            }
+
+            .characters-dropdown.open .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0) !important;
             }
             
             .quick-character-links {
@@ -1412,6 +1439,97 @@ image: "/assets/images/EbookPic.jpg"
             .section-title {
                 font-size: 2.2em;
             }
+            
+            .dropdown-toggle[href="/world-guide/characters/"] {
+                width: 100%;
+                max-width: 300px;
+                margin: 15px auto;
+                display: block;
+            }
+            
+            .lost-histories-container {
+                padding: 25px 15px;
+                margin-top: 20px;
+                backdrop-filter: none;
+                background: rgba(30, 30, 30, 0.9);
+            }
+            
+            .story-section {
+                margin-bottom: 40px;
+                padding-bottom: 40px;
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                transition: none !important;
+            }
+            
+            .authors-note {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+            
+            .historian-note {
+                padding: 20px;
+            }
+            
+            .read-more-content.collapsed {
+                max-height: 150px;
+            }
+            
+            /* Force visibility on mobile */
+            .story-section,
+            .story-section.reveal-hidden {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                transition: none !important;
+            }
+            
+            .reveal {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+            }
+            
+            /* Disable problematic effects on mobile */
+            .lost-histories-container {
+                backdrop-filter: none;
+                background: rgba(30, 30, 30, 0.9);
+            }
+            
+            .project-card {
+                backdrop-filter: none;
+                background: rgba(20, 20, 30, 0.95);
+            }
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-text {
+            font-size: 2em;
+            color: #8a9fff;
+            letter-spacing: 0.1em;
+            animation: loading-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes loading-pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
         }
 
         /* Reveal animations on scroll */
@@ -1427,7 +1545,12 @@ image: "/assets/images/EbookPic.jpg"
         }
     </style>
 </head>
-<body>
+<body class="no-js">
+    <script>document.body.classList.remove('no-js');</script>
+    
+    <!-- Mobile Dropdown Overlay -->
+    <div class="mobile-dropdown-overlay" id="mobileDropdownOverlay"></div>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-text">Awakening the Stories...</div>
@@ -1814,7 +1937,7 @@ image: "/assets/images/EbookPic.jpg"
             </div>
 
             <!-- The Lost Histories -->
-            <div class="project-card reveal">
+            <div class="project-card">
                 <div class="project-status">In Progress</div>
                 <h3 class="project-title">Blood of the Wild Gods: The Lost Histories, Volume One</h3>
                 <div class="project-genre">Literary Dark Fantasy • Anthology</div>
@@ -2233,6 +2356,7 @@ image: "/assets/images/EbookPic.jpg"
         // Character dropdown functionality
         document.addEventListener('DOMContentLoaded', function() {
             const dropdowns = document.querySelectorAll('.characters-dropdown');
+            const overlay = document.getElementById('mobileDropdownOverlay');
             
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -2251,17 +2375,46 @@ image: "/assets/images/EbookPic.jpg"
                         });
                         
                         // Toggle current dropdown
+                        const wasOpen = dropdown.classList.contains('open');
                         dropdown.classList.toggle('open');
+                        
+                        // Handle mobile overlay
+                        if (window.innerWidth <= 768) {
+                            if (!wasOpen) {
+                                overlay.classList.add('active');
+                            } else {
+                                overlay.classList.remove('active');
+                            }
+                            
+                            const rect = toggle.getBoundingClientRect();
+                            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                            
+                            // Position the menu below the button
+                            menu.style.position = 'fixed';
+                            menu.style.top = (rect.bottom + 5) + 'px';
+                            
+                            // Ensure menu doesn't go off screen bottom
+                            setTimeout(() => {
+                                const menuHeight = menu.offsetHeight;
+                                const windowHeight = window.innerHeight;
+                                if (rect.bottom + menuHeight + 10 > windowHeight) {
+                                    // Position above the button instead
+                                    menu.style.top = 'auto';
+                                    menu.style.bottom = (windowHeight - rect.top + 5) + 'px';
+                                }
+                            }, 10);
+                        }
                     });
                 }
             });
             
-            // Close dropdowns when clicking outside
+            // Close dropdowns when clicking outside or on overlay
             document.addEventListener('click', function(e) {
-                if (!e.target.closest('.characters-dropdown')) {
+                if (!e.target.closest('.characters-dropdown') || e.target === overlay) {
                     dropdowns.forEach(dropdown => {
                         dropdown.classList.remove('open');
                     });
+                    overlay.classList.remove('active');
                 }
             });
             
@@ -2271,7 +2424,18 @@ image: "/assets/images/EbookPic.jpg"
                     dropdowns.forEach(dropdown => {
                         dropdown.classList.remove('open');
                     });
+                    overlay.classList.remove('active');
                 }
+            });
+            
+            // Reposition dropdowns on window resize
+            window.addEventListener('resize', function() {
+                dropdowns.forEach(dropdown => {
+                    if (dropdown.classList.contains('open')) {
+                        dropdown.classList.remove('open');
+                    }
+                });
+                overlay.classList.remove('active');
             });
         });
 
@@ -2421,46 +2585,76 @@ image: "/assets/images/EbookPic.jpg"
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
+                    entry.target.classList.remove('reveal-hidden');
                 }
             });
         }, observerOptions);
 
         // Initialize on DOM load
         document.addEventListener('DOMContentLoaded', function() {
-            // Create particles
-            createParticles();
-            
-            // Hide loading screen
-            setTimeout(() => {
-                document.getElementById('loadingScreen').classList.add('hidden');
-            }, 1500);
-            
-            // Observe reveal elements
-            document.querySelectorAll('.reveal').forEach(el => {
-                observer.observe(el);
-            });
-            
-            // Smooth parallax effect
-            let ticking = false;
-            function updateParallax() {
-                const scrolled = window.pageYOffset;
-                const parallax = document.querySelector('.hero-bg');
-                if (parallax) {
-                    const speed = 0.5;
-                    const yPos = -(scrolled * speed);
-                    parallax.style.transform = `translate(0, ${yPos}px) scale(1.1)`;
+            try {
+                // Create particles
+                createParticles();
+                
+                // Hide loading screen
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').classList.add('hidden');
+                }, 1500);
+                
+                // Observe reveal elements
+                document.querySelectorAll('.reveal').forEach(el => {
+                    observer.observe(el);
+                });
+                
+                // Also observe story sections
+                document.querySelectorAll('.story-section').forEach((el, index) => {
+                    // On mobile, don't add reveal animation
+                    if (window.innerWidth > 768) {
+                        el.classList.add('reveal-hidden');
+                        observer.observe(el);
+                    }
+                });
+                
+                // Failsafe: Ensure all content is visible on mobile
+                if (window.innerWidth <= 768) {
+                    setTimeout(() => {
+                        document.querySelectorAll('.story-section, .reveal').forEach(el => {
+                            el.style.opacity = '1';
+                            el.style.transform = 'translateY(0)';
+                            el.classList.remove('reveal-hidden');
+                        });
+                    }, 100);
                 }
-                ticking = false;
-            }
-            
-            function requestTick() {
-                if (!ticking) {
-                    window.requestAnimationFrame(updateParallax);
-                    ticking = true;
+                
+                // Smooth parallax effect
+                let ticking = false;
+                function updateParallax() {
+                    const scrolled = window.pageYOffset;
+                    const parallax = document.querySelector('.hero-bg');
+                    if (parallax) {
+                        const speed = 0.5;
+                        const yPos = -(scrolled * speed);
+                        parallax.style.transform = `translate(0, ${yPos}px) scale(1.1)`;
+                    }
+                    ticking = false;
                 }
+                
+                function requestTick() {
+                    if (!ticking) {
+                        window.requestAnimationFrame(updateParallax);
+                        ticking = true;
+                    }
+                }
+                
+                window.addEventListener('scroll', requestTick);
+            } catch (error) {
+                console.error('Initialization error:', error);
+                // Fallback: make everything visible
+                document.querySelectorAll('.story-section, .reveal').forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
             }
-            
-            window.addEventListener('scroll', requestTick);
         });
     </script>
 </body>
