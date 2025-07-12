@@ -1257,7 +1257,11 @@ image: "/assets/images/EbookPic.jpg"
             transform: rotate(180deg);
         }
 
-        /* Hide scrollbar but keep functionality */
+        /* Style for View All Characters link to match dropdowns */
+        .dropdown-toggle[href="/world-guide/characters/"] {
+            width: auto !important;
+            display: inline-flex !important;
+        }
         .toc::-webkit-scrollbar {
             width: 6px;
         }
@@ -1520,10 +1524,10 @@ image: "/assets/images/EbookPic.jpg"
             }
             
             .dropdown-toggle[href="/world-guide/characters/"] {
-                width: 100%;
-                max-width: 300px;
-                margin: 15px auto;
-                display: block;
+                width: auto;
+                max-width: none;
+                margin: 15px 0;
+                display: inline-block;
             }
             
             .lost-histories-container {
@@ -1891,7 +1895,7 @@ image: "/assets/images/EbookPic.jpg"
                 </div>
 
                 <!-- All Characters Link -->
-                <a href="/world-guide/characters/" class="dropdown-toggle" style="text-decoration: none;">
+                <a href="/world-guide/characters/" class="dropdown-toggle" style="text-decoration: none; width: auto;">
                     <span>View All Characters</span>
                 </a>
             </div>
