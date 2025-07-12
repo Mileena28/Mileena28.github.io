@@ -1308,8 +1308,7 @@ image: "/assets/images/EbookPic.jpg"
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(2px);
+            background: rgba(0, 0, 0, 0.5);
             z-index: 9998;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -1423,25 +1422,25 @@ image: "/assets/images/EbookPic.jpg"
             
             .dropdown-menu {
                 position: fixed;
-                top: auto !important;
+                top: 50% !important;
                 left: 10px !important;
                 right: 10px !important;
                 bottom: auto;
-                transform: none !important;
+                transform: translateY(-50%) !important;
                 width: auto !important;
                 max-width: none;
                 min-width: auto;
-                margin-top: 10px;
+                margin-top: 0;
                 z-index: 10001;
-                max-height: 50vh;
+                max-height: 70vh;
                 overflow-y: auto;
                 overflow-x: hidden;
                 -webkit-overflow-scrolling: touch;
                 box-shadow: 
                     0 20px 40px rgba(0, 0, 0, 0.8),
                     0 0 0 1px rgba(138, 159, 255, 0.3);
-                background: rgba(35, 35, 35, 0.98);
-                backdrop-filter: blur(10px);
+                background: rgba(20, 20, 30, 0.98);
+                border-radius: 15px;
             }
 
             .characters-dropdown.open .dropdown-menu {
@@ -1463,6 +1462,13 @@ image: "/assets/images/EbookPic.jpg"
                 flex-direction: column;
                 justify-content: center;
                 padding: 16px 20px;
+                background: transparent;
+                transition: background 0.2s ease;
+            }
+            
+            /* Touch feedback */
+            .dropdown-item:active {
+                background: rgba(138, 159, 255, 0.2);
             }
             
             /* Fix for iOS Safari */
@@ -2476,20 +2482,10 @@ image: "/assets/images/EbookPic.jpg"
                                 document.body.style.top = `-${scrollPosition}px`;
                                 overlay.classList.add('active');
                                 
-                                // Position the menu
-                                const rect = toggle.getBoundingClientRect();
-                                menu.style.position = 'fixed';
-                                menu.style.top = (rect.bottom + 5) + 'px';
-                                
-                                // Ensure menu doesn't go off screen
-                                setTimeout(() => {
-                                    const menuBottom = menu.getBoundingClientRect().bottom;
-                                    const windowHeight = window.innerHeight;
-                                    if (menuBottom > windowHeight - 20) {
-                                        menu.style.top = 'auto';
-                                        menu.style.bottom = '20px';
-                                    }
-                                }, 10);
+                                // Remove any inline styles that might conflict
+                                menu.style.removeProperty('position');
+                                menu.style.removeProperty('top');
+                                menu.style.removeProperty('bottom');
                             } else {
                                 closeDropdown();
                             }
@@ -2499,20 +2495,22 @@ image: "/assets/images/EbookPic.jpg"
                     // Add click handlers to dropdown items
                     const dropdownItems = menu.querySelectorAll('.dropdown-item');
                     dropdownItems.forEach(item => {
-                        // Use both click and touchend for better mobile support
-                        ['click', 'touchend'].forEach(eventType => {
-                            item.addEventListener(eventType, function(e) {
-                                if (eventType === 'touchend') {
-                                    e.preventDefault(); // Prevent ghost clicks
-                                }
-                                
-                                // Navigate to the link
-                                const href = this.getAttribute('href');
-                                if (href) {
+                        // Use click event only for better reliability
+                        item.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            
+                            // Navigate to the link
+                            const href = this.getAttribute('href');
+                            if (href) {
+                                // Close dropdown first
+                                closeDropdown();
+                                // Small delay to ensure dropdown closes smoothly
+                                setTimeout(() => {
                                     window.location.href = href;
-                                }
-                            }, { passive: false });
-                        });
+                                }, 100);
+                            }
+                        }, { passive: false });
                     });
                 }
             });
