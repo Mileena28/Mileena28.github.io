@@ -1,0 +1,1157 @@
+---
+layout: default
+title: "Blood of the Wild Gods: Voices of the Wild | Academic Fantasy Novel | Mileena Rayne"
+description: "An amateur scholar's research journal documenting nature spirits who are forgetting their purpose as a mysterious force called The Silence tips the cosmic balance. Academic fantasy meets ecological crisis in this epistolary adventure."
+keywords: "academic fantasy novel, epistolary fiction, nature fantasy, fantasy adventure, Blood of the Wild Gods series, Voices of the Wild, Mileena Rayne author, nature spirits, magical research, fantasy journal"
+image: "/assets/images/voices-of-the-wild.png"
+canonical: "https://mileenarayne.com/writing/voices-of-the-wild/"
+robots: "index, follow"
+og:type: "book"
+og:title: "Blood of the Wild Gods: Voices of the Wild | Academic Fantasy Novel"
+og:description: "What begins as simple research into a mischievous water sprite unravels into something far more sinister. An academic fantasy told through research journals."
+og:image: "/assets/images/voices-of-the-wild.png"
+og:url: "https://mileenarayne.com/writing/voices-of-the-wild/"
+twitter:card: "summary_large_image"
+twitter:title: "Blood of the Wild Gods: Voices of the Wild"
+twitter:description: "When nature spirits whisper warnings of The Silence returning, an amateur scholar must uncover the truth."
+twitter:image: "/assets/images/voices-of-the-wild.png"
+schema:
+  "@type": "Book"
+  "@context": "https://schema.org"
+  "name": "Blood of the Wild Gods: Voices of the Wild"
+  "author":
+    "@type": "Person"
+    "name": "Mileena Rayne"
+  "genre": ["Academic Fantasy", "Epistolary Fiction", "Fantasy Adventure"]
+  "bookFormat": "EBook"
+  "publisher":
+    "@type": "Person"
+    "name": "Mileena Rayne"
+  "description": "An amateur scholar's research journal documenting nature spirits who are forgetting their purpose as The Silence tips the cosmic balance and causes natural disruption."
+---
+
+<style>
+    /* Voices of the Wild Page Styles - Nature Theme */
+    :root {
+        --wild-primary: #4a9d4a;
+        --wild-secondary: #66b866;
+        --wild-accent: #8bc34a;
+        --forest-green: #2e7d32;
+        --moss-green: #558b2f;
+        --leaf-light: #9ccc65;
+        --earth-brown: #5d4037;
+        --sky-blue: #81c784;
+        --nature-gold: #cddc39;
+    }
+
+    /* Forest Background */
+    .forest-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top, rgba(74, 157, 74, 0.08) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom, rgba(46, 125, 50, 0.1) 0%, transparent 50%),
+            linear-gradient(to bottom, #0a1f0a 0%, #1a3d1a 50%, #0f2d0f 100%);
+    }
+
+    /* Falling Leaves Animation */
+    .falling-leaves {
+        position: fixed;
+        top: -10%;
+        left: 0;
+        width: 100%;
+        height: 110%;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .leaf {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: radial-gradient(circle, rgba(139, 195, 74, 0.8) 0%, transparent 70%);
+        border-radius: 0 100% 0 100%;
+        opacity: 0;
+        animation: fall-and-sway 15s infinite;
+    }
+
+    @keyframes fall-and-sway {
+        0% {
+            opacity: 0;
+            transform: translateY(-100px) translateX(0) rotate(0deg);
+        }
+        10% {
+            opacity: 0.8;
+        }
+        90% {
+            opacity: 0.8;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(calc(100vh + 100px)) translateX(100px) rotate(360deg);
+        }
+    }
+
+    /* Floating Spores/Light Particles */
+    .nature-particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .nature-particle {
+        position: absolute;
+        background: radial-gradient(circle, rgba(205, 220, 57, 0.6) 0%, transparent 70%);
+        border-radius: 50%;
+        opacity: 0;
+        animation: float-up-nature 25s infinite;
+    }
+
+    @keyframes float-up-nature {
+        0% {
+            opacity: 0;
+            transform: translateY(100vh) scale(0);
+        }
+        10% {
+            opacity: 0.6;
+        }
+        90% {
+            opacity: 0.6;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-100vh) scale(1.2);
+        }
+    }
+
+    /* Hero Section */
+    .book-hero {
+        padding: 100px 0 80px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(74, 157, 74, 0.1) 0%, rgba(139, 195, 74, 0.05) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .book-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 60%);
+        animation: rotate-glow 35s linear infinite;
+        pointer-events: none;
+    }
+
+    @keyframes rotate-glow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .status-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+        color: #fff;
+        padding: 8px 20px;
+        border-radius: 25px;
+        font-size: 0.85em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 20px rgba(74, 157, 74, 0.4);
+        animation: gentle-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes gentle-pulse {
+        0%, 100% { transform: scale(1); box-shadow: 0 5px 20px rgba(74, 157, 74, 0.4); }
+        50% { transform: scale(1.02); box-shadow: 0 8px 30px rgba(74, 157, 74, 0.6); }
+    }
+
+    .book-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 300;
+        margin-bottom: 15px;
+        color: #f0f0f0;
+        letter-spacing: 0.05em;
+        background: linear-gradient(135deg, #fff 0%, var(--wild-accent) 30%, #fff 60%, var(--leaf-light) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 4s ease-in-out infinite;
+        background-size: 300% 300%;
+        text-shadow: 0 0 60px rgba(139, 195, 74, 0.5);
+        position: relative;
+        z-index: 1;
+    }
+
+    @keyframes shimmer {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .book-genre {
+        color: var(--wild-accent);
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+    }
+
+    .book-tagline {
+        font-size: 1.3em;
+        color: #ddd;
+        font-style: italic;
+        max-width: 800px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+    }
+
+    /* Book Showcase Section */
+    .book-showcase {
+        padding: 80px 0;
+        position: relative;
+    }
+
+    .showcase-grid {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 80px;
+        align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .book-cover-showcase {
+        position: relative;
+        text-align: center;
+        position: sticky;
+        top: 100px;
+    }
+
+    .cover-container {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 
+            0 40px 80px rgba(0, 0, 0, 0.6),
+            0 0 120px rgba(139, 195, 74, 0.3),
+            inset 0 0 0 3px rgba(74, 157, 74, 0.4);
+        transition: all 0.6s ease;
+        transform-style: preserve-3d;
+    }
+
+    .cover-container::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        background: linear-gradient(45deg, 
+            var(--wild-primary), 
+            transparent, 
+            var(--leaf-light), 
+            transparent, 
+            var(--wild-primary)
+        );
+        border-radius: 25px;
+        z-index: -1;
+        animation: nature-border 5s linear infinite;
+    }
+
+    @keyframes nature-border {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .cover-container:hover {
+        transform: translateY(-10px) rotateY(5deg);
+        box-shadow: 
+            0 60px 120px rgba(0, 0, 0, 0.7),
+            0 0 200px rgba(139, 195, 74, 0.5);
+    }
+
+    .cover-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.6s ease;
+    }
+
+    .cover-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120%;
+        height: 120%;
+        background: radial-gradient(circle, rgba(139, 195, 74, 0.4) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .cover-container:hover .cover-glow {
+        opacity: 1;
+    }
+
+    .chapter-section {
+        margin-top: 40px;
+        padding: 30px;
+        background: linear-gradient(135deg, rgba(74, 157, 74, 0.1), rgba(139, 195, 74, 0.05));
+        border: 1px solid rgba(74, 157, 74, 0.3);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+    }
+
+    .chapter-title {
+        color: var(--wild-accent);
+        font-size: 1.3em;
+        margin-bottom: 20px;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .chapter-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .chapter-link {
+        background: rgba(74, 157, 74, 0.2);
+        color: var(--wild-accent);
+        border: 1px solid var(--wild-primary);
+        text-decoration: none;
+        padding: 15px 28px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chapter-link::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(139, 195, 74, 0.3) 0%, transparent 70%);
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .chapter-link:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .chapter-link:hover {
+        background: rgba(74, 157, 74, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(74, 157, 74, 0.3);
+    }
+
+    /* Book Content */
+    .book-content {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .content-section {
+        background: linear-gradient(135deg, rgba(20, 40, 20, 0.9), rgba(10, 30, 10, 0.9));
+        border: 1px solid rgba(74, 157, 74, 0.3);
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(20px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .content-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--wild-accent), transparent);
+        animation: slide-line 4s ease-in-out infinite;
+    }
+
+    @keyframes slide-line {
+        0% { left: -100%; }
+        100% { left: 100%; }
+    }
+
+    .section-title {
+        color: var(--wild-accent);
+        font-size: 1.8em;
+        margin-bottom: 25px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--wild-accent);
+        transition: width 0.5s ease;
+    }
+
+    .content-section:hover .section-title::after {
+        width: 100%;
+    }
+
+    .book-description {
+        color: #ddd;
+        font-size: 1.15em;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .book-excerpt {
+        background: linear-gradient(135deg, rgba(139, 195, 74, 0.1), rgba(74, 157, 74, 0.05));
+        border-left: 4px solid var(--wild-accent);
+        padding: 30px;
+        margin: 30px 0;
+        font-style: italic;
+        color: #f0f0f0;
+        border-radius: 0 15px 15px 0;
+        position: relative;
+        overflow: hidden;
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
+
+    .book-excerpt::before {
+        content: '"';
+        position: absolute;
+        top: -15px;
+        left: 25px;
+        font-size: 80px;
+        color: rgba(139, 195, 74, 0.3);
+        font-family: Georgia, serif;
+    }
+
+    .book-excerpt::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(139, 195, 74, 0.1), transparent);
+        transition: left 0.8s ease;
+    }
+
+    .book-excerpt:hover::after {
+        left: 100%;
+    }
+
+    /* Journal Entry Style */
+    .journal-entry {
+        background: rgba(245, 240, 230, 0.95);
+        color: #2d3d2d;
+        border: 2px solid rgba(74, 157, 74, 0.3);
+        border-radius: 10px;
+        padding: 30px;
+        margin: 20px 0;
+        font-family: 'Courier New', monospace;
+        position: relative;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .journal-entry::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 40px;
+        right: 40px;
+        height: 1px;
+        background: repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(74, 157, 74, 0.3) 10px, rgba(74, 157, 74, 0.3) 11px);
+    }
+
+    .journal-date {
+        color: var(--forest-green);
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-decoration: underline;
+    }
+
+    /* Characters Section */
+    .characters-showcase {
+        padding: 80px 0;
+        background: rgba(10, 30, 10, 0.6);
+    }
+
+    .characters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .character-card {
+        background: linear-gradient(135deg, rgba(74, 157, 74, 0.1), rgba(139, 195, 74, 0.05));
+        border: 1px solid rgba(74, 157, 74, 0.3);
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(139, 195, 74, 0.08) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .character-card:hover::before {
+        opacity: 1;
+        animation: rotate-glow 15s linear infinite;
+    }
+
+    .character-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--wild-accent);
+        box-shadow: 0 20px 40px rgba(74, 157, 74, 0.3);
+    }
+
+    .character-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        border: 3px solid var(--wild-primary);
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: rgba(139, 195, 74, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        color: var(--wild-primary);
+    }
+
+    .character-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .character-card:hover .character-avatar {
+        transform: scale(1.1);
+        box-shadow: 0 10px 20px rgba(74, 157, 74, 0.4);
+    }
+
+    .character-name {
+        color: #f0f0f0;
+        font-size: 1.3em;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .character-title {
+        color: var(--wild-accent);
+        font-style: italic;
+        margin-bottom: 15px;
+        font-size: 0.95em;
+    }
+
+    .character-description {
+        color: #bbb;
+        font-size: 0.9em;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .character-link {
+        display: inline-block;
+        color: var(--wild-accent);
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.3s ease;
+    }
+
+    .character-link:hover {
+        border-bottom-color: var(--wild-accent);
+    }
+
+    /* Research Elements Section */
+    .research-section {
+        padding: 80px 0;
+        background: linear-gradient(to bottom, rgba(10, 30, 10, 0.8), rgba(20, 40, 20, 0.8));
+    }
+
+    .research-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .research-card {
+        background: linear-gradient(135deg, rgba(74, 157, 74, 0.08), rgba(139, 195, 74, 0.03));
+        border: 1px solid rgba(74, 157, 74, 0.3);
+        border-radius: 15px;
+        padding: 30px;
+        transition: all 0.4s ease;
+    }
+
+    .research-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(74, 157, 74, 0.2);
+    }
+
+    .research-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, rgba(74, 157, 74, 0.3), rgba(139, 195, 74, 0.2));
+        backdrop-filter: blur(20px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5em;
+        position: relative;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 
+            0 8px 32px rgba(74, 157, 74, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .research-icon::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        animation: holographic-sweep 3s ease-in-out infinite;
+    }
+
+    @keyframes holographic-sweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .research-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: var(--wild-accent);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        z-index: 1;
+        position: relative;
+    }
+
+    .research-card:hover .research-icon {
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 
+            0 20px 40px rgba(74, 157, 74, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    .research-title {
+        color: var(--wild-accent);
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .research-description {
+        color: #ccc;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .showcase-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+            text-align: center;
+        }
+
+        .book-cover-showcase {
+            position: static;
+            order: -1;
+        }
+
+        .cover-container {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .book-title {
+            font-size: 2.2em;
+        }
+
+        .showcase-grid {
+            gap: 30px;
+        }
+
+        .cover-container {
+            max-width: 280px;
+        }
+
+        .content-section {
+            padding: 25px;
+        }
+
+        .characters-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .journal-entry {
+            padding: 20px;
+            font-size: 0.9em;
+        }
+    }
+
+    /* Loading Animation */
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a1f0a;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s ease;
+    }
+
+    .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loading-text {
+        font-size: 2em;
+        color: var(--wild-accent);
+        letter-spacing: 0.1em;
+        animation: loading-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes loading-pulse {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    /* Reveal animations */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Blood of the Wild Gods: Voices of the Wild",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "genre": ["Academic Fantasy", "Epistolary Fiction", "Fantasy Adventure"],
+  "bookFormat": "EBook",
+  "publisher": {
+    "@type": "Person",
+    "name": "Mileena Rayne"
+  },
+  "description": "An amateur scholar's research journal documenting nature spirits who are forgetting their purpose as The Silence tips the cosmic balance and causes natural disruption.",
+  "workExample": {
+    "@type": "Book",
+    "bookFormat": "https://schema.org/EBook",
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://mileenarayne.com/chapters/voices-of-the-wild/chapter-01/"
+      }
+    }
+  }
+}
+</script>
+
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-text">Awakening the Voices</div>
+</div>
+
+<!-- Forest Background -->
+<div class="forest-bg"></div>
+
+<!-- Falling Leaves -->
+<div class="falling-leaves" id="leavesContainer"></div>
+
+<!-- Nature Particles -->
+<div class="nature-particles" id="particlesContainer"></div>
+
+<!-- Hero Section -->
+<section class="book-hero">
+    <div class="container">
+        <div class="status-badge">Work in Progress</div>
+        <h1 class="book-title">Blood of the Wild Gods: Voices of the Wild</h1>
+        <div class="book-genre">Academic Fantasy • Epistolary Fiction • Fantasy Adventure</div>
+        <p class="book-tagline">
+            When nature spirits forget their ancient purposes and the cosmic balance tips toward chaos, an amateur scholar must document what the world is too distracted to notice.
+        </p>
+    </div>
+</section>
+
+<!-- Book Showcase -->
+<section class="book-showcase">
+    <div class="container">
+        <div class="showcase-grid">
+            <!-- Book Cover -->
+            <div class="book-cover-showcase">
+                <div class="cover-container">
+                    <div class="cover-glow"></div>
+                    <img src="/assets/images/voices-of-the-wild.png" alt="Blood of the Wild Gods: Voices of the Wild book cover">
+                </div>
+                
+                <div class="chapter-section">
+                    <h3 class="chapter-title">Available Chapters</h3>
+                    <div class="chapter-links">
+                        <a href="/chapters/voices-of-the-wild/chapter-01/" class="chapter-link">
+                            Read Chapter 1
+                        </a>
+                        <a href="/chapters/voices-of-the-wild/chapter-02/" class="chapter-link">
+                            Read Chapter 2
+                        </a>
+                        <a href="/chapters/voices-of-the-wild/chapter-03/" class="chapter-link">
+                            Read Chapter 3
+                        </a>
+                        <a href="/chapters/voices-of-the-wild/chapter-04/" class="chapter-link">
+                            Read Chapter 4
+                        </a>
+                        <a href="/chapters/voices-of-the-wild/chapter-05/" class="chapter-link">
+                            Read Chapter 5
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book Content -->
+            <div class="book-content">
+                <!-- Synopsis -->
+                <div class="content-section reveal">
+                    <h2 class="section-title">The Story</h2>
+                    <p class="book-description">
+                        In a world where the gods have gone silent, amateur scholar Alaquinn Althaea sets out to study the nature spirits that remain. What begins as simple research into a mischievous water sprite quickly unravels into something far more sinister when the creature whispers a chilling warning: <em>"The Silence... It's coming."</em>
+                    </p>
+                    
+                    <p class="book-description">
+                        Armed with little more than an expensive journal and stubborn curiosity, Quinn must navigate bureaucratic obstacles, budding romance, and her own inexperience to uncover a supernatural crisis that's causing the cosmic balance to tip dangerously—making nature spirits forget their ancient purposes and act against their very nature.
+                    </p>
+                    
+                    <p class="book-description" style="font-style: italic;">
+                        Told through Quinn's research journal as she stumbles from academic disaster to dangerous discovery.
+                    </p>
+
+                    <div class="journal-entry">
+                        <div class="journal-date">Journal Entry - Day 1</div>
+                        "The pressure of a pristine journal is almost paralyzing."
+                    </div>
+                </div>
+
+                <!-- Key Quotes -->
+                <div class="content-section reveal">
+                    <h2 class="section-title">From the Research Journal</h2>
+                    
+                    <div class="book-excerpt">
+                        "Perhaps that's because we've been too distracted by The Great Withdrawal. Since the Divine War ended and the Wild Gods retreated into their hidden places, since prayers began echoing unanswered into the void, we've been so focused on what we've lost that we've overlooked what remains."
+                    </div>
+
+                    <div class="book-excerpt">
+                        "My tutors were excellent at teaching me languages and literature and basic magical theory, but somehow 'How to Approach Potentially Dangerous Magical Creatures for Academic Purposes' wasn't part of the curriculum."
+                    </div>
+
+                    <div class="book-excerpt">
+                        "IT APPEARED! Just popped up out of the water right in front of my face! I was so shocked and delighted that I shouted 'YES!' at the top of my lungs in triumph. Immediately - and I mean IMMEDIATELY - the sprite opened its tiny mouth and spat a stream of water directly into my face."
+                    </div>
+
+                    <div class="journal-entry">
+                        <div class="journal-date">The Warning</div>
+                        "The Silence... It's coming..."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Characters Section -->
+<section class="characters-showcase">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Meet the Characters</h2>
+        <p style="text-align: center; color: #ccc; font-size: 1.1em; margin-bottom: 40px;">
+            A scholar, a warden, and the spirits who bridge two worlds.
+        </p>
+        
+        <div class="characters-grid reveal">
+            <div class="character-card">
+                <div class="character-avatar">
+                    A
+                </div>
+                <h3 class="character-name">Alaquinn Althaea</h3>
+                <div class="character-title">The Amateur Scholar</div>
+                <p class="character-description">
+                    An enthusiastic but inexperienced researcher whose determination to study nature spirits leads her to discover why they're forgetting their purpose as The Silence disrupts the cosmic balance.
+                </p>
+                <a href="/world-guide/characters/alaquinn-althaea.html" class="character-link">Learn More →</a>
+            </div>
+
+            <div class="character-card">
+                <div class="character-avatar">
+                    D
+                </div>
+                <h3 class="character-name">Dani</h3>
+                <div class="character-title">The Municipal Warden</div>
+                <p class="character-description">
+                    A practical and capable forest warden who becomes Quinn's unexpected ally, guide, and perhaps something more as they uncover the mystery together.
+                </p>
+                <a href="/world-guide/characters/dani-municipal-warden.html" class="character-link">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Research Elements Section -->
+<section class="research-section">
+    <div class="container">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Research Elements</h2>
+        
+        <div class="research-grid reveal">
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9,10H7V12H9V10M13,10H11V12H13V10M17,10H15V12H17V10M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19Z"/>
+                    </svg>
+                </div>
+                <div class="research-title">Journal Format</div>
+                <div class="research-description">
+                    The entire story unfolds through Quinn's research journal entries, field notes, and academic observations.
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M15.6,8.34C16.67,8.34 17.53,9.2 17.53,10.27C17.53,11.34 16.67,12.2 15.6,12.2A1.93,1.93 0 0,1 13.67,10.27C13.67,9.2 14.53,8.34 15.6,8.34M9.6,6.76C10.9,6.76 11.96,7.82 11.96,9.12C11.96,10.42 10.9,11.48 9.6,11.48C8.3,11.48 7.24,10.42 7.24,9.12C7.24,7.81 8.29,6.76 9.6,6.76M9.6,15.89V19.64C7.2,18.89 5.3,17.04 4.46,14.68C5.5,13.56 8.13,13 9.6,13C10.13,13 10.8,13.07 11.5,13.21C9.86,14.08 9.6,15.23 9.6,15.89M12,20C11.72,20 11.46,20 11.2,19.96V15.89C11.2,14.47 14.14,13.76 15.6,13.76C16.67,13.76 18.5,14.15 19.44,14.91C18.27,17.88 15.38,20 12,20Z"/>
+                    </svg>
+                </div>
+                <div class="research-title">Nature Spirits</div>
+                <div class="research-description">
+                    Encounter various spirits of water, forest, and earth—each with their own personality and secrets to share.
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19,8L15,12H18A6,6 0 0,1 12,18C11,18 10.03,17.75 9.2,17.3L7.74,18.76C8.97,19.54 10.43,20 12,20A8,8 0 0,0 20,12H23M6,12A6,6 0 0,1 12,6C13,6 13.97,6.25 14.8,6.7L16.26,5.24C15.03,4.46 13.57,4 12,4A8,8 0 0,0 4,12H1L5,16L9,12"/>
+                    </svg>
+                </div>
+                <div class="research-title">Academic Mystery</div>
+                <div class="research-description">
+                    What starts as simple research becomes a race against time to understand why the spirits are forgetting their purpose and acting out of character.
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3,9V15H7L12,20V4L7,9H3M16.5,12A4.5,4.5 0 0,0 12,7.5V16.5A4.5,4.5 0 0,0 16.5,12M12,3.23V5.29C14.89,6.15 17,8.83 17,12C17,15.17 14.89,17.84 12,18.7V20.77C16,19.86 19,16.28 19,12C19,7.72 16,4.14 12,3.23Z"/>
+                    </svg>
+                </div>
+                <div class="research-title">The Silence</div>
+                <div class="research-description">
+                    A mysterious force that's tipping the cosmic balance and causing natural disruption as spirits forget their ancient purposes.
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12,20A7,7 0 0,1 5,13A7,7 0 0,1 12,6A7,7 0 0,1 19,13A7,7 0 0,1 12,20M12,4A9,9 0 0,0 3,13A9,9 0 0,0 12,22A9,9 0 0,0 21,13A9,9 0 0,0 12,4M12.5,8H11V14L15.75,16.85L16.5,15.62L12.5,13.25V8M7.88,3.39L6.6,1.86L2,5.71L3.29,7.24L7.88,3.39M22,5.72L17.4,1.86L16.12,3.39L20.72,7.25L22,5.72Z"/>
+                    </svg>
+                </div>
+                <div class="research-title">Bureaucratic Humor</div>
+                <div class="research-description">
+                    Navigate the absurdity of academic permits, municipal regulations, and official procedures in a magical world.
+                </div>
+            </div>
+
+            <div class="research-card">
+                <div class="research-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z"/>
+                    </svg>
+                </div>
+                <div class="research-title">Growing Romance</div>
+                <div class="research-description">
+                    Watch Quinn's academic objectivity slowly crumble as her partnership with Dani develops into something deeper.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Initialize nature particles
+    function createParticles() {
+        const container = document.getElementById('particlesContainer');
+        const particleCount = 50;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'nature-particle';
+            particle.style.width = Math.random() * 6 + 2 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 25 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 25) + 's';
+            container.appendChild(particle);
+        }
+    }
+
+    // Create falling leaves
+    function createLeaves() {
+        const container = document.getElementById('leavesContainer');
+        const leafCount = 15;
+        
+        for (let i = 0; i < leafCount; i++) {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.animationDelay = Math.random() * 15 + 's';
+            leaf.style.animationDuration = (Math.random() * 5 + 15) + 's';
+            leaf.style.width = Math.random() * 15 + 10 + 'px';
+            leaf.style.height = leaf.style.width;
+            container.appendChild(leaf);
+        }
+    }
+
+    // Reveal animations on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create particles and leaves
+        createParticles();
+        createLeaves();
+        
+        // Hide loading screen
+        setTimeout(() => {
+            document.getElementById('loadingScreen').classList.add('hidden');
+        }, 1500);
+        
+        // Observe reveal elements
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth parallax effect for forest
+        let ticking = false;
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const forestBg = document.querySelector('.forest-bg');
+            const leaves = document.querySelector('.falling-leaves');
+            
+            if (forestBg) {
+                const speed = 0.3;
+                const yPos = -(scrolled * speed);
+                forestBg.style.transform = `translateY(${yPos}px)`;
+            }
+            
+            if (leaves) {
+                const leafSpeed = 0.2;
+                const leafPos = -(scrolled * leafSpeed);
+                leaves.style.transform = `translateY(${leafPos}px)`;
+            }
+            
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                window.requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+    });
+</script>
