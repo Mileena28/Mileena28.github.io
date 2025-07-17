@@ -890,6 +890,79 @@ schema:
         box-shadow: 0 5px 15px rgba(168, 192, 232, 0.3);
     }
 
+  /* Story Quotes Styling */
+.story-quotes {
+    margin: 40px 0;
+}
+
+.excerpt-quote {
+    background: linear-gradient(135deg, rgba(177, 156, 217, 0.08), rgba(168, 192, 232, 0.05));
+    border-left: 3px solid var(--primary-purple);
+    padding: 25px 35px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--text-primary);
+    border-radius: 0 15px 15px 0;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.05em;
+    line-height: 1.8;
+    transition: all 0.3s ease;
+}
+
+.excerpt-quote::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    font-size: 60px;
+    color: rgba(177, 156, 217, 0.2);
+    font-family: Georgia, serif;
+}
+
+.excerpt-quote::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(177, 156, 217, 0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+.excerpt-quote:hover::after {
+    left: 100%;
+}
+
+.excerpt-quote:hover {
+    transform: translateX(5px);
+    box-shadow: 0 10px 30px rgba(177, 156, 217, 0.15);
+    background: linear-gradient(135deg, rgba(177, 156, 217, 0.12), rgba(168, 192, 232, 0.08));
+}
+
+@media (max-width: 768px) {
+    .nav-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+  
+  .excerpt-quote {
+        padding: 20px 25px;
+        font-size: 0.95em;
+    }
+    
+    .nav-title {
+        font-size: 2em;
+    }
+    
+    .excerpt-quote {
+        padding: 20px 25px;
+        font-size: 0.95em;
+    }
+}
+</style>
+
     /* Mobile Responsive */
     @media (max-width: 1024px) {
         .showcase-container {
@@ -1280,69 +1353,79 @@ schema:
 <!-- Detailed Story Sections -->
 <section class="story-detail-section">
     <div class="container">
-        <!-- Seven Days of Sun Detail -->
-        <div class="story-detail-card">
-            <div class="story-detail-header">
-                <div class="story-detail-info">
-                    <h3>Seven Days of Sun</h3>
-                    <p class="story-detail-tagline">Love eternal, death inevitable, hope unquenchable</p>
-                    <p class="story-detail-description">
-                        Elodias, the Sun-Touched God, bears a curse unlike any other—to find his beloved Senia 
-                        in every incarnation, to love her for seven perfect days, and to lose her when the sun 
-                        sets on the seventh night. Yet neither divine decree nor mortal death can extinguish 
-                        the flame they carry for each other across the ages.
-                    </p>
-                </div>
-                
-                <div class="chapter-access">
-                    <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="chapter-access-btn">
-                        Read Chapter 1
-                    </a>
-                </div>
-            </div>
-            
-            <div class="story-characters-grid">
-                <div class="character-showcase-card">
-                    <div class="character-showcase-avatar">E</div>
-                    <div class="character-showcase-info">
-                        <h4>Elodias</h4>
-                        <div class="character-showcase-title">The Sun-Touched God</div>
-                        <a href="/world-guide/characters/elodias.html" class="character-showcase-link">View Profile →</a>
-                    </div>
-                </div>
-                
-                <div class="character-showcase-card">
-                    <div class="character-showcase-avatar">S</div>
-                    <div class="character-showcase-info">
-                        <h4>Senia</h4>
-                        <div class="character-showcase-title">The Beloved</div>
-                        <a href="/world-guide/characters/senia.html" class="character-showcase-link">View Profile →</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="authors-note-elegant">
-                <div class="authors-note-header">Author's Note</div>
-                <div class="authors-note-preview">
-                    This story reached me first as a song—fragmented, mournful, carried in the voices 
-                    of ocean-bound bards who still sing to the dusk...
-                </div>
-                <div class="authors-note-full" id="seven-days-note">
-                    They claimed it was older than the city of Atheria itself—passed down from the time when the land was still called Quenos, a quiet village by the sea where gods once walked beside mortals. The melody shifts from coast to coast, but the names never change.<br><br>
-                    
-                    Years later, on a windswept coast north of old Quenos, I found a weather-beaten shack nearly swallowed by sand and time. Inside, buried beneath a thick coat of dust and rotted canvas, was a journal. The pages, brittle and translucent, shimmered faintly—crystallized by salt and age. Most of the writing had long since vanished, devoured by moisture and silence. But the illustrations endured.<br><br>
-                    
-                    Dozens of women. Each different. Each the same.<br><br>
-                    
-                    One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her.<br><br>
-                    
-                    Pressed between two pages, I found sun daisies. Their color had nearly faded, but not completely. I cannot say with certainty whose hand once held that book. But I have not shaken the feeling since: that I touched something sacred. That I held the grief of a god who remembers every life she lived, and every time she loved him—before the end came again.<br><br>
-                    
-                    If that is true—if I have held the grief of a god—then no myth in this collection is more tender. Or more tragic. I write this account not for glory or acclaim, but because truth, however painful, deserves witness.
-                    </div>
-                <button class="expand-note-btn" onclick="expandNote('seven-days')">Read Full Note</button>
+<!-- Seven Days of Sun Detail -->
+<div class="story-detail-card">
+    <div class="story-detail-header">
+        <div class="story-detail-info">
+            <h3>Seven Days of Sun</h3>
+            <p class="story-detail-tagline">Love eternal, death inevitable, hope unquenchable</p>
+            <p class="story-detail-description">
+                Elodias, the Sun-Touched God, bears a curse unlike any other—to find his beloved Senia 
+                in every incarnation, to love her for seven perfect days, and to lose her when the sun 
+                sets on the seventh night. Yet neither divine decree nor mortal death can extinguish 
+                the flame they carry for each other across the ages.
+            </p>
+        </div>
+        
+        <div class="chapter-access">
+            <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="chapter-access-btn">
+                Read Chapter 1
+            </a>
+        </div>
+    </div>
+    
+    <div class="story-characters-grid">
+        <div class="character-showcase-card">
+            <div class="character-showcase-avatar">E</div>
+            <div class="character-showcase-info">
+                <h4>Elodias</h4>
+                <div class="character-showcase-title">The Sun-Touched God</div>
+                <a href="/world-guide/characters/elodias.html" class="character-showcase-link">View Profile →</a>
             </div>
         </div>
+        
+        <div class="character-showcase-card">
+            <div class="character-showcase-avatar">S</div>
+            <div class="character-showcase-info">
+                <h4>Senia</h4>
+                <div class="character-showcase-title">The Beloved</div>
+                <a href="/world-guide/characters/senia.html" class="character-showcase-link">View Profile →</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="story-quotes">
+        <div class="excerpt-quote">
+            "Why would I look at the stars," he said, his voice dropping to a softer timbre, rich and warm as honey in sunlight, "when I have always loved the sun?"
+        </div>
+        
+        <div class="excerpt-quote">
+            "She felt like something was beginning. Something real. Something strange. Something that tasted like love and danger all at once—a flavor both new and hauntingly familiar."
+        </div>
+    </div>
+    
+    <div class="authors-note-elegant">
+        <div class="authors-note-header">Author's Note</div>
+        <div class="authors-note-preview">
+            This story reached me first as a song—fragmented, mournful, carried in the voices 
+            of ocean-bound bards who still sing to the dusk...
+        </div>
+        <div class="authors-note-full" id="seven-days-note">
+            They claimed it was older than the city of Atheria itself—passed down from the time when the land was still called Quenos, a quiet village by the sea where gods once walked beside mortals. The melody shifts from coast to coast, but the names never change.<br><br>
+            
+            Years later, on a windswept coast north of old Quenos, I found a weather-beaten shack nearly swallowed by sand and time. Inside, buried beneath a thick coat of dust and rotted canvas, was a journal. The pages, brittle and translucent, shimmered faintly—crystallized by salt and age. Most of the writing had long since vanished, devoured by moisture and silence. But the illustrations endured.<br><br>
+            
+            Dozens of women. Each different. Each the same.<br><br>
+            
+            One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her.<br><br>
+            
+            Pressed between two pages, I found sun daisies. Their color had nearly faded, but not completely. I cannot say with certainty whose hand once held that book. But I have not shaken the feeling since: that I touched something sacred. That I held the grief of a god who remembers every life she lived, and every time she loved him—before the end came again.<br><br>
+            
+            If that is true—if I have held the grief of a god—then no myth in this collection is more tender. Or more tragic. I write this account not for glory or acclaim, but because truth, however painful, deserves witness.
+        </div>
+        <button class="expand-note-btn" onclick="expandNote('seven-days')">Read Full Note</button>
+    </div>
+</div>
 
         <!-- The Weaver of Sorrows Detail -->
         <div class="story-detail-card">
@@ -1372,6 +1455,16 @@ schema:
                         <div class="character-showcase-title">The Weaver of Sorrows</div>
                         <a href="/world-guide/characters/malritha.html" class="character-showcase-link">View Profile →</a>
                     </div>
+                </div>
+            </div>
+            
+            <div class="story-quotes">
+                <div class="excerpt-quote">
+                    "Malritha was born during the deepest moment of lunar eclipse, when the moon hung like an open wound in the night sky. The air itself seemed to hold its breath, caught between anticipation and dread."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "Her loom required no ordinary material. Malritha would wait until the full moon hung heavy in the night sky, then climb to the highest spire of the temple. There, with a spindle carved from driftwood and fingers dipped in saltwater, she would gather moonlight itself, pulling it from the air like silver silk."
                 </div>
             </div>
             
@@ -1448,6 +1541,16 @@ schema:
                 </div>
             </div>
             
+            <div class="story-quotes">
+                <div class="excerpt-quote">
+                    "He gave them softer skin than made sense, bodies that would bruise at a touch, hearts that could break from mere words. He gave them minds that would never be satisfied, always reaching beyond their grasp. He gave them souls that could contain infinities but would be housed in flesh that lasted mere moments. He made them absurd. He made them glorious. He made them human."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "They love precisely because they know loss. They create beauty because they understand decay. They choose hope not from ignorance of despair, but in full knowledge of it—and that makes their hope infinitely more precious than the easy certainty of those who have never faced darkness."
+                </div>
+            </div>
+            
             <div class="authors-note-elegant">
                 <div class="authors-note-header">Scholar's Reflection</div>
                 <div class="authors-note-preview">
@@ -1515,6 +1618,16 @@ schema:
                         <div class="character-showcase-title">The Impossible Child</div>
                         <a href="/world-guide/characters/hope.html" class="character-showcase-link">View Profile →</a>
                     </div>
+                </div>
+            </div>
+            
+            <div class="story-quotes">
+                <div class="excerpt-quote">
+                    "The creature that emerged from the shadows was no natural beast—too tall, too wrong, with matted black fur and pale green eyes that burned in the dying light. This stranger—this dark figure who had appeared like salvation from the night itself—moved with a grace that seemed almost inhuman."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "She stared back at him from where she lay among the leaves, her arm throbbing with pain but her fear temporarily forgotten. This close, she could see that his green eyes held depths of sorrow that seemed older than the forest itself."
                 </div>
             </div>
             
@@ -1595,6 +1708,24 @@ schema:
                 </div>
             </div>
             
+            <div class="story-quotes">
+                <div class="excerpt-quote">
+                    "The river knew her name, though she had never told it."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "Perhaps the greatest power lay not in mighty demonstrations but in small acts of compassion, in being present when fear threatened to drown hope entirely. Perhaps this was why she had chosen this form, this place, this quiet work among mortals who would never truly know what walked among them."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "Oh, your cottage is absolutely enchanting! It's exactly how I've always imagined a fairy tale dwelling should look—you know, the sort where the wise woman is secretly lovely and the woodland creatures all adore her."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "There was something oddly endearing about Jade's complete inability to take even her own nightmares entirely seriously... 'At this point, I'd let you paint me blue and dance naked under the moon if it would give me one decent night's sleep.'"
+                </div>
+            </div>
+            
             <div class="authors-note-elegant">
                 <div class="authors-note-header">Carved in Stone, Written in Gold</div>
                 <div class="authors-note-preview">
@@ -1666,6 +1797,16 @@ schema:
                         <div class="character-showcase-title">The Trickster God</div>
                         <a href="/world-guide/characters/silas.html" class="character-showcase-link">View Profile →</a>
                     </div>
+                </div>
+            </div>
+            
+            <div class="story-quotes">
+                <div class="excerpt-quote">
+                    "The sun remembered when mortals weren't afraid of the dark."
+                </div>
+                
+                <div class="excerpt-quote">
+                    "'The Wild Gods are just stories, Astrid. Fairy tales we tell ourselves to make the darkness bearable. No one's coming to save us. No divine champion will descend from the heavens to protect the innocent. We're alone.' But their prayers had not gone unheard. In halls beyond mortal sight, in realms where stars were born and died like candle flames, something stirred. The Wild Gods had heard every desperate plea, every anguished cry. And they were coming."
                 </div>
             </div>
             
@@ -1808,18 +1949,6 @@ schema:
     color: var(--text-primary);
     box-shadow: 0 10px 30px rgba(177, 156, 217, 0.3);
 }
-
-@media (max-width: 768px) {
-    .nav-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .nav-title {
-        font-size: 2em;
-    }
-}
-</style>
 
 <script>
     // Smooth scroll for navigation
