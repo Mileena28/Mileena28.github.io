@@ -15,6 +15,19 @@ twitter:card: "summary_large_image"
 twitter:title: "Blood of the Wild Gods: The Lost Histories"
 twitter:description: "Stories whispered between stone and silence, lost beneath conquest and doctrine."
 twitter:image: "/assets/images/the-lost-histories.png"
+schema:
+  "@type": "Book"
+  "@context": "https://schema.org"
+  "name": "Blood of the Wild Gods: The Lost Histories"
+  "author":
+    "@type": "Person"
+    "name": "Mileena Rayne"
+  "genre": ["Dark Fantasy", "Anthology", "Mythological Fiction"]
+  "bookFormat": "EBook"
+  "publisher":
+    "@type": "Person"
+    "name": "Mileena Rayne"
+  "description": "A collection of forgotten tales from the world of the Wild Gods, each revealing divine nature through tragedy and triumph."
 ---
 
 <style>
@@ -847,6 +860,18 @@ twitter:image: "/assets/images/the-lost-histories.png"
         margin-bottom: 15px;
     }
 
+    .authors-note-full {
+        color: var(--text-secondary);
+        font-style: italic;
+        line-height: 1.7;
+        display: none;
+        margin-top: 15px;
+    }
+
+    .authors-note-full.expanded {
+        display: block;
+    }
+
     .expand-note-btn {
         background: transparent;
         border: 1px solid var(--accent-blue);
@@ -958,6 +983,38 @@ twitter:image: "/assets/images/the-lost-histories.png"
         letter-spacing: 1px;
     }
 </style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Blood of the Wild Gods: The Lost Histories",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "genre": ["Dark Fantasy", "Anthology", "Mythological Fiction"],
+  "bookFormat": "EBook",
+  "publisher": {
+    "@type": "Person",
+    "name": "Mileena Rayne"
+  },
+  "description": "A collection of forgotten tales from the world of the Wild Gods, each revealing divine nature through tragedy and triumph.",
+  "workExample": {
+    "@type": "Book",
+    "bookFormat": "https://schema.org/EBook",
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://mileenarayne.com/chapters/lost-histories/seven-days-of-sun/chapter-01/"
+      }
+    }
+  }
+}
+</script>
 
 <!-- Loading Screen -->
 <div class="loading-screen" id="loadingScreen">
@@ -1270,12 +1327,297 @@ twitter:image: "/assets/images/the-lost-histories.png"
                     This story reached me first as a song—fragmented, mournful, carried in the voices 
                     of ocean-bound bards who still sing to the dusk...
                 </div>
+                <div class="authors-note-full" id="seven-days-note">
+                    They claimed it was older than the city of Atheria itself—passed down from the time when the land was still called Quenos, a quiet village by the sea where gods once walked beside mortals. The melody shifts from coast to coast, but the names never change.<br><br>
+                    
+                    Years later, on a windswept coast north of old Quenos, I found a weather-beaten shack nearly swallowed by sand and time. Inside, buried beneath a thick coat of dust and rotted canvas, was a journal. The pages, brittle and translucent, shimmered faintly—crystallized by salt and age. Most of the writing had long since vanished, devoured by moisture and silence. But the illustrations endured.<br><br>
+                    
+                    Dozens of women. Each different. Each the same.<br><br>
+                    
+                    One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her.<br><br>
+                    
+                    Pressed between two pages, I found sun daisies. Their color had nearly faded, but not completely. I cannot say with certainty whose hand once held that book. But I have not shaken the feeling since: that I touched something sacred. That I held the grief of a god who remembers every life she lived, and every time she loved him—before the end came again.<br><br>
+                    
+                    If that is true—if I have held the grief of a god—then no myth in this collection is more tender. Or more tragic. I write this account not for glory or acclaim, but because truth, however painful, deserves witness.
+                    </div>
                 <button class="expand-note-btn" onclick="expandNote('seven-days')">Read Full Note</button>
             </div>
         </div>
 
-        <!-- Continue with other story detail cards... -->
-        <!-- (I'll add just one more as an example, but all 6 would follow this pattern) -->
+        <!-- The Weaver of Sorrows Detail -->
+        <div class="story-detail-card">
+            <div class="story-detail-header">
+                <div class="story-detail-info">
+                    <h3>The Weaver of Sorrows</h3>
+                    <p class="story-detail-tagline">Divine jealousy spun into eternal tragedy</p>
+                    <p class="story-detail-description">
+                        Before Elodias and Senia were bound by their curse, there was Malritha—the lunar seer whose jealous heart 
+                        wove fate itself into a weapon. Born during eclipse, raised in shadow, she crafted a curse so perfect 
+                        that even the gods could not unmake it. This is the story of how divine emotion becomes cosmic law.
+                    </p>
+                </div>
+                
+                <div class="chapter-access">
+                    <a href="/chapters/lost-histories/weaver-of-sorrows/chapter-06/" class="chapter-access-btn">
+                        Read Chapter 6
+                    </a>
+                </div>
+            </div>
+            
+            <div class="story-characters-grid">
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">M</div>
+                    <div class="character-showcase-info">
+                        <h4>Malritha</h4>
+                        <div class="character-showcase-title">The Weaver of Sorrows</div>
+                        <a href="/world-guide/characters/malritha.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="authors-note-elegant">
+                <div class="authors-note-header">Preface to the Sixth Account</div>
+                <div class="authors-note-preview">
+                    I discovered this account sealed in a blackwood box, half-buried in a sea cave beneath the cliffs of old Quenos—where modern Atheria now gleams above, unaware...
+                </div>
+                <div class="authors-note-full" id="weaver-note">
+                    The cave mouth opens only at low tide, and even then, only long enough for the brave or the reckless to slip inside. I was both.<br><br>
+                    
+                    The scroll was wrapped in oilskin and bound with silver thread. Its script was mirrored—illegible by torchlight, but revealed in full beneath the rising moon. No title. No signature. Only the sharp, deliberate hand of someone who poured their sorrow into ink, never daring to speak it aloud.<br><br>
+                    
+                    Not far from where I found it lay a skeleton, folded as if the tide itself had tucked it into rest. I did not linger. The bones were old, almost hollow with time. A ring of silver thread still clung to one wrist. I have my theories, but none I'll speak aloud in a place like that.<br><br>
+                    
+                    This is not a tale you'll hear sung. Not in the markets of Atheria, nor in the sanctified halls that now bless its name.<br><br>
+                    
+                    But the wind remembers.<br>
+                    The sea remembers.<br>
+                    And some griefs are woven too deeply to ever stay buried.
+                </div>
+                <button class="expand-note-btn" onclick="expandNote('weaver')">Read Full Note</button>
+            </div>
+        </div>
+
+        <!-- The God Who Wept Detail -->
+        <div class="story-detail-card">
+            <div class="story-detail-header">
+                <div class="story-detail-info">
+                    <h3>The God Who Wept</h3>
+                    <p class="story-detail-tagline">The search for goodness becomes the discovery of complexity</p>
+                    <p class="story-detail-description">
+                        Thainos descended from heaven with a simple quest: find one human untouched by cruelty. For a thousand years 
+                        he walked among mortals, witnessing every shade of human nature. What he discovered challenged everything 
+                        the divine believed about creation, morality, and the nature of goodness itself.
+                    </p>
+                </div>
+                
+                <div class="chapter-access">
+                    <a href="/chapters/lost-histories/god-who-wept/chapter-01/" class="chapter-access-btn">
+                        Read Chapter 1
+                    </a>
+                </div>
+            </div>
+            
+            <div class="story-characters-grid">
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">
+                        <img src="/assets/images/thainos.jpg" alt="Thainos">
+                    </div>
+                    <div class="character-showcase-info">
+                        <h4>Thainos</h4>
+                        <div class="character-showcase-title">The God Who Wept</div>
+                        <a href="/world-guide/characters/thainos.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">L</div>
+                    <div class="character-showcase-info">
+                        <h4>Leika</h4>
+                        <div class="character-showcase-title">Mother of Mountains</div>
+                        <a href="/world-guide/characters/leika.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">A</div>
+                    <div class="character-showcase-info">
+                        <h4>Archadeus</h4>
+                        <div class="character-showcase-title">The War God</div>
+                        <a href="/world-guide/characters/archadeus.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="authors-note-elegant">
+                <div class="authors-note-header">Scholar's Reflection</div>
+                <div class="authors-note-preview">
+                    The story of Thainos is not merely a theological oddity or an unusually persistent myth. It is a lens—one that reshapes how we think about divinity, about hope, about the very nature of what it means to try to be good in a world so shaped by failure...
+                </div>
+                <div class="authors-note-full" id="god-wept-note">
+                    Most gods demand reverence, fear, submission. This one demands something far more difficult: reflection.<br><br>
+                    
+                    What undoes me is not the idea that he failed. It's the idea that no one could rise to meet him. He became everything he was searching for—and we could not match him. Not once. Not in a thousand years.<br><br>
+                    
+                    I don't think it was our sins that broke him. Perhaps it was the way we excused them.<br><br>
+                    
+                    Do you think he left us because he, too, became afraid of what he had created? Or do you think—as I have sometimes dared to hope—that he scattered himself like seeds, that some fragment of his light remains, waiting for the day when we might finally prove worthy of his faith?<br><br>
+                    
+                    I do not know if he truly failed. I only know that he tried longer than anyone else would have. And perhaps—perhaps that is enough.
+                </div>
+                <button class="expand-note-btn" onclick="expandNote('god-wept')">Read Full Note</button>
+            </div>
+        </div>
+
+        <!-- The Sin of Mercy Detail -->
+        <div class="story-detail-card">
+            <div class="story-detail-header">
+                <div class="story-detail-info">
+                    <h3>The Sin of Mercy</h3>
+                    <p class="story-detail-tagline">When divine justice meets human compassion</p>
+                    <p class="story-detail-description">
+                        Azrael was the God of Guardian Angels until the day he chose mercy over divine law. Cast from heaven for 
+                        killing his corrupted brother, he walks the earth bearing the weight of necessary sin. In a small forest 
+                        village, he discovers that redemption comes not from divine forgiveness, but from the stubborn love of 
+                        those who see past the monster to the man.
+                    </p>
+                </div>
+                
+                <div class="chapter-access">
+                    <a href="/chapters/lost-histories/sin-of-mercy/chapter-01/" class="chapter-access-btn">
+                        Read Chapter 1
+                    </a>
+                </div>
+            </div>
+            
+            <div class="story-characters-grid">
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">A</div>
+                    <div class="character-showcase-info">
+                        <h4>Azrael</h4>
+                        <div class="character-showcase-title">The Fallen Guardian</div>
+                        <a href="/world-guide/characters/azrael.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">R</div>
+                    <div class="character-showcase-info">
+                        <h4>Rynn</h4>
+                        <div class="character-showcase-title">The Stubborn Heart</div>
+                        <a href="/world-guide/characters/rynn.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">H</div>
+                    <div class="character-showcase-info">
+                        <h4>Hope</h4>
+                        <div class="character-showcase-title">The Impossible Child</div>
+                        <a href="/world-guide/characters/hope.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="authors-note-elegant">
+                <div class="authors-note-header">Found in Blood</div>
+                <div class="authors-note-preview">
+                    I found this story in blood. Not metaphorically—though there is blood enough in the telling. I mean literally, in the rusted stains that still mark the floorboards of a cabin deep in what locals call the Dark Forest...
+                </div>
+                <div class="authors-note-full" id="sin-mercy-note">
+                    The pattern of it troubles me even now. Too much for violence alone. Too deliberate for accident. As if something profound and terrible had occurred in that small space, leaving its signature in crimson.<br><br>
+                    
+                    The trail began with a children's rhyme in Oakhaven, sung with the casual cruelty of those who've forgotten fear can have a source:<br><br>
+                    
+                    <em>"The demon dwells in darkest wood<br>
+                    Where light fears to fall<br>
+                    He feasts on those who trust too much<br>
+                    And darkness takes them all"</em><br><br>
+                    
+                    What I discovered challenged everything we think we know about demons and angels, about mercy and judgment, about the price of choosing compassion in a world that calls it weakness. This is not a tale of simple good conquering evil, nor of darkness consuming light. It asks harder questions: What does it mean to show mercy to those who seem undeserving? How do we judge actions taken in impossible circumstances? And when the divine walks among us, scarred by choices we cannot fathom, do we have the wisdom to recognize grace beneath the guilt?<br><br>
+                    
+                    I publish this account not because I've found all the answers, but because the questions themselves deserve better than children's rhymes and comfortable lies. Because blood on floorboards might tell a different story than the one we've inherited. Because sometimes what we name as demons are simply those who choose mercy in a world that counts it as sin.<br><br>
+                    
+                    And sometimes, the greatest mercy is the one that damns us.
+                </div>
+                <button class="expand-note-btn" onclick="expandNote('sin-mercy')">Read Full Note</button>
+            </div>
+        </div>
+
+        <!-- The Song of Blood and Stone Detail -->
+        <div class="story-detail-card">
+            <div class="story-detail-header">
+                <div class="story-detail-info">
+                    <h3>The Song of Blood and Stone</h3>
+                    <p class="story-detail-tagline">Truth dies when gold speaks louder than justice</p>
+                    <p class="story-detail-description">
+                        Khali, the ancient Dream Shepherd, chose to walk among mortals as a simple healer. When she caught the eye 
+                        of both a foreign prince and a jealous princess, divine love became the catalyst for mortal tragedy. This 
+                        tale reveals how wealth can rewrite history, transforming murder into mythology and villains into heroes.
+                    </p>
+                </div>
+                
+                <div class="chapter-access">
+                    <a href="/chapters/lost-histories/song-of-blood-and-stone/chapter-01/" class="chapter-access-btn">
+                        Read Chapter 1
+                    </a>
+                    <a href="/chapters/lost-histories/song-of-blood-and-stone/chapter-02/" class="chapter-access-btn">
+                        Read Chapter 2
+                    </a>
+                </div>
+            </div>
+            
+            <div class="story-characters-grid">
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">K</div>
+                    <div class="character-showcase-info">
+                        <h4>Khali</h4>
+                        <div class="character-showcase-title">The Dream Shepherd</div>
+                        <a href="/world-guide/characters/khali.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">E</div>
+                    <div class="character-showcase-info">
+                        <h4>Prince Eshuah</h4>
+                        <div class="character-showcase-title">The Displaced Heir</div>
+                        <a href="/world-guide/characters/eshuah.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">J</div>
+                    <div class="character-showcase-info">
+                        <h4>Princess Jade</h4>
+                        <div class="character-showcase-title">The Gilded Serpent</div>
+                        <a href="/world-guide/characters/jade.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="authors-note-elegant">
+                <div class="authors-note-header">Carved in Stone, Written in Gold</div>
+                <div class="authors-note-preview">
+                    I first encountered this tale not in scrolls or songs, but carved into stone. Deep within the stone sanctuary near what was once High Pass, I found a mural that took my breath away...
+                </div>
+                <div class="authors-note-full" id="blood-stone-note">
+                    Ancient beyond reckoning, its lines worn soft by countless years, it depicted a story I thought I knew: a radiant Vaelari wielding a blade of pure light, striking down a shadowed figure who glowed with ethereal darkness. Below them, a human figure reached toward the fallen god. The standard tale—Light conquering Dark, balance restored through sacrifice.<br><br>
+                    
+                    For years, I accepted this version. It aligned perfectly with every official record, every teaching about the dangers of unchecked darkness and the necessity of the Light's dominion.<br><br>
+                    
+                    Then I found Captain Morris's journal, buried deep within his family's private archives and sealed away as if it contained a disgrace too dangerous to confront—its weathered pages revealing a story entirely different from the one the world had been told.<br><br>
+                    
+                    His private account of the deaths at High Pass. Blood patterns that didn't match testimonies. Defensive wounds on the wrong person. The precision of a blade between ribs that spoke not of desperate struggle, but of calculated murder.<br><br>
+                    
+                    The official investigation records, when I finally unearthed them from a magistrate's sealed files, confirmed my growing suspicion. The reports had been... edited. Revised. Purchased. A hefty donation to the High Pass Widows and Orphans Fund had transformed murder into mythology.<br><br>
+                    
+                    The mural I had studied with such reverence was not a record of divine justice, but a monument to mortal lies. The "corrupted Vaelari" and the "dark witch" were simply two people who had loved each other, killed by a jealous princess whose family had enough gold to rewrite history.<br><br>
+                    
+                    Let those who read this remember: the stones we carve our stories into are no more truthful than the hands that wield the chisel.
+                </div>
+                <button class="expand-note-btn" onclick="expandNote('blood-stone')">Read Full Note</button>
+            </div>
+        </div>
 
         <!-- The Divine War Detail -->
         <div class="story-detail-card">
@@ -1327,44 +1669,201 @@ twitter:image: "/assets/images/the-lost-histories.png"
                 </div>
             </div>
             
-            <div class="elegant-note">
-                <span class="note-label">Final Testament</span>
-                <div class="note-content">
-                    "I am seventy-three years old, and I am dying of truth. Not the gentle death of age, 
-                    but the death of those who learn too late that their greatest enemy was their own heart. 
-                    Now I know why the gods don't answer, and the knowing has killed everything I was..."
+            <div class="authors-note-elegant">
+                <div class="authors-note-header">Final Testament</div>
+                <div class="authors-note-preview">
+                    I am seventy-three years old, and I am dying of truth. Not the gentle death of age, 
+                    but the death of those who learn too late that their greatest enemy was their own heart...
                 </div>
+                <div class="authors-note-full" id="divine-war-note">
+                    When every conviction you held sacred turns to poison in your hands. When truth itself becomes the enemy of everything you once called good.<br><br>
+                    
+                    I have spent fifty-one years asking why the gods don't speak to us.<br><br>
+                    
+                    Fifty-one years cataloguing our desperate prayers, our reaching hands, our broken hearts crying out to a heaven that seemed deaf to our suffering. I raged against their silence. I condemned their absence. I built my entire scholarly identity on the foundation of one burning question: <em>Why don't they answer?</em><br><br>
+                    
+                    Now I know.<br><br>
+                    
+                    And the knowing has murdered everything I was.<br><br>
+                    
+                    The gods are not absent. They are not deaf. They are not indifferent to our suffering. They are right here—closer than our own breath, nearer than our heartbeat—holding themselves back with a restraint so absolute it looks like abandonment. Every moment of every day, they love us enough to remain silent. To stand at the very edge of intervention and choose, again and again and again, not to speak.<br><br>
+                    
+                    Because they learned—through apocalypse, through the unmaking of stars, through watching reality itself crack beneath the weight of their good intentions—that divine words reshape existence. That every blessing becomes a curse in time. That every gift, no matter how lovingly given, becomes a weapon in mortal hands. That love expressed directly from the infinite to the finite doesn't elevate; it incinerates.<br><br>
+                    
+                    The Wild Gods were everything I believed divinity should be. Compassionate. Present. Active in mortal affairs. They walked among us, loved us, protected us with fierce devotion. They gave us everything I spent my life insisting we deserved.<br><br>
+                    
+                    And they destroyed the world with their kindness.<br><br>
+                    
+                    I have seen the records—not the sanitized versions, but the raw testimonies written in blood and madness. I have traced the cascade of consequences that began with a single act of divine mercy and ended with reality itself coming undone. The Wild Gods loved us the way I always said gods should love. Without restraint. Without distance. Without the cold wisdom that keeps the infinite from overwhelming the finite.<br><br>
+                    
+                    The First Gods—those distant, hierarchical beings I spent decades condemning—were right. Their cruelty was kindness. Their distance was love. They understood what I, in my progressive arrogance, could not: that some chasms are not meant to be bridged. That some silences are not meant to be broken. That some loves are too vast to be safely expressed.<br><br>
+                    
+                    Do you understand what it means to discover this? To realize that every prayer you've documented, every plea for divine presence you've preserved, was a request for catastrophe? To be a truth-seeker who has discovered that truth can be more evil than any lie?<br><br>
+                    
+                    The generations before us, the ones after—they all cry out the same question: <em>Why don't you answer?</em> And the gods, in their terrible mercy, continue their silence. Not because they don't care. But because they care too much to risk speaking. Because they learned, through losses that would break mortal minds to contemplate, that true love sometimes means letting the beloved believe themselves abandoned rather than destroying them with presence.<br><br>
+                    
+                    What remains of them now speaks only in sacred spaces—those few sanctuaries where divine words can be contained, where the infinite can whisper without shattering the finite. Even there, their voices are muffled, careful, wrapped in so many layers of restraint that hearing them requires a lifetime of preparation. The rest? Dead or in hiding. But here's the question that haunts me: do they hide because they love us, or because they've learned to fear what they created?<br><br>
+                    
+                    For we are no longer the helpless mortals of ancient days. The Bloodmarked walk among us now, carrying within them the power to kill gods. Divine blood spills as readily as mortal when the right blade finds its mark.<br><br>
+                    
+                    Perhaps they hide to protect the world from the catastrophe of their love unleashed. Or perhaps—and this thought chills me more than any other—they hide because they've discovered that their greatest creation has become capable of their destruction. Love and fear, intertwined like lovers in the dark, each feeding the other until even gods cannot say where one ends and the other begins.<br><br>
+                    
+                    The Wild Gods who survived the war didn't ascend to some distant plane. They buried themselves in the deep places of the world, in caves that echo with unspoken words, in forests where no mortal foot has trod for millennia. They made themselves into living tombs, conscious and aware but forever separate, forever silent save for those rare moments in those rarer places where communication won't crack the cosmos.<br><br>
+                    
+                    And I—fool that I am, romantic that I was—I spent my life trying to make them speak. To draw them out. To end their isolation.<br><br>
+                    
+                    I sit here in the ruins of my convictions, surrounded by scrolls that document divine atrocities committed in the name of love, and still—still—some treacherous part of my heart whispers: <em>Maybe it didn't have to be this way.</em> The scholar's curse is not just seeing patterns across time. It's seeing those patterns and still believing, against all evidence, that the next iteration might be different. That knowledge might transform us. That understanding might redeem us. That if we just knew <em>why</em>, we could somehow make it right.<br><br>
+                    
+                    But I know why now. And the knowing has made nothing right. It has only revealed that what I called wrong was the only right we could survive.<br><br>
+                    
+                    The Wild Gods are still here, scattered and broken, maintaining their distance not out of indifference but out of a love so profound it accepts being reviled rather than risk our destruction. They endure our curses, our accusations of abandonment, our bitter prayers—because explaining their silence would require speaking. And speaking would begin the cascade again.<br><br>
+                    
+                    Tomorrow, if tomorrow comes, someone will find these notes. But should they? Should I burn these pages before my strength fails, let this terrible understanding die with me? For fifty-one years I sought this answer. I raged at heaven for it. I would have given anything to know <em>why</em>.<br><br>
+                    
+                    Now I wonder if ignorance wasn't its own blessing. If the question that burns in every mortal heart—<em>Why don't the gods answer?</em>—is bearable only because we don't know. The not-knowing lets us hope. Lets us believe in eventual reunion, in divine intervention just beyond the horizon, in a love that might someday speak our names again.<br><br>
+                    
+                    But I am a scholar. Even dying, even broken, I cannot bring myself to destroy truth. So these words will remain, and someone will read them, and they will carry this poison I've carried. They will know what I know. They will understand what I understand.<br><br>
+                    
+                    And perhaps, like me, they will wish they had never asked.<br><br>
+                    
+                    Now, at least, one man knows why the gods don't answer.<br><br>
+                    
+                    And the knowing has killed everything he was, leaving only enough life to write this warning:<br><br>
+                    
+                    Some questions should never be answered.<br>
+                    Some silences should never be broken.<br>
+                    Some loves are too vast for the beloved to survive.<br><br>
+                    
+                    The gods' silence is their greatest gift.<br>
+                    Pray they never love us enough to speak again.<br><br>
+                    
+                    <em>—Tanneus G'Raja</em><br>
+                    <em>Scholar of Lost Histories</em><br>
+                    <em>Seeker of Buried Truths</em><br>
+                    <em>Dying of what he found</em>
+                </div>
+                <button class="expand-note-btn" onclick="expandNote('divine-war')">Read Full Note</button>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Navigation Footer -->
+<section class="navigation-footer">
+    <div class="container">
+        <h2 class="nav-title">Continue Your Journey</h2>
+        <div class="nav-grid">
+            <a href="/writing/" class="nav-link">Back to Writing</a>
+            <a href="/world-guide/" class="nav-link">Explore the World Guide</a>
+            <a href="/world-guide/characters/" class="nav-link">Meet All Characters</a>
+            <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="nav-link">Start Reading</a>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Navigation Footer Styles */
+.navigation-footer {
+    padding: 80px 0;
+    background: rgba(5, 5, 20, 0.95);
+    text-align: center;
+    border-top: 2px solid rgba(177, 156, 217, 0.3);
+    margin-top: 100px;
+}
+
+.nav-title {
+    font-size: 2.5em;
+    color: var(--text-primary);
+    margin-bottom: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    background: rgba(177, 156, 217, 0.1);
+    border: 1px solid rgba(177, 156, 217, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-link:hover {
+    border-color: var(--primary-purple);
+    background: rgba(177, 156, 217, 0.2);
+    transform: translateY(-3px);
+    color: var(--text-primary);
+    box-shadow: 0 10px 30px rgba(177, 156, 217, 0.3);
+}
+
+@media (max-width: 768px) {
+    .nav-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .nav-title {
+        font-size: 2em;
+    }
+}
+</style>
 
 <script>
     // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
     // Hide loading screen
     window.addEventListener('load', () => {
         setTimeout(() => {
-            document.getElementById('loadingScreen').classList.add('hidden');
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+            }
         }, 1500);
     });
 
     // Expand note functionality
     function expandNote(noteId) {
-        // Implementation for expanding author's notes
-        console.log('Expanding note:', noteId);
+        const fullNote = document.getElementById(noteId + '-note');
+        const button = fullNote.parentElement.querySelector('.expand-note-btn');
+        
+        if (fullNote && button) {
+            if (fullNote.classList.contains('expanded')) {
+                fullNote.classList.remove('expanded');
+                button.textContent = 'Read Full Note';
+            } else {
+                fullNote.classList.add('expanded');
+                button.textContent = 'Read Less';
+            }
+        }
     }
 
     // Parallax effect for orbs
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+    function updateParallax() {
         const scrolled = window.pageYOffset;
         const orbs = document.querySelectorAll('.orb');
         
@@ -1373,7 +1872,18 @@ twitter:image: "/assets/images/the-lost-histories.png"
             const yPos = -(scrolled * speed * 0.1);
             orb.style.transform = `translateY(${yPos}px)`;
         });
-    });
+        
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
 
     // Intersection Observer for fade-in animations
     const observerOptions = {
@@ -1390,11 +1900,17 @@ twitter:image: "/assets/images/the-lost-histories.png"
         });
     }, observerOptions);
 
-    // Observe all cards
-    document.querySelectorAll('.story-card, .story-detail-card').forEach(card => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'all 0.8s ease';
-        observer.observe(card);
+    // Observe all cards with delay
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.story-card, .story-detail-card');
+        cards.forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = `all 0.8s ease ${index * 0.1}s`;
+            observer.observe(card);
+        });
     });
 </script>
+
+</body>
+</html>
