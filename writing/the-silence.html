@@ -94,40 +94,11 @@ schema:
         }
     }
 
-    /* Navigation Breadcrumb */
-    .breadcrumb {
-        padding: 20px 0;
-        background: rgba(10, 10, 20, 0.6);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(139, 0, 0, 0.3);
-        margin-top: -20px;
-    }
 
-    .breadcrumb-nav {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        color: #ccc;
-        font-size: 0.9em;
-    }
-
-    .breadcrumb-nav a {
-        color: var(--accent-color);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .breadcrumb-nav a:hover {
-        color: #fff;
-    }
-
-    .breadcrumb-separator {
-        color: #666;
-    }
 
     /* Hero Section */
     .book-hero {
-        padding: 60px 0 80px;
+        padding: 100px 0 80px;
         text-align: center;
         background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
         position: relative;
@@ -704,11 +675,6 @@ schema:
         .characters-grid {
             grid-template-columns: 1fr;
         }
-
-        .breadcrumb-nav {
-            font-size: 0.8em;
-            flex-wrap: wrap;
-        }
     }
 
     /* Loading Animation */
@@ -800,7 +766,7 @@ schema:
 
 <!-- Loading Screen -->
 <div class="loading-screen" id="loadingScreen">
-    <div class="loading-text">Awakening the Silence...</div>
+    <div class="loading-text">Awakening The Silence...</div>
 </div>
 
 <!-- Cosmic Background -->
@@ -809,18 +775,7 @@ schema:
 <!-- Floating Particles -->
 <div class="floating-particles" id="particlesContainer"></div>
 
-<!-- Breadcrumb Navigation -->
-<nav class="breadcrumb">
-    <div class="container">
-        <div class="breadcrumb-nav">
-            <a href="/">Home</a>
-            <span class="breadcrumb-separator">→</span>
-            <a href="/writing/">Writing</a>
-            <span class="breadcrumb-separator">→</span>
-            <span>The Silence</span>
-        </div>
-    </div>
-</nav>
+
 
 <!-- Hero Section -->
 <section class="book-hero">
