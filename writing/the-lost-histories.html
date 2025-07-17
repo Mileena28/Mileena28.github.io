@@ -1,0 +1,1400 @@
+---
+layout: default
+title: "Blood of the Wild Gods: The Lost Histories | Dark Fantasy Anthology | Mileena Rayne"
+description: "A collection of forgotten tales from the world of the Wild Gods—stories whispered between stone and silence. Each tale reveals divine nature through love that defies time, mercy that becomes sin, and the terrible price of walking among mortals."
+keywords: "dark fantasy anthology, literary dark fantasy, mythological fiction, divine tragedy, Blood of the Wild Gods series, The Lost Histories, Mileena Rayne author, fantasy short stories, gods and mortals"
+image: "/assets/images/the-lost-histories.png"
+canonical: "https://mileenarayne.com/writing/the-lost-histories/"
+robots: "index, follow"
+og:type: "book"
+og:title: "Blood of the Wild Gods: The Lost Histories | Dark Fantasy Anthology"
+og:description: "Forgotten tales of divine love, tragic mercy, and the price of walking among mortals. Six stories that reveal what history tried to bury."
+og:image: "/assets/images/the-lost-histories.png"
+og:url: "https://mileenarayne.com/writing/the-lost-histories/"
+twitter:card: "summary_large_image"
+twitter:title: "Blood of the Wild Gods: The Lost Histories"
+twitter:description: "Stories whispered between stone and silence, lost beneath conquest and doctrine."
+twitter:image: "/assets/images/the-lost-histories.png"
+---
+
+<style>
+    /* The Lost Histories - Futuristic Elegant Design */
+    :root {
+        --primary-purple: #b19cd9;
+        --light-purple: #d4c5f9;
+        --accent-blue: #a8c0e8;
+        --light-grey-blue: #b8c9e4;
+        --soft-white: #f8f9fa;
+        --elegant-grey: #e9ecef;
+        --deep-shadow: #2a2d3a;
+        --glass-white: rgba(255, 255, 255, 0.1);
+        --text-primary: #f0f0f0;
+        --text-secondary: #d0d0d0;
+    }
+
+    /* Futuristic Background */
+    .futuristic-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -3;
+        background: 
+            linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    }
+
+    /* Geometric Pattern Overlay */
+    .geometric-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        opacity: 0.05;
+        background-image: 
+            repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px),
+            repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);
+    }
+
+    /* Floating Light Orbs */
+    .light-orbs {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, var(--light-purple), transparent);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: orb-float 20s infinite ease-in-out;
+    }
+
+    .orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
+    }
+
+    .orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle at 30% 30%, var(--accent-blue), transparent);
+        animation-duration: 30s;
+        animation-delay: -5s;
+    }
+
+    .orb:nth-child(3) {
+        width: 250px;
+        height: 250px;
+        top: 50%;
+        left: 50%;
+        background: radial-gradient(circle at 30% 30%, var(--light-grey-blue), transparent);
+        animation-duration: 35s;
+        animation-delay: -10s;
+    }
+
+    @keyframes orb-float {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        33% {
+            transform: translate(100px, -100px) scale(1.1);
+        }
+        66% {
+            transform: translate(-100px, 100px) scale(0.9);
+        }
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 120px 0 100px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .status-indicator {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(177, 156, 217, 0.2);
+        border: 1px solid rgba(177, 156, 217, 0.3);
+        border-radius: 50px;
+        padding: 10px 25px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .status-indicator:hover {
+        background: rgba(177, 156, 217, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(177, 156, 217, 0.2);
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--primary-purple);
+        animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.5);
+            opacity: 0.5;
+        }
+    }
+
+    .status-text {
+        color: var(--text-primary);
+        font-size: 0.85em;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4.5rem);
+        font-weight: 200;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        letter-spacing: -1px;
+        line-height: 1.2;
+        position: relative;
+    }
+
+    .hero-title .highlight {
+        background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 300;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1em;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto 40px;
+        line-height: 1.8;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+    /* Main Content Layout */
+    .main-showcase {
+        padding: 80px 0;
+        position: relative;
+    }
+
+    .showcase-container {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 80px;
+        max-width: 1400px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    /* Book Cover Section */
+    .book-visual {
+        position: sticky;
+        top: 100px;
+    }
+
+    .book-cover-frame {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        transition: all 0.5s ease;
+    }
+
+    .book-cover-frame:hover {
+        transform: translateY(-10px);
+        box-shadow: 
+            0 30px 60px rgba(177, 156, 217, 0.3),
+            0 0 0 1px rgba(177, 156, 217, 0.2);
+    }
+
+    .book-cover-inner {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .book-cover-inner img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .book-cover-glow {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(177, 156, 217, 0.2) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+    }
+
+    .book-cover-frame:hover .book-cover-glow {
+        opacity: 1;
+        animation: rotate-slow 20s linear infinite;
+    }
+
+    @keyframes rotate-slow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    /* Historian Card */
+    .historian-profile {
+        margin-top: 40px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .historian-profile:hover {
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: 0 20px 40px rgba(177, 156, 217, 0.2);
+    }
+
+    .historian-header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .historian-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8em;
+        color: white;
+        font-weight: 300;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .historian-avatar::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, var(--primary-purple), var(--accent-blue), var(--primary-purple));
+        border-radius: 50%;
+        z-index: -1;
+        animation: rotate-border 4s linear infinite;
+    }
+
+    @keyframes rotate-border {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .historian-info h3 {
+        color: var(--text-primary);
+        font-size: 1.3em;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+    .historian-role {
+        color: var(--primary-purple);
+        font-size: 0.9em;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+
+    .historian-bio {
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .historian-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        color: var(--accent-blue);
+        text-decoration: none;
+        font-size: 0.9em;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .historian-link:hover {
+        color: var(--primary-purple);
+        transform: translateX(5px);
+    }
+
+    /* Book Info Content */
+    .book-info-content {
+        position: relative;
+    }
+
+    .info-section {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+    }
+
+    .info-section:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-heading {
+        color: var(--primary-purple);
+        font-size: 1.6em;
+        font-weight: 300;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 15px;
+    }
+
+    .section-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-purple), transparent);
+    }
+
+    .description-text {
+        color: var(--text-secondary);
+        font-size: 1.05em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    /* Elegant Note Box */
+    .elegant-note {
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1), rgba(168, 192, 232, 0.05));
+        border: 1px solid rgba(177, 156, 217, 0.2);
+        border-radius: 15px;
+        padding: 30px;
+        margin: 30px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .elegant-note::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
+        animation: shimmer-line 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .note-label {
+        color: var(--primary-purple);
+        font-size: 0.9em;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .note-content {
+        color: var(--text-primary);
+        font-style: italic;
+        line-height: 1.7;
+    }
+
+    /* Stories Grid Section */
+    .stories-showcase {
+        padding: 100px 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+    }
+
+    .stories-header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 80px;
+    }
+
+    .stories-title {
+        font-size: 3.5em;
+        font-weight: 200;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        letter-spacing: -1px;
+    }
+
+    .stories-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        line-height: 1.7;
+        font-weight: 300;
+    }
+
+    /* Story Cards Grid */
+    .stories-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .story-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 25px;
+        padding: 40px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .story-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--accent-blue));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .story-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .story-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.2),
+            0 0 0 1px rgba(177, 156, 217, 0.3);
+    }
+
+    .story-number {
+        color: var(--accent-blue);
+        font-size: 0.85em;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+        opacity: 0.8;
+    }
+
+    .story-name {
+        font-size: 1.8em;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        font-weight: 300;
+        line-height: 1.3;
+    }
+
+    .story-theme {
+        color: var(--primary-purple);
+        font-size: 0.95em;
+        font-style: italic;
+        margin-bottom: 20px;
+        opacity: 0.9;
+    }
+
+    .story-summary {
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+    /* Chapter Pills */
+    .chapter-pills {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    .chapter-pill {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--text-primary);
+        padding: 8px 20px;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.85em;
+        font-weight: 400;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+    }
+
+    .chapter-pill:hover {
+        background: rgba(177, 156, 217, 0.2);
+        border-color: var(--primary-purple);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(177, 156, 217, 0.3);
+    }
+
+    /* Character Avatars */
+    .story-characters {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-top: 25px;
+        padding-top: 25px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .characters-label {
+        color: var(--text-secondary);
+        font-size: 0.85em;
+        font-weight: 400;
+        margin-right: 10px;
+    }
+
+    .character-avatar-small {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9em;
+        color: white;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .character-avatar-small img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .character-avatar-small:hover {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(177, 156, 217, 0.4);
+    }
+
+    .view-story-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-blue);
+        text-decoration: none;
+        font-size: 0.9em;
+        font-weight: 500;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .view-story-link:hover {
+        color: var(--primary-purple);
+        transform: translateX(5px);
+    }
+
+    /* Detailed Story Modal Style */
+    .story-detail-section {
+        padding: 100px 0;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .story-detail-card {
+        max-width: 1200px;
+        margin: 0 auto 80px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 30px;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .story-detail-header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 40px;
+        align-items: start;
+        margin-bottom: 40px;
+    }
+
+    .story-detail-info h3 {
+        font-size: 2.5em;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    .story-detail-tagline {
+        color: var(--primary-purple);
+        font-size: 1.1em;
+        font-style: italic;
+        margin-bottom: 25px;
+    }
+
+    .story-detail-description {
+        color: var(--text-secondary);
+        font-size: 1.05em;
+        line-height: 1.8;
+    }
+
+    /* Chapter Access Buttons */
+    .chapter-access {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .chapter-access-btn {
+        background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+        color: white;
+        text-decoration: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .chapter-access-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .chapter-access-btn:hover::before {
+        width: 200px;
+        height: 200px;
+    }
+
+    .chapter-access-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.4);
+    }
+
+    /* Character Showcase */
+    .story-characters-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .character-showcase-card {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .character-showcase-card:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .character-showcase-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-purple), var(--accent-blue));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        color: white;
+        font-weight: 400;
+        flex-shrink: 0;
+        overflow: hidden;
+    }
+
+    .character-showcase-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .character-showcase-info h4 {
+        color: var(--text-primary);
+        font-size: 1.1em;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+    .character-showcase-title {
+        color: var(--primary-purple);
+        font-size: 0.85em;
+        font-style: italic;
+    }
+
+    .character-showcase-link {
+        color: var(--accent-blue);
+        text-decoration: none;
+        font-size: 0.85em;
+        margin-top: 5px;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .character-showcase-link:hover {
+        color: var(--primary-purple);
+        transform: translateX(3px);
+    }
+
+    /* Author's Note */
+    .authors-note-elegant {
+        background: linear-gradient(135deg, rgba(168, 192, 232, 0.08), rgba(177, 156, 217, 0.05));
+        border: 1px solid rgba(168, 192, 232, 0.2);
+        border-radius: 20px;
+        padding: 35px;
+        margin-top: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .authors-note-header {
+        color: var(--accent-blue);
+        font-size: 0.95em;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+    }
+
+    .authors-note-preview {
+        color: var(--text-secondary);
+        font-style: italic;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+
+    .expand-note-btn {
+        background: transparent;
+        border: 1px solid var(--accent-blue);
+        color: var(--accent-blue);
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .expand-note-btn:hover {
+        background: rgba(168, 192, 232, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(168, 192, 232, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .showcase-container {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .book-visual {
+            position: static;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .stories-grid {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .story-detail-card {
+            padding: 40px 30px;
+        }
+
+        .story-detail-header {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .chapter-access {
+            flex-direction: column;
+        }
+
+        .chapter-access-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        .story-characters-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Loading Screen */
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0f0c29;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s ease;
+    }
+
+    .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loading-content {
+        text-align: center;
+    }
+
+    .loading-spinner {
+        width: 60px;
+        height: 60px;
+        border: 2px solid rgba(177, 156, 217, 0.2);
+        border-top-color: var(--primary-purple);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        font-size: 1.5em;
+        color: var(--primary-purple);
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+</style>
+
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Awakening the Lost Histories</div>
+    </div>
+</div>
+
+<!-- Background Layers -->
+<div class="futuristic-bg"></div>
+<div class="geometric-overlay"></div>
+<div class="light-orbs">
+    <div class="orb"></div>
+    <div class="orb"></div>
+    <div class="orb"></div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="status-indicator">
+                <div class="status-dot"></div>
+                <span class="status-text">Work in Progress</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Blood of the Wild Gods: <br>
+                <span class="highlight">The Lost Histories</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Six forgotten tales of divine tragedy and mortal resilience, preserved by one who chose 
+                truth over treasure, memory over myth.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Main Showcase -->
+<section class="main-showcase">
+    <div class="container">
+        <div class="showcase-container">
+            <!-- Book Visual -->
+            <div class="book-visual">
+                <div class="book-cover-frame">
+                    <div class="book-cover-inner">
+                        <div class="book-cover-glow"></div>
+                        <img src="/assets/images/the-lost-histories.png" alt="The Lost Histories book cover">
+                    </div>
+                </div>
+                
+                <!-- Historian Profile -->
+                <div class="historian-profile">
+                    <div class="historian-header">
+                        <div class="historian-avatar">T</div>
+                        <div class="historian-info">
+                            <h3>Tanneus G'Raja</h3>
+                            <div class="historian-role">The Historian</div>
+                        </div>
+                    </div>
+                    <p class="historian-bio">
+                        Born among the ash and ruin of the Godscarred Wastes, Tanneus chose ink over treasure, 
+                        dedicating his life to preserving truths others would see forgotten.
+                    </p>
+                    <a href="/world-guide/characters/tanneus-graja.html" class="historian-link">
+                        Discover His Story →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Book Info -->
+            <div class="book-info-content">
+                <div class="info-section">
+                    <h2 class="section-heading">The Collection</h2>
+                    <p class="description-text">
+                        Within these pages lie stories that shaped our world, though few now remember their truth. 
+                        Each tale stands alone as a window into the divine heart—beautiful and terrible in equal measure.
+                    </p>
+                    <p class="description-text">
+                        From eternal love cursed by jealousy to mercy that damns its giver, from philosophical quests 
+                        that span millennia to wars that silence the heavens themselves, these are the histories that 
+                        were meant to be lost.
+                    </p>
+                    
+                    <div class="elegant-note">
+                        <span class="note-label">From the Historian's Pen</span>
+                        <div class="note-content">
+                            "I was not born with ink-stained hands or reverent eyes for scrolls. I was born in ash. 
+                            But where my people search for fragments to trade like coin, I chose a different pursuit—to 
+                            record what remains, without softening cruelty or gilding virtue. Let the reader see them as 
+                            they are. Let the gods answer for themselves."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stories Showcase -->
+<section class="stories-showcase">
+    <div class="container">
+        <div class="stories-header">
+            <h2 class="stories-title">The Six Tales</h2>
+            <p class="stories-subtitle">
+                Each story reveals a different facet of divine nature and mortal courage. 
+                Choose where your journey through these lost histories begins.
+            </p>
+        </div>
+
+        <div class="stories-grid">
+            <!-- Seven Days of Sun -->
+            <div class="story-card">
+                <div class="story-number">First Tale</div>
+                <h3 class="story-name">Seven Days of Sun</h3>
+                <p class="story-theme">Love eternal, death inevitable</p>
+                <p class="story-summary">
+                    A god cursed to watch his beloved die through endless incarnations. Each lifetime brings 
+                    seven perfect days before fate claims its due.
+                </p>
+                
+                <div class="chapter-pills">
+                    <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="chapter-pill">
+                        Chapter 1 Available
+                    </a>
+                </div>
+                
+                <div class="story-characters">
+                    <span class="characters-label">Characters:</span>
+                    <div class="character-avatar-small">E</div>
+                    <div class="character-avatar-small">S</div>
+                </div>
+            </div>
+
+            <!-- The Weaver of Sorrows -->
+            <div class="story-card">
+                <div class="story-number">Second Tale</div>
+                <h3 class="story-name">The Weaver of Sorrows</h3>
+                <p class="story-theme">Jealousy woven into fate</p>
+                <p class="story-summary">
+                    The origin of the curse that binds eternal lovers—a lunar seer's jealousy transformed 
+                    into cosmic vengeance that even gods cannot undo.
+                </p>
+                
+                <div class="chapter-pills">
+                    <a href="/chapters/lost-histories/weaver-of-sorrows/chapter-06/" class="chapter-pill">
+                        Chapter 6 Available
+                    </a>
+                </div>
+                
+                <div class="story-characters">
+                    <span class="characters-label">Characters:</span>
+                    <div class="character-avatar-small">M</div>
+                </div>
+            </div>
+
+            <!-- The God Who Wept -->
+            <div class="story-card">
+                <div class="story-number">Third Tale</div>
+                <h3 class="story-name">The God Who Wept</h3>
+                <p class="story-theme">A millennium searching for purity</p>
+                <p class="story-summary">
+                    A philosophical journey of a god who walked among mortals for a thousand years, 
+                    searching for one human untouched by cruelty.
+                </p>
+                
+                <div class="chapter-pills">
+                    <a href="/chapters/lost-histories/god-who-wept/chapter-01/" class="chapter-pill">
+                        Chapter 1 Available
+                    </a>
+                </div>
+                
+                <div class="story-characters">
+                    <span class="characters-label">Characters:</span>
+                    <div class="character-avatar-small">
+                        <img src="/assets/images/thainos.jpg" alt="Thainos">
+                    </div>
+                    <div class="character-avatar-small">L</div>
+                    <div class="character-avatar-small">A</div>
+                </div>
+            </div>
+
+            <!-- The Sin of Mercy -->
+            <div class="story-card">
+                <div class="story-number">Fourth Tale</div>
+                <h3 class="story-name">The Sin of Mercy</h3>
+                <p class="story-theme">When compassion becomes damnation</p>
+                <p class="story-summary">
+                    A god cast from heaven for choosing mercy over divine law. This tale explores the price 
+                    of compassion in a world that calls it weakness.
+                </p>
+                
+                <div class="chapter-pills">
+                    <a href="/chapters/lost-histories/sin-of-mercy/chapter-01/" class="chapter-pill">
+                        Chapter 1 Available
+                    </a>
+                </div>
+                
+                <div class="story-characters">
+                    <span class="characters-label">Characters:</span>
+                    <div class="character-avatar-small">A</div>
+                    <div class="character-avatar-small">R</div>
+                    <div class="character-avatar-small">H</div>
+                </div>
+            </div>
+
+            <!-- The Song of Blood and Stone -->
+            <div class="story-card">
+                <div class="story-number">Fifth Tale</div>
+                <h3 class="story-name">The Song of Blood and Stone</h3>
+                <p class="story-theme">How wealth rewrites history</p>
+                <p class="story-summary">
+                    When a goddess walks as a healer, her murder becomes mythology. A tale of how gold 
+                    can transform villainy into heroism.
+                </p>
+                
+                <div class="chapter-pills">
+                    <a href="/chapters/lost-histories/song-of-blood-and-stone/chapter-01/" class="chapter-pill">
+                        Chapter 1 Available
+                    </a>
+                    <a href="/chapters/lost-histories/song-of-blood-and-stone/chapter-02/" class="chapter-pill">
+                        Chapter 2 Available
+                    </a>
+                </div>
+                
+                <div class="story-characters">
+                    <span class="characters-label">Characters:</span>
+                    <div class="character-avatar-small">K</div>
+                    <div class="character-avatar-small">E</div>
+                    <div class="character-avatar-small">J</div>
+                </div>
+            </div>
+
+            <!-- The Divine War -->
+            <div class="story-card">
+                <div class="story-number">Final Tale</div>
+                <h3 class="story-name">The Divine War</h3>
+                <p class="story-theme">Why the gods fell silent</p>
+                <p class="story-summary">
+                    The cataclysmic conflict that shattered heaven and earth, revealing why divine silence 
+                    might be the greatest mercy of all.
+                </p>
+                
+                <div class="chapter-pills">
+                    <a href="/chapters/lost-histories/divine-war/chapter-01/" class="chapter-pill">
+                        Chapter 1 Available
+                    </a>
+                </div>
+                
+                <div class="story-characters">
+                    <span class="characters-label">Characters:</span>
+                    <div class="character-avatar-small">A</div>
+                    <div class="character-avatar-small">N</div>
+                    <div class="character-avatar-small">S</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Story Sections -->
+<section class="story-detail-section">
+    <div class="container">
+        <!-- Seven Days of Sun Detail -->
+        <div class="story-detail-card">
+            <div class="story-detail-header">
+                <div class="story-detail-info">
+                    <h3>Seven Days of Sun</h3>
+                    <p class="story-detail-tagline">Love eternal, death inevitable, hope unquenchable</p>
+                    <p class="story-detail-description">
+                        Elodias, the Sun-Touched God, bears a curse unlike any other—to find his beloved Senia 
+                        in every incarnation, to love her for seven perfect days, and to lose her when the sun 
+                        sets on the seventh night. Yet neither divine decree nor mortal death can extinguish 
+                        the flame they carry for each other across the ages.
+                    </p>
+                </div>
+                
+                <div class="chapter-access">
+                    <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="chapter-access-btn">
+                        Read Chapter 1
+                    </a>
+                </div>
+            </div>
+            
+            <div class="story-characters-grid">
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">E</div>
+                    <div class="character-showcase-info">
+                        <h4>Elodias</h4>
+                        <div class="character-showcase-title">The Sun-Touched God</div>
+                        <a href="/world-guide/characters/elodias.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">S</div>
+                    <div class="character-showcase-info">
+                        <h4>Senia</h4>
+                        <div class="character-showcase-title">The Beloved</div>
+                        <a href="/world-guide/characters/senia.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="authors-note-elegant">
+                <div class="authors-note-header">Author's Note</div>
+                <div class="authors-note-preview">
+                    This story reached me first as a song—fragmented, mournful, carried in the voices 
+                    of ocean-bound bards who still sing to the dusk...
+                </div>
+                <button class="expand-note-btn" onclick="expandNote('seven-days')">Read Full Note</button>
+            </div>
+        </div>
+
+        <!-- Continue with other story detail cards... -->
+        <!-- (I'll add just one more as an example, but all 6 would follow this pattern) -->
+
+        <!-- The Divine War Detail -->
+        <div class="story-detail-card">
+            <div class="story-detail-header">
+                <div class="story-detail-info">
+                    <h3>The Divine War</h3>
+                    <p class="story-detail-tagline">The price of divine love, the cost of mortal prayer</p>
+                    <p class="story-detail-description">
+                        The final tale reveals the cataclysmic truth: a civil war between gods that nearly 
+                        unmade reality itself. When the Wild Gods chose to love mortals without restraint, 
+                        their compassion became catastrophe. Now we understand why divine silence might be 
+                        the greatest gift—and the heaviest burden—the gods could bear.
+                    </p>
+                </div>
+                
+                <div class="chapter-access">
+                    <a href="/chapters/lost-histories/divine-war/chapter-01/" class="chapter-access-btn">
+                        Read Chapter 1
+                    </a>
+                </div>
+            </div>
+            
+            <div class="story-characters-grid">
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">A</div>
+                    <div class="character-showcase-info">
+                        <h4>Astrid Ravenscroft</h4>
+                        <div class="character-showcase-title">The First Bloodmarked</div>
+                        <a href="/world-guide/characters/astrid.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">N</div>
+                    <div class="character-showcase-info">
+                        <h4>Natalia DreamingOwl</h4>
+                        <div class="character-showcase-title">The Lost Light</div>
+                        <a href="/world-guide/characters/natalia.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+                
+                <div class="character-showcase-card">
+                    <div class="character-showcase-avatar">S</div>
+                    <div class="character-showcase-info">
+                        <h4>Silas</h4>
+                        <div class="character-showcase-title">The Trickster God</div>
+                        <a href="/world-guide/characters/silas.html" class="character-showcase-link">View Profile →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="elegant-note">
+                <span class="note-label">Final Testament</span>
+                <div class="note-content">
+                    "I am seventy-three years old, and I am dying of truth. Not the gentle death of age, 
+                    but the death of those who learn too late that their greatest enemy was their own heart. 
+                    Now I know why the gods don't answer, and the knowing has killed everything I was..."
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Smooth scroll for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Hide loading screen
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loadingScreen').classList.add('hidden');
+        }, 1500);
+    });
+
+    // Expand note functionality
+    function expandNote(noteId) {
+        // Implementation for expanding author's notes
+        console.log('Expanding note:', noteId);
+    }
+
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.orb');
+        
+        orbs.forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            orb.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all cards
+    document.querySelectorAll('.story-card, .story-detail-card').forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.8s ease';
+        observer.observe(card);
+    });
+</script>
