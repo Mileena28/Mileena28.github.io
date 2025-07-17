@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood of the Wild Gods: The Silence | Mileena Rayne</title>
+    <meta name="description" content="Discover The Silence - where gods wage war in silence and their blood births monsters. Available now in ebook, paperback, and hardcover.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #8a9fff;
+            --secondary-color: #a8b5ff;
+            --accent-color: #8b0000;
+            --blood-red: #8b0000;
+            --dark-red: #660000;
+            --shadow-purple: #4a0080;
+            --mist-white: #f0f0f0;
+            --deep-black: #0a0a0a;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: #000;
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Cosmic Background Effects */
+        .cosmic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -2;
+            background: 
+                radial-gradient(ellipse at top, rgba(139, 0, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(74, 0, 128, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse at center, #1a1a2e 0%, #0a0a0a 100%);
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: float-up 18s infinite;
+        }
+
+        @keyframes float-up {
+            0% {
+                opacity: 0;
+                transform: translateY(100vh) scale(0);
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(1.2);
+            }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background: rgba(10, 10, 20, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 0, 0, 0.3);
+        }
+
+        .breadcrumb-nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #ccc;
+            font-size: 0.9em;
+        }
+
+        .breadcrumb-nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb-nav a:hover {
+            color: #fff;
+        }
+
+        .breadcrumb-separator {
+            color: #666;
+        }
+
+        /* Hero Section */
+        .book-hero {
+            padding: 60px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1) 0%, rgba(139, 0, 0, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.1) 0%, transparent 60%);
+            animation: rotate-glow 25s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate-glow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .published-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), #b30000);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4);
+            animation: gentle-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes gentle-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 5px 20px rgba(139, 0, 0, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 8px 30px rgba(139, 0, 0, 0.6); }
+        }
+
+        .book-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+            letter-spacing: 0.05em;
+            background: linear-gradient(135deg, #fff 0%, var(--accent-color) 30%, #fff 60%, var(--accent-color) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 4s ease-in-out infinite;
+            background-size: 300% 300%;
+            text-shadow: 0 0 60px rgba(139, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .book-genre {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .book-tagline {
+            font-size: 1.3em;
+            color: #ddd;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* Book Showcase Section */
+        .book-showcase {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 80px;
+            align-items: start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .book-cover-showcase {
+            position: relative;
+            text-align: center;
+            position: sticky;
+            top: 100px;
+        }
+
+        .cover-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 80px rgba(0, 0, 0, 0.8),
+                0 0 120px rgba(139, 0, 0, 0.3),
+                inset 0 0 0 3px rgba(139, 0, 0, 0.4);
+            transition: all 0.6s ease;
+            transform-style: preserve-3d;
+        }
+
+        .cover-container::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, 
+                var(--accent-color), 
+                transparent, 
+                var(--accent-color), 
+                transparent, 
+                var(--accent-color)
+            );
+            border-radius: 25px;
+            z-index: -1;
+            animation: golden-border 3s linear infinite;
+        }
+
+        @keyframes golden-border {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cover-container:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 
+                0 60px 120px rgba(0, 0, 0, 0.9),
+                0 0 200px rgba(139, 0, 0, 0.5);
+        }
+
+        .cover-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .cover-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.4) 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .cover-container:hover .cover-glow {
+            opacity: 1;
+        }
+
+        .purchase-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(139, 0, 0, 0.05));
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .purchase-title {
+            color: var(--accent-color);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .purchase-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .purchase-link {
+            background: linear-gradient(135deg, #8a9fff, #a8b5ff);
+            color: #000;
+            text-decoration: none;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: none;
+            letter-spacing: 0;
+            font-size: 1em;
+            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+        }
+
+        .purchase-link::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transition: all 0.5s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .purchase-link:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .purchase-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+        }
+
+        .purchase-link.secondary {
+            background: rgba(139, 0, 0, 0.2);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .purchase-link.secondary:hover {
+            background: rgba(139, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(139, 0, 0, 0.3);
+        }
+
+        /* Book Content */
+        .book-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .content-section {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.9));
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            animation: slide-line 4s ease-in-out infinite;
+        }
+
+        @keyframes slide-line {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .section-title {
+            color: var(--accent-color);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.5s ease;
+        }
+
+        .content-section:hover .section-title::after {
+            width: 100%;
+        }
+
+        .book-description {
+            color: #ddd;
+            font-size: 1.15em;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .book-excerpt {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(139, 0, 0, 0.05));
+            border-left: 4px solid var(--accent-color);
+            padding: 30px;
+            margin: 30px 0;
+            font-style: italic;
+            color: #f0f0f0;
+            border-radius: 0 15px 15px 0;
+            position: relative;
+            overflow: hidden;
+            font-size: 1.2em;
+            line-height: 1.7;
+        }
+
+        .book-excerpt::before {
+            content: '"';
+            position: absolute;
+            top: -15px;
+            left: 25px;
+            font-size: 80px;
+            color: rgba(139, 0, 0, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        .book-excerpt::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .book-excerpt:hover::after {
+            left: 100%;
+        }
+
+        /* Characters Section */
+        .characters-showcase {
+            padding: 80px 0;
+            background: rgba(10, 10, 20, 0.6);
+        }
+
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .character-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.1), rgba(139, 0, 0, 0.05));
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .character-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.08) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .character-card:hover::before {
+            opacity: 1;
+            animation: rotate-glow 15s linear infinite;
+        }
+
+        .character-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-color);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.3);
+        }
+
+        .character-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            border: 3px solid var(--accent-color);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .character-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .character-card:hover .character-avatar {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4);
+        }
+            color: var(--accent-color);
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .character-title {
+            color: #ccc;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .character-description {
+            color: #bbb;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .character-link {
+            display: inline-block;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .character-link:hover {
+            border-bottom-color: var(--accent-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+        }
+
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.08), rgba(139, 0, 0, 0.03));
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-text {
+            color: #ddd;
+            font-size: 1.1em;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-align: right;
+        }
+
+        .star-rating {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .star {
+            color: var(--accent-color);
+            font-size: 1.2em;
+        }
+
+        /* World Building Section */
+        .world-section {
+            padding: 80px 0;
+            background: rgba(15, 15, 25, 0.8);
+        }
+
+        .world-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .world-card {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.08), rgba(139, 0, 0, 0.03));
+            border: 1px solid rgba(139, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+        }
+
+        .world-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(139, 0, 0, 0.2);
+        }
+
+        .world-term {
+            color: var(--accent-color);
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .world-definition {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+
+            .book-cover-showcase {
+                position: static;
+                order: -1;
+            }
+
+            .cover-container {
+                max-width: 350px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .book-title {
+                font-size: 2.2em;
+            }
+
+            .showcase-grid {
+                gap: 30px;
+            }
+
+            .cover-container {
+                max-width: 280px;
+            }
+
+            .content-section {
+                padding: 25px;
+            }
+
+            .characters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .breadcrumb-nav {
+                font-size: 0.8em;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-text {
+            font-size: 2em;
+            color: var(--accent-color);
+            letter-spacing: 0.1em;
+            animation: loading-pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes loading-pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-text">Awakening the Silence...</div>
+    </div>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-bg"></div>
+    
+    <!-- Floating Particles -->
+    <div class="floating-particles" id="particlesContainer"></div>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="/">Home</a>
+                <span class="breadcrumb-separator">→</span>
+                <a href="/writing/">Writing</a>
+                <span class="breadcrumb-separator">→</span>
+                <span>The Silence</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="book-hero">
+        <div class="container">
+            <div class="published-badge">Published Novel</div>
+            <h1 class="book-title">Blood of the Wild Gods: The Silence</h1>
+            <div class="book-genre">Dark Fantasy • Epic Fantasy</div>
+            <p class="book-tagline">
+                When silence itself becomes a weapon, the fate of the realm will depend on choices that defy destiny and truths buried in blood.
+            </p>
+        </div>
+    </section>
+
+    <!-- Book Showcase -->
+    <section class="book-showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                <!-- Book Cover -->
+                <div class="book-cover-showcase">
+                    <div class="cover-container">
+                        <div class="cover-glow"></div>
+                        <img src="/assets/images/EbookPic.jpg" alt="Blood of the Wild Gods: The Silence book cover">
+                    </div>
+                    
+                    <div class="purchase-section">
+                        <h3 class="purchase-title">Available Now</h3>
+                        <div class="purchase-links">
+                            <a href="https://a.co/d/1XDMREf" class="purchase-link">
+                                Kindle Ebook
+                            </a>
+                            <a href="https://a.co/d/4jmp1tc" class="purchase-link secondary">
+                                Paperback
+                            </a>
+                            <a href="https://a.co/d/4wzxoA6" class="purchase-link secondary">
+                                Hardcover
+                            </a>
+                            <a href="/chapters/the-silence/chapter-01/" class="purchase-link secondary">
+                                Read Chapter 1
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Content -->
+                <div class="book-content">
+                    <!-- Synopsis -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">The Story</h2>
+                        <p class="book-description">
+                            Long ago, the gods waged war across the heavens, leaving scars that reshaped the world. Their blood seeped into the land, birthing the <strong>Beastborn</strong>—monstrous creatures of divine wrath, sorrow, and forgotten desires. But not all touched by this power became beasts. Some became the <strong>Bloodmarked</strong>—mortals who wield impossible power, forever teetering on the edge of corruption.
+                        </p>
+                        
+                        <p class="book-description">
+                            Now, as humanity clings to the ruins of divine legacies, something far older and more terrifying begins to stir. The <strong>Silent God</strong>, a being erased from history and feared even by the divine, is awakening. Its whispers seep into the minds of five mortals, each chosen for a purpose they do not understand.
+                        </p>
+
+                        <div class="book-excerpt">
+                            When silence itself becomes a weapon, the fate of the realm will depend on choices that defy destiny and truths buried in blood. The gods may be gone, but their echoes remain—and the age of silence has just begun.
+                        </div>
+                    </div>
+
+                    <!-- World Building -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">Enter the World</h2>
+                        <div class="world-grid">
+                            <div class="world-card">
+                                <div class="world-term">The Bloodmarked</div>
+                                <div class="world-definition">
+                                    Mortals touched by divine blood, wielding incredible power at the cost of their humanity. They walk the razor's edge between salvation and corruption.
+                                </div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">Beastborn</div>
+                                <div class="world-definition">
+                                    Monstrous creatures born from the emotional echoes of the gods' war—living manifestations of divine wrath, sorrow, and lost love.
+                                </div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">The Silent God</div>
+                                <div class="world-definition">
+                                    An ancient deity erased from history, whose very existence was feared by other gods. Its awakening threatens to unravel reality itself.
+                                </div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">Divine Silence</div>
+                                <div class="world-definition">
+                                    The eerie quiet that has fallen over the realm since the gods' withdrawal—a silence that whispers, watches, and remembers.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Characters Section -->
+    <section class="characters-showcase">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Meet the Characters</h2>
+            <p style="text-align: center; color: #ccc; font-size: 1.1em; margin-bottom: 40px;">
+                Five mortals chosen by an ancient force they don't understand, each carrying secrets that could save or damn them all.
+            </p>
+            
+            <div class="characters-grid reveal">
+                <div class="character-card">
+                    <div class="character-avatar">
+                        <img src="/assets/images/characters/kaelen-rveyne.jpg" alt="Kaelen R'Veyne avatar">
+                    </div>
+                    <h3 class="character-name">Kaelen R'Veyne</h3>
+                    <div class="character-title">The Silver Hunter</div>
+                    <p class="character-description">
+                        A Bloodmarked hunter whose silver eyes mark him as both blessed and cursed. He tracks the Beastborn through shadows, carrying secrets about his own dark transformation.
+                    </p>
+                    <a href="/world-guide/characters/kaelen-rveyne.html" class="character-link">Learn More →</a>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-avatar">
+                        <img src="/assets/images/characters/elowen-faerwyn.jpg" alt="Elowen Faerwyn avatar">
+                    </div>
+                    <h3 class="character-name">Elowen Faerwyn</h3>
+                    <div class="character-title">The Healer of Verdant Veil</div>
+                    <p class="character-description">
+                        A gentle healer whose connection to ancient magic runs deeper than she knows. Her touch can mend wounds, but her heart carries scars that refuse to heal.
+                    </p>
+                    <a href="/world-guide/characters/elowen-faerwyn.html" class="character-link">Learn More →</a>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-avatar">
+                        <img src="/assets/images/characters/dain-solarius.jpg" alt="Dain Solarius avatar">
+                    </div>
+                    <h3 class="character-name">Dain Solarius</h3>
+                    <div class="character-title">The Fireborn Prince</div>
+                    <p class="character-description">
+                        A prince whose birthright came with flames in his blood and duty in his bones. He struggles between the crown he was born to wear and the freedom he longs to claim.
+                    </p>
+                    <a href="/world-guide/characters/dain-solarius.html" class="character-link">Learn More →</a>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-avatar">
+                        <img src="/assets/images/characters/ryx-shadowclaw.jpg" alt="Ryx Shadowclaw avatar">
+                    </div>
+                    <h3 class="character-name">Ryx Shadowclaw</h3>
+                    <div class="character-title">The Young Beastman</div>
+                    <p class="character-description">
+                        A young Beastborn caught between two worlds—neither fully beast nor human. His loyalty runs deep, but his nature pulls him toward dangerous instincts.
+                    </p>
+                    <a href="/world-guide/characters/ryx-shadowclaw.html" class="character-link">Learn More →</a>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-avatar">
+                        <img src="/assets/images/characters/mordain-ashcroft.jpg" alt="Mordain Ashcroft avatar">
+                    </div>
+                    <h3 class="character-name">Mordain Ashcroft</h3>
+                    <div class="character-title">The Scholar Priest</div>
+                    <p class="character-description">
+                        A priest whose faith in ancient texts rivals his faith in the divine. He seeks truth in forbidden knowledge, even when that truth threatens everything he believes.
+                    </p>
+                    <a href="/world-guide/characters/mordain-ashcroft.html" class="character-link">Learn More →</a>
+                </div>
+
+                <div class="character-card">
+                    <div class="character-avatar">
+                        <img src="/assets/images/characters/the-silent-god.jpg" alt="The Silent God avatar">
+                    </div>
+                    <h3 class="character-name">The Silent God</h3>
+                    <div class="character-title">The Ancient Silence</div>
+                    <p class="character-description">
+                        An entity erased from history and feared even by gods. Its awakening sends ripples through reality, and its whispers reach those it has chosen for unknown purposes.
+                    </p>
+                    <a href="/world-guide/characters/the-silent-god.html" class="character-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">What Readers Are Saying</h2>
+            
+            <div class="testimonial-card reveal">
+                <div class="star-rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+                <div class="testimonial-text">
+                    "Fantastic Story. Great read!!!"
+                </div>
+                <div class="testimonial-author">
+                    — Amazon Verified Purchase Review
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal">
+                <div class="testimonial-text">
+                    "This books pretty good..it's poetic, but tells a story too."
+                </div>
+                <div class="testimonial-author">
+                    — In loving memory of a friend whose words remind me why stories matter
+                </div>
+                <div style="text-align: center; margin-top: 25px;">
+                    <img src="/assets/images/blood-of-the-wild-gods-book.jpg" alt="Friend holding Blood of the Wild Gods book" style="max-width: 300px; border-radius: 10px; border: 2px solid var(--accent-color); box-shadow: 0 10px 20px rgba(139, 0, 0, 0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize particles
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.width = Math.random() * 6 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 18 + 's';
+                particle.style.animationDuration = (Math.random() * 8 + 18) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create particles
+            createParticles();
+            
+            // Hide loading screen
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 1500);
+            
+            // Observe reveal elements
+            document.querySelectorAll('.reveal').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Smooth parallax effect
+            let ticking = false;
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxBg = document.querySelector('.cosmic-bg');
+                if (parallaxBg) {
+                    const speed = 0.3;
+                    const yPos = -(scrolled * speed);
+                    parallaxBg.style.transform = `translateY(${yPos}px)`;
+                }
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick);
+        });
+    </script>
+</body>
+</html>
