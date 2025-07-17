@@ -557,6 +557,8 @@ image: "/assets/images/EbookPic.jpg"
             position: relative;
             overflow: hidden;
             display: inline-block;
+            cursor: pointer;
+            z-index: 1;
         }
 
         .book-link::before {
@@ -596,6 +598,8 @@ image: "/assets/images/EbookPic.jpg"
             margin-top: 40px;
             padding-top: 30px;
             border-top: 1px solid rgba(138, 159, 255, 0.2);
+            position: relative;
+            z-index: 10;
         }
 
         .characters-label {
@@ -613,6 +617,8 @@ image: "/assets/images/EbookPic.jpg"
             gap: 12px;
             justify-content: center;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 10;
         }
 
         .quick-character-link {
@@ -627,6 +633,9 @@ image: "/assets/images/EbookPic.jpg"
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            z-index: 1;
+            display: inline-block;
         }
 
         .quick-character-link::after {
@@ -693,6 +702,7 @@ image: "/assets/images/EbookPic.jpg"
             transition: all 0.4s ease;
             opacity: 1;
             visibility: visible;
+            z-index: 1;
         }
 
         .project-card::before {
@@ -705,6 +715,8 @@ image: "/assets/images/EbookPic.jpg"
             background: radial-gradient(circle, rgba(138, 159, 255, 0.05) 0%, transparent 60%);
             opacity: 0;
             transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: -1;
         }
 
         .project-card:hover::before {
@@ -793,6 +805,8 @@ image: "/assets/images/EbookPic.jpg"
             gap: 15px;
             flex-wrap: wrap;
             margin-top: 30px;
+            position: relative;
+            z-index: 10;
         }
 
         /* Enhanced Lost Histories */
@@ -1580,11 +1594,13 @@ image: "/assets/images/EbookPic.jpg"
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
+            pointer-events: none;
         }
 
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+            pointer-events: auto;
         }
     </style>
 </head>
@@ -2735,7 +2751,12 @@ image: "/assets/images/EbookPic.jpg"
                 
                 // Observe reveal elements
                 document.querySelectorAll('.reveal').forEach(el => {
-                    observer.observe(el);
+                    // Make sure project cards are immediately active
+                    if (el.classList.contains('project-card')) {
+                        el.classList.add('active');
+                    } else {
+                        observer.observe(el);
+                    }
                 });
                 
                 // Also observe story sections
