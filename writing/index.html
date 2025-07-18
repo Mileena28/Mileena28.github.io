@@ -559,13 +559,18 @@ image: "/assets/images/EbookPic.jpg"
         font-weight: 300;
     }
 
-    /* Books Grid */
+    /* Books Container - Now displays cards vertically */
     .books-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
         max-width: 1400px;
         margin: 0 auto;
+    }
+
+    .wip-section .featured-book-card {
+        width: 100%;
+        max-width: none;
     }
 
     .book-card {
@@ -898,9 +903,16 @@ image: "/assets/images/EbookPic.jpg"
         }
 
         .books-grid {
+            gap: 30px;
+        }
+        
+        .wip-section .featured-book-card {
+            padding: 40px;
+        }
+        
+        .wip-section .featured-content {
             grid-template-columns: 1fr;
-            max-width: 600px;
-            margin: 0 auto;
+            gap: 40px;
         }
     }
 
@@ -1046,7 +1058,7 @@ image: "/assets/images/EbookPic.jpg"
             </p>
         </div>
 
-        <div class="books-grid">
+        <div class="books-container books-grid">
             <!-- The Chosen -->
             <div class="featured-book-card reveal">
                 <div class="featured-content">
