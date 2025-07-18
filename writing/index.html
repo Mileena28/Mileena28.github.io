@@ -833,26 +833,26 @@ image: "/assets/images/EbookPic.jpg"
         text-align: center;
     }
 
-    .loading-spinner {
-        width: 80px;
-        height: 80px;
-        border: 3px solid rgba(138, 159, 255, 0.1);
-        border-top-color: var(--primary-purple);
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-        margin: 0 auto 30px;
-    }
-
-    @keyframes spin {
-        to { transform: rotate(360deg); }
-    }
-
     .loading-text {
-        font-size: 1.5em;
+        font-size: 2em;
         color: var(--primary-purple);
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        animation: loading-pulse 2s ease-in-out infinite;
+        text-align: center;
+        padding: 0 20px;
+        width: 100%;
+    }
+
+    @keyframes loading-pulse {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    /* Mobile loading screen fix */
+    @media (max-width: 768px) {
+        .loading-text {
+            font-size: 1.5em;
+        }
     }
 
     /* Reveal Animations */
@@ -945,10 +945,7 @@ image: "/assets/images/EbookPic.jpg"
 
 <!-- Loading Screen -->
 <div class="loading-screen" id="loadingScreen">
-    <div class="loading-content">
-        <div class="loading-spinner"></div>
-        <div class="loading-text">Awakening the Stories</div>
-    </div>
+    <div class="loading-text">Awakening the Stories</div>
 </div>
 
 <!-- Background Layers -->
@@ -1059,7 +1056,10 @@ image: "/assets/images/EbookPic.jpg"
                 
                 <div class="book-info">
                     <h3 class="book-title">Blood of the Wild Gods: The Chosen</h3>
-                    <div class="book-genre">Dark Fantasy • Psychological Horror</div>
+                    <div class="book-genre">
+                        <span>Dark Fantasy</span>
+                        <span>Psychological Horror</span>
+                    </div>
                     
                     <p class="book-description">
                         Five years after The Silence, when a silver-tongued leader arrives promising Light 
@@ -1089,7 +1089,10 @@ image: "/assets/images/EbookPic.jpg"
                 
                 <div class="book-info">
                     <h3 class="book-title">Blood of the Wild Gods: Voices of the Wild</h3>
-                    <div class="book-genre">Academic Fantasy • Epistolary Fiction</div>
+                    <div class="book-genre">
+                        <span>Academic Fantasy</span>
+                        <span>Epistolary Fiction</span>
+                    </div>
                     
                     <p class="book-description">
                         An amateur scholar's research journal documenting nature spirits who whisper warnings 
@@ -1119,7 +1122,10 @@ image: "/assets/images/EbookPic.jpg"
                 
                 <div class="book-info">
                     <h3 class="book-title">Blood of the Wild Gods: The Lost Histories</h3>
-                    <div class="book-genre">Literary Dark Fantasy • Anthology</div>
+                    <div class="book-genre">
+                        <span>Literary Dark Fantasy</span>
+                        <span>Anthology</span>
+                    </div>
                     
                     <p class="book-description">
                         Six forgotten tales of divine tragedy and mortal courage. Stories whispered between 
