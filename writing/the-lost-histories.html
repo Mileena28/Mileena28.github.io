@@ -890,56 +890,56 @@ schema:
         box-shadow: 0 5px 15px rgba(168, 192, 232, 0.3);
     }
 
-  /* Story Quotes Styling */
-.story-quotes {
-    margin: 40px 0;
-}
-
-.excerpt-quote {
-    background: linear-gradient(135deg, rgba(177, 156, 217, 0.08), rgba(168, 192, 232, 0.05));
-    border-left: 3px solid var(--primary-purple);
-    padding: 25px 35px;
-    margin: 20px 0;
-    font-style: italic;
-    color: var(--text-primary);
-    border-radius: 0 15px 15px 0;
-    position: relative;
-    overflow: hidden;
-    font-size: 1.05em;
-    line-height: 1.8;
-    transition: all 0.3s ease;
-}
-
-.excerpt-quote::before {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    left: 25px;
-    font-size: 60px;
-    color: rgba(177, 156, 217, 0.2);
-    font-family: Georgia, serif;
-}
-
-.excerpt-quote::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(177, 156, 217, 0.1), transparent);
-    transition: left 0.8s ease;
-}
-
-.excerpt-quote:hover::after {
-    left: 100%;
-}
-
-.excerpt-quote:hover {
-    transform: translateX(5px);
-    box-shadow: 0 10px 30px rgba(177, 156, 217, 0.15);
-    background: linear-gradient(135deg, rgba(177, 156, 217, 0.12), rgba(168, 192, 232, 0.08));
-}
+      /* Story Quotes Styling */
+    .story-quotes {
+        margin: 40px 0;
+    }
+    
+    .excerpt-quote {
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.08), rgba(168, 192, 232, 0.05));
+        border-left: 3px solid var(--primary-purple);
+        padding: 25px 35px;
+        margin: 20px 0;
+        font-style: italic;
+        color: var(--text-primary);
+        border-radius: 0 15px 15px 0;
+        position: relative;
+        overflow: hidden;
+        font-size: 1.05em;
+        line-height: 1.8;
+        transition: all 0.3s ease;
+    }
+    
+    .excerpt-quote::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 25px;
+        font-size: 60px;
+        color: rgba(177, 156, 217, 0.2);
+        font-family: Georgia, serif;
+    }
+    
+    .excerpt-quote::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(177, 156, 217, 0.1), transparent);
+        transition: left 0.8s ease;
+    }
+    
+    .excerpt-quote:hover::after {
+        left: 100%;
+    }
+    
+    .excerpt-quote:hover {
+        transform: translateX(5px);
+        box-shadow: 0 10px 30px rgba(177, 156, 217, 0.15);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.12), rgba(168, 192, 232, 0.08));
+    }
 
 @media (max-width: 768px) {
     .nav-grid {
