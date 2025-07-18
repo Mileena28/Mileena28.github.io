@@ -151,6 +151,141 @@ image: "/assets/images/mileena-rayne-author.jpg"
         padding: 40px 20px;
     }
 
+    /* Testimonial Section */
+    .testimonial-section {
+        padding: 100px 0;
+        background: linear-gradient(135deg, rgba(10, 10, 20, 0.95), rgba(20, 15, 30, 0.95));
+        position: relative;
+        overflow: hidden;
+    }
+
+    .testimonial-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(circle at 30% 50%, rgba(138, 159, 255, 0.15) 0%, transparent 40%),
+                          radial-gradient(circle at 70% 50%, rgba(168, 181, 255, 0.1) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .featured-testimonial {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .testimonial-box {
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.03));
+        border: 2px solid rgba(138, 159, 255, 0.4);
+        border-radius: 30px;
+        padding: 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
+                    inset 0 0 80px rgba(138, 159, 255, 0.1);
+        backdrop-filter: blur(20px);
+        transform: translateY(0);
+        transition: all 0.4s ease;
+    }
+
+    .testimonial-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6),
+                    inset 0 0 100px rgba(138, 159, 255, 0.15);
+        border-color: rgba(168, 181, 255, 0.6);
+    }
+
+    .testimonial-box::before {
+        content: '"';
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-size: 8em;
+        color: rgba(138, 159, 255, 0.1);
+        font-family: Georgia, serif;
+        line-height: 0.8;
+    }
+
+    .testimonial-box::after {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.2) 0%, transparent 70%);
+        animation: shimmer 8s ease-in-out infinite;
+        pointer-events: none;
+    }
+
+    @keyframes shimmer {
+        0%, 100% { 
+            transform: translate(-30%, -30%) scale(0.8); 
+            opacity: 0.3;
+        }
+        50% { 
+            transform: translate(-20%, -20%) scale(1.2); 
+            opacity: 0.6;
+        }
+    }
+
+    .testimonial-text {
+        font-size: 1.25em;
+        color: #e0e0e0;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+        font-style: italic;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .highlight {
+        color: #8a9fff;
+        font-weight: 600;
+        background: linear-gradient(to right, #8a9fff, #a8b5ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        display: inline-block;
+        position: relative;
+    }
+
+    .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(to right, #8a9fff, #a8b5ff);
+        opacity: 0.5;
+        border-radius: 2px;
+    }
+
+    .testimonial-attribution {
+        color: #999;
+        font-size: 0.95em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        z-index: 1;
+        margin-top: 20px;
+    }
+
+    .testimonial-attribution::before,
+    .testimonial-attribution::after {
+        content: '—';
+        margin: 0 15px;
+        color: rgba(138, 159, 255, 0.5);
+    }
+
     /* Recent Thoughts Section */
     .recent-thoughts {
         padding: 80px 0;
@@ -196,6 +331,20 @@ image: "/assets/images/mileena-rayne-author.jpg"
         
         .work-grid {
             grid-template-columns: 1fr;
+        }
+        
+        .testimonial-box {
+            padding: 40px 30px;
+        }
+        
+        .testimonial-box::before {
+            font-size: 5em;
+            top: 15px;
+            left: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1em;
         }
     }
 </style>
@@ -314,10 +463,12 @@ image: "/assets/images/mileena-rayne-author.jpg"
 <section class="testimonial-section">
     <div class="container">
         <div class="featured-testimonial">
-            <div class="testimonial-text">
-                "Just showing my support in what you are doing. Your website is pretty amazing. So much detail! If I was you I'd change my IG profile name to <span class="highlight">theperfectperfectionist</span>. Your attention to detail is uncanny. Your words are said with such precision. I wish you the best in what you are trying to accomplish Mileena."
+            <div class="testimonial-box">
+                <div class="testimonial-text">
+                    "Just showing my support in what you are doing. Your website is pretty amazing. So much detail! If I was you I'd change my IG profile name to <span class="highlight">theperfectperfectionist</span>. Your attention to detail is uncanny. Your words are said with such precision. I wish you the best in what you are trying to accomplish Mileena."
+                </div>
+                <div class="testimonial-attribution">Message from a website visitor</div>
             </div>
-            <div class="testimonial-attribution">— Message from a website visitor</div>
         </div>
     </div>
 </section>
