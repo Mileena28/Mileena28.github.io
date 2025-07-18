@@ -1,0 +1,1226 @@
+---
+layout: default
+title: "Writing | Dark Fantasy Novels by Mileena Rayne"
+description: "Explore the Blood of the Wild Gods series - dark fantasy novels exploring divine corruption, religious trauma, and the price of power. Published and upcoming works."
+keywords: "dark fantasy novels, Blood of the Wild Gods series, Mileena Rayne author, fantasy books, religious trauma fiction"
+image: "/assets/images/EbookPic.jpg"
+---
+
+<style>
+    /* Writing Index Page - Futuristic Elegant Design */
+    :root {
+        --primary-purple: #8a9fff;
+        --light-purple: #a8b5ff;
+        --accent-purple: #b19cd9;
+        --deep-purple: #4a0080;
+        --soft-white: #f8f9fa;
+        --elegant-grey: #e9ecef;
+        --deep-shadow: #1a1a2e;
+        --glass-white: rgba(255, 255, 255, 0.1);
+        --text-primary: #f0f0f0;
+        --text-secondary: #d0d0d0;
+    }
+
+    /* Futuristic Background */
+    .cosmic-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -3;
+        background: 
+            linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
+    }
+
+    /* Geometric Grid Overlay */
+    .grid-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        opacity: 0.03;
+        background-image: 
+            linear-gradient(rgba(138, 159, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(138, 159, 255, 0.1) 1px, transparent 1px);
+        background-size: 100px 100px;
+        animation: grid-move 20s linear infinite;
+    }
+
+    @keyframes grid-move {
+        0% { transform: translate(0, 0); }
+        100% { transform: translate(100px, 100px); }
+    }
+
+    /* Floating Light Spheres */
+    .light-spheres {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .sphere {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, var(--light-purple), transparent);
+        filter: blur(60px);
+        opacity: 0.2;
+        animation: sphere-float 30s infinite ease-in-out;
+    }
+
+    .sphere:nth-child(1) {
+        width: 500px;
+        height: 500px;
+        top: -250px;
+        left: -250px;
+        animation-duration: 35s;
+    }
+
+    .sphere:nth-child(2) {
+        width: 600px;
+        height: 600px;
+        bottom: -300px;
+        right: -300px;
+        background: radial-gradient(circle at 30% 30%, var(--accent-purple), transparent);
+        animation-duration: 40s;
+        animation-delay: -10s;
+    }
+
+    .sphere:nth-child(3) {
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        left: 50%;
+        background: radial-gradient(circle at 30% 30%, var(--primary-purple), transparent);
+        animation-duration: 45s;
+        animation-delay: -20s;
+    }
+
+    @keyframes sphere-float {
+        0%, 100% {
+            transform: translate(0, 0) scale(1);
+        }
+        25% {
+            transform: translate(100px, -100px) scale(1.1);
+        }
+        50% {
+            transform: translate(-50px, 100px) scale(0.9);
+        }
+        75% {
+            transform: translate(-100px, -50px) scale(1.05);
+        }
+    }
+
+    /* Hero Section */
+    .hero-section {
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 200;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        letter-spacing: -2px;
+        line-height: 1.1;
+        position: relative;
+    }
+
+    .hero-title .highlight {
+        background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 300;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3em;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto 50px;
+        line-height: 1.8;
+        opacity: 0.9;
+        font-weight: 300;
+    }
+
+    /* Series Badge */
+    .series-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 50px;
+        padding: 15px 35px;
+        margin-bottom: 40px;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+    }
+
+    .series-badge:hover {
+        background: rgba(138, 159, 255, 0.15);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.2);
+    }
+
+    .badge-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+        0%, 100% {
+            box-shadow: 0 0 0 0 rgba(138, 159, 255, 0.4);
+        }
+        50% {
+            box-shadow: 0 0 0 10px rgba(138, 159, 255, 0);
+        }
+    }
+
+    .badge-text {
+        color: var(--text-primary);
+        font-size: 1.1em;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    /* Published Book Section */
+    .published-section {
+        padding: 100px 0;
+        position: relative;
+        background: linear-gradient(180deg, transparent 0%, rgba(138, 159, 255, 0.03) 50%, transparent 100%);
+    }
+
+    .published-label {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .label-line {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .label-line::before,
+    .label-line::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, transparent, var(--primary-purple), transparent);
+        max-width: 200px;
+    }
+
+    .label-text {
+        color: var(--primary-purple);
+        font-size: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        padding: 10px 30px;
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 30px;
+    }
+
+    /* Featured Book Card */
+    .featured-book-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .featured-book-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 30px;
+        padding: 80px;
+        position: relative;
+        overflow: hidden;
+        transform: translateZ(0);
+        transition: all 0.5s ease;
+    }
+
+    .featured-book-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, var(--primary-purple), transparent, var(--light-purple), transparent, var(--primary-purple));
+        border-radius: 30px;
+        opacity: 0.5;
+        z-index: -1;
+        animation: shimmer-border 4s linear infinite;
+    }
+
+    @keyframes shimmer-border {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .featured-book-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 
+            0 50px 100px rgba(138, 159, 255, 0.3),
+            0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .featured-content {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .featured-cover {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s ease;
+    }
+
+    .featured-cover::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.3) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+    }
+
+    .featured-cover:hover::after {
+        opacity: 1;
+        animation: rotate-glow 20s linear infinite;
+    }
+
+    @keyframes rotate-glow {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .featured-cover:hover {
+        transform: scale(1.05);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    .featured-cover img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .featured-info {
+        text-align: left;
+    }
+
+    .featured-title {
+        font-size: 3em;
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .featured-genre {
+        color: var(--primary-purple);
+        font-size: 1.1em;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .featured-description {
+        color: var(--text-secondary);
+        font-size: 1.15em;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+
+    .featured-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+        color: white;
+        text-decoration: none;
+        padding: 15px 35px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+    .btn-primary::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .btn-primary:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(138, 159, 255, 0.4);
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary-purple);
+        border: 2px solid var(--primary-purple);
+        text-decoration: none;
+        padding: 13px 35px;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        display: inline-block;
+    }
+
+    .btn-secondary:hover {
+        background: rgba(138, 159, 255, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(138, 159, 255, 0.2);
+    }
+
+    /* Author's Note Display */
+    .authors-note-display {
+        margin-top: 60px;
+        padding-top: 60px;
+        border-top: 1px solid rgba(138, 159, 255, 0.2);
+        text-align: center;
+    }
+
+    .note-header {
+        color: var(--primary-purple);
+        font-size: 1.1em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+        position: relative;
+        display: inline-block;
+    }
+
+    .note-header::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
+    }
+
+    .note-content {
+        max-width: 800px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, rgba(138, 159, 255, 0.05), rgba(138, 159, 255, 0.02));
+        border: 1px solid rgba(138, 159, 255, 0.1);
+        border-radius: 20px;
+        padding: 40px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .note-content::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        right: -100px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .note-content::after {
+        content: '';
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .note-content p {
+        color: var(--text-secondary);
+        font-size: 1.05em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-family: 'Georgia', serif;
+        position: relative;
+        z-index: 1;
+    }
+
+    .note-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .note-content p:first-child {
+        color: var(--primary-purple);
+        font-size: 1.15em;
+        font-weight: 500;
+    }
+
+    .note-content p:nth-child(3) {
+        color: var(--text-primary);
+        font-size: 1.2em;
+        font-weight: 600;
+        margin: 30px 0;
+    }
+
+    /* Work in Progress Section */
+    .wip-section {
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 80px;
+    }
+
+    .section-title {
+        font-size: 3.5em;
+        font-weight: 200;
+        margin-bottom: 20px;
+        color: var(--text-primary);
+        letter-spacing: -1px;
+    }
+
+    .section-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        line-height: 1.7;
+        font-weight: 300;
+    }
+
+    /* Books Grid */
+    .books-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 40px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .book-card {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 25px;
+        overflow: hidden;
+        transition: all 0.4s ease;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .book-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--light-purple));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .book-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .book-card:hover {
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.04);
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.2),
+            0 0 0 1px rgba(138, 159, 255, 0.3);
+    }
+
+    .book-cover-wrapper {
+        position: relative;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .book-cover-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .book-card:hover .book-cover-wrapper img {
+        transform: scale(1.05);
+    }
+
+    .status-tag {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(138, 159, 255, 0.9);
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        backdrop-filter: blur(10px);
+    }
+
+    .book-info {
+        padding: 40px;
+    }
+
+    .book-title {
+        font-size: 1.8em;
+        color: var(--text-primary);
+        margin-bottom: 10px;
+        font-weight: 300;
+        line-height: 1.3;
+    }
+
+    .book-genre {
+        color: var(--primary-purple);
+        font-size: 0.95em;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+
+    .book-description {
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .book-chapters {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+    }
+
+    .chapter-count {
+        background: rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        color: var(--primary-purple);
+        padding: 6px 15px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 500;
+    }
+
+    .book-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-purple);
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+
+    .book-link:hover {
+        transform: translateX(5px);
+    }
+
+    .book-link svg {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .book-link:hover svg {
+        transform: translateX(5px);
+    }
+
+    /* Author Note Section */
+    .author-section {
+        padding: 100px 0;
+        background: linear-gradient(to bottom, rgba(138, 159, 255, 0.03) 0%, transparent 100%);
+        text-align: center;
+    }
+
+    .author-content {
+        max-width: 900px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 30px;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .author-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
+        animation: shimmer-line 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .author-quote {
+        font-size: 1.6em;
+        color: var(--text-primary);
+        font-style: italic;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        position: relative;
+        padding: 0 40px;
+    }
+
+    .author-quote::before,
+    .author-quote::after {
+        position: absolute;
+        font-size: 3em;
+        color: var(--primary-purple);
+        opacity: 0.3;
+        font-family: Georgia, serif;
+    }
+
+    .author-quote::before {
+        content: '"';
+        top: -20px;
+        left: 0;
+    }
+
+    .author-quote::after {
+        content: '"';
+        bottom: -40px;
+        right: 0;
+    }
+
+    .author-philosophy {
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(138, 159, 255, 0.1);
+    }
+
+    .author-philosophy p {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        text-align: left;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .author-philosophy p:last-child {
+        margin-bottom: 0;
+    }
+
+    .author-links {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    /* Loading Screen */
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0a;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 1s ease;
+    }
+
+    .loading-screen.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .loading-content {
+        text-align: center;
+    }
+
+    .loading-spinner {
+        width: 80px;
+        height: 80px;
+        border: 3px solid rgba(138, 159, 255, 0.1);
+        border-top-color: var(--primary-purple);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 30px;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+        font-size: 1.5em;
+        color: var(--primary-purple);
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    /* Reveal Animations */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .featured-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+            text-align: center;
+        }
+
+        .featured-cover {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .featured-info {
+            text-align: center;
+        }
+
+        .featured-buttons {
+            justify-content: center;
+        }
+
+        .authors-note-display {
+            margin-top: 40px;
+            padding-top: 40px;
+        }
+
+        .note-content {
+            padding: 30px 20px;
+        }
+
+        .books-grid {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-title {
+            font-size: 2.5rem;
+        }
+
+        .featured-book-card {
+            padding: 40px 30px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+        }
+
+        .author-content {
+            padding: 40px 30px;
+        }
+
+        .author-quote {
+            font-size: 1.3em;
+            padding: 0 20px;
+        }
+
+        .author-philosophy p {
+            font-size: 1em;
+            padding: 0 10px;
+        }
+    }
+</style>
+
+<!-- Loading Screen -->
+<div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Awakening the Stories</div>
+    </div>
+</div>
+
+<!-- Background Layers -->
+<div class="cosmic-bg"></div>
+<div class="grid-overlay"></div>
+<div class="light-spheres">
+    <div class="sphere"></div>
+    <div class="sphere"></div>
+    <div class="sphere"></div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <div class="series-badge">
+                <div class="badge-icon"></div>
+                <span class="badge-text">Blood of the Wild Gods Series</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Where Gods Fall Silent<br>
+                <span class="highlight">And Mortals Rise</span>
+            </h1>
+            
+            <p class="hero-subtitle">
+                Dark fantasy that explores the shadows between divinity and humanity, 
+                where trauma becomes power and silence speaks louder than prayers.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Published Book Section -->
+<section class="published-section">
+    <div class="container">
+        <div class="published-label">
+            <div class="label-line">
+                <span class="label-text">Published Novel</span>
+            </div>
+        </div>
+
+        <div class="featured-book-container reveal">
+            <div class="featured-book-card">
+                <div class="featured-content">
+                    <div class="featured-cover">
+                        <img src="/assets/images/EbookPic.jpg" alt="Blood of the Wild Gods: The Silence">
+                    </div>
+                    
+                    <div class="featured-info">
+                        <h2 class="featured-title">Blood of the Wild Gods: The Silence</h2>
+                        <div class="featured-genre">Dark Fantasy • Epic Fantasy</div>
+                        
+                        <p class="featured-description">
+                            Long ago, the gods waged war across the heavens, leaving scars that reshaped the world. 
+                            Their blood birthed the Beastborn—monstrous creatures of divine wrath. But not all touched 
+                            by this power became beasts. Some became the Bloodmarked—mortals wielding impossible power, 
+                            forever teetering on the edge of corruption.
+                        </p>
+                        
+                        <p class="featured-description">
+                            Now, as the Silent God awakens, its whispers reach five mortals chosen for a purpose 
+                            they do not understand. When silence itself becomes a weapon, the fate of the realm 
+                            will depend on choices that defy destiny.
+                        </p>
+                        
+                        <div class="featured-buttons">
+                            <a href="/writing/the-silence/" class="btn-primary">Explore The Book</a>
+                            <a href="https://a.co/d/1XDMREf" class="btn-secondary">Buy on Amazon</a>
+                            <a href="/chapters/the-silence/chapter-01/" class="btn-secondary">Read Chapter 1</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Author's Note -->
+                <div class="authors-note-display">
+                    <div class="note-header">Author's Dedication</div>
+                    <div class="note-content">
+                        <p><em>For the dreamer I once was, and the one I will always be.</em></p>
+                        <p><em>To the stories that shaped me, the worlds I escaped to, and the legends that lived in my heart long before I ever put words to my own. As a child, I promised myself that one day, I would write a book—not just for the love of storytelling, but to prove that the magic I believed in was real. That dreams, no matter how distant, are worth chasing.</em></p>
+                        <p><em>And now, here I am.</em></p>
+                        <p><em>This book is proof that the worlds we imagine can become something real, something lasting. To every dreamer who holds a story in their heart—may you never stop believing in the day it becomes yours to tell.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Works in Progress Section -->
+<section class="wip-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Works in Progress</h2>
+            <p class="section-subtitle">
+                Journey deeper into the world of the Wild Gods through stories of divine tragedy, 
+                mortal resilience, and the spaces between light and shadow.
+            </p>
+        </div>
+
+        <div class="books-grid">
+            <!-- The Chosen -->
+            <div class="book-card reveal">
+                <div class="book-cover-wrapper">
+                    <img src="/assets/images/the-chosen.png" alt="Blood of the Wild Gods: The Chosen">
+                    <span class="status-tag">In Progress</span>
+                </div>
+                
+                <div class="book-info">
+                    <h3 class="book-title">Blood of the Wild Gods: The Chosen</h3>
+                    <div class="book-genre">Dark Fantasy • Psychological Horror</div>
+                    
+                    <p class="book-description">
+                        Five years after The Silence, when a silver-tongued leader arrives promising Light 
+                        and order, Mira Roehart must question what she might become in a world where light 
+                        and darkness blur.
+                    </p>
+                    
+                    <div class="book-chapters">
+                        <span class="chapter-count">3 Chapters Available</span>
+                    </div>
+                    
+                    <a href="/writing/the-chosen/" class="book-link">
+                        Explore Story
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Voices of the Wild -->
+            <div class="book-card reveal">
+                <div class="book-cover-wrapper">
+                    <img src="/assets/images/voices-of-the-wild.png" alt="Blood of the Wild Gods: Voices of the Wild">
+                    <span class="status-tag">In Progress</span>
+                </div>
+                
+                <div class="book-info">
+                    <h3 class="book-title">Blood of the Wild Gods: Voices of the Wild</h3>
+                    <div class="book-genre">Academic Fantasy • Epistolary Fiction</div>
+                    
+                    <p class="book-description">
+                        An amateur scholar's research journal documenting nature spirits who whisper warnings 
+                        of The Silence returning. What begins as simple research unravels into something 
+                        far more sinister.
+                    </p>
+                    
+                    <div class="book-chapters">
+                        <span class="chapter-count">5 Chapters Available</span>
+                    </div>
+                    
+                    <a href="/writing/voices-of-the-wild/" class="book-link">
+                        Explore Journal
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- The Lost Histories -->
+            <div class="book-card reveal">
+                <div class="book-cover-wrapper">
+                    <img src="/assets/images/the-lost-histories.png" alt="Blood of the Wild Gods: The Lost Histories">
+                    <span class="status-tag">In Progress</span>
+                </div>
+                
+                <div class="book-info">
+                    <h3 class="book-title">Blood of the Wild Gods: The Lost Histories</h3>
+                    <div class="book-genre">Literary Dark Fantasy • Anthology</div>
+                    
+                    <p class="book-description">
+                        Six forgotten tales of divine tragedy and mortal courage. Stories whispered between 
+                        stone and silence, revealing why the gods fell silent and what price they paid 
+                        for loving mortals.
+                    </p>
+                    
+                    <div class="book-chapters">
+                        <span class="chapter-count">6 Stories • Multiple Chapters</span>
+                    </div>
+                    
+                    <a href="/writing/the-lost-histories/" class="book-link">
+                        Discover Histories
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Author Section -->
+<section class="author-section">
+    <div class="container">
+        <div class="author-content reveal">
+            <p class="author-quote">
+                I write the stories that make me uncomfortable, because comfort is the enemy of truth. 
+                If my words don't disturb someone into awareness, then I'm not doing my job as a storyteller.
+            </p>
+            
+            <div class="author-philosophy">
+                <p>My writing comes from the belief that literature should be more than entertainment - it should be transformation. I'm not interested in stories that let readers stay comfortable in their assumptions. I want to write the narratives that force us to examine our own shadows, to question what we think we know about human nature, and to find beauty in the places we're afraid to look.</p>
+                
+                <p>Every story I write is born from authentic experience or deep emotional truth. I don't create suffering for shock value, but I refuse to sanitize the human experience for palatability. My characters are flawed, complex, and real because real people are messy and contradictory and beautiful in their brokenness.</p>
+            </div>
+            
+            <div class="author-links">
+                <a href="/about/" class="btn-secondary">About the Author</a>
+                <a href="/diary/" class="btn-secondary">Writing Journey</a>
+                <a href="/world-guide/" class="btn-secondary">Explore the World</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Hide loading screen
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            const loadingScreen = document.getElementById('loadingScreen');
+            if (loadingScreen) {
+                loadingScreen.classList.add('hidden');
+            }
+        }, 1500);
+    });
+
+    // Parallax effect for spheres
+    let ticking = false;
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const spheres = document.querySelectorAll('.sphere');
+        
+        spheres.forEach((sphere, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            sphere.style.transform = `translateY(${yPos}px)`;
+        });
+        
+        // Move grid overlay
+        const grid = document.querySelector('.grid-overlay');
+        if (grid) {
+            const gridSpeed = 0.05;
+            const gridPos = scrolled * gridSpeed;
+            grid.style.transform = `translate(${gridPos}px, ${gridPos}px)`;
+        }
+        
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Intersection Observer for reveal animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with reveal class
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => observer.observe(el));
+        
+        // Add stagger effect to book cards
+        const bookCards = document.querySelectorAll('.book-card');
+        bookCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
