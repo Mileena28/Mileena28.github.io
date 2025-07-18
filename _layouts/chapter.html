@@ -376,7 +376,11 @@ layout: default
         <span></span>
         {% endif %}
         
+        {% if page.book_page %}
+        <a href="{{ page.book_page }}" class="nav-link">Back to {{ page.book_title }}</a>
+        {% else %}
         <a href="/writing/" class="nav-link">Back to Writing</a>
+        {% endif %}
         
         {% if page.next_chapter %}
         <a href="{{ page.next_chapter }}" class="nav-link">Next Chapter →</a>
