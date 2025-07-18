@@ -272,20 +272,31 @@ image: "/assets/images/EbookPic.jpg"
     .featured-book-card::before {
         content: '';
         position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: linear-gradient(45deg, var(--primary-purple), transparent, var(--light-purple), transparent, var(--primary-purple));
-        border-radius: 30px;
-        opacity: 0.5;
-        z-index: -1;
-        animation: shimmer-border 4s linear infinite;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), var(--light-purple), transparent);
+        opacity: 0.8;
+        animation: shimmer-border 4s ease-in-out infinite;
+    }
+
+    .featured-book-card::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--light-purple), var(--primary-purple), transparent);
+        opacity: 0.8;
+        animation: shimmer-border 4s ease-in-out infinite;
+        animation-delay: 2s;
     }
 
     @keyframes shimmer-border {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
     }
 
     .featured-book-card:hover {
@@ -329,8 +340,8 @@ image: "/assets/images/EbookPic.jpg"
     }
 
     @keyframes rotate-glow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
+        0%, 100% { opacity: 0.3; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
     }
 
     .featured-cover:hover {
@@ -566,6 +577,8 @@ image: "/assets/images/EbookPic.jpg"
         transition: all 0.4s ease;
         position: relative;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
     }
 
     .book-card::before {
@@ -595,19 +608,21 @@ image: "/assets/images/EbookPic.jpg"
 
     .book-cover-wrapper {
         position: relative;
-        height: 300px;
+        height: 600px;
         overflow: hidden;
+        background: #0a0a0a;
     }
 
     .book-cover-wrapper img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        object-position: center;
         transition: transform 0.5s ease;
     }
 
     .book-card:hover .book-cover-wrapper img {
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 
     .status-tag {
@@ -627,6 +642,9 @@ image: "/assets/images/EbookPic.jpg"
 
     .book-info {
         padding: 40px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
     .book-title {
@@ -651,10 +669,7 @@ image: "/assets/images/EbookPic.jpg"
         font-size: 0.95em;
         line-height: 1.7;
         margin-bottom: 30px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        flex: 1;
     }
 
     .book-chapters {
@@ -682,6 +697,7 @@ image: "/assets/images/EbookPic.jpg"
         text-decoration: none;
         font-weight: 600;
         transition: all 0.3s ease;
+        margin-top: auto;
     }
 
     .book-link:hover {
@@ -905,6 +921,10 @@ image: "/assets/images/EbookPic.jpg"
             padding: 40px 30px;
         }
 
+        .book-cover-wrapper {
+            height: 500px;
+        }
+
         .author-quote {
             font-size: 1.3em;
             padding: 0 20px;
@@ -913,6 +933,12 @@ image: "/assets/images/EbookPic.jpg"
         .author-philosophy p {
             font-size: 1em;
             padding: 0 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .book-cover-wrapper {
+            height: 450px;
         }
     }
 </style>
