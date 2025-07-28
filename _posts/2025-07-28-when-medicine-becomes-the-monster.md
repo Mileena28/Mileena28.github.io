@@ -288,7 +288,7 @@ Let's make sure the next generation of patients remembers us as healers, not as 
 
 <p>If you're a medical trauma survivor with a story that needs witnessing, I'm here to listen. Sometimes the greatest healing comes from being believed, from having someone say: "What happened to you was wrong, and you deserved better." <a href="/contact/">Reach out anytime</a>.</p>
 
-<p>For those dealing with medical trauma, resources like <a href="https://www.medicaltaumaproject.org/" target="_blank">The Medical Trauma Project</a> and trauma-informed healthcare providers can offer specialized support and understanding.</p>
+<p>For those dealing with medical trauma, trauma-informed healthcare providers can offer specialized support and understanding.</p>
 
 <p>And to my fellow healthcare workers: we have the power to be part of the solution. Every patient interaction is an opportunity to build trust or destroy it, to create safety or fear, to heal trauma or create it. Let's choose healing, always.</p>
 </div>
