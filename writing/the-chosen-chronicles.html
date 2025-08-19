@@ -190,6 +190,419 @@ schema:
             }
         }
 
+        /* Content Warning Banner */
+        .content-warning-banner {
+            margin-top: 40px;
+            background: rgba(255, 193, 93, 0.1);
+            border: 2px solid rgba(255, 193, 93, 0.3);
+            border-radius: 15px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            backdrop-filter: blur(10px);
+            animation: subtle-pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes subtle-pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 193, 93, 0.2); }
+            50% { box-shadow: 0 0 30px rgba(255, 193, 93, 0.3); }
+        }
+
+        .warning-icon {
+            font-size: 2em;
+            color: #ffc15d;
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            color: var(--text-primary);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .warning-text strong {
+            color: #ffc15d;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .warning-link {
+            color: var(--ocean-primary);
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        .warning-link:hover {
+            color: var(--heaven-accent);
+        }
+
+        /* Dedication Section */
+        .dedication-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(10, 20, 40, 0.95), rgba(20, 30, 50, 0.95));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dedication-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(138, 196, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .dedication-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .dedication-title {
+            color: var(--ocean-primary);
+            font-size: 1.2em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+        }
+
+        .dedication-content {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(138, 196, 255, 0.2);
+            border-radius: 25px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dedication-content::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--ocean-primary), transparent, var(--heaven-accent), transparent);
+            border-radius: 25px;
+            opacity: 0.3;
+            animation: rotate-border 8s linear infinite;
+        }
+
+        @keyframes rotate-border {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .dedication-text {
+            color: var(--text-primary);
+            font-size: 1.15em;
+            line-height: 1.8;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .dedication-text strong {
+            color: var(--ocean-primary);
+            font-weight: 500;
+        }
+
+        .dedication-signature {
+            margin-top: 30px;
+            color: var(--heaven-accent);
+            font-style: normal;
+            font-size: 0.95em;
+        }
+
+        /* Prose Samples Section */
+        .prose-samples-section {
+            padding: 100px 0;
+            background: rgba(15, 25, 45, 0.4);
+        }
+
+        .prose-sample-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(138, 196, 255, 0.15);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .prose-sample-card:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 30px rgba(138, 196, 255, 0.2);
+        }
+
+        .prose-quote {
+            color: var(--text-primary);
+            font-size: 1.2em;
+            line-height: 1.8;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .prose-source {
+            color: var(--ocean-primary);
+            font-size: 0.9em;
+            text-align: right;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* World Building Showcase */
+        .world-showcase-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, rgba(10, 20, 40, 0.6), rgba(5, 10, 20, 0.8));
+        }
+
+        .world-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            max-width: 1400px;
+            margin: 60px auto 0;
+        }
+
+        .world-element-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(138, 196, 255, 0.2);
+            border-radius: 20px;
+            padding: 35px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .world-element-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ocean-primary), var(--heaven-accent));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .world-element-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .world-element-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(138, 196, 255, 0.2);
+        }
+
+        .world-element-title {
+            color: var(--ocean-primary);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 400;
+        }
+
+        .world-element-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95em;
+        }
+
+        /* Trauma-Informed Section */
+        .trauma-informed-section {
+            padding: 100px 0;
+            background: rgba(20, 30, 50, 0.4);
+        }
+
+        .trauma-card {
+            background: linear-gradient(135deg, rgba(138, 196, 255, 0.08), rgba(192, 224, 255, 0.04));
+            border: 1px solid rgba(138, 196, 255, 0.2);
+            border-radius: 25px;
+            padding: 45px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trauma-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .trauma-content h3 {
+            color: var(--ocean-primary);
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .trauma-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .author-credentials {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .credentials-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-secondary);
+        }
+
+        .credential-icon {
+            color: var(--ocean-primary);
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        /* Community Section */
+        .community-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(138, 196, 255, 0.05), rgba(192, 224, 255, 0.02));
+            position: relative;
+        }
+
+        .community-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(30px);
+            border: 2px solid rgba(138, 196, 255, 0.3);
+            border-radius: 30px;
+            padding: 50px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .community-title {
+            color: var(--ocean-primary);
+            font-size: 2em;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .community-description {
+            color: var(--text-secondary);
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+
+        .community-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--ocean-primary), var(--heaven-accent));
+            color: #0a1628;
+            padding: 18px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 35px rgba(138, 196, 255, 0.3);
+        }
+
+        .community-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 45px rgba(138, 196, 255, 0.4);
+        }
+
+        /* Content Warnings Detail */
+        .content-warnings-section {
+            padding: 80px 0;
+            background: rgba(10, 15, 25, 0.8);
+        }
+
+        .warnings-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 193, 93, 0.05);
+            border: 1px solid rgba(255, 193, 93, 0.2);
+            border-radius: 20px;
+            padding: 45px;
+        }
+
+        .warnings-title {
+            color: #ffc15d;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .warnings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .warning-category {
+            background: rgba(20, 20, 30, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .warning-category h4 {
+            color: #ffc15d;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        .warning-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .warning-list li {
+            color: var(--text-secondary);
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 193, 93, 0.1);
+        }
+
+        .warning-list li:last-child {
+            border-bottom: none;
+        }
+
+        .support-resources {
+            background: rgba(138, 196, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .support-resources h4 {
+            color: var(--ocean-primary);
+            margin-bottom: 15px;
+        }
+
+        .support-resources p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
         /* Container */
         .container {
             max-width: 1400px;
@@ -1282,6 +1695,50 @@ schema:
                 From entrapment to empowerment, from silence to strength—a generational tale 
                 of survival, healing, and choosing when to stop running and start fighting.
             </p>
+            
+            <div class="content-warning-banner">
+                <div class="warning-icon">⚠</div>
+                <div class="warning-text">
+                    <strong>Content Warning:</strong> This series contains explicit depictions of marital rape, 
+                    religious trauma, psychological abuse, and suicidal ideation. Created by and for trauma 
+                    survivors with authentic, research-based portrayals. 
+                    <a href="#content-warnings" class="warning-link">View detailed warnings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dedication Section -->
+<section class="dedication-section">
+    <div class="container">
+        <div class="dedication-container">
+            <div class="dedication-title">Dedication</div>
+            <div class="dedication-content">
+                <div class="dedication-text">
+                    <p><strong>To the girl I once was—</strong></p>
+                    
+                    <p>Who watched her world shrink with each new rule, each forbidden question, each friend who disappeared behind walls of doctrine. Who carried secrets too heavy for young shoulders and learned silence before she learned to sing.</p>
+                    
+                    <p>You deserved meadows to run through, not careful steps on narrow paths. You deserved laughter that bubbled up freely, not words weighed and measured before they could escape. You deserved a childhood painted in every color, not just the approved shades of obedience.</p>
+                    
+                    <p>This book is for you—for every question you swallowed, every doubt you hid, every time you felt the walls closing in and wondered if you were the only one who couldn't breathe. Your questions were not sins. They were the cracks where the light got in.</p>
+                    
+                    <p>This is for all of us who grew up in worlds that grew smaller, who lost ourselves before we knew who we were, who were taught that our voices were dangerous and our thoughts were weapons to be feared.</p>
+                    
+                    <p>To everyone who was told to be quiet about the things that happened in the dark, about the truths that make others uncomfortable, about the pain prettied up as providence—</p>
+                    
+                    <p>This book is our rebellion. Our refusal. Our roar.</p>
+                    
+                    <p>May we be loud about the things they taught us to whisper.<br>
+                    May we question until the walls come down.<br>
+                    May we reclaim every stolen piece of ourselves.</p>
+                    
+                    <p>And may our younger selves know, finally, that they were never alone.</p>
+                    
+                    <div class="dedication-signature">— For the child I was, and for all those still finding their way out of the silence</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1327,7 +1784,7 @@ schema:
                 <div class="content-block reveal">
                     <h2 class="content-title">The Complete Saga</h2>
                     <p class="content-text">
-                        The Chosen Chronicles follows Mira Roehart across eighteen transformative years—from 
+                        The Chosen Chronicles follows Mira Roehart across <strong>eighteen transformative years</strong>—from 
                         a young woman trapped in religious extremism to a powerful mother ready to reclaim 
                         her world. This is not a story of quick vengeance or easy victory, but a generational 
                         tale that explores how trauma reverberates through time, how healing requires sanctuary, 
@@ -1344,30 +1801,34 @@ schema:
                 </div>
 
                 <div class="content-block reveal reveal-delay-1">
-                    <h2 class="content-title">A Journey Through Darkness</h2>
+                    <h2 class="content-title">Not Your Typical Revenge Fantasy</h2>
                     <p class="content-text">
-                        Set in a world where divine silence has left humanity vulnerable to those who would 
-                        claim to speak for absent gods, The Chosen Chronicles explores the weaponization of 
-                        faith, the price of belonging, and the courage required to stand apart. Mira's discovery 
-                        of her Nimwe heritage—beings of void who seek balance between light and darkness—challenges 
-                        the binary thinking that Zenith's Light uses to maintain control.
+                        What sets The Chosen Chronicles apart is its commitment to realistic healing. Book Three, 
+                        <em>The Village</em>, isn't about fighting—it's about <strong>thriving</strong>. It's about building 
+                        community, learning heritage, raising a child in safety, and discovering that healing 
+                        isn't linear but spiral, returning to old wounds with new strength.
                     </p>
                     <p class="content-text">
-                        Through systematic isolation, gaslighting, and abuse, we witness how extremist movements 
-                        operate—and more importantly, how survivors rebuild their lives, reclaim their power, 
-                        and protect the next generation from repeating the cycle.
+                        This eighteen-year journey shows that recovery from trauma isn't a montage sequence. 
+                        It's years of small victories, setbacks, breakthroughs, and the slow, patient work of 
+                        rebuilding a self that was systematically destroyed. Only after genuine healing—after 
+                        learning to trust again, to love again, to believe in tomorrow—does Mira choose to 
+                        return and confront her abuser. Not from a place of rage, but from a place of power.
                     </p>
                 </div>
 
                 <div class="content-block reveal reveal-delay-2">
-                    <h2 class="content-title">More Than Survival</h2>
+                    <h2 class="content-title">Created By and For Trauma Survivors</h2>
                     <p class="content-text">
-                        While the series begins in darkness, it ultimately becomes a story of hope. Not the 
-                        easy hope of divine intervention or magical solutions, but the hard-won hope that 
-                        comes from choosing to heal, choosing to trust again, and choosing to believe that 
-                        tomorrow can be different than today. Mira's son Kai, born from trauma but transformed 
-                        into purpose, represents the possibility that even the darkest origins can give rise 
-                        to powerful light.
+                        Every aspect of this series has been crafted with trauma survivors in mind. From the 
+                        authentic portrayal of dissociation and complex PTSD to the realistic depiction of 
+                        religious indoctrination and recovery, this isn't fantasy that uses trauma for shock 
+                        value—it's literature that validates, witnesses, and honors the survivor experience.
+                    </p>
+                    <p class="content-text">
+                        Written by a former Jehovah's Witness, Registered Nurse, and trauma advocate who has 
+                        volunteered at crisis centers and dedicates her platform to sharing survivor stories, 
+                        these books offer both escape and recognition, both fantasy and hard-won truth.
                     </p>
                 </div>
             </div>
@@ -1506,6 +1967,215 @@ schema:
                 she be something—someone—she fundamentally, irrevocably, was not."
             </div>
             <div class="quote-source">— The Chosen, Chapter 12</div>
+            <p style="color: var(--text-secondary); margin-top: 30px; font-style: italic; font-size: 1em;">
+                This is the heart of Mira's journey—the suffocating pressure to conform to a faith that 
+                denies her very nature, the isolation of being different in a world that punishes difference, 
+                and the courage it takes to choose authenticity over belonging.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Prose Samples Section -->
+<section class="prose-samples-section">
+    <div class="container">
+        <h2 class="books-title" style="text-align: center; margin-bottom: 60px;">The Writing That Cuts Deep</h2>
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div class="prose-sample-card">
+                <div class="prose-quote">
+                    "My folks, they grabbed onto it like a drowning man grabs a rope. Didn't matter if 
+                    the rope was made of lies, long as it kept them from sinking."
+                </div>
+                <div class="prose-source">— The Forsaken, Chapter 29</div>
+            </div>
+            
+            <div class="prose-sample-card">
+                <div class="prose-quote">
+                    "The world has balance. Light and shadow, joy and sorrow, creation and destruction, 
+                    good and evil... they have to coexist. They're two sides of the same coin, aren't they?"
+                </div>
+                <div class="prose-source">— The Chosen, Chapter 3</div>
+            </div>
+            
+            <div class="prose-sample-card">
+                <div class="prose-quote">
+                    "Thank you for the privilege of losing everything."
+                </div>
+                <div class="prose-source">— The Forsaken, Chapter 24</div>
+            </div>
+            
+            <div class="prose-sample-card">
+                <div class="prose-quote">
+                    "She wanted to belong. No matter how much she pretended it didn't matter, that desire 
+                    had always lived inside her. The yearning to be liked, to be wanted, to be enough."
+                </div>
+                <div class="prose-source">— The Chosen, Chapter 3</div>
+            </div>
+            
+            <div class="prose-sample-card">
+                <div class="prose-quote">
+                    "And the lie—the slow, insidious lie she was about to step into—felt heavier, more 
+                    suffocating, more terrifying than the deepest, darkest depths of the hidden pool 
+                    beneath the whispering falls."
+                </div>
+                <div class="prose-source">— The Chosen, Chapter 3</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- World Building Showcase -->
+<section class="world-showcase-section">
+    <div class="container">
+        <h2 class="books-title" style="text-align: center; color: var(--text-primary);">A Universe Unlike Any Other</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: 0 auto 60px;">
+            The world of the Wild Gods isn't built on typical fantasy tropes. It's a cosmos where balance 
+            itself is a character, where void and light wage philosophical war through those who wield them.
+        </p>
+        
+        <div class="world-grid">
+            <div class="world-element-card">
+                <h3 class="world-element-title">The Nimwe</h3>
+                <p class="world-element-description">
+                    Beings of void who exist between worlds, emerging when reality tips too far toward 
+                    extremes. With violet eyes and forms that shift between corporeal and shadow, they 
+                    represent not darkness but the creative void from which all things emerge. Mira's 
+                    heritage ties her to these ancient balance-keepers.
+                </p>
+            </div>
+            
+            <div class="world-element-card">
+                <h3 class="world-element-title">The Vaelari</h3>
+                <p class="world-element-description">
+                    Rare beings of mixed Elven and Angelic heritage, wielding celestial power drawn from 
+                    pure Light. Beautiful beyond mortal comprehension, they can channel divine energy to 
+                    heal or destroy. Lucien's Vaelari nature makes his evil all the more insidious—corruption 
+                    wearing the face of divinity.
+                </p>
+            </div>
+            
+            <div class="world-element-card">
+                <h3 class="world-element-title">Beastborn</h3>
+                <p class="world-element-description">
+                    Animals corrupted by divine blood spilled upon the earth, transformed into nightmare 
+                    amalgamations of their original forms. Multiple eyes, elongated bodies, venomous claws—
+                    these creatures are what happens when celestial essence meets mortal flesh without consent.
+                </p>
+            </div>
+            
+            <div class="world-element-card">
+                <h3 class="world-element-title">The Silence</h3>
+                <p class="world-element-description">
+                    A catastrophic event five years before our story begins, when cosmic void corruption 
+                    swept the realm. Cities fell, kingdoms crumbled, and the gods went quiet. Now the 
+                    pendulum swings the other way, as too much Light threatens to blind the world entirely.
+                </p>
+            </div>
+            
+            <div class="world-element-card">
+                <h3 class="world-element-title">Zenithian Baptism</h3>
+                <p class="world-element-description">
+                    Not mere ritual but supernatural mind control. The white light Lucien channels doesn't 
+                    save—it rewrites consciousness, creating a "comfortable fog" that suppresses emotion 
+                    and independent thought. Only Mira's Nimwe blood makes her immune to this divine violation.
+                </p>
+            </div>
+            
+            <div class="world-element-card">
+                <h3 class="world-element-title">The Wild Gods</h3>
+                <p class="world-element-description">
+                    Ancient deities of nature and balance, now condemned as demons by Zenith's Light. 
+                    They represent the chaotic beauty of existence—neither purely good nor evil, but 
+                    authentic in their complexity. Their silence isn't absence but restraint, knowing 
+                    their touch can shatter mortal minds.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Trauma-Informed Approach Section -->
+<section class="trauma-informed-section">
+    <div class="container">
+        <div class="trauma-card">
+            <div class="trauma-content">
+                <h3>Written With Clinical Understanding</h3>
+                <p>
+                    This series doesn't use trauma as plot device or shock value. Every portrayal of abuse, 
+                    every trauma response, every step of recovery has been written with research-based 
+                    understanding of how trauma actually works. From the realistic depiction of dissociation 
+                    during assault to the confusing physical responses that create shame, from trauma bonding 
+                    to the long, non-linear path of healing—this is trauma fiction that validates rather 
+                    than sensationalizes.
+                </p>
+                <p>
+                    Mira's journey includes authentic portrayals of:
+                </p>
+                <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 30px;">
+                    <li>Complex PTSD and its manifestations</li>
+                    <li>Dissociation as survival mechanism</li>
+                    <li>The confusion of unwanted physical arousal during assault</li>
+                    <li>Religious trauma and spiritual abuse recovery</li>
+                    <li>The isolation tactics of high-control groups</li>
+                    <li>Trauma bonding and why leaving is so difficult</li>
+                    <li>The spiral nature of healing—returning to wounds with new strength</li>
+                    <li>How pregnancy from rape can become a source of unexpected purpose</li>
+                </ul>
+                
+                <div class="author-credentials">
+                    <h4 style="color: var(--ocean-primary); margin-bottom: 20px;">Author Credentials</h4>
+                    <div class="credentials-list">
+                        <div class="credential-item">
+                            <span class="credential-icon">▸</span>
+                            <span>Registered Nurse with trauma-informed care training</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-icon">▸</span>
+                            <span>Crisis center volunteer and advocate</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-icon">▸</span>
+                            <span>Platform dedicated to sharing survivor stories</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-icon">▸</span>
+                            <span>Former Jehovah's Witness with lived experience</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-icon">▸</span>
+                            <span>Extensive research into trauma psychology</span>
+                        </div>
+                        <div class="credential-item">
+                            <span class="credential-icon">▸</span>
+                            <span>Future SANE nurse and policy advocate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Community Section -->
+<section class="community-section">
+    <div class="container">
+        <div class="community-card">
+            <h2 class="community-title">Join Our Community of Survivors</h2>
+            <p class="community-description">
+                The Chosen Chronicles isn't just a book series—it's a gathering place for those who 
+                understand that some stories need to be told, some truths need to be witnessed, and 
+                some journeys are too difficult to walk alone.
+            </p>
+            <p class="community-description">
+                Connect with other readers who see themselves in Mira's journey. Share your own story 
+                of survival and healing. Find resources, support, and the reminder that your experience 
+                matters, your voice matters, and you are not alone in this.
+            </p>
+            <p class="community-description" style="font-style: italic; color: var(--ocean-primary);">
+                "This series was created by and for the trauma survivor community. Every page honors 
+                your strength, witnesses your pain, and celebrates your survival."
+            </p>
+            <a href="/community/" class="community-button">Visit Community Stories</a>
         </div>
     </div>
 </section>
@@ -1732,6 +2402,94 @@ schema:
                 </p>
             </div>
             <div class="author-signature">— Mileena Rayne</div>
+        </div>
+    </div>
+</section>
+
+<!-- Content Warnings Section -->
+<section class="content-warnings-section" id="content-warnings">
+    <div class="container">
+        <div class="warnings-container">
+            <h2 class="warnings-title">Detailed Content Warnings</h2>
+            
+            <div class="warnings-grid">
+                <div class="warning-category">
+                    <h4>Sexual Violence</h4>
+                    <ul class="warning-list">
+                        <li>Marital rape (Chapters 16, 18)</li>
+                        <li>Sexual coercion and manipulation</li>
+                        <li>Unwanted physical arousal during assault</li>
+                        <li>Forced intimacy and "wifely duties"</li>
+                        <li>Pregnancy resulting from rape</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-category">
+                    <h4>Religious/Spiritual Abuse</h4>
+                    <ul class="warning-list">
+                        <li>Cult indoctrination and control</li>
+                        <li>Spiritual manipulation</li>
+                        <li>Religious extremism</li>
+                        <li>Forced conversion</li>
+                        <li>Shunning and social death</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-category">
+                    <h4>Psychological Abuse</h4>
+                    <ul class="warning-list">
+                        <li>Gaslighting and reality distortion</li>
+                        <li>Systematic isolation</li>
+                        <li>Emotional manipulation</li>
+                        <li>Trauma bonding</li>
+                        <li>Identity destruction</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-category">
+                    <h4>Mental Health</h4>
+                    <ul class="warning-list">
+                        <li>Suicidal ideation (Chapter 19)</li>
+                        <li>Suicide attempt</li>
+                        <li>Dissociation and depersonalization</li>
+                        <li>Complex PTSD</li>
+                        <li>Severe depression</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-category">
+                    <h4>Violence</h4>
+                    <ul class="warning-list">
+                        <li>Public execution</li>
+                        <li>Mob violence</li>
+                        <li>Torture and interrogation</li>
+                        <li>Body horror (Beastborn)</li>
+                        <li>Child death (backstory)</li>
+                    </ul>
+                </div>
+                
+                <div class="warning-category">
+                    <h4>Family Trauma</h4>
+                    <ul class="warning-list">
+                        <li>Parental abandonment</li>
+                        <li>Betrayal by loved ones</li>
+                        <li>Forced marriage</li>
+                        <li>Loss of support systems</li>
+                        <li>Chosen family dynamics</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="support-resources">
+                <h4>Support Resources</h4>
+                <p>
+                    If you or someone you know needs support:<br>
+                    <strong>National Sexual Assault Hotline:</strong> 1-800-656-4673<br>
+                    <strong>Crisis Text Line:</strong> Text HOME to 741741<br>
+                    <strong>RAINN.org</strong> for online support<br>
+                    <strong>Religious Trauma Resources:</strong> RecoveringFromReligion.org
+                </p>
+            </div>
         </div>
     </div>
 </section>
