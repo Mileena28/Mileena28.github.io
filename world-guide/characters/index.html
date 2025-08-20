@@ -6,6 +6,11 @@ image: "/assets/images/world-guide-characters.jpg"
 ---
 
 <style>
+    /* Global box-sizing for consistent spacing */
+    * {
+        box-sizing: border-box;
+    }
+
     /* Atmospheric Background */
     body {
         background: #0a0a0a;
@@ -172,27 +177,35 @@ image: "/assets/images/world-guide-characters.jpg"
         border-color: rgba(138, 159, 255, 0.5);
     }
 
-    /* Characters Section */
+    /* Container constraint for better layout control */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Characters Section - Fixed spacing */
     .characters-section {
-        padding: 0px 0 0px;
+        padding: 60px 0 100px;
         position: relative;
         z-index: 2;
     }
 
-    /* Book Sections with Enhanced Styling */
+    /* Book Sections with Fixed Spacing */
     .book-section {
-        margin-bottom: 0px;
+        margin-bottom: 100px; /* Increased from 0px to prevent overlap */
         background: 
             linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(30, 30, 30, 0.8) 100%);
         border-radius: 30px;
-        padding: 60px;
+        padding: 60px 40px; /* Reduced horizontal padding to give cards more room */
         border: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
-        overflow: hidden;
+        overflow: visible; /* Changed from hidden to visible to prevent card cutoff */
         backdrop-filter: blur(10px);
         box-shadow: 
             0 20px 40px rgba(0, 0, 0, 0.5),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        transform: none; /* Remove any transform that might cause overlap */
     }
 
     .book-section::before {
@@ -205,6 +218,7 @@ image: "/assets/images/world-guide-characters.jpg"
         background: radial-gradient(circle, rgba(138, 159, 255, 0.05) 0%, transparent 70%);
         animation: rotate-slow 30s linear infinite;
         pointer-events: none;
+        z-index: -1; /* Ensure it stays behind content */
     }
 
     @keyframes rotate-slow {
@@ -238,12 +252,29 @@ image: "/assets/images/world-guide-characters.jpg"
         letter-spacing: 0.5px;
     }
 
+    /* Special grid for sections with only 2 characters (like Voices of the Wild) */
+    .characters-grid:has(.character-card:nth-child(2):last-child) {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 350px)); /* Limit max width for 2 cards */
+        justify-content: center;
+    }
+
+    /* Special grid for sections with only 1 character */
+    .characters-grid:has(.character-card:only-child) {
+        grid-template-columns: minmax(300px, 350px);
+        justify-content: center;
+    }
+
     /* Enhanced Substory Sections */
     .substory-section {
         margin-top: 60px;
         padding-top: 40px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
+    }
+
+    /* Special grid for substories with fewer characters */
+    .substory-section .characters-grid {
+        max-width: 1000px; /* Slightly smaller max-width for substories */
     }
 
     .substory-section::before {
@@ -279,29 +310,53 @@ image: "/assets/images/world-guide-characters.jpg"
         font-weight: 300;
     }
 
-    /* Enhanced Characters Grid */
+    /* Fixed Characters Grid - Centered layout */
     .characters-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-        gap: 40px;
-        margin-top: 50px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Changed from auto-fill to auto-fit for centering */
+        gap: 60px 50px; /* Different gap for rows and columns */
+        margin: 40px auto;
+        justify-content: center; /* Center the grid content */
         justify-items: center;
+        align-content: center; /* Center grid rows */
+        padding: 0 40px; /* Increased padding for better edge spacing */
+        width: 100%;
+        box-sizing: border-box;
+        max-width: 1200px; /* Limit maximum width for better control */
     }
 
-    /* Dramatically Enhanced Character Cards */
+    /* Alternative flex layout for small numbers of cards (better browser support) */
+    .characters-grid:has(:nth-child(1):nth-last-child(1)),
+    .characters-grid:has(:nth-child(1):nth-last-child(2)) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+    }
+
+    /* Fallback for browsers without :has() support - apply to specific small grids */
+    .book-section:last-of-type .characters-grid:first-of-type {
+        /* Voices of the Wild section with 2 cards */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+    }
+
+    /* Character Cards */
     .character-card {
         background: 
             linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 20px;
-        padding: 40px 30px;
+        padding: 35px 25px;
         text-align: center;
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         text-decoration: none;
         color: inherit;
         backdrop-filter: blur(20px);
         width: 100%;
-        max-width: 340px;
+        max-width: 100%; /* Let grid control sizing */
         min-height: 420px;
         display: flex;
         flex-direction: column;
@@ -311,6 +366,7 @@ image: "/assets/images/world-guide-characters.jpg"
         box-shadow: 
             0 10px 30px rgba(0, 0, 0, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        box-sizing: border-box;
     }
 
     .character-card::before {
@@ -348,12 +404,13 @@ image: "/assets/images/world-guide-characters.jpg"
     }
 
     .character-card:hover {
-        transform: translateY(-15px) scale(1.02);
+        transform: translateY(-8px); /* Removed scale to prevent any size change */
         box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 40px rgba(138, 159, 255, 0.1),
+            0 25px 50px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(138, 159, 255, 0.15),
             inset 0 1px 0 rgba(255, 255, 255, 0.1);
         border-color: rgba(138, 159, 255, 0.3);
+        z-index: 10; /* Add z-index to ensure hovered card appears above others */
     }
 
     /* Enhanced Character Avatars */
@@ -378,12 +435,12 @@ image: "/assets/images/world-guide-characters.jpg"
     }
 
     .character-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 50%;
-}
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 50%;
+    }
     
     .character-avatar::before {
         content: '';
@@ -580,49 +637,63 @@ image: "/assets/images/world-guide-characters.jpg"
             transform: translateY(0);
         }
     }
-/* Navigation Footer */
-.navigation-footer {
-    padding: 80px 0;
-    background: rgba(5, 5, 20, 0.95);
-    text-align: center;
-    border-top: 2px solid rgba(138, 159, 255, 0.3);
-    margin-top: -60px;
-}
 
-.nav-title {
-    font-size: 2.5em;
-    color: #ffffff;
-    margin-bottom: 30px;
-    font-weight: 300;
-    letter-spacing: 2px;
-}
+    /* Navigation Footer */
+    .navigation-footer {
+        padding: 80px 0;
+        background: rgba(5, 5, 20, 0.95);
+        text-align: center;
+        border-top: 2px solid rgba(138, 159, 255, 0.3);
+        margin-top: 60px;
+    }
 
-.nav-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-}
+    .nav-title {
+        font-size: 2.5em;
+        color: #ffffff;
+        margin-bottom: 30px;
+        font-weight: 300;
+        letter-spacing: 2px;
+    }
 
-.nav-link {
-    background: rgba(25, 25, 60, 0.3);
-    border: 1px solid rgba(138, 159, 255, 0.3);
-    border-radius: 15px;
-    padding: 20px;
-    text-decoration: none;
-    color: #c8dcff;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
+    .nav-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
 
-.nav-link:hover {
-    border-color: #c8dcff;
-    background: rgba(138, 159, 255, 0.2);
-    transform: translateY(-3px);
-    color: #ffffff;
-}
+    .nav-link {
+        background: rgba(25, 25, 60, 0.3);
+        border: 1px solid rgba(138, 159, 255, 0.3);
+        border-radius: 15px;
+        padding: 20px;
+        text-decoration: none;
+        color: #c8dcff;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .nav-link:hover {
+        border-color: #c8dcff;
+        background: rgba(138, 159, 255, 0.2);
+        transform: translateY(-3px);
+        color: #ffffff;
+    }
     
+    /* Medium screen adjustments */
+    @media (max-width: 1200px) {
+        .characters-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); /* Limited max for centering */
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .book-section {
+            padding: 50px 30px;
+        }
+    }
+
     /* Mobile Responsive Enhancements */
     @media (max-width: 768px) {
         .page-title {
@@ -632,7 +703,7 @@ image: "/assets/images/world-guide-characters.jpg"
         
         .book-section {
             padding: 40px 20px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .book-title {
@@ -641,11 +712,13 @@ image: "/assets/images/world-guide-characters.jpg"
         
         .characters-grid {
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 30px; /* Reduced gap for mobile since cards stack vertically */
+            padding: 0 20px;
         }
 
         .character-card {
-            max-width: 100%;
+            max-width: 320px; /* Set reasonable max-width for mobile */
+            margin: 0 auto; /* Center cards */
         }
 
         .nav-grid {
@@ -732,7 +805,7 @@ image: "/assets/images/world-guide-characters.jpg"
 
                 <a href="/world-guide/characters/dain-solarius.html" class="character-card antagonist">
                     <div class="character-avatar">
-                        <img src="/assets/images/dain.jpg" alt="Elowen Faerwyn" />
+                        <img src="/assets/images/dain.jpg" alt="Dain Solarius" />
                     </div>
                     <h3 class="character-name">Dain Solarius</h3>
                     <div class="character-title">"The Fireborn Prince"</div>
@@ -748,7 +821,7 @@ image: "/assets/images/world-guide-characters.jpg"
 
                 <a href="/world-guide/characters/ryx-shadowclaw.html" class="character-card protagonist">
                     <div class="character-avatar">
-                        <img src="/assets/images/ryx.jpg" alt="Elowen Faerwyn" />
+                        <img src="/assets/images/ryx.jpg" alt="Ryx Shadowclaw" />
                     </div>
                     <h3 class="character-name">Ryx Shadowclaw</h3>
                     <div class="character-title">"The Young Beastman"</div>
@@ -764,7 +837,7 @@ image: "/assets/images/world-guide-characters.jpg"
 
                 <a href="/world-guide/characters/mordain-ashcroft.html" class="character-card">
                     <div class="character-avatar">
-                        <img src="/assets/images/mordain.jpg" alt="Elowen Faerwyn" />
+                        <img src="/assets/images/mordain.jpg" alt="Mordain Ashcroft" />
                     </div>
                     <h3 class="character-name">Mordain Ashcroft</h3>
                     <div class="character-title">"The Scholar Priest"</div>
@@ -796,7 +869,7 @@ image: "/assets/images/world-guide-characters.jpg"
             </div>
         </div>
 
-<!-- The Chosen Chronicles -->
+        <!-- The Chosen Chronicles -->
         <div class="book-section">
             <h2 class="book-title">The Chosen Chronicles</h2>
             <p class="book-description">A four-book dark fantasy saga spanning 18 years: The Chosen, The Forsaken, The Village, and The Return. Follow Mira's journey from victim to warrior, and watch her son Kai grow from a child of trauma into a powerful force for change.</p>
@@ -995,6 +1068,46 @@ image: "/assets/images/world-guide-characters.jpg"
                 </a>
             </div>
         </div>
+
+        <!-- Voices of the Wild Characters -->
+        <div class="book-section">
+            <h2 class="book-title">Blood of the Wild Gods: Voices of the Wild</h2>
+            <p class="book-description">An amateur scholar's journey to understand nature spirits leads to discoveries about cosmic forces that threaten the natural order itself.</p>
+            
+            <div class="characters-grid">
+                <a href="/world-guide/characters/alaquinn-althaea.html" class="character-card protagonist">
+                    <div class="character-avatar">
+                        <img src="/assets/images/alaquinn.png" alt="Alaquinn Althaea" />
+                    </div>
+                    <h3 class="character-name">Alaquinn Althaea</h3>
+                    <div class="character-title">"The Aspiring Scholar"</div>
+                    <p class="character-preview">
+                        An enthusiastic but inexperienced researcher whose determination to understand nature spirits reveals a cosmic crisis. Her journey from academic naivety to dangerous discovery proves that sometimes the most important research comes from those brave enough to ask questions others overlook.
+                    </p>
+                    <div class="character-tags">
+                        <div class="character-tag">Scholar</div>
+                        <div class="character-tag">Researcher</div>
+                        <div class="character-tag">Determined</div>
+                    </div>
+                </a>
+
+                <a href="/world-guide/characters/dani-hightower.html" class="character-card protector">
+                    <div class="character-avatar">
+                        <img src="/assets/images/dani.webp" alt="Dani Hightower" />
+                    </div>
+                    <h3 class="character-name">Dani Hightower</h3>
+                    <div class="character-title">"The Warden of Sacred Fauna"</div>
+                    <p class="character-preview">
+                        A respected municipal warden whose practical competence and unexpected kindness become essential to Quinn's research. His patient support and growing affection demonstrate that sometimes the best partnerships bloom between scholarly ambition and grounded wisdom.
+                    </p>
+                    <div class="character-tags">
+                        <div class="character-tag">Warden</div>
+                        <div class="character-tag">Protector</div>
+                        <div class="character-tag">Supportive</div>
+                    </div>
+                </a>
+            </div>
+        </div>
         
         <!-- Lost Histories Characters -->
         <div class="book-section">
@@ -1076,7 +1189,7 @@ image: "/assets/images/world-guide-characters.jpg"
                 </div>
             </div>
 
-                       <!-- The God Who Wept -->
+            <!-- The God Who Wept -->
             <div class="substory-section">
                 <h3 class="substory-title">The God Who Wept</h3>
                 <p class="substory-description">A divine quest to find goodness in mortal hearts, spanning a thousand years of wandering.</p>
@@ -1388,48 +1501,6 @@ image: "/assets/images/world-guide-characters.jpg"
                         </div>
                     </a>
                 </div>
-                
-        </div>
-    </div>
-</section>
-
-        <!-- Voices of the Wild Characters -->
-        <div class="book-section">
-            <h2 class="book-title">Blood of the Wild Gods: Voices of the Wild</h2>
-            <p class="book-description">An amateur scholar's journey to understand nature spirits leads to discoveries about cosmic forces that threaten the natural order itself.</p>
-            
-            <div class="characters-grid">
-                <a href="/world-guide/characters/alaquinn-althaea.html" class="character-card protagonist">
-                    <div class="character-avatar">
-                        <img src="/assets/images/alaquinn.png" alt="Alaquinn Althaea" />
-                    </div>
-                    <h3 class="character-name">Alaquinn Althaea</h3>
-                    <div class="character-title">"The Aspiring Scholar"</div>
-                    <p class="character-preview">
-                        An enthusiastic but inexperienced researcher whose determination to understand nature spirits reveals a cosmic crisis. Her journey from academic naivety to dangerous discovery proves that sometimes the most important research comes from those brave enough to ask questions others overlook.
-                    </p>
-                    <div class="character-tags">
-                        <div class="character-tag">Scholar</div>
-                        <div class="character-tag">Researcher</div>
-                        <div class="character-tag">Determined</div>
-                    </div>
-                </a>
-
-                <a href="/world-guide/characters/dani-hightower.html" class="character-card protector">
-                    <div class="character-avatar">
-                        <img src="/assets/images/dani.webp" alt="Dani Hightower" />
-                    </div>
-                    <h3 class="character-name">Dani Hightower</h3>
-                    <div class="character-title">"The Warden of Sacred Fauna"</div>
-                    <p class="character-preview">
-                        A respected municipal warden whose practical competence and unexpected kindness become essential to Quinn's research. His patient support and growing affection demonstrate that sometimes the best partnerships bloom between scholarly ambition and grounded wisdom.
-                    </p>
-                    <div class="character-tags">
-                        <div class="character-tag">Warden</div>
-                        <div class="character-tag">Protector</div>
-                        <div class="character-tag">Supportive</div>
-                    </div>
-                </a>
             </div>
         </div>
     </div>
@@ -1507,16 +1578,9 @@ document.addEventListener('DOMContentLoaded', () => {
     generateRandomNavigation();
 });
 
-// Add scroll-based parallax effect to book sections
+// Remove the parallax scroll effect that was causing overlap
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const bookSections = document.querySelectorAll('.book-section');
-    
-    bookSections.forEach((section, index) => {
-        const speed = 0.5 + (index * 0.1);
-        const yPos = -(scrolled * speed);
-        section.style.transform = `translateY(${yPos * 0.1}px)`;
-    });
+    // Removed parallax effect on book sections to prevent overlap
 });
 </script>
 
