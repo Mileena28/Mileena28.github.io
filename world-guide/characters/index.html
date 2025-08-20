@@ -179,7 +179,7 @@ image: "/assets/images/world-guide-characters.jpg"
 
     /* Container constraint for better layout control */
     .container {
-        max-width: 1400px;
+        max-width: 1500px; /* Allow enough width for multiple cards */
         margin: 0 auto;
         padding: 0 20px;
     }
@@ -197,7 +197,7 @@ image: "/assets/images/world-guide-characters.jpg"
         background: 
             linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(30, 30, 30, 0.8) 100%);
         border-radius: 30px;
-        padding: 60px 40px; /* Reduced horizontal padding to give cards more room */
+        padding: 60px 50px; /* Balanced padding */
         border: 1px solid rgba(255, 255, 255, 0.1);
         position: relative;
         overflow: visible; /* Changed from hidden to visible to prevent card cutoff */
@@ -275,6 +275,16 @@ image: "/assets/images/world-guide-characters.jpg"
     /* Special grid for substories with fewer characters */
     .substory-section .characters-grid {
         max-width: 1000px; /* Slightly smaller max-width for substories */
+    }
+
+    /* Ensure 2-card grids don't stretch too much */
+    .characters-grid:has(.character-card:nth-child(2):last-child) {
+        max-width: 800px;
+    }
+
+    /* Single card grids stay centered and reasonable size */
+    .characters-grid:has(.character-card:only-child) {
+        max-width: 400px;
     }
 
     .substory-section::before {
@@ -356,7 +366,7 @@ image: "/assets/images/world-guide-characters.jpg"
         color: inherit;
         backdrop-filter: blur(20px);
         width: 100%;
-        max-width: 100%; /* Let grid control sizing */
+        max-width: 360px; /* Reasonable max-width */
         min-height: 420px;
         display: flex;
         flex-direction: column;
@@ -367,6 +377,7 @@ image: "/assets/images/world-guide-characters.jpg"
             0 10px 30px rgba(0, 0, 0, 0.3),
             inset 0 1px 0 rgba(255, 255, 255, 0.05);
         box-sizing: border-box;
+        margin: 0 auto; /* Center cards within grid cells */
     }
 
     .character-card::before {
@@ -681,16 +692,44 @@ image: "/assets/images/world-guide-characters.jpg"
         color: #ffffff;
     }
     
+    /* Large screen adjustments for wide monitors */
+    @media (min-width: 1400px) {
+        .characters-grid {
+            max-width: 1400px;
+            gap: 45px;
+        }
+        
+        .character-card {
+            max-width: 380px;
+        }
+    }
+
     /* Medium screen adjustments */
     @media (max-width: 1200px) {
         .characters-grid {
-            grid-template-columns: repeat(auto-fit, minmax(280px, 320px)); /* Limited max for centering */
-            gap: 40px;
-            justify-content: center;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Smaller min for tablets */
+            gap: 30px;
+        }
+        
+        .character-card {
+            max-width: 340px;
         }
         
         .book-section {
             padding: 50px 30px;
+        }
+    }
+
+    /* Tablet adjustments */
+    @media (max-width: 900px) {
+        .characters-grid {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 2 cards on smaller tablets */
+            gap: 25px;
+            padding: 0 20px;
+        }
+        
+        .character-card {
+            max-width: 320px;
         }
     }
 
@@ -711,13 +750,14 @@ image: "/assets/images/world-guide-characters.jpg"
         }
         
         .characters-grid {
-            grid-template-columns: 1fr;
-            gap: 30px; /* Reduced gap for mobile since cards stack vertically */
+            grid-template-columns: minmax(250px, 380px); /* Single column on mobile */
+            gap: 30px;
             padding: 0 20px;
+            justify-content: center;
         }
 
         .character-card {
-            max-width: 320px; /* Set reasonable max-width for mobile */
+            max-width: 380px; /* Set reasonable max-width for mobile */
             margin: 0 auto; /* Center cards */
         }
 
