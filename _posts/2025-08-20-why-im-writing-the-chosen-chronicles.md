@@ -6,7 +6,7 @@ category: "Writing"
 description: "The real reasons behind writing a four-book dark fantasy series that refuses to look away from trauma—and why sometimes the most important stories are the hardest to tell."
 excerpt: "As a child, I devoured the thickest books I could find, believing that more pages meant more time to hide from reality. Now I write books that drag reality into fantasy, forcing us to see what we've been taught to ignore."
 tags: [the-chosen-chronicles, writing-process, religious-trauma, survivor-stories, dark-fantasy, healing-through-fiction]
-image: "/assets/images/the-chosen-chronicles.png"
+image: "/assets/images/the-chosen-chronicles-post.png"
 ---
 
 <style>
