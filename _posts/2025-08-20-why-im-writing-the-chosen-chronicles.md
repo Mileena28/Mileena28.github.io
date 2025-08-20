@@ -9,6 +9,35 @@ tags: [the-chosen-chronicles, writing-process, religious-trauma, survivor-storie
 image: "/assets/images/the-chosen-chronicles.png"
 ---
 
+<style>
+    .book-cover-showcase {
+        max-width: 500px;
+        margin: 30px auto;
+    }
+    .book-cover-showcase img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+    .book-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin: 30px auto;
+        max-width: 600px;
+    }
+    .book-grid img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: 600px) {
+        .book-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
 As a child, I devoured the thickest books I could find.
 
 My logic was simple: the bigger the book, the longer I got to live in that world with those characters. The longer I could postpone returning to my own reality. I'd scan library shelves not for interesting covers or compelling summaries, but for spine width. Give me your thousand-page epics, your multi-volume sagas, your stories that promised to keep me somewhere else for as long as possible.
@@ -164,29 +193,39 @@ I'd be lying if I said I wasn't excited to have an excuse to make more book cove
 Each cover became its own meditation on what that particular book was trying to say. I spent hours thinking about the symbolism, the colors, the mood—how do you capture systematic destruction in one image? How do you show healing that takes years? How do you illustrate the moment someone stops running and turns to fight?
 
 ### The Chosen Chronicles
-![The Chosen Chronicles Omnibus Cover](/assets/images/the-chosen-chronicles.png)
+<div class="book-cover-showcase">
+    <img src="/assets/images/the-chosen-chronicles.png" alt="The Chosen Chronicles Omnibus Cover">
+</div>
 
 For The Chosen Chronicles omnibus cover, I tried to think about how to make all four covers come into one image, and I'm honestly thrilled with how it turned out. It's just this clash of everything that happens over the series displayed in one picture—eighteen years of transformation, all that pain and power colliding in a single moment.
 
-### Book One: The Chosen
-![The Chosen Cover](/assets/images/the-chosen.png)
+### The Individual Books
+<div class="book-grid">
+    <div>
+        <img src="/assets/images/the-chosen.png" alt="The Chosen Cover">
+        <h4 style="text-align: center; margin-top: 10px;">Book One: The Chosen</h4>
+    </div>
+    <div>
+        <img src="/assets/images/the-forsaken.png" alt="The Forsaken Cover">
+        <h4 style="text-align: center; margin-top: 10px;">Book Two: The Forsaken</h4>
+    </div>
+    <div>
+        <img src="/assets/images/the-village.png" alt="The Village Cover">
+        <h4 style="text-align: center; margin-top: 10px;">Book Three: The Village</h4>
+    </div>
+    <div>
+        <img src="/assets/images/the-return.png" alt="The Return Cover">
+        <h4 style="text-align: center; margin-top: 10px;">Book Four: The Return</h4>
+    </div>
+</div>
 
-The Chosen went through several variations before I settled on this one, which features art that resembles ocean waves. It had to be this way—because of that first chapter where Mira stands on the pier watching her whole world turn upside down, watching the tide of religious extremism sweep in and drown everything she knew.
+**The Chosen** went through several variations before I settled on this one, which features art that resembles ocean waves. It had to be this way—because of that first chapter where Mira stands on the pier watching her whole world turn upside down, watching the tide of religious extremism sweep in and drown everything she knew.
 
-### Book Two: The Forsaken
-![The Forsaken Cover](/assets/images/the-forsaken.png)
+With **The Forsaken**, I wanted to capture those cosmic stakes—because this is where all the action really starts to happen and we uncover that there's a lot more at risk here than just one woman's freedom. The world itself hangs in the balance between void and light.
 
-With The Forsaken, I wanted to capture those cosmic stakes—because this is where all the action really starts to happen and we uncover that there's a lot more at risk here than just one woman's freedom. The world itself hangs in the balance between void and light.
+**The Village** is more serene. It reminds me of the forest, and it just seems lighter in tone, more peaceful and calm—which is exactly the point of The Village. This is the book where we finally get to breathe. Where healing happens not through battle but through belonging.
 
-### Book Three: The Village
-![The Village Cover](/assets/images/the-village.png)
-
-The Village is more serene. It reminds me of the forest, and it just seems lighter in tone, more peaceful and calm—which is exactly the point of The Village. This is the book where we finally get to breathe. Where healing happens not through battle but through belonging.
-
-### Book Four: The Return
-![The Return Cover](/assets/images/the-return.png)
-
-In The Return, we see these bold colors clashing and that dripping red paint that's basically screaming: something big is going to happen in this book, and it might not be pretty. Because let's be honest—finally fighting back can get pretty ugly. Eighteen years of suppressed rage doesn't come out clean.
+In **The Return**, we see these bold colors clashing and that dripping red paint that's basically screaming: something big is going to happen in this book, and it might not be pretty. Because let's be honest—finally fighting back can get pretty ugly. Eighteen years of suppressed rage doesn't come out clean.
 
 Each cover tells its piece of the truth. Together, they map the long road from drowning to breathing to thriving to fighting.
 
