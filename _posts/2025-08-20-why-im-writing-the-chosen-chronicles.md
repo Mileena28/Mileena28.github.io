@@ -44,7 +44,7 @@ My logic was simple: the bigger the book, the longer I got to live in that world
 
 Books were my escape routes. My hiding places. My proof that other worlds existed beyond the suffocating walls of the Kingdom Hall.
 
-But what happens when you grow up and realize that escape isn't enough anymore? What happens when you need to write the books that don't let you escape—that grab you by the shoulders and force you to look at what you've been running from?
+But what happens when you grow up and realize that escape isn't enough anymore? What happens when you need to write the books that don't let you escape, that grab you by the shoulders and force you to look at what you've been running from?
 
 What happens when you stop writing fantasy to avoid reality and start writing fantasy to expose it?
 
@@ -54,9 +54,9 @@ What happens when you stop writing fantasy to avoid reality and start writing fa
 
 The books that saved my life weren't the ones that let me forget my pain. They were the ones that looked directly at it and said, "Yes, this happened. Yes, it was wrong. Yes, you're allowed to be angry about it."
 
-They were few and far between—those books that didn't shy away from the truth. The ones that portrayed trauma with unflinching honesty, that showed abuse without romanticizing it, that let their characters be messy and broken and furious. The ones that didn't rush to easy healing or pretty endings.
+They were few and far between, those books that didn't shy away from the truth. The ones that portrayed trauma with unflinching honesty, that showed abuse without romanticizing it, that let their characters be messy and broken and furious. The ones that didn't rush to easy healing or pretty endings.
 
-Those books, few as they were, are the ones I never forgot. They live in my bones. They whisper to me on bad days: *Someone else knows. Someone else survived this. You're not alone in what you carry.*
+Those books, few as they were, are the ones I never forgot. They haunt my memory. They whisper to me on bad days: *Someone else knows. Someone else survived this. You're not alone in what you carry.*
 
 I think about them still, decades later. Not because they were comfortable reads, but because they were witnesses. They saw what others refused to acknowledge. They spoke what others demanded stay silent.
 
@@ -92,7 +92,7 @@ But as I wrote, I realized this story was too heavy to carry all at once. Both f
 
 **Book Two: The Forsaken** – Currently at 45,000+ words and growing, this is about what happens when you finally run. The messy, complicated reality of escape when you're pregnant, traumatized, and being hunted by the very people who claim to love you.
 
-**Book Three: The Village** – This is the book I'm most excited about because it's not about fighting or running—it's about *thriving*. Five years of Mira and young Kai (ages 3-8) living in magical sanctuary, learning what family really means, discovering heritage, and finding that healing isn't linear but spiral. We return to old wounds with new strength.
+**Book Three: The Village** – This is the book I'm most excited about because it's not about fighting or running; it's about *thriving*. Five years of Mira and young Kai (ages 3-8) living in magical sanctuary, learning what family really means, discovering heritage, and finding that healing isn't linear but spiral. We return to old wounds with new strength.
 
 **Book Four: The Return** – Eighteen years after it all began, Mira and teenage Kai stop running. Not from a place of rage, but from a place of power. This is about choosing when to fight back, and doing it not for revenge but for protection of others.
 
@@ -104,15 +104,15 @@ The eighteen-year span matters. Healing doesn't happen in a training montage. Yo
 
 ## The Chapters That Nearly Broke Me
 
-I need to be transparent about something: there are chapters in these books that are genuinely difficult to read. Chapters 16-19 of The Chosen contain explicit depictions of marital rape and the psychological aftermath. These aren't gratuitous—they're necessary to understand Mira's journey—but they're real in ways that might be triggering.
+I need to be transparent about something: there are chapters in these books that are genuinely difficult to read. Chapters 16-19 of The Chosen contain explicit depictions of marital rape and the psychological aftermath. These aren't gratuitous. They're necessary to understand Mira's journey, but they're real in ways that might be triggering.
 
 There were points where I had to stop writing. Where I had to walk away from my laptop and make music instead, letting melodies carry what words were too heavy to hold. Where I had to push through trauma responses just to finish a scene and remember that I survived what I was putting on the page.
 
-The hardest parts to write weren't the dramatic moments—the public Forsakings, the explosive magic, the narrow escapes. The hardest parts were the quiet violations. The systematic gaslighting. The slow erosion of self. The confusion when your body responds to abuse in ways that make you feel complicit.
+The hardest parts to write weren't the dramatic moments: the public Forsakings, the explosive magic, the narrow escapes. The hardest parts were the quiet violations. The systematic gaslighting. The slow erosion of self. The confusion when your body responds to abuse in ways that make you feel complicit.
 
 These are the parts most fantasy glosses over. The parts that get summarized as "and then bad things happened" before moving on to the revenge plot.
 
-But my belief—my bone-deep conviction—is that these truths need to be portrayed correctly. Not sensationalized, not romanticized, not sanitized, but witnessed with the full weight they deserve.
+But my belief, my bone-deep conviction, is that these truths need to be portrayed correctly. Not sensationalized, not romanticized, not sanitized, but witnessed with the full weight they deserve.
 
 ---
 
@@ -128,13 +128,13 @@ So I hope I did those topics justice. I hope that survivors reading these books 
 
 ## Why Every Success Feels More Earned
 
-One of the things I love most about this series is how we live inside Mira's head. These books are so integrated with her psychology and inner thoughts that reading them is like experiencing trauma and recovery from the inside out. You don't just watch her story—you feel it happening in your own nervous system.
+One of the things I love most about this series is how we live inside Mira's head. These books are so integrated with her psychology and inner thoughts that reading them is like experiencing trauma and recovery from the inside out. You don't just watch her story; you feel it happening in your own nervous system.
 
 This makes the heavy parts heavier. When Lucien manipulates her, you feel the confusion in your own mind. When she dissociates, you float above the scene with her. When she breaks, something in you fractures too.
 
 But it also makes every success feel more earned.
 
-When Mira finally manifests her void powers and escapes, you feel that triumph in your bones because you know—truly know—what she survived to get there. When she bonds with her son despite his origin, you understand the profound courage that requires. When she eventually stops running and turns to face her abuser, you know exactly how much strength eighteen years of healing has built.
+When Mira finally manifests her void powers and escapes, you feel that triumph in your bones because you know, truly know, what she survived to get there. When she bonds with her son despite his origin, you understand the profound courage that requires. When she eventually stops running and turns to face her abuser, you know exactly how much strength eighteen years of healing has built.
 
 These aren't hollow victories. They're triumphs weighted with truth.
 
@@ -144,7 +144,7 @@ These aren't hollow victories. They're triumphs weighted with truth.
 
 I'm not writing The Chosen Chronicles to escape reality anymore. I'm writing them to drag reality into the light, dress it in fantasy clothes, and force us all to look at what we've been taught to ignore.
 
-These books are for the girl I used to be, searching library shelves for something thick enough to hide in. But more than that, they're for who she became—someone who needed stories that didn't let her hide, that validated her experience, that said: *This happened. It was wrong. And you're allowed to be furious about it.*
+These books are for the girl I used to be, searching library shelves for something thick enough to hide in. But more than that, they're for who she became: someone who needed stories that didn't let her hide, that validated her experience, that said: *This happened. It was wrong. And you're allowed to be furious about it.*
 
 They're for every survivor who's been told their story is too dark, too complicated, too uncomfortable for mainstream fiction. For everyone who's been asked to sanitize their experience for palatability.
 
@@ -188,16 +188,16 @@ Even if the truth is harder to tell than any fantasy I could invent.
 
 ## The Covers That Hold These Truths
 
-I'd be lying if I said I wasn't excited to have an excuse to make more book covers—which is exactly what needed to happen when I decided to split my massive tome into four books. 
+I'd be lying if I said I wasn't excited to have an excuse to make more book covers, which is exactly what needed to happen when I decided to split my massive tome into four books. 
 
-Each cover became its own meditation on what that particular book was trying to say. I spent hours thinking about the symbolism, the colors, the mood—how do you capture systematic destruction in one image? How do you show healing that takes years? How do you illustrate the moment someone stops running and turns to fight?
+Each cover became its own meditation on what that particular book was trying to say. I spent hours thinking about the symbolism, the colors, the mood. How do you capture systematic destruction in one image? How do you show healing that takes years? How do you illustrate the moment someone stops running and turns to fight?
 
 ### The Chosen Chronicles
 <div class="book-cover-showcase">
     <img src="/assets/images/the-chosen-chronicles.png" alt="The Chosen Chronicles Omnibus Cover">
 </div>
 
-For The Chosen Chronicles omnibus cover, I tried to think about how to make all four covers come into one image, and I'm honestly thrilled with how it turned out. It's just this clash of everything that happens over the series displayed in one picture—eighteen years of transformation, all that pain and power colliding in a single moment.
+For The Chosen Chronicles omnibus cover, I tried to think about how to make all four covers come into one image, and I'm honestly thrilled with how it turned out. It's just this clash of everything that happens over the series displayed in one picture: eighteen years of transformation, all that pain and power colliding in a single moment.
 
 ### The Individual Books
 <div class="book-grid">
@@ -219,13 +219,13 @@ For The Chosen Chronicles omnibus cover, I tried to think about how to make all 
     </div>
 </div>
 
-**The Chosen** went through several variations before I settled on this one, which features art that resembles ocean waves. It had to be this way—because of that first chapter where Mira stands on the pier watching her whole world turn upside down, watching the tide of religious extremism sweep in and drown everything she knew.
+**The Chosen** went through several variations before I settled on this one, which features art that resembles ocean waves. It had to be this way because of that first chapter where Mira stands on the pier watching her whole world turn upside down, watching the tide of religious extremism sweep in and drown everything she knew.
 
-With **The Forsaken**, I wanted to capture those cosmic stakes—because this is where all the action really starts to happen and we uncover that there's a lot more at risk here than just one woman's freedom. The world itself hangs in the balance between void and light.
+With **The Forsaken**, I wanted to capture those cosmic stakes because this is where all the action really starts to happen and we uncover that there's a lot more at risk here than just one woman's freedom. The world itself hangs in the balance between void and light.
 
-**The Village** is more serene. It reminds me of the forest, and it just seems lighter in tone, more peaceful and calm—which is exactly the point of The Village. This is the book where we finally get to breathe. Where healing happens not through battle but through belonging.
+**The Village** is more serene. It reminds me of the forest, and it just seems lighter in tone, more peaceful and calm, which is exactly the point of The Village. This is the book where we finally get to breathe. Where healing happens not through battle but through belonging.
 
-In **The Return**, we see these bold colors clashing and that dripping red paint that's basically screaming: something big is going to happen in this book, and it might not be pretty. Because let's be honest—finally fighting back can get pretty ugly. Eighteen years of suppressed rage doesn't come out clean.
+In **The Return**, we see these bold colors clashing and that dripping red paint that's basically screaming: something big is going to happen in this book, and it might not be pretty. Because let's be honest, finally fighting back can get pretty ugly. Eighteen years of suppressed rage doesn't come out clean.
 
 Each cover tells its piece of the truth. Together, they map the long road from drowning to breathing to thriving to fighting.
 
