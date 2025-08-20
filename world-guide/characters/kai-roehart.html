@@ -328,87 +328,176 @@
             line-height: 1.6;
         }
 
-        /* Age Evolution Section */
+        /* ENHANCED Age Evolution Section */
         .evolution-section {
-            background: rgba(10, 10, 26, 0.4);
+            background: rgba(10, 10, 26, 0.6);
             border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
+            border-radius: 20px;
+            padding: 50px;
+            margin: 40px -100px;
+            position: relative;
         }
 
         .evolution-title {
+            text-align: center;
+            font-size: 2.5em;
             background: linear-gradient(135deg, #9370db, #4169e1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-weight: 600;
+            font-weight: 300;
             margin-bottom: 20px;
-            font-size: 1.2em;
+            letter-spacing: 2px;
         }
 
-        .age-showcase {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .age-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #444;
-            border-radius: 15px;
-            padding: 20px;
+        .evolution-subtitle {
             text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .age-card:hover {
-            transform: translateY(-5px);
-            border-color: #9370db;
-            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.3);
-        }
-
-        .age-image {
-            width: 100%;
-            height: 200px;
-            background: rgba(138, 43, 226, 0.1);
-            border: 1px solid #666;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #9370db;
+            color: #999;
+            font-size: 1.2em;
             font-style: italic;
+            margin-bottom: 60px;
         }
 
-        .age-image img {
+        .age-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .age-card-horizontal {
+            background: rgba(20, 20, 20, 0.9);
+            border: 2px solid #444;
+            border-radius: 25px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            transition: all 0.4s ease;
+            position: relative;
+            min-height: 350px;
+        }
+
+        .age-card-horizontal:hover {
+            transform: translateX(10px);
+            border-color: #9370db;
+            box-shadow: 0 20px 60px rgba(138, 43, 226, 0.3);
+        }
+
+        .age-card-horizontal.reversed {
+            grid-template-columns: 1fr 400px;
+        }
+
+        .age-image-large {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.2), rgba(30, 144, 255, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .age-image-large img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
         }
 
-        .age-label {
-            color: #9370db;
-            font-weight: 600;
-            font-size: 1.2em;
+        .age-image-large::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(10, 10, 26, 0.4) 100%);
+        }
+
+        .age-card-horizontal.reversed .age-image-large::after {
+            background: linear-gradient(-90deg, transparent 0%, rgba(10, 10, 26, 0.4) 100%);
+        }
+
+        .age-content {
+            padding: 40px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .age-header {
+            margin-bottom: 25px;
+        }
+
+        .age-number {
+            font-size: 4em;
+            font-weight: 300;
+            background: linear-gradient(135deg, #9370db, #4169e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
             margin-bottom: 10px;
         }
 
-        .age-book {
+        .age-book-title {
+            font-size: 1.8em;
+            color: #f0f0f0;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+        .age-book-subtitle {
             color: #4169e1;
             font-style: italic;
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+
+        .age-description-expanded {
+            color: #d0d0d0;
+            font-size: 1.05em;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .age-highlights {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        .highlight-label {
+            color: #9370db;
+            font-weight: 600;
             font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 10px;
         }
 
-        .age-description {
-            color: #ccc;
+        .highlight-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .highlight-tag {
+            background: rgba(138, 43, 226, 0.15);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            padding: 5px 15px;
+            border-radius: 15px;
             font-size: 0.9em;
-            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .age-connector {
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(180deg, transparent, #9370db, #4169e1, transparent);
+            margin: -20px auto;
+            position: relative;
+            z-index: 1;
         }
 
         .related-characters {
@@ -630,9 +719,18 @@
                 position: static;
             }
 
-            .age-showcase {
+            .age-card-horizontal,
+            .age-card-horizontal.reversed {
                 grid-template-columns: 1fr;
-                gap: 20px;
+            }
+
+            .age-image-large {
+                min-height: 250px;
+            }
+
+            .evolution-section {
+                margin: 40px 0;
+                padding: 30px;
             }
         }
 
@@ -652,6 +750,18 @@
             
             .powers-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .age-number {
+                font-size: 3em;
+            }
+
+            .age-book-title {
+                font-size: 1.5em;
+            }
+
+            .age-content {
+                padding: 30px;
             }
         }
     </style>
@@ -741,43 +851,96 @@
                     </div>
                 </section>
 
-<!-- Age Evolution Showcase -->
+                <!-- ENHANCED Age Evolution Showcase -->
                 <section class="section">
                     <h2 class="section-title">Evolution Through Time</h2>
                     
                     <div class="evolution-section">
                         <div class="evolution-title">The Journey from Infant to Warrior</div>
+                        <div class="evolution-subtitle">Three pivotal stages in the life of the Bridge Between Worlds</div>
                         
-                        <div class="age-showcase">
+                        <div class="age-timeline">
                             <!-- Age 3 -->
-                            <div class="age-card">
-                                <div class="age-image">
+                            <div class="age-card-horizontal">
+                                <div class="age-image-large">
                                     <img src="/assets/images/kai-3.webp" alt="Kai at age 3">
                                 </div>
-                                <div class="age-label">Age 3</div>
-                                <div class="age-book">The Forsaken</div>
-                                <div class="age-description">
-                                    Born in the Verdant Veil's sanctuary, Kai's earliest years are marked by safety and wonder rather than fear. Surrounded by the Dawnseeker elves' ancient magic and protected by Princess Elowen's kingdom. Here, among healers and scholars who view his dual nature with curiosity rather than horror, his first words are spoken in both Common and Elvish, his first steps taken on paths blessed by the Wild Gods.
+                                <div class="age-content">
+                                    <div class="age-header">
+                                        <div class="age-number">Age 3</div>
+                                        <div class="age-book-title">The Forsaken</div>
+                                        <div class="age-book-subtitle">Book One: The Sanctuary Years</div>
+                                    </div>
+                                    <div class="age-description-expanded">
+                                        Born within the sacred groves of the Verdant Veil, Kai's earliest years unfold in a realm where magic flows as naturally as breath. The Dawnseeker elves, ancient protectors of cosmic balance, recognize in him something unprecedented—a child who shouldn't exist yet does, embodying a harmony they've sought for millennia. Princess Elowen herself oversees his protection, ensuring that his first experiences of the world are filled with wonder rather than the violence that preceded his conception. Here, beneath canopies that shimmer with otherworldly light, Kai takes his first steps on paths blessed by the Wild Gods themselves, speaking his first words in the melodic tongues of both Common and Elvish, learning that he belongs to multiple worlds simultaneously.
+                                    </div>
+                                    <div class="age-highlights">
+                                        <div class="highlight-label">Key Developments</div>
+                                        <div class="highlight-items">
+                                            <span class="highlight-tag">First Manifestation of Powers</span>
+                                            <span class="highlight-tag">Elvish Language Mastery</span>
+                                            <span class="highlight-tag">Wild God Blessings</span>
+                                            <span class="highlight-tag">Mother's Protection</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="age-connector"></div>
+
                             <!-- Age 8 -->
-                            <div class="age-card">
-                                <div class="age-image">
+                            <div class="age-card-horizontal reversed">
+                                <div class="age-content">
+                                    <div class="age-header">
+                                        <div class="age-number">Age 8</div>
+                                        <div class="age-book-title">The Village</div>
+                                        <div class="age-book-subtitle">Book Two: The Forest Awakening</div>
+                                    </div>
+                                    <div class="age-description-expanded">
+                                        The Murmeleks, those enigmatic half-goat beings renowned for uncovering hidden truths, become Kai's unexpected mentors in understanding his dual nature. Through their legendary skills at revealing secrets, they help him discover the reclusive nature spirits dwelling in the forest's deepest sanctuaries—ancient entities who existed before the schism between void and light. These primordial beings recognize in Kai something they haven't witnessed since the cosmos was whole: a living bridge between divided realms. Under their patient tutelage, he learns that his void heritage doesn't hunger for destruction but for truth, while his light inheritance doesn't demand dominance but offers illumination. By eight, he dances between shadows and radiance with the fluid grace of one who has never known they should be enemies, understanding that true power lies not in choosing one over the other, but in the sacred space where opposites meet and transform each other.
+                                    </div>
+                                    <div class="age-highlights">
+                                        <div class="highlight-label">Key Developments</div>
+                                        <div class="highlight-items">
+                                            <span class="highlight-tag">Nature Spirit Training</span>
+                                            <span class="highlight-tag">Void-Light Harmonization</span>
+                                            <span class="highlight-tag">Truth-Seeking Abilities</span>
+                                            <span class="highlight-tag">Forest Guardian Bond</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="age-image-large">
                                     <img src="/assets/images/kai-8.webp" alt="Kai at age 8">
                                 </div>
-                                <div class="age-label">Age 8</div>
-                                <div class="age-book">The Village</div>
-                                <div class="age-description">
-                                    Growing up among the Murmeleks, Kai benefits from their legendary skill at uncovering hidden truths. These half-goat creatures, masters of finding what others wish to keep secret, help him discover the reclusive nature spirits dwelling deep in the forest—ancient beings who recognize his impossible dual heritage and agree to take him as their student. Under their tutelage, he learns to harness both aspects of his nature: the void that reveals truth and the light that illuminates it. The spirits teach him the delicate art of balance, showing him how to wield shadow and radiance in harmony rather than conflict. By age eight, he moves through the forest with the confidence of one who belongs, his dual powers flowing as naturally as breathing, understanding that balance isn't about choosing sides but about knowing when to embrace each part of himself.
                             </div>
-                            
+
+                            <div class="age-connector"></div>
+
                             <!-- Age 18 -->
-                            <div class="age-card">
-                                <div class="age-image">
+                            <div class="age-card-horizontal">
+                                <div class="age-image-large">
                                     <img src="/assets/images/kai-18.webp" alt="Kai at age 18">
                                 </div>
-                                <div class="age-label">Age 18</div>
-                                <div class="age-book">The Return</div>
-                                <div class="age-description">
-                                    A formidable warrior shaped by his mother's love rather than his father's violence, Kai has spent years training his dual powers into weapons of protection rather than domination. Having learned compassion from Mira's example, he treats her with a reverence born of understanding what she sacrificed to keep him safe—she is not just his mother but the sacred proof that love can transform even the darkest origins. When news reaches them of refugees fleeing their homeland, speaking of Lucien's expanding tyranny and the suffering of those still trapped in Zenith's Light, it is Kai who makes the decision: no more running. He convinces Mira that they are finally strong enough, that he is ready to stand beside her, and that those still suffering deserve the chance at freedom she fought so hard to give him. But as they prepare to return, the Nimwe's prophecy echoes with terrible clarity—will this child of impossible union bring the balance the realm desperately needs, or will his unprecedented power shatter the very foundations of existence?
+                                <div class="age-content">
+                                    <div class="age-header">
+                                        <div class="age-number">Age 18</div>
+                                        <div class="age-book-title">The Return</div>
+                                        <div class="age-book-subtitle">Book Three: The Reckoning</div>
+                                    </div>
+                                    <div class="age-description-expanded">
+                                        Eighteen years of love, training, and careful nurturing have forged Kai into something his father never anticipated—a warrior whose strength comes from compassion rather than cruelty, whose power serves protection rather than domination. The years in hiding haven't been spent in fear but in preparation, with Mira teaching him not just to fight but to understand why some battles must be fought and others must be transcended. When whispers reach their sanctuary of Lucien's expanding tyranny, of entire populations enslaved by corrupted light, of children born into bondage within Zenith's Light, it is Kai who makes the choice that will define his destiny. He looks at his mother—the woman who sacrificed everything to give him a life free from his father's shadow—and speaks words that echo with quiet certainty: "We're strong enough now. They need us." His violet eyes, rimmed with celestial blue, hold no vengeance, only determination. He is ready to face the man who gave him life through violence, not to perpetuate cycles of harm, but to ensure no other child suffers as his mother did. The Bridge Between Worlds prepares to fulfill his purpose—not through prophecy's demand, but through his own choice to stand between tyranny and freedom.
+                                    </div>
+                                    <div class="age-highlights">
+                                        <div class="highlight-label">Key Developments</div>
+                                        <div class="highlight-items">
+                                            <span class="highlight-tag">Full Power Manifestation</span>
+                                            <span class="highlight-tag">Warrior Training Complete</span>
+                                            <span class="highlight-tag">Choice to Return</span>
+                                            <span class="highlight-tag">Destiny Acceptance</span>
+                                            <span class="highlight-tag">Mother-Son United Front</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
