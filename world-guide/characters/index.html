@@ -1,793 +1,848 @@
----
-layout: default
-title: "Characters | Blood of the Wild Gods World Guide"
-description: "Meet the complex characters from Mileena Rayne's Blood of the Wild Gods series. From the Silver Hunter to divine beings, explore their stories, relationships, and journeys."
-image: "/assets/images/world-guide-characters.jpg"
----
-
-<style>
-    /* Global box-sizing for consistent spacing */
-    * {
-        box-sizing: border-box;
-    }
-
-    /* Atmospheric Background */
-    body {
-        background: #0a0a0a;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 80%, rgba(138, 159, 255, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
-        animation: cosmic-drift 30s ease-in-out infinite;
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    @keyframes cosmic-drift {
-        0%, 100% { transform: scale(1) rotate(0deg); }
-        50% { transform: scale(1.1) rotate(5deg); }
-    }
-
-    /* Floating Particles */
-    .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-    }
-
-    .particle {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: rgba(255, 255, 255, 0.5);
-        border-radius: 50%;
-        animation: float-up 20s linear infinite;
-    }
-
-    @keyframes float-up {
-        from {
-            transform: translateY(100vh) translateX(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.8;
-        }
-        90% {
-            opacity: 0.8;
-        }
-        to {
-            transform: translateY(-100vh) translateX(100px);
-            opacity: 0;
-        }
-    }
-
-    /* Enhanced Page Header */
-    .page-header {
-        padding: 120px 0 80px;
-        text-align: center;
-        background: 
-            linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.8) 100%),
-            radial-gradient(ellipse at center top, rgba(138, 159, 255, 0.2) 0%, transparent 60%);
-        position: relative;
-        z-index: 2;
-    }
-
-    .page-header::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
-        filter: blur(40px);
-        animation: pulse-glow 4s ease-in-out infinite;
-    }
-
-    @keyframes pulse-glow {
-        0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
-        50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
-    }
-
-    .page-title {
-        font-size: 4em;
-        font-weight: 200;
-        margin-bottom: 20px;
-        color: #f0f0f0;
-        letter-spacing: 6px;
-        text-transform: uppercase;
-        position: relative;
-        z-index: 1;
-        text-shadow: 
-            0 0 20px rgba(138, 159, 255, 0.5),
-            0 0 40px rgba(138, 159, 255, 0.3),
-            0 0 60px rgba(138, 159, 255, 0.1);
-        animation: title-glow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes title-glow {
-        from { filter: brightness(1); }
-        to { filter: brightness(1.2); }
-    }
-
-    .page-subtitle {
-        font-size: 1.3em;
-        color: #999;
-        max-width: 700px;
-        margin: 0 auto;
-        font-style: italic;
-        position: relative;
-        z-index: 1;
-        line-height: 1.8;
-        font-weight: 300;
-    }
-
-    .series-breadcrumb {
-        background: transparent;
-        border: 1px solid rgba(138, 159, 255, 0.3);
-        border-radius: 30px;
-        padding: 12px 30px;
-        display: inline-block;
-        font-size: 0.9em;
-        color: #8a9fff;
-        text-decoration: none;
-        transition: all 0.4s ease;
-        margin-bottom: 40px;
-        position: relative;
-        overflow: hidden;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-weight: 500;
-    }
-
-    .series-breadcrumb::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.2), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .series-breadcrumb:hover::before {
-        left: 100%;
-    }
-
-    .series-breadcrumb:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 5px 20px rgba(138, 159, 255, 0.3);
-        border-color: rgba(138, 159, 255, 0.5);
-    }
-
-    /* Container constraint for better layout control */
-    .container {
-        max-width: 1500px; /* Allow enough width for multiple cards */
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    /* Characters Section - Fixed spacing */
-    .characters-section {
-        padding: 60px 0 100px;
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Book Sections with Fixed Spacing */
-    .book-section {
-        margin-bottom: 100px; /* Increased from 0px to prevent overlap */
-        background: 
-            linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(30, 30, 30, 0.8) 100%);
-        border-radius: 30px;
-        padding: 60px 50px; /* Balanced padding */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-        overflow: visible; /* Changed from hidden to visible to prevent card cutoff */
-        backdrop-filter: blur(10px);
-        box-shadow: 
-            0 20px 40px rgba(0, 0, 0, 0.5),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        transform: none; /* Remove any transform that might cause overlap */
-    }
-
-    .book-section::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(138, 159, 255, 0.05) 0%, transparent 70%);
-        animation: rotate-slow 30s linear infinite;
-        pointer-events: none;
-        z-index: -1; /* Ensure it stays behind content */
-    }
-
-    @keyframes rotate-slow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .book-title {
-        font-size: 2.8em;
-        background: linear-gradient(135deg, #8a9fff 0%, #a8b5ff 50%, #c8d0ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 20px;
-        text-align: center;
-        font-weight: 300;
-        letter-spacing: 2px;
-        position: relative;
-        z-index: 1;
-    }
-
-    .book-description {
-        color: #aaa;
-        text-align: center;
-        margin-bottom: 50px;
-        font-style: italic;
-        font-size: 1.1em;
-        position: relative;
-        z-index: 1;
-        font-weight: 300;
-        letter-spacing: 0.5px;
-    }
-
-    /* Special grid for sections with only 2 characters (like Voices of the Wild) */
-    .characters-grid:has(.character-card:nth-child(2):last-child) {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 350px)); /* Limit max width for 2 cards */
-        justify-content: center;
-    }
-
-    /* Special grid for sections with only 1 character */
-    .characters-grid:has(.character-card:only-child) {
-        grid-template-columns: minmax(300px, 350px);
-        justify-content: center;
-    }
-
-    /* Enhanced Substory Sections */
-    .substory-section {
-        margin-top: 60px;
-        padding-top: 40px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-    }
-
-    /* Special grid for substories with fewer characters */
-    .substory-section .characters-grid {
-        max-width: 1000px; /* Slightly smaller max-width for substories */
-    }
-
-    /* Ensure 2-card grids don't stretch too much */
-    .characters-grid:has(.character-card:nth-child(2):last-child) {
-        max-width: 800px;
-    }
-
-    /* Single card grids stay centered and reasonable size */
-    .characters-grid:has(.character-card:only-child) {
-        max-width: 400px;
-    }
-
-    .substory-section::before {
-        content: '';
-        position: absolute;
-        top: -1px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #b8860b, transparent);
-        box-shadow: 0 0 20px rgba(184, 134, 11, 0.5);
-    }
-
-    .substory-title {
-        font-size: 2em;
-        background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #ffd700 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 15px;
-        text-align: center;
-        font-weight: 400;
-        letter-spacing: 1px;
-    }
-
-    .substory-description {
-        color: #999;
-        text-align: center;
-        margin-bottom: 35px;
-        font-style: italic;
-        font-size: 1em;
-        font-weight: 300;
-    }
-
-    /* Fixed Characters Grid - Centered layout */
-    .characters-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Changed from auto-fill to auto-fit for centering */
-        gap: 60px 50px; /* Different gap for rows and columns */
-        margin: 40px auto;
-        justify-content: center; /* Center the grid content */
-        justify-items: center;
-        align-content: center; /* Center grid rows */
-        padding: 0 40px; /* Increased padding for better edge spacing */
-        width: 100%;
-        box-sizing: border-box;
-        max-width: 1200px; /* Limit maximum width for better control */
-    }
-
-    /* Alternative flex layout for small numbers of cards (better browser support) */
-    .characters-grid:has(:nth-child(1):nth-last-child(1)),
-    .characters-grid:has(:nth-child(1):nth-last-child(2)) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: start;
-    }
-
-    /* Fallback for browsers without :has() support - apply to specific small grids */
-    .book-section:last-of-type .characters-grid:first-of-type {
-        /* Voices of the Wild section with 2 cards */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: start;
-    }
-
-    /* Character Cards */
-    .character-card {
-        background: 
-            linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 20px;
-        padding: 35px 25px;
-        text-align: center;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        text-decoration: none;
-        color: inherit;
-        backdrop-filter: blur(20px);
-        width: 100%;
-        max-width: 360px; /* Reasonable max-width */
-        min-height: 420px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 
-            0 10px 30px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
-        box-sizing: border-box;
-        margin: 0 auto; /* Center cards within grid cells */
-    }
-
-    .character-card::before {
-        content: '';
-        position: absolute;
-        top: -100%;
-        left: -100%;
-        width: 300%;
-        height: 300%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
-        transition: all 0.6s ease;
-        pointer-events: none;
-    }
-
-    .character-card:hover::before {
-        top: -150%;
-        left: -150%;
-    }
-
-    .character-card::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.02) 100%);
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        pointer-events: none;
-    }
-
-    .character-card:hover::after {
-        opacity: 1;
-    }
-
-    .character-card:hover {
-        transform: translateY(-8px); /* Removed scale to prevent any size change */
-        box-shadow: 
-            0 25px 50px rgba(0, 0, 0, 0.4),
-            0 0 30px rgba(138, 159, 255, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-        border-color: rgba(138, 159, 255, 0.3);
-        z-index: 10; /* Add z-index to ensure hovered card appears above others */
-    }
-
-    /* Enhanced Character Avatars */
-    .character-avatar {
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(168, 181, 255, 0.1));
-        border-radius: 50%;
-        margin: 0 auto 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #8a9fff;
-        font-weight: 300;
-        font-size: 2em;
-        border: 2px solid rgba(138, 159, 255, 0.3);
-        position: relative;
-        box-shadow: 
-            0 0 30px rgba(138, 159, 255, 0.2),
-            inset 0 0 20px rgba(138, 159, 255, 0.1);
-        transition: all 0.4s ease;
-    }
-
-    .character-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 50%;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters | Blood of the Wild Gods World Guide</title>
+    <meta name="description" content="Meet the complex characters from Mileena Rayne's Blood of the Wild Gods series. From the Silver Hunter to divine beings, explore their stories, relationships, and journeys.">
+    <meta property="og:image" content="/assets/images/world-guide-characters.jpg">
     
-    .character-avatar::before {
-        content: '';
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, transparent, rgba(138, 159, 255, 0.2), transparent);
-        animation: rotate-border 8s linear infinite;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .character-card:hover .character-avatar::before {
-        opacity: 1;
-    }
-
-    @keyframes rotate-border {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .character-card:hover .character-avatar {
-        transform: scale(1.1);
-        box-shadow: 
-            0 0 50px rgba(138, 159, 255, 0.4),
-            inset 0 0 30px rgba(138, 159, 255, 0.2);
-    }
-
-    .character-name {
-        color: #f0f0f0;
-        font-size: 1.5em;
-        font-weight: 400;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
-        transition: all 0.3s ease;
-    }
-
-    .character-card:hover .character-name {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-    }
-
-    .character-title {
-        color: #8a9fff;
-        font-size: 1em;
-        margin-bottom: 20px;
-        font-style: italic;
-        font-weight: 300;
-        letter-spacing: 0.5px;
-        opacity: 0.8;
-    }
-
-    .character-preview {
-        color: #bbb;
-        font-size: 0.95em;
-        line-height: 1.7;
-        margin-bottom: 25px;
-        font-weight: 300;
-        flex-grow: 1;
-    }
-
-    .character-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-        margin-top: auto;
-    }
-
-    .character-tag {
-        background: rgba(138, 159, 255, 0.15);
-        color: #8a9fff;
-        padding: 8px 16px;
-        border-radius: 15px;
-        font-size: 0.8em;
-        font-weight: 400;
-        white-space: nowrap;
-        border: 1px solid rgba(138, 159, 255, 0.2);
-        transition: all 0.3s ease;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-    }
-
-    .character-card:hover .character-tag {
-        background: rgba(138, 159, 255, 0.2);
-        border-color: rgba(138, 159, 255, 0.3);
-        transform: translateY(-2px);
-    }
-
-    /* Special character type styling with enhanced effects */
-    .character-card.protagonist .character-avatar {
-        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-        border-color: rgba(255, 215, 0, 0.3);
-        color: #ffd700;
-        box-shadow: 
-            0 0 30px rgba(255, 215, 0, 0.2),
-            inset 0 0 20px rgba(255, 215, 0, 0.1);
-    }
-
-    .character-card.protagonist:hover {
-        box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 40px rgba(255, 215, 0, 0.2);
-    }
-
-    .character-card.antagonist .character-avatar {
-        background: linear-gradient(135deg, rgba(204, 0, 0, 0.2), rgba(204, 0, 0, 0.1));
-        border-color: rgba(204, 0, 0, 0.3);
-        color: #ff4444;
-        box-shadow: 
-            0 0 30px rgba(204, 0, 0, 0.2),
-            inset 0 0 20px rgba(204, 0, 0, 0.1);
-    }
-
-    .character-card.antagonist:hover {
-        box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 40px rgba(204, 0, 0, 0.2);
-    }
-
-    .character-card.divine .character-avatar {
-        background: 
-            radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 70%);
-        border-color: rgba(255, 255, 255, 0.4);
-        color: #ffffff;
-        box-shadow: 
-            0 0 40px rgba(255, 255, 255, 0.3),
-            inset 0 0 25px rgba(255, 255, 255, 0.2);
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-    }
-
-    .character-card.divine:hover {
-        box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 50px rgba(255, 255, 255, 0.3);
-    }
-
-    .character-card.historian .character-avatar {
-        background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), rgba(184, 134, 11, 0.1));
-        border-color: rgba(184, 134, 11, 0.3);
-        color: #daa520;
-        box-shadow: 
-            0 0 30px rgba(184, 134, 11, 0.2),
-            inset 0 0 20px rgba(184, 134, 11, 0.1);
-    }
-
-    .character-card.tragic .character-avatar {
-        background: linear-gradient(135deg, rgba(221, 160, 221, 0.2), rgba(221, 160, 221, 0.1));
-        border-color: rgba(221, 160, 221, 0.3);
-        color: #dda0dd;
-        box-shadow: 
-            0 0 30px rgba(221, 160, 221, 0.2),
-            inset 0 0 20px rgba(221, 160, 221, 0.1);
-    }
-
-    .character-card.protector .character-avatar {
-        background: linear-gradient(135deg, rgba(70, 130, 180, 0.2), rgba(70, 130, 180, 0.1));
-        border-color: rgba(70, 130, 180, 0.3);
-        color: #5a9bd4;
-        box-shadow: 
-            0 0 30px rgba(70, 130, 180, 0.2),
-            inset 0 0 20px rgba(70, 130, 180, 0.1);
-    }
-
-    .character-card.catalyst .character-avatar {
-        background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1));
-        border-color: rgba(255, 140, 0, 0.3);
-        color: #ff8c00;
-        box-shadow: 
-            0 0 30px rgba(255, 140, 0, 0.2),
-            inset 0 0 20px rgba(255, 140, 0, 0.1);
-    }
-
-    /* Scroll reveal animation */
-    .character-card {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fade-in-up 0.6s ease forwards;
-    }
-
-    .character-card:nth-child(1) { animation-delay: 0.1s; }
-    .character-card:nth-child(2) { animation-delay: 0.2s; }
-    .character-card:nth-child(3) { animation-delay: 0.3s; }
-    .character-card:nth-child(4) { animation-delay: 0.4s; }
-    .character-card:nth-child(5) { animation-delay: 0.5s; }
-    .character-card:nth-child(6) { animation-delay: 0.6s; }
-
-    @keyframes fade-in-up {
-        to {
-            opacity: 1;
-            transform: translateY(0);
+    <style>
+        /* Reset and Global Settings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-    }
 
-    /* Navigation Footer */
-    .navigation-footer {
-        padding: 80px 0;
-        background: rgba(5, 5, 20, 0.95);
-        text-align: center;
-        border-top: 2px solid rgba(138, 159, 255, 0.3);
-        margin-top: 60px;
-    }
-
-    .nav-title {
-        font-size: 2.5em;
-        color: #ffffff;
-        margin-bottom: 30px;
-        font-weight: 300;
-        letter-spacing: 2px;
-    }
-
-    .nav-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .nav-link {
-        background: rgba(25, 25, 60, 0.3);
-        border: 1px solid rgba(138, 159, 255, 0.3);
-        border-radius: 15px;
-        padding: 20px;
-        text-decoration: none;
-        color: #c8dcff;
-        transition: all 0.3s ease;
-        font-weight: 500;
-    }
-
-    .nav-link:hover {
-        border-color: #c8dcff;
-        background: rgba(138, 159, 255, 0.2);
-        transform: translateY(-3px);
-        color: #ffffff;
-    }
-    
-    /* Large screen adjustments for wide monitors */
-    @media (min-width: 1400px) {
-        .characters-grid {
-            max-width: 1400px;
-            gap: 45px;
+        /* Atmospheric Background */
+        body {
+            background: #0a0a0a;
+            color: #f0f0f0;
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
-        
-        .character-card {
-            max-width: 380px;
-        }
-    }
 
-    /* Medium screen adjustments */
-    @media (max-width: 1200px) {
-        .characters-grid {
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Smaller min for tablets */
-            gap: 30px;
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(138, 159, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+            animation: cosmic-drift 30s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
         }
-        
-        .character-card {
-            max-width: 340px;
-        }
-        
-        .book-section {
-            padding: 50px 30px;
-        }
-    }
 
-    /* Tablet adjustments */
-    @media (max-width: 900px) {
-        .characters-grid {
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* 2 cards on smaller tablets */
-            gap: 25px;
+        @keyframes cosmic-drift {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(2deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+            75% { transform: scale(1.05) rotate(3deg); }
+        }
+
+        /* Floating Particles Effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float-up 20s linear infinite;
+        }
+
+        @keyframes float-up {
+            from {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            to {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Container System */
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
-        
-        .character-card {
-            max-width: 320px;
-        }
-    }
 
-    /* Mobile Responsive Enhancements */
-    @media (max-width: 768px) {
-        .page-title {
-            font-size: 2.5em;
-            letter-spacing: 3px;
+        /* Enhanced Page Header */
+        .page-header {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: 
+                linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.8) 100%),
+                radial-gradient(ellipse at center top, rgba(138, 159, 255, 0.2) 0%, transparent 60%);
+            position: relative;
+            z-index: 2;
         }
-        
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
+            filter: blur(40px);
+            animation: pulse-glow 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { 
+                opacity: 0.5; 
+                transform: translate(-50%, -50%) scale(1); 
+            }
+            50% { 
+                opacity: 0.8; 
+                transform: translate(-50%, -50%) scale(1.1); 
+            }
+        }
+
+        .page-title {
+            font-size: 4em;
+            font-weight: 200;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            text-shadow: 
+                0 0 20px rgba(138, 159, 255, 0.5),
+                0 0 40px rgba(138, 159, 255, 0.3),
+                0 0 60px rgba(138, 159, 255, 0.1);
+            animation: title-glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes title-glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .page-subtitle {
+            font-size: 1.3em;
+            color: #999;
+            max-width: 700px;
+            margin: 0 auto;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .series-breadcrumb {
+            background: transparent;
+            border: 1px solid rgba(138, 159, 255, 0.3);
+            border-radius: 30px;
+            padding: 12px 30px;
+            display: inline-block;
+            font-size: 0.9em;
+            color: #8a9fff;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .series-breadcrumb::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .series-breadcrumb:hover::before {
+            left: 100%;
+        }
+
+        .series-breadcrumb:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(138, 159, 255, 0.3);
+            border-color: rgba(138, 159, 255, 0.5);
+        }
+
+        /* Main Characters Section */
+        .characters-section {
+            padding: 60px 0 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Book Sections Container */
         .book-section {
-            padding: 40px 20px;
-            margin-bottom: 60px;
+            margin-bottom: 100px;
+            background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(30, 30, 30, 0.8) 100%);
+            border-radius: 30px;
+            padding: 60px 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: visible;
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .book-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(138, 159, 255, 0.05) 0%, transparent 70%);
+            animation: rotate-slow 30s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .book-title {
-            font-size: 2em;
-        }
-        
-        .characters-grid {
-            grid-template-columns: minmax(250px, 380px); /* Single column on mobile */
-            gap: 30px;
-            padding: 0 20px;
-            justify-content: center;
+            font-size: 2.8em;
+            background: linear-gradient(135deg, #8a9fff 0%, #a8b5ff 50%, #c8d0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
         }
 
+        .book-description {
+            color: #aaa;
+            text-align: center;
+            margin-bottom: 50px;
+            font-style: italic;
+            font-size: 1.1em;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Default Characters Grid - For 3+ cards */
+        .characters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin: 40px auto;
+            justify-content: center;
+            padding: 0 20px;
+            max-width: 1300px;
+        }
+
+        /* Grid for exactly 2 cards - Force side by side */
+        .characters-grid.two-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 800px;
+            gap: 40px;
+        }
+
+        /* Grid for exactly 1 card */
+        .characters-grid.one-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 400px;
+        }
+
+        /* Enhanced Substory Sections */
+        .substory-section {
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .substory-section::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #b8860b, transparent);
+            box-shadow: 0 0 20px rgba(184, 134, 11, 0.5);
+        }
+
+        .substory-title {
+            font-size: 2em;
+            background: linear-gradient(135deg, #b8860b 0%, #daa520 50%, #ffd700 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .substory-description {
+            color: #999;
+            text-align: center;
+            margin-bottom: 35px;
+            font-style: italic;
+            font-size: 1em;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Character Cards */
         .character-card {
-            max-width: 380px; /* Set reasonable max-width for mobile */
-            margin: 0 auto; /* Center cards */
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.95) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: inherit;
+            backdrop-filter: blur(20px);
+            width: 100%;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .character-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+            transition: all 0.6s ease;
+            pointer-events: none;
+        }
+
+        .character-card:hover::before {
+            top: -150%;
+            left: -150%;
+        }
+
+        .character-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.02) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .character-card:hover::after {
+            opacity: 1;
+        }
+
+        .character-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(138, 159, 255, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: rgba(138, 159, 255, 0.3);
+            z-index: 10;
+        }
+
+        /* Character Avatar */
+        .character-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2), rgba(168, 181, 255, 0.1));
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8a9fff;
+            font-weight: 300;
+            font-size: 2em;
+            border: 2px solid rgba(138, 159, 255, 0.3);
+            position: relative;
+            box-shadow: 
+                0 0 30px rgba(138, 159, 255, 0.2),
+                inset 0 0 20px rgba(138, 159, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .character-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+        }
+
+        .character-avatar::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, transparent, rgba(138, 159, 255, 0.2), transparent);
+            animation: rotate-border 8s linear infinite;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .character-card:hover .character-avatar::before {
+            opacity: 1;
+        }
+
+        @keyframes rotate-border {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .character-card:hover .character-avatar {
+            transform: scale(1.1);
+            box-shadow: 
+                0 0 50px rgba(138, 159, 255, 0.4),
+                inset 0 0 30px rgba(138, 159, 255, 0.2);
+        }
+
+        .character-name {
+            color: #f0f0f0;
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .character-card:hover .character-name {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .character-title {
+            color: #8a9fff;
+            font-size: 1em;
+            margin-bottom: 20px;
+            font-style: italic;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+
+        .character-preview {
+            color: #bbb;
+            font-size: 0.95em;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-weight: 300;
+            flex-grow: 1;
+        }
+
+        .character-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .character-tag {
+            background: rgba(138, 159, 255, 0.15);
+            color: #8a9fff;
+            padding: 8px 16px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 400;
+            white-space: nowrap;
+            border: 1px solid rgba(138, 159, 255, 0.2);
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .character-card:hover .character-tag {
+            background: rgba(138, 159, 255, 0.2);
+            border-color: rgba(138, 159, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Special Character Type Styling */
+        .character-card.protagonist .character-avatar {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+            border-color: rgba(255, 215, 0, 0.3);
+            color: #ffd700;
+            box-shadow: 
+                0 0 30px rgba(255, 215, 0, 0.2),
+                inset 0 0 20px rgba(255, 215, 0, 0.1);
+        }
+
+        .character-card.protagonist:hover {
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .character-card.antagonist .character-avatar {
+            background: linear-gradient(135deg, rgba(204, 0, 0, 0.2), rgba(204, 0, 0, 0.1));
+            border-color: rgba(204, 0, 0, 0.3);
+            color: #ff4444;
+            box-shadow: 
+                0 0 30px rgba(204, 0, 0, 0.2),
+                inset 0 0 20px rgba(204, 0, 0, 0.1);
+        }
+
+        .character-card.antagonist:hover {
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(204, 0, 0, 0.2);
+        }
+
+        .character-card.divine .character-avatar {
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 70%);
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            box-shadow: 
+                0 0 40px rgba(255, 255, 255, 0.3),
+                inset 0 0 25px rgba(255, 255, 255, 0.2);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .character-card.divine:hover {
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                0 0 50px rgba(255, 255, 255, 0.3);
+        }
+
+        .character-card.historian .character-avatar {
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.2), rgba(184, 134, 11, 0.1));
+            border-color: rgba(184, 134, 11, 0.3);
+            color: #daa520;
+            box-shadow: 
+                0 0 30px rgba(184, 134, 11, 0.2),
+                inset 0 0 20px rgba(184, 134, 11, 0.1);
+        }
+
+        .character-card.tragic .character-avatar {
+            background: linear-gradient(135deg, rgba(221, 160, 221, 0.2), rgba(221, 160, 221, 0.1));
+            border-color: rgba(221, 160, 221, 0.3);
+            color: #dda0dd;
+            box-shadow: 
+                0 0 30px rgba(221, 160, 221, 0.2),
+                inset 0 0 20px rgba(221, 160, 221, 0.1);
+        }
+
+        .character-card.protector .character-avatar {
+            background: linear-gradient(135deg, rgba(70, 130, 180, 0.2), rgba(70, 130, 180, 0.1));
+            border-color: rgba(70, 130, 180, 0.3);
+            color: #5a9bd4;
+            box-shadow: 
+                0 0 30px rgba(70, 130, 180, 0.2),
+                inset 0 0 20px rgba(70, 130, 180, 0.1);
+        }
+
+        .character-card.catalyst .character-avatar {
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.2), rgba(255, 140, 0, 0.1));
+            border-color: rgba(255, 140, 0, 0.3);
+            color: #ff8c00;
+            box-shadow: 
+                0 0 30px rgba(255, 140, 0, 0.2),
+                inset 0 0 20px rgba(255, 140, 0, 0.1);
+        }
+
+        /* Scroll Reveal Animation */
+        .character-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fade-in-up 0.6s ease forwards;
+        }
+
+        .character-card:nth-child(1) { animation-delay: 0.1s; }
+        .character-card:nth-child(2) { animation-delay: 0.2s; }
+        .character-card:nth-child(3) { animation-delay: 0.3s; }
+        .character-card:nth-child(4) { animation-delay: 0.4s; }
+        .character-card:nth-child(5) { animation-delay: 0.5s; }
+        .character-card:nth-child(6) { animation-delay: 0.6s; }
+        .character-card:nth-child(7) { animation-delay: 0.7s; }
+        .character-card:nth-child(8) { animation-delay: 0.8s; }
+        .character-card:nth-child(9) { animation-delay: 0.9s; }
+        .character-card:nth-child(10) { animation-delay: 1.0s; }
+        .character-card:nth-child(11) { animation-delay: 1.1s; }
+        .character-card:nth-child(12) { animation-delay: 1.2s; }
+
+        @keyframes fade-in-up {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation Footer */
+        .navigation-footer {
+            padding: 80px 0;
+            background: rgba(5, 5, 20, 0.95);
+            text-align: center;
+            border-top: 2px solid rgba(138, 159, 255, 0.3);
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-title {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
         }
 
         .nav-grid {
-            grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .nav-link {
-            padding: 20px 15px;
-            min-height: 100px;
+            background: rgba(25, 25, 60, 0.3);
+            border: 1px solid rgba(138, 159, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-decoration: none;
+            color: #c8dcff;
+            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .nav-icon {
-            width: 40px;
-            height: 40px;
+        .nav-link:hover {
+            border-color: #c8dcff;
+            background: rgba(138, 159, 255, 0.2);
+            transform: translateY(-3px);
+            color: #ffffff;
         }
 
-        .nav-icon svg {
-            width: 20px;
-            height: 20px;
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .characters-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 35px;
+                max-width: 1100px;
+            }
+
+            .characters-grid.two-cards {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 700px;
+            }
+
+            .book-section {
+                padding: 50px 40px;
+            }
         }
 
-        .nav-link span {
-            font-size: 0.85em;
-        }
-    }
-</style>
+        @media (max-width: 900px) {
+            .characters-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 30px;
+                max-width: 900px;
+            }
 
-<!-- Floating Particles -->
+            .characters-grid.two-cards {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 600px;
+                gap: 30px;
+            }
+
+            .book-title {
+                font-size: 2.2em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5em;
+                letter-spacing: 3px;
+            }
+
+            .page-subtitle {
+                font-size: 1.1em;
+                padding: 0 20px;
+            }
+
+            .book-section {
+                padding: 40px 20px;
+                margin-bottom: 60px;
+                border-radius: 20px;
+            }
+
+            .book-title {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+
+            .book-description {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+
+            /* Single column on mobile for all grids */
+            .characters-grid,
+            .characters-grid.two-cards,
+            .characters-grid.one-card {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                gap: 30px;
+                padding: 0;
+            }
+
+            .character-card {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .nav-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .nav-link {
+                padding: 15px 10px;
+                font-size: 0.9em;
+            }
+
+            .nav-title {
+                font-size: 2em;
+            }
+
+            .substory-title {
+                font-size: 1.6em;
+            }
+
+            .substory-description {
+                font-size: 0.95em;
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2em;
+                letter-spacing: 2px;
+            }
+
+            .page-header {
+                padding: 80px 0 60px;
+            }
+
+            .characters-section {
+                padding: 40px 0 80px;
+            }
+
+            .book-section {
+                padding: 30px 15px;
+            }
+
+            .character-card {
+                padding: 30px 20px;
+                min-height: 380px;
+            }
+
+            .character-avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 1.5em;
+            }
+
+            .character-name {
+                font-size: 1.3em;
+            }
+
+            .character-title {
+                font-size: 0.95em;
+            }
+
+            .character-preview {
+                font-size: 0.9em;
+            }
+
+            .character-tag {
+                padding: 6px 12px;
+                font-size: 0.75em;
+            }
+
+            .nav-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Floating Particles Background -->
 <div class="particles" id="particles"></div>
 
 <!-- Page Header -->
@@ -801,11 +856,11 @@ image: "/assets/images/world-guide-characters.jpg"
     </div>
 </section>
 
-<!-- Characters Section -->
+<!-- Main Characters Section -->
 <section class="characters-section">
     <div class="container">
         
-        <!-- The Silence Characters -->
+        <!-- The Silence Book Section -->
         <div class="book-section">
             <h2 class="book-title">Blood of the Wild Gods: The Silence</h2>
             <p class="book-description">Five mortals chosen by the Silent God, each carrying their own darkness and light through a world on the edge of apocalypse.</p>
@@ -909,7 +964,7 @@ image: "/assets/images/world-guide-characters.jpg"
             </div>
         </div>
 
-        <!-- The Chosen Chronicles -->
+        <!-- The Chosen Chronicles Book Section -->
         <div class="book-section">
             <h2 class="book-title">The Chosen Chronicles</h2>
             <p class="book-description">A four-book dark fantasy saga spanning 18 years: The Chosen, The Forsaken, The Village, and The Return. Follow Mira's journey from victim to warrior, and watch her son Kai grow from a child of trauma into a powerful force for change.</p>
@@ -1109,12 +1164,12 @@ image: "/assets/images/world-guide-characters.jpg"
             </div>
         </div>
 
-        <!-- Voices of the Wild Characters -->
+        <!-- Voices of the Wild Book Section -->
         <div class="book-section">
             <h2 class="book-title">Blood of the Wild Gods: Voices of the Wild</h2>
             <p class="book-description">An amateur scholar's journey to understand nature spirits leads to discoveries about cosmic forces that threaten the natural order itself.</p>
             
-            <div class="characters-grid">
+            <div class="characters-grid two-cards">
                 <a href="/world-guide/characters/alaquinn-althaea.html" class="character-card protagonist">
                     <div class="character-avatar">
                         <img src="/assets/images/alaquinn.png" alt="Alaquinn Althaea" />
@@ -1149,13 +1204,13 @@ image: "/assets/images/world-guide-characters.jpg"
             </div>
         </div>
         
-        <!-- Lost Histories Characters -->
+        <!-- Lost Histories Book Section -->
         <div class="book-section">
             <h2 class="book-title">Blood of the Wild Gods: The Lost Histories</h2>
             <p class="book-description">Ancient tales of gods and mortals, woven together by the Historian who remembers what others have forgotten.</p>
             
             <!-- Main Lost Histories Character -->
-            <div class="characters-grid">
+            <div class="characters-grid one-card">
                 <a href="/world-guide/characters/tanneus-graja.html" class="character-card historian">
                     <div class="character-avatar">T</div>
                     <h3 class="character-name">Tanneus G'Raja</h3>
@@ -1171,12 +1226,12 @@ image: "/assets/images/world-guide-characters.jpg"
                 </a>
             </div>
 
-            <!-- Seven Days of Sun -->
+            <!-- Seven Days of Sun Substory -->
             <div class="substory-section">
                 <h3 class="substory-title">Seven Days of Sun</h3>
                 <p class="substory-description">The eternal love between a god and a mortal, cursed to repeat across time.</p>
                 
-                <div class="characters-grid">
+                <div class="characters-grid two-cards">
                     <a href="/world-guide/characters/elodias.html" class="character-card divine">
                         <div class="character-avatar">E</div>
                         <h3 class="character-name">Elodias</h3>
@@ -1207,12 +1262,12 @@ image: "/assets/images/world-guide-characters.jpg"
                 </div>
             </div>
 
-            <!-- The Weaver of Sorrows -->
+            <!-- The Weaver of Sorrows Substory -->
             <div class="substory-section">
                 <h3 class="substory-title">The Weaver of Sorrows</h3>
                 <p class="substory-description">The jealous seer who wove the curse that binds divine love to eternal tragedy.</p>
                 
-                <div class="characters-grid">
+                <div class="characters-grid one-card">
                     <a href="/world-guide/characters/malritha.html" class="character-card divine">
                         <div class="character-avatar">M</div>
                         <h3 class="character-name">Malritha</h3>
@@ -1229,7 +1284,7 @@ image: "/assets/images/world-guide-characters.jpg"
                 </div>
             </div>
 
-            <!-- The God Who Wept -->
+            <!-- The God Who Wept Substory -->
             <div class="substory-section">
                 <h3 class="substory-title">The God Who Wept</h3>
                 <p class="substory-description">A divine quest to find goodness in mortal hearts, spanning a thousand years of wandering.</p>
@@ -1365,7 +1420,7 @@ image: "/assets/images/world-guide-characters.jpg"
                 </div>
             </div>
 
-            <!-- The Sin of Mercy -->
+            <!-- The Sin of Mercy Substory -->
             <div class="substory-section">
                 <h3 class="substory-title">The Sin of Mercy</h3>
                 <p class="substory-description">A god's fall from grace through the act of mercy, and the mortal consequences of divine compassion.</p>
@@ -1429,7 +1484,7 @@ image: "/assets/images/world-guide-characters.jpg"
                 </div>
             </div>
 
-            <!-- The Song of Blood and Stone -->
+            <!-- The Song of Blood and Stone Substory -->
             <div class="substory-section">
                 <h3 class="substory-title">The Song of Blood and Stone</h3>
                 <p class="substory-description">A tale of divine love, mortal jealousy, and the tragic cost of power corrupted by possessive desire.</p>
@@ -1479,7 +1534,7 @@ image: "/assets/images/world-guide-characters.jpg"
                 </div>
             </div>
 
-            <!-- The Divine War -->
+            <!-- The Divine War Substory -->
             <div class="substory-section">
                 <h3 class="substory-title">The Divine War</h3>
                 <p class="substory-description">The first Bloodmarked is created from grief and love, sparking transformation in a world where gods and mortals collide.</p>
@@ -1557,7 +1612,7 @@ image: "/assets/images/world-guide-characters.jpg"
 </section>
 
 <script>
-// Create floating particles
+// Create floating particles effect
 function createParticles() {
     const particlesContainer = document.getElementById('particles');
     const particleCount = 50;
@@ -1601,7 +1656,7 @@ function generateRandomNavigation() {
     // Add World Guide Home as the 6th option
     selectedCategories.push({ name: 'World Guide Home', path: '/world-guide/' });
     
-    // Generate HTML
+    // Generate HTML for navigation links
     const navGrid = document.getElementById('navigation-grid');
     selectedCategories.forEach(category => {
         const link = document.createElement('a');
@@ -1612,15 +1667,10 @@ function generateRandomNavigation() {
     });
 }
 
-// Initialize on page load
+// Initialize everything on page load
 document.addEventListener('DOMContentLoaded', () => {
     createParticles();
     generateRandomNavigation();
-});
-
-// Remove the parallax scroll effect that was causing overlap
-window.addEventListener('scroll', () => {
-    // Removed parallax effect on book sections to prevent overlap
 });
 </script>
 
