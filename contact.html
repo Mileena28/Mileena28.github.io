@@ -405,55 +405,72 @@ image: "/assets/images/mileena-rayne-author.jpg"
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="contact-form-section">
-                <h2 class="section-title">Send Me a Message</h2>
-                <p class="section-description">
-                    Have something meaningful to share? A question about my work? 
-                    Or just want to connect authentically? I'd love to hear from you.
-                </p>
-                
-                <form action="https://formspree.io/f/mvgrblwz" method="POST" class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label class="form-label">Your Name</label>
-                        <input type="text" name="name" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Email Address</label>
-                        <input type="email" name="email" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">What's this about?</label>
-                        <select name="category" class="form-select" required>
-                            <option value="">Choose a category</option>
-                            <option value="general">General connection / fan mail</option>
-                            <option value="collaboration">Creative collaboration</option>
-                            <option value="speaking">Speaking / workshop inquiry</option>
-                            <option value="interview">Interview / media request</option>
-                            <option value="feedback">Feedback on my work</option>
-                            <option value="personal">Personal story / shared experience</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Your Message</label>
-                        <textarea name="message" class="form-textarea" placeholder="Share what's on your mind. I appreciate authenticity over perfection." required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button" id="submitBtn">Send Message</button>
-                </form>
-
-                <div class="success-message" id="successMessage">
-                    <strong>Thank you for your message!</strong><br>
-                    I'll respond thoughtfully within 3-5 business days. I appreciate you choosing depth over speed.
-                </div>
-            </div>
-
+<!-- Contact Form Section (Updated for Google Forms) -->
+<div class="contact-form-section">
+    <h2 class="section-title">Send Me a Message</h2>
+    <p class="section-description">
+        Have something meaningful to share? A question about my work? 
+        Or just want to connect authentically? I'd love to hear from you.
+    </p>
+    
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSeeNpOKAbfqE32CcmdMZYmUk9-Z0A3v8zLSTBC9MxR8pL5BDA/formResponse" method="POST" target="_blank" class="contact-form" id="contactForm">
+        <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" name="entry.1690115139" class="form-input" required>
         </div>
+        
+        <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" name="entry.1879233838" class="form-input" required>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">What's this about?</label>
+            <select name="entry.204218828" class="form-select" required>
+                <option value="">Choose a category</option>
+                <option value="General Connection / Fan Mail">General connection / fan mail</option>
+                <option value="Creative Collaboration">Creative collaboration</option>
+                <option value="Speaking / Worshop Inquiry">Speaking / workshop inquiry</option>
+                <option value="Interview / Media Request">Interview / media request</option>
+                <option value="Feedback On My Work">Feedback on my work</option>
+                <option value="Personal Story / Shared Experience">Personal story / shared experience</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label class="form-label">Your Message</label>
+            <textarea name="entry.1321555449" class="form-textarea" placeholder="Share what's on your mind. I appreciate authenticity over perfection." required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-button" id="submitBtn">Send Message</button>
+    </form>
+
+    <div class="success-message" id="successMessage">
+        <strong>Thank you for your message!</strong><br>
+        I'll respond thoughtfully within 3-5 business days. I appreciate you choosing depth over speed.
     </div>
-</section>
+</div>
+
+<script>
+// Handle form submission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+        // Let the form submit to Google Forms
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Show success message after a short delay
+        setTimeout(function() {
+            successMessage.classList.add('show');
+            form.style.display = 'none';
+        }, 1000);
+    });
+});
+</script>
 
 <!-- Social Media -->
 <section class="social-section">
