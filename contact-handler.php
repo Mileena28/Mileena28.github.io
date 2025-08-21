@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 $smtp_username = 'mileenarayne@mileenarayne.com';
-$smtp_password = 'cpje lxgl tryt yqfd';
+$smtp_password = 'isgz kjhr spnv fnbn';
 $to_email = 'mileenarayne@mileenarayne.com';
 
 $name = trim(htmlspecialchars($_POST['name'] ?? ''));
