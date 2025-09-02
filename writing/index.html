@@ -194,100 +194,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         }
     }
 
-    /* Futuristic Background */
-    .cosmic-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -3;
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #0a0a0a 100%);
-    }
 
-    /* Geometric Grid Overlay */
-    .grid-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -2;
-        opacity: 0.03;
-        background-image: 
-            linear-gradient(rgba(138, 159, 255, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(138, 159, 255, 0.1) 1px, transparent 1px);
-        background-size: 100px 100px;
-        animation: grid-move 20s linear infinite;
-    }
-
-    @keyframes grid-move {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(100px, 100px); }
-    }
-
-    /* Subtle Atmospheric Particles */
-    .light-particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -1;
-        overflow: hidden;
-        pointer-events: none;
-    }
-
-    .particle {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: var(--primary-purple);
-        border-radius: 50%;
-        opacity: 0.3;
-        animation: particle-drift 20s infinite linear;
-    }
-
-    .particle:nth-child(1) {
-        left: 10%;
-        animation-delay: 0s;
-        animation-duration: 25s;
-    }
-
-    .particle:nth-child(2) {
-        left: 30%;
-        animation-delay: 5s;
-        animation-duration: 30s;
-    }
-
-    .particle:nth-child(3) {
-        left: 60%;
-        animation-delay: 10s;
-        animation-duration: 35s;
-    }
-
-    .particle:nth-child(4) {
-        left: 80%;
-        animation-delay: 15s;
-        animation-duration: 28s;
-    }
-
-    @keyframes particle-drift {
-        0% {
-            transform: translateY(-100px);
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.3;
-        }
-        90% {
-            opacity: 0.3;
-        }
-        100% {
-            transform: translateY(calc(100vh + 100px));
-            opacity: 0;
-        }
-    }
 
     /* Hero Section */
     .hero-section {
@@ -572,12 +479,6 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     .featured-cover:hover::after {
         opacity: 1;
-        animation: rotate-glow 20s linear infinite;
-    }
-
-    @keyframes rotate-glow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
     }
 
     .featured-cover:hover {
@@ -589,6 +490,43 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    /* Subtle shimmer effect for book covers */
+    .featured-cover::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 70%
+        );
+        transform: rotate(45deg);
+        transition: all 0.6s;
+        opacity: 0;
+    }
+
+    .featured-cover:hover::before {
+        animation: shimmer-sweep 0.6s ease;
+    }
+
+    @keyframes shimmer-sweep {
+        0% {
+            transform: rotate(45deg) translateY(-100%);
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: rotate(45deg) translateY(100%);
+            opacity: 0;
+        }
     }
 
     .featured-info {
@@ -919,7 +857,6 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     .wip-cover-wrapper:hover::after {
         opacity: 1;
-        animation: rotate-glow 20s linear infinite;
     }
 
     .wip-cover-wrapper:hover {
@@ -931,6 +868,29 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    /* Subtle shimmer effect for WIP book covers */
+    .wip-cover-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 70%
+        );
+        transform: rotate(45deg);
+        transition: all 0.6s;
+        opacity: 0;
+    }
+
+    .wip-cover-wrapper:hover::before {
+        animation: shimmer-sweep 0.6s ease;
     }
 
     .wip-info {
@@ -1243,17 +1203,18 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     </div>
 </div>
 
-<!-- Background Layers -->
-<div class="cosmic-bg"></div>
-<div class="grid-overlay"></div>
-<div class="light-particles">
+<div class="writing-page">
+    <!-- Floating Particles -->
     <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
     <div class="particle"></div>
-</div>
+    <div class="particle"></div>
+    
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
 
-<!-- Hero Section -->
+    <!-- Hero Section -->
 <section class="hero-section">
     <div class="container">
         <div class="hero-content">
