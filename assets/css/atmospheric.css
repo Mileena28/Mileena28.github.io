@@ -1,0 +1,262 @@
+/* Root Variables */
+:root {
+    --primary-purple: #b19cd9;
+    --ocean-blue: #8ac4ff;
+    --accent-violet: #a8b5ff;
+    --deep-night: #0a0a14;
+    --text-light: #f0f0f0;
+    --text-secondary: #d0d0d0;
+    --glass-white: rgba(255, 255, 255, 0.05);
+}
+
+/* Atmospheric Background - Applied to page wrapper */
+.atmospheric-page {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
+    min-height: 100vh;
+}
+
+/* Cosmic Overlay */
+.cosmic-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -2;
+    background: 
+        radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Floating Light Particles */
+.particle-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.light-orb {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(177, 156, 217, 0.4) 0%, transparent 70%);
+    filter: blur(40px);
+    opacity: 0.3;
+    animation: float-drift 20s infinite ease-in-out;
+}
+
+.light-orb:nth-child(1) {
+    width: 300px;
+    height: 300px;
+    top: -150px;
+    left: -150px;
+    animation-duration: 25s;
+}
+
+.light-orb:nth-child(2) {
+    width: 400px;
+    height: 400px;
+    bottom: -200px;
+    right: -200px;
+    background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
+    animation-duration: 30s;
+}
+
+.light-orb:nth-child(3) {
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 30%;
+    background: radial-gradient(circle, rgba(168, 181, 255, 0.3) 0%, transparent 70%);
+    animation-duration: 35s;
+}
+
+@keyframes float-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(100px, -100px) scale(1.1); }
+    66% { transform: translate(-100px, 100px) scale(0.9); }
+}
+
+/* Common Card Styles with Glassmorphism */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(177, 156, 217, 0.2);
+    border-radius: 25px;
+    padding: 40px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-purple), var(--ocean-blue));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+}
+
+.glass-card:hover::before {
+    transform: scaleX(1);
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Common Title Animations */
+.gradient-title {
+    background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: title-shimmer 4s ease-in-out infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes title-shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Common Animations */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reveal Animation Class */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Common Button Styles */
+.cta-button {
+    display: inline-block;
+    padding: 18px 45px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: all 0.4s ease;
+    box-shadow: 0 15px 35px rgba(177, 156, 217, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cta-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
+}
+
+/* Common Section Header Styles */
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 3em;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-weight: 200;
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Page Headers with Atmospheric Style */
+.page-header {
+    padding: 100px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 200;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    animation: title-shimmer 4s ease-in-out infinite;
+    background-size: 200% 200%;
+}
+
+.page-subtitle {
+    font-size: 1.3em;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Parallax Script for Orbs */
+/* Include this JavaScript in your pages or main script file:
+
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const orbs = document.querySelectorAll('.light-orb');
+    
+    orbs.forEach((orb, index) => {
+        const speed = 0.5 + (index * 0.2);
+        const yPos = -(scrolled * speed * 0.1);
+        orb.style.transform = `translateY(${yPos}px)`;
+    });
+});
+
+*/
