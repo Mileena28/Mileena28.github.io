@@ -38,25 +38,25 @@ schema:
     <title>Blood of the Wild Gods: The Chosen Chronicles</title>
     
     <style>
-        /* Enhanced Ocean & Heaven Theme - Bright Light Version */
+        /* Enhanced Ocean & Heaven Theme - Writing Index Style */
         :root {
-            --ocean-primary: #4a9eff;
-            --ocean-deep: #2e7cd6;
-            --ocean-light: #8ac4ff;
-            --ocean-secondary: #a8d4ff;
-            --heaven-accent: #c0e0ff;
-            --celestial-glow: #d4ecff;
-            --silver-light: #e8f4ff;
+            --ocean-primary: #8ac4ff;
+            --ocean-deep: #6bb6ff;
+            --ocean-light: #a8d4ff;
+            --ocean-secondary: #c0e0ff;
+            --heaven-accent: #d4ecff;
+            --celestial-glow: #e8f4ff;
+            --silver-light: #f8fcff;
             --deep-ocean: #1a4d8a;
             --midnight-ocean: #0a2540;
             --deep-night: #0a0a14;
             --foam-white: #f8fcff;
-            --text-primary: #1a2332;
-            --text-secondary: #3a4556;
-            --glass-blue: rgba(138, 196, 255, 0.2);
-            --glass-white: rgba(255, 255, 255, 0.8);
+            --text-primary: #f0f4f8;
+            --text-secondary: #d0dce8;
+            --glass-blue: rgba(138, 196, 255, 0.1);
+            --glass-white: rgba(255, 255, 255, 0.05);
             --shadow-depth: #051828;
-            --glow-intensity: rgba(74, 158, 255, 0.6);
+            --glow-intensity: rgba(138, 196, 255, 0.5);
         }
 
         * {
@@ -66,20 +66,20 @@ schema:
         }
 
         body {
-            background: linear-gradient(135deg, #e8f4ff 0%, #c0e0ff 50%, #a8d4ff 100%);
-            color: #2c3e50;
+            background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
+            color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
         }
 
-        /* Loading Screen - Bright Version */
+        /* Loading Screen - Writing Index Style */
         .loading-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #c0e0ff 0%, #8ac4ff 100%);
+            background: #0a0a14;
             z-index: 10000;
             display: flex;
             align-items: center;
@@ -94,13 +94,13 @@ schema:
 
         .loading-text {
             font-size: 2em;
-            color: var(--ocean-deep);
+            color: var(--ocean-primary);
             letter-spacing: 0.1em;
             animation: loading-pulse 2s ease-in-out infinite;
             text-align: center;
             padding: 0 20px;
             width: 100%;
-            font-weight: 300;
+            font-weight: 200;
             text-transform: uppercase;
         }
 
@@ -117,7 +117,7 @@ schema:
             }
         }
 
-        /* Atmospheric Background - Bright Light Version */
+        /* Atmospheric Background - Writing Index Style */
         .ocean-depths {
             position: fixed;
             top: 0;
@@ -126,8 +126,8 @@ schema:
             height: 100vh;
             z-index: -2;
             background: 
-                radial-gradient(ellipse at top right, rgba(74, 158, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.12) 0%, transparent 50%);
+                radial-gradient(ellipse at top right, rgba(138, 196, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, rgba(168, 212, 255, 0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -146,9 +146,9 @@ schema:
         .light-orb {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(74, 158, 255, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
             filter: blur(40px);
-            opacity: 0.4;
+            opacity: 0.3;
             animation: float-drift 20s infinite ease-in-out;
         }
 
@@ -165,7 +165,7 @@ schema:
             height: 400px;
             bottom: -200px;
             right: -200px;
-            background: radial-gradient(circle, rgba(138, 196, 255, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(168, 212, 255, 0.4) 0%, transparent 70%);
             animation-duration: 30s;
         }
 
@@ -174,7 +174,7 @@ schema:
             height: 350px;
             top: 50%;
             left: 30%;
-            background: radial-gradient(circle, rgba(168, 212, 255, 0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(192, 224, 255, 0.3) 0%, transparent 70%);
             animation-duration: 35s;
         }
 
@@ -587,85 +587,105 @@ schema:
             }
         }
 
-        /* Series Badge - Bright Light Version */
+        /* Series Badge - Writing Index Style */
         .series-badge {
             display: inline-flex;
             align-items: center;
             gap: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 2px solid var(--ocean-primary);
+            background: rgba(138, 196, 255, 0.1);
+            border: 1px solid rgba(138, 196, 255, 0.3);
             border-radius: 50px;
             padding: 15px 35px;
             margin-bottom: 40px;
             backdrop-filter: blur(20px);
             transition: all 0.3s ease;
             animation: badge-glow 3s ease-in-out infinite;
-            box-shadow: 0 5px 20px rgba(74, 158, 255, 0.3);
         }
 
         @keyframes badge-glow {
             0%, 100% {
-                box-shadow: 0 5px 20px rgba(74, 158, 255, 0.3);
+                box-shadow: 0 0 30px rgba(138, 196, 255, 0.2);
             }
             50% {
-                box-shadow: 0 8px 30px rgba(74, 158, 255, 0.5);
+                box-shadow: 0 0 50px rgba(138, 196, 255, 0.4);
             }
         }
 
         .series-badge:hover {
+            background: rgba(138, 196, 255, 0.15);
             transform: translateY(-2px);
-            box-shadow: 0 10px 35px rgba(74, 158, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(138, 196, 255, 0.3);
         }
 
         .badge-dot {
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-deep));
+            background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-light));
             display: flex;
             align-items: center;
             justify-content: center;
             animation: pulse-glow 3s ease-in-out infinite;
-            box-shadow: 0 0 20px rgba(74, 158, 255, 0.5);
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(138, 196, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(138, 196, 255, 0);
+            }
         }
 
         .badge-text {
             color: var(--text-primary);
             font-size: 1.1em;
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: 1px;
         }
 
-        /* Hero Titles - Bright Light Version */
+        /* Hero Titles - Writing Index Style with Glow */
         .hero-title {
             font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 300;
+            font-weight: 200;
             margin-bottom: 20px;
             color: var(--text-primary);
             letter-spacing: -2px;
             line-height: 1.1;
             position: relative;
-            text-shadow: 0 2px 10px rgba(74, 158, 255, 0.3);
+            text-shadow: 0 0 40px rgba(138, 196, 255, 0.5);
+            animation: title-glow 4s ease-in-out infinite;
+        }
+
+        @keyframes title-glow {
+            0%, 100% {
+                text-shadow: 0 0 40px rgba(138, 196, 255, 0.5);
+            }
+            50% {
+                text-shadow: 0 0 60px rgba(138, 196, 255, 0.7);
+            }
         }
 
         .hero-subtitle {
             font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 400;
-            background: linear-gradient(135deg, var(--ocean-deep), var(--ocean-primary));
+            font-weight: 300;
+            background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-light));
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: title-shimmer 4s ease-in-out infinite;
             background-size: 200% 200%;
-            filter: drop-shadow(0 2px 8px rgba(74, 158, 255, 0.4));
+            filter: drop-shadow(0 0 20px rgba(138, 196, 255, 0.5));
         }
 
         @keyframes title-shimmer {
             0%, 100% { 
                 background-position: 0% 50%;
+                filter: drop-shadow(0 0 20px rgba(138, 196, 255, 0.5));
             }
             50% { 
                 background-position: 100% 50%;
+                filter: drop-shadow(0 0 30px rgba(138, 196, 255, 0.7));
             }
         }
 
@@ -675,15 +695,15 @@ schema:
             max-width: 700px;
             margin: 0 auto 50px;
             line-height: 1.8;
-            opacity: 0.95;
-            font-weight: 400;
+            opacity: 0.9;
+            font-weight: 300;
         }
 
-        /* Main Showcase - Bright Light Version */
+        /* Main Showcase - Writing Index Style */
         .main-showcase {
             padding: 100px 0;
             position: relative;
-            background: linear-gradient(180deg, transparent 0%, rgba(232, 244, 255, 0.5) 50%, transparent 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 30, 50, 0.3) 50%, transparent 100%);
         }
 
         .showcase-container {
@@ -751,23 +771,22 @@ schema:
             position: relative;
         }
 
-        /* Chronicles Frame - Bright Light Version */
+        /* Chronicles Frame - Writing Index Style */
         .chronicles-frame {
             position: relative;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(30px);
-            border: 2px solid rgba(74, 158, 255, 0.3);
+            border: 1px solid rgba(138, 196, 255, 0.2);
             border-radius: 30px;
             padding: 30px;
             transition: all 0.6s ease;
-            box-shadow: 0 15px 40px rgba(74, 158, 255, 0.15);
         }
 
         .chronicles-frame:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 
-                0 25px 60px rgba(74, 158, 255, 0.25),
-                0 10px 30px rgba(0, 0, 0, 0.1);
+                0 40px 80px rgba(138, 196, 255, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .chronicles-cover {
@@ -843,17 +862,16 @@ schema:
             }
         }
 
-        /* Series Stats - Bright Light Version */
+        /* Series Stats - Writing Index Style */
         .series-stats {
             margin-top: 40px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
-            border: 2px solid rgba(74, 158, 255, 0.3);
+            border: 1px solid rgba(138, 196, 255, 0.2);
             border-radius: 30px;
             padding: 40px;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(74, 158, 255, 0.15);
         }
 
         .series-stats::before {
@@ -862,7 +880,7 @@ schema:
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 1px;
             background: linear-gradient(90deg, transparent, var(--ocean-primary), transparent);
             animation: shimmer-line 3s ease-in-out infinite;
         }
@@ -879,20 +897,29 @@ schema:
 
         .stat-number {
             font-size: 2.2em;
-            color: var(--ocean-deep);
-            font-weight: 400;
+            color: var(--ocean-primary);
+            font-weight: 300;
             display: block;
             margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(74, 158, 255, 0.3);
+            text-shadow: 0 0 20px rgba(138, 196, 255, 0.5);
             animation: counter-glow 3s ease-in-out infinite;
+            background: linear-gradient(135deg, var(--ocean-primary), var(--heaven-accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 15px rgba(138, 196, 255, 0.6));
         }
 
         @keyframes counter-glow {
             0%, 100% { 
-                text-shadow: 0 2px 10px rgba(74, 158, 255, 0.3);
+                opacity: 0.9;
+                text-shadow: 0 0 20px rgba(138, 196, 255, 0.5);
+                filter: drop-shadow(0 0 15px rgba(138, 196, 255, 0.6));
             }
             50% { 
-                text-shadow: 0 2px 20px rgba(74, 158, 255, 0.5);
+                opacity: 1;
+                text-shadow: 0 0 30px rgba(138, 196, 255, 0.8);
+                filter: drop-shadow(0 0 25px rgba(138, 196, 255, 0.8));
             }
         }
 
@@ -904,18 +931,17 @@ schema:
             font-weight: 500;
         }
 
-        /* Content Blocks - Bright Light Version */
+        /* Content Blocks - Writing Index Style */
         .content-block {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(74, 158, 255, 0.3);
+            border: 1px solid rgba(138, 196, 255, 0.2);
             border-radius: 30px;
             padding: 50px;
             margin-bottom: 40px;
             transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(74, 158, 255, 0.1);
         }
 
         .content-block::before {
@@ -924,7 +950,7 @@ schema:
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 1px;
             background: linear-gradient(90deg, transparent, var(--ocean-primary), transparent);
             animation: shimmer-line 3s ease-in-out infinite;
         }
@@ -935,18 +961,29 @@ schema:
         }
 
         .content-block:hover {
+            background: rgba(255, 255, 255, 0.04);
             transform: translateY(-3px);
-            box-shadow: 0 25px 50px rgba(74, 158, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(138, 196, 255, 0.15);
         }
 
         .content-title {
-            color: var(--ocean-deep);
+            color: var(--ocean-primary);
             font-size: 2em;
-            font-weight: 400;
+            font-weight: 300;
             margin-bottom: 30px;
             position: relative;
             padding-bottom: 20px;
-            filter: drop-shadow(0 2px 8px rgba(74, 158, 255, 0.3));
+            filter: drop-shadow(0 0 15px rgba(138, 196, 255, 0.4));
+            animation: subtle-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes subtle-glow {
+            0%, 100% {
+                filter: drop-shadow(0 0 15px rgba(138, 196, 255, 0.4));
+            }
+            50% {
+                filter: drop-shadow(0 0 25px rgba(138, 196, 255, 0.6));
+            }
         }
 
         .content-title::after {
@@ -957,7 +994,7 @@ schema:
             width: 80px;
             height: 2px;
             background: linear-gradient(90deg, var(--ocean-primary), transparent);
-            box-shadow: 0 2px 8px rgba(74, 158, 255, 0.4);
+            box-shadow: 0 0 10px rgba(138, 196, 255, 0.5);
         }
 
         .content-text {
@@ -1015,23 +1052,22 @@ schema:
             top: 100px;
         }
 
-        /* Book Frame - Bright Light Version */
+        /* Book Frame - Writing Index Style */
         .book-frame {
             position: relative;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(30px);
-            border: 2px solid rgba(74, 158, 255, 0.3);
+            border: 1px solid rgba(107, 182, 255, 0.2);
             border-radius: 30px;
             padding: 30px;
             transition: all 0.6s ease;
-            box-shadow: 0 15px 40px rgba(74, 158, 255, 0.15);
         }
 
         .book-frame:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 
-                0 25px 60px rgba(74, 158, 255, 0.25),
-                0 10px 30px rgba(0, 0, 0, 0.1);
+                0 40px 80px rgba(107, 182, 255, 0.3),
+                0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .book-cover {
@@ -1093,18 +1129,17 @@ schema:
             animation: shimmer-sweep 0.6s ease;
         }
 
-        /* Book Info Blocks - Bright Light Version */
+        /* Book Info Blocks - Writing Index Style */
         .book-info-block {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
-            border: 2px solid rgba(74, 158, 255, 0.3);
+            border: 1px solid rgba(107, 182, 255, 0.2);
             border-radius: 30px;
             padding: 45px;
             margin-bottom: 35px;
             transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(74, 158, 255, 0.15);
         }
 
         .book-info-block::before {
@@ -1113,14 +1148,15 @@ schema:
             top: 0;
             left: 0;
             width: 100%;
-            height: 2px;
+            height: 1px;
             background: linear-gradient(90deg, transparent, var(--ocean-primary), transparent);
             animation: shimmer-line 3s ease-in-out infinite;
         }
 
         .book-info-block:hover {
+            background: rgba(255, 255, 255, 0.04);
             transform: translateY(-3px);
-            box-shadow: 0 20px 45px rgba(74, 158, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(107, 182, 255, 0.15);
         }
 
         .book-number {
@@ -1137,9 +1173,10 @@ schema:
             font-size: 2.8em;
             color: var(--text-primary);
             margin-bottom: 20px;
-            font-weight: 400;
+            font-weight: 300;
             line-height: 1.2;
-            text-shadow: 0 2px 10px rgba(74, 158, 255, 0.3);
+            text-shadow: 0 0 30px rgba(107, 182, 255, 0.4);
+            animation: subtle-glow 3s ease-in-out infinite;
         }
 
         .book-summary {
