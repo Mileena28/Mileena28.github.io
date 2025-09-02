@@ -2,94 +2,248 @@
 layout: default
 title: "Diary - Unfiltered Thoughts on Trauma, Writing & Truth | Mileena Rayne"
 description: "Raw, honest diary entries about surviving homelessness, leaving religious trauma behind, and finding truth through writing and music. Authentic thoughts without filters."
+keywords: "personal diary, trauma recovery, religious trauma, ex-JW experiences, mental health journey, authentic writing, vulnerability in art"
 image: "/assets/images/mileena-rayne-author.jpg"
+canonical: "https://mileenarayne.com/diary/"
+robots: "index, follow"
+og:type: "website"
+og:title: "Diary - Unfiltered Thoughts | Mileena Rayne"
+og:description: "Raw, honest diary entries about trauma, recovery, and finding truth through creative expression."
+og:image: "/assets/images/mileena-rayne-author.jpg"
+og:url: "https://mileenarayne.com/diary/"
+twitter:card: "summary_large_image"
+twitter:title: "Diary - Unfiltered Thoughts | Mileena Rayne"
+twitter:description: "Raw, honest diary entries about trauma, recovery, and finding truth."
+twitter:image: "/assets/images/mileena-rayne-author.jpg"
 ---
 
 <style>
+    /* Root Variables */
+    :root {
+        --primary-purple: #b19cd9;
+        --ocean-blue: #8ac4ff;
+        --accent-violet: #a8b5ff;
+        --deep-night: #0a0a14;
+        --text-light: #f0f0f0;
+        --text-secondary: #d0d0d0;
+        --glass-white: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Atmospheric Background */
+    .diary-page {
+        position: relative;
+        background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
+        min-height: 100vh;
+    }
+
+    .cosmic-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    /* Floating Light Particles */
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .light-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(177, 156, 217, 0.4) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 20s infinite ease-in-out;
+    }
+
+    .light-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
+    }
+
+    .light-orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
+        animation-duration: 30s;
+    }
+
+    .light-orb:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        top: 50%;
+        left: 30%;
+        background: radial-gradient(circle, rgba(168, 181, 255, 0.3) 0%, transparent 70%);
+        animation-duration: 35s;
+    }
+
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
+    }
+
+    /* Blog Header */
     .blog-header {
-        padding: 80px 0 40px;
+        padding: 100px 0 60px;
         text-align: center;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blog-header-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        animation: fade-in-up 1s ease-out;
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .blog-title {
-        font-size: 3em;
-        font-weight: 300;
-        margin-bottom: 20px;
-        color: #f0f0f0;
-        letter-spacing: 2px;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 200;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 3px;
+        animation: title-shimmer 4s ease-in-out infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes title-shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .blog-subtitle {
-        font-size: 1.2em;
-        color: #bbb;
+        font-size: 1.3em;
+        color: var(--text-secondary);
         font-style: italic;
+        line-height: 1.8;
+        padding: 0 20px;
     }
 
     /* Search Container */
     .search-container {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 30px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+        border-radius: 30px;
+        padding: 50px;
         margin: 40px auto;
-        max-width: 900px;
-        backdrop-filter: blur(10px);
+        max-width: 1000px;
+        position: relative;
+        overflow: hidden;
+        animation: fade-in-up 1s ease-out 0.2s both;
+    }
+
+    .search-container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), var(--ocean-blue), transparent);
+        animation: shimmer-line 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
     }
 
     .search-header {
         text-align: center;
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
 
     .search-title {
-        color: #f0f0f0;
-        font-size: 1.5em;
+        color: var(--text-light);
+        font-size: 1.8em;
         margin-bottom: 10px;
         font-weight: 300;
     }
 
     .search-subtitle {
-        color: #999;
-        font-size: 0.9em;
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        opacity: 0.8;
     }
 
     /* Search Input */
     .search-input-container {
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .search-input {
         width: 100%;
-        padding: 15px 50px 15px 20px;
-        background: rgba(0, 0, 0, 0.6);
-        border: 1px solid #444;
-        border-radius: 25px;
-        color: #e8e8e8;
-        font-size: 1em;
+        padding: 18px 55px 18px 25px;
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid rgba(177, 156, 217, 0.3);
+        border-radius: 30px;
+        color: var(--text-light);
+        font-size: 1.05em;
         transition: all 0.3s ease;
+    }
+
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
     }
 
     .search-input:focus {
         outline: none;
-        border-color: #8a9fff;
-        box-shadow: 0 0 20px rgba(138, 159, 255, 0.3);
+        border-color: var(--primary-purple);
+        box-shadow: 0 0 30px rgba(177, 156, 217, 0.3);
+        background: rgba(0, 0, 0, 0.5);
     }
 
     .search-icon {
         position: absolute;
-        right: 20px;
+        right: 25px;
         top: 50%;
         transform: translateY(-50%);
-        width: 20px;
-        height: 20px;
-        fill: #666;
-        transition: fill 0.3s ease;
+        width: 22px;
+        height: 22px;
+        fill: rgba(177, 156, 217, 0.5);
+        transition: all 0.3s ease;
     }
 
     .search-input:focus + .search-icon {
-        fill: #8a9fff;
+        fill: var(--primary-purple);
     }
 
     /* Filters */
@@ -98,39 +252,63 @@ image: "/assets/images/mileena-rayne-author.jpg"
         gap: 15px;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .filter-button {
-        padding: 8px 16px;
-        background: rgba(138, 159, 255, 0.1);
-        border: 1px solid rgba(138, 159, 255, 0.3);
-        border-radius: 20px;
-        color: #8a9fff;
+        padding: 10px 22px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+        border-radius: 25px;
+        color: var(--text-secondary);
         text-decoration: none;
-        font-size: 0.85em;
+        font-size: 0.9em;
         transition: all 0.3s ease;
         cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .filter-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, var(--primary-purple) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: all 0.5s ease;
+        opacity: 0.3;
+    }
+
+    .filter-button:hover::before,
+    .filter-button.active::before {
+        width: 200px;
+        height: 200px;
     }
 
     .filter-button:hover,
     .filter-button.active {
-        background: rgba(138, 159, 255, 0.2);
-        border-color: #8a9fff;
-        color: #a8b5ff;
-        transform: translateY(-1px);
+        background: rgba(177, 156, 217, 0.15);
+        border-color: var(--primary-purple);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(177, 156, 217, 0.2);
     }
 
     /* Search Results */
     .search-results {
-        margin-top: 30px;
+        margin-top: 40px;
     }
 
     .search-stats {
-        color: #999;
-        font-size: 0.9em;
-        margin-bottom: 20px;
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        margin-bottom: 30px;
         text-align: center;
+        font-style: italic;
     }
 
     .search-results-grid {
@@ -139,254 +317,359 @@ image: "/assets/images/mileena-rayne-author.jpg"
     }
 
     .search-result {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.1);
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .search-result::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--ocean-blue));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .search-result:hover::before {
+        transform: scaleX(1);
     }
 
     .search-result:hover {
-        transform: translateY(-3px);
-        border-color: #8a9fff;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        border-color: rgba(177, 156, 217, 0.3);
     }
 
     .search-result-meta {
-        color: #8a9fff;
-        font-size: 0.9em;
+        color: var(--primary-purple);
+        font-size: 0.85em;
         text-transform: uppercase;
         letter-spacing: 1px;
-        margin-bottom: 8px;
-    }
-
-    .search-result-title {
-        font-size: 1.4em;
         margin-bottom: 10px;
     }
 
+    .search-result-title {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
     .search-result-title a {
-        color: #f0f0f0;
+        color: var(--text-light);
         text-decoration: none;
         transition: color 0.3s ease;
     }
 
     .search-result-title a:hover {
-        color: #8a9fff;
+        color: var(--primary-purple);
     }
 
     .search-result-excerpt {
-        color: #ccc;
-        line-height: 1.6;
-        margin-bottom: 15px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 20px;
     }
 
     .search-result-tags {
         display: flex;
-        gap: 8px;
+        gap: 10px;
         flex-wrap: wrap;
     }
 
     .search-result-tag {
-        background: rgba(138, 159, 255, 0.15);
-        color: #8a9fff;
-        padding: 4px 10px;
-        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.2), rgba(138, 196, 255, 0.1));
+        color: var(--accent-violet);
+        padding: 5px 12px;
+        border-radius: 15px;
         font-size: 0.8em;
-        border: 1px solid rgba(138, 159, 255, 0.3);
+        border: 1px solid rgba(177, 156, 217, 0.3);
     }
 
     /* Highlight search terms */
     .highlight {
-        background: rgba(138, 159, 255, 0.3);
-        color: #a8b5ff;
-        padding: 2px 4px;
-        border-radius: 3px;
+        background: rgba(177, 156, 217, 0.3);
+        color: var(--accent-violet);
+        padding: 2px 6px;
+        border-radius: 4px;
     }
 
     /* No results */
     .no-results {
         text-align: center;
-        padding: 60px 20px;
-        color: #999;
+        padding: 80px 20px;
+        color: var(--text-secondary);
     }
 
     .no-results-icon {
-        width: 60px;
-        height: 60px;
-        fill: #666;
-        margin: 0 auto 20px;
+        width: 70px;
+        height: 70px;
+        fill: rgba(177, 156, 217, 0.4);
+        margin: 0 auto 25px;
         display: block;
     }
 
     .no-results-title {
-        color: #ccc;
-        font-size: 1.3em;
-        margin-bottom: 10px;
+        color: var(--text-light);
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        font-weight: 300;
     }
 
     .no-results-text {
         line-height: 1.6;
+        opacity: 0.8;
     }
 
     /* Posts Container */
     .posts-container {
-        padding: 60px 0;
-        max-width: 900px;
+        padding: 80px 0 100px;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
     .post-preview {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 40px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.1);
+        border-radius: 25px;
+        padding: 45px;
         margin-bottom: 40px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        animation: fade-in-up 0.8s ease-out;
+    }
+
+    .post-preview::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--ocean-blue));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .post-preview:hover::before {
+        transform: scaleX(1);
     }
 
     .post-preview:hover {
-        transform: translateY(-5px);
-        border-color: #8a9fff;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        transform: translateY(-8px);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.3),
+            0 0 0 1px rgba(177, 156, 217, 0.2);
     }
 
     .post-preview-meta {
-        color: #8a9fff;
+        color: var(--primary-purple);
         font-size: 0.9em;
         text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
+        letter-spacing: 1.5px;
+        margin-bottom: 15px;
     }
 
     .post-preview-title {
-        font-size: 1.8em;
-        color: #f0f0f0;
-        margin-bottom: 15px;
+        font-size: 2em;
+        color: var(--text-light);
+        margin-bottom: 20px;
         line-height: 1.3;
+        font-weight: 300;
     }
 
     .post-preview-title a {
-        color: #f0f0f0;
+        color: var(--text-light);
         text-decoration: none;
         transition: color 0.3s ease;
     }
 
     .post-preview-title a:hover {
-        color: #8a9fff;
+        color: var(--primary-purple);
     }
 
     .post-preview-excerpt {
-        color: #ccc;
+        color: var(--text-secondary);
         font-size: 1.1em;
-        line-height: 1.6;
-        margin-bottom: 20px;
+        line-height: 1.7;
+        margin-bottom: 25px;
     }
 
     .post-preview-link {
-        color: #8a9fff;
+        color: var(--primary-purple);
         text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.3s ease;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .post-preview-link::after {
+        content: '→';
+        transition: transform 0.3s ease;
     }
 
     .post-preview-link:hover {
-        border-bottom-color: #8a9fff;
+        transform: translateX(5px);
+        color: var(--accent-violet);
+    }
+
+    .post-preview-link:hover::after {
+        transform: translateX(5px);
     }
 
     /* Mobile responsive */
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
         .search-container {
-            margin: 20px 10px;
-            padding: 20px;
+            margin: 20px;
+            padding: 35px 25px;
+        }
+
+        .posts-container {
+            padding: 60px 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .blog-title {
+            font-size: 2.5rem;
+        }
+
+        .blog-subtitle {
+            font-size: 1.1em;
+        }
+
+        .search-container {
+            border-radius: 20px;
+            padding: 30px 20px;
+        }
+
+        .search-title {
+            font-size: 1.5em;
         }
 
         .search-filters {
             justify-content: flex-start;
+            gap: 10px;
         }
 
         .filter-button {
-            font-size: 0.8em;
-            padding: 6px 12px;
+            font-size: 0.85em;
+            padding: 8px 16px;
+        }
+
+        .post-preview {
+            padding: 30px 25px;
+        }
+
+        .post-preview-title {
+            font-size: 1.6em;
         }
     }
 </style>
 
-<div class="blog-header">
-    <div class="container">
-        <h1 class="blog-title">Diary</h1>
-        <p class="blog-subtitle">Welcome to my inner thoughts. They're dark, curious, maybe even a little disturbing…
-Beautiful or unsettling—I never quite know which.
-But that's probably why you're here, isn't it?
-To satisfy a bit of that morbid curiosity and see what's really going on in my head.</p>
-    </div>
-</div>
-
-<!-- Search Container - Added after blog-header section -->
-<div class="search-container">
-    <div class="search-header">
-        <h2 class="search-title">Search Diary Entries</h2>
-        <p class="search-subtitle">Find entries by title, content, or category</p>
+<div class="diary-page">
+    <!-- Background Effects -->
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
     </div>
 
-    <div class="search-input-container">
-        <input 
-            type="text" 
-            class="search-input" 
-            id="searchInput"
-            placeholder="Search for thoughts, experiences, or specific topics..."
-            autocomplete="off"
-        >
-        <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
-        </svg>
-    </div>
-
-    <div class="search-filters">
-        <button class="filter-button active" data-filter="all">All Entries</button>
-        <button class="filter-button" data-filter="Diary Entry">Personal Thoughts</button>
-        <button class="filter-button" data-filter="Community Stories">Community</button>
-        <button class="filter-button" data-filter="Writing">Creative Writing</button>
-        <button class="filter-button" data-filter="Music">Music & Songs</button>
-    </div>
-
-    <div class="search-results" id="searchResults">
-        <div class="search-stats" id="searchStats">
-            <span id="totalResults">0</span> entries found
-        </div>
-        <div class="search-results-grid" id="resultsGrid">
-            <!-- Results will be populated by JavaScript -->
-        </div>
-    </div>
-</div>
-
-<div class="posts-container">
-    <div class="container">
-        {% for post in site.posts %}
-        <article class="post-preview">
-            <div class="post-preview-meta">{{ post.date | date: "%B %d, %Y" }} • {{ post.category | default: "Diary Entry" }}</div>
-            <h2 class="post-preview-title">
-                <a href="{{ post.url }}">{{ post.title }}</a>
-            </h2>
-            <div class="post-preview-excerpt">
-                {{ post.excerpt | strip_html | truncate: 300 }}
-            </div>
-            <a href="{{ post.url }}" class="post-preview-link">Continue Reading →</a>
-        </article>
-        {% endfor %}
-        
-        {% if site.posts.size == 0 %}
-        <div class="post-preview">
-            <h2 class="post-preview-title">Coming Soon...</h2>
-            <div class="post-preview-excerpt">
-                This is where my thoughts will live. Raw, honest, and unfiltered. 
-                Check back soon for the first entry.
+    <!-- Blog Header -->
+    <div class="blog-header">
+        <div class="container">
+            <div class="blog-header-content">
+                <h1 class="blog-title">Diary</h1>
+                <p class="blog-subtitle">
+                    Welcome to my inner thoughts. They're dark, curious, maybe even a little disturbing…
+                    Beautiful or unsettling—I never quite know which.
+                    But that's probably why you're here, isn't it?
+                    To satisfy a bit of that morbid curiosity and see what's really going on in my head.
+                </p>
             </div>
         </div>
-        {% endif %}
+    </div>
+
+    <!-- Search Container -->
+    <div class="search-container">
+        <div class="search-header">
+            <h2 class="search-title">Search Diary Entries</h2>
+            <p class="search-subtitle">Find entries by title, content, or category</p>
+        </div>
+
+        <div class="search-input-container">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchInput"
+                placeholder="Search for thoughts, experiences, or specific topics..."
+                autocomplete="off"
+            >
+            <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+            </svg>
+        </div>
+
+        <div class="search-filters">
+            <button class="filter-button active" data-filter="all">All Entries</button>
+            <button class="filter-button" data-filter="Diary Entry">Personal Thoughts</button>
+            <button class="filter-button" data-filter="Community Stories">Community</button>
+            <button class="filter-button" data-filter="Writing">Creative Writing</button>
+            <button class="filter-button" data-filter="Music">Music & Songs</button>
+        </div>
+
+        <div class="search-results" id="searchResults">
+            <div class="search-stats" id="searchStats">
+                <span id="totalResults">0</span> entries found
+            </div>
+            <div class="search-results-grid" id="resultsGrid">
+                <!-- Results will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Posts Container -->
+    <div class="posts-container">
+        <div class="container">
+            {% for post in site.posts %}
+            <article class="post-preview">
+                <div class="post-preview-meta">{{ post.date | date: "%B %d, %Y" }} • {{ post.category | default: "Diary Entry" }}</div>
+                <h2 class="post-preview-title">
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                </h2>
+                <div class="post-preview-excerpt">
+                    {{ post.excerpt | strip_html | truncate: 300 }}
+                </div>
+                <a href="{{ post.url }}" class="post-preview-link">Continue Reading</a>
+            </article>
+            {% endfor %}
+            
+            {% if site.posts.size == 0 %}
+            <div class="post-preview">
+                <h2 class="post-preview-title">Coming Soon...</h2>
+                <div class="post-preview-excerpt">
+                    This is where my thoughts will live. Raw, honest, and unfiltered. 
+                    Check back soon for the first entry.
+                </div>
+            </div>
+            {% endif %}
+        </div>
     </div>
 </div>
 
@@ -521,5 +804,17 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.value = searchParam;
         performSearch(searchParam, currentFilter);
     }
+
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.light-orb');
+        
+        orbs.forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            orb.style.transform = `translateY(${yPos}px)`;
+        });
+    });
 });
 </script>
