@@ -17,6 +17,9 @@
       gtag('config', 'G-7K576LDGCK');
     </script>
     
+    <!-- Atmospheric Styles -->
+    <link rel="stylesheet" href="/assets/css/atmospheric.css">
+    
     <style>
         * {
             margin: 0;
@@ -72,7 +75,7 @@
         .logo {
             font-size: 1.8em;
             font-weight: 300;
-            color: #f0f0f0;
+            color: var(--text-light, #f0f0f0);
             letter-spacing: 2px;
             text-decoration: none;
         }
@@ -83,7 +86,7 @@
         }
 
         .nav a {
-            color: #ccc;
+            color: var(--text-secondary, #ccc);
             text-decoration: none;
             font-size: 1.1em;
             transition: all 0.3s ease;
@@ -91,7 +94,7 @@
         }
 
         .nav a.active {
-            color: #8a9fff;
+            color: var(--primary-purple, #8a9fff);
         }
 
         .nav a::after {
@@ -101,12 +104,12 @@
             left: 0;
             width: 0;
             height: 1px;
-            background: #8a9fff;
+            background: var(--primary-purple, #8a9fff);
             transition: width 0.3s ease;
         }
 
         .nav a:hover {
-            color: #8a9fff;
+            color: var(--primary-purple, #8a9fff);
         }
 
         .nav a:hover::after,
@@ -139,13 +142,13 @@
         }
 
         .footer-nav a {
-            color: #ccc;
+            color: var(--text-secondary, #ccc);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-nav a:hover {
-            color: #8a9fff;
+            color: var(--primary-purple, #8a9fff);
         }
 
         /* Mobile Responsive */
@@ -255,5 +258,40 @@
     
     <!-- User Experience Enhancements -->
     <script src="/user-enhancements.js"></script>
+    
+    <!-- Parallax Script for Atmospheric Elements -->
+    <script>
+        // Parallax effect for orbs
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const orbs = document.querySelectorAll('.light-orb');
+            
+            orbs.forEach((orb, index) => {
+                const speed = 0.5 + (index * 0.2);
+                const yPos = -(scrolled * speed * 0.1);
+                orb.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Intersection Observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with reveal class
+        document.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => observer.observe(el));
+        });
+    </script>
 </body>
 </html>
