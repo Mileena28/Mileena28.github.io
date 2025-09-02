@@ -138,11 +138,83 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         --primary-purple: #b19cd9;
         --ocean-blue: #8ac4ff;
         --accent-violet: #a8b5ff;
-        --deep-purple: #4a0080;
         --deep-night: #0a0a14;
         --text-light: #f0f0f0;
         --text-secondary: #d0d0d0;
         --glass-white: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Atmospheric Background */
+    .writing-page {
+        position: relative;
+        background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
+        min-height: 100vh;
+    }
+
+    .cosmic-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    /* Floating Light Particles */
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .light-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(177, 156, 217, 0.4) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 20s infinite ease-in-out;
+    }
+
+    .light-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
+    }
+
+    .light-orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
+        animation-duration: 30s;
+    }
+
+    .light-orb:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        top: 50%;
+        left: 30%;
+        background: radial-gradient(circle, rgba(168, 181, 255, 0.3) 0%, transparent 70%);
+        animation-duration: 35s;
+    }
+
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
     }
 
     /* Loading Screen */
@@ -152,7 +224,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         left: 0;
         width: 100%;
         height: 100%;
-        background: #0a0a0a;
+        background: #0a0a14;
         z-index: 10000;
         display: flex;
         align-items: center;
@@ -194,15 +266,12 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         }
     }
 
-
-
     /* Hero Section */
     .hero-section {
         padding: 120px 0 80px;
         text-align: center;
         position: relative;
         overflow: hidden;
-        background: rgba(0, 0, 0, 0.1);
     }
 
     .hero-content {
@@ -210,6 +279,18 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         z-index: 2;
         max-width: 1000px;
         margin: 0 auto;
+        animation: fade-in-up 1s ease-out;
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .hero-title {
@@ -228,6 +309,13 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         font-weight: 300;
+        animation: title-shimmer 4s ease-in-out infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes title-shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .hero-subtitle {
@@ -250,7 +338,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         padding: 40px;
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(138, 159, 255, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.2);
         border-radius: 30px;
         position: relative;
         overflow: hidden;
@@ -267,6 +355,11 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         animation: shimmer-line 3s ease-in-out infinite;
     }
 
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
     .stat-item {
         text-align: center;
         position: relative;
@@ -278,13 +371,13 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         font-weight: 300;
         display: block;
         margin-bottom: 8px;
-        text-shadow: 0 0 20px rgba(138, 159, 255, 0.5);
+        text-shadow: 0 0 20px rgba(177, 156, 217, 0.5);
         animation: counter-glow 3s ease-in-out infinite;
     }
 
     @keyframes counter-glow {
         0%, 100% { opacity: 0.9; }
-        50% { opacity: 1; text-shadow: 0 0 30px rgba(138, 159, 255, 0.8); }
+        50% { opacity: 1; text-shadow: 0 0 30px rgba(177, 156, 217, 0.8); }
     }
 
     .stat-label {
@@ -300,8 +393,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         display: inline-flex;
         align-items: center;
         gap: 15px;
-        background: rgba(138, 159, 255, 0.1);
-        border: 1px solid rgba(138, 159, 255, 0.3);
+        background: rgba(177, 156, 217, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.3);
         border-radius: 50px;
         padding: 15px 35px;
         margin-bottom: 40px;
@@ -312,17 +405,17 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     @keyframes badge-glow {
         0%, 100% {
-            box-shadow: 0 0 30px rgba(138, 159, 255, 0.2);
+            box-shadow: 0 0 30px rgba(177, 156, 217, 0.2);
         }
         50% {
-            box-shadow: 0 0 50px rgba(138, 159, 255, 0.4);
+            box-shadow: 0 0 50px rgba(177, 156, 217, 0.4);
         }
     }
 
     .series-badge:hover {
-        background: rgba(138, 159, 255, 0.15);
+        background: rgba(177, 156, 217, 0.15);
         transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+        box-shadow: 0 10px 30px rgba(177, 156, 217, 0.3);
     }
 
     .badge-icon {
@@ -338,10 +431,10 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     @keyframes pulse-glow {
         0%, 100% {
-            box-shadow: 0 0 0 0 rgba(138, 159, 255, 0.4);
+            box-shadow: 0 0 0 0 rgba(177, 156, 217, 0.4);
         }
         50% {
-            box-shadow: 0 0 0 10px rgba(138, 159, 255, 0);
+            box-shadow: 0 0 0 10px rgba(177, 156, 217, 0);
         }
     }
 
@@ -388,8 +481,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         text-transform: uppercase;
         letter-spacing: 3px;
         padding: 10px 30px;
-        background: rgba(138, 159, 255, 0.1);
-        border: 1px solid rgba(138, 159, 255, 0.3);
+        background: rgba(177, 156, 217, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.3);
         border-radius: 30px;
     }
 
@@ -403,7 +496,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     .featured-book-card {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(30px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.2);
         border-radius: 30px;
         padding: 80px;
         position: relative;
@@ -445,7 +538,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     .featured-book-card:hover {
         transform: translateY(-10px);
         box-shadow: 
-            0 50px 100px rgba(138, 159, 255, 0.3),
+            0 50px 100px rgba(177, 156, 217, 0.3),
             0 20px 40px rgba(0, 0, 0, 0.3);
     }
 
@@ -471,7 +564,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, transparent 70%);
         opacity: 0;
         transition: opacity 0.5s ease;
         pointer-events: none;
@@ -569,8 +662,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         gap: 30px;
         margin: 35px 0;
         padding: 25px;
-        background: rgba(138, 159, 255, 0.05);
-        border: 1px solid rgba(138, 159, 255, 0.2);
+        background: rgba(177, 156, 217, 0.05);
+        border: 1px solid rgba(177, 156, 217, 0.2);
         border-radius: 20px;
         backdrop-filter: blur(10px);
     }
@@ -589,7 +682,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         transform: translateY(-50%);
         width: 1px;
         height: 30px;
-        background: rgba(138, 159, 255, 0.3);
+        background: rgba(177, 156, 217, 0.3);
     }
 
     .book-stat-number {
@@ -621,7 +714,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         position: relative;
         overflow: hidden;
         display: inline-block;
-        box-shadow: 0 15px 35px rgba(138, 159, 255, 0.3);
+        box-shadow: 0 15px 35px rgba(177, 156, 217, 0.3);
     }
 
     .btn-primary::before {
@@ -643,7 +736,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     .btn-primary:hover {
         transform: translateY(-3px);
-        box-shadow: 0 20px 45px rgba(138, 159, 255, 0.4);
+        box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
     }
 
     .btn-secondary {
@@ -659,16 +752,16 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     }
 
     .btn-secondary:hover {
-        background: rgba(138, 159, 255, 0.1);
+        background: rgba(177, 156, 217, 0.1);
         transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(138, 159, 255, 0.2);
+        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.2);
     }
 
     /* Author's Note Display */
     .authors-note-display {
         margin-top: 60px;
         padding-top: 60px;
-        border-top: 1px solid rgba(138, 159, 255, 0.2);
+        border-top: 1px solid rgba(177, 156, 217, 0.2);
         text-align: center;
     }
 
@@ -697,8 +790,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     .note-content {
         max-width: 800px;
         margin: 0 auto;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.05), rgba(138, 159, 255, 0.02));
-        border: 1px solid rgba(138, 159, 255, 0.1);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05), rgba(177, 156, 217, 0.02));
+        border: 1px solid rgba(177, 156, 217, 0.1);
         border-radius: 20px;
         padding: 40px;
         position: relative;
@@ -712,7 +805,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         right: -50px;
         width: 100px;
         height: 100px;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, transparent);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, transparent);
         pointer-events: none;
     }
 
@@ -723,7 +816,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         left: -50px;
         width: 100px;
         height: 100px;
-        background: linear-gradient(135deg, transparent, rgba(138, 159, 255, 0.1) 100%);
+        background: linear-gradient(135deg, transparent, rgba(177, 156, 217, 0.1) 100%);
         pointer-events: none;
     }
 
@@ -794,7 +887,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     .wip-book-card {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(30px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(177, 156, 217, 0.1);
         border-radius: 30px;
         padding: 80px;
         position: relative;
@@ -809,7 +902,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.05) 0%, transparent 50%);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05) 0%, transparent 50%);
         opacity: 0;
         transition: opacity 0.5s ease;
     }
@@ -821,9 +914,9 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     .wip-book-card:hover {
         transform: translateY(-10px);
         box-shadow: 
-            0 50px 100px rgba(138, 159, 255, 0.3),
+            0 50px 100px rgba(177, 156, 217, 0.3),
             0 20px 40px rgba(0, 0, 0, 0.3);
-        border-color: rgba(138, 159, 255, 0.3);
+        border-color: rgba(177, 156, 217, 0.3);
     }
 
     .wip-content {
@@ -849,7 +942,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, transparent 70%);
         opacity: 0;
         transition: opacity 0.5s ease;
         pointer-events: none;
@@ -908,7 +1001,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         text-transform: uppercase;
         letter-spacing: 1.5px;
         margin-bottom: 20px;
-        box-shadow: 0 5px 15px rgba(138, 159, 255, 0.3);
+        box-shadow: 0 5px 15px rgba(177, 156, 217, 0.3);
     }
 
     .wip-title {
@@ -943,8 +1036,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     }
 
     .meta-badge {
-        background: rgba(138, 159, 255, 0.1);
-        border: 1px solid rgba(138, 159, 255, 0.3);
+        background: rgba(177, 156, 217, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.3);
         color: var(--ocean-blue);
         padding: 8px 18px;
         border-radius: 20px;
@@ -987,7 +1080,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         margin: 0 auto;
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(20px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(177, 156, 217, 0.1);
         border-radius: 30px;
         padding: 60px;
         position: relative;
@@ -1003,11 +1096,6 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
         animation: shimmer-line 3s ease-in-out infinite;
-    }
-
-    @keyframes shimmer-line {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
     }
 
     .author-quote {
@@ -1044,7 +1132,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     .author-philosophy {
         margin-top: 30px;
         padding-top: 30px;
-        border-top: 1px solid rgba(138, 159, 255, 0.1);
+        border-top: 1px solid rgba(177, 156, 217, 0.1);
     }
 
     .author-philosophy p {
@@ -1204,15 +1292,13 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 </div>
 
 <div class="writing-page">
-    <!-- Floating Particles -->
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    
-    <!-- Gradient Overlay -->
-    <div class="gradient-overlay"></div>
+    <!-- Background Effects -->
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+    </div>
 
     <!-- Hero Section -->
 <section class="hero-section">
@@ -1589,36 +1675,17 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         observerCounter.observe(statsSection);
     }
 
-    // Parallax effect for spheres</    let ticking = false;
-    function updateParallax() {
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
-        const spheres = document.querySelectorAll('.sphere');
+        const orbs = document.querySelectorAll('.light-orb');
         
-        spheres.forEach((sphere, index) => {
+        orbs.forEach((orb, index) => {
             const speed = 0.5 + (index * 0.2);
             const yPos = -(scrolled * speed * 0.1);
-            sphere.style.transform = `translateY(${yPos}px)`;
+            orb.style.transform = `translateY(${yPos}px)`;
         });
-        
-        // Move grid overlay
-        const grid = document.querySelector('.grid-overlay');
-        if (grid) {
-            const gridSpeed = 0.05;
-            const gridPos = scrolled * gridSpeed;
-            grid.style.transform = `translate(${gridPos}px, ${gridPos}px)`;
-        }
-        
-        ticking = false;
-    }
-
-    function requestTick() {
-        if (!ticking) {
-            window.requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
-    }
-
-    window.addEventListener('scroll', requestTick);
+    });
 
     // Intersection Observer for reveal animations
     const observerOptions = {
