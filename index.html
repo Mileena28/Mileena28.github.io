@@ -2,79 +2,392 @@
 layout: default
 title: "Dark Fantasy Author & Musician | Mileena Rayne"
 description: "Registered Nurse turned dark fantasy author and musician. Read Blood of the Wild Gods series, listen to original songs about mental health & trauma. Raw, honest storytelling."
+keywords: "Mileena Rayne, dark fantasy author, musician, Blood of the Wild Gods, mental health music, trauma recovery, ex-JW author"
 image: "/assets/images/mileena-rayne-author.jpg"
+canonical: "https://mileenarayne.com/"
+robots: "index, follow"
+og:type: "website"
+og:title: "Mileena Rayne | Dark Fantasy Author & Musician"
+og:description: "Registered Nurse turned dark fantasy author and musician. Read Blood of the Wild Gods series, listen to original songs about mental health & trauma."
+og:image: "/assets/images/mileena-rayne-author.jpg"
+og:url: "https://mileenarayne.com/"
+twitter:card: "summary_large_image"
+twitter:title: "Mileena Rayne | Dark Fantasy Author & Musician"
+twitter:description: "Dark fantasy novels, original music about mental health, and raw honest storytelling."
+twitter:image: "/assets/images/mileena-rayne-author.jpg"
 ---
 
+<!-- SEO Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Mileena Rayne",
+  "url": "https://mileenarayne.com",
+  "description": "Dark fantasy author and musician creating honest stories about trauma, faith, and human resilience",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com",
+    "sameAs": [
+      "https://www.facebook.com/share/16qhtJiSk8/?mibextid=wwXIfr",
+      "https://www.instagram.com/mileenarayne",
+      "https://www.tiktok.com/@mileena_rayne",
+      "https://x.com/mileena_rayne",
+      "https://open.spotify.com/artist/0DZlZexMYSKS7twfxpcM0P",
+      "https://youtube.com/@mileenarayne",
+      "https://linktr.ee/mileenarayne"
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://mileenarayne.com/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mileena Rayne",
+  "alternateName": "Mileena",
+  "jobTitle": ["Author", "Musician", "Registered Nurse"],
+  "description": "Dark fantasy author and musician from Minnesota. Creating honest stories about trauma, religious recovery, and mental health through novels and music.",
+  "url": "https://mileenarayne.com",
+  "image": "https://mileenarayne.com/assets/images/mileena-rayne-author.jpg",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "Minnesota, USA"
+  },
+  "knowsAbout": [
+    "Dark Fantasy Writing",
+    "Mental Health Advocacy",
+    "Religious Trauma Recovery",
+    "Music Composition",
+    "Trauma-Informed Care"
+  ],
+  "sameAs": [
+    "https://www.facebook.com/share/16qhtJiSk8/?mibextid=wwXIfr",
+    "https://www.instagram.com/mileenarayne",
+    "https://open.spotify.com/artist/0DZlZexMYSKS7twfxpcM0P",
+    "https://youtube.com/@mileenarayne",
+    "https://linktr.ee/mileenarayne"
+  ]
+}
+</script>
+
 <style>
+    /* Root Variables */
+    :root {
+        --primary-purple: #b19cd9;
+        --ocean-blue: #8ac4ff;
+        --accent-violet: #a8b5ff;
+        --deep-night: #0a0a14;
+        --text-light: #f0f0f0;
+        --text-secondary: #d0d0d0;
+        --glass-white: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Atmospheric Background */
+    .homepage {
+        position: relative;
+        background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
+        min-height: 100vh;
+    }
+
+    .cosmic-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    /* Floating Light Particles */
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .light-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(177, 156, 217, 0.4) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 20s infinite ease-in-out;
+    }
+
+    .light-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
+    }
+
+    .light-orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
+        animation-duration: 30s;
+    }
+
+    .light-orb:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        top: 50%;
+        left: 30%;
+        background: radial-gradient(circle, rgba(168, 181, 255, 0.3) 0%, transparent 70%);
+        animation-duration: 35s;
+    }
+
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
+    }
+
     /* Hero Section */
     .hero {
-        padding: 80px 0 120px;
+        padding: 120px 0 80px;
         text-align: center;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(138, 159, 255, 0.05) 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        animation: fade-in-up 1s ease-out;
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .hero-title {
-        font-size: 3.5em;
-        font-weight: 300;
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 200;
         margin-bottom: 20px;
-        color: #f0f0f0;
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         letter-spacing: 3px;
+        animation: title-shimmer 4s ease-in-out infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes title-shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .hero-subtitle {
-        font-size: 1.3em;
-        color: #bbb;
+        font-size: 1.4em;
+        color: var(--accent-violet);
         margin-bottom: 30px;
         font-style: italic;
+        letter-spacing: 2px;
+        opacity: 0.9;
     }
 
     .hero-description {
-        font-size: 1.1em;
-        color: #ccc;
-        max-width: 600px;
-        margin: 0 auto 40px;
+        font-size: 1.2em;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto 50px;
         line-height: 1.8;
-    }
-
-    .hero-description a {
-        color: #8a9fff;
-        text-decoration: none;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.3s ease;
-    }
-
-    .hero-description a:hover {
-        border-bottom-color: #8a9fff;
+        font-weight: 300;
     }
 
     .cta-button {
         display: inline-block;
-        padding: 15px 35px;
-        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-        color: #000;
+        padding: 18px 45px;
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        color: white;
         text-decoration: none;
         border-radius: 30px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+        font-weight: 500;
+        font-size: 1.1em;
+        transition: all 0.4s ease;
+        box-shadow: 0 15px 35px rgba(177, 156, 217, 0.3);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .cta-button:hover::before {
+        width: 300px;
+        height: 300px;
     }
 
     .cta-button:hover {
         transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(138, 159, 255, 0.4);
+        box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
+    }
+
+    /* Explore Section */
+    .explore-section {
+        padding: 100px 0;
+        position: relative;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    .explore-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-title {
+        font-size: 3em;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-weight: 200;
+    }
+
+    .section-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .explore-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .explore-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+        border-radius: 25px;
+        padding: 40px 30px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        display: block;
+    }
+
+    .explore-card::before {
+        content: '';
+        position: absolute;
+        top: -100px;
+        left: -100px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, var(--primary-purple) 0%, transparent 70%);
+        opacity: 0.1;
+        transition: all 0.5s ease;
+    }
+
+    .explore-card:hover::before {
+        transform: scale(2);
+        opacity: 0.15;
+    }
+
+    .explore-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-purple);
+        box-shadow: 
+            0 30px 60px rgba(177, 156, 217, 0.3),
+            0 0 0 1px rgba(177, 156, 217, 0.3);
+    }
+
+    .explore-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 25px;
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.15), rgba(138, 196, 255, 0.1));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid rgba(177, 156, 217, 0.3);
+        transition: all 0.4s ease;
+    }
+
+    .explore-card:hover .explore-icon {
+        transform: scale(1.1) rotate(5deg);
+        border-color: var(--primary-purple);
+        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.4);
+    }
+
+    .explore-icon svg {
+        width: 35px;
+        height: 35px;
+        stroke: var(--primary-purple);
+        fill: none;
+        stroke-width: 1.5;
+        transition: all 0.3s ease;
+    }
+
+    .explore-card:hover .explore-icon svg {
+        stroke: var(--accent-violet);
+        transform: scale(1.1);
+    }
+
+    .explore-card-title {
+        font-size: 1.5em;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    .explore-card-description {
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        line-height: 1.6;
     }
 
     /* Recent Work Section */
     .recent-work {
-        padding: 80px 0;
-    }
-
-    .section-title {
-        font-size: 2.5em;
-        text-align: center;
-        margin-bottom: 60px;
-        color: #f0f0f0;
-        font-weight: 300;
+        padding: 100px 0;
+        background: linear-gradient(180deg, rgba(138, 159, 255, 0.02) 0%, transparent 100%);
     }
 
     .work-grid {
@@ -85,40 +398,62 @@ image: "/assets/images/mileena-rayne-author.jpg"
     }
 
     .work-card {
-        background: rgba(20, 20, 20, 0.8);
-        border: 1px solid #333;
-        border-radius: 15px;
-        padding: 30px;
-        transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        min-height: 200px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.1);
+        border-radius: 25px;
+        padding: 35px;
+        transition: all 0.4s ease;
+        min-height: 250px;
         display: flex;
         flex-direction: column;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .work-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--ocean-blue));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+        transform-origin: left;
+    }
+
+    .work-card:hover::before {
+        transform: scaleX(1);
     }
 
     .work-card:hover {
         transform: translateY(-10px);
-        border-color: #8a9fff;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        border-color: rgba(177, 156, 217, 0.3);
     }
 
     .work-type {
-        color: #8a9fff;
+        color: var(--primary-purple);
         font-size: 0.9em;
         text-transform: uppercase;
         letter-spacing: 2px;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: 600;
     }
 
     .work-title {
-        font-size: 1.4em;
-        color: #f0f0f0;
+        font-size: 1.6em;
+        color: var(--text-light);
         margin-bottom: 15px;
         line-height: 1.3;
+        font-weight: 300;
     }
 
     .work-preview {
-        color: #ccc;
+        color: var(--text-secondary);
         line-height: 1.6;
         margin-bottom: 20px;
         flex-grow: 1;
@@ -132,23 +467,34 @@ image: "/assets/images/mileena-rayne-author.jpg"
     }
 
     .work-link {
-        color: #8a9fff;
+        color: var(--primary-purple);
         text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px solid transparent;
-        transition: border-color 0.3s ease;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
         margin-top: auto;
     }
 
     .work-link:hover {
-        border-bottom-color: #8a9fff;
+        transform: translateX(5px);
+        color: var(--accent-violet);
+    }
+
+    .work-link::after {
+        content: '→';
+        transition: transform 0.3s ease;
+    }
+
+    .work-link:hover::after {
+        transform: translateX(5px);
     }
 
     .coming-soon {
         color: #999;
         font-style: italic;
-        text-align: center;
-        padding: 40px 20px;
+        padding: 20px 0;
     }
 
     /* Testimonial Section */
@@ -172,32 +518,30 @@ image: "/assets/images/mileena-rayne-author.jpg"
     }
 
     .featured-testimonial {
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
         position: relative;
         z-index: 1;
     }
 
     .testimonial-box {
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.03));
-        border: 2px solid rgba(138, 159, 255, 0.4);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(30px);
+        border: 2px solid rgba(177, 156, 217, 0.3);
         border-radius: 30px;
         padding: 60px;
         text-align: center;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5),
-                    inset 0 0 80px rgba(138, 159, 255, 0.1);
-        backdrop-filter: blur(20px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         transform: translateY(0);
         transition: all 0.4s ease;
     }
 
     .testimonial-box:hover {
         transform: translateY(-5px);
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6),
-                    inset 0 0 100px rgba(138, 159, 255, 0.15);
-        border-color: rgba(168, 181, 255, 0.6);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+        border-color: rgba(168, 181, 255, 0.5);
     }
 
     .testimonial-box::before {
@@ -235,38 +579,18 @@ image: "/assets/images/mileena-rayne-author.jpg"
     }
 
     .testimonial-text {
-        font-size: 1.25em;
-        color: #e0e0e0;
+        font-size: 1.3em;
+        color: var(--text-secondary);
         line-height: 1.8;
         margin-bottom: 30px;
         position: relative;
         z-index: 1;
         font-style: italic;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     .highlight {
-        color: #8a9fff;
+        color: var(--primary-purple);
         font-weight: 600;
-        background: linear-gradient(to right, #8a9fff, #a8b5ff);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-shadow: none;
-        display: inline-block;
-        position: relative;
-    }
-
-    .highlight::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(to right, #8a9fff, #a8b5ff);
-        opacity: 0.5;
-        border-radius: 2px;
     }
 
     .testimonial-attribution {
@@ -288,227 +612,436 @@ image: "/assets/images/mileena-rayne-author.jpg"
 
     /* Recent Thoughts Section */
     .recent-thoughts {
-        padding: 80px 0;
-        background: rgba(10, 10, 20, 0.6);
+        padding: 100px 0;
+        background: rgba(0, 0, 0, 0.3);
     }
 
     .thoughts-container {
-        max-width: 800px;
+        max-width: 900px;
         margin: 0 auto;
+        padding: 0 20px;
     }
 
     .thought-entry {
-        background: rgba(20, 20, 20, 0.8);
-        border-left: 4px solid #8a9fff;
-        padding: 25px 30px;
-        margin-bottom: 25px;
-        border-radius: 0 15px 15px 0;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border-left: 3px solid var(--primary-purple);
+        padding: 30px 35px;
+        margin-bottom: 30px;
+        border-radius: 0 20px 20px 0;
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .thought-entry::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05) 0%, transparent 60%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .thought-entry:hover::before {
+        opacity: 1;
     }
 
     .thought-entry:hover {
-        transform: translateX(5px);
-        background: rgba(25, 25, 25, 0.9);
+        transform: translateX(10px);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
 
     .thought-date {
-        color: #999;
+        color: var(--primary-purple);
         font-size: 0.85em;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .thought-content {
-        color: #ddd;
+        color: var(--text-secondary);
         font-style: italic;
-        font-size: 1.05em;
-        line-height: 1.6;
+        font-size: 1.1em;
+        line-height: 1.7;
+    }
+
+    /* Reveal Animations */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .explore-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .work-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 768px) {
         .hero-title {
-            font-size: 2.5em;
+            font-size: 2.5rem;
         }
-        
+
+        .hero {
+            padding: 80px 0 60px;
+        }
+
+        .section-title {
+            font-size: 2.2em;
+        }
+
+        .explore-grid {
+            grid-template-columns: 1fr;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .explore-card {
+            padding: 30px 25px;
+        }
+
         .work-grid {
             grid-template-columns: 1fr;
         }
-        
+
         .testimonial-box {
             padding: 40px 30px;
         }
-        
+
         .testimonial-box::before {
             font-size: 5em;
             top: 15px;
             left: 20px;
         }
-        
+
         .testimonial-text {
             font-size: 1.1em;
+        }
+
+        .thought-entry {
+            padding: 25px;
         }
     }
 </style>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-    <div class="container">
-        <h1 class="hero-title">{{ site.title }}</h1>
-        <p class="hero-subtitle">Musician • Writer • Truth-Teller</p>
-        <p class="hero-description">
-            Welcome to my corner of the internet where vulnerability meets artistry. 
-            Here you'll find unfiltered thoughts, authentic music, and stories that 
-            dig deep into what it means to be beautifully, perfectly imperfect.
-        </p>
-        <p class="hero-description">
-            Read my <a href="/writing/">dark fantasy novels</a> including the published 
-            <em><a href="/chapters/the-silence/chapter-01/">Blood of the Wild Gods: The Silence</a></em>, 
-            listen to my <a href="/music/">original songs about mental health</a>, or dive into my 
-            <a href="/diary/">unfiltered diary entries</a> about <a href="/about/">my journey</a> 
-            from religious trauma to creative freedom.
-        </p>
-        <a href="/diary/" class="cta-button">Read My Latest Thoughts</a>
+<div class="homepage">
+    <!-- Background Effects -->
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
     </div>
-</section>
 
-<!-- Recent Creations -->
-<section class="recent-work">
-    <div class="container">
-        <h2 class="section-title">Recent Creations</h2>
-        <div class="work-grid">
-            <!-- Latest Music -->
-            <div class="work-card">
-                <div class="work-type">Music</div>
-                {% assign latest_music = site.posts | where: "category", "Music" | first %}
-                {% if latest_music %}
-                    <h3 class="work-title">{{ latest_music.title }}</h3>
-                    <div class="work-date">{{ latest_music.date | date: "%B %d, %Y" }}</div>
-                    <p class="work-preview">
-                        {{ latest_music.excerpt | strip_html | truncate: 120 }}
-                    </p>
-                    <a href="{{ latest_music.url }}" class="work-link">Listen →</a>
-                {% else %}
-                    <h3 class="work-title">Coming Soon</h3>
-                    <div class="coming-soon">
-                        New music is brewing in the depths of midnight inspiration. 
-                        Check back soon for melodies born from silence and longing.
-                    </div>
-                {% endif %}
-            </div>
-            
-            <!-- Latest Writing -->
-            <div class="work-card">
-                <div class="work-type">Writing</div>
-                {% assign latest_writing = site.posts | where: "category", "Writing" | first %}
-                {% if latest_writing %}
-                    <h3 class="work-title">{{ latest_writing.title }}</h3>
-                    <div class="work-date">{{ latest_writing.date | date: "%B %d, %Y" }}</div>
-                    <p class="work-preview">
-                        {{ latest_writing.excerpt | strip_html | truncate: 120 }}
-                    </p>
-                    <a href="{{ latest_writing.url }}" class="work-link">Read →</a>
-                {% else %}
-                    <h3 class="work-title">Coming Soon</h3>
-                    <div class="coming-soon">
-                        Stories are simmering, waiting for the right words to give them life. 
-                        Something beautiful is on its way.
-                    </div>
-                {% endif %}
-            </div>
-            
-            <!-- Latest Diary Entry -->
-            <div class="work-card">
-                <div class="work-type">Diary Entry</div>
-                {% assign latest_diary = site.posts | where: "category", "Diary Entry" | first %}
-                {% if latest_diary %}
-                    <h3 class="work-title">{{ latest_diary.title }}</h3>
-                    <div class="work-date">{{ latest_diary.date | date: "%B %d, %Y" }}</div>
-                    <p class="work-preview">
-                        {{ latest_diary.excerpt | strip_html | truncate: 120 }}
-                    </p>
-                    <a href="{{ latest_diary.url }}" class="work-link">Continue Reading →</a>
-                {% else %}
-                    <h3 class="work-title">Coming Soon</h3>
-                    <div class="coming-soon">
-                        This is where my unfiltered thoughts will live. 
-                        Raw, honest, and vulnerably real.
-                    </div>
-                {% endif %}
-            </div>
-
-            <!-- Latest Community Stories -->
-            <div class="work-card">
-                <div class="work-type">Community Stories</div>
-                {% assign latest_community = site.posts | where: "category", "Community Stories" | first %}
-                {% if latest_community %}
-                    <h3 class="work-title">{{ latest_community.title }}</h3>
-                    <div class="work-date">{{ latest_community.date | date: "%B %d, %Y" }}</div>
-                    <p class="work-preview">
-                        {{ latest_community.excerpt | strip_html | truncate: 120 }}
-                    </p>
-                    <a href="{{ latest_community.url }}" class="work-link">Read Stories →</a>
-                {% else %}
-                    <h3 class="work-title">Stories Being Shared</h3>
-                    <div class="coming-soon">
-                        A space for the voices that find me in dark corners of the internet—
-                        survivors sharing truth, strangers becoming witnesses, community growing from connection.
-                    </div>
-                    <a href="/community/" class="work-link">See Community →</a>
-                {% endif %}
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Mileena Rayne</h1>
+                <p class="hero-subtitle">Musician • Writer • Truth-Teller</p>
+                <p class="hero-description">
+                    Welcome to my corner of the internet where vulnerability meets artistry. 
+                    Here you'll find unfiltered thoughts, authentic music, and stories that 
+                    dig deep into what it means to be beautifully, perfectly imperfect.
+                </p>
+                <a href="/diary/" class="cta-button">Read My Latest Thoughts</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Testimonial Section -->
-<section class="testimonial-section">
-    <div class="container">
-        <div class="featured-testimonial">
-            <div class="testimonial-box">
-                <div class="testimonial-text">
-                    "Just showing my support in what you are doing. Your website is pretty amazing. So much detail! If I was you I'd change my IG profile name to <span class="highlight">theperfectperfectionist</span>. Your attention to detail is uncanny. Your words are said with such precision. I wish you the best in what you are trying to accomplish Mileena."
-                </div>
-                <div class="testimonial-attribution">Message from a website visitor</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Recent Thoughts -->
-<section class="recent-thoughts">
-    <div class="container">
-        <h2 class="section-title">Recent Thoughts</h2>
-        <div class="thoughts-container">
-            {% if site.data.thoughts %}
-                {% for thought in site.data.thoughts limit:4 %}
-                <div class="thought-entry">
-                    <div class="thought-date">{{ thought.date }}</div>
-                    <div class="thought-content">
-                        "{{ thought.content }}"
-                    </div>
-                </div>
-                {% endfor %}
-            {% else %}
-                <div class="thought-entry">
-                    <div class="thought-date">June 16, 2025</div>
-                    <div class="thought-content">
-                        "Sometimes we need to create our own corners of the world where our truth can breathe freely."
-                    </div>
+    <!-- Recent Creations -->
+    <section class="recent-work">
+        <div class="container">
+            <h2 class="section-title">Recent Creations</h2>
+            <div class="work-grid">
+                <!-- Latest Music -->
+                <div class="work-card reveal">
+                    <div class="work-type">Music</div>
+                    {% assign latest_music = site.posts | where: "category", "Music" | first %}
+                    {% if latest_music %}
+                        <h3 class="work-title">{{ latest_music.title }}</h3>
+                        <div class="work-date">{{ latest_music.date | date: "%B %d, %Y" }}</div>
+                        <p class="work-preview">
+                            {{ latest_music.excerpt | strip_html | truncate: 120 }}
+                        </p>
+                        <a href="{{ latest_music.url }}" class="work-link">Listen</a>
+                    {% else %}
+                        <h3 class="work-title">Coming Soon</h3>
+                        <div class="coming-soon">
+                            New music is brewing in the depths of midnight inspiration. 
+                            Check back soon for melodies born from silence and longing.
+                        </div>
+                    {% endif %}
                 </div>
                 
-                <div class="thought-entry">
-                    <div class="thought-date">June 15, 2025</div>
-                    <div class="thought-content">
-                        "I've realized that my emotional intelligence comes from having to develop it for survival. The people who call me 'intense' have never had to navigate the depths I've been forced to explore."
-                    </div>
+                <!-- Latest Writing -->
+                <div class="work-card reveal">
+                    <div class="work-type">Writing</div>
+                    {% assign latest_writing = site.posts | where: "category", "Writing" | first %}
+                    {% if latest_writing %}
+                        <h3 class="work-title">{{ latest_writing.title }}</h3>
+                        <div class="work-date">{{ latest_writing.date | date: "%B %d, %Y" }}</div>
+                        <p class="work-preview">
+                            {{ latest_writing.excerpt | strip_html | truncate: 120 }}
+                        </p>
+                        <a href="{{ latest_writing.url }}" class="work-link">Read</a>
+                    {% else %}
+                        <h3 class="work-title">Coming Soon</h3>
+                        <div class="coming-soon">
+                            Stories are simmering, waiting for the right words to give them life. 
+                            Something beautiful is on its way.
+                        </div>
+                    {% endif %}
                 </div>
                 
-                <div class="thought-entry">
-                    <div class="thought-date">June 14, 2025</div>
-                    <div class="thought-content">
-                        "Your truth shouldn't threaten anyone - unless they're hiding from their own."
-                    </div>
+                <!-- Latest Diary Entry -->
+                <div class="work-card reveal">
+                    <div class="work-type">Diary Entry</div>
+                    {% assign latest_diary = site.posts | where: "category", "Diary Entry" | first %}
+                    {% if latest_diary %}
+                        <h3 class="work-title">{{ latest_diary.title }}</h3>
+                        <div class="work-date">{{ latest_diary.date | date: "%B %d, %Y" }}</div>
+                        <p class="work-preview">
+                            {{ latest_diary.excerpt | strip_html | truncate: 120 }}
+                        </p>
+                        <a href="{{ latest_diary.url }}" class="work-link">Continue Reading</a>
+                    {% else %}
+                        <h3 class="work-title">Coming Soon</h3>
+                        <div class="coming-soon">
+                            This is where my unfiltered thoughts will live. 
+                            Raw, honest, and vulnerably real.
+                        </div>
+                    {% endif %}
                 </div>
-            {% endif %}
+
+                <!-- Latest Community Stories -->
+                <div class="work-card reveal">
+                    <div class="work-type">Community Stories</div>
+                    {% assign latest_community = site.posts | where: "category", "Community Stories" | first %}
+                    {% if latest_community %}
+                        <h3 class="work-title">{{ latest_community.title }}</h3>
+                        <div class="work-date">{{ latest_community.date | date: "%B %d, %Y" }}</div>
+                        <p class="work-preview">
+                            {{ latest_community.excerpt | strip_html | truncate: 120 }}
+                        </p>
+                        <a href="{{ latest_community.url }}" class="work-link">Read Stories</a>
+                    {% else %}
+                        <h3 class="work-title">Stories Being Shared</h3>
+                        <div class="coming-soon">
+                            A space for the voices that find me in dark corners of the internet—
+                            survivors sharing truth, strangers becoming witnesses, community growing from connection.
+                        </div>
+                        <a href="/community/" class="work-link">See Community</a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Explore Section -->
+    <section class="explore-section">
+        <div class="container">
+            <div class="explore-header">
+                <h2 class="section-title">Explore My World</h2>
+                <p class="section-subtitle">
+                    Dive into the different dimensions of my creative journey
+                </p>
+            </div>
+            
+            <div class="explore-grid">
+                <!-- Dark Fantasy Card -->
+                <a href="/writing/" class="explore-card reveal">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke-width="1.5"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" stroke-width="1.5"/>
+                            <line x1="12" y1="7" x2="16" y2="7" stroke-width="1.5"/>
+                            <line x1="12" y1="11" x2="16" y2="11" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="explore-card-title">Dark Fantasy Novels</h3>
+                    <p class="explore-card-description">
+                        Enter the Blood of the Wild Gods universe where divine silence speaks louder than prayers
+                    </p>
+                </a>
+
+                <!-- Music Card -->
+                <a href="/music/" class="explore-card reveal">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 18V5l12-2v13" stroke-width="1.5"/>
+                            <circle cx="6" cy="18" r="3" stroke-width="1.5"/>
+                            <circle cx="18" cy="16" r="3" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="explore-card-title">Original Music</h3>
+                    <p class="explore-card-description">
+                        Songs about mental health, trauma, and finding light in the darkest places
+                    </p>
+                </a>
+
+                <!-- Diary Card -->
+                <a href="/diary/" class="explore-card reveal">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z" stroke-width="1.5" stroke-linejoin="round"/>
+                            <path d="M14.06 6.19L17.81 9.94" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="explore-card-title">Unfiltered Diary</h3>
+                    <p class="explore-card-description">
+                        Raw, honest entries about my journey from religious trauma to creative freedom
+                    </p>
+                </a>
+
+                <!-- Community Card -->
+                <a href="/community/" class="explore-card reveal">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-width="1.5"/>
+                            <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4-4-1.79-4-4z" stroke-width="1.5"/>
+                            <path d="M12 2v20M2 12h20" stroke-width="1.5" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3 class="explore-card-title">Survivor Stories</h3>
+                    <p class="explore-card-description">
+                        Real voices from trauma survivors finding healing through shared experience
+                    </p>
+                </a>
+
+                <!-- About Card -->
+                <a href="/about/" class="explore-card reveal">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke-width="1.5"/>
+                            <path d="M12 8v4M12 16h.01" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="explore-card-title">My Story</h3>
+                    <p class="explore-card-description">
+                        From Jehovah's Witness to RN to dark fantasy author—the journey that shaped me
+                    </p>
+                </a>
+
+                <!-- Contact Card -->
+                <a href="/contact/" class="explore-card reveal">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="explore-card-title">Let's Connect</h3>
+                    <p class="explore-card-description">
+                        Join my inner circle or reach out for authentic connection beyond the surface
+                    </p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="featured-testimonial">
+                <div class="testimonial-box">
+                    <div class="testimonial-text">
+                        "Just showing my support in what you are doing. Your website is pretty amazing. So much detail! If I was you I'd change my IG profile name to <span class="highlight">theperfectperfectionist</span>. Your attention to detail is uncanny. Your words are said with such precision. I wish you the best in what you are trying to accomplish Mileena."
+                    </div>
+                    <div class="testimonial-attribution">Message from a website visitor</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Thoughts -->
+    <section class="recent-thoughts">
+        <div class="container">
+            <h2 class="section-title">Recent Thoughts</h2>
+            <div class="thoughts-container">
+                {% if site.data.thoughts %}
+                    {% for thought in site.data.thoughts limit:3 %}
+                    <div class="thought-entry reveal">
+                        <div class="thought-date">{{ thought.date }}</div>
+                        <div class="thought-content">
+                            "{{ thought.content }}"
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="thought-entry reveal">
+                        <div class="thought-date">July 17, 2025</div>
+                        <div class="thought-content">
+                            "I built this website as my own little space carved out of the internet—something personal, a place to share my passions and everything that makes me who I am. It started as a safe haven, but over time, it's grown into something much more. From the world guide for my fantasy universe to the community page where I've begun sharing other people's stories of trauma and giving them a voice, this site has become a reflection of both my heart and the stories that matter to me. But real life has been heavy lately. The demands of my day-to-day work have drained so much of my energy, leaving me too exhausted to fully dive into the things I love. I know I've fallen behind on updating stories, and I'm sorry for that. I haven't forgotten them. I'll return to them—because writing is what I truly want to be doing. I dream of the day when that's all I have to do. Just write and write and write, without anything standing in the way."
+                        </div>
+                    </div>
+                    
+                    <div class="thought-entry reveal">
+                        <div class="thought-date">June 16, 2025</div>
+                        <div class="thought-content">
+                            "It feels so good to be making music again. I'm honestly just grateful my equipment made it through—survived a rat-infested storage unit and all kinds of wild weather. Somehow, it still works. Lately, I've been working on a song about stalkers, because—for some strange reason—that topic keeps showing up in my life. Apparently, I'm… interesting."
+                        </div>
+                    </div>
+                    
+                    <div class="thought-entry reveal">
+                        <div class="thought-date">June 14, 2025</div>
+                        <div class="thought-content">
+                            "Maybe it makes me naïve, but I've never been good at hiding how I feel. I've always been willing to set aside my pride and say the things most people wouldn't dare say out loud. That honesty gets me in trouble sometimes, but I don't know how to be any other way. If being vulnerable helps even one person feel less alone, then maybe the discomfort is worth it."
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.light-orb');
+        
+        orbs.forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            orb.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Intersection Observer for reveal animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all elements with reveal class
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => observer.observe(el));
+    });
+</script>
