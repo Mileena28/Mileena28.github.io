@@ -227,8 +227,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         100% { transform: translate(100px, 100px); }
     }
 
-    /* Floating Light Spheres */
-    .light-spheres {
+    /* Subtle Atmospheric Particles */
+    .light-particles {
         position: fixed;
         top: 0;
         left: 0;
@@ -239,55 +239,54 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         pointer-events: none;
     }
 
-    .sphere {
+    .particle {
         position: absolute;
+        width: 2px;
+        height: 2px;
+        background: var(--primary-purple);
         border-radius: 50%;
-        background: radial-gradient(circle at 30% 30%, var(--primary-purple), transparent);
-        filter: blur(60px);
-        opacity: 0.2;
-        animation: sphere-float 30s infinite ease-in-out;
+        opacity: 0.3;
+        animation: particle-drift 20s infinite linear;
     }
 
-    .sphere:nth-child(1) {
-        width: 500px;
-        height: 500px;
-        top: -250px;
-        left: -250px;
+    .particle:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+        animation-duration: 25s;
+    }
+
+    .particle:nth-child(2) {
+        left: 30%;
+        animation-delay: 5s;
+        animation-duration: 30s;
+    }
+
+    .particle:nth-child(3) {
+        left: 60%;
+        animation-delay: 10s;
         animation-duration: 35s;
     }
 
-    .sphere:nth-child(2) {
-        width: 600px;
-        height: 600px;
-        bottom: -300px;
-        right: -300px;
-        background: radial-gradient(circle at 30% 30%, var(--accent-violet), transparent);
-        animation-duration: 40s;
-        animation-delay: -10s;
+    .particle:nth-child(4) {
+        left: 80%;
+        animation-delay: 15s;
+        animation-duration: 28s;
     }
 
-    .sphere:nth-child(3) {
-        width: 400px;
-        height: 400px;
-        top: 50%;
-        left: 50%;
-        background: radial-gradient(circle at 30% 30%, var(--ocean-blue), transparent);
-        animation-duration: 45s;
-        animation-delay: -20s;
-    }
-
-    @keyframes sphere-float {
-        0%, 100% {
-            transform: translate(0, 0) scale(1);
+    @keyframes particle-drift {
+        0% {
+            transform: translateY(-100px);
+            opacity: 0;
         }
-        25% {
-            transform: translate(100px, -100px) scale(1.1);
+        10% {
+            opacity: 0.3;
         }
-        50% {
-            transform: translate(-50px, 100px) scale(0.9);
+        90% {
+            opacity: 0.3;
         }
-        75% {
-            transform: translate(-100px, -50px) scale(1.05);
+        100% {
+            transform: translateY(calc(100vh + 100px));
+            opacity: 0;
         }
     }
 
@@ -1248,10 +1247,11 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 <!-- Background Layers -->
 <div class="cosmic-bg"></div>
 <div class="grid-overlay"></div>
-<div class="light-spheres">
-    <div class="sphere"></div>
-    <div class="sphere"></div>
-    <div class="sphere"></div>
+<div class="light-particles">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
 </div>
 
 <!-- Hero Section -->
