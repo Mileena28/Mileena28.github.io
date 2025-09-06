@@ -150,7 +150,7 @@ Writing this fictional cosmology recontextualized every unanswered prayer of my 
 
 ## Writing Blood of the Wild Gods: The Lost Histories
 
-I didn't set out to write a book about divine silence when I began crafting Blood of the Wild Gods: The Lost Histories. I thought I was creating an anthology of interconnected mythologies—six stories that could stand alone while weaving together a larger tapestry of meaning. But as I dug deeper into these fictional histories, I realized I was *excavating something much more personal*: my own questions about love, power, and the terrible price of caring too much.
+I didn't set out to write a book about divine silence when I began crafting Blood of the Wild Gods: The Lost Histories. I thought I was creating an anthology of interconnected mythologies—six stories that could stand alone while weaving together a larger picture of meaning. But as I dug deeper into these fictional histories, I realized I was *excavating something much more personal*: my own questions about love, power, and the terrible price of caring too much.
 
 The first story, "Seven Days of Sun," explores love that transcends death itself—but asks what happens when eternal devotion becomes *eternal suffering*. Elodias and Senia's curse forces us to confront whether some loves are *too powerful to survive*, whether the very intensity that makes love beautiful also makes it destructive.
 
