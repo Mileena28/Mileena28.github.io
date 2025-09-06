@@ -2,7 +2,7 @@
 layout: post
 title: "When Pain Becomes Suspicion: A Journey Through Medical Gaslighting and Dental Malpractice"
 date: 2025-08-03
-category: "Community Stories"
+category: "Survivor Stories"
 description: "A survivor shares their three-year battle with chronic pain, bone infection, and medical gaslighting after a botched wisdom tooth extraction—and what healthcare providers need to understand about the dangerous assumption that pain equals drug-seeking."
 excerpt: "Sometimes the most dangerous words a healthcare provider can speak aren't about your diagnosis—they're the accusations that transform you from patient to suspect. This is the story of someone whose legitimate pain was dismissed as drug-seeking behavior, leading to life-threatening complications that continue three years later."
 tags: [medical-trauma, dental-malpractice, chronic-pain, medical-gaslighting, drug-seeking-accusations, healthcare-reform, pain-management, osteomyelitis]
