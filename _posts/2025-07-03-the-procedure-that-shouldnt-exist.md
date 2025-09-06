@@ -2,7 +2,7 @@
 layout: post
 title: "The Procedure That Shouldn't Exist: When Medicine Failed Children for Thirty Years"
 date: 2025-07-03 08:00:00 -0500
-category: "Community Stories"
+category: "Survivor Stories"
 description: "In 2023, a pediatric urologist admitted they've never studied the long-term psychological effects of a procedure performed on hundreds of thousands of children annually. Two survivors share what medical research refused to examine for three decades."
 excerpt: "Sometimes a story finds you not because it's unusual, but because it's heartbreakingly common. When I asked for medical trauma stories, I expected a variety of experiences from different procedures and settings. What I got was a flood of nearly identical accounts of VCUG trauma that the healthcare system has ignored for thirty years."
 tags: [medical-trauma, VCUG, childhood-trauma, medical-negligence, survivor-stories, healthcare-reform, pediatric-trauma]
