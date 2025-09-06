@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When Silence Becomes Sacred: Why Unanswered Prayers Might Be Love's Greatest Gift"
-date: 2025-01-06
+date: 2025-09-06
 category: "Writing"
 description: "A fantasy author's journey from religious trauma to a radical recontextualization of divine silence - what if gods don't answer because answering would destroy us?"
 excerpt: "Sometimes the most profound truths emerge not from finding answers, but from discovering that our questions were born from the wrong assumptions entirely."
