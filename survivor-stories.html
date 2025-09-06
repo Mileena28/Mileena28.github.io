@@ -1741,7 +1741,7 @@ schema:
             </div>
             
             <div class="community-posts-grid">
-                {% assign community_posts = site.posts | where: "category", "Community Stories" %}
+                {% assign community_posts = site.posts | where: "category", "Survivor Stories" %}
                 {% if community_posts.size > 0 %}
                     {% for post in community_posts limit:6 %}
                     <article class="community-post-card reveal">
