@@ -2,7 +2,7 @@
 layout: post
 title: "When Medicine Forgets Children Are Human: A Survivor's Journey Through Pediatric Medical Trauma"
 date: 2025-08-24
-category: "Community Stories"
+category: "Survivor Stories"
 description: "A survivor shares their experience of repeated medical trauma in early childhood that created lasting PTSD, sexual dysfunction, and loss of bodily autonomy—and what healthcare providers need to understand about treating the most vulnerable patients."
 excerpt: "Sometimes the most devastating betrayal comes not from strangers, but from the medical professionals who forget that children's pain matters, that their bodies deserve gentleness, and that trauma created in the name of treatment can last a lifetime."
 tags: [medical-trauma, childhood-trauma, pediatric-gynecology, labial-adhesions, medical-negligence, survivor-stories, healthcare-reform, PTSD]
