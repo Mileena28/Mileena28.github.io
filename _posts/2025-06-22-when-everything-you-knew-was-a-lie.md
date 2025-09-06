@@ -2,7 +2,7 @@
 layout: post
 title: "When Everything You Knew Was a Lie: One Survivor's Journey from Jehovah's Witnesses to Searching the Stars for Truth"
 date: 2025-06-22
-category: "Community Stories"
+category: "Survivor Stories"
 description: "When I asked for ex-JW stories, one person trusted me with their journey through family sexual abuse, religious betrayal, devastating loss, and a desperate search for truth that led beyond this world."
 excerpt: "When I asked people to share their stories, promising they would be heard, one ex-Jehovah's Witness answered with a truth so heavy it took my breath away. This is their story."
 tags: [jehovahs-witness, religious-trauma, sexual-abuse, family-betrayal, truth-seeking, survivor-stories]
