@@ -2,7 +2,7 @@
 layout: post
 title: "From Silence to Science: A Survivor's Journey from Religious Abuse to Royal Commission Testimony"
 date: 2025-07-05
-category: "Community Stories"
+category: "Survivor Stories"
 description: "A survivor shares their transformative journey from childhood sexual abuse within the Jehovah's Witness organization to becoming an advocate for change through the Australian Royal Commission and psychological research."
 excerpt: "Sometimes the most powerful response to systematic abuse is to study the very mechanisms that enabled it. This is the story of someone who transformed decades of silenced trauma into scientific understanding, Royal Commission testimony, and a mission to protect others from the cult that nearly destroyed them."
 tags: [jehovahs-witness, childhood-sexual-abuse, royal-commission, religious-trauma, cult-recovery, survivor-advocacy, psychological-research]
