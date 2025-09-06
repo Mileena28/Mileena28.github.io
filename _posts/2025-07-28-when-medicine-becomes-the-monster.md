@@ -2,7 +2,7 @@
 layout: post
 title: "When Medicine Becomes the Monster: A Survivor's Journey Through Medical Trauma"
 date: 2025-07-28
-category: "Community Stories"
+category: "Survivor Stories"
 description: "An 18-year-old shares their journey from childhood medical trauma during an orthodontic procedure that left lasting psychological scars, and what healthcare workers need to understand about the patients in their care."
 excerpt: "Sometimes the people meant to heal us become the source of our deepest wounds. This is the story of an 8-year-old who went in for routine dental surgery and came out with trauma that continues to haunt them a decade later—and what every healthcare worker needs to hear."
 tags: [medical-trauma, childhood-trauma, healthcare-reform, informed-consent, medical-negligence, survivor-stories, dental-trauma]
