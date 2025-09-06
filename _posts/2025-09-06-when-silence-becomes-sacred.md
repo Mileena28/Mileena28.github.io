@@ -180,7 +180,7 @@ The silence that once felt like abandonment now feels like space—room to grow,
 
 Perhaps the most radical act of faith isn't demanding that the universe answer our prayers, but trusting that our questions themselves have value. That the searching matters more than the finding. That consciousness capable of wonder is already more miraculous than any intervention could be.
 
-In that silence, I've found something I never expected: a love so vast it knows when to stay hidden, so wise it appears absent, so profound it chooses distance over destruction. Not the anthropomorphic God of my childhood religion, but something infinitely more mysterious—the possibility that we are held by forces beyond our understanding, loved by a cosmos that cares enough to let us become who we're meant to be without interference.
+In that silence, I've found something I never expected: a love so vast it knows when to stay hidden, so wise it appears absent, so profound it chooses distance over destruction. Not the omnipotent God of my childhood religion, but something infinitely more mysterious—the possibility that we are held by forces beyond our understanding, loved by a cosmos that cares enough to let us become who we're meant to be without interference.
 
 As Tanneus writes in his final testament:
 
