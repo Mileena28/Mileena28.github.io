@@ -2,7 +2,7 @@
 layout: post
 title: "When Your First Fight Was Just to Breathe: A Journey Through Unthinkable Trauma"
 date: 2025-06-30 08:00:00 -0500
-category: "Community Stories"
+category: "Survivor Stories"
 description: "At 21, Benji has survived more trauma than most people could imagine—premature birth, heart surgery, severe neglect, abandonment, abuse, and ongoing medical challenges. His story is proof of the incredible resilience of the human spirit."
 excerpt: "I never know what to expect when someone sends me their painful story, and each time I'm so honored they entrust me with it. When this story reached me, I felt a sinking feeling in my chest. As a mother of two, I read the unthinkable."
 tags: [childhood-trauma, medical-trauma, autism, survivor-stories, family-abandonment, resilience, healing]
