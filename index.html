@@ -832,17 +832,17 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                     {% endif %}
                 </div>
 
-                <!-- Latest Community Stories -->
+                <!-- Updated Community Stories Card in Recent Creations Section -->
                 <div class="work-card reveal">
-                    <div class="work-type">Community Stories</div>
-                    {% assign latest_community = site.posts | where: "category", "Community Stories" | first %}
-                    {% if latest_community %}
-                        <h3 class="work-title">{{ latest_community.title }}</h3>
-                        <div class="work-date">{{ latest_community.date | date: "%B %d, %Y" }}</div>
+                    <div class="work-type">Survivor Stories</div>
+                    {% assign latest_survivor = site.posts | where: "category", "Survivor Stories" | first %}
+                    {% if latest_survivor %}
+                        <h3 class="work-title">{{ latest_survivor.title }}</h3>
+                        <div class="work-date">{{ latest_survivor.date | date: "%B %d, %Y" }}</div>
                         <p class="work-preview">
-                            {{ latest_community.excerpt | strip_html | truncate: 120 }}
+                            {{ latest_survivor.excerpt | strip_html | truncate: 120 }}
                         </p>
-                        <a href="{{ latest_community.url }}" class="work-link">Read Stories</a>
+                        <a href="{{ latest_survivor.url }}" class="work-link">Read Story</a>
                     {% else %}
                         <h3 class="work-title">Stories Being Shared</h3>
                         <div class="coming-soon">
