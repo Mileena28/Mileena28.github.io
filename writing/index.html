@@ -515,6 +515,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         background: linear-gradient(90deg, transparent, var(--primary-purple), var(--ocean-blue), transparent);
         opacity: 0.8;
         animation: shimmer-border 4s ease-in-out infinite;
+        pointer-events: none;
     }
 
     .featured-book-card::after {
@@ -528,6 +529,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         opacity: 0.8;
         animation: shimmer-border 4s ease-in-out infinite;
         animation-delay: 2s;
+        pointer-events: none;
     }
 
     @keyframes shimmer-border {
@@ -547,6 +549,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         grid-template-columns: 450px 1fr;
         gap: 80px;
         align-items: center;
+        position: relative;
+        z-index: 2;
     }
 
     .featured-cover {
@@ -602,6 +606,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         transform: rotate(45deg);
         transition: all 0.6s;
         opacity: 0;
+        pointer-events: none;
     }
 
     .featured-cover:hover::before {
@@ -624,6 +629,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     .featured-info {
         text-align: left;
+        position: relative;
+        z-index: 5;
     }
 
     .featured-title {
@@ -654,6 +661,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
+        position: relative;
+        z-index: 100;
     }
 
     /* Book Stats Display */
@@ -703,7 +712,9 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         font-weight: 500;
     }
 
-    .btn-primary {
+    /* FIX FOR BUTTON CLICKABILITY */
+    .btn-primary,
+    .btn-secondary {
         background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
         color: white;
         text-decoration: none;
@@ -715,6 +726,17 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         overflow: hidden;
         display: inline-block;
         box-shadow: 0 15px 35px rgba(177, 156, 217, 0.3);
+        z-index: 1000;
+        cursor: pointer;
+        pointer-events: auto !important;
+        isolation: isolate;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        color: var(--primary-purple);
+        border: 2px solid var(--primary-purple);
+        box-shadow: none;
     }
 
     .btn-primary::before {
@@ -727,6 +749,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
         transition: all 0.5s ease;
         transform: translate(-50%, -50%);
+        pointer-events: none;
     }
 
     .btn-primary:hover::before {
@@ -734,26 +757,14 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         height: 300px;
     }
 
-    .btn-primary:hover {
+    .btn-primary:hover,
+    .btn-secondary:hover {
         transform: translateY(-3px);
         box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
     }
 
-    .btn-secondary {
-        background: transparent;
-        color: var(--primary-purple);
-        border: 2px solid var(--primary-purple);
-        text-decoration: none;
-        padding: 13px 35px;
-        border-radius: 30px;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        display: inline-block;
-    }
-
     .btn-secondary:hover {
         background: rgba(177, 156, 217, 0.1);
-        transform: translateY(-3px);
         box-shadow: 0 15px 30px rgba(177, 156, 217, 0.2);
     }
 
@@ -893,6 +904,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         position: relative;
         overflow: hidden;
         transition: all 0.5s ease;
+        z-index: 1;
     }
 
     .wip-book-card::before {
@@ -905,6 +917,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         background: linear-gradient(135deg, rgba(177, 156, 217, 0.05) 0%, transparent 50%);
         opacity: 0;
         transition: opacity 0.5s ease;
+        pointer-events: none;
+        z-index: 0;
     }
 
     .wip-book-card:hover::before {
@@ -924,6 +938,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         grid-template-columns: 450px 1fr;
         gap: 80px;
         align-items: center;
+        position: relative;
+        z-index: 2;
     }
 
     .wip-cover-wrapper {
@@ -980,6 +996,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         transform: rotate(45deg);
         transition: all 0.6s;
         opacity: 0;
+        pointer-events: none;
     }
 
     .wip-cover-wrapper:hover::before {
@@ -988,6 +1005,9 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     .wip-info {
         text-align: left;
+        position: relative;
+        z-index: 5;
+        transform: translateZ(0);
     }
 
     .wip-status {
@@ -1066,6 +1086,16 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         display: flex;
         gap: 20px;
         flex-wrap: wrap;
+        position: relative;
+        z-index: 100;
+    }
+
+    /* Ensure all links in cards are clickable */
+    .wip-book-card a,
+    .featured-book-card a {
+        position: relative;
+        z-index: 1000;
+        pointer-events: auto !important;
     }
 
     /* Author Philosophy Section */
@@ -1703,6 +1733,44 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     document.addEventListener('DOMContentLoaded', () => {
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach(el => observer.observe(el));
+        
+        // Fix for chapter links - ensure they're clickable
+        const chapterLinks = document.querySelectorAll('a[href*="/chapters/"]');
+        
+        chapterLinks.forEach(link => {
+            // Remove any potential event blockers
+            link.style.pointerEvents = 'auto';
+            link.style.position = 'relative';
+            link.style.zIndex = '1000';
+            link.style.cursor = 'pointer';
+            
+            // Add click event listener for debugging
+            link.addEventListener('click', function(e) {
+                console.log('Chapter link clicked:', this.href);
+                // The link should work normally, but if it doesn't, uncomment the next lines:
+                // e.preventDefault();
+                // window.location.href = this.href;
+            });
+        });
+        
+        // Check if any elements are overlapping the buttons after page load
+        setTimeout(() => {
+            const buttons = document.querySelectorAll('.btn-secondary, .btn-primary');
+            buttons.forEach(button => {
+                const rect = button.getBoundingClientRect();
+                const elementAtPoint = document.elementFromPoint(
+                    rect.left + rect.width / 2,
+                    rect.top + rect.height / 2
+                );
+                
+                if (elementAtPoint !== button && !button.contains(elementAtPoint)) {
+                    console.warn('Button is being overlapped:', button, 'by:', elementAtPoint);
+                    // Force button to top
+                    button.style.position = 'relative';
+                    button.style.zIndex = '10000';
+                }
+            });
+        }, 1000);
     });
 
     // Smooth scroll for anchor links
