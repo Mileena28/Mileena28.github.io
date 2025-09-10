@@ -1,3 +1,10 @@
+---
+layout: default
+title: "Bae'Ravah Language Guide | Ancient Wisdom Tongue of the Baelak"
+description: "Complete dictionary, grammar, and phrases of Bae'Ravah - the lost language of the original Baelak. Learn the sacred tongue that emphasizes balance, trauma, healing, and spiritual understanding."
+image: "/assets/images/baeravah-language.jpg"
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -424,6 +431,123 @@
             font-weight: bold;
         }
 
+        /* Grammar Tables */
+        .grammar-table {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .grammar-table thead {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2) 0%, rgba(147, 112, 219, 0.2) 100%);
+        }
+
+        .grammar-table th {
+            padding: 12px;
+            text-align: left;
+            color: #c8b5ff;
+            font-weight: bold;
+            border-bottom: 2px solid rgba(138, 159, 255, 0.3);
+        }
+
+        .grammar-table td {
+            padding: 10px 12px;
+            color: #ddd;
+            border-bottom: 1px solid rgba(138, 159, 255, 0.1);
+        }
+
+        .grammar-table tr:hover {
+            background: rgba(138, 159, 255, 0.05);
+        }
+
+        .grammar-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Grammar Subsections */
+        .grammar-subsection {
+            margin-top: 30px;
+        }
+
+        .grammar-subsection h3 {
+            color: #c8b5ff;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px rgba(200, 181, 255, 0.3);
+        }
+
+        /* Example text */
+        .example-text {
+            color: #a8b5ff;
+            font-style: italic;
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+
+        /* Time markers list */
+        .time-markers {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .time-markers li {
+            background: rgba(138, 159, 255, 0.05);
+            padding: 8px 15px;
+            border-radius: 8px;
+            border-left: 3px solid #8a9fff;
+        }
+
+        /* Grammar notes */
+        .grammar-notes {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .grammar-notes li {
+            background: rgba(138, 159, 255, 0.03);
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 3px solid rgba(138, 159, 255, 0.3);
+        }
+
+        /* Quick reference card */
+        .quick-reference {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(147, 112, 219, 0.1) 100%);
+            border: 2px solid rgba(138, 159, 255, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .reference-card h4 {
+            color: #c8b5ff;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .reference-card ol {
+            color: #ddd;
+            padding-left: 25px;
+        }
+
+        .reference-card li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .reference-card strong {
+            color: #a8b5ff;
+        }
+
         /* Search Box */
         .search-container {
             max-width: 600px;
@@ -614,44 +738,297 @@
             </div>
 
             <div class="grammar-section">
+                <h2 class="grammar-title">Basic Sentence Structure</h2>
+                <div class="grammar-content">
+                    <p><strong>Standard Word Order:</strong> Subject + Verb + Object + Time/Place</p>
+                    <p class="example-text">Bae'Ravah: "Vek frish kara hor'sinta" → English: "I walk home today"</p>
+                    <br>
+                    <p><strong>Questions:</strong> Question word + Subject + Verb + Object</p>
+                    <p class="example-text">Bae'Ravah: "Qua dak gish?" → English: "What do you make?"</p>
+                </div>
+            </div>
+
+            <div class="grammar-section">
                 <h2 class="grammar-title">Basic Grammar Rules</h2>
                 
                 <div class="grammar-rule">
                     <div class="rule-header">1. Verb System - NO CONJUGATION</div>
                     <p>Verbs never change form regardless of subject or tense. Time is shown with separate time words.</p>
+                    
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>I walk</td><td>Vek frish</td></tr>
+                            <tr><td>You walk</td><td>Dak frish</td></tr>
+                            <tr><td>They walk</td><td>Kelth frish</td></tr>
+                            <tr><td>I walked yesterday</td><td>Vek frish tor'sinta</td></tr>
+                            <tr><td>I will walk tomorrow</td><td>Vek shevek frish zen'sinta</td></tr>
+                            <tr><td>I am walking</td><td>Vek frish nal</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="grammar-rule">
                     <div class="rule-header">2. Plurality - USE QUANTITY WORDS</div>
-                    <p>Nouns never change form. Quantity is shown with number or quantity words (uni, du, manu, koral, etc.)</p>
+                    <p>Nouns never change form. Quantity is shown with number or quantity words.</p>
+                    
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>One child</td><td>Uni bafu</td></tr>
+                            <tr><td>Many children</td><td>Manu bafu</td></tr>
+                            <tr><td>Some children</td><td>Sevek bafu</td></tr>
+                            <tr><td>Twenty people</td><td>Du'tona opa</td></tr>
+                            <tr><td>All enemies</td><td>Koral raka'vul</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="grammar-rule">
                     <div class="rule-header">3. Possession - PRONOUN + NOUN</div>
-                    <p>Simple juxtaposition - no possessive markers or changes to words. "Vek rikta" = My pain</p>
+                    <p>Simple juxtaposition - no possessive markers or changes to words.</p>
+                    
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>My pain</td><td>Vek rikta</td></tr>
+                            <tr><td>Your strength</td><td>Dak braj'va</td></tr>
+                            <tr><td>Their home</td><td>Kelth kara</td></tr>
+                            <tr><td>Kiri's wisdom</td><td>Kiri vel'thari</td></tr>
+                            <tr><td>The warrior's blade</td><td>Mok'tunak swix</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="grammar-rule">
-                    <div class="rule-header">4. Comparisons - MOOKA/LOCHE/EQUAS</div>
+                    <div class="rule-header">4. Comparisons - MOOKA/LOCHE/EQUAS STRUCTURE</div>
                     <p>Use comparison words for all comparisons. No comparative/superlative word changes.</p>
+                    
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>You are stronger than me</td><td>Dak erza mooka vek</td></tr>
+                            <tr><td>This is more beautiful</td><td>Tis mira mooka</td></tr>
+                            <tr><td>The most dangerous enemy</td><td>Raka'vul bav'glek mooka koral</td></tr>
+                            <tr><td>As strong as</td><td>Erza equas</td></tr>
+                            <tr><td>Less painful</td><td>Rikta loche</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="grammar-rule">
-                    <div class="rule-header">5. Negation - KETH BEFORE VERB</div>
-                    <p>"Keth" negates any verb or adjective. "Vek keth frish" = I do not walk</p>
+                    <div class="rule-header">5. Articles - CONTEXT DETERMINES</div>
+                    <p>"The" is optional and shown by context or "eth" when emphasis needed.</p>
+                    
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>The house</td><td>Kara (or "eth kara" for emphasis)</td></tr>
+                            <tr><td>A house</td><td>Kara</td></tr>
+                            <tr><td>Houses</td><td>Manu kara</td></tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="grammar-rule">
-                    <div class="rule-header">6. Time Through Separate Words</div>
-                    <p>Past: Time word + base verb | Present: Base verb (+ "nal" if needed) | Future: "Shevek" + base verb</p>
+                    <div class="rule-header">6. Negation - KETH BEFORE VERB</div>
+                    <p>"Keth" negates any verb or adjective.</p>
+                    
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>I do not walk</td><td>Vek keth frish</td></tr>
+                            <tr><td>You are not strong</td><td>Dak keth erza</td></tr>
+                            <tr><td>They will not come</td><td>Kelth keth shevek doveka</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <div class="grammar-section">
-                <h2 class="grammar-title">Word Order</h2>
-                <div class="grammar-content">
-                    <p><strong>Standard:</strong> Subject + Verb + Object + Time/Place</p>
-                    <p><strong>Questions:</strong> Question word + Subject + Verb + Object</p>
+                <h2 class="grammar-title">Time Expressions</h2>
+                
+                <div class="grammar-subsection">
+                    <h3>Tense Through Time Words</h3>
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English Tense</th>
+                                <th>Bae'Ravah Method</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Past</td>
+                                <td>Time word + base verb</td>
+                                <td>"Vek frish tor'sinta" (I walked yesterday)</td>
+                            </tr>
+                            <tr>
+                                <td>Present</td>
+                                <td>Base verb (+ "nal" if needed)</td>
+                                <td>"Vek frish" or "Vek frish nal" (I walk/am walking)</td>
+                            </tr>
+                            <tr>
+                                <td>Future</td>
+                                <td>"Shevek" + base verb</td>
+                                <td>"Vek shevek frish" (I will walk)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grammar-subsection">
+                    <h3>Common Time Markers</h3>
+                    <ul class="time-markers">
+                        <li><strong>tor'sinta</strong> - yesterday</li>
+                        <li><strong>hor'sinta</strong> - today</li>
+                        <li><strong>zen'sinta</strong> - tomorrow</li>
+                        <li><strong>nal</strong> - now</li>
+                        <li><strong>ren</strong> - soon</li>
+                        <li><strong>giva</strong> - later</li>
+                        <li><strong>horva</strong> - always</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grammar-section">
+                <h2 class="grammar-title">Practical Translation Examples</h2>
+                
+                <div class="grammar-subsection">
+                    <h3>Simple Sentences</h3>
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>I am tired</td><td>Vek voos'tana</td></tr>
+                            <tr><td>You need rest</td><td>Dak mikta rest</td></tr>
+                            <tr><td>She will heal</td><td>She shevek shim</td></tr>
+                            <tr><td>We fight together</td><td>Thol krivek opanu</td></tr>
+                            <tr><td>They are afraid</td><td>Kelth ketra</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grammar-subsection">
+                    <h3>Complex Sentences</h3>
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>I remember many old friends who died</td><td>Vek shwea manu mak mosh'mak vok vosh'dak</td></tr>
+                            <tr><td>You will understand this pain later</td><td>Dak shevek yeshva eth rikta giva</td></tr>
+                            <tr><td>My healing journey is slow but necessary</td><td>Vek shimah na salo yel mikta</td></tr>
+                            <tr><td>Some truths hide in darkness</td><td>Sevek veridak nim sul umbra</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grammar-subsection">
+                    <h3>Emotional Expressions</h3>
+                    <table class="grammar-table">
+                        <thead>
+                            <tr>
+                                <th>English</th>
+                                <th>Bae'Ravah</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>My heart is broken</td><td>Vek emosha sashata</td></tr>
+                            <tr><td>I feel lost and alone</td><td>Vek tu'vesha sas'weka vel sawas</td></tr>
+                            <tr><td>You carry heavy grief</td><td>Dak fortu mord'uul gorga</td></tr>
+                            <tr><td>We share blood-bond through trials</td><td>Thol malek zhak'mor topeka examu'ti</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="grammar-section">
+                <h2 class="grammar-title">Special Grammar Notes</h2>
+                
+                <div class="grammar-subsection">
+                    <h3>Cultural Speech Patterns</h3>
+                    <ul class="grammar-notes">
+                        <li><strong>Drop articles when possible:</strong> "Pain teaches wisdom" not "The pain teaches the wisdom"</li>
+                        <li><strong>Use present tense for universal truths:</strong> "Rikta gish braj'va" (Pain makes strength)</li>
+                        <li><strong>Emphasize through word choice, not grammar:</strong> Use precise vocabulary rather than complex structures</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-subsection">
+                    <h3>Kiri's Speaking Style</h3>
+                    <ul class="grammar-notes">
+                        <li>Often drops Common tongue articles: "Pain is teacher" instead of "The pain is a teacher"</li>
+                        <li>Mixes languages under stress: "Doja slek making stupid gaks!"</li>
+                        <li>Uses third person for serious topics: "Kiri has seen much darkness"</li>
+                    </ul>
+                </div>
+
+                <div class="grammar-subsection">
+                    <h3>Emotional Intensity Through Repetition</h3>
+                    <ul class="grammar-notes">
+                        <li><strong>Strong emphasis:</strong> "Gaks gaks gaks!" (gossip gossip gossip!)</li>
+                        <li><strong>Certainty:</strong> "Y'lu y'lu!" (yes yes!)</li>
+                        <li><strong>Dismissal:</strong> "Unk unk!" (no no!)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grammar-section">
+                <h2 class="grammar-title">Quick Reference Guide</h2>
+                <div class="quick-reference">
+                    <div class="reference-card">
+                        <h4>Remember:</h4>
+                        <ol>
+                            <li><strong>No verb conjugations</strong> - same verb form always</li>
+                            <li><strong>No noun pluralization</strong> - use quantity words</li>
+                            <li><strong>Simple possession</strong> - pronoun + noun</li>
+                            <li><strong>Time through separate words</strong> - not verb changes</li>
+                            <li><strong>Negation with "keth"</strong> before what's being negated</li>
+                            <li><strong>Comparisons with mooka/loche/equas</strong> - no word modifications</li>
+                            <li><strong>Cultural concepts may need explanation</strong> - shimah, zhak'mor, vala'dak tum have no direct English equivalents</li>
+                            <li><strong>Context matters</strong> - some words like "tora" have multiple meanings</li>
+                            <li><strong>Preserve emotional weight</strong> - don't simplify profound concepts</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1463,6 +1840,50 @@
                 particle.remove();
             }, 25000);
         }, 3000);
+    </script>
+
+    <!-- SEO Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Bae'Ravah Language Guide",
+        "description": "Complete dictionary, grammar, and phrases of Bae'Ravah - the lost language of the original Baelak from the Blood of the Wild Gods universe.",
+        "author": {
+            "@type": "Person",
+            "name": "Mileena Rayne",
+            "url": "https://mileenarayne.com"
+        },
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "Mileena Rayne",
+            "url": "https://mileenarayne.com"
+        },
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "Constructed Language"
+            },
+            {
+                "@type": "Thing",
+                "name": "Fantasy Language"
+            },
+            {
+                "@type": "Thing",
+                "name": "Blood of the Wild Gods"
+            }
+        ],
+        "mainEntity": {
+            "@type": "CreativeWork",
+            "name": "Bae'Ravah Language",
+            "creator": {
+                "@type": "Person",
+                "name": "Mileena Rayne"
+            },
+            "description": "Ancient wisdom tongue of the Baelak people",
+            "genre": "Constructed Language"
+        }
+    }
     </script>
 </body>
 </html>
