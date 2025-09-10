@@ -1,1 +1,1468 @@
-?
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bae'Ravah Language Guide | Ancient Wisdom Tongue</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a1a3e 50%, #0a0a2a 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Mystical Background Effects */
+        .language-cosmos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .cosmic-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(138, 159, 255, 0.8) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-100vh) translateX(50px);
+            }
+        }
+
+        .mystic-orb {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(147, 112, 219, 0.2) 0%, transparent 70%);
+            animation: pulse 8s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        /* Header Section */
+        .language-header {
+            text-align: center;
+            padding: 100px 20px 80px;
+            background: radial-gradient(ellipse at center, rgba(138, 159, 255, 0.1) 0%, transparent 70%);
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #8a9fff 0%, #c8b5ff 50%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(138, 159, 255, 0.5);
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.2);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.8em;
+            color: #a8b5ff;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .header-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #ddd;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Navigation Tabs */
+        .language-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 50px auto;
+            max-width: 1200px;
+            flex-wrap: wrap;
+            padding: 0 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .nav-tab {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(147, 112, 219, 0.1) 100%);
+            border: 2px solid rgba(138, 159, 255, 0.3);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #a8b5ff;
+            font-size: 1.1em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-tab::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: radial-gradient(circle, rgba(138, 159, 255, 0.4) 0%, transparent 70%);
+            transition: all 0.5s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .nav-tab:hover::before {
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+            border-color: #8a9fff;
+            color: #ffffff;
+        }
+
+        .nav-tab.active {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.3) 0%, rgba(147, 112, 219, 0.3) 100%);
+            border-color: #8a9fff;
+            color: #ffffff;
+            box-shadow: 0 5px 20px rgba(138, 159, 255, 0.4);
+        }
+
+        /* Content Container */
+        .content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Alphabet Navigation */
+        .alphabet-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            justify-content: center;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.8) 0%, rgba(30, 30, 50, 0.8) 100%);
+            border-radius: 20px;
+            border: 1px solid rgba(138, 159, 255, 0.2);
+        }
+
+        .letter-btn {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.2) 0%, rgba(147, 112, 219, 0.2) 100%);
+            border: 1px solid rgba(138, 159, 255, 0.3);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #a8b5ff;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .letter-btn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.4) 0%, rgba(147, 112, 219, 0.4) 100%);
+            box-shadow: 0 5px 15px rgba(138, 159, 255, 0.4);
+            color: #ffffff;
+        }
+
+        /* Word Entries */
+        .letter-section {
+            margin-bottom: 60px;
+        }
+
+        .letter-header {
+            font-size: 3em;
+            color: #8a9fff;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid rgba(138, 159, 255, 0.3);
+            text-shadow: 0 0 20px rgba(138, 159, 255, 0.5);
+        }
+
+        .word-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .word-entry {
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.9) 0%, rgba(30, 30, 50, 0.9) 100%);
+            border: 1px solid rgba(138, 159, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .word-entry::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .word-entry:hover::before {
+            left: 100%;
+        }
+
+        .word-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.2);
+            border-color: #8a9fff;
+        }
+
+        .word-main {
+            font-size: 1.4em;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .pronunciation {
+            color: #c8b5ff;
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .definition {
+            color: #a8b5ff;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .cultural-note {
+            color: #ddd;
+            font-size: 0.95em;
+            line-height: 1.5;
+            padding-top: 10px;
+            border-top: 1px solid rgba(138, 159, 255, 0.1);
+            font-style: italic;
+        }
+
+        /* Phrases Section */
+        .phrase-entry {
+            background: linear-gradient(135deg, rgba(30, 20, 50, 0.9) 0%, rgba(40, 30, 60, 0.9) 100%);
+            border: 1px solid rgba(147, 112, 219, 0.3);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .phrase-entry:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 5px 20px rgba(147, 112, 219, 0.3);
+        }
+
+        .phrase-original {
+            font-size: 1.5em;
+            color: #c8b5ff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .phrase-translation {
+            color: #ffffff;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        /* Numbers Section */
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .number-card {
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.1) 0%, rgba(147, 112, 219, 0.1) 100%);
+            border: 2px solid rgba(138, 159, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .number-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.3);
+        }
+
+        .number-value {
+            font-size: 2em;
+            color: #8a9fff;
+            margin-bottom: 10px;
+        }
+
+        .number-word {
+            font-size: 1.3em;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .number-pronunciation {
+            color: #c8b5ff;
+            font-style: italic;
+        }
+
+        /* Grammar Section */
+        .grammar-section {
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.9) 0%, rgba(30, 30, 50, 0.9) 100%);
+            border: 1px solid rgba(138, 159, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .grammar-title {
+            font-size: 2em;
+            color: #8a9fff;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(138, 159, 255, 0.5);
+        }
+
+        .grammar-content {
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .grammar-rule {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(138, 159, 255, 0.05);
+            border-left: 3px solid #8a9fff;
+            border-radius: 10px;
+        }
+
+        .rule-header {
+            font-size: 1.3em;
+            color: #c8b5ff;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        /* Search Box */
+        .search-container {
+            max-width: 600px;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 50px 15px 20px;
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.9) 0%, rgba(30, 30, 50, 0.9) 100%);
+            border: 2px solid rgba(138, 159, 255, 0.3);
+            border-radius: 30px;
+            color: #ffffff;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #8a9fff;
+            box-shadow: 0 0 20px rgba(138, 159, 255, 0.4);
+        }
+
+        .search-input::placeholder {
+            color: #666;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5em;
+            }
+            
+            .subtitle {
+                font-size: 1.3em;
+            }
+            
+            .word-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .language-nav {
+                gap: 10px;
+            }
+            
+            .nav-tab {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+            
+            .letter-btn {
+                width: 35px;
+                height: 35px;
+                font-size: 1em;
+            }
+            
+            /* Grammar tables mobile */
+            .grammar-table {
+                font-size: 0.9em;
+            }
+            
+            .grammar-table th,
+            .grammar-table td {
+                padding: 8px;
+            }
+            
+            .time-markers {
+                grid-template-columns: 1fr;
+            }
+            
+            .grammar-subsection h3 {
+                font-size: 1.2em;
+            }
+            
+            .reference-card {
+                padding: 15px;
+            }
+            
+            .reference-card ol {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cosmic Background Effects -->
+    <div class="language-cosmos">
+        <div class="cosmic-particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="cosmic-particle" style="left: 20%; animation-delay: 2s;"></div>
+        <div class="cosmic-particle" style="left: 30%; animation-delay: 4s;"></div>
+        <div class="cosmic-particle" style="left: 40%; animation-delay: 6s;"></div>
+        <div class="cosmic-particle" style="left: 50%; animation-delay: 8s;"></div>
+        <div class="cosmic-particle" style="left: 60%; animation-delay: 10s;"></div>
+        <div class="cosmic-particle" style="left: 70%; animation-delay: 12s;"></div>
+        <div class="cosmic-particle" style="left: 80%; animation-delay: 14s;"></div>
+        <div class="cosmic-particle" style="left: 90%; animation-delay: 16s;"></div>
+        
+        <div class="mystic-orb" style="width: 200px; height: 200px; top: 10%; left: 5%; animation-delay: 0s;"></div>
+        <div class="mystic-orb" style="width: 150px; height: 150px; top: 60%; right: 10%; animation-delay: 3s;"></div>
+        <div class="mystic-orb" style="width: 100px; height: 100px; top: 30%; right: 30%; animation-delay: 6s;"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="language-header">
+        <h1 class="main-title">Bae'Ravah</h1>
+        <p class="subtitle">"The Ancient Wisdom Tongue"</p>
+        <div class="header-description">
+            <p>The lost language of the original Baelak, now spoken only by Kirisha'na. This sacred tongue emphasizes concepts of balance, trauma, healing, and spiritual understanding. Modern beastmen have forgotten these words, making Kiri the last keeper of its wisdom.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="language-nav">
+        <div class="nav-tab active" onclick="showSection('dictionary')">Dictionary</div>
+        <div class="nav-tab" onclick="showSection('phrases')">Phrases</div>
+        <div class="nav-tab" onclick="showSection('numbers')">Numbers</div>
+        <div class="nav-tab" onclick="showSection('grammar')">Grammar</div>
+    </nav>
+
+    <!-- Search Box -->
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search for a word..." id="searchInput" onkeyup="searchWords()">
+    </div>
+
+    <!-- Content Container -->
+    <div class="content-container">
+        
+        <!-- Dictionary Section -->
+        <div id="dictionary" class="content-section active">
+            <div class="alphabet-nav">
+                <div class="letter-btn" onclick="scrollToLetter('A')">A</div>
+                <div class="letter-btn" onclick="scrollToLetter('B')">B</div>
+                <div class="letter-btn" onclick="scrollToLetter('C')">C</div>
+                <div class="letter-btn" onclick="scrollToLetter('D')">D</div>
+                <div class="letter-btn" onclick="scrollToLetter('E')">E</div>
+                <div class="letter-btn" onclick="scrollToLetter('F')">F</div>
+                <div class="letter-btn" onclick="scrollToLetter('G')">G</div>
+                <div class="letter-btn" onclick="scrollToLetter('H')">H</div>
+                <div class="letter-btn" onclick="scrollToLetter('I')">I</div>
+                <div class="letter-btn" onclick="scrollToLetter('J')">J</div>
+                <div class="letter-btn" onclick="scrollToLetter('K')">K</div>
+                <div class="letter-btn" onclick="scrollToLetter('L')">L</div>
+                <div class="letter-btn" onclick="scrollToLetter('M')">M</div>
+                <div class="letter-btn" onclick="scrollToLetter('N')">N</div>
+                <div class="letter-btn" onclick="scrollToLetter('O')">O</div>
+                <div class="letter-btn" onclick="scrollToLetter('P')">P</div>
+                <div class="letter-btn" onclick="scrollToLetter('Q')">Q</div>
+                <div class="letter-btn" onclick="scrollToLetter('R')">R</div>
+                <div class="letter-btn" onclick="scrollToLetter('S')">S</div>
+                <div class="letter-btn" onclick="scrollToLetter('T')">T</div>
+                <div class="letter-btn" onclick="scrollToLetter('U')">U</div>
+                <div class="letter-btn" onclick="scrollToLetter('V')">V</div>
+                <div class="letter-btn" onclick="scrollToLetter('W')">W</div>
+                <div class="letter-btn" onclick="scrollToLetter('X')">X</div>
+                <div class="letter-btn" onclick="scrollToLetter('Y')">Y</div>
+                <div class="letter-btn" onclick="scrollToLetter('Z')">Z</div>
+            </div>
+
+            <!-- Dictionary entries will be inserted here by JavaScript -->
+            <div id="dictionaryContent"></div>
+        </div>
+
+        <!-- Phrases Section -->
+        <div id="phrases" class="content-section">
+            <div id="phrasesContent"></div>
+        </div>
+
+        <!-- Numbers Section -->
+        <div id="numbers" class="content-section">
+            <h2 class="grammar-title">Basic Numbers (1-10)</h2>
+            <div class="numbers-grid" id="basicNumbers"></div>
+            
+            <h2 class="grammar-title">Tens (20-90)</h2>
+            <div class="numbers-grid" id="tensNumbers"></div>
+            
+            <h2 class="grammar-title">Large Numbers</h2>
+            <div class="numbers-grid" id="largeNumbers"></div>
+        </div>
+
+        <!-- Grammar Section -->
+        <div id="grammar" class="content-section">
+            <div class="grammar-section">
+                <h2 class="grammar-title">Core Philosophy</h2>
+                <div class="grammar-content">
+                    <p>Bae'Ravah prioritizes directness and simplicity over grammatical complexity. Meaning comes from precise vocabulary rather than elaborate sentence structures. The language reflects the Fus'Ravahn value of honest, straightforward communication.</p>
+                </div>
+            </div>
+
+            <div class="grammar-section">
+                <h2 class="grammar-title">Basic Grammar Rules</h2>
+                
+                <div class="grammar-rule">
+                    <div class="rule-header">1. Verb System - NO CONJUGATION</div>
+                    <p>Verbs never change form regardless of subject or tense. Time is shown with separate time words.</p>
+                </div>
+
+                <div class="grammar-rule">
+                    <div class="rule-header">2. Plurality - USE QUANTITY WORDS</div>
+                    <p>Nouns never change form. Quantity is shown with number or quantity words (uni, du, manu, koral, etc.)</p>
+                </div>
+
+                <div class="grammar-rule">
+                    <div class="rule-header">3. Possession - PRONOUN + NOUN</div>
+                    <p>Simple juxtaposition - no possessive markers or changes to words. "Vek rikta" = My pain</p>
+                </div>
+
+                <div class="grammar-rule">
+                    <div class="rule-header">4. Comparisons - MOOKA/LOCHE/EQUAS</div>
+                    <p>Use comparison words for all comparisons. No comparative/superlative word changes.</p>
+                </div>
+
+                <div class="grammar-rule">
+                    <div class="rule-header">5. Negation - KETH BEFORE VERB</div>
+                    <p>"Keth" negates any verb or adjective. "Vek keth frish" = I do not walk</p>
+                </div>
+
+                <div class="grammar-rule">
+                    <div class="rule-header">6. Time Through Separate Words</div>
+                    <p>Past: Time word + base verb | Present: Base verb (+ "nal" if needed) | Future: "Shevek" + base verb</p>
+                </div>
+            </div>
+
+            <div class="grammar-section">
+                <h2 class="grammar-title">Word Order</h2>
+                <div class="grammar-content">
+                    <p><strong>Standard:</strong> Subject + Verb + Object + Time/Place</p>
+                    <p><strong>Questions:</strong> Question word + Subject + Verb + Object</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Complete dictionary data structure with ALL words
+        const dictionaryData = {
+            'A': [
+                {word: 'Ack', pronunciation: '[ahk]', definition: 'Can, able to, capable, permitted, allowed', cultural: 'Expresses capability or permission - important for consent and boundaries in healing'},
+                {word: 'Ait', pronunciation: '[ait]', definition: 'Also, too, as well, additionally, furthermore', cultural: 'Used to add information or show parallel concepts'},
+                {word: "Ak'seshwa", pronunciation: '[ahk-SESH-wah]', definition: 'Mind-harmer, mental abuser, psychological tormentor', cultural: 'Considered more insidious than physical harm because wounds are invisible'},
+                {word: "Ak'tuka", pronunciation: '[ahk-TOO-kah]', definition: 'Physical harmer, one who hurts their own kind bodily', cultural: 'Violation of sacred trust - harming those who should be protected'},
+                {word: 'Anjeka', pronunciation: '[ahn-JEH-kah]', definition: 'Light element, divine radiance, celestial fire', cultural: 'Sacred light that can both illuminate and destroy'},
+                {word: "Anjeka'Ravah", pronunciation: '[ahn-JEH-kah rah-VAH]', definition: 'Angel, light-speaker, celestial being', cultural: 'Celestial beings who serve the light gods'},
+                {word: "Aq'gorga", pronunciation: '[ahk-GOR-gah]', definition: 'Ocean, sea, vast waters, endless depths', cultural: 'The infinite water that holds both life and death'},
+                {word: "Aq'mas", pronunciation: '[ahk-MAHS]', definition: 'Tears, sorrow-water, grief-rain', cultural: "Sacred water from the eyes that cleanses emotional wounds"},
+                {word: "Aq'mashta", pronunciation: '[ahk-MAHSH-tah]', definition: 'Rain, sky-tears, cloud-water', cultural: "Seen as the sky's emotional release"},
+                {word: "Aq'twa", pronunciation: '[ahk-TWAH]', definition: 'Water, liquid element, the flowing force', cultural: 'Element of change and emotion - can heal or destroy'},
+                {word: "Aq'twani", pronunciation: '[ahk-TWAH-nee]', definition: 'River, flowing water, stream', cultural: 'Sacred flowing waters that connect mountains to seas'},
+                {word: "Aur'sa", pronunciation: '[OWR-sah]', definition: 'Happy, happiness, joy, contentment', cultural: 'Deep contentment that comes from inner peace'},
+                {word: 'Avahn', pronunciation: '[ah-VAHN]', definition: 'Pray, prayer, sacred request', cultural: 'Direct communication with divine powers'}
+            ],
+            'B': [
+                {word: "Bae'thari", pronunciation: '[BAY-thah-ree]', definition: 'Master, mastery, complete understanding', cultural: 'Beyond expertise - spiritual unity with one\'s craft'},
+                {word: 'Baekuva', pronunciation: '[BAY-koo-vah]', definition: 'Wise mentor, teacher, guide, elder', cultural: 'Earned title, not given lightly. Always capitalized when used'},
+                {word: 'Bafa', pronunciation: '[BAH-fah]', definition: 'Young, new, fresh, inexperienced', cultural: 'Youth with potential to learn and grow'},
+                {word: 'Bafu', pronunciation: '[BAH-foo]', definition: 'Child, young one, offspring, innocent', cultural: 'Precious young life to be protected and nurtured'},
+                {word: "Bafu raktun'sha", pronunciation: '[BAH-foo rahk-TOON-shah]', definition: 'Babysitter, child-watcher', cultural: 'Sacred trust to guard another\'s child'},
+                {word: 'Bafude', pronunciation: '[bah-FOO-day]', definition: 'Student, learner, seeker, pupil', cultural: 'One who seeks wisdom with open mind and humble heart'},
+                {word: 'Bafusa', pronunciation: '[BAH-foo-sah]', definition: 'Young one, child (mildly derogatory)', cultural: 'Can be endearing when said with affection'},
+                {word: "Ba'hym", pronunciation: '[bah-HEEM]', definition: 'Lullaby, sleep-song, comfort melody', cultural: 'Sacred songs sung to children for protection'},
+                {word: 'Bava', pronunciation: '[BAH-vah]', definition: 'Harm, pain, damage, hurt', cultural: 'Intentional causing of suffering'},
+                {word: "Bav'glek", pronunciation: '[BAHV-glek]', definition: 'Dangerous, threatening, perilous', cultural: 'Immediate danger requiring caution'},
+                {word: 'Beca', pronunciation: '[BEH-kah]', definition: 'Because, for the reason that', cultural: 'Understanding causation brings wisdom'},
+                {word: 'Bene', pronunciation: '[BEH-nay]', definition: 'Good, beneficial, positive, helpful', cultural: 'Good that serves balance and growth'},
+                {word: "Ben'weka", pronunciation: '[ben-WEH-kah]', definition: 'Medicine, healing substance, cure', cultural: 'Sacred substances that restore balance'},
+                {word: 'Benewah', pronunciation: '[BEH-neh-wah]', definition: 'Help, assist, aid, support', cultural: 'Sacred act of supporting another\'s journey'},
+                {word: "Blev'ka", pronunciation: '[BLEV-kah]', definition: 'Curse, hex, divine punishment', cultural: 'Supernatural burden or affliction'},
+                {word: 'Bloka', pronunciation: '[BLOH-kah]', definition: 'Black, darkest color, void-colored', cultural: 'Color of void and deep shadow - not evil but mysterious'},
+                {word: 'Blu', pronunciation: '[bloo]', definition: 'Blue, divine eye color', cultural: 'Sacred color of divine heritage'},
+                {word: 'Boka', pronunciation: '[BOH-kah]', definition: 'Body, flesh, physical form', cultural: 'Physical form that carries the soul through life'},
+                {word: 'Bon', pronunciation: '[bohn]', definition: 'Bones, skeletal structure', cultural: 'Sacred as the last part of body to return to earth'},
+                {word: "Bona'tu", pronunciation: '[BOH-nah-too]', definition: 'Should, ought to, advised action', cultural: 'Gentle guidance rather than forceful command'},
+                {word: 'Bonsaka', pronunciation: '[bon-SAH-kah]', definition: 'Healthy, well, whole, vital', cultural: 'State of physical and spiritual wellness'},
+                {word: "Braj'va", pronunciation: '[BRASH-vah]', definition: 'Strong, fierce, brave, resilient', cultural: 'Spiritual resilience earned through surviving hardship'},
+                {word: 'Bundu', pronunciation: '[BOON-doo]', definition: 'Weight, burden, responsibility', cultural: 'Both physical and emotional weight'},
+                {word: 'Buk', pronunciation: '[book]', definition: 'Wares, goods, merchandise', cultural: 'Physical objects that carry value for trade'},
+                {word: "Buk'tek", pronunciation: '[BOOK-tek]', definition: 'Merchant, seller, trader', cultural: 'Those who facilitate exchange between people'},
+                {word: 'Buuvda', pronunciation: '[BOOV-dah]', definition: 'Ugly, hideous, repulsive', cultural: 'Ugliness of spirit or corruption'}
+            ],
+            'C': [
+                {word: 'Capi', pronunciation: '[KAH-pee]', definition: 'Civilization, city, town, settlement', cultural: 'Places where people gather to live together'},
+                {word: 'Ceol', pronunciation: '[SEH-ohl]', definition: 'Turn, pivot, change direction', cultural: 'The moment of choosing new direction'},
+                {word: "Chata'rek", pronunciation: '[CHAH-tah-rek]', definition: 'Farmer, grower, earth-worker', cultural: 'Those who understand partnership with earth'},
+                {word: 'Chitka', pronunciation: '[CHEET-kah]', definition: 'Annoying, irritating, bothersome', cultural: 'Like persistent mosquito buzzing'},
+                {word: "Cloma'tak", pronunciation: '[kloh-MAH-tahk]', definition: 'Training, practice, repetition', cultural: 'Sacred commitment to improvement through repeated effort'},
+                {word: 'Conla', pronunciation: '[KOHN-lah]', definition: 'Fade, diminish, grow weak', cultural: 'The slow vanishing that happens to memories over time'},
+                {word: 'Crona', pronunciation: '[KROH-nah]', definition: 'Head, skull, mind-house', cultural: 'Sacred vessel that houses mind and connection to divine'}
+            ],
+            'D': [
+                {word: 'Dak', pronunciation: '[dahk]', definition: 'You, yourself', cultural: 'Formal and respectful way to address someone'},
+                {word: 'Damo', pronunciation: '[DAH-moh]', definition: 'Touch, contact, feel physically', cultural: 'Can be healing or harmful - the body\'s first language'},
+                {word: 'Denga', pronunciation: '[DEHN-gah]', definition: 'Carry, bear, transport', cultural: 'Physical and emotional carrying'},
+                {word: 'Derma', pronunciation: '[DEHR-mah]', definition: 'Skin, hide, outer covering', cultural: 'First defense against world'},
+                {word: 'Dhomu', pronunciation: '[DOH-moo]', definition: 'Creatures, animals, fauna', cultural: 'All non-speaking creatures'},
+                {word: "Din'pola", pronunciation: '[deen-POH-lah]', definition: 'Cook, chef, food-maker', cultural: 'Sacred role of transforming ingredients into sustenance'},
+                {word: 'Disha', pronunciation: '[DEE-shah]', definition: 'Perhaps, maybe, possibly', cultural: 'Acknowledges the uncertainty inherent in life'},
+                {word: 'Doja', pronunciation: '[DOH-jah]', definition: 'Stupid, fool, idiot', cultural: 'Strong insult implying inability to learn'},
+                {word: "Dom'teka opi", pronunciation: '[dohm-TEH-kah OH-pee]', definition: 'Conqueror, victor', cultural: 'One who takes by force'},
+                {word: "Domi'tel", pronunciation: '[doh-mee-TEL]', definition: 'Conquer, defeat, overcome', cultural: 'Complete victory over enemies or demons'},
+                {word: 'Domtu', pronunciation: '[DOM-too]', definition: 'Give, offer, present', cultural: 'Generous giving, often of wisdom or comfort'},
+                {word: 'Doveka', pronunciation: '[doh-VEH-kah]', definition: 'Come, arrive, approach', cultural: 'Both physical arrival and spiritual emergence'},
+                {word: 'Du', pronunciation: '[doo]', definition: 'Two, pair, dual', cultural: 'Number of balance and partnership'},
+                {word: 'Duhab', pronunciation: '[doo-HAHB]', definition: 'Grow, increase, develop', cultural: 'Sacred process of development'},
+                {word: 'Dulo', pronunciation: '[DOO-loh]', definition: 'Decide, make decision', cultural: 'Sacred act of using choice'},
+                {word: "Du'tona", pronunciation: '[doo-TOH-nah]', definition: 'Twenty, two tens', cultural: 'Significant counting unit'},
+                {word: 'Dun', pronunciation: '[doon]', definition: 'When, as, while, during', cultural: 'Temporal connector'}
+            ],
+            'E': [
+                {word: 'Eisa', pronunciation: '[AY-sah]', definition: 'Breath, life-air, soul-wind', cultural: 'Life force that connects body to spirit'},
+                {word: 'Eish', pronunciation: '[aysh]', definition: 'Story, tale, narrative', cultural: 'Sacred vessels for wisdom'},
+                {word: "Eish'tek", pronunciation: '[AYSH-tek]', definition: 'Storyteller, tale-keeper', cultural: 'Sacred role of preserving memory through stories'},
+                {word: 'Eiva', pronunciation: '[AY-vah]', definition: 'Birds, sky-flyers', cultural: 'Messengers between earth and sky'},
+                {word: 'Eive', pronunciation: '[AY-veh]', definition: 'Air, wind, breath element', cultural: 'Element of communication and freedom'},
+                {word: "Eive'wah", pronunciation: '[AY-veh-wah]', definition: 'Sky, heavens', cultural: 'Sacred space between earth and stars'},
+                {word: 'Eivona', pronunciation: '[ay-VOH-nah]', definition: 'Breathe, inhale/exhale', cultural: 'Sacred act connecting body to spirit'},
+                {word: 'Ek', pronunciation: '[ek]', definition: 'Like, similar to, as', cultural: 'Used for comparisons and metaphors'},
+                {word: 'Emosha', pronunciation: '[eh-MO-shah]', definition: 'Heart, emotional center', cultural: 'The seat of feeling and spiritual connection'},
+                {word: 'Equas', pronunciation: '[EH-kwahs]', definition: 'Same, equal, identical', cultural: 'Recognition of fundamental equality'},
+                {word: 'Erta', pronunciation: '[EHR-tah]', definition: 'East, sunrise direction', cultural: 'Direction of new beginnings'},
+                {word: 'Erza', pronunciation: '[ER-zah]', definition: 'Strong, powerful, mighty', cultural: 'Strength earned through surviving hardship'},
+                {word: 'Eth', pronunciation: '[eth]', definition: 'The, this, that', cultural: 'Article used to specify particular things'},
+                {word: 'Ethola', pronunciation: '[eh-THO-lah]', definition: 'Enough, sufficient', cultural: 'Wisdom of recognizing sufficiency'},
+                {word: 'Ewa', pronunciation: '[EH-wah]', definition: 'Sit, be seated', cultural: 'Position of receptivity and learning'},
+                {word: "Examu'ti", pronunciation: '[ehk-SAH-moo-tee]', definition: 'Trials, tribulations, tests', cultural: 'Sacred challenges that forge character'},
+                {word: 'Eysha', pronunciation: '[EY-shah]', definition: 'Memories, recollections', cultural: 'Recollections that shape identity'}
+            ],
+            'F': [
+                {word: 'Fi', pronunciation: '[fee]', definition: 'If, in case that', cultural: 'Opens doorway to possibility'},
+                {word: "Fie'ta", pronunciation: '[fee-EH-tah]', definition: 'Ember, glowing coal', cultural: 'What remains after great fire'},
+                {word: 'Fier', pronunciation: '[fee-EHR]', definition: 'Hot, heated, warm', cultural: 'Heat that can comfort or destroy'},
+                {word: 'Fierna', pronunciation: '[fee-AIR-nah]', definition: 'Fire, flame, burning element', cultural: 'Element of transformation'},
+                {word: 'Fin', pronunciation: '[feen]', definition: 'End, ending, conclusion', cultural: 'Sometimes necessary for new beginning'},
+                {word: 'Fina', pronunciation: '[FEE-nah]', definition: 'Fall, drop, descend', cultural: 'Sometimes must fall to learn to rise'},
+                {word: 'Fiska', pronunciation: '[FEES-kah]', definition: 'Fish, water-swimmers', cultural: 'Creatures of the deep'},
+                {word: 'Floka', pronunciation: '[FLOH-kah]', definition: 'Tense, rigid, stiff', cultural: 'Physical manifestation of emotional guarding'},
+                {word: "Fon'kri", pronunciation: '[fohn-KREE]', definition: 'Must, obligated to', cultural: 'Cosmic or moral imperative'},
+                {word: 'Forqa', pronunciation: '[FOR-kah]', definition: 'Four, quartet', cultural: 'Number of stability and foundation'},
+                {word: "Forqa'qen", pronunciation: '[FOR-kah-ken]', definition: 'Forty, four tens', cultural: 'Traditional period for deep training'},
+                {word: 'Fortu', pronunciation: '[FOR-too]', definition: 'Carry, bear, hold', cultural: 'To bear burdens with strength'},
+                {word: 'Freja', pronunciation: '[FRAY-jah]', definition: 'Forget, forgotten', cultural: 'To lose memories - both blessing and curse'},
+                {word: 'Fres', pronunciation: '[fres]', definition: 'Which, what one', cultural: 'Tool for discernment and choosing'},
+                {word: 'Frish', pronunciation: '[frish]', definition: 'Walk, travel, journey', cultural: 'Journey both physical and spiritual'},
+                {word: 'Froka', pronunciation: '[FROH-kah]', definition: 'Provider, sustainer', cultural: 'Sacred role of ensuring others have what they need'},
+                {word: "Frok'tek", pronunciation: '[frohk-TEK]', definition: 'Hunter, tracker', cultural: 'Ancient role requiring patience and respect for prey'}
+            ],
+            'G': [
+                {word: 'Gaks', pronunciation: '[gahks]', definition: 'Gossip, rumors', cultural: 'Destructive social behavior that breaks trust'},
+                {word: "Gaks'kura", pronunciation: '[gahks-KOO-rah]', definition: 'Gossiper, rumor-spreader', cultural: 'Person who habitually spreads private information'},
+                {word: 'Gish', pronunciation: '[gish]', definition: 'Make, create, cause', cultural: 'The act of bringing something into being'},
+                {word: 'Giva', pronunciation: '[GEE-vah]', definition: 'Later, eventually', cultural: 'Acknowledges things that cannot happen now'},
+                {word: "Giva'tek", pronunciation: '[GEE-vah-tek]', definition: 'Prophet, seer', cultural: 'Those blessed/cursed to see the future'},
+                {word: 'Givana', pronunciation: '[gee-VAH-nah]', definition: 'Prophecy, foretelling', cultural: 'Words that bind fate'},
+                {word: 'Goba', pronunciation: '[GOH-bah]', definition: 'Earth, ground, soil', cultural: 'Element of stability and growth'},
+                {word: 'Gobeka', pronunciation: '[goh-BEH-kah]', definition: 'Stone, rock, boulder', cultural: 'Symbol of endurance'},
+                {word: 'Gobegorga', pronunciation: '[goh-beh-GOR-gah]', definition: 'Mountain, peak', cultural: 'Sacred places where earth reaches toward sky'},
+                {word: 'Goja', pronunciation: '[GOH-jah]', definition: 'Last, final, ultimate', cultural: 'The end that defines the journey'},
+                {word: 'Gorga', pronunciation: '[GOR-gah]', definition: 'Big, large, huge', cultural: 'Great in size or importance'},
+                {word: 'Gorvek', pronunciation: '[GOR-vek]', definition: 'Then, at that time', cultural: 'Temporal marker for future events'},
+                {word: 'Grav tomaku', pronunciation: '[GRAHV to-MAH-koo]', definition: 'Destruction, obliterate', cultural: 'Complete obliteration'},
+                {word: "Gre'ka", pronunciation: '[GREH-kah]', definition: 'Ashes, burnt remains', cultural: 'What remains after transformation by fire'},
+                {word: 'Griva', pronunciation: '[GREE-vah]', definition: 'Road, path, way', cultural: 'Physical paths that represent life journeys'},
+                {word: 'Gruva', pronunciation: '[GROO-vah]', definition: 'Roots, foundation', cultural: 'Hidden strength that feeds visible life'},
+                {word: 'Guv', pronunciation: '[goov]', definition: 'Bad, harmful, negative', cultural: 'That which destroys rather than builds'}
+            ],
+            'H': [
+                {word: 'Harmeka', pronunciation: '[HAR-meh-kah]', definition: 'Balance, harmony, equilibrium', cultural: 'Essential concept - all things must find center'},
+                {word: 'Harmesha', pronunciation: '[har-MEH-shah]', definition: 'Illuminate, light up', cultural: 'To bring understanding or gentle light'},
+                {word: 'Harvaka', pronunciation: '[har-VAH-kah]', definition: 'Blind, lose sight', cultural: 'Loss of sight from too much light or truth'},
+                {word: 'Hassan', pronunciation: '[HAH-sahn]', definition: 'Trust, faith, confidence', cultural: 'Deep trust earned through time'},
+                {word: 'Haswa', pronunciation: '[HAHS-wah]', definition: 'Comfort, ease, solace', cultural: 'Gentle healing that comes from care'},
+                {word: 'Havana', pronunciation: '[hah-VAH-nah]', definition: 'Hell, underworld', cultural: 'Place of eternal torment'},
+                {word: "Heb'oni", pronunciation: '[hehb-OH-nee]', definition: 'Herbivore, plant-eater', cultural: 'Creatures that harm no others for food'},
+                {word: 'Hesh', pronunciation: '[hesh]', definition: 'Weak, fragile, feeble', cultural: 'Temporary weakness that can be overcome'},
+                {word: "He'tika", pronunciation: '[heh-TEE-kah]', definition: 'Mental weakness', cultural: 'Temporary state from trauma or exhaustion'},
+                {word: 'Hexa', pronunciation: '[HEK-sah]', definition: 'Six, half-dozen', cultural: 'Number of harmony'},
+                {word: "Hexa'fu", pronunciation: '[HEK-sah-foo]', definition: 'Sixty, six tens', cultural: 'Full cycle of training'},
+                {word: 'Hissa', pronunciation: '[HEE-sah]', definition: 'Stop, cease, halt', cultural: 'Sacred boundary word'},
+                {word: "Hol'mun", pronunciation: '[hohl-MOON]', definition: 'Marriage, life-bonding', cultural: 'Sacred ceremony binding two souls'},
+                {word: 'Hona', pronunciation: '[HOH-nah]', definition: 'Moment, instant', cultural: 'The eternal present where healing happens'},
+                {word: "Hor'sinta", pronunciation: '[hor-SIN-tah]', definition: 'Today, this day', cultural: 'The day we have power within'},
+                {word: 'Horva', pronunciation: '[HOR-vah]', definition: 'Always, eternally', cultural: 'Perpetual state or action'},
+                {word: 'Hushla', pronunciation: '[HOOSH-lah]', definition: 'Peace, calm, tranquility', cultural: 'Inner tranquility after accepting pain'},
+                {word: 'Hyma', pronunciation: '[HEE-mah]', definition: 'Song, melody', cultural: 'Sacred form that speaks directly to soul'},
+                {word: "Hym'tek", pronunciation: '[heem-TEK]', definition: 'Singer, song-maker', cultural: 'Sacred role of carrying memory through song'}
+            ],
+            'I': [
+                {word: "I'meka", pronunciation: '[ee-MEH-kah]', definition: 'Fate, destiny', cultural: 'The threads already woven'},
+                {word: 'Ima', pronunciation: '[EE-mah]', definition: 'Book, written knowledge', cultural: 'Sacred vessels containing wisdom'},
+                {word: 'Imagi', pronunciation: '[ee-MAH-gee]', definition: 'Imagine, envision', cultural: 'Sacred power to create worlds in mind'},
+                {word: 'Imani', pronunciation: '[ee-MAH-nee]', definition: 'Please, request kindly', cultural: 'Shows respect for another\'s choice'},
+                {word: "Imo'tek", pronunciation: '[EE-moh-tek]', definition: 'Writer, word-crafter', cultural: 'Sacred role of preserving wisdom through words'},
+                {word: 'Inamu', pronunciation: '[ee-NAH-moo]', definition: 'Mother, maternal one', cultural: 'Sacred role combining gentleness and ferocity'},
+                {word: 'Ione', pronunciation: '[ee-OH-nay]', definition: 'Stand, rise up', cultural: 'Physical and spiritual act of resistance'},
+                {word: "Ish'koka", pronunciation: '[eesh-KOH-kah]', definition: 'Madness, insanity', cultural: 'When mind breaks under too much burden'},
+                {word: 'Ishta', pronunciation: '[ISH-tah]', definition: 'Leave, go, depart', cultural: 'The act of departing'}
+            ],
+            'J': [
+                {word: 'Jekka', pronunciation: '[JEH-kah]', definition: 'Where, what place', cultural: 'Seeking location in physical and spiritual sense'},
+                {word: 'Joni', pronunciation: '[JOH-nee]', definition: 'Learn, study', cultural: 'Sacred act of receiving wisdom'},
+                {word: "Jonta'mu", pronunciation: '[john-TAH-moo]', definition: 'Beginning, start', cultural: 'Sacred moment of new possibilities'},
+                {word: 'Jorsha', pronunciation: '[JOR-shah]', definition: 'Eat, consume', cultural: 'Sacred act of taking life into oneself'},
+                {word: 'Jowas', pronunciation: '[JOH-wahs]', definition: 'Morning, dawn', cultural: 'Sacred time of renewal'}
+            ],
+            'K': [
+                {word: "Ka'vi", pronunciation: '[kah-VEE]', definition: 'Carnivore, predator', cultural: 'Beasts that must kill to survive'},
+                {word: 'Kaia', pronunciation: '[KAI-uh]', definition: 'Soul, spirit, essence', cultural: 'Most sacred word - the eternal being within'},
+                {word: 'Kama', pronunciation: '[KAH-mah]', definition: 'Cruel, cruelty', cultural: 'Intentional infliction of suffering for pleasure'},
+                {word: "Kamu'son", pronunciation: '[kah-MOO-sohn]', definition: 'Suicide, self-ending', cultural: 'Tragic choice when pain becomes too much'},
+                {word: 'Kara', pronunciation: '[KAH-rah]', definition: 'Home, sanctuary', cultural: 'Place of safety and belonging'},
+                {word: "Kar'ina", pronunciation: '[kahr-EE-nah]', definition: 'Welcome, greeting', cultural: 'Sacred hospitality'},
+                {word: 'Kata', pronunciation: '[KAH-tah]', definition: 'Cat, feline', cultural: 'Sacred to Fus\'Ravahn as their base form'},
+                {word: "Kek'das", pronunciation: '[KEK-dahs]', definition: 'Anger, rage, fury', cultural: 'Righteous anger that can fuel change'},
+                {word: 'Kelth', pronunciation: '[kelth]', definition: 'They, them', cultural: 'Respectful way to refer to others'},
+                {word: "Ker'kiva", pronunciation: '[kehr-KEE-vah]', definition: 'Stranger, unknown one', cultural: 'One whose intentions remain hidden'},
+                {word: 'Keth', pronunciation: '[keth]', definition: 'Not, no, never', cultural: 'Universal negation word'},
+                {word: 'Ketra', pronunciation: '[KEH-trah]', definition: 'Fear, terror, dread', cultural: 'Fear that can paralyze or motivate'},
+                {word: 'Kikamo', pronunciation: '[kee-KAH-moh]', definition: 'Nightmare, terror-dream', cultural: 'Where unprocessed trauma lives'},
+                {word: 'Kina', pronunciation: '[KEE-nah]', definition: 'Very, quite, greatly', cultural: 'Amplifier of intensity'},
+                {word: "Kin'vash", pronunciation: '[keen-VAHSH]', definition: 'Refuse, reject, deny', cultural: 'Sometimes protective, sometimes destructive'},
+                {word: 'Koka nix', pronunciation: '[KOH-kah neeks]', definition: 'Mentally ill', cultural: 'Illness of mind requiring same care as body wounds'},
+                {word: 'Konta', pronunciation: '[KOHN-tah]', definition: 'So, therefore, thus', cultural: 'Shows flow of cause to effect'},
+                {word: 'Koral', pronunciation: '[KOR-ahl]', definition: 'All, every, each', cultural: 'Encompasses totality'},
+                {word: 'Kormac', pronunciation: '[KOR-mahk]', definition: 'Protect, guard, defend', cultural: 'Protection from wisdom and strength combined'},
+                {word: 'Kresh', pronunciation: '[kresh]', definition: 'Kill, destroy', cultural: 'Final ending - complete cessation'},
+                {word: "Kri'seka", pronunciation: '[KREE-seh-kah]', definition: 'Strike, cut, slash', cultural: 'Purposeful violence with skill'},
+                {word: 'Krivek', pronunciation: '[KREE-vek]', definition: 'Fight, battle, combat', cultural: 'Both physical combat and internal struggles'},
+                {word: 'Kyev', pronunciation: '[kyehv]', definition: 'Fuck, copulate (vulgar)', cultural: 'Powerful vulgarity expressing extreme emotion'}
+            ],
+            'L': [
+                {word: 'Lakea', pronunciation: '[lah-KEH-ah]', definition: 'Wild, wilderness', cultural: 'Places where ancient laws still rule'},
+                {word: 'Lema', pronunciation: '[LEH-mah]', definition: 'Run, flee, escape', cultural: 'Not cowardice but survival wisdom'},
+                {word: 'Leonas', pronunciation: '[lee-OH-nahs]', definition: 'Pride, dignity', cultural: 'Can be healthy self-respect or dangerous arrogance'},
+                {word: 'Loche', pronunciation: '[LOH-chay]', definition: 'Less than, fewer', cultural: 'Comparison that can humble or diminish'},
+                {word: 'Lofota', pronunciation: '[loh-FOH-tah]', definition: 'Leaf, leaves', cultural: 'Symbol of cycles and letting go'},
+                {word: 'Loka', pronunciation: '[LOH-kah]', definition: 'How, in what way', cultural: 'The path or method'},
+                {word: 'Lopa', pronunciation: '[LOH-pah]', definition: 'Hands, palms', cultural: 'Can create or destroy, comfort or harm'},
+                {word: 'Luska', pronunciation: '[LOOS-kah]', definition: 'Wander, roam aimlessly', cultural: 'Sometimes necessary for lost souls'}
+            ],
+            'M': [
+                {word: "Ma'talo", pronunciation: '[mah-TAH-loh]', definition: 'Mental strength', cultural: 'Strength of mind that survives trauma'},
+                {word: 'Mak', pronunciation: '[mahk]', definition: 'Old, aged, ancient', cultural: 'Age that brings wisdom'},
+                {word: "Mak'duul", pronunciation: '[MAHK-dool]', definition: 'Ancient, primordial', cultural: 'From the time of original Baelak'},
+                {word: 'Malek', pronunciation: '[MAH-lek]', definition: 'Have, possess, own', cultural: 'Possession both physical and spiritual'},
+                {word: 'Malo', pronunciation: '[MAH-lo]', definition: 'Love, deep care', cultural: 'Love that transcends simple fondness'},
+                {word: 'Malok', pronunciation: '[MAH-loke]', definition: 'God, deity', cultural: 'Divine beings whose blood creates hybrids'},
+                {word: "Man'oa", pronunciation: '[mahn-OH-ah]', definition: 'Forest, woods', cultural: 'Sacred spaces of mystery and ancient wisdom'},
+                {word: 'Manu', pronunciation: '[MAH-noo]', definition: 'Many, numerous', cultural: 'Abundance that can overwhelm or enrich'},
+                {word: 'Masuna', pronunciation: '[mah-SOO-nah]', definition: 'Free, freedom', cultural: 'Most sacred state of soul'},
+                {word: 'Matika', pronunciation: '[mah-TEE-kah]', definition: 'Power, magic, ability', cultural: 'Inner power and magical abilities'},
+                {word: 'Mavea', pronunciation: '[mah-VEH-ah]', definition: 'Truth, fact, reality', cultural: 'Simple truth as it exists'},
+                {word: "Mave'tek", pronunciation: '[MAH-veh-tek]', definition: 'Researcher, scholar', cultural: 'Those who dedicate life to uncovering truth'},
+                {word: 'Melana', pronunciation: '[meh-LAH-nah]', definition: 'Hope, optimism', cultural: 'Hope that persists even in darkness'},
+                {word: 'Meshka', pronunciation: '[MESH-kah]', definition: 'Hybrid, mixed being', cultural: 'Divine-mortal crosses belonging fully nowhere'},
+                {word: 'Mesima', pronunciation: '[meh-SEE-mah]', definition: 'Dream, vision', cultural: 'Where soul processes experiences'},
+                {word: 'Mikta', pronunciation: '[MIK-tah]', definition: 'Need, require', cultural: 'Essential requirement for survival'},
+                {word: 'Mira', pronunciation: '[MEE-rah]', definition: 'Beautiful, lovely', cultural: 'Beauty that touches the soul'},
+                {word: 'Mishk', pronunciation: '[meeshk]', definition: 'Shit, excrement (vulgar)', cultural: 'Crude expression of frustration'},
+                {word: 'Mishka', pronunciation: '[MISH-kah]', definition: 'Take, receive, accept', cultural: 'Accepting what is offered'},
+                {word: 'Mok', pronunciation: '[moke]', definition: 'Blood, life essence', cultural: 'Life essence that carries power'},
+                {word: "Mok'tunak", pronunciation: '[mohk-too-NAHK]', definition: 'Warrior, fighter', cultural: 'Those who stand between danger and innocent'},
+                {word: 'Mooka', pronunciation: '[MOO-kah]', definition: 'More than, greater', cultural: 'Excess that can strengthen or burden'},
+                {word: 'Mor', pronunciation: '[more]', definition: 'Of, from, about', cultural: 'Shows origin or relationship'},
+                {word: "Mor'dun", pronunciation: '[MORE-doon]', definition: 'Soul-scar, trauma mark', cultural: 'Visible only to those with similar experiences'},
+                {word: "Mord'uul", pronunciation: '[MORE-dool]', definition: 'Heavy grief, deep sorrow', cultural: 'Reserved for profound loss'},
+                {word: "Mosh'mak", pronunciation: '[MOSH-mahk]', definition: 'Friend, ally', cultural: 'Chosen family bound by loyalty'},
+                {word: 'Mumba', pronunciation: '[MOOM-bah]', definition: 'Hum, drone', cultural: 'Sacred sound that calms mind'}
+            ],
+            'N': [
+                {word: 'Na', pronunciation: '[nah]', definition: 'Is, am, are, be', cultural: 'Fundamental verb of existence'},
+                {word: 'Nal', pronunciation: '[nahl]', definition: 'Now, currently', cultural: 'The present moment'},
+                {word: 'Neka', pronunciation: '[NEH-kah]', definition: 'Beside, next to', cultural: 'Physical and emotional proximity'},
+                {word: 'Nenta', pronunciation: '[NEN-tah]', definition: 'Nine, ninth', cultural: 'Number of near-perfection'},
+                {word: "Nenta'kis", pronunciation: '[NEN-tah-kees]', definition: 'Ninety, nine tens', cultural: 'Near the end of a full cycle'},
+                {word: 'Nexa', pronunciation: '[NEK-sah]', definition: 'Artifact, relic', cultural: 'Objects containing dormant power'},
+                {word: 'Nim', pronunciation: '[nim]', definition: 'Hide, conceal, mask', cultural: 'Hiding in protective darkness'},
+                {word: "Nina'ma", pronunciation: '[nee-NAH-mah]', definition: 'Kindness, gentleness', cultural: 'Strength expressed through gentleness'},
+                {word: 'Nimwah', pronunciation: '[NIM-wah]', definition: 'Void, darkness', cultural: 'Not evil, but necessary balance'},
+                {word: "Nira'rav", pronunciation: '[NEE-rah-rahv]', definition: 'Emotionally safe', cultural: 'When soul feels protected enough to be vulnerable'},
+                {word: "Nira'tu", pronunciation: '[NEE-rah-too]', definition: 'Safe, protected', cultural: 'True safety from inner strength'},
+                {word: "Nix'ani", pronunciation: '[NEEKS-ah-nee]', definition: 'The dead ones', cultural: 'Those whose fate is sealed'},
+                {word: 'Noma', pronunciation: '[NOH-mah]', definition: 'Numb, without feeling', cultural: 'Common trauma response'},
+                {word: 'Nora', pronunciation: '[NOH-rah]', definition: 'North, cold direction', cultural: 'Direction of endurance and truth'}
+            ],
+            'O': [
+                {word: "Oa'kan", pronunciation: '[oh-ah-KAHN]', definition: 'Tree, wood-being', cultural: 'Symbol of growth and endurance'},
+                {word: "Obvu'lek", pronunciation: '[OHB-voo-lek]', definition: 'Obsession, fixation', cultural: 'When want becomes sickness'},
+                {word: 'Oi', pronunciation: '[oy]', definition: 'Or, either', cultural: 'The power of choice between paths'},
+                {word: 'Oisha', pronunciation: '[OY-shah]', definition: 'Empty, hollow', cultural: 'Terrible emptiness after loss'},
+                {word: 'Onika', pronunciation: '[oh-NEE-kah]', definition: 'Open, unlocked', cultural: 'State of vulnerability and possibility'},
+                {word: 'Oosa', pronunciation: '[OO-sah]', definition: 'Loose, slack', cultural: 'State between tight and release'},
+                {word: 'Opa', pronunciation: '[OH-pah]', definition: 'People, group', cultural: 'Multiple souls gathered'},
+                {word: 'Opanu', pronunciation: '[oh-PAH-noo]', definition: 'Together, united', cultural: 'Sacred unity that makes weak become strong'},
+                {word: 'Opi', pronunciation: '[OH-pee]', definition: 'Person, individual', cultural: 'Acknowledges individual worth'},
+                {word: 'Oranga', pronunciation: '[oh-RAHN-gah]', definition: 'Orange, sunset color', cultural: 'Color of transition'},
+                {word: "Orba'she", pronunciation: '[OR-bah-shay]', definition: 'Sun, solar orb', cultural: 'Sacred celestial body that brings life'},
+                {word: 'Owa', pronunciation: '[OH-wah]', definition: 'Sway, rock gently', cultural: 'Movement that shows flexibility'},
+                {word: 'Oxa', pronunciation: '[OK-sah]', definition: 'Eight, eighth', cultural: 'Number of renewal and cycles'},
+                {word: "Oxa'req", pronunciation: '[OK-sah-rek]', definition: 'Eighty, eight tens', cultural: 'Deep maturity in training cycles'}
+            ],
+            'P': [
+                {word: 'Peqo', pronunciation: '[PEH-ko]', definition: 'Small, little, tiny', cultural: 'Small things often carry great importance'},
+                {word: 'Pika', pronunciation: '[PEE-kah]', definition: 'Pet, companion animal', cultural: 'Sacred bond of mutual care'},
+                {word: 'Pina', pronunciation: '[PEE-nah]', definition: 'Hear, listen casually', cultural: 'Basic hearing without deep understanding'},
+                {word: 'Pisk', pronunciation: '[peesk]', definition: 'Whisker; nosy', cultural: 'Double meaning - literal and metaphorical'},
+                {word: "Pisk'ani", pronunciation: '[peesk-AH-nee]', definition: 'Whiskered ones (derogatory)', cultural: 'Insulting term for meddlers'},
+                {word: 'Ploq', pronunciation: '[plohk]', definition: 'Defend, block, parry', cultural: 'Active defense requiring skill'},
+                {word: 'Pola', pronunciation: '[POH-lah]', definition: 'Food, nourishment', cultural: 'Sacred gift that sustains life'},
+                {word: 'Praya', pronunciation: '[PRAH-yah]', definition: 'Believe, faith', cultural: 'Power that makes unseen real'},
+                {word: "Pul'tek", pronunciation: '[POOL-tek]', definition: 'Shame, disgrace', cultural: 'Shame that can teach or destroy'},
+                {word: "Puna'tek", pronunciation: '[POO-nah-tek]', definition: 'Punish, punishment', cultural: 'Necessary consequences for harmful actions'}
+            ],
+            'Q': [
+                {word: "Q'la", pronunciation: '[KUH-lah]', definition: 'Down, downward', cultural: 'Direction of grounding and humility'},
+                {word: "Q'ta", pronunciation: '[KUH-tah]', definition: 'Speak, talk, tell', cultural: 'Speaking important truths'},
+                {word: 'Qoa', pronunciation: '[KOH-ah]', definition: 'Why, for what reason', cultural: 'The eternal question of suffering'},
+                {word: 'Qua', pronunciation: '[kwah]', definition: 'What, which thing', cultural: 'Basic tool for understanding'},
+                {word: 'Quas', pronunciation: '[kwahs]', definition: 'Ten, decade', cultural: 'Number of completion and perfection'},
+                {word: "Quas'condo", pronunciation: '[kwahs-KON-doh]', definition: 'One hundred', cultural: 'Major milestone in counting'},
+                {word: "Quas'menna", pronunciation: '[kwahs-MEN-nah]', definition: 'One thousand', cultural: 'Nearly mythical number'}
+            ],
+            'R': [
+                {word: "Raka'vul", pronunciation: '[RAH-kah-vool]', definition: 'Enemy, foe, threat', cultural: 'Those who would harm the innocent'},
+                {word: "Raktun'sha", pronunciation: '[rahk-TOON-shah]', definition: 'Shepherd, flock-keeper', cultural: 'One who guides and protects'},
+                {word: "Ravah'shalah", pronunciation: '[RAH-vah-shah-lah]', definition: 'Heaven, divine realm', cultural: 'Sacred place where gods dwell'},
+                {word: "Ravah'taluk", pronunciation: '[RAH-vah-tah-look]', definition: 'Divine, sacred, holy', cultural: 'Connected to gods and higher powers'},
+                {word: "Rav'mona", pronunciation: '[rahv-MOH-nah]', definition: 'Ceremony, ritual', cultural: 'Sacred practices connecting mortal to divine'},
+                {word: 'Ren', pronunciation: '[ren]', definition: 'Soon, shortly', cultural: 'Immediate future that can be anticipated'},
+                {word: "Rev'tana", pronunciation: '[REV-tah-nah]', definition: 'Find, discover', cultural: 'Discovering hidden truths'},
+                {word: 'Rikta', pronunciation: '[RIK-tah]', definition: 'Pain, suffering', cultural: 'Pain that serves as teacher'},
+                {word: 'Risa', pronunciation: '[REE-sah]', definition: 'Rise, ascend', cultural: 'Act of overcoming'},
+                {word: 'Romas', pronunciation: '[ROH-mahs]', definition: 'Eyes, sight organs', cultural: 'Sacred as revealers of inner truth'},
+                {word: 'Runara', pronunciation: '[roo-NAH-rah]', definition: 'Run, sprint', cultural: 'Sometimes courage, sometimes fear'},
+                {word: 'Ruva', pronunciation: '[ROO-vah]', definition: 'Know, have knowledge', cultural: 'Mental knowing without wisdom'}
+            ],
+            'S': [
+                {word: 'Sa', pronunciation: '[sah]', definition: 'Oh, exclamation', cultural: 'Universal sound of recognition'},
+                {word: 'Salo', pronunciation: '[SAH-lo]', definition: 'Slow, gradual', cultural: 'The natural pace of healing'},
+                {word: 'Sarosa', pronunciation: '[sah-ROH-sah]', definition: 'Plants, vegetation', cultural: 'Quiet life that heals and feeds'},
+                {word: "Sas'weka", pronunciation: '[sahs-WEH-kah]', definition: 'Emotionally lost', cultural: 'When trauma disrupts sense of self'},
+                {word: 'Sasawa', pronunciation: '[sah-SAH-wah]', definition: 'Cry, weep', cultural: 'Sacred release of pain'},
+                {word: 'Sashata', pronunciation: '[sah-SHAH-tah]', definition: 'Broken, shattered emotionally', cultural: 'State of being broken by trauma'},
+                {word: 'Sasmu', pronunciation: '[SAHS-moo]', definition: 'Father, paternal one', cultural: 'Sacred role of protection and guidance'},
+                {word: 'Sawas', pronunciation: '[sah-WAHS]', definition: 'Loneliness, isolation', cultural: 'Deep isolation of spirit'},
+                {word: "Sem'daka", pronunciation: '[sehm-DAH-kah]', definition: 'Creepy stalker', cultural: 'One whose obsession drives boundary violation'},
+                {word: 'Sena', pronunciation: '[SEH-nah]', definition: 'South, warm direction', cultural: 'Direction of abundance and life'},
+                {word: 'Septa', pronunciation: '[SEP-tah]', definition: 'Seven, seventh', cultural: 'Mystical number in tradition'},
+                {word: "Septa'ona", pronunciation: '[SEP-tah-OH-nah]', definition: 'Seventy, seven tens', cultural: 'Significant spiritual milestone'},
+                {word: 'Seshwe', pronunciation: '[SESH-way]', definition: 'Depression, deep sadness', cultural: 'The quiet, lingering sadness'},
+                {word: 'Sevek', pronunciation: '[SEH-vek]', definition: 'Some, several', cultural: 'Indicates partial quantity'},
+                {word: 'Sewa', pronunciation: '[SEH-wah]', definition: 'Sleep, slumber', cultural: 'Sacred time when body and soul heal'},
+                {word: "Sha'torn", pronunciation: '[shah-TORN]', definition: 'To skin alive', cultural: 'Extreme threat of violent exposure'},
+                {word: "Sham'tani", pronunciation: '[shahm-TAH-nee]', definition: 'Healer, medicine-worker', cultural: 'Sacred role bridging physical and spiritual healing'},
+                {word: 'Shamah', pronunciation: '[SHAH-mah]', definition: 'Quiet, be quiet', cultural: 'The stillness needed for true listening'},
+                {word: 'Shan', pronunciation: '[shahn]', definition: 'Here, this place', cultural: 'Immediate presence and location'},
+                {word: 'Shevek', pronunciation: '[SHEH-vek]', definition: 'Will, shall', cultural: 'Strong future tense implying certainty'},
+                {word: 'Shik', pronunciation: '[sheek]', definition: 'Close, shut, seal', cultural: 'Creating boundaries and protection'},
+                {word: 'Shim', pronunciation: '[shim]', definition: 'Heal, restore', cultural: 'The act of healing'},
+                {word: 'Shimah', pronunciation: '[SHEE-mah]', definition: 'Healing journey', cultural: 'Sacred commitment to heal and grow'},
+                {word: 'Shinew', pronunciation: '[SHEE-new]', definition: 'Mind, thoughts', cultural: 'Thinking mind that needs balance with heart'},
+                {word: "Shu'shu", pronunciation: '[shoo-shoo]', definition: 'Chittering, annoying sounds', cultural: 'Irritating vocalization'},
+                {word: 'Shun', pronunciation: '[shoon]', definition: 'Silence, quietness', cultural: 'Can be peaceful or oppressive'},
+                {word: 'Shwea', pronunciation: '[SHWAY-ah]', definition: 'Remember, recall', cultural: 'Deep remembering that connects to soul'},
+                {word: 'Si', pronunciation: '[see]', definition: 'Cold, chilled', cultural: 'Can preserve or destroy'},
+                {word: 'Sia', pronunciation: '[SEE-ah]', definition: 'Freeze, become motionless', cultural: 'Trauma response when unable to fight or flee'},
+                {word: "Sia'rek", pronunciation: '[see-ah-REK]', definition: 'Slip, slide', cultural: 'Moment of lost control'},
+                {word: 'Silta', pronunciation: '[SEEL-tah]', definition: 'Thread, string', cultural: 'What connects and creates'},
+                {word: 'Sima', pronunciation: '[SEE-mah]', definition: 'Since, from the time', cultural: 'Marks the point where change began'},
+                {word: 'Sina', pronunciation: '[SEE-nah]', definition: 'Dance, move rhythmically', cultural: 'Often metaphor for balance in life'},
+                {word: 'Sinta', pronunciation: '[SIN-tah]', definition: 'Day, daylight period', cultural: 'Unit of time and symbol of openness'},
+                {word: 'Slava', pronunciation: '[SLAH-vah]', definition: 'Slave, bondservant', cultural: 'Ultimate violation of soul\'s freedom'},
+                {word: 'Slek', pronunciation: '[slehk]', definition: 'Rodent, vermin (insult)', cultural: 'Insulting term for pestilent people'},
+                {word: 'Soka', pronunciation: '[SOH-kah]', definition: 'Permission, consent', cultural: 'Sacred recognition of another\'s choice'},
+                {word: 'Somatu', pronunciation: '[soh-MAH-too]', definition: 'Passive, yielding', cultural: 'Not weakness but different strength'},
+                {word: 'Sul', pronunciation: '[sool]', definition: 'In, within, inside', cultural: 'Indicates deep placement'},
+                {word: 'Suni', pronunciation: '[SOO-nee]', definition: 'See, perceive', cultural: 'Seeing beyond surface'},
+                {word: "Susi'na", pronunciation: '[soo-SEE-nah]', definition: 'Surrender, submit', cultural: 'Can be wisdom or tragedy'},
+                {word: 'Swix', pronunciation: '[swiks]', definition: 'Blade, sword', cultural: 'Sacred weapon extension of warrior\'s soul'},
+                {word: "Syl'ma", pronunciation: '[seel-MAH]', definition: 'Stars, night lights', cultural: 'Sacred lights where ancestors watch'},
+                {word: "Syl'umbra", pronunciation: '[sil-OOM-brah]', definition: 'Moon, night-light', cultural: 'Sacred keeper of mysteries'},
+                {word: 'Sylva', pronunciation: '[SIL-vah]', definition: 'Light, bright', cultural: 'Light that illuminates without blinding'}
+            ],
+            'T': [
+                {word: 'Tala', pronunciation: '[TAH-lah]', definition: 'Gift, present, blessing', cultural: 'Something given freely'},
+                {word: 'Talo', pronunciation: '[TAH-loh]', definition: 'Try, attempt', cultural: 'The sacred effort regardless of outcome'},
+                {word: 'Tanka', pronunciation: '[TAHN-kah]', definition: 'Thank, gratitude', cultural: 'Sacred acknowledgment of receiving'},
+                {word: 'Tantu', pronunciation: '[TAHN-too]', definition: 'Aggression, hostility', cultural: 'Natural response to threat'},
+                {word: 'Tasha', pronunciation: '[TAH-shah]', definition: 'Think, ponder', cultural: 'Mental activity that can help or hinder'},
+                {word: 'Temu', pronunciation: '[TEH-moo]', definition: 'Few, small number', cultural: 'Sometimes more precious for rarity'},
+                {word: 'Tens', pronunciation: '[tens]', definition: 'Flow, stream', cultural: 'Natural movement that cannot be stopped'},
+                {word: 'Teptu', pronunciation: '[TEP-too]', definition: 'Insignificant, worthless', cultural: 'Complete dismissal of worth'},
+                {word: 'Thaven', pronunciation: '[THAH-ven]', definition: 'Can, could, able to', cultural: 'Indicates capability or possibility'},
+                {word: 'Thol', pronunciation: '[thohl]', definition: 'We, us, ourselves', cultural: 'Unity and collective identity'},
+                {word: "Thun'malok", pronunciation: '[thoon-MAH-lohk]', definition: 'Storm, tempest', cultural: 'Divine fury made manifest'},
+                {word: "Tika'ta", pronunciation: '[TEE-kah-tah]', definition: 'Tremble, shake', cultural: 'Body releasing trauma or expressing fear'},
+                {word: "Tin'tuk", pronunciation: '[teen-TOOK]', definition: 'Scars, marks', cultural: 'Physical and emotional marks that prove survival'},
+                {word: 'Tis', pronunciation: '[tis]', definition: 'Things, it (pronoun)', cultural: 'General term or neutral pronoun'},
+                {word: 'Topeka', pronunciation: '[toh-PEH-kah]', definition: 'Through, across', cultural: 'The path through difficulty'},
+                {word: 'Tora', pronunciation: '[TOH-rah]', definition: 'Before; Ancestors', cultural: 'Dual meaning - temporal and heritage'},
+                {word: "Tor'sinta", pronunciation: '[tor-SIN-tah]', definition: 'Yesterday', cultural: 'The immediate past that still echoes'},
+                {word: "Tor'tena", pronunciation: '[tor-TEH-nah]', definition: 'The past', cultural: 'All that came before'},
+                {word: "Tre'fecta", pronunciation: '[treh-FEK-tah]', definition: 'Tribe, clan', cultural: 'Group bound by shared purpose'},
+                {word: 'Treya', pronunciation: '[TRAY-ah]', definition: 'Traveler, journeyer', cultural: 'Those who walk between worlds'},
+                {word: "Tu'peka", pronunciation: '[too-PEH-kah]', definition: 'Supporter, helper', cultural: 'One who stands beside others'},
+                {word: "Tu'vesha", pronunciation: '[too-VEH-shah]', definition: 'Feel emotionally', cultural: 'Allowing emotions to exist and be experienced'},
+                {word: 'Tudal', pronunciation: '[too-DAHL]', definition: 'Tide, ocean\'s breath', cultural: 'Eternal cycle of advance and retreat'},
+                {word: "Tuka've", pronunciation: '[too-KAH-vay]', definition: 'Steal, thieve', cultural: 'Violation of sacred ownership'},
+                {word: 'Tul', pronunciation: '[tool]', definition: 'To, for, toward', cultural: 'Indicates purpose or direction'},
+                {word: 'Twea', pronunciation: '[TWAY-ah]', definition: 'Listen with understanding', cultural: 'Hearing with the heart, not just ears'},
+                {word: 'Twi', pronunciation: '[twee]', definition: 'Three, trio', cultural: 'Number of balance and completion'},
+                {word: "Twi'trena", pronunciation: '[twee-TREH-nah]', definition: 'Thirty, three tens', cultural: 'Traditional month cycle in training'}
+            ],
+            'U': [
+                {word: 'Ui', pronunciation: '[oo-EE]', definition: 'Up, upward', cultural: 'Direction of aspiration and growth'},
+                {word: "Um'dro", pronunciation: '[oom-DROH]', definition: 'Hide, hidden', cultural: 'Protection through concealment'},
+                {word: "Um'rana", pronunciation: '[oom-RAH-nah]', definition: 'Evening, night time', cultural: 'Sacred transition to rest'},
+                {word: 'Umbra', pronunciation: '[OOM-brah]', definition: 'Dark, shadow', cultural: 'Protective darkness where truth can be found'},
+                {word: 'Uni', pronunciation: '[OO-nee]', definition: 'One, single, first', cultural: 'Starting point of all things'},
+                {word: 'Unika', pronunciation: '[oo-NEE-kah]', definition: 'First, initial', cultural: 'Sacred position of beginning'},
+                {word: 'Unk', pronunciation: '[oonk]', definition: 'No, negative', cultural: 'Strong negative response'},
+                {word: 'Unta', pronunciation: '[OON-tah]', definition: 'Gates, door', cultural: 'Sacred boundaries between spaces'},
+                {word: 'Ush', pronunciation: '[oosh]', definition: 'Sigh, exhale deeply', cultural: 'Release of held tension'}
+            ],
+            'V': [
+                {word: "Va'daka", pronunciation: '[vah-DAH-kah]', definition: 'Soul-stealer through violation', cultural: 'The ultimate evil'},
+                {word: 'Vala harra tu', pronunciation: '[VAH-lah HAR-rah too]', definition: 'Too much, excessive', cultural: 'Dangerous excess that disrupts balance'},
+                {word: 'Vamas', pronunciation: '[VAH-mahs]', definition: 'Voice, speech-sound', cultural: 'Power to speak truth'},
+                {word: 'Vek', pronunciation: '[vek]', definition: 'I, me, myself', cultural: 'Humble self-reference'},
+                {word: 'Veka', pronunciation: '[VEH-kah]', definition: 'Self (reflexive)', cultural: 'The self looking at itself'},
+                {word: "Vek'lasha", pronunciation: '[vehk-LAH-shah]', definition: 'Privacy, personal matters', cultural: 'Sacred personal boundaries'},
+                {word: 'Vel', pronunciation: '[vel]', definition: 'And, with, together', cultural: 'Connection and unity'},
+                {word: "Vel'bae", pronunciation: '[VEL-bay]', definition: 'Teach, instruct', cultural: 'Teaching through experience'},
+                {word: "Vel'thari", pronunciation: '[VEL-thah-ree]', definition: 'Ancient wisdom', cultural: 'Knowledge earned through experience'},
+                {word: 'Verd', pronunciation: '[vehrd]', definition: 'Green, plant-colored', cultural: 'Color of life and growth'},
+                {word: 'Veridak', pronunciation: '[VER-ih-dahk]', definition: 'Hidden truth', cultural: 'Truth beneath surface appearances'},
+                {word: "Vis'ke", pronunciation: '[VEES-kay]', definition: 'Red, blood-colored', cultural: 'Color of blood and fire'},
+                {word: 'Visha', pronunciation: '[VEE-shah]', definition: 'Live, exist', cultural: 'Actively being present in existence'},
+                {word: 'Vok', pronunciation: '[vohk]', definition: 'Who, whom', cultural: 'Fundamental question of identity'},
+                {word: "Voos'tana", pronunciation: '[VOOS-tah-nah]', definition: 'Tired, exhausted', cultural: 'State demanding rest'},
+                {word: "Vordun'mek", pronunciation: '[vor-DOON-mehk]', definition: 'Wake up, awaken', cultural: 'Both literal and metaphorical awakening'},
+                {word: "Vor'gul", pronunciation: '[VOR-gool]', definition: 'Death, transition', cultural: 'Respected as natural transition'},
+                {word: 'Vorth', pronunciation: '[vorth]', definition: 'There, that place', cultural: 'Indicates distance or separation'},
+                {word: "Vosh'dak", pronunciation: '[VOSH-dahk]', definition: 'Die, cease existing', cultural: 'The final act of dying'},
+                {word: 'Voteka', pronunciation: '[voh-TEH-kah]', definition: 'Violet, purple', cultural: 'Color of transition and mystery'},
+                {word: 'Vundu', pronunciation: '[VOON-doo]', definition: 'Fast, quick', cultural: 'Speed that can help or harm'},
+                {word: "Vur'don", pronunciation: '[VUR-don]', definition: 'Guilt, remorse', cultural: 'Can motivate change or paralyze'}
+            ],
+            'W': [
+                {word: 'Waha', pronunciation: '[WAH-hah]', definition: 'Drink, imbibe', cultural: 'Taking water into oneself'},
+                {word: 'Wakas', pronunciation: '[WAH-kahs]', definition: 'Reward, prize', cultural: 'Recognition for right action'},
+                {word: 'Wamasu', pronunciation: '[wah-MAH-soo]', definition: 'Relax, release tension', cultural: 'Difficult act of releasing protective tension'},
+                {word: "Weka'wu", pronunciation: '[WEH-kah-woo]', definition: 'Drug, intoxicant', cultural: 'Substances that shift perception'},
+                {word: 'Weh', pronunciation: '[way]', definition: 'Word, spoken sound', cultural: 'Building blocks of communication and power'},
+                {word: 'Wichta', pronunciation: '[WICH-tah]', definition: 'Want, desire', cultural: 'Healthy wanting that motivates growth'},
+                {word: 'Wina', pronunciation: '[WEE-nah]', definition: 'West, sunset direction', cultural: 'Direction of endings and rest'},
+                {word: 'Wita', pronunciation: '[WEE-tah]', definition: 'White, pure color', cultural: 'Color of new beginnings and divine purity'},
+                {word: "Woa'rek", pronunciation: '[woh-ah-REK]', definition: 'Wail, cry loudly', cultural: 'Sacred expression of deep grief'},
+                {word: 'Wof', pronunciation: '[wohf]', definition: 'Dog, wolf, canine', cultural: 'Symbol of loyalty and pack bonds'},
+                {word: 'Wopa', pronunciation: '[WOH-pah]', definition: 'Choice, option', cultural: 'Sacred power of agency'},
+                {word: 'Woshka', pronunciation: '[WOHSH-kah]', definition: 'Sick, illness', cultural: 'Imbalance in body or spirit'},
+                {word: 'Wova', pronunciation: '[WOH-vah]', definition: 'Weave, interlace', cultural: 'Creating strength from separate pieces'},
+                {word: 'Wum', pronunciation: '[woom]', definition: 'Below, under', cultural: 'Not always negative - roots grow below'},
+                {word: 'Wumba', pronunciation: '[WOOM-bah]', definition: 'Deep, profound', cultural: 'Physical and spiritual depth'}
+            ],
+            'X': [
+                {word: 'Xad', pronunciation: '[zahd]', definition: 'Five, fifth', cultural: 'Number of the human form'},
+                {word: "Xad'ponta", pronunciation: '[zahd-PON-tah]', definition: 'Fifty, five tens', cultural: 'Midpoint of major training cycle'},
+                {word: 'Xek', pronunciation: '[zek]', definition: 'Flinch, recoil', cultural: 'Body\'s protective response to threat'}
+            ],
+            'Y': [
+                {word: "Y'lu", pronunciation: '[ee-LOO]', definition: 'Yes, agreement', cultural: 'Strong affirmative response'},
+                {word: "Y'moka", pronunciation: '[ee-MOH-kah]', definition: 'Ask/answer', cultural: 'Sacred exchange of knowledge'},
+                {word: "Y'sam", pronunciation: '[ee-SAHM]', definition: 'Simple, easy', cultural: 'Simplicity can be blessing or curse'},
+                {word: "Y'shtola", pronunciation: '[eesh-TOH-lah]', definition: 'Demon, evil spirit', cultural: 'Beings of pure cruelty'},
+                {word: "Y'talone", pronunciation: '[ee-tah-LOH-nay]', definition: 'Fail, failure', cultural: 'Not ending but teaching'},
+                {word: 'Yal', pronunciation: '[yahl]', definition: 'Yellow, sun-colored', cultural: 'Color of sun and joy'},
+                {word: 'Yel', pronunciation: '[yell]', definition: 'But, however', cultural: 'Shows contrast or exception'},
+                {word: 'Yelu', pronunciation: '[YEH-loo]', definition: 'Above, over', cultural: 'Position of oversight'},
+                {word: 'Yema', pronunciation: '[YEH-mah]', definition: 'Religion, faith system', cultural: 'Mortal attempts to understand divine'},
+                {word: 'Yeshva', pronunciation: '[YESH-vah]', definition: 'Understand, comprehend', cultural: 'True understanding from experience and heart'},
+                {word: 'Yisk', pronunciation: '[yeesk]', definition: 'Disgusting, vile', cultural: 'Complete revulsion'},
+                {word: 'Ymola', pronunciation: '[ee-MOH-lah]', definition: 'Regret, remorse', cultural: 'Weight of wishing different choices'},
+                {word: 'Yunka', pronunciation: '[YOON-kah]', definition: 'Hold, grasp', cultural: 'Can be protective embrace or possessive prison'}
+            ],
+            'Z': [
+                {word: 'Zawa', pronunciation: '[ZAH-wah]', definition: 'Wait, pause', cultural: 'Active waiting - gathering strength'},
+                {word: 'Zeka', pronunciation: '[ZEH-kah]', definition: 'Lie, deception', cultural: 'Poison to relationships and healing'},
+                {word: "Zek'maktu", pronunciation: '[zehk-MAHK-too]', definition: 'Leader, king, ruler', cultural: 'Heavy burden of guiding others'},
+                {word: 'Zena', pronunciation: '[ZEH-nah]', definition: 'After, following', cultural: 'What comes as consequence'},
+                {word: "Zen'sinta", pronunciation: '[zen-SIN-tah]', definition: 'Tomorrow', cultural: 'The promise of another chance'},
+                {word: "Zen'tena", pronunciation: '[zen-TEH-nah]', definition: 'The future', cultural: 'Unknown but shaped by present choices'},
+                {word: "Zhak'mor", pronunciation: '[ZHAHK-more]', definition: 'Blood-bond', cultural: 'Souls bound by mutual understanding'},
+                {word: 'Zola', pronunciation: '[ZOH-lah]', definition: 'Complex, complicated', cultural: 'Complexity that challenges but teaches'},
+                {word: 'Zura', pronunciation: '[ZOO-rah]', definition: 'Time, duration', cultural: 'Time as both healer and teacher'}
+            ]
+        };
+
+        const phrasesData = [
+            {
+                original: "Bene'twa Jowa'she",
+                pronunciation: "[BEH-neh-twah JOH-wah-shay]",
+                translation: "Good morning, we welcome the sun rise",
+                cultural: "Traditional morning greeting acknowledging the new day"
+            },
+            {
+                original: "Bene'twa Um'shela",
+                pronunciation: "[BEH-neh-twah oom-SHEH-lah]",
+                translation: "Good night, may the shadows find you peace",
+                cultural: "Traditional evening farewell wishing restful sleep"
+            },
+            {
+                original: "Bon'kreka tun",
+                pronunciation: "[bohn-KREH-kah toon]",
+                translation: "Bone-breaker, destroyer of structure",
+                cultural: "Title for one who completely destroys an opponent's ability to fight"
+            },
+            {
+                original: "Du Tor'Inamu",
+                pronunciation: "[doo tor-ee-NAH-moo]",
+                translation: "Great-grandmother",
+                cultural: "Maternal ancestor two generations back"
+            },
+            {
+                original: "Fus'Ravahn",
+                pronunciation: "[FOOS-rah-vahn]",
+                translation: "Children of the Divine",
+                cultural: "Sacred name for Kiri's extinct mortal people"
+            },
+            {
+                original: "Inashu daku",
+                pronunciation: "[ee-NAH-shoo DAH-koo]",
+                translation: "You are welcome",
+                cultural: "Response to gratitude that acknowledges mutual blessing"
+            },
+            {
+                original: "Ishtana sawaska veytu",
+                pronunciation: "[ish-TAH-nah sah-WAHS-kah VAY-too]",
+                translation: "Leave me alone, go away",
+                cultural: "Forceful command to respect one's need for isolation"
+            },
+            {
+                original: "Kaia mor vel'thari",
+                pronunciation: "[KAH-ee-ah more VEL-thah-ree]",
+                translation: "The spirit knows ancient wisdom",
+                cultural: "Said when someone displays intuitive understanding"
+            },
+            {
+                original: "Kin'vasha frish'tola kun deka",
+                pronunciation: "[keen-VAH-shah frish-TOH-lah koon DEH-kah]",
+                translation: "Refuse to walk away from someone in need",
+                cultural: "Sacred commitment to stand by those who are suffering"
+            },
+            {
+                original: "Kyev'a shik",
+                pronunciation: "[KYEHV-ah sheek]",
+                translation: "Fuck off/Fuck you",
+                cultural: "Violent dismissal demanding immediate departure"
+            },
+            {
+                original: "Leo'zhak Mor'vek",
+                pronunciation: "[LEE-oh-zhahk MORE-vek]",
+                translation: "Honor through combat",
+                cultural: "Warrior's creed acknowledging honor comes through righteous battle"
+            },
+            {
+                original: "Mak'Tor Inamu/Sasmu",
+                pronunciation: "[mahk-tor ee-NAH-moo/SAHS-moo]",
+                translation: "The Ancient Mother/Father",
+                cultural: "Any ancestor beyond ten generations back"
+            },
+            {
+                original: "Mek'tar skeka",
+                pronunciation: "[mehk-TAR SKEH-kah]",
+                translation: "Soul-traitor",
+                cultural: "The worst possible betrayal - selling another's soul"
+            },
+            {
+                original: "Nimwah sul miran",
+                pronunciation: "[NIM-wah sool MEE-rahn]",
+                translation: "The void calls home",
+                cultural: "Recognition that someone belongs to darkness/void powers"
+            },
+            {
+                original: "Sa Mishk",
+                pronunciation: "[sah meeshk]",
+                translation: "Oh shit",
+                cultural: "Expression of sudden realization that situation is terrible"
+            },
+            {
+                original: "Tank'ela daku",
+                pronunciation: "[tahn-KEH-lah DAH-koo]",
+                translation: "Thank you",
+                cultural: "Formal expression of gratitude acknowledging gift received"
+            },
+            {
+                original: "Tor'Inamu",
+                pronunciation: "[tor-ee-NAH-moo]",
+                translation: "Grandmother",
+                cultural: "Maternal ancestor one generation back"
+            },
+            {
+                original: "Tor'Sasmu",
+                pronunciation: "[tor-SAHS-moo]",
+                translation: "Grandfather",
+                cultural: "Paternal ancestor one generation back"
+            },
+            {
+                original: "Tulak vak mi",
+                pronunciation: "[too-LAHK vahk mee]",
+                translation: "Oh my god",
+                cultural: "Invocation of personal deity in moments of extreme emotion"
+            },
+            {
+                original: "Vala'dak tum",
+                pronunciation: "[VAH-lah-dahk toom]",
+                translation: "Soul stolen through violence",
+                cultural: "Most brutal phrase acknowledging deepest trauma"
+            },
+            {
+                original: "Vel kaia'thul",
+                pronunciation: "[VEL KAI-uh-thool]",
+                translation: "Until souls meet (again)",
+                cultural: "Formal goodbye acknowledging eternal nature of souls"
+            },
+            {
+                original: "Wo'kaia letch vosh'dak",
+                pronunciation: "[woh-KAI-ah letch vohsh-DAHK]",
+                translation: "The soul chooses to die",
+                cultural: "The most tragic choice - when soul stops fighting"
+            },
+            {
+                original: "Wopa'sin foka de",
+                pronunciation: "[WOH-pah-seen FOH-kah day]",
+                translation: "Choice-dance at the crossing",
+                cultural: "Sacred moment of decision at crossroads"
+            },
+            {
+                original: "Woshka'voos ethola tis",
+                pronunciation: "[WOHSH-kah-voos eh-THO-lah tis]",
+                translation: "Sick and tired of something",
+                cultural: "Complete exhaustion with a situation"
+            },
+            {
+                original: "Ymola tens",
+                pronunciation: "[ee-MOH-lah tens]",
+                translation: "I'm sorry",
+                cultural: "Sincere apology taking responsibility"
+            },
+            {
+                original: "Zhak'mor vel nira",
+                pronunciation: "[ZHAHK-more vel NEE-rah]",
+                translation: "Blood-bond through shadow",
+                cultural: "Formal acknowledgment of deep connection through trauma"
+            },
+            {
+                original: "Zura'kela",
+                pronunciation: "[ZOO-rah-keh-lah]",
+                translation: "Age Braids/Wisdom Braids",
+                cultural: "Visual representation of accumulated wisdom and experience"
+            }
+        ];
+
+        const numbersData = {
+            basic: [
+                {value: '1', word: 'Uni', pronunciation: '[OO-nee]'},
+                {value: '2', word: 'Du', pronunciation: '[doo]'},
+                {value: '3', word: 'Twi', pronunciation: '[twee]'},
+                {value: '4', word: 'Forqa', pronunciation: '[FOR-kah]'},
+                {value: '5', word: 'Xad', pronunciation: '[zahd]'},
+                {value: '6', word: 'Hexa', pronunciation: '[HEK-sah]'},
+                {value: '7', word: 'Septa', pronunciation: '[SEP-tah]'},
+                {value: '8', word: 'Oxa', pronunciation: '[OK-sah]'},
+                {value: '9', word: 'Nenta', pronunciation: '[NEN-tah]'},
+                {value: '10', word: 'Quas', pronunciation: '[kwahs]'}
+            ],
+            tens: [
+                {value: '20', word: "Du'tona", pronunciation: '[doo-TOH-nah]'},
+                {value: '30', word: "Twi'trena", pronunciation: '[twee-TREH-nah]'},
+                {value: '40', word: "Forqa'qen", pronunciation: '[FOR-kah-ken]'},
+                {value: '50', word: "Xad'ponta", pronunciation: '[zahd-PON-tah]'},
+                {value: '60', word: "Hexa'fu", pronunciation: '[HEK-sah-foo]'},
+                {value: '70', word: "Septa'ona", pronunciation: '[SEP-tah-OH-nah]'},
+                {value: '80', word: "Oxa'req", pronunciation: '[OK-sah-rek]'},
+                {value: '90', word: "Nenta'kis", pronunciation: '[NEN-tah-kees]'}
+            ],
+            large: [
+                {value: '100', word: "Quas'condo", pronunciation: '[kwahs-KON-doh]'},
+                {value: '1000', word: "Quas'menna", pronunciation: '[kwahs-MEN-nah]'}
+            ]
+        };
+
+        // Initialize page
+        function initializePage() {
+            loadDictionary();
+            loadPhrases();
+            loadNumbers();
+        }
+
+        function loadDictionary() {
+            const container = document.getElementById('dictionaryContent');
+            let html = '';
+            
+            for (let letter in dictionaryData) {
+                html += `<div class="letter-section" id="letter-${letter}">`;
+                html += `<h2 class="letter-header">${letter}</h2>`;
+                html += '<div class="word-grid">';
+                
+                dictionaryData[letter].forEach(word => {
+                    html += `
+                        <div class="word-entry">
+                            <div class="word-main">${word.word}</div>
+                            <div class="pronunciation">${word.pronunciation}</div>
+                            <div class="definition">${word.definition}</div>
+                            ${word.cultural ? `<div class="cultural-note">${word.cultural}</div>` : ''}
+                        </div>
+                    `;
+                });
+                
+                html += '</div></div>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        function loadPhrases() {
+            const container = document.getElementById('phrasesContent');
+            let html = '';
+            
+            phrasesData.forEach(phrase => {
+                html += `
+                    <div class="phrase-entry">
+                        <div class="phrase-original">${phrase.original}</div>
+                        <div class="pronunciation">${phrase.pronunciation}</div>
+                        <div class="phrase-translation">"${phrase.translation}"</div>
+                        <div class="cultural-note">${phrase.cultural}</div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function loadNumbers() {
+            // Basic Numbers
+            let basicHtml = '';
+            numbersData.basic.forEach(num => {
+                basicHtml += `
+                    <div class="number-card">
+                        <div class="number-value">${num.value}</div>
+                        <div class="number-word">${num.word}</div>
+                        <div class="number-pronunciation">${num.pronunciation}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('basicNumbers').innerHTML = basicHtml;
+            
+            // Tens
+            let tensHtml = '';
+            numbersData.tens.forEach(num => {
+                tensHtml += `
+                    <div class="number-card">
+                        <div class="number-value">${num.value}</div>
+                        <div class="number-word">${num.word}</div>
+                        <div class="number-pronunciation">${num.pronunciation}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('tensNumbers').innerHTML = tensHtml;
+            
+            // Large Numbers
+            let largeHtml = '';
+            numbersData.large.forEach(num => {
+                largeHtml += `
+                    <div class="number-card">
+                        <div class="number-value">${num.value}</div>
+                        <div class="number-word">${num.word}</div>
+                        <div class="number-pronunciation">${num.pronunciation}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('largeNumbers').innerHTML = largeHtml;
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active from all tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active to clicked tab
+            event.target.classList.add('active');
+        }
+
+        function scrollToLetter(letter) {
+            const element = document.getElementById(`letter-${letter}`);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        function searchWords() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const entries = document.querySelectorAll('.word-entry');
+            
+            entries.forEach(entry => {
+                const word = entry.querySelector('.word-main').textContent.toLowerCase();
+                const definition = entry.querySelector('.definition').textContent.toLowerCase();
+                
+                if (word.includes(input) || definition.includes(input)) {
+                    entry.style.display = 'block';
+                } else {
+                    entry.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initializePage);
+
+        // Add floating animation to cosmic particles
+        setInterval(() => {
+            const particle = document.createElement('div');
+            particle.className = 'cosmic-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = '0s';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            document.querySelector('.language-cosmos').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 25000);
+        }, 3000);
+    </script>
+</body>
+</html>
