@@ -632,6 +632,69 @@ image: "/assets/images/baeravah-language.jpg"
             }
         }
     </style>
+
+    <!-- Additional CSS for Calendar Section - Add to your existing <style> section -->
+<style>
+    /* Calendar-specific styles */
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .calendar-entry {
+        background: linear-gradient(135deg, rgba(30, 25, 50, 0.9) 0%, rgba(20, 20, 40, 0.9) 100%);
+        border: 1px solid rgba(138, 159, 255, 0.2);
+        border-radius: 15px;
+        padding: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .calendar-entry:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(138, 159, 255, 0.2);
+        border-color: #8a9fff;
+    }
+
+    .calendar-number, .month-number {
+        font-size: 0.9em;
+        color: #8a9fff;
+        margin-bottom: 5px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .calendar-name {
+        font-size: 1.4em;
+        color: #ffffff;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
+    .calendar-translation {
+        color: #c8b5ff;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        font-style: italic;
+    }
+
+    .months-grid .calendar-entry {
+        background: linear-gradient(135deg, rgba(40, 30, 60, 0.9) 0%, rgba(25, 20, 45, 0.9) 100%);
+        border-color: rgba(147, 112, 219, 0.3);
+    }
+
+    .months-grid .calendar-entry:hover {
+        border-color: #9370db;
+        box-shadow: 0 10px 25px rgba(147, 112, 219, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .calendar-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 </head>
 <body>
     <!-- Cosmic Background Effects -->
@@ -666,6 +729,7 @@ image: "/assets/images/baeravah-language.jpg"
         <div class="nav-tab" onclick="showSection('phrases')">Phrases</div>
         <div class="nav-tab" onclick="showSection('numbers')">Numbers</div>
         <div class="nav-tab" onclick="showSection('grammar')">Grammar</div>
+        <div class="nav-tab" onclick="showSection('calendar')">Calendar</div>
     </nav>
 
     <!-- Search Box -->
@@ -1024,6 +1088,220 @@ image: "/assets/images/baeravah-language.jpg"
             </div>
         </div>
     </div>
+
+    <!-- Calendar Content Section - Add this after the Grammar section in content-container -->
+<div id="calendar" class="content-section">
+    <div class="grammar-section">
+        <h2 class="grammar-title">The Arcane Calendar</h2>
+        <div class="grammar-content">
+            <p>The Bae'Ravah calendar terms follow the ancient Arcane Calendar system, with each period named for the elemental and divine forces that govern time itself. This sacred calendar consists of 8-day weeks, with 12 months of varying lengths totaling 365 days.</p>
+        </div>
+    </div>
+
+    <div class="grammar-section">
+        <h2 class="grammar-title">Time Periods</h2>
+        <div class="numbers-grid">
+            <div class="number-card">
+                <div class="number-word">Oxa'sinta</div>
+                <div class="number-pronunciation">[OK-sah-SIN-tah]</div>
+                <div class="phrase-translation">Week (8-day period)</div>
+                <div class="cultural-note">Eight days reflecting the eight primary cosmic forces</div>
+            </div>
+            <div class="number-card">
+                <div class="number-word">Sinta</div>
+                <div class="number-pronunciation">[SIN-tah]</div>
+                <div class="phrase-translation">Day</div>
+                <div class="cultural-note">Basic unit of time from sunrise to sunrise</div>
+            </div>
+            <div class="number-card">
+                <div class="number-word">Meren</div>
+                <div class="number-pronunciation">[MEH-ren]</div>
+                <div class="phrase-translation">Month</div>
+                <div class="cultural-note">Lunar cycle marking seasonal changes</div>
+            </div>
+            <div class="number-card">
+                <div class="number-word">Ven'cyra</div>
+                <div class="number-pronunciation">[ven-SEE-rah]</div>
+                <div class="phrase-translation">Year</div>
+                <div class="cultural-note">Complete cycle through all twelve sacred months</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grammar-section">
+        <h2 class="grammar-title">Days of the Week (Oxa'sinta)</h2>
+        <div class="calendar-grid">
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 1</div>
+                <div class="calendar-name">Goba'sinta</div>
+                <div class="pronunciation">[GOH-bah-SIN-tah]</div>
+                <div class="calendar-translation">Earthsday</div>
+                <div class="cultural-note">Day of grounding, practical work, and connection to the land</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 2</div>
+                <div class="calendar-name">Eive'sinta</div>
+                <div class="pronunciation">[AY-veh-SIN-tah]</div>
+                <div class="calendar-translation">Airsday</div>
+                <div class="cultural-note">Day of communication, travel, and spreading news</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 3</div>
+                <div class="calendar-name">Fierna'sinta</div>
+                <div class="pronunciation">[fee-AIR-nah-SIN-tah]</div>
+                <div class="calendar-translation">Firesday</div>
+                <div class="cultural-note">Day of passion, transformation, and creative work</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 4</div>
+                <div class="calendar-name">Aq'twa'sinta</div>
+                <div class="pronunciation">[ahk-TWAH-SIN-tah]</div>
+                <div class="calendar-translation">Watersday</div>
+                <div class="cultural-note">Day of healing, emotion, and spiritual cleansing</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 5</div>
+                <div class="calendar-name">Sylva'sinta</div>
+                <div class="pronunciation">[SIL-vah-SIN-tah]</div>
+                <div class="calendar-translation">Lightsday</div>
+                <div class="cultural-note">Day of illumination, truth-seeking, and divine worship</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 6</div>
+                <div class="calendar-name">Nimwah'sinta</div>
+                <div class="pronunciation">[NIM-wah-SIN-tah]</div>
+                <div class="calendar-translation">Voidsday</div>
+                <div class="cultural-note">Day of rest, introspection, and honoring the mysteries</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 7</div>
+                <div class="calendar-name">Kaia'sinta</div>
+                <div class="pronunciation">[KAH-ee-ah-SIN-tah]</div>
+                <div class="calendar-translation">Spiritsday</div>
+                <div class="cultural-note">Day of nature spirits, ancestral worship, and soul-work</div>
+            </div>
+            <div class="calendar-entry">
+                <div class="calendar-number">Day 8</div>
+                <div class="calendar-name">I'meka'sinta</div>
+                <div class="pronunciation">[ee-MEH-kah-SIN-tah]</div>
+                <div class="calendar-translation">Fatesday</div>
+                <div class="cultural-note">Day of destiny, divination, and acknowledging time's power</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grammar-section">
+        <h2 class="grammar-title">Months of the Year</h2>
+        <div class="calendar-grid months-grid">
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 1</div>
+                <div class="calendar-name">Aq'meren</div>
+                <div class="pronunciation">[ahk-MEH-ren]</div>
+                <div class="calendar-translation">Aquaris (Water Month)</div>
+                <div class="cultural-note">Time of emotional cleansing and renewal through tears</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 2</div>
+                <div class="calendar-name">Kaiaven</div>
+                <div class="pronunciation">[KAH-ee-ah-ven]</div>
+                <div class="calendar-translation">Kaethyn (Spirit Month)</div>
+                <div class="cultural-note">When the veil between worlds grows thin</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 3</div>
+                <div class="calendar-name">Eivahn</div>
+                <div class="pronunciation">[AY-vahn]</div>
+                <div class="calendar-translation">Aeroneth (Air Month)</div>
+                <div class="cultural-note">Season of change and communication with distant lands</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 4</div>
+                <div class="calendar-name">Zhakaran</div>
+                <div class="pronunciation">[ZHAHK-ah-rahn]</div>
+                <div class="calendar-translation">Sangrien (Blood Month)</div>
+                <div class="cultural-note">Sacred time of blood-bonds and warrior trials</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 5</div>
+                <div class="calendar-name">Fierahan</div>
+                <div class="pronunciation">[fee-EH-rah-hahn]</div>
+                <div class="calendar-translation">Pyraven (Fire Month)</div>
+                <div class="cultural-note">Peak of summer's transformative heat</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 6</div>
+                <div class="calendar-name">Theosvahn</div>
+                <div class="pronunciation">[THEE-ohs-vahn]</div>
+                <div class="calendar-translation">Theoven (Divine Month)</div>
+                <div class="cultural-note">When gods walk closest to mortal realms</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 7</div>
+                <div class="calendar-name">Sylvaren</div>
+                <div class="pronunciation">[sil-VAH-ren]</div>
+                <div class="calendar-translation">Lumenis (Light Month)</div>
+                <div class="cultural-note">Longest days when truth cannot hide in shadow</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 8</div>
+                <div class="calendar-name">Equinahl</div>
+                <div class="pronunciation">[EH-kwee-nahl]</div>
+                <div class="calendar-translation">Equilibria (Balance Month)</div>
+                <div class="cultural-note">Sacred balance between light and dark, life and death</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 9</div>
+                <div class="calendar-name">Gobahan</div>
+                <div class="pronunciation">[GOH-bah-hahn]</div>
+                <div class="calendar-translation">Terraven (Earth Month)</div>
+                <div class="cultural-note">Harvest time when earth gives its greatest gifts</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 10</div>
+                <div class="calendar-name">Mekaven</div>
+                <div class="pronunciation">[MEH-kah-ven]</div>
+                <div class="calendar-translation">Destinia (Fates Month)</div>
+                <div class="cultural-note">When destiny's threads become visible to seers</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 11</div>
+                <div class="calendar-name">Nimvaren</div>
+                <div class="pronunciation">[nim-VAH-ren]</div>
+                <div class="calendar-translation">Noxmere (Void Month)</div>
+                <div class="cultural-note">Darkest period of introspection and shadow-work</div>
+            </div>
+            <div class="calendar-entry month-entry">
+                <div class="month-number">Month 12</div>
+                <div class="calendar-name">Mortanis</div>
+                <div class="pronunciation">[mor-TAH-nis]</div>
+                <div class="calendar-translation">Mortegon (Underworld Month)</div>
+                <div class="cultural-note">When the dead are honored and remembered</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grammar-section">
+        <h2 class="grammar-title">Common Calendar Phrases</h2>
+        <div class="phrase-entry">
+            <div class="phrase-original">Sul Goba'sinta, vek shevek frish</div>
+            <div class="pronunciation">[sool GOH-bah-SIN-tah, vek SHEH-vek frish]</div>
+            <div class="phrase-translation">"On Earthsday, I will walk"</div>
+            <div class="cultural-note">Example of using day names in everyday speech</div>
+        </div>
+        <div class="phrase-entry">
+            <div class="phrase-original">Aq'meren na si</div>
+            <div class="pronunciation">[ahk-MEH-ren nah see]</div>
+            <div class="phrase-translation">"Water Month is cold"</div>
+            <div class="cultural-note">Traditional observation about the first month's weather</div>
+        </div>
+        <div class="phrase-entry">
+            <div class="phrase-original">Oxa'sinta shevek fin</div>
+            <div class="pronunciation">[OK-sah-SIN-tah SHEH-vek feen]</div>
+            <div class="phrase-translation">"The week will end"</div>
+            <div class="cultural-note">Common phrase for anticipating rest</div>
+        </div>
+    </div>
+</div>
 
     <script>
         // Complete dictionary data structure with ALL words
