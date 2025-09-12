@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dual Calendar Systems of Arcadia | Blood of the Wild Gods</title>
+    <meta name="description" content="Explore the mathematical perfection of the Arcane Calendar and the practical wisdom of the Astronomer's Calendar, including their months, days, and the prophetic constellations that guide Arcadia's destiny.">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: radial-gradient(ellipse at center, #0a0a2a 0%, #000000 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Celestial Background */
+        .celestial-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .constellation-line {
+            position: absolute;
+            width: 1px;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(138, 159, 255, 0.3), transparent);
+            opacity: 0.5;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        .star-point {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+        .cosmic-dust {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: drift 20s linear infinite;
+        }
+
+        @keyframes drift {
+            from {
+                transform: translateY(-100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            to {
+                transform: translateY(100vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        /* Page Header */
+        .calendar-header {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 10, 40, 0.9), rgba(15, 15, 30, 0.8));
+            position: relative;
+            z-index: 2;
+        }
+
+        .calendar-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" patternUnits="userSpaceOnUse" width="50" height="50"><circle cx="5" cy="5" r="0.5" fill="rgba(255,255,255,0.3)"/><circle cx="25" cy="20" r="0.3" fill="rgba(255,255,255,0.2)"/><circle cx="40" cy="35" r="0.4" fill="rgba(255,255,255,0.25)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>') center/cover;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .page-title {
+            font-size: 3.5em;
+            font-weight: 200;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(138, 159, 255, 0.5);
+        }
+
+        .page-subtitle {
+            font-size: 1.4em;
+            color: #8a9fff;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Main Content Container */
+        .calendar-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Introduction Section */
+        .intro-section {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 159, 255, 0.2);
+        }
+
+        .intro-text {
+            font-size: 1.15em;
+            line-height: 1.9;
+            color: #ddd;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Calendar Sections */
+        .calendar-section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            font-size: 2.8em;
+            color: #f0f0f0;
+            margin-bottom: 15px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8a9fff, transparent);
+            transform: translateX(-50%);
+        }
+
+        .arcane-title { color: #c983ff; }
+        .arcane-title::after { background: linear-gradient(90deg, transparent, #c983ff, transparent); }
+
+        .common-title { color: #8a9fff; }
+        .common-title::after { background: linear-gradient(90deg, transparent, #8a9fff, transparent); }
+
+        .section-description {
+            font-size: 1.1em;
+            color: #ccc;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Calendar Info Cards */
+        .calendar-info {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 159, 255, 0.2);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            background: rgba(40, 40, 50, 0.5);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 3px solid #8a9fff;
+        }
+
+        .arcane-calendar .info-item {
+            border-left-color: #c983ff;
+        }
+
+        .info-label {
+            font-size: 0.9em;
+            color: #8a9fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .arcane-calendar .info-label {
+            color: #c983ff;
+        }
+
+        .info-value {
+            font-size: 1.3em;
+            color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        /* Days of the Week Display */
+        .days-display {
+            background: rgba(30, 30, 40, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+
+        .days-title {
+            font-size: 1.4em;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .days-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .arcane-days {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .common-days {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .day-card {
+            background: linear-gradient(135deg, rgba(50, 50, 60, 0.8), rgba(40, 40, 50, 0.8));
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .day-card:hover {
+            transform: translateY(-5px);
+            border-color: #8a9fff;
+            box-shadow: 0 10px 30px rgba(138, 159, 255, 0.2);
+        }
+
+        .arcane-calendar .day-card:hover {
+            border-color: #c983ff;
+            box-shadow: 0 10px 30px rgba(201, 131, 255, 0.2);
+        }
+
+        .day-name {
+            font-size: 1.2em;
+            color: #f0f0f0;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .day-meaning {
+            font-size: 0.95em;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        /* Months Display */
+        .months-display {
+            margin-top: 40px;
+        }
+
+        .months-title {
+            font-size: 1.4em;
+            color: #f0f0f0;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .season-group {
+            margin-bottom: 35px;
+        }
+
+        .season-title {
+            font-size: 1.2em;
+            color: #8a9fff;
+            margin-bottom: 15px;
+            padding-left: 20px;
+            font-weight: 600;
+        }
+
+        .arcane-calendar .season-title {
+            color: #c983ff;
+        }
+
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .month-card {
+            background: linear-gradient(135deg, rgba(50, 50, 60, 0.6), rgba(40, 40, 50, 0.6));
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(138, 159, 255, 0.1);
+        }
+
+        .month-card:hover {
+            transform: translateY(-3px);
+            border-color: #8a9fff;
+            background: linear-gradient(135deg, rgba(60, 60, 70, 0.7), rgba(50, 50, 60, 0.7));
+        }
+
+        .arcane-calendar .month-card:hover {
+            border-color: #c983ff;
+        }
+
+        .month-name {
+            font-size: 1.15em;
+            color: #f0f0f0;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .month-description {
+            font-size: 0.9em;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        /* Visual Calendar Displays - UPDATED FOR SEQUENTIAL VIEWING */
+        .visual-calendars-section {
+            margin: 80px 0;
+        }
+
+        .calendar-displays {
+            margin-top: 40px;
+        }
+
+        .calendar-visual {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .arcane-visual {
+            border: 2px solid rgba(201, 131, 255, 0.3);
+        }
+
+        .common-visual {
+            border: 2px solid rgba(138, 159, 255, 0.3);
+        }
+
+        .visual-title {
+            font-size: 1.6em;
+            color: #f0f0f0;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .calendar-wrapper {
+            background: rgba(60, 60, 70, 0.3);
+            border-radius: 10px;
+            padding: 2px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .calendar-grid {
+            display: grid;
+            gap: 2px;
+            min-width: fit-content;
+        }
+
+        .arcane-grid {
+            grid-template-columns: repeat(8, minmax(100px, 1fr));
+        }
+
+        .common-grid {
+            grid-template-columns: repeat(6, minmax(120px, 1fr));
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, rgba(50, 50, 60, 0.9), rgba(40, 40, 50, 0.9));
+            padding: 15px 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #f0f0f0;
+            font-size: 1em;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .arcane-visual .day-header {
+            color: #c983ff;
+            background: linear-gradient(135deg, rgba(60, 50, 70, 0.9), rgba(50, 40, 60, 0.9));
+        }
+
+        .common-visual .day-header {
+            color: #8a9fff;
+            background: linear-gradient(135deg, rgba(50, 50, 70, 0.9), rgba(40, 40, 60, 0.9));
+        }
+
+        .calendar-day {
+            background: rgba(30, 30, 40, 0.8);
+            padding: 25px;
+            text-align: center;
+            font-size: 1.2em;
+            color: #ddd;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calendar-day:hover {
+            background: rgba(50, 50, 60, 0.9);
+            color: #f0f0f0;
+            transform: scale(1.05);
+            z-index: 10;
+            border-radius: 8px;
+        }
+
+        .arcane-visual .calendar-day:hover {
+            box-shadow: 0 0 20px rgba(201, 131, 255, 0.4);
+            background: rgba(60, 50, 70, 0.9);
+        }
+
+        .common-visual .calendar-day:hover {
+            box-shadow: 0 0 20px rgba(138, 159, 255, 0.4);
+            background: rgba(50, 50, 70, 0.9);
+        }
+
+        /* Special day highlighting */
+        .arcane-visual .calendar-day:nth-child(8n) {  /* Every 8th day (Fatesday) */
+            color: #c983ff;
+            font-weight: 600;
+        }
+
+        .common-visual .calendar-day:nth-child(6n) {  /* Every 6th day (Venu) */
+            color: #8a9fff;
+            font-weight: 600;
+        }
+
+        .calendar-note {
+            text-align: center;
+            font-size: 1em;
+            color: #aaa;
+            font-style: italic;
+            padding: 15px;
+            background: rgba(40, 40, 50, 0.3);
+            border-radius: 10px;
+        }
+
+        /* Year Overview Grid */
+        .year-overview {
+            margin-top: 60px;
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(138, 159, 255, 0.2);
+        }
+
+        .year-title {
+            font-size: 1.6em;
+            color: #f0f0f0;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .months-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .month-mini {
+            background: rgba(40, 40, 50, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .month-mini:hover {
+            background: rgba(50, 50, 60, 0.7);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .month-mini-name {
+            font-size: 0.9em;
+            color: #8a9fff;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .month-mini-days {
+            font-size: 0.8em;
+            color: #aaa;
+        }
+
+        /* Athea Section */
+        .athea-section {
+            background: linear-gradient(135deg, rgba(25, 20, 40, 0.95), rgba(35, 25, 45, 0.9));
+            border-radius: 20px;
+            padding: 60px;
+            margin: 80px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(159, 138, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .athea-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(159, 138, 255, 0.05) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .athea-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .athea-title {
+            font-size: 2.4em;
+            color: #9f8aff;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .athea-story {
+            font-size: 1.1em;
+            line-height: 1.9;
+            color: #ddd;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .athea-story p {
+            margin-bottom: 20px;
+        }
+
+        .prophecy-quote {
+            background: rgba(40, 35, 60, 0.5);
+            border-left: 3px solid #9f8aff;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.15em;
+            color: #e0d5ff;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        /* Constellations Section */
+        .constellations-section {
+            margin: 80px 0;
+        }
+
+        .constellation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .constellation-card {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 20px;
+            padding: 35px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 159, 255, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .constellation-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
+            transition: left 0.8s ease;
+        }
+
+        .constellation-card:hover::before {
+            left: 100%;
+        }
+
+        .constellation-card:hover {
+            transform: translateY(-5px);
+            border-color: #8a9fff;
+            box-shadow: 0 20px 40px rgba(138, 159, 255, 0.2);
+        }
+
+        .constellation-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .constellation-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(138, 159, 255, 0.3), rgba(168, 181, 255, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5em;
+        }
+
+        .existing-constellation .constellation-icon {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 235, 59, 0.2));
+        }
+
+        .constellation-title {
+            font-size: 1.4em;
+            color: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .constellation-month {
+            font-size: 0.9em;
+            color: #8a9fff;
+            margin-bottom: 15px;
+        }
+
+        .constellation-description {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .constellation-status {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-top: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .status-existing {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .status-prophesied {
+            background: rgba(138, 159, 255, 0.2);
+            color: #8a9fff;
+            border: 1px solid rgba(138, 159, 255, 0.3);
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            margin: 80px 0;
+        }
+
+        .comparison-table {
+            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
+            border-radius: 20px;
+            padding: 40px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        thead {
+            background: rgba(40, 40, 50, 0.8);
+        }
+
+        th {
+            padding: 20px;
+            text-align: left;
+            font-size: 1.2em;
+            color: #f0f0f0;
+            font-weight: 600;
+            border-bottom: 2px solid #8a9fff;
+        }
+
+        th:first-child {
+            border-top-left-radius: 10px;
+        }
+
+        th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        td {
+            padding: 20px;
+            color: #ddd;
+            border-bottom: 1px solid rgba(138, 159, 255, 0.1);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: rgba(138, 159, 255, 0.05);
+        }
+
+        .table-label {
+            color: #8a9fff;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .arcane-grid {
+                grid-template-columns: repeat(8, minmax(80px, 1fr));
+            }
+            
+            .common-grid {
+                grid-template-columns: repeat(6, minmax(100px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2.5em;
+            }
+            
+            .section-title {
+                font-size: 2em;
+            }
+            
+            .calendar-info {
+                padding: 30px 20px;
+            }
+            
+            .days-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .constellation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .athea-section {
+                padding: 40px 20px;
+            }
+            
+            .comparison-table {
+                padding: 20px;
+            }
+            
+            th, td {
+                padding: 15px 10px;
+                font-size: 0.9em;
+            }
+
+            .calendar-day {
+                padding: 15px 5px;
+                min-height: 50px;
+                font-size: 1em;
+            }
+            
+            .day-header {
+                padding: 10px 5px;
+                font-size: 0.85em;
+            }
+            
+            .arcane-grid {
+                grid-template-columns: repeat(8, minmax(60px, 1fr));
+            }
+            
+            .common-grid {
+                grid-template-columns: repeat(6, minmax(60px, 1fr));
+            }
+
+            .calendar-visual {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .arcane-grid {
+                grid-template-columns: repeat(8, 50px);
+            }
+
+            .common-grid {
+                grid-template-columns: repeat(6, 50px);
+            }
+            
+            .calendar-day {
+                padding: 10px 3px;
+                font-size: 0.9em;
+            }
+            
+            .day-header {
+                font-size: 0.7em;
+                padding: 8px 2px;
+            }
+        }
+
+        @keyframes rippleEffect {
+            to {
+                width: 50px;
+                height: 50px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Celestial Background -->
+    <div class="celestial-background">
+        <!-- Random constellation lines -->
+        <div class="constellation-line" style="top: 10%; left: 20%; transform: rotate(45deg);"></div>
+        <div class="constellation-line" style="top: 30%; left: 70%; transform: rotate(-30deg);"></div>
+        <div class="constellation-line" style="top: 60%; left: 40%; transform: rotate(60deg);"></div>
+        <div class="constellation-line" style="top: 80%; left: 15%; transform: rotate(-45deg);"></div>
+        
+        <!-- Star points -->
+        <div class="star-point" style="top: 15%; left: 25%;"></div>
+        <div class="star-point" style="top: 35%; left: 75%;"></div>
+        <div class="star-point" style="top: 55%; left: 45%;"></div>
+        <div class="star-point" style="top: 75%; left: 20%;"></div>
+        <div class="star-point" style="top: 25%; left: 85%;"></div>
+        
+        <!-- Cosmic dust -->
+        <div class="cosmic-dust" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="cosmic-dust" style="left: 30%; animation-delay: 5s;"></div>
+        <div class="cosmic-dust" style="left: 50%; animation-delay: 10s;"></div>
+        <div class="cosmic-dust" style="left: 70%; animation-delay: 15s;"></div>
+        <div class="cosmic-dust" style="left: 90%; animation-delay: 20s;"></div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="calendar-header">
+        <div class="container">
+            <h1 class="page-title">The Dual Calendar Systems of Arcadia</h1>
+            <p class="page-subtitle">
+                Two ways of measuring time reflect two philosophies of existence: divine mathematical perfection and mortal adaptive wisdom
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="calendar-content">
+        <div class="container">
+            
+            <!-- Introduction -->
+            <div class="intro-section">
+                <div class="intro-text">
+                    <p>In Arcadia, time itself becomes a statement of belief. The world operates on two distinct calendar systems, each reflecting the values and needs of its creators. The ancient Arcane Calendar, created by Atonia, First God of Mathematical Precision, tracks the deeper magical rhythms of the universe with perfect divisibility. The Common Calendar, born from humanity's need for practical timekeeping after divine withdrawal, follows the observable solar cycles and carries within it prophecies written in stars both seen and unseen.</p>
+                </div>
+            </div>
+
+            <!-- Visual Calendar Displays -->
+            <section class="visual-calendars-section">
+                <div class="section-header">
+                    <h2 class="section-title">Visual Calendar Comparison</h2>
+                    <p class="section-description">
+                        See how each calendar system structures its months with their different week lengths
+                    </p>
+                </div>
+
+                <div class="calendar-displays">
+                    <!-- Arcane Calendar Visual (FIRST) -->
+                    <div class="calendar-visual arcane-visual">
+                        <h3 class="visual-title">Arcane Calendar - Month of Aquaris (Spring)</h3>
+                        <div class="calendar-wrapper">
+                            <div class="calendar-grid arcane-grid">
+                                <div class="day-header">Earthsday</div>
+                                <div class="day-header">Airsday</div>
+                                <div class="day-header">Firesday</div>
+                                <div class="day-header">Watersday</div>
+                                <div class="day-header">Lightsday</div>
+                                <div class="day-header">Voidsday</div>
+                                <div class="day-header">Spiritsday</div>
+                                <div class="day-header">Fatesday</div>
+                                
+                                <!-- Week 1 -->
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                
+                                <!-- Week 2 -->
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day">16</div>
+                                
+                                <!-- Week 3 -->
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                
+                                <!-- Week 4 -->
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                                <div class="calendar-day">31</div>
+                                <div class="calendar-day">32</div>
+                            </div>
+                        </div>
+                        <div class="calendar-note">32 days • 4 weeks • 8 days per week • Mathematical perfection</div>
+                    </div>
+
+                    <!-- Common Calendar Visual (SECOND) -->
+                    <div class="calendar-visual common-visual">
+                        <h3 class="visual-title">Astronomer's Calendar - Month of Primaven (Spring)</h3>
+                        <div class="calendar-wrapper">
+                            <div class="calendar-grid common-grid">
+                                <div class="day-header">Earta</div>
+                                <div class="day-header">Arona</div>
+                                <div class="day-header">Fierna</div>
+                                <div class="day-header">Wame</div>
+                                <div class="day-header">Litu</div>
+                                <div class="day-header">Venu</div>
+                                
+                                <!-- Week 1 -->
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                
+                                <!-- Week 2 -->
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day">11</div>
+                                <div class="calendar-day">12</div>
+                                
+                                <!-- Week 3 -->
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                
+                                <!-- Week 4 -->
+                                <div class="calendar-day">19</div>
+                                <div class="calendar-day">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day">24</div>
+                                
+                                <!-- Week 5 -->
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                            </div>
+                        </div>
+                        <div class="calendar-note">30 days • 5 weeks • 6 days per week • Solar observation</div>
+                    </div>
+                </div>
+
+                <!-- Year Overview -->
+                <div class="year-overview">
+                    <h3 class="year-title">Full Year Overview</h3>
+                    <div class="months-overview">
+                        <div class="month-mini">
+                            <div class="month-mini-name">Aquaris / Primaven</div>
+                            <div class="month-mini-days">Spring Month 1</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Kaethyn / Loriven</div>
+                            <div class="month-mini-days">Spring Month 2</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Aeroneth / Verdanis</div>
+                            <div class="month-mini-days">Spring Month 3</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Sangrien / Solmere</div>
+                            <div class="month-mini-days">Summer Month 4</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Pyraven / Umbralux</div>
+                            <div class="month-mini-days">Summer Month 5</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Theoven / Wanderis</div>
+                            <div class="month-mini-days">Summer Month 6</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Lumenis / Goldmere</div>
+                            <div class="month-mini-days">Autumn Month 7</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Equilibria / Thornmarch</div>
+                            <div class="month-mini-days">Autumn Month 8</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Terraven / Stormend</div>
+                            <div class="month-mini-days">Autumn Month 9</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Destinia / Frostmere</div>
+                            <div class="month-mini-days">Winter Month 10</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Noxmere / Drakonis</div>
+                            <div class="month-mini-days">Winter Month 11</div>
+                        </div>
+                        <div class="month-mini">
+                            <div class="month-mini-name">Mortegon / Veilmorn</div>
+                            <div class="month-mini-days">Winter Month 12</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Arcane Calendar Section -->
+            <section class="calendar-section arcane-calendar">
+                <div class="section-header">
+                    <h2 class="section-title arcane-title">The Arcane Calendar</h2>
+                    <p class="section-description">
+                        The ancient calendar of divine mathematics, where every division is perfect and every cycle carries cosmic significance
+                    </p>
+                </div>
+
+                <div class="calendar-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Year Length</div>
+                            <div class="info-value">384 days</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Months</div>
+                            <div class="info-value">12 months</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Days per Month</div>
+                            <div class="info-value">32 days</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Weeks per Month</div>
+                            <div class="info-value">4 weeks</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Days per Week</div>
+                            <div class="info-value">8 days</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Current Users</div>
+                            <div class="info-value">Scholars & Mages</div>
+                        </div>
+                    </div>
+
+                    <!-- Days of the Week -->
+                    <div class="days-display">
+                        <h3 class="days-title">The Eight Days of the Week</h3>
+                        <div class="days-grid arcane-days">
+                            <div class="day-card">
+                                <div class="day-name">Earthsday</div>
+                                <div class="day-meaning">Earth & Foundation</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Airsday</div>
+                                <div class="day-meaning">Air & Thought</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Firesday</div>
+                                <div class="day-meaning">Fire & Passion</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Watersday</div>
+                                <div class="day-meaning">Water & Flow</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Lightsday</div>
+                                <div class="day-meaning">Light & Revelation</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Voidsday</div>
+                                <div class="day-meaning">Void & Mystery</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Spiritsday</div>
+                                <div class="day-meaning">Nature Spirits</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Fatesday</div>
+                                <div class="day-meaning">Destiny & Time</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Months -->
+                    <div class="months-display">
+                        <h3 class="months-title">The Twelve Months</h3>
+                        
+                        <div class="season-group">
+                            <div class="season-title">Spring (Months 1-3)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">1. Aquaris</div>
+                                    <div class="month-description">Water Month - Spring melt and renewal</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">2. Kaethyn</div>
+                                    <div class="month-description">Spirit Month - Nature spirits awakening</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">3. Aeroneth</div>
+                                    <div class="month-description">Air Month - Spring winds and change</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="season-group">
+                            <div class="season-title">Early Summer (Months 4-6)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">4. Sangrien</div>
+                                    <div class="month-description">Blood Month - Life essence flourishing</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">5. Pyraven</div>
+                                    <div class="month-description">Fire Month - Summer heat building</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">6. Theoven</div>
+                                    <div class="month-description">Divine Month - Gods closest to mortals</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="season-group">
+                            <div class="season-title">Late Summer/Early Autumn (Months 7-9)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">7. Lumenis</div>
+                                    <div class="month-description">Light Month - Peak illumination</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">8. Equilibria</div>
+                                    <div class="month-description">Balance Month - Cosmic harmony and harvest</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">9. Terraven</div>
+                                    <div class="month-description">Earth Month - Grounding and harvest</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="season-group">
+                            <div class="season-title">Winter (Months 10-12)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">10. Destinia</div>
+                                    <div class="month-description">Fates Month - Destiny contemplation</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">11. Noxmere</div>
+                                    <div class="month-description">Void Month - Darkness and mystery</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">12. Mortegon</div>
+                                    <div class="month-description">Underworld Month - Death and renewal</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Common Calendar Section -->
+            <section class="calendar-section common-calendar">
+                <div class="section-header">
+                    <h2 class="section-title common-title">The Astronomer's Calendar</h2>
+                    <p class="section-description">
+                        The practical calendar of commerce and daily life, tied to observable solar cycles and named for constellations both present and prophesied
+                    </p>
+                </div>
+
+                <div class="calendar-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Year Length</div>
+                            <div class="info-value">360 days</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Months</div>
+                            <div class="info-value">12 months</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Days per Month</div>
+                            <div class="info-value">30 days</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Weeks per Month</div>
+                            <div class="info-value">5 weeks</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Days per Week</div>
+                            <div class="info-value">6 days</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Current Users</div>
+                            <div class="info-value">All Common Folk</div>
+                        </div>
+                    </div>
+
+                    <!-- Days of the Week -->
+                    <div class="days-display">
+                        <h3 class="days-title">The Six Days of the Week</h3>
+                        <div class="days-grid common-days">
+                            <div class="day-card">
+                                <div class="day-name">Day of Earta</div>
+                                <div class="day-meaning">Earth Day</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Day of Arona</div>
+                                <div class="day-meaning">Air Day</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Day of Fierna</div>
+                                <div class="day-meaning">Fire Day</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Day of Wame</div>
+                                <div class="day-meaning">Water Day</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Day of Litu</div>
+                                <div class="day-meaning">Light Day</div>
+                            </div>
+                            <div class="day-card">
+                                <div class="day-name">Day of Venu</div>
+                                <div class="day-meaning">Void Day</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Months -->
+                    <div class="months-display">
+                        <h3 class="months-title">The Twelve Months</h3>
+                        
+                        <div class="season-group">
+                            <div class="season-title">Spring (Months 1-3)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">1. Primaven</div>
+                                    <div class="month-description">The Awakener constellation (prophesied)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">2. Loriven</div>
+                                    <div class="month-description">The Lovers constellation (exists)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">3. Verdanis</div>
+                                    <div class="month-description">The Garden constellation (prophesied)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="season-group">
+                            <div class="season-title">Summer (Months 4-6)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">4. Solmere</div>
+                                    <div class="month-description">The Crown constellation (prophesied)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">5. Umbralux</div>
+                                    <div class="month-description">The Guardians constellation (prophesied)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">6. Wanderis</div>
+                                    <div class="month-description">The Wanderer constellation (prophesied)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="season-group">
+                            <div class="season-title">Autumn (Months 7-9)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">7. Goldmere</div>
+                                    <div class="month-description">The Shepherd constellation (prophesied)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">8. Thornmarch</div>
+                                    <div class="month-description">The Hunter constellation (exists)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">9. Stormend</div>
+                                    <div class="month-description">The Storm constellation (prophesied)</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="season-group">
+                            <div class="season-title">Winter (Months 10-12)</div>
+                            <div class="months-grid">
+                                <div class="month-card">
+                                    <div class="month-name">10. Frostmere</div>
+                                    <div class="month-description">The Tower constellation (prophesied)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">11. Drakonis</div>
+                                    <div class="month-description">The Dragon constellation (exists)</div>
+                                </div>
+                                <div class="month-card">
+                                    <div class="month-name">12. Veilmorn</div>
+                                    <div class="month-description">The Broken Chain constellation (prophesied)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Athea Section -->
+            <section class="athea-section">
+                <div class="athea-content">
+                    <h2 class="athea-title">Athea the Weaver of Stars</h2>
+                    <div class="athea-story">
+                        <p>During the Great Withdrawal, when the gods retreated from mortal affairs, a desperate mother brought her blind infant daughter to a tidal cave—one of the few places where divine presence still lingered. Under the full moon, she wrote a plea with her own tears as ink and placed her baby in a pool where moonlight gathered.</p>
+                        
+                        <p>A god whose identity remains unknown answered her prayer, touching the child's head. The baby's hair turned white as moonlight, forever marking her as divinely touched. Though born blind with white-over eyes, the child gained the ability to see through the essence of stars rather than sight.</p>
+                        
+                        <p>She became known as Athea the Weaver of Stars, using gifted siren bones as conductors to gather star essence and weave prophecies. She speaks of future events in present tense, seeing constellation patterns that will eventually form in the empty sky.</p>
+                        
+                        <div class="prophecy-quote">
+                            "Twelve stories. Twelve turnings. Three written in light, nine await their time."
+                        </div>
+                        
+                        <p>When human astronomers sought to create their calendar after Thainos's death, they consulted Athea. Through her siren-bone needles, she touched the night sky and named each month for the constellations she saw—both those existing and those yet to come. The Common Calendar thus became not just a measure of time, but a map of prophecy written across the heavens.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Constellations Section -->
+            <section class="constellations-section">
+                <div class="section-header">
+                    <h2 class="section-title">The Constellations of Prophecy</h2>
+                    <p class="section-description">
+                        Of the twelve constellations that name the months, only three currently exist. The remaining nine are prophecies waiting to be written in starlight.
+                    </p>
+                </div>
+
+                <div class="constellation-grid">
+                    <!-- Existing Constellations -->
+                    <div class="constellation-card existing-constellation">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">⭐</div>
+                            <div>
+                                <div class="constellation-title">The Lovers</div>
+                                <div class="constellation-month">Month 2 - Loriven</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            The constellation of Elodias and Senia, the sun and moon gods cursed by Malritha. Elodias remains immortal while Senia dies and reincarnates endlessly in mortal form. When Elodias finds her, she remembers for seven days before dying again. Their eternal tragic pursuit is written in the stars.
+                        </div>
+                        <span class="constellation-status status-existing">Currently Visible</span>
+                    </div>
+
+                    <div class="constellation-card existing-constellation">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">⭐</div>
+                            <div>
+                                <div class="constellation-title">The Hunter</div>
+                                <div class="constellation-month">Month 8 - Thornmarch</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Astrid, the first Bloodmarked who killed the first god during the Divine War. Her constellation immortalizes the moment mortals proved they could slay the divine, forever marking her as both hero and warning.
+                        </div>
+                        <span class="constellation-status status-existing">Currently Visible</span>
+                    </div>
+
+                    <div class="constellation-card existing-constellation">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">⭐</div>
+                            <div>
+                                <div class="constellation-title">The Dragon</div>
+                                <div class="constellation-month">Month 11 - Drakonis</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            The most ancient and mysterious constellation. It maps the location of a prison created by beings who existed before even the First Gods. What lies imprisoned is lost to memory. Children see a dragon in the stars, unaware they look upon directions to something that must never be found.
+                        </div>
+                        <span class="constellation-status status-existing">Currently Visible</span>
+                    </div>
+
+                    <!-- Prophesied Constellations -->
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Awakener</div>
+                                <div class="constellation-month">Month 1 - Primaven</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Prophesied to appear when something long dormant stirs to consciousness. Athea spoke of it with trembling voice: "When the Awakener burns bright, that which slept through ages of darkness shall open its eyes, and the world shall remember why it was made to sleep."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Garden</div>
+                                <div class="constellation-month">Month 3 - Verdanis</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Will manifest when paradise is either found or forever lost. The prophecy speaks: "In the Garden's light, mortals shall either reclaim their first innocence or watch it wither beyond all recovery. The seeds of both salvation and damnation grow in the same soil."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Crown</div>
+                                <div class="constellation-month">Month 4 - Solmere</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Foretold to appear when true sovereignty is claimed or reclaimed. "The Crown shall form when one who was meant to rule finally accepts their burden, or when the last pretender falls. Divine right and mortal ambition shall meet in a single moment of truth."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Guardians</div>
+                                <div class="constellation-month">Month 5 - Umbralux</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Will emerge when protectors arise in the hour of greatest need. Athea wept as she spoke: "The Guardians shall stand between light and shadow, and their formation shall mean that something precious enough to die for has finally been found—or is about to be lost."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Wanderer</div>
+                                <div class="constellation-month">Month 6 - Wanderis</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Destined to appear when one who has lost their way finally finds their path—or when all paths converge into one. "The Wanderer walks all roads at once, and when their constellation forms, the journey's end shall be both homecoming and exile."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Shepherd</div>
+                                <div class="constellation-month">Month 7 - Goldmere</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Will manifest when the lost flock is gathered or scattered forever. The prophecy warns: "The Shepherd's crook shall appear in stars when one must choose between saving the many or preserving the few. Not all who are led shall wish to follow."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Storm</div>
+                                <div class="constellation-month">Month 9 - Stormend</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Prophesied to form when chaos becomes necessary for renewal. "The Storm shall rage in heaven when the old order must be swept away. Its winds shall carry both destruction and the seeds of what comes after. Some shelters will stand; most will fall."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Tower</div>
+                                <div class="constellation-month">Month 10 - Frostmere</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            Will appear when isolation becomes either sanctuary or prison. Athea whispered: "The Tower rises in stars when one must stand alone against many, or when many unite against one. Its height shall measure the distance between earth and heaven—or the depth of the fall."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+
+                    <div class="constellation-card">
+                        <div class="constellation-header">
+                            <div class="constellation-icon">✨</div>
+                            <div>
+                                <div class="constellation-title">The Broken Chain</div>
+                                <div class="constellation-month">Month 12 - Veilmorn</div>
+                            </div>
+                        </div>
+                        <div class="constellation-description">
+                            The final constellation, prophesied to form when ancient bonds are severed. "The Broken Chain shall mark either the end of divine tyranny or mortal hope. When it burns across winter's sky, what was bound shall be free, but freedom and survival are not the same blessing."
+                        </div>
+                        <span class="constellation-status status-prophesied">Not Yet Formed</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="comparison-section">
+                <div class="section-header">
+                    <h2 class="section-title">Calendar Comparison</h2>
+                    <p class="section-description">
+                        Understanding the differences between the two systems reveals much about the divide between divine and mortal perspectives
+                    </p>
+                </div>
+
+                <div class="comparison-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspect</th>
+                                <th>Arcane Calendar</th>
+                                <th>Common Calendar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="table-label">Creator</td>
+                                <td>Atonia, First God of Mathematical Precision</td>
+                                <td>Human astronomers with Athea's guidance</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Philosophy</td>
+                                <td>Divine mathematical perfection</td>
+                                <td>Practical solar observation</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Year Length</td>
+                                <td>384 days (perfectly divisible)</td>
+                                <td>360 days (approximately solar)</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Week Structure</td>
+                                <td>8 days (Eight Pillars of Existence)</td>
+                                <td>6 days (Six tangible magical forces)</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Month Names</td>
+                                <td>Based on elemental and divine concepts</td>
+                                <td>Based on constellations and prophecy</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Current Users</td>
+                                <td>Scholars, mages, ancient races</td>
+                                <td>Merchants, farmers, common folk</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Cultural Significance</td>
+                                <td>Marks deep education and magical attunement</td>
+                                <td>Enables trade and practical life</td>
+                            </tr>
+                            <tr>
+                                <td class="table-label">Lost Elements</td>
+                                <td>None - preserves all original concepts</td>
+                                <td>Lost Spirit and Fate from the week</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+        // Create more celestial elements dynamically
+        function createStarField() {
+            const background = document.querySelector('.celestial-background');
+            
+            // Add more stars
+            for (let i = 0; i < 20; i++) {
+                const star = document.createElement('div');
+                star.className = 'star-point';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                star.style.animationDuration = (2 + Math.random() * 2) + 's';
+                
+                // Vary star sizes
+                const size = 2 + Math.random() * 3;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                
+                background.appendChild(star);
+            }
+            
+            // Add more constellation lines
+            for (let i = 0; i < 8; i++) {
+                const line = document.createElement('div');
+                line.className = 'constellation-line';
+                line.style.top = Math.random() * 100 + '%';
+                line.style.left = Math.random() * 100 + '%';
+                line.style.transform = `rotate(${Math.random() * 360}deg)`;
+                line.style.height = (50 + Math.random() * 100) + 'px';
+                line.style.animationDelay = Math.random() * 4 + 's';
+                
+                background.appendChild(line);
+            }
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', createStarField);
+
+        // Calendar day interactions
+        document.querySelectorAll('.calendar-day').forEach(day => {
+            day.addEventListener('click', function() {
+                // Create ripple effect
+                const rect = this.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '10px';
+                ripple.style.height = '10px';
+                ripple.style.background = 'rgba(255, 255, 255, 0.5)';
+                ripple.style.borderRadius = '50%';
+                ripple.style.transform = 'translate(-50%, -50%)';
+                ripple.style.pointerEvents = 'none';
+                ripple.style.animation = 'rippleEffect 0.6s ease-out';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Smooth scroll reveal for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply initial hidden state and observe
+        document.querySelectorAll('.calendar-section, .athea-section, .constellations-section, .comparison-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Add hover effect to constellation cards
+        document.querySelectorAll('.constellation-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.constellation-icon');
+                if (icon) {
+                    icon.style.transform = 'rotate(360deg)';
+                    icon.style.transition = 'transform 0.6s ease';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.constellation-icon');
+                if (icon) {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
