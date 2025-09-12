@@ -2,601 +2,405 @@
 layout: default
 title: "Blood of the Wild Gods World Guide | Complete Universe Guide"
 description: "Explore the complete world of Blood of the Wild Gods by Mileena Rayne. Meet characters, discover locations, learn about magic systems, and dive deep into the lore."
+keywords: "Blood of the Wild Gods, world guide, dark fantasy, Mileena Rayne, fantasy world building, magic systems, fantasy characters, Arcadia"
 image: "/assets/images/world-guide-main.jpg"
+canonical: "https://mileenarayne.com/world-guide/"
+robots: "index, follow"
+og:type: "website"
+og:title: "Blood of the Wild Gods World Guide"
+og:description: "Complete guide to the Blood of the Wild Gods universe featuring characters, locations, magic systems, and lore."
+og:image: "/assets/images/world-guide-main.jpg"
+og:url: "https://mileenarayne.com/world-guide/"
+twitter:card: "summary_large_image"
+twitter:title: "Blood of the Wild Gods World Guide"
+twitter:description: "Explore the dark fantasy universe of Blood of the Wild Gods by Mileena Rayne"
+twitter:image: "/assets/images/world-guide-main.jpg"
 ---
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    :root {
+        --primary-purple: #b19cd9;
+        --ocean-blue: #8ac4ff;
+        --accent-violet: #a8b5ff;
+        --deep-night: #0a0a14;
+        --text-light: #f0f0f0;
+        --text-secondary: #d0d0d0;
+        --glass-white: rgba(255, 255, 255, 0.05);
+        --cosmic-purple: #c983ff;
+        --starlight: #9fff8a;
     }
 
-    body {
-        font-family: 'Georgia', serif;
-        background: radial-gradient(ellipse at center, #0a0a2a 0%, #000000 100%);
-        color: #f0f0f0;
-        min-height: 100vh;
-        position: relative;
-        overflow-x: hidden;
-    }
-
-    /* Enhanced Cosmic Background Effects */
-    .cosmic-background {
+    /* Cosmic Background */
+    .cosmic-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.08) 0%, transparent 50%);
         pointer-events: none;
-        z-index: 1;
-        overflow: hidden;
     }
 
-    .floating-orb {
+    /* Floating Light Particles */
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .light-orb {
         position: absolute;
         border-radius: 50%;
-        background: radial-gradient(circle, rgba(138, 159, 255, 0.3) 0%, transparent 70%);
-        animation: floatOrb 20s ease-in-out infinite;
+        background: radial-gradient(circle, rgba(177, 156, 217, 0.4) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 20s infinite ease-in-out;
     }
 
-    .orb-1 {
-        width: 200px;
-        height: 200px;
-        top: 10%;
-        left: 5%;
-        animation-delay: 0s;
+    .light-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
     }
 
-    .orb-2 {
-        width: 150px;
-        height: 150px;
-        top: 60%;
-        right: 10%;
-        background: radial-gradient(circle, rgba(201, 131, 255, 0.25) 0%, transparent 70%);
-        animation-delay: 7s;
+    .light-orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
+        animation-duration: 30s;
     }
 
-    .orb-3 {
-        width: 100px;
-        height: 100px;
-        top: 30%;
-        right: 30%;
-        background: radial-gradient(circle, rgba(159, 255, 138, 0.2) 0%, transparent 70%);
-        animation-delay: 14s;
+    .light-orb:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        top: 50%;
+        left: 30%;
+        background: radial-gradient(circle, rgba(168, 181, 255, 0.3) 0%, transparent 70%);
+        animation-duration: 35s;
     }
 
-    @keyframes floatOrb {
-        0%, 100% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.3;
-        }
-        33% {
-            transform: translate(30px, -40px) scale(1.1);
-            opacity: 0.5;
-        }
-        66% {
-            transform: translate(-20px, 30px) scale(0.9);
-            opacity: 0.4;
-        }
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
     }
 
+    /* Stardust Effects */
     .stardust {
         position: absolute;
         width: 2px;
         height: 2px;
-        background: rgba(255, 255, 255, 0.8);
+        background: rgba(255, 255, 255, 0.9);
         border-radius: 50%;
         animation: twinkle 3s ease-in-out infinite;
+        box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     }
-
-    .star-1 { top: 15%; left: 20%; animation-delay: 0s; }
-    .star-2 { top: 25%; left: 70%; animation-delay: 1s; }
-    .star-3 { top: 45%; left: 15%; animation-delay: 2s; }
-    .star-4 { top: 65%; left: 80%; animation-delay: 0.5s; }
-    .star-5 { top: 75%; left: 40%; animation-delay: 1.5s; }
 
     @keyframes twinkle {
         0%, 100% { opacity: 0.3; transform: scale(1); }
         50% { opacity: 1; transform: scale(1.5); }
     }
 
-    .cosmic-wave {
-        position: absolute;
-        width: 100%;
-        height: 80px;
-        background: linear-gradient(90deg, 
-            transparent 0%, 
-            rgba(138, 159, 255, 0.1) 25%, 
-            rgba(201, 131, 255, 0.15) 50%, 
-            rgba(138, 159, 255, 0.1) 75%, 
-            transparent 100%);
-        animation: waveFlow 25s linear infinite;
-    }
-
-    .wave-1 {
-        top: 20%;
-        animation-delay: 0s;
-    }
-
-    .wave-2 {
-        top: 70%;
-        animation-delay: 12s;
-        animation-direction: reverse;
-    }
-
-    @keyframes waveFlow {
-        0% {
-            transform: translateX(-100%) skewX(-5deg);
-            opacity: 0;
-        }
-        10%, 90% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateX(100%) skewX(5deg);
-            opacity: 0;
-        }
-    }
-
+    /* Hero Header */
     .world-header {
-        padding: 120px 0 100px;
+        padding: 140px 0 100px;
         text-align: center;
-        background: 
-            radial-gradient(circle at 30% 70%, rgba(138, 159, 255, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 70% 30%, rgba(201, 131, 255, 0.12) 0%, transparent 50%),
-            linear-gradient(135deg, rgba(10, 10, 40, 0.9), rgba(15, 15, 30, 0.8));
         position: relative;
-        z-index: 2;
-    }
-
-    .world-header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="worldpattern" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="5" cy="5" r="1" fill="rgba(138,159,255,0.1)"/><circle cx="25" cy="15" r="0.5" fill="rgba(201,131,255,0.08)"/><circle cx="15" cy="25" r="0.8" fill="rgba(159,255,138,0.06)"/><path d="M10,10 Q15,5 20,10 Q25,15 20,20 Q15,25 10,20 Q5,15 10,10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23worldpattern)"/></svg>') center/cover;
-        opacity: 0.4;
-        z-index: -1;
+        background: 
+            radial-gradient(circle at 30% 70%, rgba(177, 156, 217, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(201, 131, 255, 0.12) 0%, transparent 50%);
     }
 
     .world-title {
-        font-size: 4.2em;
+        font-size: clamp(3rem, 6vw, 5rem);
         font-weight: 200;
-        margin-bottom: 25px;
-        color: #f0f0f0;
-        letter-spacing: 4px;
-        text-shadow: 
-            0 0 30px rgba(138, 159, 255, 0.6),
-            0 0 60px rgba(201, 131, 255, 0.3),
-            0 4px 8px rgba(0, 0, 0, 0.8);
-        position: relative;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 3px;
+        animation: title-shimmer 4s ease-in-out infinite;
+        background-size: 200% 200%;
     }
 
-    .world-title::after {
-        content: '';
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        width: 300px;
-        height: 4px;
-        background: linear-gradient(90deg, 
-            transparent, 
-            rgba(138, 159, 255, 0.8), 
-            rgba(255, 255, 255, 0.9), 
-            rgba(138, 159, 255, 0.8), 
-            transparent);
-        transform: translateX(-50%);
-        border-radius: 2px;
-        animation: titleGlow 4s ease-in-out infinite;
-    }
-
-    @keyframes titleGlow {
-        0%, 100% { opacity: 0.6; }
-        50% { opacity: 1; }
+    @keyframes title-shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .world-subtitle {
-        font-size: 1.6em;
-        color: #8a9fff;
+        font-size: 1.4em;
+        color: var(--accent-violet);
+        margin-bottom: 30px;
         font-style: italic;
-        margin-bottom: 40px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: 0 0 20px rgba(138, 159, 255, 0.4);
+        letter-spacing: 2px;
+        opacity: 0.9;
     }
 
     .world-description {
-        font-size: 1.15em;
-        color: #ddd;
+        font-size: 1.2em;
+        color: var(--text-secondary);
         max-width: 900px;
         margin: 0 auto;
-        line-height: 1.9;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+        line-height: 1.8;
+        font-weight: 300;
+        padding: 0 20px;
     }
 
+    /* Guide Sections Container */
     .guide-sections {
-        padding: 120px 0;
+        padding: 100px 0;
         position: relative;
-        z-index: 2;
+    }
+
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     .sections-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-        gap: 40px;
-        max-width: 1500px;
-        margin: 0 auto;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 35px;
     }
 
-    .guide-section {
-        background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
-        border: 2px solid rgba(138, 159, 255, 0.2);
+    /* Guide Cards */
+    .guide-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.2);
         border-radius: 25px;
-        padding: 40px;
-        text-align: center;
-        transition: all 0.5s ease;
-        backdrop-filter: blur(15px);
+        padding: 40px 30px;
+        transition: all 0.4s ease;
         position: relative;
         overflow: hidden;
-        min-height: 320px;
+        cursor: pointer;
+        text-decoration: none;
         display: flex;
         flex-direction: column;
-        cursor: pointer;
+        min-height: 320px;
     }
 
-    .guide-section::before {
+    .guide-card::before {
         content: '';
         position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.15), transparent);
-        transition: left 0.8s ease;
+        top: -100px;
+        left: -100px;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, var(--primary-purple) 0%, transparent 70%);
+        opacity: 0.1;
+        transition: all 0.5s ease;
     }
 
-    .guide-section::after {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: conic-gradient(
-            from 0deg,
-            transparent 0deg,
-            rgba(138, 159, 255, 0.1) 60deg,
-            transparent 120deg,
-            rgba(201, 131, 255, 0.08) 180deg,
-            transparent 240deg,
-            rgba(159, 255, 138, 0.06) 300deg,
-            transparent 360deg
-        );
-        animation: sectionRotate 20s linear infinite;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-        z-index: 0;
+    .guide-card:hover::before {
+        transform: scale(2);
+        opacity: 0.15;
     }
 
-    @keyframes sectionRotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .guide-section:hover {
-        border-color: #8a9fff;
-        transform: translateY(-15px) scale(1.02);
+    .guide-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--primary-purple);
         box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 80px rgba(138, 159, 255, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            0 30px 60px rgba(177, 156, 217, 0.3),
+            0 0 0 1px rgba(177, 156, 217, 0.3);
     }
 
-    .guide-section:hover::before {
-        left: 100%;
-    }
-
-    .guide-section:hover::after {
-        opacity: 1;
-    }
-
-    .section-icon {
-        width: 90px;
-        height: 90px;
+    /* Card Icons */
+    .card-icon {
+        width: 70px;
+        height: 70px;
         margin: 0 auto 25px;
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.4), rgba(168, 181, 255, 0.3));
-        border-radius: 22px;
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.15), rgba(138, 196, 255, 0.1));
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        backdrop-filter: blur(20px);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 
-            0 12px 40px rgba(138, 159, 255, 0.3),
-            inset 0 2px 0 rgba(255, 255, 255, 0.2),
-            inset 0 -2px 0 rgba(0, 0, 0, 0.2);
-        transition: all 0.5s ease;
-        position: relative;
-        overflow: hidden;
+        border: 2px solid rgba(177, 156, 217, 0.3);
+        transition: all 0.4s ease;
     }
 
-    .section-icon::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.8s ease;
+    .guide-card:hover .card-icon {
+        transform: scale(1.1) rotate(5deg);
+        border-color: var(--primary-purple);
+        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.4);
     }
 
-    .section-icon::after {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-        border-radius: 50%;
-        transition: all 0.5s ease;
-        transform: translate(-50%, -50%);
+    .card-icon svg {
+        width: 35px;
+        height: 35px;
+        transition: all 0.3s ease;
     }
 
-    .guide-section:hover .section-icon::before {
-        left: 100%;
-    }
-
-    .guide-section:hover .section-icon::after {
-        width: 120px;
-        height: 120px;
-    }
-
-    .section-icon svg {
-        width: 45px;
-        height: 45px;
-        fill: #8a9fff;
-        filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
-        transition: all 0.5s ease;
-        z-index: 1;
-        position: relative;
-    }
-
-    .guide-section:hover .section-icon {
-        transform: translateY(-8px) scale(1.1);
-        box-shadow: 
-            0 25px 50px rgba(138, 159, 255, 0.4),
-            inset 0 2px 0 rgba(255, 255, 255, 0.3),
-            inset 0 -2px 0 rgba(0, 0, 0, 0.1);
-        background: linear-gradient(135deg, rgba(138, 159, 255, 0.6), rgba(168, 181, 255, 0.5));
-    }
-
-    .guide-section:hover .section-icon svg {
-        fill: #ffffff;
+    .guide-card:hover .card-icon svg {
         transform: scale(1.1);
-        filter: drop-shadow(0 0 15px rgba(138, 159, 255, 0.8));
+    }
+
+    /* Card Content */
+    .card-title {
+        font-size: 1.5em;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-weight: 300;
+    }
+
+    .card-description {
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        line-height: 1.6;
+        flex-grow: 1;
+    }
+
+    .card-link {
+        display: inline-block;
+        color: var(--primary-purple);
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+    }
+
+    .card-link:hover {
+        color: var(--accent-violet);
+        transform: translateX(5px);
+    }
+
+    .card-link::after {
+        content: '→';
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .card-link:hover::after {
+        transform: translateX(5px);
+    }
+
+    /* Featured Section */
+    .featured-section {
+        padding: 100px 0;
+        background: linear-gradient(180deg, rgba(138, 159, 255, 0.02) 0%, transparent 100%);
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
     }
 
     .section-title {
-        font-size: 1.8em;
-        color: #f0f0f0;
-        margin-bottom: 15px;
-        font-weight: 600;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .section-description {
-        color: #ccc;
-        line-height: 1.7;
-        margin-bottom: 30px;
-        flex-grow: 1;
-        font-size: 1em;
-        text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
-    }
-
-    .section-link {
-        display: inline-block;
-        background: linear-gradient(135deg, #8a9fff, #a8b5ff);
-        color: #000;
-        text-decoration: none;
-        padding: 12px 25px;
-        border-radius: 25px;
-        font-weight: 600;
-        transition: all 0.5s ease;
-        margin-top: auto;
-        position: relative;
-        overflow: hidden;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        font-size: 0.9em;
-        z-index: 10;
-        pointer-events: auto;
-    }
-
-    .section-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .section-link:hover::before {
-        left: 100%;
-    }
-
-    .section-link:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 
-            0 15px 30px rgba(138, 159, 255, 0.5),
-            0 0 25px rgba(138, 159, 255, 0.3);
-        background: linear-gradient(135deg, #a8b5ff, #c8d5ff);
-    }
-
-    .featured-content {
-        padding: 100px 0;
-        background: 
-            radial-gradient(circle at 20% 80%, rgba(138, 159, 255, 0.08) 0%, transparent 50%),
-            radial-gradient(circle at 80% 20%, rgba(201, 131, 255, 0.06) 0%, transparent 50%),
-            linear-gradient(135deg, rgba(10, 10, 20, 0.9), rgba(15, 15, 25, 0.8));
-        position: relative;
-        z-index: 2;
-    }
-
-    .featured-title {
         font-size: 3em;
-        text-align: center;
-        margin-bottom: 70px;
-        color: #f0f0f0;
-        font-weight: 300;
-        text-shadow: 
-            0 0 20px rgba(138, 159, 255, 0.4),
-            0 2px 10px rgba(0, 0, 0, 0.6);
-        position: relative;
-    }
-
-    .featured-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        width: 150px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #8a9fff, transparent);
-        transform: translateX(-50%);
-        border-radius: 1px;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        font-weight: 200;
     }
 
     .featured-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 35px;
-        max-width: 1100px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
         margin: 0 auto;
     }
 
     .featured-card {
-        background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(30, 30, 40, 0.8));
-        border: 2px solid rgba(138, 159, 255, 0.2);
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.1);
         border-radius: 20px;
         padding: 35px;
-        transition: all 0.5s ease;
+        transition: all 0.4s ease;
         text-decoration: none;
         color: inherit;
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(10px);
-    }
-
-    .featured-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(138, 159, 255, 0.1), transparent);
-        transition: left 0.8s ease;
-    }
-
-    .featured-card:hover::before {
-        left: 100%;
     }
 
     .featured-card:hover {
-        border-color: #8a9fff;
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 
-            0 20px 40px rgba(0, 0, 0, 0.4),
-            0 0 30px rgba(138, 159, 255, 0.2);
+        transform: translateY(-10px);
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        border-color: rgba(177, 156, 217, 0.3);
     }
 
-    .card-label {
-        color: #8a9fff;
+    .featured-label {
+        color: var(--primary-purple);
         font-size: 0.9em;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         margin-bottom: 12px;
-        font-weight: 500;
-    }
-
-    .card-title {
-        color: #f0f0f0;
-        font-size: 1.4em;
-        margin-bottom: 15px;
         font-weight: 600;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
 
-    .card-description {
-        color: #ccc;
-        line-height: 1.7;
-        font-size: 1em;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    .featured-title {
+        font-size: 1.6em;
+        color: var(--text-light);
+        margin-bottom: 15px;
+        line-height: 1.3;
+        font-weight: 300;
     }
 
+    .featured-description {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-size: 0.95em;
+    }
+
+    /* Reveal Animation */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
         .world-title {
-            font-size: 3em;
+            font-size: 2.5rem;
         }
-        
-        .world-subtitle {
-            font-size: 1.3em;
-        }
-        
+
         .sections-grid {
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 25px;
         }
-        
-        .guide-section {
-            padding: 30px;
-            min-height: 280px;
-        }
-        
-        .section-icon {
-            width: 80px;
-            height: 80px;
-        }
-        
-        .section-icon svg {
-            width: 40px;
-            height: 40px;
-        }
-        
+
         .featured-grid {
             grid-template-columns: 1fr;
-            gap: 25px;
+        }
+
+        .guide-card {
+            padding: 30px 25px;
         }
     }
 </style>
 
-<!-- Cosmic Background Effects -->
-<div class="cosmic-background">
-    <div class="floating-orb orb-1"></div>
-    <div class="floating-orb orb-2"></div>
-    <div class="floating-orb orb-3"></div>
-    
-    <div class="stardust star-1"></div>
-    <div class="stardust star-2"></div>
-    <div class="stardust star-3"></div>
-    <div class="stardust star-4"></div>
-    <div class="stardust star-5"></div>
-    
-    <div class="cosmic-wave wave-1"></div>
-    <div class="cosmic-wave wave-2"></div>
+<!-- Background Effects -->
+<div class="cosmic-overlay"></div>
+<div class="particle-field">
+    <div class="light-orb"></div>
+    <div class="light-orb"></div>
+    <div class="light-orb"></div>
 </div>
 
-<!-- World Header -->
+<!-- Hero Header -->
 <section class="world-header">
     <div class="container">
         <h1 class="world-title">World Guide</h1>
@@ -614,203 +418,219 @@ image: "/assets/images/world-guide-main.jpg"
     <div class="container">
         <div class="sections-grid">
             
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Characters -->
+            <a href="/world-guide/characters/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2M12 7C13.66 7 15 8.34 15 10V18H13V10C13 9.45 12.55 9 12 9C11.45 9 11 9.45 11 10V18H9V10C9 8.34 10.34 7 12 7M6 2C7.1 2 8 2.9 8 4C8 5.1 7.1 6 6 6C4.9 6 4 5.1 4 4C4 2.9 4.9 2 6 2M6 7C7.66 7 9 8.34 9 10V18H7V10C7 9.45 6.55 9 6 9C5.45 9 5 9.45 5 10V18H3V10C3 8.34 4.34 7 6 7M18 2C19.1 2 20 2.9 20 4C20 5.1 19.1 6 18 6C16.9 6 16 5.1 16 4C16 2.9 16.9 2 18 2M18 7C19.66 7 21 8.34 21 10V18H19V10C19 9.45 18.55 9 18 9C17.45 9 17 9.45 17 10V18H15V10C15 8.34 16.34 7 18 7Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Characters</h2>
-                <div class="section-description">
+                <h2 class="card-title">Characters</h2>
+                <p class="card-description">
                     Meet the complex souls who walk between light and shadow. From the Silver Hunter to divine beings erased from history, each character carries their own darkness and light.
-                </div>
-                <a href="/world-guide/characters/" class="section-link">Explore Characters</a>
-            </div>
+                </p>
+                <span class="card-link">Explore Characters</span>
+            </a>
 
-			<div class="guide-section">
-                <div class="section-icon">
+            <!-- Bae'Ravah Language -->
+            <a href="/world-guide/language/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M21,8A2,2 0 0,1 19,10H14A2,2 0 0,1 12,8V4A2,2 0 0,1 14,2H19A2,2 0 0,1 21,4V8M14,13C14,13 9.5,13 9.5,13C8.67,13 8,13.67 8,14.5V17H10V22H14V17H16V14.5C16,13.67 15.33,13 14.5,13M14,4V8H19V4H14M5,16.5A1,1 0 0,0 4,17.5A1,1 0 0,0 5,18.5A1,1 0 0,0 6,17.5A1,1 0 0,0 5,16.5M3,20.5A1,1 0 0,0 2,21.5A1,1 0 0,0 3,22.5A1,1 0 0,0 4,21.5A1,1 0 0,0 3,20.5M7,20.5A1,1 0 0,0 6,21.5A1,1 0 0,0 7,22.5A1,1 0 0,0 8,21.5A1,1 0 0,0 7,20.5M21,16.5A1,1 0 0,0 20,17.5A1,1 0 0,0 21,18.5A1,1 0 0,0 22,17.5A1,1 0 0,0 21,16.5M19,20.5A1,1 0 0,0 18,21.5A1,1 0 0,0 19,22.5A1,1 0 0,0 20,21.5A1,1 0 0,0 19,20.5Z"/>
+                        <path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Bae'Ravah Language</h2>
-                <div class="section-description">
+                <h2 class="card-title">Bae'Ravah Language</h2>
+                <p class="card-description">
                     Discover the ancient tongue of the Fus'Ravahn people, now preserved only by the First Baelak—the last remaining beastwoman of her kind. A dead language that holds the memories of an entire civilization lost to time.
-                </div>
-                <a href="/world-guide/language/" class="section-link">Learn Bae'Ravah</a>
-            </div>
+                </p>
+                <span class="card-link">Learn Bae'Ravah</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Dual Calendar Systems -->
+            <a href="/world-guide/calendars/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19,3H18V1H16V3H8V1H6V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M19,19H5V8H19V19M12,10H17V15H12V10Z"/>
+                        <path d="M19 3H18V1H16V3H8V1H6V3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3M19 19H5V8H19V19M7 10H12V15H7V10Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Dual Calendar Systems</h2>
-                <div class="section-description">
-                    Understand how Arcadia measures time through two distinct calendar systems. The mathematically perfect Arcane Calendar tracks divine rhythms and cosmic cycles, while the practical Common Calendar follows the observable solar year. Each month is named for constellations—some visible in the night sky, others existing only in prophecy.
-                </div>
-                <a href="/world-guide/calendars/" class="section-link">Study Calendars</a>
-            </div>
+                <h2 class="card-title">Dual Calendar Systems</h2>
+                <p class="card-description">
+                    Understand how Arcadia measures time through two distinct calendar systems. The mathematically perfect Arcane Calendar tracks divine rhythms and cosmic cycles, while the practical Common Calendar follows the observable solar year.
+                </p>
+                <span class="card-link">Study Calendars</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
+            <!-- Geography & Realms -->
+            <a href="/world-guide/geography/" class="guide-card reveal">
+                <div class="card-icon">
+                    <svg viewBox="0 0 48.625 48.625" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.459,13.158l-0.132,0.34h-0.639v0.33h0.152c0,0,0.009,0.07,0.022,0.162l0.392-0.033l0.245-0.152l0.064-0.307l0.317-0.027l0.125-0.258l-0.291-0.06L22.459,13.158z M20.812,13.757 20.787,14.08 21.25,14.041 21.298,13.717 21.02,13.498zM48.619,24.061c-0.007-0.711-0.043-1.417-0.11-2.112c-0.225-2.317-0.779-4.538-1.609-6.62c-0.062-0.155-0.119-0.312-0.185-0.465c-1.106-2.613-2.659-4.992-4.56-7.045c-0.125-0.134-0.252-0.266-0.379-0.396c-0.359-0.373-0.728-0.737-1.11-1.086C36.344,2.402,30.604,0,24.312,0C17.967,0,12.186,2.445,7.852,6.44C6.842,7.371,5.914,8.387,5.072,9.475C1.896,13.583,0,18.729,0,24.312c0,13.407,10.907,24.313,24.313,24.313c9.43,0,17.617-5.4,21.647-13.268c0.862-1.682,1.533-3.475,1.985-5.354c0.115-0.477,0.214-0.956,0.3-1.441c0.245-1.381,0.379-2.801,0.379-4.25C48.625,24.228,48.62,24.145,48.619,24.061z" fill="#b19cd9"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Geography & Realms</h2>
-                <div class="section-description">
+                <h2 class="card-title">Geography & Realms</h2>
+                <p class="card-description">
                     Explore the diverse realms of Arcadia, from seas that remember divine tears to wastelands scarred by gods' rage. Each region tells stories of cosmic conflict and mortal resilience.
-                </div>
-                <a href="/world-guide/geography/" class="section-link">Discover Realms</a>
-            </div>
+                </p>
+                <span class="card-link">Discover Realms</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Kingdoms & Politics -->
+            <a href="/world-guide/kingdoms/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M5,5V19H19V5H5Z"/>
+                        <path d="M5 16L3 5L8.5 10L12 4L15.5 10L21 5L19 16H5M19 19C19 19.6 18.6 20 18 20H6C5.4 20 5 19.6 5 19V18H19V19Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Kingdoms & Politics</h2>
-                <div class="section-description">
+                <h2 class="card-title">Kingdoms & Politics</h2>
+                <p class="card-description">
                     Discover the rise and fall of kingdoms—from Atheria built on divine grief to Solara's golden rebirth. Political systems shaped by supernatural threats and cosmic consequences.
-                </div>
-                <a href="/world-guide/kingdoms/" class="section-link">Explore Kingdoms</a>
-            </div>
+                </p>
+                <span class="card-link">Explore Kingdoms</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Divine Realms & Cosmology -->
+            <a href="/world-guide/divine-realms/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
+                        <path d="M12 2L14.09 8.26L20.45 8.26L15.18 12.14L17.27 18.39L12 14.51L6.73 18.39L8.82 12.14L3.55 8.26L9.91 8.26L12 2Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Divine Realms & Cosmology</h2>
-                <div class="section-description">
+                <h2 class="card-title">Divine Realms & Cosmology</h2>
+                <p class="card-description">
                     Journey to the Hall of Eternal Judgment and Celestial Gardens. Understand divine hierarchy, cosmic politics, and why the gods maintain their terrifying silence.
-                </div>
-                <a href="/world-guide/divine-realms/" class="section-link">Enter Divine Realms</a>
-            </div>
+                </p>
+                <span class="card-link">Enter Divine Realms</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Magic Systems -->
+            <a href="/world-guide/magic/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
+                        <path d="M7 2V13H10V22L17 10H13L17 2H7Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Magic Systems</h2>
-                <div class="section-description">
+                <h2 class="card-title">Magic Systems</h2>
+                <p class="card-description">
                     Understand the complete six-element framework, Bloodmarked transformations, and the terrible price of wielding divine power. Magic where every blessing becomes a curse.
-                </div>
-                <a href="/world-guide/magic/" class="section-link">Learn Magic</a>
-            </div>
+                </p>
+                <span class="card-link">Learn Magic</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M5,5H18A1,1 0 0,1 19,6V9H21V6A3,3 0 0,0 18,3H5A3,3 0 0,0 2,6V18A3,3 0 0,0 5,21H11V19H5A1,1 0 0,1 4,18V8H18V11H20V6A1,1 0 0,0 19,5H5M5,5V6H18V5H5M23,18L20.5,15.5L19,17L23,21L19,17L20.5,15.5L23,18Z"/>
+            <!-- Magical Materials & Artifacts -->
+            <a href="/world-guide/artifacts/" class="guide-card reveal">
+                <div class="card-icon">
+                    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path d="M16,28.18L21.337,9.5h8.716L16,30.098V28.18z M11.268,9.5L16,2.86l4.743,6.64H11.268z" fill="#b19cd9" opacity="0.3"/>
+                            <path d="M25.5,3.561L21.257,9.5h0.08L16,28.18L10.663,9.5H1.946L1.609,9.007L6,2.86l4.743,6.64h10L16.5,3.561V2.5h9V3.561z" fill="#b19cd9" opacity="0.5"/>
+                            <path d="M1.946,9.5h8.717L16,28.18v1.918L1.946,9.5z M6.5,3.561V2.5h9v1.061L11.268,9.5h-0.525L6.5,3.561z M30.054,9.5l0.337-0.493L26,2.86L21.257,9.5H30.054z" fill="#b19cd9" opacity="0.2"/>
+                            <path d="M26,2H6L1,9l15,22L31,9L26,2z M20.674,10L16,26.36L11.326,10H20.674z M12.229,9L16,3.72L19.771,9H12.229z M15.619,28.666L2.892,10h7.394L15.619,28.666z M21.714,10h7.394L16.381,28.666L21.714,10z M29.771,9h-7.542L26,3.72L29.771,9z M25.286,3L21,9l-4.286-6H25.286z M15.286,3L11,9L6.714,3H15.286z M9.771,9H2.229L6,3.72L9.771,9z" stroke="#b19cd9" stroke-width="0.5" fill="none"/>
+                        </g>
                     </svg>
                 </div>
-                <h2 class="section-title">Magical Materials & Artifacts</h2>
-                <div class="section-description">
+                <h2 class="card-title">Magical Materials & Artifacts</h2>
+                <p class="card-description">
                     From crystallized moonlight to the Crown of Aetheris, discover the supernatural substances and legendary artifacts that shape the fate of gods and mortals alike.
-                </div>
-                <a href="/world-guide/artifacts/" class="section-link">Discover Artifacts</a>
-            </div>
+                </p>
+                <span class="card-link">Discover Artifacts</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
+            <!-- History & Timeline -->
+            <a href="/world-guide/history/" class="guide-card reveal">
+                <div class="card-icon">
+                    <svg viewBox="-7.5 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                        <g transform="translate(2.000000, 1.000000)" stroke="#b19cd9" stroke-width="2" fill="none">
+                            <path d="M44,8 C45.1,8 46,8.9 46,10 L46,60 C46,61.1 45.1,62 44,62 L2,62 C0.9,62 0,61.1 0,60 L0,4"/>
+                            <path d="M5,11 L5,59"/>
+                            <path d="M44,4.5 L44,8 L3.2,8 C1.6,8 -0.1,5.9 -0.1,4 L-0.1,4 C-0.1,2.1 1.5,0 3.2,0 L41,0 C42.6,0 43.9,0.6 43.9,2.5 L44,4.5 L44,4.5 Z"/>
+                            <path d="M4,4 L40,4"/>
+                            <path d="M18.1,42 C18.1,42.6 17.7,43 17.1,43 L14.1,39 L11.1,43 C10.5,43 10.1,42.6 10.1,42 L10.1,9 C10.1,8.4 10.5,8 11.1,8 L17.1,8 C17.7,8 18.1,8.4 18.1,9 L18.1,42 L18.1,42 Z" fill="#b19cd9"/>
+                        </g>
                     </svg>
                 </div>
-                <h2 class="section-title">History & Timeline</h2>
-                <div class="section-description">
+                <h2 class="card-title">History & Timeline</h2>
+                <p class="card-description">
                     Uncover the buried truths about the Divine Wars, the Great Withdrawal, and the Silent God Crisis. Discover why some histories are too dangerous to remember.
-                </div>
-                <a href="/world-guide/history/" class="section-link">Uncover History</a>
-            </div>
+                </p>
+                <span class="card-link">Uncover History</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Organizations & Societies -->
+            <a href="/world-guide/organizations/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+                        <path d="M16 11C17.66 11 18.99 9.66 18.99 8S17.66 5 16 5C14.34 5 13 6.34 13 8S14.34 11 16 11M8 11C9.66 11 10.99 9.66 10.99 8S9.66 5 8 5C6.34 5 5 6.34 5 8S6.34 11 8 11M8 13C5.67 13 1 14.17 1 16.5V19H15V16.5C15 14.17 10.33 13 8 13M16 13C15.71 13 15.38 13.02 15.03 13.05C16.19 13.89 17 15.02 17 16.5V19H23V16.5C23 14.17 18.33 13 16 13Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Organizations & Societies</h2>
-                <div class="section-description">
+                <h2 class="card-title">Organizations & Societies</h2>
+                <p class="card-description">
                     From Zenith's Chosen to the Forsaken Communities, explore the groups that shape society through faith, knowledge, and survival in a world touched by divine chaos.
-                </div>
-                <a href="/world-guide/organizations/" class="section-link">Join Organizations</a>
-            </div>
+                </p>
+                <span class="card-link">Join Organizations</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Creatures & Beings -->
+            <a href="/world-guide/creatures/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 48.839 48.839" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
-		c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
-		c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742
-		c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181
-		C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0
-		S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971
-		s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878
-		c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z
-		 M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414
-		S48.455,16.861,45.727,15.602z"/>
+                        <path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414S48.455,16.861,45.727,15.602z" fill="#b19cd9"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Creatures & Beings</h2>
-                <div class="section-description">
+                <h2 class="card-title">Creatures & Beings</h2>
+                <p class="card-description">
                     From benevolent Nimwe to corrupted Beastborn, encounter the entities that inhabit a world where divine blood transforms innocence into nightmare and whispers guide the lost to safety.
-                </div>
-                <a href="/world-guide/creatures/" class="section-link">Meet Creatures</a>
-            </div>
+                </p>
+                <span class="card-link">Meet Creatures</span>
+            </a>
 
-            <div class="guide-section">
-                <div class="section-icon">
+            <!-- Daily Life & Culture -->
+            <a href="/world-guide/daily-life/" class="guide-card reveal">
+                <div class="card-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                        <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" stroke="#b19cd9" fill="none" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <h2 class="section-title">Daily Life & Culture</h2>
-                <div class="section-description">
+                <h2 class="card-title">Daily Life & Culture</h2>
+                <p class="card-description">
                     Understand how mortals survive under divine predation, the social structures born from supernatural threats, and the cultural adaptations that define life in Arcadia.
-                </div>
-                <a href="/world-guide/daily-life/" class="section-link">Experience Life</a>
-            </div>
+                </p>
+                <span class="card-link">Experience Life</span>
+            </a>
 
         </div>
     </div>
 </section>
 
 <!-- Featured Content -->
-<section class="featured-content">
+<section class="featured-section">
     <div class="container">
-        <h2 class="featured-title">Start Your Journey</h2>
+        <div class="section-header">
+            <h2 class="section-title">Start Your Journey</h2>
+        </div>
         <div class="featured-grid">
             
             <a href="/world-guide/characters/kaelen-rveyne.html" class="featured-card">
-                <div class="card-label">Featured Character</div>
-                <div class="card-title">Kaelen R'Veyne</div>
-                <div class="card-description">
+                <div class="featured-label">Featured Character</div>
+                <h3 class="featured-title">Kaelen R'Veyne</h3>
+                <p class="featured-description">
                     The Silver Hunter whose journey from isolation to love becomes a testament to choosing humanity over power.
-                </div>
+                </p>
             </a>
 
             <a href="/chapters/the-silence/chapter-01/" class="featured-card">
-                <div class="card-label">Start Reading</div>
-                <div class="card-title">The Silence: Chapter 1</div>
-                <div class="card-description">
+                <div class="featured-label">Start Reading</div>
+                <h3 class="featured-title">The Silence: Chapter 1</h3>
+                <p class="featured-description">
                     Begin the epic journey that started it all—where five mortals discover they've been chosen by a god erased from history.
-                </div>
+                </p>
             </a>
 
             <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="featured-card">
-                <div class="card-label">Standalone Story</div>
-                <div class="card-title">Seven Days of Sun</div>
-                <div class="card-description">
+                <div class="featured-label">Standalone Story</div>
+                <h3 class="featured-title">Seven Days of Sun</h3>
+                <p class="featured-description">
                     A tragic love story of a god cursed to watch his beloved die again and again through endless incarnations.
-                </div>
+                </p>
             </a>
 
         </div>
@@ -818,89 +638,33 @@ image: "/assets/images/world-guide-main.jpg"
 </section>
 
 <script>
-    // Create additional floating orbs
-    function createFloatingOrb() {
-        const orb = document.createElement('div');
-        orb.className = 'floating-orb';
-        orb.style.width = (50 + Math.random() * 150) + 'px';
-        orb.style.height = orb.style.width;
-        orb.style.top = Math.random() * 100 + '%';
-        orb.style.left = Math.random() * 100 + '%';
-        orb.style.animationDelay = '0s';
-        orb.style.animationDuration = (15 + Math.random() * 10) + 's';
-        
-        const colors = [
-            'radial-gradient(circle, rgba(138, 159, 255, 0.2) 0%, transparent 70%)',
-            'radial-gradient(circle, rgba(201, 131, 255, 0.15) 0%, transparent 70%)',
-            'radial-gradient(circle, rgba(159, 255, 138, 0.1) 0%, transparent 70%)',
-            'radial-gradient(circle, rgba(255, 159, 138, 0.12) 0%, transparent 70%)'
-        ];
-        
-        orb.style.background = colors[Math.floor(Math.random() * colors.length)];
-        
-        document.querySelector('.cosmic-background').appendChild(orb);
-        
-        setTimeout(() => {
-            if (orb.parentNode) {
-                orb.parentNode.removeChild(orb);
-            }
-        }, 25000);
+    // Create stardust effects
+    function createStardust() {
+        const particleField = document.querySelector('.particle-field');
+        for (let i = 0; i < 15; i++) {
+            const star = document.createElement('div');
+            star.className = 'stardust';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (2 + Math.random() * 2) + 's';
+            particleField.appendChild(star);
+        }
     }
 
-    // Add orbs periodically
-    setInterval(createFloatingOrb, 8000);
-
-    // Initial orbs
-    for (let i = 0; i < 3; i++) {
-        setTimeout(createFloatingOrb, i * 3000);
-    }
-
-    // Enhanced section hover effects
-    document.querySelectorAll('.guide-section').forEach(section => {
-        section.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('.section-icon');
-            if (icon) {
-                icon.style.transform = 'translateY(-8px) scale(1.1)';
-                icon.style.background = 'linear-gradient(135deg, rgba(138, 159, 255, 0.6), rgba(168, 181, 255, 0.5))';
-            }
-            
-            // Add cosmic energy effect
-            this.style.setProperty('--cosmic-energy', '1');
-        });
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.light-orb');
         
-        section.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('.section-icon');
-            if (icon) {
-                icon.style.transform = '';
-                icon.style.background = '';
-            }
-            
-            this.style.setProperty('--cosmic-energy', '0');
+        orbs.forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            orb.style.transform = `translateY(${yPos}px)`;
         });
     });
 
-    // Enhanced stardust twinkling
-    function createStardust() {
-        const star = document.createElement('div');
-        star.className = 'stardust';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 3 + 's';
-        star.style.animationDuration = (2 + Math.random() * 2) + 's';
-        
-        document.querySelector('.cosmic-background').appendChild(star);
-        
-        setTimeout(() => {
-            if (star.parentNode) {
-                star.parentNode.removeChild(star);
-            }
-        }, 5000);
-    }
-
-    // Add stardust periodically
-    setInterval(createStardust, 2000);
-
-    // Intersection Observer for section animations
+    // Intersection Observer for reveal animations
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -909,40 +673,71 @@ image: "/assets/images/world-guide-main.jpg"
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                
-                // Stagger animation for child elements
-                const children = entry.target.querySelectorAll('.guide-section');
-                children.forEach((child, index) => {
-                    setTimeout(() => {
-                        child.style.opacity = '1';
-                        child.style.transform = 'translateY(0)';
-                    }, index * 100);
-                });
+                entry.target.classList.add('active');
             }
         });
     }, observerOptions);
 
-    // Observe sections for animations
-    document.querySelectorAll('.guide-sections, .featured-content').forEach(section => {
-        observer.observe(section);
+    // Initialize on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+        createStardust();
+        
+        // Observe all reveal elements
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach(el => observer.observe(el));
+
+        // Add dynamic starbursts on hover
+        document.querySelectorAll('.guide-card').forEach(card => {
+            card.addEventListener('mouseenter', function(e) {
+                const burst = document.createElement('div');
+                burst.style.position = 'absolute';
+                burst.style.width = '20px';
+                burst.style.height = '20px';
+                burst.style.background = 'radial-gradient(circle, rgba(177, 156, 217, 0.8) 0%, transparent 70%)';
+                burst.style.borderRadius = '50%';
+                burst.style.pointerEvents = 'none';
+                burst.style.left = (e.offsetX - 10) + 'px';
+                burst.style.top = (e.offsetY - 10) + 'px';
+                burst.style.animation = 'burst 0.5s ease-out forwards';
+                this.appendChild(burst);
+                
+                setTimeout(() => burst.remove(), 500);
+            });
+        });
     });
 
-    // Enhanced title glow effect
-    const title = document.querySelector('.world-title');
-    if (title) {
-        setInterval(() => {
-            const intensity = 0.6 + Math.sin(Date.now() / 2000) * 0.4;
-            title.style.textShadow = `
-                0 0 ${30 * intensity}px rgba(138, 159, 255, ${0.6 * intensity}),
-                0 0 ${60 * intensity}px rgba(201, 131, 255, ${0.3 * intensity}),
-                0 4px 8px rgba(0, 0, 0, 0.8)
-            `;
-        }, 100);
-    }
+    // Add burst animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes burst {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Create floating particles periodically
+    setInterval(() => {
+        const particle = document.createElement('div');
+        particle.className = 'stardust';
+        particle.style.position = 'fixed';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = '0s';
+        particle.style.animationDuration = '3s';
+        document.querySelector('.particle-field').appendChild(particle);
+        
+        setTimeout(() => particle.remove(), 3000);
+    }, 3000);
 </script>
 
+<!-- SEO Schema Markup -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
