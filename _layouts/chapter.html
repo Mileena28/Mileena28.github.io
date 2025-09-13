@@ -68,11 +68,14 @@ layout: default
     }
 
     .chapter-subtitle {
-        font-size: 1.8em;
+        display: block;
+        font-size: 0.7em;
         color: var(--text-secondary);
         font-weight: 300;
         font-style: italic;
-        margin-bottom: 30px;
+        margin-top: 10px;
+        background: none;
+        -webkit-text-fill-color: var(--text-secondary);
     }
 
     /* Reading Meta Information */
@@ -302,7 +305,8 @@ layout: default
         }
         
         .chapter-subtitle {
-            font-size: 1.5em;
+            font-size: 1.2em;
+            margin-top: 8px;
         }
         
         .story-title {
@@ -390,25 +394,31 @@ layout: default
     </div>
 
     <!-- Reading Progress Bar -->
-    <div class="reading-progress" id="reading-progress"></div>
+    <div class="reading-progress" id="reading-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
 
-    <article class="chapter-container">
-        <div class="chapter-header">
+    <article class="chapter-container" itemscope itemtype="https://schema.org/Chapter">
+        <header class="chapter-header">
             {% if page.book_title %}
-            <div class="book-title">{{ page.book_title }}</div>
+            <div class="book-title" itemprop="isPartOf" itemscope itemtype="https://schema.org/Book">
+                <span itemprop="name">{{ page.book_title }}</span>
+            </div>
             {% endif %}
             {% if page.story_title %}
             <div class="story-title">{{ page.story_title }}</div>
             {% endif %}
-            <h1 class="chapter-title">{{ page.title }}</h1>
-            {% if page.subtitle %}
-            <div class="chapter-subtitle">{{ page.subtitle }}</div>
-            {% endif %}
+            
+            <!-- Proper H1 for SEO -->
+            <h1 class="chapter-title" itemprop="name">
+                {{ page.title }}
+                {% if page.subtitle %}
+                <span class="chapter-subtitle" itemprop="alternativeHeadline">{{ page.subtitle }}</span>
+                {% endif %}
+            </h1>
 
             <!-- Reading Meta Information -->
-            <div class="reading-meta">
+            <div class="reading-meta" role="contentinfo">
                 <div class="meta-item">
-                    <div class="meta-icon">
+                    <div class="meta-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                         </svg>
@@ -417,7 +427,7 @@ layout: default
                     <span>words</span>
                 </div>
                 <div class="meta-item">
-                    <div class="meta-icon">
+                    <div class="meta-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
                         </svg>
@@ -427,12 +437,12 @@ layout: default
                 </div>
                 {% if page.chapter_number and page.total_chapters %}
                 <div class="meta-item">
-                    <div class="meta-icon">
+                    <div class="meta-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19,2L14,6.5V17.5L19,13V2M6.5,5C4.55,5 2.45,5.4 1,6.5V21.16C1,21.41 1.25,21.66 1.5,21.66C1.6,21.66 1.65,21.59 1.75,21.59C3.1,20.94 5.05,20.5 6.5,20.5C8.45,20.5 10.55,20.9 12,22C13.35,21.15 15.8,20.5 17.5,20.5C19.15,20.5 20.85,20.81 22.25,21.56C22.35,21.61 22.4,21.59 22.5,21.59C22.75,21.59 23,21.34 23,21.09V6.5C22.4,6.05 21.75,5.75 21,5.5V19C19.9,18.65 18.7,18.5 17.5,18.5C15.8,18.5 13.35,19.15 12,20V6.5C10.55,5.4 8.45,5 6.5,5Z"/>
                         </svg>
                     </div>
-                    <span class="meta-value">Chapter {{ page.chapter_number }} of {{ page.total_chapters }}</span>
+                    <span class="meta-value" itemprop="position">Chapter {{ page.chapter_number }} of {{ page.total_chapters }}</span>
                 </div>
                 {% endif %}
             </div>
@@ -440,7 +450,7 @@ layout: default
             <!-- Chapter Progress (if part of a series) -->
             {% if page.chapter_number and page.total_chapters %}
             <div class="chapter-progress">
-                <div class="progress-bar">
+                <div class="progress-bar" role="progressbar" aria-label="Book progress">
                     <div class="progress-fill" style="width: {{ page.chapter_number | times: 100 | divided_by: page.total_chapters }}%"></div>
                 </div>
                 <div class="progress-text">
@@ -449,17 +459,17 @@ layout: default
                 </div>
             </div>
             {% endif %}
-        </div>
+        </header>
 
-        <div class="chapter-content-wrapper">
-            <div class="chapter-content" id="chapter-content">
+        <section class="chapter-content-wrapper">
+            <div class="chapter-content" id="chapter-content" itemprop="text">
                 {{ content }}
             </div>
-        </div>
+        </section>
 
-        <div class="navigation">
+        <nav class="navigation" aria-label="Chapter navigation">
             {% if page.prev_chapter %}
-            <a href="{{ page.prev_chapter }}" class="nav-link">← Previous Chapter</a>
+            <a href="{{ page.prev_chapter }}" class="nav-link" rel="prev">← Previous Chapter</a>
             {% else %}
             <span></span>
             {% endif %}
@@ -471,16 +481,62 @@ layout: default
             {% endif %}
             
             {% if page.next_chapter %}
-            <a href="{{ page.next_chapter }}" class="nav-link">Next Chapter →</a>
+            <a href="{{ page.next_chapter }}" class="nav-link" rel="next">Next Chapter →</a>
             {% else %}
             <span></span>
             {% endif %}
-        </div>
+        </nav>
+
+        <!-- Hidden metadata for SEO -->
+        <meta itemprop="author" content="{{ site.author.name }}">
+        <meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">
+        {% if page.last_modified_at %}
+        <meta itemprop="dateModified" content="{{ page.last_modified_at | date_to_xmlschema }}">
+        {% endif %}
     </article>
 </div>
 
-<!-- Related Posts - THIS IS THE IMPORTANT PART -->
+<!-- Related Posts -->
 {% include related-posts.html %}
+
+<!-- Enhanced Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Chapter",
+  "name": "{{ page.title }}{% if page.subtitle %}: {{ page.subtitle }}{% endif %}",
+  "headline": "{{ page.title }}",
+  "alternativeHeadline": "{{ page.subtitle }}",
+  "description": "{{ page.excerpt | default: page.description | strip_html | truncate: 160 }}",
+  "position": "{{ page.chapter_number }}",
+  "url": "{{ site.url }}{{ page.permalink }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "wordCount": "{{ content | number_of_words }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}/about/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}"
+  },
+  "isPartOf": {
+    "@type": "Book",
+    "name": "{{ page.book_title }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ site.author.name }}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.permalink }}"
+  }
+}
+</script>
 
 <script>
 // Calculate word count and reading time
@@ -520,14 +576,18 @@ function updateReadingProgress() {
     const scrollStart = articleTop - windowHeight * 0.1; // Start when article is 10% visible
     const scrollEnd = articleBottom - windowHeight * 0.9; // End when article is 90% past
     
+    let progress = 0;
     if (scrollTop < scrollStart) {
-        progressBar.style.width = '0%';
+        progress = 0;
     } else if (scrollTop > scrollEnd) {
-        progressBar.style.width = '100%';
+        progress = 100;
     } else {
-        const progress = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100;
-        progressBar.style.width = Math.min(Math.max(progress, 0), 100) + '%';
+        progress = ((scrollTop - scrollStart) / (scrollEnd - scrollStart)) * 100;
+        progress = Math.min(Math.max(progress, 0), 100);
     }
+    
+    progressBar.style.width = progress + '%';
+    progressBar.setAttribute('aria-valuenow', Math.round(progress));
 }
 
 // Smooth scroll to top when clicking progress bar
