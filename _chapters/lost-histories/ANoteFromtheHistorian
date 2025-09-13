@@ -2,7 +2,12 @@
 layout: chapter
 book_title: "Blood of the Wild Gods: The Lost Histories"
 title: "A Note from the Historian"
-subtitle: "Recorded by Tanneus G'Raja, Ashborn of the Wastes, who found purpose not in plunder, but in bearing witness so others might not repeat what was lost."
+subtitle: "Recorded by Tanneus G'Raja, Ashborn of the Wastes"
+description: "A historian's vow to preserve the true stories of the gods, unvarnished by myth or comfort, sets the stage for tales of divine tragedy."
+excerpt: "I was not born with ink-stained hands or reverent eyes for scrolls. I was born in ash. These are the tales whispered between stone and silence."
+image: /assets/images/the-lost-histories.png
+date: 2025-01-15
+last_modified_at: 2025-01-20
 chapter_number: 1
 total_chapters: 1
 prev_chapter: null
