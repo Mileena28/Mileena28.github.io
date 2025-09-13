@@ -47,6 +47,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-redirect-from
 
+# Sitemap Configuration
+sitemap:
+  path: sitemap.xml
+  
 # Build Settings
 markdown: kramdown
 highlighter: rouge
@@ -72,33 +76,106 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - .sass-cache
+  - .jekyll-cache
+  - .jekyll-metadata
+  - CNAME
+  - Makefile
+  - "*.gemspec"
+  - "*.gem"
+  - .gitignore
 
 # SEO Defaults
 defaults:
+  # Posts defaults
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
       author: "Mileena Rayne"
-      image: "/assets/images/default-post-image.jpg"
+      image: "/assets/images/blood-of-the-wild-gods.png"
+      sitemap:
+        priority: 0.6
+        changefreq: "monthly"
+  
+  # Chapters defaults - HIGH PRIORITY for book content
   - scope:
       path: ""
       type: "chapters"
     values:
       layout: "chapter"
       author: "Mileena Rayne"
-      image: "/assets/images/book-cover-default.jpg"
+      image: "/assets/images/EbookPic.jpg"
+      sitemap:
+        priority: 0.8
+        changefreq: "monthly"
+  
+  # World Guide defaults
   - scope:
       path: "world-guide"
     values:
       layout: "default"
       author: "Mileena Rayne"
-      image: "/assets/images/geography-main.jpg"
+      image: "/assets/images/blood-of-the-wild-gods.png"
+      sitemap:
+        priority: 0.5
+        changefreq: "yearly"
+  
+  # Default image for all pages
   - scope:
       path: ""
     values:
-      image: "/assets/images/mileena-rayne-default.jpg"
+      image: "/assets/images/mileena-rayne-author.jpg"
+  
+  # Exclude admin/drafts from sitemap
+  - scope:
+      path: "admin/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "_drafts/*"
+    values:
+      sitemap: false
+  - scope:
+      path: "404.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "403.html"
+    values:
+      sitemap: false
+  - scope:
+      path: "offline.html"
+    values:
+      sitemap: false
+
+# High priority pages (for sitemap)
+navigation:
+  - url: /
+    priority: 1.0
+    changefreq: weekly
+  - url: /writing/
+    priority: 0.9
+    changefreq: weekly
+  - url: /music/
+    priority: 0.8
+    changefreq: monthly
+  - url: /diary/
+    priority: 0.8
+    changefreq: weekly
+  - url: /about/
+    priority: 0.7
+    changefreq: monthly
+  - url: /community/
+    priority: 0.7
+    changefreq: weekly
+  - url: /world-guide/
+    priority: 0.7
+    changefreq: monthly
+  - url: /contact/
+    priority: 0.5
+    changefreq: yearly
 
 # Enhanced SEO settings
 breadcrumbs: true
@@ -113,3 +190,17 @@ organization:
     - "https://www.instagram.com/mileenarayne"
     - "https://open.spotify.com/artist/0DZlZexMYSKS7twfxpcM0P"
     - "https://youtube.com/@mileenarayne"
+
+# Feed settings (for RSS)
+feed:
+  posts_limit: 20
+  path: feed.xml
+  
+# Compression (if using jekyll-compress-html)
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
