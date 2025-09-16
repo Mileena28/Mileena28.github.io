@@ -3,7 +3,10 @@
 
 ---
 
-## Month 1: Firstlight
+## Month 1: Primaven
+
+### 1st - **Ezzie** *(The Awakener)*
+Her neurodivergent perspective that notices patterns others miss, seeing connections through her unique processing style, embodies the Awakener's gift of recognizing shifts others cannot perceive.
 
 ### 12th - **Eshuah** *(The Awakener)*
 His Vaelari heritage allowing him to perceive divine nature others cannot see, recognizing Khali's true essence through angelic sight, embodies the Awakener's gift of sensing shifts and recognizing when ages are ending.
@@ -13,11 +16,6 @@ His journey from blindness to sight, awakening from ideological possession to fa
 
 ### 30th - **The Silent God (Verites)** *(The Awakener)*
 As the Ancient Silence who awakened to unmake creation, whose stirring brought The Silence that drained purpose and memory from the world, they literally embody the Awakener prophecy about "silence itself learning to speak."
-
-## Month 1: Primaven
-
-### 1st - **Ezzie** *(The Awakener)*
-Her neurodivergent perspective that notices patterns others miss, seeing connections through her unique processing style, embodies the Awakener's gift of recognizing shifts others cannot perceive.
 
 ---
 
