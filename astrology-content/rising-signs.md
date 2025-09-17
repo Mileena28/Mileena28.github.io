@@ -361,7 +361,7 @@ These houses represent emotion, transformation, and transcendence. They show whe
 - **Timing:** Most active ages 2, 14, 26, 38, 50, 62, 74
 - **Daily Activation:** Days 6-7 of each month
 
-### **4th House - The Roots**
+### **4th House - The Sanctuary**
 *Domain: Home, Family, Mother/Primary Caregiver, Ancestry*
 - **Sacred Question:** "What soil grew my bones?"
 - **Element:** Water (Feeling)
@@ -387,7 +387,7 @@ These houses represent emotion, transformation, and transcendence. They show whe
 - **Timing:** Most active ages 3, 15, 27, 39, 51, 63, 75
 - **Daily Activation:** Days 8-10 of each month
 
-### **5th House - The Flame**
+### **5th House - The Crucible**
 *Domain: Creativity, Romance, Children, Joy, Self-Expression*
 - **Sacred Question:** "What does my soul birth into being?"
 - **Element:** Fire (Being)
@@ -439,7 +439,7 @@ These houses represent emotion, transformation, and transcendence. They show whe
 - **Timing:** Most active ages 5, 17, 29, 41, 53, 65, 77
 - **Daily Activation:** Days 13-15 of each month
 
-### **7th House - The Mirror**
+### **7th House - The Eternal Dance**
 *Domain: Partnerships, Marriage, Open Enemies, The Other*
 - **Sacred Question:** "Who stands as my equal opposite?"
 - **Element:** Air (Relating)
@@ -517,7 +517,7 @@ These houses represent emotion, transformation, and transcendence. They show whe
 - **Timing:** Most active ages 8, 20, 32, 44, 56, 68, 80
 - **Daily Activation:** Days 21-22 of each month
 
-### **10th House - The Summit**
+### **10th House - The Throne**
 *Domain: Career, Public Image, Father/Authority Figure, Legacy*
 - **Sacred Question:** "What monument will remain?"
 - **Element:** Earth (Having)
@@ -543,7 +543,7 @@ These houses represent emotion, transformation, and transcendence. They show whe
 - **Timing:** Most active ages 9, 21, 33, 45, 57, 69, 81
 - **Daily Activation:** Days 23-25 of each month
 
-### **11th House - The Assembly**
+### **11th House - The Community**
 *Domain: Community, Friendships, Shared Dreams, Revolution*
 - **Sacred Question:** "Who dreams the same dream?"
 - **Element:** Air (Relating)
@@ -569,7 +569,7 @@ These houses represent emotion, transformation, and transcendence. They show whe
 - **Timing:** Most active ages 10, 22, 34, 46, 58, 70, 82
 - **Daily Activation:** Days 26-27 of each month
 
-### **12th House - The Void**
+### **12th House - The Void Temmple**
 *Domain: Hidden Things, Unconscious, Karma, Self-Undoing*
 - **Sacred Question:** "What swims beneath awareness?"
 - **Element:** Water (Feeling)
@@ -798,9 +798,9 @@ When specific constellations are prominent in the night sky, they activate corre
 
 **Seasonal Activations:**
 - **Spring (Months 1-3):** Threshold, Foundation, and Messenger houses strengthen
-- **Summer (Months 4-6):** Roots, Flame, and Ritual houses dominate
-- **Autumn (Months 7-9):** Mirror, Abyss, and Horizon houses intensify
-- **Winter (Months 10-12):** Summit, Assembly, and Void houses deepen
+- **Summer (Months 4-6):** Sanctuary, Crucible, and Ritual houses dominate
+- **Autumn (Months 7-9):** Eternal Dance, Abyss, and Horizon houses intensify
+- **Winter (Months 10-12):** Throne, Community, and Void Temple houses deepen
 
 **Example Transits:**
 - "The Hunter stalks through your House of Mirrors this month—all relationships become prey or predator"
@@ -816,15 +816,15 @@ When someone's sun sign falls in your houses, it shows their role in your life:
 - **1st House (Threshold):** They change your identity, trigger personal transformation
 - **2nd House (Foundation):** They affect your resources, alter your values
 - **3rd House (Messenger):** They bring important messages, change how you communicate
-- **4th House (Roots):** They feel like family, affect your sense of home
-- **5th House (Flame):** They ignite creativity and romance, bring joy
+- **4th House (Sanctuary):** They feel like family, affect your sense of home
+- **5th House (Crucible):** They ignite creativity and romance, bring joy
 - **6th House (Ritual):** They influence daily routines, affect your health
-- **7th House (Mirror):** Natural partnership, they reflect your shadow
+- **7th House (Eternal Dance):** Natural partnership, they reflect your shadow
 - **8th House (Abyss):** They trigger deep transformation, share intimate resources
 - **9th House (Horizon):** They expand your worldview, bring adventure
-- **10th House (Summit):** They affect your reputation, influence career
-- **11th House (Assembly):** They bring community, share your dreams
-- **12th House (Void):** Hidden connection, karmic relationship, secret enemy or teacher
+- **10th House (Throne):** They affect your reputation, influence career
+- **11th House (Community):** They bring community, share your dreams
+- **12th House (Void Temple):** Hidden connection, karmic relationship, secret enemy or teacher
 
 ### Electoral Astrology (Choosing Timing)
 
@@ -846,12 +846,12 @@ When someone's sun sign falls in your houses, it shows their role in your life:
 - When Mercury-ruled houses activate
 
 **Home/Family Matters:**
-- Days 8-10 when Roots activates
+- Days 8-10 when Sanctuary activates
 - Waning Gibbous days (22-25) for resolution
 - When your 4th house ruler is activated
 
 **Creative/Romantic Endeavors:**
-- Days 11-12 when Flame activates
+- Days 11-12 when Crucible activates
 - Waxing Gibbous days (13-17) for intensity
 - When your 5th house ruler is activated
 
@@ -861,7 +861,7 @@ When someone's sun sign falls in your houses, it shows their role in your life:
 - When your 6th house ruler is activated
 
 **Partnerships/Negotiations:**
-- Days 16-17 when Mirror activates
+- Days 16-17 when Eternal Dance activates
 - Full Moon days (18-21) for clarity
 - When your 7th house ruler is activated
 
@@ -1008,12 +1008,12 @@ Your words carry an electrical charge that jolts others awake. You cannot engage
 
 Your learning style defies educational systems—you download entire fields of knowledge in sudden bursts rather than gradual accumulation. Teachers either loved or feared you because your questions exposed the limitations of their understanding. Your handwriting changes with your consciousness—old journals look like they were written by different people. Short trips turn into vision quests. Your daily commute becomes a journey between dimensions of awareness. Neighbors experience synchronicities after talking with you. Your social media posts go viral not through algorithms but through the sheer force of their truth.
 
-### Awakener in the 4th House (The Roots)
+### Awakener in the 4th House (The Sanctuary)
 You are the family member who breaks generational curses by existing. Your birth itself disrupted ancestral patterns that had persisted for centuries. Family gatherings become transformation ceremonies whether anyone planned it or not. You cannot participate in family traditions without questioning their purpose, often discovering they're based on traumas no one remembers. Your childhood home never felt stable—even if you never moved, the energy constantly shifted.
 
 Your relationship with your mother/primary caregiver involves cycles of death and rebirth—you've been many different children to them, and they've had to become many different parents to keep up. Family secrets surface in your presence like bodies floating to the surface of a lake. You might discover you're adopted, or that you're not but everyone treats you like you are because you're so different. Your very existence forces your family to confront what they've avoided. Home for you is not a place but a state of consciousness—you create sanctuary through transformation rather than stability.
 
-### Awakener in the 5th House (The Flame)
+### Awakener in the 5th House (The Crucible)
 Your creative expression shatters artistic paradigms. You cannot create within existing forms—your art invents new mediums, your music creates new genres, your writing breaks language itself. Romance arrives like lightning strikes—instant, transformative, often destructive to old life patterns. You fall in love with people's potential and your presence activates it, which means relationships either evolve rapidly or explode.
 
 Children in your life (your own or others') experience accelerated development in your presence. Your idea of play involves reality-bending experiments. You cannot enjoy entertainment that doesn't transform you—passive consumption feels like death. Your hobbies become spiritual practices, your spiritual practices become revolutionary acts. Joy comes in explosive moments of breakthrough rather than sustained contentment. Gambling with you involves more than money—people risk their entire worldview. Your laughter triggers others' awakenings. Sexual encounters become shamanic journeys. You cannot separate creativity from destruction—every new creation requires burning down what came before.
@@ -1023,7 +1023,7 @@ Your daily routines are constantly revolutionizing themselves. The morning ritua
 
 Coworkers experience breakthroughs just from sharing your workspace. Your productivity follows cosmic rhythms rather than corporate schedules. Service for you means awakening others to their potential, which often looks like disruption to those invested in the status quo. Your diet changes with your consciousness—foods that nourished you yesterday become poison today. Pets in your care evolve beyond typical animal behavior. Your exercise routines become moving meditations that shift reality. You heal others by breaking them first, showing them where they've been lying to themselves about their limitations.
 
-### Awakener in the 7th House (The Mirror)
+### Awakener in the 7th House (The Eternal Dance)
 Partners experience total ego death and rebirth through relationship with you. You attract people at the exact moment they're ready to transform, which means relationships begin with immediate recognition of impending change. Your partnerships are crucibles where old identities dissolve and new ones emerge. Marriage with you is accepting continuous metamorphosis—your partner must be willing to marry a new person repeatedly.
 
 You cannot do casual relationships because your presence triggers depth whether intended or not. Business partnerships revolutionize entire industries. Your enemies are your greatest teachers because they show you what you're ready to transform. Legal contracts with you seem to shift their meaning over time. Couples therapy becomes shamanic journey. You mirror others' highest potential so clearly they must either rise to meet it or flee. Open relationships or serial monogamy often suit you because different phases of your transformation need different witnesses. Your mere presence in someone's life poses the question: "Who are you willing to become?"
@@ -1038,17 +1038,17 @@ Your belief system shatters and rebuilds continuously, each philosophy lasting o
 
 Foreign cultures activate dormant aspects of your consciousness. You learn languages not through memorization but through sudden downloads of understanding. Publishing your ideas triggers collective awakening. Your philosophy cannot be contained in existing schools of thought—you create new ways of understanding reality. Religious experiences find you whether you seek them or not. You teach by destroying students' false knowledge. Long-distance travel permanently alters your molecular structure. Every horizon reached reveals twelve more. You seek truth knowing each discovery makes previous truths obsolete.
 
-### Awakener in the 10th House (The Summit)
+### Awakener in the 10th House (The Throne)
 Your career is waking others from professional sleep. You cannot hold traditional positions without transforming them into something unrecognizable. Your public image undergoes radical shifts that coincide with collective consciousness changes. You rise to prominence during times of revolutionary change. Authority comes through demonstrated willingness to destroy outdated systems. Your professional legacy is measured in paradigms shifted rather than wealth accumulated.
 
 Bosses either fast-track your advancement or try to eliminate you—there's no middle ground. Your resume reads like multiple different people's careers. Public speaking triggers mass awakening. You cannot separate professional life from spiritual mission. Corporate structures dissolve and reform around you. Your LinkedIn profile crashes servers with its energy. Fame finds you during transformative moments. You lead by awakening others to their own authority. Your career path looks like chaos to others but follows perfect cosmic timing to you.
 
-### Awakener in the 11th House (The Assembly)
+### Awakener in the 11th House (The Community)
 Friend groups transform or dissolve in your presence—you're the catalyst for collective evolution. Your social circles constantly reform around new levels of consciousness. You attract revolutionaries, visionaries, and those ready to wake up. Communities reorganize themselves around your revelations. Your dreams for humanity trigger actual change. You cannot maintain stable social circles because they're always becoming something new.
 
 Group dynamics shift the moment you enter. Social movements birth themselves through your consciousness. Your humanitarian efforts create ripple effects beyond calculation. Friendships with you involve continuous transformation or they end. You channel collective awakening. Online communities form around your transmissions. Your hopes and wishes manifest through destroying what prevents them. Technology glitches around you when transformation is imminent. You network across dimensions. Your friend groups span multiple realities. You organize flash mobs of consciousness.
 
-### Awakener in the 12th House (The Void)
+### Awakener in the 12th House (The Void Temple)
 You awaken unconscious patterns in yourself and others without conscious intent. Your dreams trigger collective revelations. Hidden enemies reveal themselves through your presence—shadows cannot stay hidden around you. Meditation takes you to realms others can't imagine. Isolation brings revelation rather than loneliness. You process humanity's unconscious material through your own psyche.
 
 Psychiatric institutions, hospitals, prisons, and monasteries feature in your life as settings for transformation. You channel information from the collective unconscious. Your spiritual experiences can't be explained in existing frameworks. Karma accelerates around you—lifetimes of patterns resolve in moments. You heal ancestral trauma through your own healing. Secret societies seek you out or oppose you. Your addictions (if any) are to transcendence itself. You sacrifice ego repeatedly for collective awakening. The void speaks through you. Your very existence bridges the unconscious and conscious worlds.
