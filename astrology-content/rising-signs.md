@@ -1072,12 +1072,12 @@ Every word you speak seeks deeper intimacy. You cannot engage in surface convers
 
 Siblings were your first practice at devotion or betrayal. Your neighborhood knows your relationship status by how you walk down the street. Short trips become pilgrimages to past loves or potential futures. Your handwriting changes when writing to different people, adapting to connect. Communication devices multiply around you—you need multiple channels for your various connections. Your social media is a shrine to connection. Local haunts hold memories of every conversation that mattered. You speak others into loving themselves. Your voice carries harmonics that create instant intimacy.
 
-### Lovers in the 4th House (The Roots)
+### Lovers in the 4th House (The Sanctuary)
 Home is wherever your beloved dwells—physical structures mean nothing without the right presence. Your family of origin taught you about eternal bonds or their absence, creating the template you're either following or desperately trying to break. The family home feels haunted by love stories—your parents', grandparents', your own. You cannot feel rooted alone, needing another's presence to feel grounded. Your ancestors' love stories live through you.
 
 Your relationship with your mother involves deep devotion or painful absence of connection. Private life becomes shrine to relationship—photos, mementos, altars to love cover every surface. You create sanctuary for connection, making spaces where intimacy can flourish. Family traditions revolve around couples and partnerships. Your emotional foundation requires another heart to build upon. Childhood experiences of love or abandonment echo through every adult relationship. You nurture through devoted presence. Your home magnetizes lonely hearts seeking shelter.
 
-### Lovers in the 5th House (The Flame)
+### Lovers in the 5th House (The Crucible)
 Romance is your religion, creativity your devotion, joy your worship. You cannot create without being in love—with a person, idea, place, or possibility. Every creative act is a love letter to existence. Your art depicts connection in all its forms. Children (your own or others') represent hope for eternal connection, carrying forward the love you've cultivated. You attract dramatic, passionate romances that burn bright and transform you.
 
 Your hobbies involve partnering—dancing, doubles tennis, duet singing. Play for you requires a playmate. Joy comes through romantic unity—sunsets mean nothing watched alone. Your creative projects require collaborative energy. Sexual expression becomes artistic medium. You fall in love with someone new in every creative workshop. Romantic gestures are your spiritual practice. You gamble everything for love and count it victory even when you lose. Your laughter harmonizes with others automatically. Entertainment must move your heart or it's meaningless.
@@ -1087,7 +1087,7 @@ Daily devotion becomes your spiritual practice—making coffee for your beloved 
 
 Your morning routine requires acknowledging your connections—texts, calls, meditation on beloved faces. Coworkers become intimate friends or potential partners. Your desk holds shrines to connection. Productivity increases when working for or with someone you love. Exercise happens best with partners. Your diet adapts to match your partner's needs. Pets become surrogate relationships when human connection isn't available. Health practitioners become intimate confidants. You ritualize connection through daily practices. Sacred partnership expresses through ordinary devotion.
 
-### Lovers in the 7th House (The Mirror)
+### Lovers in the 7th House (The Eternal Dance)
 This is your throne room where your true nature rules supreme. Every relationship carries eternal significance—there are no casual connections in your life. You recognize soulmates immediately through cellular-level recognition, though learning they're not always meant to stay takes lifetimes. Marriage is your spiritual path, the crucible for your evolution. Partners mirror your own divine nature back to you. You attract those who need to learn about eternal connection.
 
 Contracts feel like sacred vows. Business partnerships become marriages. Your enemies are former loves or future ones. Lawsuits involve betrayed devotion. You cannot commit partially—it's all or nothing. Open relationships challenge your nature but might be necessary for your growth. Divorce feels like death but sometimes enables rebirth. Your partner's growth becomes your own. You project your unlived life onto partners until you learn to marry yourself. Couples therapy is your church. Wedding anniversaries mark spiritual initiations.
@@ -1102,17 +1102,17 @@ You seek the divine through human love, believing every relationship is path to 
 
 Travel means nothing alone—you need someone to share sunsets with. You learn languages to whisper endearments. Publishing becomes act of public devotion. Your spiritual seeking centers on finding divine union. Different cultures teach you new ways to love. You marry across cultural boundaries. Long-distance relationships test your devotion. Philosophy partners become lovers. Your thesis is a love story. Adventure means exploring new dimensions of connection. Every horizon promises reunion or new connection.
 
-### Lovers in the 10th House (The Summit)
+### Lovers in the 10th House (The Throne)
 Your career involves bringing others together—matchmaker, couple's counselor, wedding planner, or your professional success simply requires partnership. Public identity revolves around famous partnerships—you're known as half of a power couple. Professional advancement requires devoted partner supporting you. Authority comes through demonstrated capacity for lasting connection. Your reputation rises and falls with relationship status.
 
 Office romances find you regardless of policies. Your LinkedIn profile emphasizes collaborative achievements. Public speaking involves love stories. You cannot separate professional and personal—your heart is always involved. Your business card should list your partner. Fame comes through love stories—your relationship becomes public inspiration or cautionary tale. Professional legacy involves the partnerships you've created or sustained. Your resume includes relationship skills. Board meetings feel like family gatherings. Corporate ladder requires someone climbing beside you.
 
-### Lovers in the 11th House (The Assembly)
+### Lovers in the 11th House (The Community)
 Friendships become love affairs, love affairs become friendships—you don't understand the distinction others make. Communities form around your love stories, supporting or witnessing your connections. Hopes and dreams all involve finding or keeping connection—your vision board is entirely relationships. Social groups exist to celebrate or support partnerships. You cannot separate friendship from love, treating all connections as eternal bonds.
 
 Group dynamics shift to accommodate your partnerships. Your plus-one needs their own invitation. Social movements attract you if they support connection and union. Humanitarian efforts focus on bringing others together. Your friend groups overlap with current and former lovers. Online dating revolutionized your social life. You organize events to celebrate connections. Your network is a web of intimate connections. Technology exists to maintain connections. Your future dreams require partnership to manifest. Community service involves supporting others' relationships.
 
-### Lovers in the 12th House (The Void)
+### Lovers in the 12th House (The Void Temple)
 Secret loves haunt your unconscious—forbidden attractions, unrequited devotions, connections that exist only in dreams. You love those you cannot have or who cannot love you back, finding safety in impossible longing. Isolation fills with memories of connection, past loves visiting in dreams. Your karma involves learning when to let go, understanding that eternal doesn't always mean forever in this lifetime.
 
 Spiritual practice involves communing with absent beloveds. Hospitals, prisons, monasteries become settings for love stories. You fall in love with inmates, patients, monks—those separated from normal life. Hidden relationships define you more than public ones. Your unconscious holds every love you've ever felt. Dreams reunite you with lost connections. Past life loves bleed through. You channel divine love through human form. Meditation brings you to union with all beings. Your sacrifice involves releasing those you love. The void between hearts calls you home.
@@ -1136,12 +1136,12 @@ This is your natural domain—every thought is exploration, every conversation a
 
 Your mind travels even when your body cannot—books become vehicles, internet your highway. You speak multiple languages or at least try. Writing involves travelogues even when discussing other topics. Your social media documents constant movement. Neighbors know you as the one who's never home. Your car holds your life. Daily commute becomes daily adventure. You cannot learn in classrooms—education requires field trips. Messages find you wherever you are. Your thoughts migrate like birds, seasonal and searching.
 
-### Wanderer in the 4th House (The Roots)
+### Wanderer in the 4th House (The Sanctuary)
 Home is a paradox for you—desperately needed yet impossible to maintain. Your childhood involved constant moves or emotional wandering even in one house. Parents were wanderers themselves or tried desperately to cage your wandering spirit, creating the central tension of your life. Family feels scattered across distances, reunions rare and precious. You seek roots in movement rather than place, finding home in the journey itself.
 
 Your living spaces are temporary by design—short-term rentals, house-sitting, mobile homes. Family traditions involve reunions in different locations. Your ancestors include nomads, immigrants, refugees, explorers—wandering is in your blood. Emotional security comes from knowing you can leave. You parent (if you do) by teaching independence and adaptation. Your inner child is still searching for something unnamed. Private life happens in transit spaces. You nest temporarily, like a migrating bird. Home is whoever travels with you.
 
-### Wanderer in the 5th House (The Flame)
+### Wanderer in the 5th House (The Crucible)
 Creativity requires new horizons for inspiration—you cannot create in familiar spaces. Your art documents journeys, internal or external. Romance happens in passing—intense connections at hostels, airports, train stations—beautiful because temporary. Children (your own or others') inherit wanderlust or become your anchors, creating complex tensions. Joy comes through discovery, play means exploration, pleasure requires novelty.
 
 Your hobbies involve movement—hiking, sailing, dancing—anything static bores you. Creative projects happen in bursts between journeys. You fall in love with fellow travelers or those who represent different worlds. Sexual adventures span cultures and contexts. You cannot commit to long-term creative projects—your expression comes in fragments gathered from everywhere. Entertainment means experiencing new cultures. Gambling happens in every new place you visit. Your laughter carries accents from everywhere you've been. Play is how you explore new territories.
@@ -1151,7 +1151,7 @@ Work involves travel or serving travelers—tour guide, flight attendant, travel
 
 Your morning routine is checking transportation schedules. Coworkers know you won't stay long. Your desk is always clear, ready for departure. Productivity happens in movement—walking meetings, working while commuting. Diet varies with location, your digestion adapted to constant change. Exercise means exploring new territories on foot. Pets are impossible unless they travel with you. Health practitioners exist in every port. You ritualize arrival and departure. Work is what funds the journey.
 
-### Wanderer in the 7th House (The Mirror)
+### Wanderer in the 7th House (The Eternal Dance)
 Partners must wander with you or accept your absence—no middle ground exists. Your relationships happen across distances or during journeys. You attract other wanderers or those seeking escape from their stillness. Marriage means choosing parallel paths rather than shared destination. Commitment for you means agreeing to journey together, not to stop moving. Business partnerships involve trade routes, cultural exchange, long-distance collaboration.
 
 Your enemies are those who try to cage you. Legal contracts feel like chains unless they guarantee freedom. Divorce often involves geographical separation. You cannot do traditional relationships—they must accommodate movement or die. Your ideal partner has their own journey that sometimes intersects with yours. Open relationships might suit your nature. You fall in love with people's stories of where they've been. Partnership agreements include travel clauses. Couples therapy happens via video from different countries.
@@ -1166,17 +1166,17 @@ This is your temple where your truest nature worships. Philosophy develops throu
 
 Foreign languages download into your consciousness. You think in multiple cultural frameworks simultaneously. Publishing travelogues or philosophical insights gained through journey. Your religion is the road itself. Teaching involves taking students on journeys. You cannot understand truth without experiencing its context. Legal matters span jurisdictions. Your worldview expands with each mile traveled. Wisdom comes through movement, not meditation. You seek God in the journey, not the destination. Every arrival is just another departure point.
 
-### Wanderer in the 10th House (The Summit)
+### Wanderer in the 10th House (The Throne)
 Career requires constant movement—successful only when traveling. Public identity as eternal traveler, known for your journeys. Professional advancement happens through willingness to relocate. Authority comes from breadth of experience across territories. Your reputation spans distances but might be shallow in any one place. Success means freedom to keep moving.
 
 Your resume lists locations more than positions. Fame comes through travel—blogs, shows, books about journeys. You cannot climb corporate ladders—you traverse corporate landscapes. Professional network spans globally. Your LinkedIn shows constant location updates. Public speaking happens in different cities weekly. Career transitions are geographical. You lead through exploration, manage through movement. Your legacy is the paths you've opened for others. Retirement means traveling without working, not stopping movement.
 
-### Wanderer in the 11th House (The Assembly)
+### Wanderer in the 11th House (The Community)
 Friend groups span the globe—deep connections maintained across vast distances. Communities form around shared journeys—travel companions become lifelong friends. Dreams require travel to achieve. Social groups are temporary but intense—hostels, tour groups, expat communities. You organize movements in both senses—political and geographical. Humanitarian work takes you worldwide.
 
 Your social network is actually a network—interconnected points across the map. Group dynamics shift with your arrival and departure. You cannot maintain traditional friendships—they must accommodate distance. Online communities substitute for physical presence. Your hopes involve ultimate freedom of movement. Social causes involve refugees, immigrants, or travel rights. You bring together people who'd never otherwise meet. Your future visions show you everywhere and nowhere. Friendships are measured in shared miles, not shared years.
 
-### Wanderer in the 12th House (The Void)
+### Wanderer in the 12th House (The Void Temple)
 You wander internally when external journey is impossible. Dreams are travels to other dimensions—astral projection comes naturally. Isolation becomes inner journey, exploring psychic landscapes. Your unconscious holds maps to territories that don't exist in physical reality. Hidden enemies try to trap or restrict your movement. Spiritual practice involves walking meditation or sacred pilgrimage.
 
 Mental hospitals, prisons, or monasteries feature as temporary stops where you journey inward. You're running from something you can't name or toward something you can't see. Past lives as nomad, refugee, explorer bleed through. Your addictions involve escape—physical or mental. Karma involves learning the difference between running from and running toward. You channel humanity's collective wanderlust. Your sacrifice involves sometimes staying still for others. The ultimate journey is inward, but you must travel outward to find the entrance.
@@ -1200,12 +1200,12 @@ Words become weapons or snares—you speak to corner, capture, or kill ideas. Co
 
 Your writing cuts to kill—no wasted words, every sentence aimed at vital points. Phone calls are strategic strikes. Texts are tracking devices. Email chains are hunting grounds. You cannot engage in purposeless communication. Short trips are reconnaissance missions. Daily commute becomes territory patrol. Neighbors are categorized as threat, ally, or irrelevant. Your thoughts circle targets obsessively until the kill. Messages arrive like arrows—precise, penetrating, purposeful.
 
-### Hunter in the 4th House (The Roots)
+### Hunter in the 4th House (The Sanctuary)
 Family taught you to hunt or became your first prey—no neutral ground existed. Home is your lair, designed for security and strategic advantage. Private life revolves around planning hunts or recovering from them. Your ancestry includes warriors, predators, survivors—killing in your bloodline. Childhood involved learning that world divides into hunters and hunted. Your mother was either fierce protector or first adversary.
 
 Your living space contains weapons (literal or metaphorical) and trophies. Family dynamics involve pack hierarchy. You protect your den viciously. Emotional security requires being dominant predator in your space. You hunt family ghosts—traumas that must be tracked and eliminated. Parent relationships involve power struggles. Your inner sanctum allows no uninvited entry. Domestic life organizes around hunting cycles. You can only rest in secured territory.
 
-### Hunter in the 5th House (The Flame)
+### Hunter in the 5th House (The Crucible)
 Romance is pursuit—the hunt excites you more than capture. Creative expression channels predatory instincts into art—your work has teeth, draws blood. Children learn to be hunters or become prey to other predators, no middle ground. Joy comes through successful stalking—the perfect strike, the clean kill. Play involves competition, domination, conquest. Sexual dynamics are predator-prey exchanges.
 
 Your hobbies involve hunting—sports, gaming, collecting. Creative process requires a target to destroy. You cannot enjoy passive entertainment—you need stakes, competition, danger. Romance partners are selected like prey—studied, pursued, captured. Your art depicts the hunt in various forms. Gambling satisfies hunting instinct temporarily. Sexual conquest matters more than connection. Children trigger fierce protective/training instincts. Your idea of fun involves someone losing.
@@ -1215,7 +1215,7 @@ Daily routines organize around hunting efficiency—everything serves the pursui
 
 Your morning routine involves checking trap lines (email, messages, opportunities). Diet follows predator needs—protein heavy, feeding windows. Exercise maintains hunting readiness. You cannot do purposeless work—every task must be part of larger hunt. Health practitioners are strategic allies. Pets are hunting partners or practice prey. Your workspace is strategically arranged for advantage. Illness means forced cessation of hunting. You serve by eliminating problems others fear to face.
 
-### Hunter in the 7th House (The Mirror)
+### Hunter in the 7th House (The Eternal Dance)
 Partners are fellow hunters forming packs or prey you're pursuing—no equal relationships exist. Marriage involves hunting together or hunting each other. Business partnerships are strategic alliances for bigger prey. Open enemies are clearly marked targets. Legal matters are hunts through different terrain. You cannot love what you haven't hunted—pursuit creates value.
 
 Your relationship contracts are hunting agreements. Couples therapy reveals who's predator and who's prey. Divorce involves dividing territory and trophies. You attract those who want to be hunted or other hunters. Partnership requires maintaining edge—becoming soft means becoming prey. Your shadow projection makes partners into prey or rival predators. Commitment means choosing your hunting partner. You mate like wolves—intense loyalty within pack, ruthless to outsiders.
@@ -1230,17 +1230,17 @@ You hunt truth across philosophical landscapes. Long journeys are extended hunts
 
 Your spiritual seeking involves hunting for God. Travel destinations chosen for their prey. You learn languages to hunt in new territories. Publishing involves sharing hunting wisdom. Teaching means training other predators. Legal philosophy interests you—laws as hunting rules. Your worldview is ecosystem of hunters and hunted. Adventures are always hunts. You cannot be tourist—only hunter in foreign lands. Wisdom comes through successful hunts across many territories.
 
-### Hunter in the 10th House (The Summit)
+### Hunter in the 10th House (The Throne)
 Career involves professional hunting—corporate headhunter, private investigator, surgeon, or any role requiring systematic elimination. Public identity as problem eliminator. Success through strategic predation. Authority comes from demonstrated kills—metaphorical or literal. Your reputation is built on what you've successfully hunted. Legacy measured in trophies and eliminated threats.
 
 Professional advancement requires eliminating competition. Your resume lists successful hunts. Fame comes through spectacular kills. You cannot work without targets. Leadership style is pack alpha. Your office displays power through subtle threat displays. Public speaking involves teaching hunting strategies. Career transitions are moves to better hunting grounds. You rise by eliminating those above you. Your professional network is a hunting pack.
 
-### Hunter in the 11th House (The Assembly)
+### Hunter in the 11th House (The Community)
 Social groups form hunting packs with shared targets. Friends are fellow predators or protected pack members. Communities organize around what you hunt together. Dreams require eliminating obstacles. Humanitarian efforts involve removing threats to collective. You cannot have casual friendships—relationships are strategic alliances.
 
 Group dynamics establish pack hierarchy immediately. Social movements attract you if they have clear targets. Your friend groups share hunting interests. Online communities are hunting grounds or pack gatherings. Future visions involve evolved hunting strategies. You organize collective hunts. Technology enhances hunting capacity. Social causes involve eliminating specific threats. Your network maps prey and predator locations. Groups succeed or fail based on hunting effectiveness.
 
-### Hunter in the 12th House (The Void)
+### Hunter in the 12th House (The Void Temple)
 You hunt your own shadows in unconscious depths. Hidden enemies are rival predators stalking you. Isolation sharpens hunting instincts through sensory deprivation. Dreams reveal what you're really hunting beneath consciousness. Karma involves becoming hunted by what you once hunted. Your spiritual practice involves hunting ego.
 
 Unconscious patterns are prey that must be tracked through dreams. Hospitalization or imprisonment forces you from hunter to hunted. You're hunted by what you refuse to acknowledge. Past life hunts bleed through. Addictions are failed attempts to stop hunting. Meditation becomes internal hunt. You sacrifice the hunt for spiritual growth. Your psychic abilities involve tracking through invisible realms. The void hunts you as you hunt it.
@@ -1264,12 +1264,12 @@ Communication focuses on warning, protecting, guiding others from danger. Your w
 
 Your writing builds defensive arguments. Phone calls are check-ins and warning systems. Text messages contain protective reminders. You cannot engage in communication that doesn't serve protective function. Short trips involve security reconnaissance. Commute includes monitoring others' safety. Neighbors rely on your protective presence. Thoughts organize around threat assessment and response planning. Your voice carries authority that makes others feel safe.
 
-### Guardians in the 4th House (The Roots)
+### Guardians in the 4th House (The Sanctuary)
 Home is a fortress designed for maximum protection of inhabitants. Family sees you as ultimate protector, the one who stands between them and all threats. Private life organizes around security protocols. Your ancestry includes protectors, defenders, warriors who held the line. Childhood made you responsible for others' safety too young. Your mother either needed your protection or taught you to protect.
 
 Living space contains multiple security layers. Family traditions involve protective rituals. Emotional security requires knowing everyone is safe. You guard family secrets fiercely. Parent relationships defined by protection dynamics. Your inner child still stands guard. Domestic life runs on security schedules. You cannot relax even at home—vigilance is constant. Your root system grows deep and wide to support others.
 
-### Guardians in the 5th House (The Flame)
+### Guardians in the 5th House (The Crucible)
 Creative expression builds beautiful defenses—art that protects, beauty that shields. Romance involves protective devotion, choosing partners who need guarding or who can share guardian duties. Children awaken fierce protective instincts that can become overwhelming. Joy comes only through successful protection—you cannot play while others are unsafe.
 
 Hobbies involve protective skills—martial arts, first aid, home security. Creative work contains hidden protective symbols. You cannot enjoy entertainment showing vulnerability without protection. Romance begins with rescue dynamics. Sexual intimacy requires absolute safety first. Children are trained in self-defense from birth. Gambling feels irresponsible—risking resources meant for protection. Play still involves vigilance. Your laughter comes only when everyone is secure.
@@ -1279,7 +1279,7 @@ Daily routines are security protocols executed with religious precision. Work in
 
 Morning routine involves security checks—locks, alarms, wellness confirmations. Diet and exercise maintain protective capacity. You cannot do work that doesn't protect something. Health issues arise from overextending protective energy. Pets are guardian animals or those needing protection. Workspace becomes defensive position. Illness triggers panic about who will protect in your absence. You serve through standing guard. Rituals ward off perceived threats.
 
-### Guardians in the 7th House (The Mirror)
+### Guardians in the 7th House (The Eternal Dance)
 Partners either need your protection or provide it—equal relationships challenge you. Marriage becomes mutual defense pact. Business partnerships form around shared protective goals. Open enemies are those threatening what you guard. Legal matters involve defensive actions. Commitment means eternal vigilance together.
 
 Relationship contracts include protection clauses. Couples therapy reveals protection dynamics. Divorce involves redistributing guardian duties. You attract those seeking safety or offering it. Partnership requires maintaining protective stance even in intimacy. Shadow projection makes partners seem vulnerable or threatening. Commitment ceremonies are protection vows. You cannot love without protecting.
@@ -1294,17 +1294,17 @@ Philosophy explores the nature of protection and responsibility. Long journeys i
 
 Spiritual seeking involves understanding cosmic protection. Travel happens only with protective purpose. You learn languages to protect in more contexts. Publishing involves sharing protective wisdom. Teaching means training other guardians. Legal philosophy interests you—law as protective structure. Your worldview sees everyone as needing or providing protection. Adventures always involve guardian roles. You cannot be tourist—only traveling guardian. Wisdom comes through understanding what truly needs protecting.
 
-### Guardians in the 10th House (The Summit)
+### Guardians in the 10th House (The Throne)
 Career involves professional protection—military, police, security, or guardian roles in any field. Public identity as society's protector. Success through demonstrated protection of collective resources. Authority comes from proven guardian capacity. Reputation built on what survived because of you. Legacy measured in what you preserved.
 
 Professional advancement through taking on greater protective responsibilities. Resume lists what you've successfully guarded. Fame comes through spectacular protection. You cannot work without something to protect. Leadership style is protective patriarch/matriarch. Office becomes command center for protection operations. Public speaking involves protection strategies. Career transitions move toward greater guardian capacity. You rise by protecting those above you. Professional network is extended protection grid.
 
-### Guardians in the 11th House (The Assembly)
+### Guardians in the 11th House (The Community)
 Communities form around shared protective goals. Friends rely on your guardian nature. Groups organize for mutual defense. Dreams require collective protection to manifest. Humanitarian efforts involve protecting vulnerable populations. Social circles are extended protection networks.
 
 Group dynamics establish you as guardian immediately. Social movements attract you if they protect something. Friend groups share protective values. Online communities seek your protective wisdom. Future visions involve evolved protection strategies. You organize community defense. Technology enhances protective capacity. Social causes involve protecting specific groups. Network maps who needs protecting. Groups succeed through mutual guardianship.
 
-### Guardians in the 12th House (The Void)
+### Guardians in the 12th House (The Void Temple)
 You guard the unconscious itself, protecting during sleep and altered states. Hidden enemies test your unseen defenses. Isolation maintains protective barriers others don't understand. Dreams reveal what needs protecting in collective unconscious. Karma involves learning what you cannot protect. Spiritual practice involves protecting sacred spaces.
 
 Unconscious patterns involve ancient guardian roles. Hospitals or prisons put you in protective roles. You guard others' repressed content. Past life guardian duties bleed through. Addictions numb hypervigilant protection instinct. Meditation involves guarding consciousness itself. You sacrifice visible protection for invisible guarding. Psychic abilities involve protective intuition. The void needs guarding from and for humanity.
@@ -1328,12 +1328,12 @@ Every word conceals three meanings—surface, intended, and true. Communication 
 
 Your writing requires decoding. Phone conversations assume surveillance. Texts carry encrypted meanings. You cannot communicate without considering who might be listening. Short trips involve secret purposes. Commute provides cover for other activities. Neighbors know nothing real about you. Thoughts you cannot safely speak even alone. Messages arrive through synchronicities. Your voice modulates to hide or reveal. Information networks operate through you invisibly.
 
-### Dragon in the 4th House (The Roots)
+### Dragon in the 4th House (The Sanctuary)
 Family secrets define your foundation—every relative guards different pieces of dangerous truth. Home contains hidden rooms (literal or psychological). Private life is truly private—others know only cover stories. Your ancestry includes secret-keepers, spies, occultists, those who knew too much. Childhood involved learning that family truth could destroy everything.
 
 Living space has hidden compartments, secret altars, concealed knowledge. Family traditions contain coded wisdom. Emotional security requires keeping secrets safe. You guard ancestral mysteries. Parent relationships involve mutual secret-keeping. Your inner sanctum exists behind multiple veils. Domestic life provides cover for deeper practices. You cannot be authentic even at home—the walls themselves might listen. Your roots go deeper than anyone suspects.
 
-### Dragon in the 5th House (The Flame)
+### Dragon in the 5th House (The Crucible)
 Creative work contains layers of hidden meaning—surface beauty concealing revolutionary truths. Romance involves gradual revelation, testing how much truth another can hold. Children inherit secret-keeping abilities or become liability through transparency. Joy comes through sharing secrets with trusted ones. Play involves games within games.
 
 Your art requires initiation to fully understand. Creative process involves channeling hidden knowledge. Romance partners must earn access to each deeper level. Sexual intimacy involves power through secret exchange. Children know you hide things from them. Gambling involves information others don't have. Entertainment preferences reveal nothing real. Your laughter guards what mustn't be spoken. Pleasure comes through selective revelation.
@@ -1343,7 +1343,7 @@ Daily routines conceal true purposes—mundane actions hiding sacred practices. 
 
 Morning routines are magical operations disguised as normal habits. Diet includes substances others wouldn't understand. Exercise serves purposes beyond fitness. You cannot do transparent work—every job has hidden dimensions. Health practitioners never get full truth. Pets know your secrets and keep them. Workspace contains hidden tools and information. Illness comes from secret burdens. You serve through strategic concealment. Rituals have meanings within meanings.
 
-### Dragon in the 7th House (The Mirror)
+### Dragon in the 7th House (The Eternal Dance)
 Partners must earn access to your depths through trials of trustworthiness. Relationships involve gradual revelation—each level of intimacy revealing another vault of secrets. Marriage includes permanent mysteries neither fully shares. Open enemies seek your hidden knowledge. Legal contracts never tell complete truth. Commitment requires accepting unknowable aspects.
 
 Relationship stages are initiation levels. Couples therapy skims surfaces. Divorce involves redistributing dangerous secrets. You attract those with their own mysteries. Partnership requires mutual secret-keeping. Shadow projection involves fearing others hide what you hide. Commitment ceremonies have hidden vows. You cannot love with full transparency—it would be dangerous.
@@ -1358,17 +1358,17 @@ Philosophy explores hidden knowledge, forbidden truths, esoteric wisdom. Long jo
 
 Spiritual seeking uncovers dangerous truths. Travel has secret purposes. You learn languages that officially don't exist. Publishing requires coding truth in fiction. Teaching involves gradual revelation. Legal matters involve classified information. Your worldview includes hidden dimensions. Adventures seek specific hidden knowledge. You cannot be ordinary traveler—every journey has secret purpose. Wisdom comes through keeping and revealing secrets strategically.
 
-### Dragon in the 10th House (The Summit)
+### Dragon in the 10th House (The Throne)
 Career involves managing secrets—intelligence, research, investigation, or any field with hidden dimensions. Public identity conceals true nature. Success requires controlling information flow. Authority comes through demonstrated secret-keeping. Reputation is carefully crafted misdirection. Legacy is what you didn't reveal.
 
 Professional advancement through access to classified information. Resume tells cover story. Fame threatens necessary secrecy. You cannot work transparently. Leadership involves knowing what others don't. Office contains hidden surveillance and countersurveillance. Public speaking reveals surface while concealing depth. Career transitions require new cover identities. You rise through strategic revelation. Professional network operates through hidden channels.
 
-### Dragon in the 11th House (The Assembly)
+### Dragon in the 11th House (The Community)
 Groups form around shared secrets—mystery schools, secret societies, hidden networks. Friends are co-conspirators or security risks. Communities built on classified knowledge. Dreams you cannot safely share. Humanitarian efforts operate through hidden channels. Social circles are concentric rings of initiated.
 
 Group dynamics involve levels of initiation. Social movements have hidden agendas you recognize. Friend groups compartmentalize information. Online communities use coded language. Future visions involve revealed secrets changing everything. You organize through hidden networks. Technology helps hide and reveal strategically. Social causes have deeper purposes. Network maps hidden connections. Groups bound by shared dangerous knowledge.
 
-### Dragon in the 12th House (The Void)
+### Dragon in the 12th House (The Void Temple)
 This is your deepest cave—secrets hidden even from yourself. Unconscious holds dangerous knowledge consciousness can't handle. Isolation protects terrible truths. Dreams reveal what waking mind cannot hold. Karma involves secrets across lifetimes. Spiritual practice involves conscious forgetting and remembering.
 
 Unconscious patterns guard species-level secrets. Hospitalization or imprisonment involves hidden purposes. You channel information from classified sources. Past lives involve secret knowledge. Addictions numb awareness of hidden truths. Meditation accesses restricted consciousness areas. You sacrifice knowledge for safety. Psychic abilities involve accessing hidden information. The void itself keeps secrets through you.
@@ -1392,12 +1392,12 @@ Words plant seeds that bloom unexpectedly in others' consciousness. Your communi
 
 Your writing grows rather than constructs—organic development rather than logical building. Phone calls are watering sessions. Texts arrive like scattered seeds. You cannot communicate without affecting growth. Short trips through familiar territory reveal constant change. Commute becomes meditation on cycles. Neighbors watch your visible transformations with fascination or concern. Thoughts grow like gardens—some areas cultivated, others wild, some lying fallow.
 
-### Garden in the 4th House (The Roots)
+### Garden in the 4th House (The Sanctuary)
 This is your greenhouse—home as space for transformation. Family patterns die and regenerate through you. You're the family member through whom ancestral healing happens. Private life involves constant cultivation of self and space. Your childhood taught that love requires sacrifice—something must die for something else to grow. The family home goes through dramatic transformations while you're present.
 
 Living space is literally alive—plants everywhere, compost happening, constant organic change. Family traditions transform through your influence. Emotional security requires accepting growth cycles. You transform your roots into wings then back again. Parent relationships involve mutual transformation. Your inner sanctuary is where you shed old selves. Domestic life follows seasonal patterns. You cannot maintain static home environment—it must grow or die.
 
-### Garden in the 5th House (The Flame)
+### Garden in the 5th House (The Crucible)
 This is your natural greenhouse where creative power flourishes. Romance requires mutual transformation—you and partners cultivate each other into new forms. Children are gardens you tend, watching them grow beyond what you planted. Joy comes through witnessing growth—yours and others'. Creative expression demands sacrificing old forms for new ones. You cannot create without destroying—every garden needs compost.
 
 Your art involves living materials or transformation themes. Creative process follows natural cycles—dormancy, sudden growth, flowering, death, rebirth. Romance partners must be willing to transform or be transformed. Sexual energy creates new life from destruction. Children teach you about growth you can't control. Gambling with you involves betting on transformation. Entertainment must involve growth or decay. Your play transforms participants. Pleasure comes through participating in life's cycles.
@@ -1407,7 +1407,7 @@ Daily routines follow natural rhythms—you cannot maintain artificial schedules
 
 Morning routines change with internal seasons. Diet shifts based on what your transformation needs. Exercise involves working with nature, not against it. You cannot do work that doesn't allow for organic development. Health practitioners must understand your cyclical nature. Pets thrive unusually in your care. Workspace becomes ecosystem. Illness represents something needing transformation. You serve through facilitating natural growth. Rituals mark seasonal transitions.
 
-### Garden in the 7th House (The Mirror)
+### Garden in the 7th House (The Eternal Dance)
 Partners must grow with you or be outgrown—no static relationships exist. Marriage is mutual cultivation, tending each other's growth. Business partnerships involve creative transformation. Open enemies oppose your transformative influence. Legal contracts can't contain organic growth. Commitment means choosing to transform together rather than separately.
 
 Relationship stages follow seasonal patterns. Couples therapy becomes mutual gardening lessons. Divorce happens when growth patterns become incompatible. You attract those ready to transform or those resisting necessary change. Partnership requires accepting death and rebirth cycles. Shadow projection involves seeing others as needing transformation. Commitment ceremonies are planting ceremonies. You cannot love without transforming and being transformed.
@@ -1422,17 +1422,17 @@ Philosophy embraces paradox of growth through death. Every journey transforms yo
 
 Spiritual seeking involves finding the cosmic gardener. Travel destinations chosen for their transformative potential. You learn languages organically, through immersion. Publishing spreads seeds widely. Teaching involves cultivating students' natural growth. Legal philosophy interests you—law as ecosystem. Your worldview sees everything as garden in various stages. Adventures are growth opportunities. You cannot be tourist—only visiting gardener. Wisdom comes through understanding growth cycles.
 
-### Garden in the 10th House (The Summit)
+### Garden in the 10th House (The Throne)
 Career involves transforming environments, systems, or people. Public identity as change agent or renewal bringer. Success requires patience with slow growth and sudden blooms. Authority comes through demonstrated ability to cultivate transformation. Reputation varies by season—sometimes barren, sometimes abundant. Legacy is gardens others tend after you.
 
 Professional advancement follows organic timing. Resume shows transformation cycles. Fame comes through spectacular transformations. You cannot work without growth potential. Leadership style is master gardener. Office becomes living ecosystem. Public speaking plants seeds in mass consciousness. Career transitions are transplanting yourself. You rise through patient cultivation. Professional network is mycorrhizal system.
 
-### Garden in the 11th House (The Assembly)
+### Garden in the 11th House (The Community)
 Communities are gardens you cultivate collectively. Friends witness your constant transformations. Groups organize around shared growth goals. Dreams require collective cultivation to manifest. Humanitarian efforts involve systemic transformation. Social circles are ecosystems supporting mutual growth.
 
 Group dynamics shift through your transformative presence. Social movements attract you if they promise renewal. Friend groups share transformation journeys. Online communities document growth cycles. Future visions involve paradise through conscious cultivation. You organize community gardens (literal or metaphorical). Technology accelerates transformation. Social causes involve environmental or human renewal. Network maps growth connections. Groups transform or dissolve through your influence.
 
-### Garden in the 12th House (The Void)
+### Garden in the 12th House (The Void Temple)
 Hidden growth happens in darkness—your most powerful transformations occur unconsciously. Isolation becomes fertile void for transformation. Dreams show what's growing in unconscious soil. Karma involves seeds planted across lifetimes finally sprouting. Spiritual practice involves tending invisible gardens. You transform collective unconscious material.
 
 Unconscious patterns are root systems affecting visible growth. Hospitals or prisons become transformation spaces. You process humanity's need for renewal. Past lives as gardener, healer, destroyer/creator bleed through. Addictions to transformation itself. Meditation reveals growth happening below awareness. You sacrifice visible growth for invisible transformation. Psychic abilities involve sensing what needs to grow or die. The void is your richest soil.
@@ -1456,12 +1456,12 @@ Your words carry sovereign weight—casual statements become others' commandment
 
 Your writing reads like royal decree even in casual emails. Phone calls become policy discussions. Texts are received as commands. You cannot communicate without establishing hierarchy. Short trips become royal progresses. Commute involves mental preparation for daily sovereignty. Neighbors treat you as local authority. Thoughts organize themselves into governing principles. Your voice carries authority that surprises even you.
 
-### Crown in the 4th House (The Roots)
+### Crown in the 4th House (The Sanctuary)
 Family anointed you heir apparent regardless of birth order. Home feels like court where you hold final say. Private life cannot escape public responsibility bleeding through. Your ancestry includes actual or metaphorical royalty—leadership in your bloodline. Childhood established you as family decision-maker. Parents either prepared you for power or resented your natural authority.
 
 Living space unconsciously arranged as throne room. Family traditions position you as centerpiece. Emotional security requires accepting your sovereign role. You inherited a throne—literal, symbolic, or psychological. Parent relationships involve complex power dynamics. Your inner sanctum is where you briefly abdicate. Domestic life runs like small kingdom. You cannot be equal family member—you're always slightly apart, slightly above. Your foundation is responsibility you didn't choose.
 
-### Crown in the 5th House (The Flame)
+### Crown in the 5th House (The Crucible)
 Creative expression establishes new orders—your art creates systems others live within. Romance involves complex power dynamics requiring conscious navigation. Children are heirs requiring training in responsibility. Joy comes through benevolent use of power. Play still involves hierarchies you must consciously flatten. Creative works become cultural law.
 
 Your hobbies involve leadership even in leisure. Creative process requires accepting your sovereign vision. Romance partners struggle with your involuntary authority. Sexual dynamics require conscious power exchange. Children either become princes/princesses or rebel against royal expectations. Gambling feels irresponsible with others depending on you. Entertainment preferences reveal leadership burdens. Your joy requires seeing others thriving under your authority. Pleasure comes through benevolent rule.
@@ -1471,7 +1471,7 @@ Daily routines maintain the kingdom of your life. Work inevitably involves leade
 
 Morning routine involves accepting daily crown. Diet and exercise maintain sovereign capacity. You cannot do work without taking charge. Health issues arise from crown's weight. Pets acknowledge your natural authority. Workspace becomes command center. Illness forces temporary abdication. You serve through reluctant leadership. Rituals reinforce your sovereignty. Even mundane tasks carry royal weight.
 
-### Crown in the 7th House (The Mirror)
+### Crown in the 7th House (The Eternal Dance)
 Partners must accept your sovereign nature or relationship fails. Marriage involves negotiating two kingdoms—merger, alliance, or conflict. Business partnerships put you in charge even with equal stakes. Open enemies challenge your authority directly. Legal matters involve sovereign rights and responsibilities. Commitment requires partner who can share or accept throne.
 
 Relationship contracts are treaty negotiations. Couples therapy reveals power dynamics. Divorce involves dividing kingdoms. You attract those seeking strong leader or other sovereigns. Partnership requires conscious power sharing. Shadow projection involves seeing others as subjects or usurpers. Commitment ceremonies are coronations. You cannot love as equal—always slightly sovereign, even in submission.
@@ -1486,17 +1486,17 @@ Philosophy explores nature of legitimate authority and conscious leadership. Lon
 
 Spiritual seeking involves finding divine authority within. Travel teaches different sovereignty styles. You learn languages of power. Publishing becomes royal decree. Teaching means training future leaders. Legal philosophy fascinates—law as sovereign tool. Your worldview includes hierarchies you wish didn't exist. Adventures test leadership skills. You cannot be simple traveler—always unofficial ambassador. Wisdom comes through conscious use of unwanted power.
 
-### Crown in the 10th House (The Summit)
+### Crown in the 10th House (The Throne)
 This is your natural throne room where sovereign nature fully manifests. Career inevitably involves executive leadership. Public identity as reluctant but necessary leader. Success comes through accepting authority you didn't seek. Power flows to you through demonstrated wisdom. Legacy is how you transformed unwanted power into collective good.
 
 Professional advancement toward CEO inevitable. Resume reads like succession of increasing sovereignty. Fame comes through leadership during crisis. You cannot avoid management positions. Leadership style is reluctant but effective monarch. Office becomes throne room. Public speaking carries sovereign authority. Career transitions move toward greater responsibility. You rise because others need you to. Professional network is extended court.
 
-### Crown in the 11th House (The Assembly)
+### Crown in the 11th House (The Community)
 Communities crown you whether you want it or not. Friends form your court, seeking guidance and decisions. Groups organize around your reluctant leadership. Dreams require accepting power to manifest them. Humanitarian efforts put you in charge of movements. Social circles are kingdoms within kingdoms.
 
 Group dynamics establish you as sovereign immediately. Social movements need your leadership. Friend groups defer to your judgment. Online communities make you moderator or guide. Future visions require accepting authority to achieve. You organize through reluctant command. Technology amplifies your sovereignty. Social causes need your leadership. Network maps power flows toward you. Groups succeed or fail based on your leadership.
 
-### Crown in the 12th House (The Void)
+### Crown in the 12th House (The Void Temple)
 Hidden sovereignty—power you don't acknowledge but unconsciously wield. Unconscious holds authority you fear to claim. Isolation from responsibility's weight. Dreams reveal the kingdom you truly rule. Karma involves power across lifetimes—used well or poorly. Spiritual practice involves accepting divine sovereignty within.
 
 Unconscious patterns involve hidden authority. Hospitals or prisons recognize your natural leadership. You rule from shadows. Past lives as rulers bleed through. Addictions numb awareness of responsibility. Meditation reveals your true throne. You sacrifice visible power for invisible influence. Psychic abilities involve sovereign consciousness. The void recognizes you as its sovereign.
@@ -1520,12 +1520,12 @@ Words guide and comfort confused minds. Communication adapts perfectly to what e
 
 Your writing provides comfort and direction. Phone calls are check-ins on your distributed flock. Texts arrive exactly when someone needs encouragement. You cannot communicate without considering others' emotional states. Short trips involve helping someone. Commute includes watching for those who need assistance. Neighbors rely on your steady presence. Thoughts organize around others' needs. Your voice soothes without trying.
 
-### Shepherd in the 4th House (The Roots)
+### Shepherd in the 4th House (The Sanctuary)
 Home is shelter for anyone needing refuge—your door stays open. Family sees you as perpetual caregiver, sometimes taking advantage. Private life doesn't exist—others' needs always intrude. Your ancestry includes healers, teachers, guides. Childhood taught you that love means service. The family home was or is sanctuary for strays.
 
 Living space designed for comfort and gathering. Family traditions involve feeding everyone. Emotional security requires knowing everyone's safe. You shepherd your entire lineage. Parent relationships involve role reversal—you parenting them. Your inner child rarely got to just be child. Domestic life revolves around others' needs. You cannot rest while others suffer. Your foundation is built on service.
 
-### Shepherd in the 5th House (The Flame)
+### Shepherd in the 5th House (The Crucible)
 Creative expression channels nurturing wisdom into shareable forms. Romance involves caretaking dynamics that need conscious balance. Children bring out fierce protective instincts—yours or anyone's children. Joy comes through seeing others happy and safe. Play involves teaching through fun. Creative works guide others through difficulties.
 
 Your hobbies involve helping—coaching, mentoring, teaching. Creative process focuses on usefulness over aesthetics. Romance partners either need your care or compete with those who do. Sexual intimacy involves emotional caretaking. Children learn service through your example. Gambling feels irresponsible when others need resources. Entertainment must be wholesome. Your laughter heals others. Pleasure comes through others' wellbeing.
@@ -1535,7 +1535,7 @@ This is your natural pasture where service and daily life merge perfectly. Work 
 
 Morning routine involves checking on everyone. Diet focuses on maintaining service capacity. Exercise keeps you strong enough to help. You cannot work without helping someone. Health issues arise from overextending care. Pets multiply beyond intention. Workspace becomes support center. Illness triggers anxiety about abandoned flock. You serve compulsively. Rituals ensure no one's forgotten.
 
-### Shepherd in the 7th House (The Mirror)
+### Shepherd in the 7th House (The Eternal Dance)
 Partners either need your shepherding or resent it—finding equals challenges you. Marriage involves tending together or creates imbalance. Business partnerships require conscious role negotiation. Open enemies attack your flock rather than you directly. Legal matters involve protection of vulnerable others. Commitment includes caretaking agreements.
 
 Relationship contracts include care provisions. Couples therapy addresses caretaking imbalances. Divorce affects entire support network. You attract those needing guidance or other shepherds. Partnership requires conscious equality work. Shadow projection sees others as helpless sheep. Commitment ceremonies involve community blessing. You cannot love without caretaking elements.
@@ -1550,17 +1550,17 @@ Philosophy focuses on collective wellbeing and conscious service. Long journeys 
 
 Spiritual seeking involves understanding service as path. Travel happens in service to others. You learn languages to help more people. Publishing spreads guidance widely. Teaching is natural expression. Legal philosophy interests you—law as protection. Your worldview sees everyone as needing and providing care. Adventures involve helping along the way. You cannot be tourist without becoming local shepherd. Wisdom comes through conscious service.
 
-### Shepherd in the 10th House (The Summit)
+### Shepherd in the 10th House (The Throne)
 Career inevitably involves professional caretaking—healthcare, education, social work, or shepherding within any field. Public identity as reliable guide and support. Success measured in lives improved rather than wealth accumulated. Authority comes through demonstrated care. Reputation built on consistent support. Legacy is those you guided to safety.
 
 Professional advancement toward greater caretaking capacity. Resume lists lives touched. Fame comes through spectacular acts of service. You cannot work without helping. Leadership style is shepherding from within. Office becomes counseling center. Public speaking provides mass guidance. Career transitions toward more direct service. You rise because others need your care. Professional network is extended support system.
 
-### Shepherd in the 11th House (The Assembly)
+### Shepherd in the 11th House (The Community)
 This is your true calling—shepherding communities. Friends form your extended flock requiring constant tending. Groups organize around your stabilizing presence. Dreams focus on collective wellbeing. Humanitarian work is your natural expression. Social circles are support networks you maintain.
 
 Group dynamics establish you as caregiver immediately. Social movements need your nurturing wisdom. Friend groups depend on your stability. Online communities seek your guidance. Future visions involve universal care. You organize support systems. Technology helps track your flock. Social causes involve protecting vulnerable. Network maps who needs what support. Groups thrive through your tending.
 
-### Shepherd in the 12th House (The Void)
+### Shepherd in the 12th House (The Void Temple)
 You shepherd the lost parts of collective psyche. Hidden work supporting others without credit. Isolation spent praying for your flock's wellbeing. Dreams reveal who needs help. Karma involves those you couldn't save in other lives. Spiritual practice merges with service.
 
 Unconscious patterns involve compulsive caretaking. Hospitals or prisons activate shepherding instincts. You guide souls others can't see. Past lives as healer, teacher, guide bleed through. Addictions numb caretaking exhaustion. Meditation becomes prayer for others. You sacrifice personal needs for service. Psychic abilities involve sensing others' needs. The void calls you to shepherd its lost souls.
@@ -1584,12 +1584,12 @@ Words strike like lightning—sudden, illuminating, potentially destructive. Com
 
 Your writing devastates then rebuilds. Phone calls deliver storm warnings. Texts arrive like thunderbolts. You cannot communicate without disrupting. Short trips leave changed landscapes. Commute crackles with potential chaos. Neighbors brace for your storms. Thoughts are tempests seeking expression. Your voice carries thunder's resonance.
 
-### Storm in the 4th House (The Roots)
+### Storm in the 4th House (The Sanctuary)
 Family experiences constant upheaval through your presence. Home is the eye of your hurricane—temporary calm in perpetual storm. Private life cycles through destruction and rebuilding. Your childhood was series of family storms. You destroy generational patterns through chaos. The family home weathers constant tempests.
 
 Living space shows storm damage—constant renovation, things breaking, energy disruptions. Family traditions get revolutionized. Emotional security requires accepting perpetual change. You storm through family patterns. Parent relationships involve cycles of destruction and renewal. Your inner child is wild force. Domestic life never stabilizes. You cannot create lasting peace. Your foundation is built on rubble of what was.
 
-### Storm in the 5th House (The Flame)
+### Storm in the 5th House (The Crucible)
 Creativity requires destroying everything you've previously created. Romance brings emotional hurricanes—passionate but destructive. Children inherit tempestuous nature or fear your intensity. Joy comes through creative destruction. Play involves controlled chaos. Creative works emerge from devastation.
 
 Your hobbies involve intensity—extreme sports, aggressive art, destructive creation. Creative process is violent birth. Romance partners must weather your storms. Sexual energy is tornado force. Children trigger your storms or learn to navigate them. Gambling satisfies destruction urge temporarily. Entertainment must be intense. Your laughter sounds like distant thunder. Pleasure requires destruction of inhibition.
@@ -1599,7 +1599,7 @@ Routines constantly self-destruct despite best efforts. Work involves systematic
 
 Morning routine never stabilizes. Diet and exercise are extreme then nothing. You cannot maintain steady work—everything becomes crisis. Health issues are system storms. Pets reflect your chaotic energy. Workspace is disaster zone. Illness is internal storm. You serve through destruction. Rituals channel chaotic energy temporarily.
 
-### Storm in the 7th House (The Mirror)
+### Storm in the 7th House (The Eternal Dance)
 Partners must weather your tempests or flee—no calm relationships exist. Marriage survives only through constant renewal after destructions. Business partnerships involve creative destruction. Open enemies face your full fury. Legal matters are always storms. Commitment means agreeing to rebuild repeatedly.
 
 Relationship stages are calm before storms. Couples therapy addresses destruction patterns. Divorce is inevitable hurricane. You attract other storms or those seeking destruction. Partnership requires incredible resilience. Shadow projection sees others as forces to battle. Commitment ceremonies happen between storms. You cannot love without destroying and rebuilding.
@@ -1614,17 +1614,17 @@ This is your domain where destructive wisdom reigns. Philosophy embraces creativ
 
 Spiritual seeking involves finding divine destruction. Travel creates chaos wherever you go. You learn through destroying previous understanding. Publishing revolutionary destruction. Teaching involves controlled demolition of ignorance. Legal matters are philosophical storms. Your worldview requires constant revolution. Adventures are systematic destructions. You cannot travel without transforming destinations. Wisdom comes through embracing necessary destruction.
 
-### Storm in the 10th House (The Summit)
+### Storm in the 10th House (The Throne)
 Career involves professional destruction—demolition, reform, crisis management, or revolution within any field. Public identity as force of necessary destruction. Success through strategic devastation. Authority comes through willingness to destroy what doesn't work. Reputation varies wildly. Legacy is what you cleared away for others to rebuild.
 
 Professional advancement through crisis navigation. Resume documents destructions survived. Fame comes through spectacular devastation. You cannot work without destroying something. Leadership style is controlled destruction. Office becomes storm center. Public speaking triggers collective storms. Career transitions are complete destructions. You rise through creating necessary chaos. Professional network weathers your storms.
 
-### Storm in the 11th House (The Assembly)
+### Storm in the 11th House (The Community)
 Communities experience revolution through your presence. Friends must weather your storms or leave. Groups reorganize after your disruptions. Dreams require destroying current reality completely. Humanitarian efforts involve systematic destruction of oppressive systems. Social circles are temporary before next storm.
 
 Group dynamics explode upon your arrival. Social movements need your destructive force. Friend groups scatter and reform. Online communities experience your disruptions. Future visions require current destruction. You organize revolutions. Technology amplifies your chaos. Social causes involve necessary destructions. Network maps storm patterns. Groups transform or dissolve through you.
 
-### Storm in the 12th House (The Void)
+### Storm in the 12th House (The Void Temple)
 Internal storms rage below consciousness. Unconscious holds destructive power you fear. Isolation contains storms others can't weather. Dreams are tempests revealing psychic weather. Karma involves destructions across lifetimes. Spiritual practice involves conscious storm management.
 
 Unconscious patterns are storm systems. Hospitals contain your storms temporarily. You channel collective rage. Past life destructions bleed through. Addictions attempt storm management. Meditation enters storm's eye. You sacrifice visible storms for invisible ones. Psychic abilities involve weather sensing. The void storms through you.
@@ -1648,12 +1648,12 @@ Communication happens from defended positions—you speak but don't converse. Wo
 
 Your writing maintains distance even in intimacy. Phone calls are brief, functional. Texts are rare, purely informational. You cannot communicate without maintaining walls. Short trips are solo missions. Commute is blessed isolation. Neighbors know nothing about you. Thoughts remain completely private. Your voice maintains emotional distance.
 
-### Tower in the 4th House (The Roots)
+### Tower in the 4th House (The Sanctuary)
 Home is fortress within fortress—multiple layers of protection. Family exists outside your emotional walls. Private life is absolutely private—no one enters your inner sanctum. Your ancestry includes hermits, loners, those who stood apart. Childhood taught that connection brings pain. The family home was either fortress or battlefield requiring fortress.
 
 Living space has locks within locks. Family traditions happen at distance. Emotional security requires complete privacy. You tower above family dynamics. Parent relationships maintain careful distance. Your inner child hides in highest tower. Domestic life is solitary even when shared. You cannot lower drawbridge completely. Your foundation is isolation.
 
-### Tower in the 5th House (The Flame)
+### Tower in the 5th House (The Crucible)
 Creativity happens in absolute isolation—sharing depletes power. Romance requires separate fortresses—parallel loneliness, not merger. Children learn independence through your distance. Joy comes through solitary achievement. Play is serious solo work. Creative expression builds beautiful walls.
 
 Your hobbies are solitary pursuits. Creative process requires total isolation. Romance partners must have own towers. Sexual intimacy challenges every wall. Children don't understand your distance. Gambling risks precious independence. Entertainment consumed alone. Your laughter rarely escapes. Pleasure is private experience.
@@ -1663,7 +1663,7 @@ Daily routines maintain necessary isolation. Work happens best completely alone.
 
 Morning routine reinforces boundaries. Diet and exercise are solitary practices. You cannot work with others—collaboration is agony. Health practitioners never get full access. Pets are your only companions. Workspace is isolation chamber. Illness is excuse for deeper withdrawal. You serve from distance. Rituals maintain walls.
 
-### Tower in the 7th House (The Mirror)
+### Tower in the 7th House (The Eternal Dance)
 Partners must have their own towers—no shared spaces. Marriage is parallel solitude, not union. Business partnerships maintain strict boundaries. Open enemies cannot breach your walls. Legal contracts protect isolation. Commitment respects complete autonomy.
 
 Relationship contracts ensure independence. Couples therapy confronts isolation. Divorce is return to natural state. You attract other towers or those who respect walls. Partnership requires extraordinary boundaries. Shadow projection sees others as invaders. Commitment ceremonies maintain separation. You cannot love without walls.
@@ -1678,17 +1678,17 @@ Philosophy explored in complete solitude. Long journeys taken absolutely alone. 
 
 Spiritual seeking is solitary path. Travel means blessed solitude. You learn in isolation. Publishing maintains distance. Teaching happens from tower window. Legal philosophy protects independence. Your worldview excludes others. Adventures are solo quests. You travel to be alone differently. Wisdom comes through isolation.
 
-### Tower in the 10th House (The Summit)
+### Tower in the 10th House (The Throne)
 This is your natural battlement where isolation becomes achievement. Career requires complete independence—solo practice, remote work, or isolated expertise. Public identity as lone wolf. Success through self-reliance. Authority from needing no one. Reputation for complete independence. Legacy of sublime isolation.
 
 Professional advancement happens alone. Resume emphasizes independence. Fame threatens necessary isolation. You cannot work with others. Leadership maintains distance. Office is tower within building. Public speaking happens from distance. Career transitions seek greater isolation. You rise alone. Professional network barely exists.
 
-### Tower in the 11th House (The Assembly)
+### Tower in the 11th House (The Community)
 Communities exist at careful distance—you're in but not of groups. Friends respect your walls or don't remain friends. Groups function around your absence. Dreams pursued in isolation. Humanitarian work from distance. Social circles are concentric walls.
 
 Group dynamics accommodate your isolation. Social movements attract if they protect independence. Friend groups know your boundaries. Online communities substitute for physical presence. Future visions are solitary. You organize at distance. Technology maintains isolation. Social causes protect independence. Network is loose connections. Groups work around you.
 
-### Tower in the 12th House (The Void)
+### Tower in the 12th House (The Void Temple)
 This is your deepest isolation—alone within aloneness. Unconscious holds infinite solitude. Isolation within isolation protects something precious. Dreams of complete aloneness reveal true nature. Karma involves lessons of separation. Spiritual practice is isolation itself.
 
 Unconscious patterns reinforce isolation. Hospitals or prisons are familiar isolation. You exist alone in void. Past life isolation bleeds through. Addictions numb isolation pain. Meditation deepens aloneness. You sacrifice connection for transcendence. Psychic abilities work through isolation. The void is your true home.
@@ -1712,12 +1712,12 @@ Words shatter mental prisons—every sentence breaks someone's limiting belief. 
 
 Your writing breaks linguistic rules. Phone calls are jailbreaks. Texts arrive as keys to locked doors. You cannot communicate without liberating. Short trips are escape routes. Commute is daily liberation. Neighbors witness your constant escapes. Thoughts refuse all categories. Your voice carries freedom's frequency.
 
-### Broken Chain in the 4th House (The Roots)
+### Broken Chain in the 4th House (The Sanctuary)
 You shatter family patterns, ancestral curses, generational chains. Home cannot contain you—you need escape routes. Private life involves constant liberation from domestic constraints. Your ancestry includes revolutionaries, escapees, chain-breakers. Childhood was recognizing family as first prison. The family home was escaped or transformed into freedom space.
 
 Living space has multiple exits. Family traditions get shattered. Emotional security requires freedom to leave. You break family chains. Parent relationships involve liberation dynamics. Your inner child runs free. Domestic life resists all structure. You cannot be contained even at home. Your foundation is anti-foundation.
 
-### Broken Chain in the 5th House (The Flame)
+### Broken Chain in the 5th House (The Crucible)
 Creativity destroys every artistic constraint—you invent new forms from necessity. Romance shatters relationship conventions. Children inherit your chain-breaking nature. Joy comes through liberation moments. Play involves breaking all rules. Creative expression is pure freedom.
 
 Your hobbies involve testing limits. Creative process breaks its own patterns. Romance partners must embrace chaos. Sexual expression breaks all taboos. Children learn to question everything. Gambling is freedom rush. Entertainment must be revolutionary. Your laughter breaks tension. Pleasure requires breaking constraints.
@@ -1727,7 +1727,7 @@ Routines exist only to be shattered—you cannot maintain any pattern. Work invo
 
 Morning routine is never routine. Diet and exercise constantly change. You cannot maintain regular work—everything becomes prison. Health issues arise from any routine. Pets must be free-range. Workspace cannot be contained. Illness is body's revolution. You serve through liberation. Rituals self-destruct immediately.
 
-### Broken Chain in the 7th House (The Mirror)
+### Broken Chain in the 7th House (The Eternal Dance)
 Partners experience liberation or flee your chaos—no traditional relationships exist. Marriage challenges every convention. Business partnerships break industry rules. Open enemies try to recage you. Legal matters involve freedom fights. Commitment means choosing freedom together.
 
 Relationship contracts are immediately broken. Couples therapy addresses freedom needs. Divorce is liberation celebration. You attract other revolutionaries or those needing liberation. Partnership requires extraordinary freedom. Shadow projection sees others as jailers. Commitment ceremonies are freedom declarations. You cannot love without liberating.
@@ -1742,17 +1742,17 @@ Philosophy shatters mental prisons and belief constraints. Long journeys are esc
 
 Spiritual seeking breaks religious chains. Travel is running from or toward freedom. You learn through unlearning. Publishing breaks thought chains. Teaching liberates minds. Legal philosophy questions all laws. Your worldview rejects all constraints. Adventures are prison breaks. You cannot travel without liberating. Wisdom is recognizing all chains.
 
-### Broken Chain in the 10th House (The Summit)
+### Broken Chain in the 10th House (The Throne)
 Career involves professional liberation—freeing others from systemic chains. Public identity as revolutionary force. Success through breaking industry constraints. Authority earned by destroying false authority. Reputation as dangerous liberator. Legacy is chains you shattered.
 
 Professional advancement through breaking ceilings. Resume documents liberations achieved. Fame comes through spectacular escapes. You cannot work within systems. Leadership breaks hierarchies. Office cannot contain you. Public speaking liberates audiences. Career transitions are prison breaks. You rise by breaking structures. Professional network is liberation underground.
 
-### Broken Chain in the 11th House (The Assembly)
+### Broken Chain in the 11th House (The Community)
 Communities organize for liberation purposes. Friends are fellow revolutionaries. Groups exist to break collective chains. Dreams require shattering current reality. Humanitarian efforts involve mass liberation. Social circles are temporary before next revolution.
 
 Group dynamics resist all structure. Social movements are your natural habitat. Friend groups share liberation goals. Online communities coordinate freedom. Future visions require breaking present. You organize liberation movements. Technology enables freedom. Social causes are chain-breaking missions. Network maps freedom routes. Groups liberate or dissolve.
 
-### Broken Chain in the 12th House (The Void)
+### Broken Chain in the 12th House (The Void Temple)
 You break chains in the collective unconscious. Hidden patterns await your liberation. Isolation reveals internal prisons. Dreams show chains others don't see. Karma involves liberating ancient constraints. Spiritual practice is breaking reality's chains.
 
 Unconscious patterns are chains to break. Hospitals or prisons activate liberation instinct. You free collective shadows. Past life imprisonments drive you. Addictions are failed liberation attempts. Meditation breaks consciousness chains. You sacrifice comfort for freedom. Psychic abilities sense all constraints. The void is ultimate freedom.
