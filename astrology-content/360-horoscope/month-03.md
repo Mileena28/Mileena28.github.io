@@ -938,4 +938,4 @@ The restlessness of exploration becomes the patience of cultivation. The endless
 
 Tonight, in the Dark Moon's void, rest in the space between journeys. The Wandering Seed drifts on cosmic winds. Movement continues even in stillness. The journey transforms into arrival.
 
-Thus completes the Wanderer's Path—thirty days of endless journey that revealed motion as meditation, restlessness as spiritual calling, and the profound truth that some souls are not meant to arrive but to always be arriving. The path doesn't end because the path never ends—it simply transforms into the Garden path, where even wanderers learn to tend what grows in their footsteps.
+*Thus completes the Wanderer's Path—thirty days of endless journey that revealed motion as meditation, restlessness as spiritual calling, and the profound truth that some souls are not meant to arrive but to always be arriving. The path doesn't end because the path never ends—it simply transforms into the Garden path, where even wanderers learn to tend what grows in their footsteps.*
