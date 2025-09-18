@@ -1,5 +1,5 @@
 # THE SHEPHERD'S GENTLENESS
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 181-210 (June 30 - July 29)*
 *Element: Gentleness | Sacred Color: Soft Wool White | Challenge: Tenderness*
 
