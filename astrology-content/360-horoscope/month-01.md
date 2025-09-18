@@ -1,5 +1,5 @@
 # THE AWAKENER'S REIGN
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 1-30 (January 1-30)*
 *Element: Transformation | Sacred Color: Violet Flame | Challenge: Consciousness*
 
