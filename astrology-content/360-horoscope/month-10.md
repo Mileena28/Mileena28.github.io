@@ -712,11 +712,6 @@ The Bone Card means you choose this recognition. The Chained Crown teaches that 
 
 ---
 
-# The Tower's Isolation - Final Days
-*Days 296-300 (October 23-27)*
-
----
-
 ## Day 296 (October 23) - Waning Gibbous in the Community
 **House Activation:** The Community (Friends, Groups & Collective Dreams) - Day 1  
 **Moon Phase:** Waning Gibbous (The Wise Griever) - Day 4 (Final Day)  
