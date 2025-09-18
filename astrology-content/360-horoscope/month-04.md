@@ -1,5 +1,5 @@
 # THE GARDEN'S ABUNDANCE
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 91-120 (April 1-30)*
 *Element: Abundance | Sacred Color: Emerald Gold | Challenge: Patience*
 
