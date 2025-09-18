@@ -1,4 +1,4 @@
-# The Hedge Witch Cards: Major Arcana - "The Old Roads"
+# The Blood and Bone Cards: Major Arcana
 
 ## Understanding Blood and Bone
 
