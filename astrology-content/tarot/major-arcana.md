@@ -19,7 +19,7 @@ In the Hedge Witch tradition, every card carries the mark of either Blood or Bon
 
 **Type**: BONE CARD - This journey begins with choice, not circumstance.
 
-**Visual Description**: A single dandelion seed drifts through a turbulent sky, neither fighting the wind nor surrendering to it completely. Storm clouds gather behind while ahead lies uncertain brightness. The seed carries no baggage, no history, only the potential for what it might become when it finally chooses to land. In the corner, a small white dog howls at the seed - warning or encouragement, we cannot tell.
+**Visual Description**: A single dandelion seed drifts through a turbulent sky, neither fighting the wind nor surrendering to it completely. Storm clouds gather behind while ahead lies uncertain brightness. The seed carries no baggage, no history, only the potential for what it might become when it finally chooses to land. In the corner, a small white wolf howls at the seed - warning or encouragement, we cannot tell.
 
 **Core Meaning**: Pure potential, the leap of faith, innocence as wisdom, the beginning before the beginning, trust in the journey over the destination.
 
