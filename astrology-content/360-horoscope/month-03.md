@@ -1,5 +1,5 @@
 # THE WANDERER'S PATH
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 61-90 (March 2-31)*
 *Element: Endless Journey | Sacred Color: Dust Gold | Challenge: Restlessness*
 
