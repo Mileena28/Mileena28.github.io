@@ -1,5 +1,5 @@
 # THE GUARDIANS' WATCH
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 121-150 (May 1-30)*
 *Element: Protection | Sacred Color: Shield Silver | Challenge: Vigilance*
 
