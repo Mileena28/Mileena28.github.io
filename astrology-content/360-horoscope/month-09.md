@@ -1,5 +1,5 @@
 # THE STORM'S TEMPEST  
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion  
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion  
 *Days 241-270 (August 29 - September 27)*  
 *Element: Tempest | Sacred Color: Lightning White | Challenge: Creative Destruction*  
 
