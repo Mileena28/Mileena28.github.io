@@ -1,5 +1,5 @@
 # THE CROWN'S SOVEREIGNTY
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 151-180 (May 31 - June 29)*
 *Element: Sovereignty | Sacred Color: Royal Purple | Challenge: Authority*
 
