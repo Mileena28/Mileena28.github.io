@@ -299,7 +299,7 @@ The Harvest Mother asks you to examine your relationship with abundance, fertili
 
 **Type**: BLOOD CARD - Structures larger than yourself shape your world.
 
-**Visual Description**: A massive figure strikes an anvil with a hammer, each blow sending sparks that form into a crown of stars above his head. His beard is grey iron, his arms thick as tree trunks, and his leather apron bears the marks of countless years of labor. Behind him rises a fortress of his own making - stone by stone, wall by wall, built to last generations. At his feet lie the tools of construction and order: the square, the level, the cornerstone. His expression is neither cruel nor kind but implacably firm - he is the law made flesh, the structure that supports, the boundary that protects.
+**Visual Description**: A powerful blacksmith strikes an anvil with a heavy hammer, each blow sending bright sparks into the air. His arms are broad and muscular, his face weathered with sweat and determination, and his dark beard is trimmed but full. He wears a worn leather apron over a rough shirt, showing years of labor at the forge. Behind him rises a great stone fortress, its towers stretching into the sky as a symbol of strength and permanence. The glowing metal on the anvil reflects the intensity of his work, while tools and iron rest nearby. His expression is focused and stern — steady, disciplined, and unyielding, embodying the weight of law, structure, and endurance.
 
 **Core Meaning**: Material mastery, protective authority, established power, building legacies, the father principle, structures that outlast their makers, earned authority.
 
@@ -369,7 +369,7 @@ The Iron King demands you examine your relationship with authority, structure, a
 
 **Type**: BLOOD CARD - You are bound by forces greater than personal desire.
 
-**Visual Description**: An ancient tree stands at a crossroads, its bark carved with thousands of names and symbols, each marking a vow made and witnessed. Red threads wind between the carvings, connecting promise to promise in an intricate web that pulses with unseen power. At the tree's base sits a figure in ceremonial robes, neither young nor old, holding a book of names and a quill that writes in blood. Above, ravens watch from the branches - they remember every oath and will call out those who break their word. The very air around the tree shimmers with the weight of accumulated promises.
+**Visual Description**: An ancient tree rises beneath a star-filled sky, its twisted branches stretching wide as if to bear witness. At its roots kneels a woman in red and black ceremonial robes, her hood drawn over long dark hair. Her hands are clasped in solemn prayer, and from her eyes stream thin trails of blood like sacred tears. Before her lies an open book on the ground, its pages marked with a fresh bloodstain shaped like a vow made in silence. A raven perches on a branch above, its dark presence watching and remembering. The air around the tree feels heavy, as though every oath spoken here lingers in the shadows, binding those who dared to make them.
 
 **Core Meaning**: Sacred bonds, the power of vows, tradition as living force, contracts with the divine, the weight of keeping your word, community held together by mutual promise.
 
