@@ -1,5 +1,5 @@
 # THE HUNTER'S CHASE
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 211-240 (July 30 - August 28)*
 *Element: The Chase | Sacred Color: Blood Red | Challenge: Focus*
 
