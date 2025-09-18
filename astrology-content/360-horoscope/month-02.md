@@ -1,5 +1,5 @@
 # THE SEEKER'S QUEST
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion
 *Days 31-60 (January 31 - March 1)*
 *Element: Sacred Pursuit | Sacred Colors: Silver of Moonlit Paths, Gold of Hidden Treasures, Violet of Mystery | Challenge: Finding Without Losing*
 
