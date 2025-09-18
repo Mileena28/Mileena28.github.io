@@ -1,4 +1,4 @@
-# The Hedge Witch Cards: Complete Minor Arcana
+# The Blood and Bone Cards: Minor Arcana
 *The Living Truths - All 56 Cards of Daily Wisdom*
 
 ## Introduction to the Minor Arcana
