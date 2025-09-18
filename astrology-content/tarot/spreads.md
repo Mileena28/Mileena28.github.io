@@ -1,5 +1,5 @@
-# The Hedge Witch Cards: Sacred Spreads & Divination Patterns
-*Ancient Patterns for Reading the Old Roads*
+# The Blood and Bone Cards: Sacred Spreads & Divination Patterns
+*Ancient Patterns for Reading the Blood and Bone Tarot Cards*
 
 ## Understanding the Art of the Spread
 
