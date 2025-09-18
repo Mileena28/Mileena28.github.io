@@ -229,7 +229,7 @@ The Veiled Sister demands you examine your relationship with the unknown. Are yo
 
 **Type**: BLOOD CARD - Life creates itself through you, not by your will alone.
 
-**Visual Description**: A pregnant woman stands in a field of golden wheat, her belly round as the full moon above her. She wears a crown of grain and poppies, and her dress is the color of rich soil. One hand rests on her belly while the other holds a scythe - for she is both the giver of life and the one who knows when things must be harvested. Behind her, fruit trees heavy with abundance bow their branches to the earth. At her feet, rabbits multiply, bees gather, and everything touched by her shadow grows lush and green. Her expression is serene but powerful - she knows she carries the future within her.
+**Visual Description**: A pregnant woman stands in a field of golden wheat, her belly round as the sun descends behind her. She wears a crown of grain and poppies, and her dress is the color of rich soil. One hand rests on her belly while the other holds a scythe - for she is both the giver of life and the one who knows when things must be harvested. Behind her, fruit trees heavy with abundance bow their branches to the earth. At her feet, rabbits multiply, bees gather, and everything touched by her shadow grows lush and green. Her expression is serene but powerful - she knows she carries the future within her.
 
 **Core Meaning**: Fertility, abundance, nurturing, maternal power, creation through patience, the multiplication of blessings, pregnancy both literal and metaphorical.
 
