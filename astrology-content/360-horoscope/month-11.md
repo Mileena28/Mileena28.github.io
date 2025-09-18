@@ -1,5 +1,5 @@
 # THE DRAGON'S MYSTERY  
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion  
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion  
 *Days 301-330 (October 28 - November 26)*  
 *Element: Forbidden Knowledge | Sacred Colors: Deep Purple, Void Black, Bone White | Challenge: Bearing Truth*  
 
