@@ -439,7 +439,7 @@ The Keeper of Oaths demands you examine your relationship with commitment and tr
 
 **Type**: BONE CARD - This choice is yours alone to make.
 
-**Visual Description**: Two paths diverge at a heart-shaped stone that bleeds from an old wound. One path is marked with drops of blood leading into a dark forest, the other with drops of milk leading to sunlit meadows. Where the paths meet, wild roses grow in impossible abundance, their thorns drawing blood from any who would pick them, their perfume intoxicating beyond measure. A figure stands at the crossroads, one foot on each path, hands pressed to their chest as if holding their heart together or perhaps pulling it apart. Above, two birds circle - one black, one white - calling in different directions.
+**Visual Description**: A woman in a dark, intricately embroidered hooded cloak stands at a crossroads where two paths diverge, her hands clasped over her heart in a moment of profound and solemn choice. To her left, a path winds into a cool, misty forest of bare branches and deep shadow. A raven sits watch, a silent guardian of this road of mystery and difficult truth. To her right, the path leads into a warm, sun-drenched grove, vibrant with life and lined with colorful flowers. A white dove takes flight into the golden light, a promise of peace and clear skies. The woman herself is the fulcrum, the point of perfect balance between these two diverging futures. She belongs to neither path yet, for the choice is not in the road, but in the heart it will forge.
 
 **Core Meaning**: Love's difficult choices, the sacrifice inherent in choosing, decisions that require leaving something beloved behind, the moment when the heart must choose its true path.
 
