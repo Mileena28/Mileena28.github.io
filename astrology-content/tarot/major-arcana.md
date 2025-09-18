@@ -89,7 +89,7 @@ The Wandering Seed asks you to examine your relationship with beginnings. Are yo
 
 **Type**: BONE CARD - Your power lies in what you do with what you have.
 
-**Visual Description**: An elderly woman stands at the threshold of a cottage, half in moonlight, half in shadow. Her hands hold iron scissors, cutting herbs that grow wild where the garden meets the forest. Behind her, through the open door, we glimpse a kitchen where bundles of herbs hang from the rafters and mysterious things bubble in pots. A black cat winds between her ankles, and strange symbols are carved into her doorframe. Her expression is neither kind nor cruel, but knowing - she sees what others miss and makes magic from the overlooked.
+**Visual Description**: An elderly woman stands at the threshold of a cottage, half in moonlight, half in shadow. Her hands hold iron scissors, cutting herbs that grow wild where the garden meets the forest. A black cat winds between her ankles, and strange symbols are carved into her doorframe. Her expression is neither kind nor cruel, but knowing - she sees what others miss and makes magic from the overlooked.
 
 **Core Meaning**: Practical magic, resourcefulness, making do and mending, the power in simplicity, wisdom that comes from working with rather than against nature.
 
