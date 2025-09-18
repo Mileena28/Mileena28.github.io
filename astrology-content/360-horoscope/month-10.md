@@ -1,5 +1,5 @@
 # THE TOWER'S ISOLATION  
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion  
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion  
 *Days 271-300 (September 28 - October 27)*  
 *Element: Isolation | Sacred Colors: Stone Gray, Ice Blue | Challenge: Solitary Strength*  
 
