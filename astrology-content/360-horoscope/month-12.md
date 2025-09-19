@@ -1,5 +1,5 @@
 # THE BROKEN CHAIN'S LIBERATION
-## Arcadian Astrology Horoscope & Hedge Witch Tarot Companion  
+## Arcadian Astrology Horoscope & Blood and Bone Tarot Companion  
 *Days 331-365 (November 27 - December 31)*  
 *Element: Liberation | Sacred Colors: Rust Red, Tarnished Silver, Freedom Gold | Challenge: Sacred Destruction*
 
