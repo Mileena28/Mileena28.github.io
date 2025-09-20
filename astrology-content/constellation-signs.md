@@ -479,7 +479,7 @@ When The Shepherd forms, someone will face the choice of who survives and who do
 
 ### 6. THE STORM (Stormend / Month 9)
 **Status:** Prophesied  
-**Element:** Tempest  
+**Element:** Necessary Destruction  
 **Colors:** Lightning white, Thunder gray  
 **Symbol:** Spiral destroying and creating simultaneously  
 
