@@ -1,62 +1,9 @@
-## THE FIVE MANIFESTED CONSTELLATIONS
+## THE FOUR MANIFESTED CONSTELLATIONS
 *These prophecies have been fulfilled and now burn eternal in the night sky*
 
 ---
 
-### 1. THE AWAKENER (Primaven / Month 1)
-**Status:** Manifested  
-**Element:** Dawn  
-**Colors:** Gold, Pale Blue  
-**Symbol:** An eye opening within a sun  
-
-#### The Original Prophecy (Now Fulfilled):
-*"The Awakener shall blaze when silence itself learns to speak. Words shall break from the void to find their vessels, and in their hearing, the unmaking begins. The constellation forms when what slept by choice remembers why it chose to forget."*
-
-#### How It Manifested:
-The constellation erupted into existence when the Silent God began to stir. Its awakening brought The Silence, a spreading void that drained purpose and memory from whatever it touched. Souls across the world heard its whispers in the spaces between sound: *Accept. Emerge. Burn. Flee. Blind.* The Silent God's awakening came not with a roar but with silence so profound it became a presence unto itself. The constellation formed at that moment of first contact between the Silent God's consciousness and mortal minds, marking the beginning of its plan to unmake creation itself. Though the deity would eventually take physical form through Prince Dain and meet its end at Kaelen's blade, the constellation burns eternal as warning and reminder—some things wake not to create or rule, but to return everything to the silence before the first word was spoken.
-
-#### Core Reading:
-You are born under the constellation of Ancient Stirring, marked by the ability to sense shifts others cannot perceive. Awakener-born individuals hear the silence between heartbeats, feel the tremor before the earthquake, know when sleeping things begin to dream again. You carry within you the terrible gift of recognizing when ages are ending, when forgotten powers remember themselves, when the world holds its breath before transformation.
-
-#### Personality Traits:
-- Incapable of accepting "because it's always been this way"
-- Physical restlessness that mirrors mental state
-- Tendency to wake others literally and metaphorically
-- First to sense when change approaches
-- Uncomfortable in situations that have reached equilibrium
-- Drawn to dormant potential like moths to flame
-- Experience reality as constant transformation rather than fixed states
-
-#### Strengths:
-- Natural catalyst for transformation
-- Ability to see potential in the dormant
-- Inspiring others to action through example
-- Recognizing the moment for change
-- Bringing dead things back to life
-- Breaking through denial and complacency
-- Turning stagnation into momentum
-
-#### Shadows:
-- May wake things better left sleeping
-- Difficulty with satisfaction or peace
-- Can destroy stability others need
-- Impatience with necessary stagnation
-- May trigger changes you can't control
-- Addiction to the rush of transformation
-- Leaving chaos in your wake without cleaning it up
-
-#### In Love:
-You need partners who either match your restlessness or provide grounding without caging. Love with an Awakener means constant evolution—the person you fall for won't be the same in a year, and neither will you.
-
-#### Destiny & Calling:
-Innovation catalyst, startup founder, emergency room surgeon, disaster first responder, breakthrough researcher, alarm ringer, dawn patrol, consciousness researcher, revival specialist, dormant volcano monitor, coma ward specialist, seedbank curator, revolutionary inventor. You excel in crisis or creation, wherever the old must give way to the new.
-
-#### Warning:
-The Awakener's legacy is complex—the Silent God's awakening brought both transformation and catastrophe. Those born under this sign carry the same duality: your stirring of sleeping things might save the world or doom it. The constellation reminds us that some sleeps are merciful, and some awakenings are not salvation but the beginning of deeper dreams.
-
----
-
-### 2. THE LOVERS (Loriven / Month 2)
+### 1. THE LOVERS (Loriven / Month 2)
 **Status:** Manifested  
 **Element:** Eternal Return  
 **Colors:** Gold of sunset, Silver of moonrise, Black of the void between  
@@ -112,7 +59,7 @@ Lovers-born often experience relationships in cycles of seven—seven days of pe
 
 ---
 
-### 3. THE WANDERER (Wanderis / Month 6)
+### 2. THE WANDERER (Wanderis / Month 6)
 **Status:** Manifested  
 **Element:** Journey  
 **Colors:** All colors shifting like aurora  
@@ -165,7 +112,7 @@ The Wanderer reminds us that some searches have no end except the seeker's trans
 
 ---
 
-### 4. THE HUNTER (Thornmarch / Month 8)
+### 3. THE HUNTER (Thornmarch / Month 8)
 **Status:** Manifested  
 **Element:** The Price of Revolution  
 **Colors:** Blood red darkening to black, Ash gray, Gold of dying stars  
@@ -221,7 +168,7 @@ Hunter-born individuals often face crucial decisions in five-minute increments. 
 
 ---
 
-### 5. THE DRAGON (Drakonis / Month 11)
+### 4. THE DRAGON (Drakonis / Month 11)
 **Status:** Manifested  
 **Element:** Forbidden Knowledge  
 **Colors:** Deep purple bleeding to void, Stars within darkness, Bone white  
@@ -277,12 +224,60 @@ Dragon-born often experience strange dreams, hear patterns in random sounds, and
 
 ---
 
-## THE SEVEN PROPHESIED CONSTELLATIONS
+## THE EIGHT PROPHESIED CONSTELLATIONS
 *These await their moment to burn across the sky*
 
 ---
 
-### 1. THE GARDEN (Verdanis / Month 3)
+### 1. THE AWAKENER (Primaven / Month 1)
+**Status:** Prophesied  
+**Element:** Dawn  
+**Colors:** Gold, Pale Blue  
+**Symbol:** An eye opening within a sun  
+
+#### The Original Prophecy (Unfulfilled):
+*"The Awakener shall blaze when silence itself learns to speak. Words shall break from the void to find their vessels, and in their hearing, the unmaking begins. The constellation forms when what slept by choice remembers why it chose to forget."*
+
+#### Core Reading:
+You are born under the constellation of Ancient Stirring, marked by the ability to sense shifts others cannot perceive. Awakener-born individuals hear the silence between heartbeats, feel the tremor before the earthquake, know when sleeping things begin to dream again. You carry within you the terrible gift of recognizing when ages are ending, when forgotten powers remember themselves, when the world holds its breath before transformation.
+
+#### Personality Traits:
+- Incapable of accepting "because it's always been this way"
+- Physical restlessness that mirrors mental state
+- Tendency to wake others literally and metaphorically
+- First to sense when change approaches
+- Uncomfortable in situations that have reached equilibrium
+- Drawn to dormant potential like moths to flame
+- Experience reality as constant transformation rather than fixed states
+
+#### Strengths:
+- Natural catalyst for transformation
+- Ability to see potential in the dormant
+- Inspiring others to action through example
+- Recognizing the moment for change
+- Bringing dead things back to life
+- Breaking through denial and complacency
+- Turning stagnation into momentum
+
+#### Shadows:
+- May wake things better left sleeping
+- Difficulty with satisfaction or peace
+- Can destroy stability others need
+- Impatience with necessary stagnation
+- May trigger changes you can't control
+- Addiction to the rush of transformation
+- Leaving chaos in your wake without cleaning it up
+
+#### In Love:
+You need partners who either match your restlessness or provide grounding without caging. Love with an Awakener means constant evolution—the person you fall for won't be the same in a year, and neither will you.
+
+#### Destiny & Calling:
+Innovation catalyst, startup founder, emergency room surgeon, disaster first responder, breakthrough researcher, alarm ringer, dawn patrol, consciousness researcher, revival specialist, dormant volcano monitor, coma ward specialist, seedbank curator, revolutionary inventor. You excel in crisis or creation, wherever the old must give way to the new.
+
+#### Warning:
+The Awakener's legacy is complex—the Silent God's awakening brought both transformation and catastrophe. Those born under this sign carry the same duality: your stirring of sleeping things might save the world or doom it. The constellation reminds us that some sleeps are merciful, and some awakenings are not salvation but the beginning of deeper dreams.
+
+### 2. THE GARDEN (Verdanis / Month 3)
 **Status:** Prophesied  
 **Element:** Paradise  
 **Colors:** Every green that exists, Pearl  
@@ -332,7 +327,7 @@ When The Garden forms, someone will offer paradise to a suffering world. But the
 
 ---
 
-### 2. THE CROWN (Solmere / Month 4)
+### 3. THE CROWN (Solmere / Month 4)
 **Status:** Prophesied  
 **Element:** Sovereignty  
 **Colors:** Gold, Purple, White  
@@ -382,7 +377,7 @@ When The Crown forms, someone will claim or reclaim power that changes the world
 
 ---
 
-### 3. THE GUARDIANS (Umbralux / Month 5)
+### 4. THE GUARDIANS (Umbralux / Month 5)
 **Status:** Prophesied  
 **Element:** Threshold  
 **Colors:** Silver and Black intertwined  
@@ -432,7 +427,7 @@ When The Guardians form, two will stand where thousands should, at the fulcrum b
 
 ---
 
-### 4. THE SHEPHERD (Goldmere / Month 7)
+### 5. THE SHEPHERD (Goldmere / Month 7)
 **Status:** Prophesied  
 **Element:** Guidance  
 **Colors:** Warm amber, Soft white  
@@ -482,7 +477,7 @@ When The Shepherd forms, someone will face the choice of who survives and who do
 
 ---
 
-### 5. THE STORM (Stormend / Month 9)
+### 6. THE STORM (Stormend / Month 9)
 **Status:** Prophesied  
 **Element:** Tempest  
 **Colors:** Lightning white, Thunder gray  
@@ -532,7 +527,7 @@ When The Storm forms, everything that can be shaken will be shaken. What remains
 
 ---
 
-### 6. THE TOWER (Frostmere / Month 10)
+### 7. THE TOWER (Frostmere / Month 10)
 **Status:** Prophesied  
 **Element:** Isolation  
 **Colors:** Stone gray, Ice blue  
@@ -582,7 +577,7 @@ When The Tower forms, someone will stand alone against impossible odds, or the w
 
 ---
 
-### 7. THE BROKEN CHAIN (Veilmorn / Month 12)
+### 8. THE BROKEN CHAIN (Veilmorn / Month 12)
 **Status:** Prophesied  
 **Element:** Liberation  
 **Colors:** Rust and Silver  
