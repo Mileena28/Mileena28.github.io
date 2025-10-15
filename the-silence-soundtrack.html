@@ -1,0 +1,959 @@
+---
+layout: default
+title: "The Silence Soundtrack | Blood of the Wild Gods Music | Mileena Rayne"
+description: "Experience The Silence through music. Each track tells a chapter of the story where gods refuse to answer and monsters become prophets."
+keywords: "The Silence soundtrack, Blood of the Wild Gods music, dark fantasy soundtrack, Mileena Rayne music, book soundtrack, fantasy music"
+image: "/assets/images/the-silence-soundtrack.png"
+canonical: "https://mileenarayne.com/the-silence-soundtrack/"
+robots: "index, follow"
+og:type: "music.album"
+og:title: "The Silence Soundtrack | Blood of the Wild Gods"
+og:description: "A musical journey through The Silence - where every track is a chapter, every melody a heartbeat in the dark."
+og:image: "/assets/images/the-silence-soundtrack.png"
+og:url: "https://mileenarayne.com/the-silence-soundtrack/"
+---
+
+<style>
+    /* Enhanced Root Variables - Blood & Shadow Theme */
+    :root {
+        --blood-primary: #8b0000;
+        --blood-secondary: #a61e1e;
+        --blood-accent: #cc0000;
+        --shadow-purple: #4a0080;
+        --deep-purple: #2a0050;
+        --midnight-black: #0a0a14;
+        --deep-night: #050510;
+        --text-light: #f0f0f0;
+        --text-secondary: #d0d0d0;
+        --glass-white: rgba(255, 255, 255, 0.05);
+        --glass-blood: rgba(139, 0, 0, 0.05);
+    }
+
+    /* Page Container */
+    .soundtrack-page {
+        position: relative;
+        background: linear-gradient(135deg, #0a0a14 0%, #1a0a0a 50%, #0f0510 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Atmospheric Background */
+    .cosmic-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top right, rgba(139, 0, 0, 0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(74, 0, 128, 0.06) 0%, transparent 50%),
+            radial-gradient(ellipse at center, rgba(10, 10, 20, 0.95) 0%, transparent 100%);
+        pointer-events: none;
+    }
+
+    /* Floating Blood Orbs */
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .blood-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(139, 0, 0, 0.4) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 20s infinite ease-in-out;
+    }
+
+    .blood-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
+    }
+
+    .blood-orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle, rgba(74, 0, 128, 0.4) 0%, transparent 70%);
+        animation-duration: 30s;
+    }
+
+    .blood-orb:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        top: 50%;
+        left: 30%;
+        background: radial-gradient(circle, rgba(139, 0, 0, 0.3) 0%, transparent 70%);
+        animation-duration: 35s;
+    }
+
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
+    }
+
+    /* Header Section */
+    .soundtrack-header {
+        position: relative;
+        padding: 120px 0 80px;
+        text-align: center;
+        z-index: 10;
+        background: linear-gradient(180deg, rgba(10, 10, 20, 0) 0%, rgba(10, 10, 20, 0.6) 100%);
+    }
+
+    .soundtrack-header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        animation: fade-in-up 1.2s ease-out;
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .soundtrack-title {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+        font-weight: 200;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, var(--blood-primary) 0%, var(--shadow-purple) 50%, var(--blood-accent) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 3px;
+        animation: title-pulse 4s ease-in-out infinite;
+        background-size: 200% 200%;
+        text-transform: uppercase;
+    }
+
+    @keyframes title-pulse {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    .soundtrack-subtitle {
+        font-size: 1.3em;
+        color: var(--blood-accent);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+
+    .soundtrack-description {
+        font-size: 1.2em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        font-style: italic;
+    }
+
+    /* Album Showcase */
+    .album-showcase {
+        position: relative;
+        padding: 80px 0;
+        z-index: 10;
+        background: linear-gradient(135deg, rgba(10, 10, 20, 0.6), rgba(20, 10, 10, 0.4));
+    }
+
+    .album-showcase-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .album-art-container {
+        position: relative;
+        animation: fade-in-left 1.2s ease-out 0.3s both;
+    }
+
+    @keyframes fade-in-left {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .album-art-wrapper {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.5),
+            0 0 100px rgba(139, 0, 0, 0.1);
+        transition: all 0.5s ease;
+    }
+
+    .album-art-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, var(--blood-primary), var(--shadow-purple), var(--blood-accent));
+        opacity: 0.5;
+        z-index: -1;
+        animation: border-glow 4s linear infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes border-glow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    .album-art-wrapper:hover {
+        transform: scale(1.03);
+        box-shadow: 
+            0 50px 100px rgba(139, 0, 0, 0.3),
+            0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .album-art {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 18px;
+    }
+
+    .album-info {
+        animation: fade-in-right 1.2s ease-out 0.5s both;
+    }
+
+    @keyframes fade-in-right {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .album-status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: rgba(139, 0, 0, 0.1);
+        border: 1px solid rgba(139, 0, 0, 0.3);
+        border-radius: 50px;
+        padding: 12px 25px;
+        margin-bottom: 30px;
+        backdrop-filter: blur(20px);
+        animation: badge-glow 3s ease-in-out infinite;
+        color: var(--text-light);
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    @keyframes badge-glow {
+        0%, 100% {
+            box-shadow: 0 0 20px rgba(139, 0, 0, 0.2);
+        }
+        50% {
+            box-shadow: 0 0 40px rgba(139, 0, 0, 0.4);
+        }
+    }
+
+    .album-quote {
+        font-size: 1.8em;
+        color: var(--text-secondary);
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: 35px;
+        padding-left: 30px;
+        border-left: 3px solid var(--blood-primary);
+        opacity: 0.9;
+    }
+
+    .album-details {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(139, 0, 0, 0.2);
+        border-radius: 20px;
+        padding: 35px;
+    }
+
+    .album-meta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .meta-item {
+        text-align: center;
+    }
+
+    .meta-label {
+        color: var(--blood-accent);
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        opacity: 0.8;
+    }
+
+    .meta-value {
+        color: var(--text-light);
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    .listen-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .listen-btn {
+        background: linear-gradient(135deg, var(--blood-primary), var(--blood-secondary));
+        color: #fff;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 25px;
+        border: 1px solid rgba(139, 0, 0, 0.3);
+        transition: all 0.3s ease;
+        font-weight: 500;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .listen-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .listen-btn:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .listen-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(139, 0, 0, 0.3);
+        color: #fff;
+    }
+
+    /* Track Section */
+    .track-section {
+        position: relative;
+        padding: 100px 0;
+        z-index: 10;
+        background: linear-gradient(180deg, rgba(10, 10, 20, 0.7), rgba(20, 10, 20, 0.5));
+    }
+
+    .track-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: 3em;
+        color: var(--blood-accent);
+        margin-bottom: 50px;
+        font-weight: 200;
+        text-align: center;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--blood-primary), transparent);
+    }
+
+    /* Track Card */
+    .track-card {
+        background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.9));
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(139, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 60px;
+        animation: fade-in-up 1s ease-out 0.6s both;
+    }
+
+    .track-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--blood-primary), var(--shadow-purple), transparent);
+        animation: shimmer-border 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-border {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .track-header {
+        margin-bottom: 30px;
+    }
+
+    .track-number {
+        color: var(--blood-accent);
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    .track-title {
+        font-size: 2.5em;
+        color: var(--text-light);
+        font-weight: 200;
+        margin-bottom: 10px;
+    }
+
+    .track-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+        font-style: italic;
+        opacity: 0.8;
+    }
+
+    /* Chapter Description */
+    .chapter-description {
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.08), rgba(74, 0, 128, 0.02));
+        border-left: 4px solid var(--blood-primary);
+        padding: 30px;
+        margin: 30px 0;
+        border-radius: 0 20px 20px 0;
+    }
+
+    .chapter-description h3 {
+        color: var(--blood-accent);
+        font-size: 1.3em;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .chapter-description p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.1em;
+    }
+
+    /* Spotify Embed */
+    .spotify-embed {
+        margin: 40px 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Lyrics Section */
+    .lyrics-section {
+        margin-top: 50px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(139, 0, 0, 0.2);
+        border-radius: 20px;
+    }
+
+    .lyrics-header {
+        color: var(--blood-accent);
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    .lyrics-content {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+        line-height: 2;
+        white-space: pre-line;
+        font-family: 'Georgia', serif;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .lyrics-verse {
+        margin-bottom: 30px;
+    }
+
+    .lyrics-chorus {
+        font-weight: 600;
+        color: var(--text-light);
+        margin: 35px 0;
+        padding: 20px;
+        background: rgba(139, 0, 0, 0.05);
+        border-radius: 10px;
+    }
+
+    .lyrics-bridge {
+        font-style: italic;
+        margin: 35px 0;
+        padding: 20px;
+        background: rgba(74, 0, 128, 0.05);
+        border-radius: 10px;
+    }
+
+    .lyrics-outro {
+        text-align: center;
+        font-style: italic;
+        opacity: 0.8;
+        margin-top: 35px;
+    }
+
+    /* Coming Soon Section */
+    .coming-soon-section {
+        padding: 100px 0;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(10, 10, 20, 0.8), rgba(10, 5, 15, 0.9));
+        position: relative;
+    }
+
+    .coming-soon-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .coming-soon-title {
+        font-size: 2.5em;
+        color: var(--blood-accent);
+        margin-bottom: 20px;
+        font-weight: 200;
+    }
+
+    .coming-soon-text {
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        line-height: 1.8;
+        font-style: italic;
+    }
+
+    /* Footer Navigation */
+    .sleek-footer {
+        padding: 100px 0 80px;
+        background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.95) 30%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sleek-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--blood-primary), transparent);
+        animation: shimmer-line 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .footer-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.05), rgba(10, 10, 10, 0.8));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(139, 0, 0, 0.2);
+        border-radius: 50px;
+        padding: 15px 35px;
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, var(--shadow-purple) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: all 0.6s ease;
+        opacity: 0.3;
+    }
+
+    .nav-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .nav-button:hover {
+        background: linear-gradient(135deg, rgba(139, 0, 0, 0.15), rgba(74, 0, 128, 0.1));
+        border-color: var(--blood-primary);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(139, 0, 0, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .album-showcase-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+            text-align: center;
+        }
+
+        .album-art-container {
+            order: -1;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .soundtrack-title {
+            font-size: 2.5rem;
+        }
+
+        .track-card {
+            padding: 40px 25px;
+        }
+
+        .track-title {
+            font-size: 1.8em;
+        }
+
+        .chapter-description {
+            padding: 20px;
+        }
+
+        .lyrics-section {
+            padding: 25px 20px;
+        }
+
+        .lyrics-content {
+            font-size: 1em;
+        }
+
+        .footer-nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-button {
+            width: 80%;
+            max-width: 280px;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .track-card {
+            padding: 30px 20px;
+        }
+
+        .chapter-description {
+            padding: 15px;
+        }
+
+        .lyrics-section {
+            padding: 20px 15px;
+        }
+    }
+</style>
+
+<div class="soundtrack-page">
+    <!-- Background Effects -->
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="blood-orb"></div>
+        <div class="blood-orb"></div>
+        <div class="blood-orb"></div>
+    </div>
+
+    <!-- Header Section -->
+    <section class="soundtrack-header">
+        <div class="soundtrack-header-content">
+            <h1 class="soundtrack-title">The Silence</h1>
+            <div class="soundtrack-subtitle">A Blood of the Wild Gods Soundtrack</div>
+            <p class="soundtrack-description">
+                A sonic journey through the novel's story—every track a chapter, every melody a character's heartbeat, 
+                every crescendo a plot twist rendered in sound. The age of silence has begun.
+            </p>
+        </div>
+    </section>
+
+    <!-- Album Showcase -->
+    <section class="album-showcase">
+        <div class="album-showcase-content">
+            <div class="album-art-container">
+                <div class="album-art-wrapper">
+                    <img src="/assets/images/the-silence-soundtrack.png" alt="The Silence Soundtrack Album Cover" class="album-art">
+                </div>
+            </div>
+
+            <div class="album-info">
+                <div class="album-status-badge">In Development</div>
+                <div class="album-quote">
+                    "When silence itself becomes a weapon, even music must learn to speak in whispers."
+                </div>
+                
+                <div class="album-details">
+                    <div class="album-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Status</div>
+                            <div class="meta-value">Chapter 1 Released</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Format</div>
+                            <div class="meta-value">Digital Single</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Genre</div>
+                            <div class="meta-value">Dark Fantasy</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Based On</div>
+                            <div class="meta-value">The Novel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="listen-buttons">
+                        <a href="https://open.spotify.com/track/49buV7407GmGGOnI133jsO" class="listen-btn">Listen on Spotify</a>
+                        <a href="/writing/the-silence/" class="listen-btn">Read the Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Track Section -->
+    <section class="track-section">
+        <div class="track-container">
+            <h2 class="section-title">Released Track</h2>
+            
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 01</div>
+                    <h3 class="track-title">The Silent God Awakens</h3>
+                    <div class="track-subtitle">Based on Chapter 1: The Unspoken God</div>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapter 1: The Unspoken God</h3>
+                    <p>
+                        In a world scarred by ancient divine war, where spilled god-blood birthed monsters and transformed 
+                        mortals into the powerful yet cursed Bloodmarked, an ominous silence descends—not mere quiet, but a 
+                        suffocating presence from the void itself. The Silent God, a deity older than the fallen pantheon, 
+                        whose name was erased from sacred texts, awakens. Unlike gods of thunder or fire, this entity commands 
+                        the silence before creation and the stillness after destruction. Across kingdoms, five souls hear 
+                        tailored whispers blooming in their minds—Accept, Emerge, Burn, Flee, Blind—each word a key turning in 
+                        their consciousness, binding them unknowingly to the Silent God's design. The age of loud, warring gods 
+                        has ended; the age of the unspoken God dawns, and the world holds its breath before the terrifying 
+                        potential of a deity who needs no voice to command, only silence to conquer.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/49buV7407GmGGOnI133jsO?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+                        <div class="lyrics-verse">
+<em>(Opening vocalization)</em>
+<em>(Chanting)</em>
+
+Listen to the silence spreading like a plague through every living thing that breathes
+Rivers running backwards spilling ancient blood while dying underneath the leaves
+Every stone remembers when the first god held dominion over nothing and the void
+Now the deer are drowning in the air they used to breathe while nature is destroyed
+
+Feel the ancient hunger crawling up through cracks in everything we thought was real
+All the temples that we burned to ash just taught the void exactly how to heal
+Feed it with our terror, feed it with our dread, the stronger grows the silence in our head
+Five souls feel the pulling of a thread they cannot see, connected to the thing that should be dead
+                        </div>
+
+                        <div class="lyrics-chorus">
+We can taste it in the water, feel it crawling in the ground
+<em>(In the ground, in the ground)</em>
+Something older than creation makes a silent, screaming sound
+<em>(Screaming sound, all around)</em>
+
+Nature forgets the purpose of her breathing, spirits leaving what they knew
+Animals are twisting into nightmares while the void is breaking through!
+<em>(Breaking through! Breaking through!)</em>
+We cast away the nothing but the nothing knows our names
+The Unspoken God is rising and nothing stays the same!
+<em>(Stays the same! Who's to blame!)</em>
+                        </div>
+
+                        <div class="lyrics-verse">
+Not with earthquakes, not with thunder, but with whispers under every prayer
+Standing naked in the presence of a thing that don't speak but knows we're there
+The Wild Gods rot in the mist while we're forgetting what the First ones used to know
+Humming in our marrow, in the narrow space between the seeds we used to sow
+
+Every forest spirit loses track of why they're dancing through the trees at night
+Every chance we had at understanding disappeared when we gave up the fight
+Animals are screaming but the sound comes out reversed, we're living with a curse
+The earth gives birth to something that existed long before the gods rehearsed
+                        </div>
+
+                        <div class="lyrics-chorus">
+We can taste it in the water, feel it crawling up our spine
+<em>(Up our spine, up our spine)</em>
+Something older than the gods themselves is waking up on time
+<em>(Up on time, by design)</em>
+
+Nature forgets the purpose of her breathing, spirits leaving what they knew
+Animals are twisting into nightmares while the void is breaking through!
+<em>(Breaking through! Breaking through!)</em>
+We cast away the nothing but the nothing knows our names
+The Unspoken God is rising and nothing stays the same!
+<em>(Stays the same! Who's to blame!)</em>
+                        </div>
+
+                        <div class="lyrics-bridge">
+Before the blood, before the bone, before we ever built a throne
+Before we learned to die alone or carved our faces into stone
+<em>(Into stone, into stone)</em>
+There was nothing, and the nothing held dominion over all
+Now it's coming back to show us we were always meant to fall
+<em>(Meant to fall, heed the call)</em>
+
+It doesn't need to scream or shout or tear the world apart
+It only needs to find the silence living in your heart!
+<em>(In your heart! In your heart!)</em>
+                        </div>
+
+                        <div class="lyrics-outro">
+<em>(In your heart! In your heart!)</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon-section">
+        <div class="coming-soon-content">
+            <h2 class="coming-soon-title">Full Album Coming Soon</h2>
+            <p class="coming-soon-text">
+                The complete soundtrack is currently in development. Each chapter of The Silence will have its own musical 
+                interpretation, creating an immersive audio journey through the world of Blood of the Wild Gods. 
+                Follow the whispers to know when new tracks awaken from the void.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Navigation -->
+    <footer class="sleek-footer">
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <a href="/music/" class="nav-button">Back to Music</a>
+                <a href="/writing/the-silence/" class="nav-button">Read The Silence</a>
+                <a href="/world-guide/" class="nav-button">Explore the World</a>
+            </nav>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.blood-orb');
+        
+        orbs.forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            orb.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
