@@ -1,0 +1,2014 @@
+---
+layout: default
+title: "The Chosen Soundtrack | Blood of the Wild Gods Music | Mileena Rayne"
+description: "A 10-track narrative journey from captivity to freedom. Experience The Chosen through music—each track tells chapters of Mira's harrowing journey."
+keywords: "The Chosen soundtrack, Blood of the Wild Gods music, dark fantasy soundtrack, Mileena Rayne music, book soundtrack, fantasy music"
+image: "/assets/images/the-chosen-soundtrack.PNG"
+canonical: "https://mileenarayne.com/the-chosen-soundtrack/"
+robots: "index, follow"
+og:type: "music.album"
+og:title: "The Chosen Soundtrack | Blood of the Wild Gods"
+og:description: "From seductive hymns to explosive freedom—a musical journey through religious trauma and supernatural awakening."
+og:image: "/assets/images/the-chosen-soundtrack.PNG"
+og:url: "https://mileenarayne.com/the-chosen-soundtrack/"
+---
+
+<style>
+    /* Enhanced Root Variables - Ocean & Heaven Theme */
+    :root {
+        --ocean-primary: #8ac4ff;
+        --ocean-deep: #6bb6ff;
+        --ocean-light: #a8d4ff;
+        --ocean-secondary: #c0e0ff;
+        --heaven-accent: #d4ecff;
+        --celestial-glow: #e8f4ff;
+        --silver-light: #f8fcff;
+        --deep-ocean: #1a4d8a;
+        --midnight-ocean: #0a2540;
+        --deep-night: #0a0a14;
+        --foam-white: #f8fcff;
+        --text-light: #f0f4f8;
+        --text-primary: #f0f4f8;
+        --text-secondary: #d0dce8;
+        --glass-blue: rgba(138, 196, 255, 0.1);
+        --glass-white: rgba(255, 255, 255, 0.05);
+        --shadow-depth: #051828;
+    }
+
+    /* Page Container */
+    .soundtrack-page {
+        position: relative;
+        background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    /* Atmospheric Background */
+    .cosmic-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background: 
+            radial-gradient(ellipse at top right, rgba(138, 196, 255, 0.1) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(168, 212, 255, 0.08) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    /* Floating Light Orbs */
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .light-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 20s infinite ease-in-out;
+    }
+
+    .light-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        top: -150px;
+        left: -150px;
+        animation-duration: 25s;
+    }
+
+    .light-orb:nth-child(2) {
+        width: 400px;
+        height: 400px;
+        bottom: -200px;
+        right: -200px;
+        background: radial-gradient(circle, rgba(168, 212, 255, 0.4) 0%, transparent 70%);
+        animation-duration: 30s;
+    }
+
+    .light-orb:nth-child(3) {
+        width: 350px;
+        height: 350px;
+        top: 50%;
+        left: 30%;
+        background: radial-gradient(circle, rgba(192, 224, 255, 0.3) 0%, transparent 70%);
+        animation-duration: 35s;
+    }
+
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
+    }
+
+    /* Header Section */
+    .soundtrack-header {
+        position: relative;
+        padding: 120px 0 80px;
+        text-align: center;
+        z-index: 10;
+        background: linear-gradient(180deg, rgba(10, 10, 20, 0) 0%, rgba(10, 10, 20, 0.6) 100%);
+    }
+
+    .soundtrack-header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        animation: fade-in-up 1.2s ease-out;
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .soundtrack-title {
+        font-size: clamp(3.5rem, 6vw, 5rem);
+        font-weight: 200;
+        margin-bottom: 15px;
+        background: linear-gradient(135deg, var(--ocean-primary) 0%, var(--ocean-deep) 50%, var(--heaven-accent) 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 3px;
+        animation: title-pulse 4s ease-in-out infinite;
+        background-size: 200% 200%;
+        text-transform: uppercase;
+    }
+
+    @keyframes title-pulse {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    .soundtrack-subtitle {
+        font-size: 1.3em;
+        color: var(--ocean-primary);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        opacity: 0.9;
+    }
+
+    .soundtrack-tagline {
+        font-size: 1.2em;
+        color: var(--text-secondary);
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+        font-style: italic;
+    }
+
+    /* Album Showcase */
+    .album-showcase {
+        position: relative;
+        padding: 80px 0;
+        z-index: 10;
+        background: linear-gradient(135deg, rgba(10, 10, 20, 0.6), rgba(20, 10, 10, 0.4));
+    }
+
+    .album-showcase-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: start;
+    }
+
+    .album-art-container {
+        position: relative;
+        animation: fade-in-left 1.2s ease-out 0.3s both;
+    }
+
+    @keyframes fade-in-left {
+        from {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .album-art-wrapper {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 
+            0 30px 60px rgba(0, 0, 0, 0.5),
+            0 0 100px rgba(138, 196, 255, 0.1);
+        transition: all 0.5s ease;
+    }
+
+    .album-art-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-deep), var(--heaven-accent));
+        opacity: 0.5;
+        z-index: -1;
+        animation: border-glow 4s linear infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes border-glow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    .album-art-wrapper:hover {
+        transform: scale(1.03);
+        box-shadow: 
+            0 50px 100px rgba(138, 196, 255, 0.3),
+            0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .album-art {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 18px;
+    }
+
+    .album-info {
+        animation: fade-in-right 1.2s ease-out 0.5s both;
+    }
+
+    @keyframes fade-in-right {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .album-description {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(138, 196, 255, 0.2);
+        border-radius: 20px;
+        padding: 35px;
+    }
+
+    .album-description h3 {
+        color: var(--ocean-primary);
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+
+    .album-description p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 1.05em;
+    }
+
+    .journey-list {
+        color: var(--text-secondary);
+        margin: 20px 0;
+        padding-left: 20px;
+    }
+
+    .journey-list li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    .album-meta {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-bottom: 30px;
+    }
+
+    .meta-item {
+        text-align: center;
+    }
+
+    .meta-label {
+        color: var(--ocean-primary);
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 8px;
+        opacity: 0.8;
+    }
+
+    .meta-value {
+        color: var(--text-light);
+        font-size: 1.2em;
+        font-weight: 300;
+    }
+
+    .listen-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .listen-btn {
+        background: linear-gradient(135deg, var(--ocean-primary), var(--ocean-deep));
+        color: var(--deep-night);
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 25px;
+        border: 1px solid rgba(138, 196, 255, 0.3);
+        transition: all 0.3s ease;
+        font-weight: 600;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .listen-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        transition: all 0.5s ease;
+        transform: translate(-50%, -50%);
+    }
+
+    .listen-btn:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .listen-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(138, 196, 255, 0.3);
+    }
+
+    /* Tracklist Section */
+    .tracklist-section {
+        position: relative;
+        padding: 100px 0;
+        z-index: 10;
+        background: linear-gradient(180deg, rgba(10, 10, 20, 0.7), rgba(20, 10, 20, 0.5));
+    }
+
+    .tracklist-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .section-title {
+        font-size: 3em;
+        color: var(--ocean-primary);
+        margin-bottom: 20px;
+        font-weight: 200;
+        text-align: center;
+        position: relative;
+        text-shadow: 0 0 30px rgba(138, 196, 255, 0.5);
+    }
+
+    .section-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        margin-bottom: 60px;
+        font-style: italic;
+    }
+
+    /* Track Card */
+    .track-card {
+        background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.9));
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(138, 196, 255, 0.3);
+        border-radius: 30px;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 60px;
+    }
+
+    .track-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--ocean-primary), var(--ocean-deep), transparent);
+        animation: shimmer-border 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-border {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .track-header {
+        margin-bottom: 30px;
+    }
+
+    .track-number {
+        color: var(--heaven-accent);
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+        opacity: 0.8;
+    }
+
+    .track-title {
+        font-size: 2.5em;
+        color: var(--text-light);
+        font-weight: 200;
+        margin-bottom: 10px;
+        text-shadow: 0 0 20px rgba(138, 196, 255, 0.3);
+    }
+
+    /* Chapter Description */
+    .chapter-description {
+        background: linear-gradient(135deg, rgba(138, 196, 255, 0.08), rgba(168, 212, 255, 0.02));
+        border-left: 4px solid var(--ocean-primary);
+        padding: 30px;
+        margin: 30px 0;
+        border-radius: 0 20px 20px 0;
+    }
+
+    .chapter-description h3 {
+        color: var(--ocean-primary);
+        font-size: 1.3em;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .chapter-description p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        font-size: 1.1em;
+    }
+
+    /* Spotify Embed */
+    .spotify-embed {
+        margin: 40px 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Lyrics Section */
+    .lyrics-section {
+        margin-top: 50px;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(138, 196, 255, 0.2);
+        border-radius: 20px;
+    }
+
+    .lyrics-header {
+        color: var(--ocean-primary);
+        font-size: 1.5em;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    .lyrics-content {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+        line-height: 2;
+        white-space: pre-line;
+        font-family: 'Georgia', serif;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .lyrics-verse {
+        margin-bottom: 30px;
+    }
+
+    .lyrics-chorus {
+        font-weight: 600;
+        color: var(--text-light);
+        margin: 35px 0;
+        padding: 20px;
+        background: rgba(138, 196, 255, 0.05);
+        border-radius: 10px;
+    }
+
+    /* Content Warning */
+    .content-warning {
+        background: linear-gradient(135deg, rgba(255, 193, 93, 0.15), rgba(255, 193, 93, 0.08));
+        border: 2px solid rgba(255, 193, 93, 0.4);
+        border-radius: 20px;
+        padding: 25px 35px;
+        margin: 40px auto;
+        max-width: 800px;
+        text-align: center;
+    }
+
+    .content-warning strong {
+        color: #ffc15d;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+    }
+
+    .content-warning p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+    }
+
+    /* Footer Navigation */
+    .sleek-footer {
+        padding: 100px 0 80px;
+        background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.95) 30%);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sleek-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--ocean-primary), transparent);
+        animation: shimmer-line 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .footer-content {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        background: linear-gradient(135deg, rgba(138, 196, 255, 0.05), rgba(10, 10, 10, 0.8));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(138, 196, 255, 0.2);
+        border-radius: 50px;
+        padding: 15px 35px;
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: radial-gradient(circle, var(--ocean-deep) 0%, transparent 70%);
+        transform: translate(-50%, -50%);
+        transition: all 0.6s ease;
+        opacity: 0.3;
+    }
+
+    .nav-button:hover::before {
+        width: 300px;
+        height: 300px;
+    }
+
+    .nav-button:hover {
+        background: linear-gradient(135deg, rgba(138, 196, 255, 0.15), rgba(168, 212, 255, 0.1));
+        border-color: var(--ocean-primary);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(138, 196, 255, 0.3);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 1024px) {
+        .album-showcase-content {
+            grid-template-columns: 1fr;
+            gap: 50px;
+            text-align: center;
+        }
+
+        .album-art-container {
+            order: -1;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .soundtrack-title {
+            font-size: 2.5rem;
+        }
+
+        .track-card {
+            padding: 40px 25px;
+        }
+
+        .track-title {
+            font-size: 1.8em;
+        }
+
+        .chapter-description {
+            padding: 20px;
+        }
+
+        .lyrics-section {
+            padding: 25px 20px;
+        }
+
+        .lyrics-content {
+            font-size: 1em;
+        }
+
+        .footer-nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-button {
+            width: 80%;
+            max-width: 280px;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .track-card {
+            padding: 30px 20px;
+        }
+
+        .chapter-description {
+            padding: 15px;
+        }
+
+        .lyrics-section {
+            padding: 20px 15px;
+        }
+    }
+</style>
+
+<div class="soundtrack-page">
+    <!-- Background Effects -->
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+    </div>
+
+    <!-- Header Section -->
+    <section class="soundtrack-header">
+        <div class="soundtrack-header-content">
+            <h1 class="soundtrack-title">The Chosen</h1>
+            <div class="soundtrack-subtitle">Original Soundtrack</div>
+            <p class="soundtrack-tagline">
+                A 10-Track Narrative Journey from Captivity to Freedom
+            </p>
+        </div>
+    </section>
+
+    <!-- Album Showcase -->
+    <section class="album-showcase">
+        <div class="album-showcase-content">
+            <div class="album-art-container">
+                <div class="album-art-wrapper">
+                    <img src="/assets/images/the-chosen-soundtrack.PNG" alt="The Chosen Soundtrack Album Cover" class="album-art">
+                </div>
+            </div>
+
+            <div class="album-info">
+                <div class="album-description">
+                    <h3>The Story Through Music</h3>
+                    <p>
+                        This isn't just a soundtrack—it's the story of The Chosen told through music. Each track follows 
+                        Mira Roehart's harrowing journey from a free-spirited young woman in a coastal town to a survivor 
+                        fleeing supernatural forces and psychological destruction.
+                    </p>
+                    <p>
+                        When charismatic religious leader Lucien Altheris arrives in Rivenglade promising salvation through 
+                        absolute faith, the town eagerly surrenders to his Light. But Mira sees through the divine facade to 
+                        the predator beneath. What follows is a descent into coercive control, forced marriage, and systematic 
+                        destruction—until an ancient power awakens within her, offering one final chance: run or die.
+                    </p>
+                    <p><strong>Musical Landscape:</strong> Blending Celtic fiddle, tribal drums, Nordic orchestral elements, 
+                    and haunting vocal lamentations, the soundtrack creates an immersive sonic world where the ancient and 
+                    modern collide.</p>
+                    
+                    <div class="album-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Tracks</div>
+                            <div class="meta-value">10 Songs</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Duration</div>
+                            <div class="meta-value">Full Album</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Genre</div>
+                            <div class="meta-value">Dark Fantasy</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Based On</div>
+                            <div class="meta-value">The Novel</div>
+                        </div>
+                    </div>
+                    
+                    <div class="listen-buttons">
+                        <a href="https://open.spotify.com/playlist/YOUR_PLAYLIST_ID" class="listen-btn">Full Album on Spotify</a>
+                        <a href="/writing/the-chosen-chronicles/" class="listen-btn">Read the Book</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Warning -->
+    <div class="content-warning">
+        <strong>Content Warning:</strong>
+        <p>This album addresses themes of religious abuse, coercive control, and trauma. Listener discretion advised.</p>
+    </div>
+
+    <!-- Tracklist Section -->
+    <section class="tracklist-section">
+        <div class="tracklist-container">
+            <h2 class="section-title">The Complete Journey</h2>
+            <p class="section-subtitle">
+                From seductive opening hymns to explosive freedom, each track captures a distinct emotional stage of trauma and survival.
+            </p>
+            
+            <!-- Track 1 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 01</div>
+                    <h3 class="track-title">The Light That Swallowed the Silence</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapter 1: The Light That Swallowed the Silence</h3>
+                    <p>
+                        Five years after the Silence devastated the realm, refugees flood into the coastal town of Rivenglade. 
+                        Then Lucien Altheris arrives—a fallen star in white robes with impossibly blue eyes. He preaches absolute 
+                        truth: Zenith is the one true god, and all others are demonic lies. The Wild Gods—the ancient spirits woven 
+                        into Rivenglade's forests and seas—are suddenly condemned as evil. While all of Rivenglade kneels before 
+                        this new Light, Mira stands at the edge of the pier, caught between the blazing certainty of Zenith's 
+                        followers and the wild, untamed truth pulsing in her blood.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/72YFdJCfHJUJFn5CNfIWWT?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+                        <div class="lyrics-verse">
+Ah-ah-ah-oh... Mmm-ah-yah-oh... Way-oh-way-oh...
+
+The tide pulls hard, it knows my name
+Its ancient song, untouched by flame
+Five years since silence stole our voice
+Now refugees drift without choice
+Oh-way-ah... oh-way-ah...
+
+The pier groans beneath their feet
+Solarian ash and Atherian wheat
+All washed ashore on Rivenglade stone
+While I stand watching, still alone
+Mmm-ah-yah-oh...
+
+A fallen star in robes of white
+Claims one truth to end our night
+His voice like honey, smooth as wine
+Says other gods are false design
+Hey-yah... hey-yah...
+
+The marketplace forgets its song
+Now prayers replace what lived here long
+My violet eyes see through his glow
+To shadows only wild things know
+Oh-ah-way-oh...
+                        </div>
+
+                        <div class="lyrics-chorus">
+Oh, the light, it burns, it blinds, it calls
+Swallows silence, builds its walls
+But in the mist, the wild still sings
+Of moonlit woods and sacred springs
+
+My heart resists, it holds the sea
+The Wild Gods' breath still lives in me
+Still lives in me... still lives in me...
+                        </div>
+
+                        <div class="lyrics-verse">
+My dearest friend now speaks his name
+"Zenith's chosen" she became
+Her hazel eyes reflect his fire
+While mine still hold the forest's choir
+Ah-yah-oh... ah-yah-oh...
+
+She says there's peace in being chosen
+But I feel something wild and frozen
+The pines still whisper ancient lore
+Of what existed long before
+Way-oh-way...
+
+Under moon, the forest wakes
+Its shadows pulse, its spirit shakes
+A trembling note, the air it breaks
+A truth no single god can take
+
+The tide, the wind, the earth's own beat
+Their voices rise where wild things meet
+Hey-yah, hey-yah, oh-way-oh
+The old ones know, the old ones know...
+
+The town turns swift, their eyes alight
+A blazing faith to drown the night
+But I stand here where waves take flight
+And feel the dark hold back the light
+Mmm-oh-ah... mmm-oh-ah...
+
+Their spirits dance in mist and stone
+They call me home, I'm not alone
+Though all of Rivenglade may kneel
+The wild remembers what is real
+Oh-way-oh-way...
+                        </div>
+
+                        <div class="lyrics-chorus">
+Oh, the light, it burns, it blinds, it calls
+Swallows silence, builds its walls
+But in the depths where shadows fall
+The sea remembers through it all
+
+Between the tide and blazing flame
+I will not bend, I won't be tamed
+The Wild Gods' breath still lives in me
+Forever wild, forever free...
+                        </div>
+
+                        <div class="lyrics-verse">
+The sea remembers... (ah-oh-ah)
+The stones remember... (way-oh-way)
+My bones remember...
+Ancient voices, ancient voices
+Calling through the foam
+Calling me back home
+Calling... calling... calling...
+
+Mmm-ah-yah-oh...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 2 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 02</div>
+                    <h3 class="track-title">Mother, Mother</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 2-3: Mother, Mother</h3>
+                    <p>
+                        At a mandatory Zenithian sermon, Mira struggles under the faith's suffocating expectations. Desperate 
+                        for answers about her absent mother, Mira confronts her father Elias. His cryptic response devastates her: 
+                        "She's not like us, Mira. She walks a different path—a path we can never follow." Her violet eyes mark 
+                        her as eternally separate. Seeking solace at a hidden waterfall with her best friend Kat, their philosophical 
+                        debate reveals Kat's complete transformation. Under mounting pressure, Mira reluctantly agrees to speak with 
+                        Lucien—a compliance that feels like a lie that may destroy her authentic self.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7t8saSWWklNEGxRmzTYJks?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+                        <div class="lyrics-verse">
+Mother, mother... You walk a path I cannot follow... Cannot follow...
+
+White walls closing in on me
+Incense choking what I breathe
+Dress too tight, can't find my skin
+They say kneel, but I can't give in
+Mmm-oh-ah... mmm-oh-ah...
+
+Father's books won't speak her name
+"She's not like us," his voice in pain
+Violet eyes stare back at me
+Mirror shows what I might be
+Oh-way-oh... way-oh...
+
+Mother, mother, where'd you go?
+Walk a path I'll never know
+Mother, mother, am I you?
+Is that why I can't make it through?
+
+She's not like us... not like me...
+Different path... set my soul free...
+
+But I RUN! I RUN! Through the ancient trees!
+Bare feet flying, finally free!
+The waterfall calls my name!
+I leap into the wild gods' domain!
+
+Cold water holds me, I'm ALIVE!
+The forest knows I will survive!
+No white robes can bind my soul!
+The wild makes me whole! Makes me whole!
+
+Kat says "be chosen, wash it clean"
+But I still hear what she's not seen
+Nymphs in pools and dryads near
+Old gods whisper what I fear
+Hey-yah-oh... hey-yah-oh...
+
+"She walks a different path," he said
+Those words keep spinning in my head
+Am I the bridge she couldn't be?
+Between the wild and what they need?
+Oh-way-oh-way...
+
+At the falls! At the falls!
+Where the old magic calls!
+Strip away what isn't real!
+Let the wild gods make me feel!
+
+Hey-yah! Hey-yah! Oh-way-oh!
+Diving deep where shadows go!
+Hey-yah! Hey-yah! Oh-way-oh!
+This is all I need to know!
+
+So I RUN! I RUN! Through the ancient trees!
+Bare feet flying, finally free!
+The waterfall drowns their prayers!
+I breathe the wild gods' sacred air!
+
+Cold water holds me, I'm ALIVE!
+Mother's blood helps me survive!
+No baptism can claim my soul!
+The wild makes me whole! I AM whole!
+
+Mother, mother... Your different path...
+Maybe leads... Back to me...
+
+Maybe I'm the path... You couldn't follow...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 3 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 03</div>
+                    <h3 class="track-title">Too Much Light Will Make You Blind</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 4-5: Too Much Light Will Make You Blind</h3>
+                    <p>
+                        Mira reluctantly meets with Lucien to discuss her doubts, but finds herself trapped in masterful psychological 
+                        manipulation. Unable to sleep, she is drawn into the forest at midnight where she discovers a mysterious stone 
+                        and receives a supernatural warning: a Nimwe appears, matching Mira's violet eyes, warning that "too much light 
+                        will make you blind." Despite this divine intervention, Mira's crushing loneliness drives her toward a decision 
+                        she knows is wrong—she chooses to undergo the Baptism ritual, trading her wild truth for the illusion of belonging.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7ryyKgyHLsGEsCoAzSt5W0?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+"Too much light will make you blind..."
+"...make you blind..."
+
+I held a silver feather once
+A creature made of void and stars
+She sang to me of balance lost
+Of light that leaves eternal scars
+Ah-oh-ah... oh-ah...
+
+Now father kneels in pristine white
+My dearest friend has lost her way
+And I stand here between two worlds
+Knowing which one I'll betray
+Way-oh-way... oh-way...
+
+They say "join us, be chosen, belong"
+But the woods still sing their warning song
+I feel myself disappearing
+Into light that's searing
+I'm disappearing…
+
+Too much light will make you blind
+When you cannot see, you'll follow
+I'm walking into my cage tonight
+Trading truth for something hollow
+
+The Nimwe warned me, warned me well
+But loneliness is my private hell
+So I surrender what is mine
+To the light that makes me blind
+
+Tomorrow they will wash me clean
+Of everything I used to be
+The forest gods will call my name
+But I'll pretend I cannot see
+Oh-way-ah... ah-oh...
+
+Lucien smiles like he's already won
+His hand a shackle on my soul
+I nod and smile and play along
+While a future untold pays the toll
+Hey-oh-hey... oh-hey...
+
+I'm sinking, sinking, sinking down
+(The Nimwe said beware)
+Into white robes, into their crown
+(But I'm too scared to care)
+
+I'm fading, fading, fading out
+(The wild gods know I lied)
+This light is killing all my doubt
+(And everything inside)
+
+Too much light will make you blind
+When you cannot see, you'll follow
+I'm walking into my cage tonight
+My spirit breaking, hollow
+
+The Nimwe warned me, I know it's true
+But I'm too afraid to be without you
+So I'll wear white and speak their lines
+Let the light make me blind
+Make me blind...
+
+Silver feather locked and hidden
+Wild prayers now forbidden
+I am walking to my drowning
+In the light, in the light
+In the blinding light...
+
+"Too much light..."
+"...will make you..."
+"...blind..."
+
+I know... I know...
+But still I go... Still I go...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 4 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 04</div>
+                    <h3 class="track-title">Light and Shadow</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 6-7: Light and Shadow</h3>
+                    <p>
+                        Mira's resistance shatters when her father converts after meeting with Lucien. At the sermon, Lucien announces 
+                        missionary expansion and isolation doctrine—non-believers are now "dangerous contamination." Trapped between 
+                        total isolation and spiritual surrender, Mira capitulates. Walking through Rivenglade's unnatural transformation, 
+                        she meets Lucien. His possessive touch and claim he "always knew" she'd convert reveals something inhuman beneath 
+                        his divine facade. This duet captures their ideological battle—the subtext of opposing worldviews as Mira walks 
+                        toward baptism, knowing she's betraying herself.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2QATLqfqDOHMb3J2p3lgMc?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+I see the darkness clinging to your soul
+Like shadow wrapped around your violet eyes
+You think I haven't noticed what you are?
+The void is calling and you still reply
+
+Let me save you from the Wild Gods' lies
+Let me wash away the stain they left behind
+Surrender to the Light and you'll be pure
+Let me heal what you've become
+
+You speak of darkness like it's something wrong
+But shadows held me when the world went cold
+The Wild Gods whispered when I felt alone
+You want to take the only home I've known
+
+I won't abandon forests for your throne
+I won't trade whispers for your absolute
+You say the void has stained my very bones
+But maybe, my darkness is the truth
+
+Don't you want to finally belong?
+Don't you want to know where you fit in?
+I can give you certainty, not doubt
+All you have to do is let me in
+
+But what's the cost of your belonging?
+What do I lose to wear your white?
+You promise peace but I hear warning
+In every word you call "the Light"
+
+Let me save you from the shadow
+I don't need your blinding flame
+I can feel the void inside you
+Maybe darkness knows my name
+
+You're afraid of being whole
+I'm afraid of losing me
+Zenith's Light will set you free
+Too much light and I won't see
+
+Can't you see what's at stake here?
+Can't you feel what's pulling us apart?
+
+I'm trying to save your soul
+You're trying to steal my heart
+
+The Wild Gods left you broken and alone
+They let the Silence swallow everything
+But I can offer order, peace, control
+A purpose higher than their withered wings
+
+You think you're different? You were always meant
+To rise above the chaos they embraced
+The void is not your friend, it's your descent
+Unless you let my Light illuminate your face
+
+The Nimwe found me crying in the woods
+She didn't promise certainty or lies
+She said too much of your blinding light
+Would leave me stumbling, following the blind
+
+You want me certain, but I'd rather doubt
+You want me whole, but I'd rather be free
+The ancient stones still hum with older truth
+Your Light's not meant for something wild like me
+
+I feel it when I touch you
+That otherness, that stain
+The void is living in you
+And I can't let it remain
+
+You'll destroy yourself without me
+You'll be lost inside the dark
+Let me be your shepherd
+Before the shadows rip you apart
+
+You don't want to save me
+You want to own my soul
+You don't want to heal me
+You want absolute control
+
+The darkness that you sense here
+Isn't evil, isn't wrong
+It's the part of me that's wild
+The part that won't belong
+
+I'll save you from the shadow
+I don't want your blinding flame
+I can purge the void inside you
+The void is part of my name
+
+You're choosing chaos over peace
+I'm choosing truth over your cage
+You'll regret this, mark my words
+Better wild than your slave
+
+This is where our paths diverge
+This is where the battle starts
+
+I will save your soul
+You'll never have my heart
+
+The Nimwe left me something
+A silver feather in the night
+A reminder that the darkness
+Isn't always wrong
+And your light...
+Isn't always right.
+
+You'll come to me eventually
+They always do
+The Light is patient
+And so am I
+
+You can't run from what you are...
+Forever.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 5 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 05</div>
+                    <h3 class="track-title">Something Ancient Rises</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapter 8: Baptism</h3>
+                    <p>
+                        The baptism ceremony reveals Zenithian conversion's true nature. As Lucien channels blinding white light into 
+                        Mira, she experiences violent intrusion—not salvation but annihilation designed to erase personality and rewrite 
+                        consciousness. However, something ancient in her blood creates an impenetrable barrier that completely repels 
+                        Zenith's power. For the first time ever, Lucien's ritual fails. He maintains the facade of success to preserve 
+                        his authority, but both now know the truth: Mira is immune to the supernatural mind control that has successfully 
+                        converted everyone else.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3bXHS1CFdgUPrBBMteGYm8?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+Barefoot on the marble cold
+A thousand eyes, a thousand souls
+Watching, waiting, wanting more
+As I walk toward the altar door
+Mmm-ah-oh... ah-oh...
+
+White gown hanging like a shroud
+Incense choking, lilies bowed
+Every step echoes my fear
+The golden light is drawing near
+Oh-way-ah... way-ah...
+
+Kat is praying for my soul
+While I'm about to lose control
+The marble drains my body's heat
+As I lay down in my defeat
+Hey-oh-hey... oh-hey...
+
+His hand upon my head like fire
+The vow I speak is born of liars
+"I give my body, mind, and soul"
+But something stirs beyond control...
+
+He's reaching in, he's reaching deep
+Into the places where I sleep
+Burning light tries to erase
+Everything about my face
+
+But something ancient starts to rise
+Something he can't recognize
+From blood and bone, from shadow's keep
+A power that was always asleep
+Always asleep...
+
+Lifted up into the air
+The congregation stops to stare
+They think it's grace, they think it's gold
+But I can feel him lose his hold
+Ah-yah-oh... yah-oh...
+
+His fingers twitch against my skin
+He cannot make his light get in
+Behind his smile I see the crack
+The shadow watching, watching back
+Way-oh-way... oh-way...
+
+Not my will, not my choice
+Something deeper finds its voice
+Ancient blood beneath my skin
+Won't let Zenith's light come in
+
+He pushes harder, I push back
+Not with light but something black
+Not evil, no—just something free
+Something wild protecting me
+Protecting me!
+
+He's pulling back, he's letting go
+There's something here he doesn't know
+The Light recoils from what I am
+His perfect ritual is a sham
+
+And in his eyes I see the truth
+Behind the light, behind the proof
+A shadow wearing holy clothes
+And now he knows... he knows I know
+He knows I know...
+
+"Rejoice!" he cries to hide his fear
+"Another Chosen standing here!"
+They cheer and clap and sing their praise
+While darkness swims behind his gaze
+
+I stand before them, playing my part
+With something ancient in my heart
+Untouched by light, unmarked, unknown
+A wild thing wearing Chosen clothes
+Wearing Chosen clothes...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 6 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 06</div>
+                    <h3 class="track-title">Forsaken</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 9-10: Forsaken</h3>
+                    <p>
+                        "Forsaking"—a fate worse than death where the condemned becomes socially dead, invisible to all despite still 
+                        existing. Lucien uses a man who encountered Nimwe in the forest as example, establishing a surveillance state 
+                        where family must report each other. The brutal reality unfolds as Lucien brands the man with supernatural white 
+                        light, marking him with eternal exile. His wife shields their children and completely rejects him. The crowd's 
+                        contempt escalates to mob violence while Lucien watches impassively before warning Mira: "Such is the fate of 
+                        those who listen to the Nimwe."
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2XpVmiUcGRxfdw0lhGvMMw?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+I stood before the altar in my robe of holy white
+My husband on his knees below, condemned by Heaven's light
+They said to speak his name aloud would stain my children's souls
+So I turned my face to stone and let the silence take its toll
+
+This is how the light devours
+This is how we break apart
+Stone by stone and hour by hour
+Tearing out each beating heart
+
+We were family, we were whole
+Now we're shadows in the sun
+They save the body, damn the soul—
+Look what we've become
+What we've become...
+
+He crawled to me in daylight with our children at my side
+Begged to say goodbye to them—I felt my mercy die
+I closed my eyes against him as the righteous gathered near
+I did what faith required of me, though it cost me dear
+
+I did what faith required of me
+I set my husband's spirit free
+But in the dark when no one sees
+I hear him calling through the trees...
+
+Mmm-ah-oh... ah-oh...
+
+This is how the light devours
+This is how we break apart
+Stone by stone and hour by hour
+Tearing out each beating heart
+
+We were family, we were whole
+Now we're shadows in the sun
+They save the body, damn the soul—
+Look what we've become
+What we've become...
+
+We were brothers, we were sisters
+Till the Light declared us wrong
+Now we're phantoms, now we're nothing
+Singing exile's bitter song
+
+Oh-way-oh... way-oh...
+
+They stripped him bare before us all
+The priest's hand burning bright
+We watched the mark sear through his flesh—
+The brand of banished light
+
+I saw them spit upon his skin
+I saw them throw the stones
+The children screaming for their da
+While mother turned to bone
+
+The marketplace ran red that day
+The faithful sang and jeered
+And Lucien stood above it all
+With neither smile nor tear
+
+This is how the light devours
+This is how we break apart
+Stone by stone and hour by hour
+Tearing out each beating heart
+
+We were family, we were whole
+Now we're shadows in the sun
+They save the body, damn the soul—
+Look what we've become
+What we've become...
+
+They said the Nimwe whispered lies into his willing ears
+That darkness called him to the woods and fed him on his fears
+But in the silence of the night when Zenith's eye won't see
+I wonder if the Nimwe's voice was kinder than our creed
+
+I did what faith required of me
+I set my husband's spirit free
+But in the dark when no one sees
+I hear him calling through the trees...
+
+Mmm-ah-oh... ah-oh...
+
+What we've become... What we've become...
+Calling through the trees...
+Mmm-ah-oh...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 7 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 07</div>
+                    <h3 class="track-title">Still Water</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 11-13: Still Water</h3>
+                    <p>
+                        Summoned to Lucien's quarters, Mira discovers he found the Nimwe feather. When she attempts denial, Lucien threatens 
+                        to plant the feather in Kat's home, resulting in her immediate Forsaking and certain death. His ultimatum: marry him 
+                        to prove devotion to Zenith's Light, or watch Kat die for a crime she didn't commit. At the pier, even nature is 
+                        corrupted—the ocean lies unnaturally still. The forced wedding unfolds as public spectacle while masking private battle. 
+                        Lucien's vows reveal explicit ownership: "from this day forward, you are mine."
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5zUre6iuVQWpcnR63JwK9I?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+Can't breathe... can't scream...
+Still water in my lungs... Oh-ah-oh... drowning...
+While standing in the sun...
+
+I want to tear my throat wide open
+Spill the truth like crimson wine
+Tell them what crawls beneath his smile
+How his kiss tastes like brine
+
+But still water fills my mouth
+Every time I try to speak
+The monster's fingers in my chest
+Playing with what makes me weak
+Oh-way-oh... can't bleed it out...
+
+My skin is screaming underneath the white
+My bones are breaking with each step I take
+But all they see is still water
+Perfect bride without a wake
+
+Still water in my throat, I'm choking
+On the vows I cannot say
+That he's eating me alive
+While they throw flowers in my way
+
+My forest wedding dies inside me
+Moss and earth turned into stone
+I'm swallowing still water
+While the monster takes me home
+Takes me whole... swallows whole...
+
+They laced me up in white surrender
+Pulled the corset till I split
+But the real chains are invisible
+The ones that make me submit
+
+I had a lover made of lightning
+Who would dance between the trees
+Now I'm marrying still water
+That will freeze me by degrees
+Mmm-ah-oh... freeze my screams...
+
+If I could vomit up the truth
+If I could bleed it on their floor
+Show them how his touch devours
+How he feeds on what I was before!
+
+But still water keeps me quiet
+Still water keeps me tame
+I'm dissolving in his presence
+Forgetting my own name...
+My own name... what's my name?
+
+Tomorrow he'll unhinge his jaw
+And swallow what remains of me
+But tonight they celebrate
+The still water ceremony
+
+My father kissed my forehead
+Where the monster's mark will go
+He thinks he's giving me away
+He'll never, never know
+Oh-ah-oh... never know...
+
+Still water in my throat, I'm drowning
+In the daylight, dressed in lace
+The congregation's singing hymns
+While something takes my face
+
+My forest lover's just a carcass
+That I carry in my chest
+Still water is dissolving
+Everything I once possessed
+Once confessed... now suppressed...
+
+I cannot slit my throat to tell you
+(Still water, still water)
+What waits beneath the gold
+(Be still now, be still)
+
+The monster wears a holy face
+(Still water, still water)
+And I'm already cold
+(So cold... so cold...)
+
+Can't... breathe...
+Still water... In my lungs...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 8 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 08</div>
+                    <h3 class="track-title">Holy Ghost</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 14-18: Holy Ghost</h3>
+                    <p>
+                        Entering Lucien's sterile home, Mira finds no trace of her belongings. Her father and Kat are sent on dangerous 
+                        missions, leaving her completely isolated. The marriage is consummated against her will as she experiences severe 
+                        dissociation and psychological fragmentation. Trapped in ongoing violations, she exists in dissociative trauma where 
+                        time becomes meaningless. Lucien forces her return to public life where she must perform as the devoted wife while 
+                        internally dissolving, employing calculated false tenderness that weaponizes her body's reactions to create devastating 
+                        shame and confusion.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4ZPPkUzHlJetsqxROyud3K?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+I'm a ghost, I'm a ghost, I'm a ghost in his house
+(In his house, in his house)
+I'm a ghost, I'm a ghost, can't get out, can't get out
+(Can't get out, can't get out)
+
+Step inside, they close the door behind me
+White and gold but nothing here defines me
+Hands on skin I never said could touch
+"You're blessed," they say, but blessings shouldn't hurt this much
+
+Father gone to spread the holy word
+Best friend sent where monsters haven't heard
+Left me here with hymns and empty walls
+Husband, shepherd, predator—he's all
+
+They see the ring, they see the vow, they see me smile
+But I've been underwater for a while
+Holding breath, holding still, holding on
+To a girl who's been erased since I put this white dress on
+
+Wash it off, wash it off, but the stain won't fade
+(Won't fade, won't fade)
+Pray it off, pray it off, but I still feel the weight
+(The weight, the weight)
+I'm a ghost in the house where they worship his name
+(His name, his name)
+Holy ghost, holy ghost, and I'm drowning in shame
+(In shame, in shame)
+
+Numb, numb, going numb when he enters the room
+Float up, float away, leave my body consumed
+Scrub raw in the morning till the water runs red
+Can't wash off the feeling that I'm already dead
+
+They smile in the marketplace, "You're glowing, my dear"
+I'm smoke, I'm a shadow, I'm not really here
+Mirror shows a stranger in a borrowed face
+Wearing his name like it's taking my place
+
+And the cruelest part? (What's the cruelest part?)
+When the vessel betrayed, when it played its part
+Body said yes when my mind screamed no
+Now the shame's another chain I can't let go
+
+Wash it off, wash it off, but the stain won't fade
+(Won't fade, won't fade)
+Pray it off, pray it off, but I still feel the weight
+(The weight, the weight)
+I'm a ghost in the house where they worship his name
+(His name, his name)
+Holy ghost, holy ghost, and I'm drowning in shame
+(In shame, in shame)
+
+They call him light (But I see the dark)
+They call him blessed (But I bear the marks)
+They call it sacred (But it feels like theft)
+They call me wife (But there's nothing left)
+
+Serpent in the shepherd's clothes
+Monster that nobody knows
+Everybody bows and prays
+To the man who takes and takes and takes
+
+But there's a forest that remembers me!
+There's a blade that could set me free!
+There's a girl beneath this holy ghost!
+And she's the one I'm saving most!
+
+Walk it off, walk it off, to the woods I'll fade
+(I'll fade, I'll fade)
+Take it off, take it off, all the white, the shame, the cage
+(The cage, the cage)
+I'm a ghost leaving the house where they worship his name
+(His name, his name)
+Holy ghost, holy ghost, but the wild calls my name
+(My name, MY NAME)
+
+I'm a ghost, I'm a ghost (But not for long, not for long)
+I'm a ghost, I'm a ghost (Gonna be gone, gonna be gone)
+
+He can keep his heaven... I'm going home
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 9 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 09</div>
+                    <h3 class="track-title">Run From the Light</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapter 20: Whispers in the Woods</h3>
+                    <p>
+                        At the hidden waterfall where she plans to end her life, Mira raises Lucien's stolen dagger to her chest. Her 
+                        desperate plea—"Please… give me a reason to live"—triggers supernatural intervention. A Nimwe emerges from the 
+                        mist, touching her forehead and triggering a violent magical awakening. Power erupts from within as violet light 
+                        explodes from her body. Something vast and long-buried rises to the surface. The dagger falls forgotten as she 
+                        realizes: she doesn't have to die to escape. She can run.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4bvtUdD7fGlPOS41qGZacd?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+To the falls, to the falls, to the falls I go
+(Let me go, let me go)
+To the deep, to the dark, to the undertow
+(Let me go, let me go)
+
+Through the vines, through the green, through the shadowed way
+Past the moss, past the stones where we used to play
+Dagger cold against my chest, silver in my hand
+One last breath, one last step to the promised land
+
+Violet eyes watching from the trees
+Soul burning through the mist
+Something ancient, something wild
+Something I can't resist
+
+I see through the holy lie
+I see the predator's eyes
+I'm done, I'm done, I'm done, I'm done
+Tonight I run!
+
+Run, run, run from the monster in the light
+Run, run, run, I'm getting out tonight
+Run, run, run to the forest, to the wild
+Run, run, run like a feral child
+
+He can keep his heaven, keep his throne
+I'm running to the woods, I'm going home
+Run, run, run from the monster in the light
+Run, run, run, I'm getting out tonight!
+
+He calls it love, I call it chains
+He calls it blessed, I call it pain
+Wolf dressed up in shepherd's clothes
+But the forest called and now I know
+
+The Nimwe showed me violet flame
+Whispered "starling" - my real name
+I don't have to die to be free
+I just have to run, just have to flee
+
+I see through the holy lie
+I see the hunter in disguise
+I'm done, I'm done, I'm done, I'm done
+Watch me run!
+
+Run, run, run from the monster in the light
+Run, run, run, I'm getting out tonight
+Run, run, run to the forest, to the wild
+Run, run, run like a feral child
+
+He can keep his heaven, keep his throne
+I'm running to the woods, I'm going home
+Run, run, run from the monster in the light
+Run, run, run, I'm getting out tonight!
+
+Hey-nim-we, hey-nim-we, oh-way-oh...
+Hey-nim-we, hey-nim-we, ah-yah-ah...
+
+Monster, monster in the holy light (Run away, run away)
+Monster, monster thinks he owns my life (Run away, run away)
+But I'm faster than his chains tonight (Run away, run away)
+I'm wild, I'm awake, I'm taking flight (Run away, RUN AWAY)
+
+He'll wake up and I'll be GONE!
+Into the forest, into the dawn!
+He can't follow where I'm going!
+The wild is mine and I AM RUNNING!
+
+Run, run, run from the monster in the light
+Run, run, run, I'm getting out tonight
+Run, run, run to the forest, to the wild
+Run, run, run like a feral child
+
+He can keep his heaven, keep his throne
+I'm running to the woods, I'm going home
+Run, run, run from the monster in the light
+Run, run, run, I GOT OUT TONIGHT!
+
+Run, run, run, run away (I got away, I got away)
+Run, run, run, run away (I got away, I got away)
+From the monster, from the light (I got away, I got away)
+Into the forest, into the night
+
+I GOT AWAY!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Track 10 -->
+            <div class="track-card">
+                <div class="track-header">
+                    <div class="track-number">Track 10</div>
+                    <h3 class="track-title">Into the Unknown Wild</h3>
+                </div>
+
+                <div class="chapter-description">
+                    <h3>Chapters 21-22: Into the Unknown Wild</h3>
+                    <p>
+                        Mira returns to gather survival supplies, but Lucien arrives unexpectedly, sensing something fundamentally different 
+                        about her magical awakening. During a Zenithian service, Forsaken rebels bomb the Hall. In the chaos, Mira attempts 
+                        escape but Lucien confronts her, triggering violent manifestation of her void magic—black tendrils that burn his flesh. 
+                        His shocked revelation—"She's Nimwe"—suggests she may be a supernatural being who believed herself human. Fleeing into 
+                        the forest, she encounters a terrifying Beastborn and a mysterious woman rescuer. Mira chooses to trust this stranger, 
+                        vanishing into the unknown.
+                    </p>
+                </div>
+
+                <div class="spotify-embed">
+                    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0QqWWAbHUDjsDHwwmlYLpI?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+
+                <div class="lyrics-section">
+                    <h4 class="lyrics-header">Lyrics</h4>
+                    <div class="lyrics-content">
+Heaven's bleeding golden light
+The altar cracks, the temple sighs
+Something holy splits the night
+And I'm the ember, I'm the fight
+
+The saints are falling from their thrones
+A thousand colored pieces rain
+I'm gathering the fragments of my soul
+Racing through this blessed hurricane
+
+My whole life sewn in leather seams
+Every secret, every prayer
+I turn to find him in the smoke
+Standing between me and the air
+
+Do I stay with the devil I know?
+The monster wearing holy robes?
+Or do I run into the night?
+Into the dark, away from his light?
+
+Into the unknown wild I go
+Where the shadows breathe and rivers flow
+I don't know what's waiting there
+But anything's better than his prayers
+
+Into the unknown, into the trees
+Where the darkness might just set me free
+The devil I know wants me to stay
+But I choose the wild, I choose to run away
+Into the unknown wild
+Into the unknown wild
+
+His fingers close around my wrist
+I panic and the shadows twist
+Black tendrils tear from my skin
+Something ancient waking deep within
+
+He screams my secret to the sky
+"She's Nimwe!" - but I won't die
+Not here, not now, not in his cage
+I'm running on adrenaline and rage
+
+The forest looms ahead of me
+Darkness promising I could be free
+But I don't know what monsters hide
+In the shadows on the other side
+
+Into the unknown wild I go
+Where the shadows breathe and rivers flow
+I don't know what's waiting there
+But anything's better than his prayers
+
+Into the unknown, into the trees
+Where the darkness might just set me free
+The devil I know wants me to stay
+But I choose the wild, I choose to run away
+Into the unknown wild
+Into the unknown wild
+
+Hollow eyes in the forest deep
+Beastborn prowling while I weep
+A stranger's voice cuts through the night
+"I can save you if you trust me right"
+
+The evil that I know would break me
+The monster in the light would take me
+Drag me back to white and gold
+Back to being bought and sold
+
+But the unknown - the unknown calls my name
+The wild is dangerous but I'm not the same
+I'd rather die free in the woods I love
+Than live as his possession in the house of his god
+
+Into the unknown wild I run
+Trading his chains for the rising sun
+I don't know what tomorrow brings
+But tonight I'm free, tonight I have wings
+
+Into the unknown, into the night
+Where the forest swallows all his light
+The devil I knew almost made me stay
+But I chose the wild, I ran away
+Into the unknown wild
+Into the unknown wild
+Into the unknown wild
+
+I don't know what's out there
+But I know what's behind me
+And I'll take my chances with the dark
+
+Fire behind me
+Forest ahead
+The old life dying
+A new one instead
+Into the wild...
+Into the wild...
+Into the wild...
+
+I'm free
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Message -->
+    <section style="padding: 80px 0; background: rgba(0, 0, 0, 0.3);">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center; padding: 0 20px;">
+            <h2 style="color: var(--ocean-primary); font-size: 2.5em; margin-bottom: 30px; font-weight: 200;">
+                For Survivors, For Fighters
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 1.2em; line-height: 1.8; font-style: italic;">
+                For anyone who ever chose the terrifying unknown over the comfortable cage. This soundtrack stands alone 
+                as a powerful narrative experience while serving as the perfect companion to the novel. Each song tells 
+                chapters of the story, offering both emotional catharsis and unflinching honesty about trauma, control, 
+                and the moment you choose to survive.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Navigation -->
+    <footer class="sleek-footer">
+        <div class="footer-content">
+            <nav class="footer-nav">
+                <a href="/music/" class="nav-button">Back to Music</a>
+                <a href="/writing/the-chosen-chronicles/" class="nav-button">Read The Chosen</a>
+                <a href="/chapters/the-chosen/chapter-01/" class="nav-button">Start Chapter 1</a>
+                <a href="/world-guide/" class="nav-button">Explore the World</a>
+            </nav>
+        </div>
+    </footer>
+</div>
+
+<script>
+    // Parallax effect for orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const orbs = document.querySelectorAll('.light-orb');
+        
+        orbs.forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            const yPos = -(scrolled * speed * 0.1);
+            orb.style.transform = `translateY(${yPos}px)`;
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
