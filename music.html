@@ -464,6 +464,199 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
         margin-right: auto;
     }
 
+    /* Soundtracks Section - NEW */
+    .soundtracks-section {
+        padding: 100px 0;
+        position: relative;
+        background: linear-gradient(180deg, 
+            rgba(10, 10, 20, 0.6) 0%, 
+            rgba(20, 10, 30, 0.8) 50%, 
+            rgba(10, 10, 20, 0.6) 100%);
+        overflow: hidden;
+    }
+
+    .soundtracks-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 70% 30%, 
+            rgba(177, 156, 217, 0.1) 0%, 
+            transparent 60%);
+        pointer-events: none;
+    }
+
+    .soundtracks-intro {
+        max-width: 800px;
+        margin: 0 auto 60px auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+
+    .soundtracks-intro p {
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        line-height: 1.8;
+        font-style: italic;
+    }
+
+    .soundtracks-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 50px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .soundtrack-card {
+        position: relative;
+        text-decoration: none;
+        display: block;
+        transition: all 0.5s ease;
+        cursor: pointer;
+    }
+
+    .soundtrack-card:hover {
+        transform: translateY(-15px);
+    }
+
+    .soundtrack-album-wrapper {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s ease;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(177, 156, 217, 0.2);
+        padding: 10px;
+    }
+
+    .soundtrack-album-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(135deg, 
+            var(--primary-purple) 0%, 
+            var(--ocean-blue) 50%, 
+            var(--accent-violet) 100%);
+        border-radius: 20px;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: -1;
+        animation: gradient-shift 3s ease infinite;
+        background-size: 200% 200%;
+    }
+
+    .soundtrack-card:hover .soundtrack-album-wrapper::before {
+        opacity: 0.7;
+    }
+
+    .soundtrack-card:hover .soundtrack-album-wrapper {
+        box-shadow: 
+            0 30px 60px rgba(177, 156, 217, 0.4),
+            0 0 80px rgba(177, 156, 217, 0.2);
+        border-color: transparent;
+    }
+
+    .soundtrack-album-art {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 15px;
+        transition: all 0.5s ease;
+    }
+
+    .soundtrack-card:hover .soundtrack-album-art {
+        transform: scale(1.03);
+    }
+
+    .soundtrack-info {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .soundtrack-title {
+        font-size: 1.8em;
+        color: var(--text-light);
+        margin-bottom: 10px;
+        font-weight: 300;
+        transition: all 0.3s ease;
+    }
+
+    .soundtrack-card:hover .soundtrack-title {
+        color: var(--primary-purple);
+        text-shadow: 0 0 20px rgba(177, 156, 217, 0.5);
+    }
+
+    .soundtrack-subtitle {
+        color: var(--text-secondary);
+        font-size: 1em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+    }
+
+    .soundtrack-card:hover .soundtrack-subtitle {
+        color: var(--accent-violet);
+        opacity: 1;
+    }
+
+    .soundtrack-explore-label {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 30px;
+        background: rgba(177, 156, 217, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.3);
+        border-radius: 25px;
+        color: var(--primary-purple);
+        font-size: 0.9em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+    }
+
+    .soundtrack-card:hover .soundtrack-explore-label {
+        background: rgba(177, 156, 217, 0.2);
+        border-color: var(--primary-purple);
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(177, 156, 217, 0.3);
+    }
+
+    /* Floating music notes animation */
+    @keyframes float-notes {
+        0%, 100% { transform: translateY(0) rotate(5deg); opacity: 0.6; }
+        50% { transform: translateY(-20px) rotate(-5deg); opacity: 1; }
+    }
+
+    .soundtrack-album-wrapper::after {
+        content: '♪';
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 2em;
+        color: rgba(177, 156, 217, 0.3);
+        animation: float-notes 4s ease-in-out infinite;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .soundtrack-card:hover .soundtrack-album-wrapper::after {
+        opacity: 1;
+    }
+
     /* Testimonials Section */
     .testimonials-section {
         padding: 100px 0;
@@ -826,6 +1019,11 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
+        
+        .soundtracks-grid {
+            grid-template-columns: 1fr;
+            max-width: 500px;
+        }
     }
 
     @media (max-width: 768px) {
@@ -872,6 +1070,20 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
 
         .latest-card {
             padding: 40px 25px;
+        }
+        
+        .soundtracks-section {
+            padding: 80px 0;
+        }
+        
+        .soundtracks-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 400px;
+        }
+        
+        .soundtrack-title {
+            font-size: 1.5em;
         }
         
         .featured-testimonial-card {
@@ -1129,6 +1341,43 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                     <a href="https://youtu.be/6YpZ0sCuGJU?si=2wr4iDdJXS4X6gXX" class="streaming-link">YouTube Music</a>
                     <a href="https://soundcloud.com/mileena_rayne/dont-push-me-away?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing" class="streaming-link">SoundCloud</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blood of the Wild Gods Soundtracks Section -->
+    <section class="soundtracks-section">
+        <div class="container">
+            <h2 class="section-title">Blood of the Wild Gods Soundtracks</h2>
+            
+            <div class="soundtracks-intro">
+                <p>Each album is a sonic journey through its book's story—every track a chapter, every melody a character's heartbeat, every crescendo a plot twist rendered in sound. These aren't just soundtracks; they're the novels themselves translated into a language beyond words, where you can feel the weight of divine silence, taste the copper of spilled blood, and hear the whispers of gods who refuse to answer. Close your eyes, press play, and let the music tell you the story of mortals who dared to demand answers from eternity itself.</p>
+            </div>
+            
+            <div class="soundtracks-grid">
+                <!-- The Silence Soundtrack -->
+                <a href="/the-silence-soundtrack/" class="soundtrack-card reveal">
+                    <div class="soundtrack-album-wrapper">
+                        <img src="/assets/images/the-silence-soundtrack.png" alt="The Silence Soundtrack Album Cover" class="soundtrack-album-art" loading="lazy">
+                    </div>
+                    <div class="soundtrack-info">
+                        <h3 class="soundtrack-title">The Silence</h3>
+                        <p class="soundtrack-subtitle">A Blood of the Wild Gods Soundtrack</p>
+                        <span class="soundtrack-explore-label">Explore Album</span>
+                    </div>
+                </a>
+                
+                <!-- The Chosen Soundtrack -->
+                <a href="/the-chosen-soundtrack/" class="soundtrack-card reveal">
+                    <div class="soundtrack-album-wrapper">
+                        <img src="/assets/images/the-chosen-soundtrack.PNG" alt="The Chosen Soundtrack Album Cover" class="soundtrack-album-art" loading="lazy">
+                    </div>
+                    <div class="soundtrack-info">
+                        <h3 class="soundtrack-title">The Chosen</h3>
+                        <p class="soundtrack-subtitle">A Blood of the Wild Gods Soundtrack</p>
+                        <span class="soundtrack-explore-label">Explore Album</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
