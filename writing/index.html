@@ -34,100 +34,6 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
       "https://www.tiktok.com/@mileena_rayne",
       "https://linktr.ee/mileenarayne"
     ]
-  },
-  "mainEntity": {
-    "@type": "BookSeries",
-    "name": "Blood of the Wild Gods",
-    "author": {
-      "@type": "Person",
-      "name": "Mileena Rayne"
-    },
-    "numberOfBooks": 10,
-    "genre": ["Dark Fantasy", "Epic Fantasy", "Psychological Horror"],
-    "hasPart": [
-      {
-        "@type": "Book",
-        "name": "Blood of the Wild Gods: The Silence",
-        "author": "Mileena Rayne",
-        "datePublished": "2024",
-        "isbn": "979-8341270121",
-        "bookFormat": "EBook",
-        "inLanguage": "en",
-        "genre": "Dark Fantasy",
-        "description": "Five mortals chosen by a god erased from history must navigate divine corruption and impossible choices",
-        "offers": {
-          "@type": "Offer",
-          "url": "https://a.co/d/1XDMREf",
-          "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "seller": {
-            "@type": "Organization",
-            "name": "Amazon"
-          }
-        }
-      },
-      {
-        "@type": "Book",
-        "name": "Blood of the Wild Gods: The Chosen Chronicles",
-        "author": "Mileena Rayne",
-        "bookFormat": "EBook",
-        "inLanguage": "en",
-        "genre": ["Dark Fantasy", "Psychological Horror"],
-        "description": "A four-book epic following Mira Roehart's 18-year journey from religious entrapment to empowerment",
-        "workExample": {
-          "@type": "CreativeWork",
-          "name": "The Chosen (Book 1)",
-          "position": 1
-        }
-      }
-    ]
-  },
-  "breadcrumb": {
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://mileenarayne.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Writing",
-        "item": "https://mileenarayne.com/writing/"
-      }
-    ]
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Mileena Rayne",
-  "@id": "https://mileenarayne.com/#author",
-  "url": "https://mileenarayne.com",
-  "image": "https://mileenarayne.com/assets/images/mileena-rayne-author.jpg",
-  "jobTitle": ["Author", "Dark Fantasy Writer", "Novelist"],
-  "description": "Dark fantasy author creating stories about religious trauma, divine corruption, and choosing humanity over power",
-  "alumniOf": {
-    "@type": "EducationalOrganization",
-    "name": "Nursing School"
-  },
-  "knowsAbout": [
-    "Dark Fantasy Writing",
-    "Religious Trauma",
-    "Psychological Horror",
-    "World Building",
-    "Character Development"
-  ],
-  "hasOccupation": {
-    "@type": "Occupation",
-    "name": "Author",
-    "occupationalCategory": "27-3043.00",
-    "description": "Dark fantasy novelist specializing in stories about trauma, religious extremism, and human resilience"
   }
 }
 </script>
@@ -142,6 +48,9 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         --text-light: #f0f0f0;
         --text-secondary: #d0d0d0;
         --glass-white: rgba(255, 255, 255, 0.05);
+        --blood-red: #8b0000;
+        --oracle-gold: #d4af37;
+        --timeline-gradient: linear-gradient(135deg, #b19cd9, #8ac4ff, #a8b5ff);
     }
 
     /* Atmospheric Background */
@@ -445,274 +354,249 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         letter-spacing: 1px;
     }
 
-    /* Published Book Section */
-    .published-section {
-        padding: 100px 0;
+    /* Timeline Navigation */
+    .timeline-nav {
+        padding: 60px 0;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .timeline-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .timeline-title {
+        font-size: 2.5em;
+        color: var(--text-light);
+        font-weight: 200;
+        margin-bottom: 15px;
+    }
+
+    .timeline-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+    }
+
+    .timeline-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .timeline-btn {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+        color: var(--text-secondary);
+        padding: 12px 25px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 0.95em;
+        font-weight: 500;
+        transition: all 0.3s ease;
         position: relative;
+        overflow: hidden;
+    }
+
+    .timeline-btn.active {
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        color: white;
+        border-color: transparent;
+    }
+
+    .timeline-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(177, 156, 217, 0.2);
+        background: rgba(177, 156, 217, 0.1);
+        color: var(--text-light);
+    }
+
+    /* Age Sections */
+    .age-section {
+        padding: 80px 0;
+        position: relative;
+    }
+
+    .age-section:nth-child(odd) {
         background: rgba(0, 0, 0, 0.2);
     }
 
-    .published-label {
+    .age-header {
         text-align: center;
         margin-bottom: 60px;
+        position: relative;
     }
 
-    .label-line {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        margin-bottom: 20px;
-    }
-
-    .label-line::before,
-    .label-line::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to right, transparent, var(--primary-purple), transparent);
-        max-width: 200px;
-    }
-
-    .label-text {
+    .age-title {
+        font-size: 3em;
         color: var(--primary-purple);
-        font-size: 1em;
-        font-weight: 600;
+        font-weight: 200;
+        margin-bottom: 15px;
         text-transform: uppercase;
         letter-spacing: 3px;
-        padding: 10px 30px;
-        background: rgba(177, 156, 217, 0.1);
-        border: 1px solid rgba(177, 156, 217, 0.3);
-        border-radius: 30px;
     }
 
-    /* Featured Book Card */
-    .featured-book-container {
-        max-width: 1400px;
+    .age-description {
+        color: var(--text-secondary);
+        font-size: 1.2em;
+        font-style: italic;
+        max-width: 800px;
         margin: 0 auto;
-        position: relative;
+        line-height: 1.7;
     }
 
-    .featured-book-card {
+    /* Book Card Enhanced */
+    .book-card {
         background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(30px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
+        border: 1px solid rgba(177, 156, 217, 0.1);
         border-radius: 30px;
-        padding: 80px;
+        padding: 60px;
+        margin-bottom: 50px;
         position: relative;
         overflow: hidden;
-        transform: translateZ(0);
         transition: all 0.5s ease;
     }
 
-    .featured-book-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary-purple), var(--ocean-blue), transparent);
-        opacity: 0.8;
-        animation: shimmer-border 4s ease-in-out infinite;
-        pointer-events: none;
-    }
-
-    .featured-book-card::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--ocean-blue), var(--primary-purple), transparent);
-        opacity: 0.8;
-        animation: shimmer-border 4s ease-in-out infinite;
-        animation-delay: 2s;
-        pointer-events: none;
-    }
-
-    @keyframes shimmer-border {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-    }
-
-    .featured-book-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 
-            0 50px 100px rgba(177, 156, 217, 0.3),
-            0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .featured-content {
-        display: grid;
-        grid-template-columns: 450px 1fr;
-        gap: 80px;
-        align-items: center;
-        position: relative;
-        z-index: 2;
-    }
-
-    .featured-cover {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-        transition: all 0.5s ease;
-    }
-
-    .featured-cover::after {
+    .book-card::before {
         content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, transparent 70%);
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05) 0%, transparent 50%);
         opacity: 0;
         transition: opacity 0.5s ease;
         pointer-events: none;
     }
 
-    .featured-cover:hover::after {
+    .book-card:hover::before {
         opacity: 1;
     }
 
-    .featured-cover:hover {
-        transform: scale(1.05);
+    .book-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 
+            0 50px 100px rgba(177, 156, 217, 0.3),
+            0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: rgba(177, 156, 217, 0.3);
+    }
+
+    .book-content {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    .book-cover-wrapper {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s ease;
+        background: #0a0a0a;
+    }
+
+    .book-cover-wrapper:hover {
+        transform: scale(1.03);
         box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
     }
 
-    .featured-cover img {
+    .book-cover-wrapper img {
         width: 100%;
         height: auto;
         display: block;
     }
 
-    /* Subtle shimmer effect for book covers */
-    .featured-cover::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-            45deg,
-            transparent 30%,
-            rgba(255, 255, 255, 0.1) 50%,
-            transparent 70%
-        );
-        transform: rotate(45deg);
-        transition: all 0.6s;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .featured-cover:hover::before {
-        animation: shimmer-sweep 0.6s ease;
-    }
-
-    @keyframes shimmer-sweep {
-        0% {
-            transform: rotate(45deg) translateY(-100%);
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
-        100% {
-            transform: rotate(45deg) translateY(100%);
-            opacity: 0;
-        }
-    }
-
-    .featured-info {
-        text-align: left;
+    .book-info {
         position: relative;
-        z-index: 5;
     }
 
-    .featured-title {
-        font-size: 3em;
+    .book-status {
+        display: inline-block;
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 0.85em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(177, 156, 217, 0.3);
+    }
+
+    .book-status.published {
+        background: linear-gradient(135deg, #4caf50, #45a049);
+    }
+
+    .book-status.coming-soon {
+        background: linear-gradient(135deg, var(--oracle-gold), #b8941f);
+    }
+
+    .book-status.in-progress {
+        background: linear-gradient(135deg, var(--ocean-blue), #6bb6ff);
+    }
+
+    .book-title {
+        font-size: 2.2em;
         color: var(--text-light);
         margin-bottom: 15px;
         font-weight: 300;
         line-height: 1.2;
     }
 
-    .featured-genre {
+    .book-series {
         color: var(--primary-purple);
         font-size: 1.1em;
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: 2px;
+        margin-bottom: 25px;
+    }
+
+    .book-description {
+        color: var(--text-secondary);
+        font-size: 1.1em;
+        line-height: 1.8;
         margin-bottom: 30px;
     }
 
-    .featured-description {
-        color: var(--text-secondary);
-        font-size: 1.15em;
-        line-height: 1.8;
-        margin-bottom: 40px;
-    }
-
-    .featured-buttons {
+    .book-meta {
         display: flex;
-        gap: 20px;
+        gap: 15px;
         flex-wrap: wrap;
-        position: relative;
-        z-index: 100;
+        margin-bottom: 30px;
     }
 
-    /* Book Stats Display */
-    .book-stats {
-        display: flex;
-        gap: 30px;
-        margin: 35px 0;
-        padding: 25px;
-        background: rgba(177, 156, 217, 0.05);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        border-radius: 20px;
-        backdrop-filter: blur(10px);
-    }
-
-    .book-stat {
-        text-align: center;
-        flex: 1;
-        position: relative;
-    }
-
-    .book-stat:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        right: -15px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1px;
-        height: 30px;
-        background: rgba(177, 156, 217, 0.3);
-    }
-
-    .book-stat-number {
-        display: block;
-        font-size: 1.8em;
+    .meta-badge {
+        background: rgba(177, 156, 217, 0.1);
+        border: 1px solid rgba(177, 156, 217, 0.3);
         color: var(--ocean-blue);
-        font-weight: 300;
-        margin-bottom: 5px;
-        text-shadow: 0 0 15px rgba(138, 196, 255, 0.5);
-    }
-
-    .book-stat-label {
-        display: block;
-        font-size: 0.85em;
-        color: var(--text-secondary);
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        padding: 8px 18px;
+        border-radius: 20px;
+        font-size: 0.9em;
         font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    /* FIX FOR BUTTON CLICKABILITY */
+    .book-buttons {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
     .btn-primary,
     .btn-secondary {
         background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
@@ -739,366 +623,62 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         box-shadow: none;
     }
 
-    .btn-primary::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-        transition: all 0.5s ease;
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-    }
-
-    .btn-primary:hover::before {
-        width: 300px;
-        height: 300px;
+    .btn-soundtrack {
+        background: transparent;
+        color: var(--primary-purple);
+        border: 2px solid var(--primary-purple);
+        box-shadow: none;
     }
 
     .btn-primary:hover,
-    .btn-secondary:hover {
+    .btn-secondary:hover,
+    .btn-soundtrack:hover {
         transform: translateY(-3px);
         box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
     }
 
-    .btn-secondary:hover {
-        background: rgba(177, 156, 217, 0.1);
-        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.2);
+    /* Multi-Book Series Container */
+    .series-container {
+        margin-bottom: 60px;
     }
 
-    /* Author's Note Display */
-    .authors-note-display {
-        margin-top: 60px;
-        padding-top: 60px;
-        border-top: 1px solid rgba(177, 156, 217, 0.2);
-        text-align: center;
-    }
-
-    .note-header {
-        color: var(--primary-purple);
-        font-size: 1.1em;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 30px;
-        position: relative;
-        display: inline-block;
-    }
-
-    .note-header::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
-    }
-
-    .note-content {
-        max-width: 800px;
-        margin: 0 auto;
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05), rgba(177, 156, 217, 0.02));
-        border: 1px solid rgba(177, 156, 217, 0.1);
+    .series-header {
+        background: rgba(177, 156, 217, 0.05);
+        border: 1px solid rgba(177, 156, 217, 0.2);
         border-radius: 20px;
-        padding: 40px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .note-content::before {
-        content: '';
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, transparent);
-        pointer-events: none;
-    }
-
-    .note-content::after {
-        content: '';
-        position: absolute;
-        bottom: -50px;
-        left: -50px;
-        width: 100px;
-        height: 100px;
-        background: linear-gradient(135deg, transparent, rgba(177, 156, 217, 0.1) 100%);
-        pointer-events: none;
-    }
-
-    .note-content p {
-        color: var(--text-secondary);
-        font-size: 1.05em;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        font-family: 'Georgia', serif;
-        position: relative;
-        z-index: 1;
-    }
-
-    .note-content p:last-child {
-        margin-bottom: 0;
-    }
-
-    .note-content p:first-child {
-        color: var(--primary-purple);
-        font-size: 1.15em;
-        font-weight: 500;
-    }
-
-    .note-content p:nth-child(3) {
-        color: var(--text-light);
-        font-size: 1.2em;
-        font-weight: 600;
-        margin: 30px 0;
-    }
-
-    /* Work in Progress Section */
-    .wip-section {
-        padding: 100px 0;
-        position: relative;
-    }
-
-    .section-header {
+        padding: 30px;
+        margin-bottom: 30px;
         text-align: center;
-        max-width: 900px;
-        margin: 0 auto 80px;
     }
 
-    .section-title {
-        font-size: 3.5em;
-        font-weight: 200;
-        margin-bottom: 20px;
-        color: var(--text-light);
-        letter-spacing: -1px;
-    }
-
-    .section-subtitle {
-        color: var(--text-secondary);
-        font-size: 1.2em;
-        line-height: 1.7;
+    .series-name {
+        font-size: 2em;
+        color: var(--primary-purple);
+        margin-bottom: 10px;
         font-weight: 300;
     }
 
-    /* Books Container - Large individual cards */
-    .books-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 80px;
-        max-width: 1400px;
-        margin: 0 auto;
+    .series-count {
+        color: var(--text-secondary);
+        font-size: 1.1em;
     }
 
-    /* Enhanced Individual Book Cards */
-    .wip-book-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(30px);
-        border: 1px solid rgba(177, 156, 217, 0.1);
-        border-radius: 30px;
-        padding: 80px;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.5s ease;
-        z-index: 1;
-    }
-
-    .wip-book-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05) 0%, transparent 50%);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    .wip-book-card:hover::before {
-        opacity: 1;
-    }
-
-    .wip-book-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 
-            0 50px 100px rgba(177, 156, 217, 0.3),
-            0 20px 40px rgba(0, 0, 0, 0.3);
-        border-color: rgba(177, 156, 217, 0.3);
-    }
-
-    .wip-content {
+    .series-books {
         display: grid;
-        grid-template-columns: 450px 1fr;
-        gap: 80px;
-        align-items: center;
-        position: relative;
-        z-index: 2;
+        gap: 30px;
     }
 
-    .wip-cover-wrapper {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-        transition: all 0.5s ease;
-        background: #0a0a0a;
+    /* Oracle Books Special Styling */
+    .oracle-book-card {
+        background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(255, 255, 255, 0.02));
+        border: 1px solid rgba(212, 175, 55, 0.3);
     }
 
-    .wip-cover-wrapper::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1) 0%, transparent 70%);
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
+    .oracle-book-card .book-status {
+        background: linear-gradient(135deg, var(--oracle-gold), #b8941f);
     }
 
-    .wip-cover-wrapper:hover::after {
-        opacity: 1;
-    }
-
-    .wip-cover-wrapper:hover {
-        transform: scale(1.03);
-        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
-    }
-
-    .wip-cover-wrapper img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    /* Subtle shimmer effect for WIP book covers */
-    .wip-cover-wrapper::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-            45deg,
-            transparent 30%,
-            rgba(255, 255, 255, 0.1) 50%,
-            transparent 70%
-        );
-        transform: rotate(45deg);
-        transition: all 0.6s;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .wip-cover-wrapper:hover::before {
-        animation: shimmer-sweep 0.6s ease;
-    }
-
-    .wip-info {
-        text-align: left;
-        position: relative;
-        z-index: 5;
-        transform: translateZ(0);
-    }
-
-    .wip-status {
-        display: inline-block;
-        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
-        color: white;
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 0.85em;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        margin-bottom: 20px;
-        box-shadow: 0 5px 15px rgba(177, 156, 217, 0.3);
-    }
-
-    .wip-title {
-        font-size: 2.5em;
-        color: var(--text-light);
-        margin-bottom: 15px;
-        font-weight: 300;
-        line-height: 1.2;
-    }
-
-    .wip-genre {
-        color: var(--primary-purple);
-        font-size: 1.1em;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 30px;
-    }
-
-    .wip-description {
-        color: var(--text-secondary);
-        font-size: 1.15em;
-        line-height: 1.8;
-        margin-bottom: 35px;
-    }
-
-    .wip-meta {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin-bottom: 35px;
-    }
-
-    .meta-badge {
-        background: rgba(177, 156, 217, 0.1);
-        border: 1px solid rgba(177, 156, 217, 0.3);
-        color: var(--ocean-blue);
-        padding: 8px 18px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        font-weight: 500;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .meta-badge::before {
-        content: '';
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--ocean-blue);
-        animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { opacity: 0.6; }
-        50% { opacity: 1; }
-    }
-
-    .wip-buttons {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-        position: relative;
-        z-index: 100;
-    }
-
-    /* Ensure all links in cards are clickable */
-    .wip-book-card a,
-    .featured-book-card a {
-        position: relative;
-        z-index: 1000;
-        pointer-events: auto !important;
-    }
-
-    /* Author Philosophy Section */
+    /* Author Section */
     .author-section {
         padding: 100px 0;
         background: rgba(0, 0, 0, 0.3);
@@ -1115,17 +695,6 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         padding: 60px;
         position: relative;
         overflow: hidden;
-    }
-
-    .author-content::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
-        animation: shimmer-line 3s ease-in-out infinite;
     }
 
     .author-quote {
@@ -1159,35 +728,6 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         right: 0;
     }
 
-    .author-philosophy {
-        margin-top: 30px;
-        padding-top: 30px;
-        border-top: 1px solid rgba(177, 156, 217, 0.1);
-    }
-
-    .author-philosophy p {
-        color: var(--text-secondary);
-        font-size: 1.1em;
-        line-height: 1.8;
-        margin-bottom: 20px;
-        text-align: left;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .author-philosophy p:last-child {
-        margin-bottom: 0;
-    }
-
-    .author-links {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 40px;
-    }
-
     /* Reveal Animations */
     .reveal {
         opacity: 0;
@@ -1202,114 +742,67 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
 
     /* Mobile Responsive */
     @media (max-width: 1024px) {
-        .featured-content,
-        .wip-content {
+        .book-content {
             grid-template-columns: 1fr;
-            gap: 50px;
+            gap: 40px;
             text-align: center;
         }
 
-        .featured-cover,
-        .wip-cover-wrapper {
-            max-width: 400px;
+        .book-cover-wrapper {
+            max-width: 350px;
             margin: 0 auto;
         }
 
-        .featured-info,
-        .wip-info {
+        .book-info {
             text-align: center;
         }
 
-        .featured-buttons,
-        .wip-buttons {
+        .book-buttons {
             justify-content: center;
         }
 
-        .books-grid {
-            gap: 60px;
-        }
-
-        .wip-book-card {
-            padding: 60px 40px;
-        }
-        
         .series-stats {
             gap: 30px;
         }
     }
 
     @media (max-width: 768px) {
-        .loading-text {
-            font-size: 1.5em;
-        }
-
         .hero-title {
             font-size: 2.5rem;
         }
 
-        .featured-book-card,
-        .wip-book-card {
+        .book-card {
             padding: 40px 30px;
         }
 
-        .section-title {
-            font-size: 2.5em;
-        }
-
-        .featured-title,
-        .wip-title {
+        .age-title {
             font-size: 2em;
         }
 
-        .author-content {
-            padding: 40px 30px;
+        .book-title {
+            font-size: 1.8em;
         }
 
-        .books-grid {
-            gap: 50px;
+        .timeline-buttons {
+            flex-direction: column;
+            align-items: center;
         }
-        
-        .series-stats {
-            gap: 20px;
-            padding: 30px 20px;
-        }
-        
-        .stat-number {
-            font-size: 2.2em;
-        }
-        
-        .book-stats {
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
-        
-        .book-stat {
-            flex: 1 1 40%;
-        }
-        
-        .book-stat:not(:last-child)::after {
-            display: none;
+
+        .timeline-btn {
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
         }
     }
 
     @media (max-width: 480px) {
-        .featured-book-card,
-        .wip-book-card {
+        .book-card {
             padding: 30px 20px;
         }
 
-        .books-grid {
-            gap: 40px;
-        }
-        
         .series-stats {
             flex-direction: column;
             gap: 15px;
-        }
-        
-        .book-stat {
-            flex: 1 1 100%;
         }
     }
 </style>
@@ -1331,326 +824,484 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     </div>
 
     <!-- Hero Section -->
-<section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <div class="series-badge">
-                <div class="badge-icon"></div>
-                <span class="badge-text">Blood of the Wild Gods Series</span>
-            </div>
-            
-            <h1 class="hero-title">
-                Where Gods Fall Silent<br>
-                <span class="highlight">And Mortals Rise</span>
-            </h1>
-            
-            <p class="hero-subtitle">
-                Dark fantasy that explores the shadows between divinity and humanity, 
-                where trauma becomes power and silence speaks louder than prayers.
-            </p>
-            
-            <div class="series-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="7">0</span>
-                    <span class="stat-label">Total Works</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="392" data-suffix="K+">0</span>
-                    <span class="stat-label">Words Written</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="137">0</span>
-                    <span class="stat-label">Chapters+</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="1">0</span>
-                    <span class="stat-label">Published</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Published Book Section -->
-<section class="published-section">
-    <div class="container">
-        <div class="published-label">
-            <div class="label-line">
-                <span class="label-text">Published Novel</span>
-            </div>
-        </div>
-
-        <div class="featured-book-container reveal">
-            <div class="featured-book-card">
-                <div class="featured-content">
-                    <div class="featured-cover">
-                        <img src="/assets/images/EbookPic.jpg" alt="Blood of the Wild Gods: The Silence">
-                    </div>
-                    
-                    <div class="featured-info">
-                        <h2 class="featured-title">Blood of the Wild Gods: The Silence</h2>
-                        <div class="featured-genre">Dark Fantasy • Epic Fantasy</div>
-                        
-                        <p class="featured-description">
-                            Long ago, the gods waged war across the heavens, leaving scars that reshaped the world. 
-                            Their blood birthed the Beastborn—monstrous creatures of divine wrath. But not all touched 
-                            by this power became beasts. Some became the Bloodmarked—mortals wielding impossible power, 
-                            forever teetering on the edge of corruption.
-                        </p>
-                        
-                        <p class="featured-description">
-                            Now, as the Silent God awakens, its whispers reach five mortals chosen for a purpose 
-                            they do not understand. When silence itself becomes a weapon, the fate of the realm 
-                            will depend on choices that defy destiny.
-                        </p>
-                        
-                        <div class="book-stats">
-                            <div class="book-stat">
-                                <span class="book-stat-number">95K+</span>
-                                <span class="book-stat-label">Words</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">41</span>
-                                <span class="book-stat-label">Chapters</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">1</span>
-                                <span class="book-stat-label">Published</span>
-                            </div>
-                        </div>
-                        
-                        <div class="featured-buttons">
-                            <a href="/writing/the-silence/" class="btn-primary">Explore The Book</a>
-                            <a href="https://a.co/d/1XDMREf" class="btn-secondary">Buy on Amazon</a>
-                            <a href="/chapters/the-silence/chapter-01/" class="btn-secondary">Read Chapter 1</a>
-                        </div>
-                    </div>
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="series-badge">
+                    <div class="badge-icon"></div>
+                    <span class="badge-text">Blood of the Wild Gods Universe</span>
                 </div>
                 
-                <!-- Author's Note -->
-                <div class="authors-note-display">
-                    <div class="note-header">Author's Dedication</div>
-                    <div class="note-content">
-                        <p><em>For the dreamer I once was, and the one I will always be.</em></p>
-                        <p><em>To the stories that shaped me, the worlds I escaped to, and the legends that lived in my heart long before I ever put words to my own. As a child, I promised myself that one day, I would write a book—not just for the love of storytelling, but to prove that the magic I believed in was real. That dreams, no matter how distant, are worth chasing.</em></p>
-                        <p><em>And now, here I am.</em></p>
-                        <p><em>This book is proof that the worlds we imagine can become something real, something lasting. To every dreamer who holds a story in their heart—may you never stop believing in the day it becomes yours to tell.</em></p>
+                <h1 class="hero-title">
+                    Where Gods Fall Silent<br>
+                    <span class="highlight">And Mortals Rise</span>
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Dark fantasy that explores the shadows between divinity and humanity, 
+                    where trauma becomes power and silence speaks louder than prayers.
+                </p>
+                
+                <div class="series-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="10" data-suffix="+">0</span>
+                        <span class="stat-label">Total Books</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="559" data-suffix="K+">0</span>
+                        <span class="stat-label">Words Written</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="160" data-suffix="+">0</span>
+                        <span class="stat-label">Chapters</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="2">0</span>
+                        <span class="stat-label">Published</span>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Works in Progress Section -->
-<section class="wip-section">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Works in Progress</h2>
-            <p class="section-subtitle">
-                Journey deeper into the world of the Wild Gods through stories of divine tragedy, 
-                mortal resilience, and the spaces between light and shadow.
-            </p>
+    <!-- Timeline Navigation -->
+    <section class="timeline-nav">
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <h2 class="timeline-title">Reading Order by Timeline</h2>
+                <p class="timeline-subtitle">Journey through the ages of the Blood of the Wild Gods universe</p>
+            </div>
+            <div class="timeline-buttons">
+                <a href="#age-of-gods" class="timeline-btn">Age of Gods</a>
+                <a href="#great-withdrawal" class="timeline-btn">The Great Withdrawal</a>
+                <a href="#age-of-awakening" class="timeline-btn">Age of Awakening</a>
+                <a href="#age-of-consequence" class="timeline-btn">Age of Consequence</a>
+                <a href="#age-of-broken-seals" class="timeline-btn">Age of Broken Seals</a>
+            </div>
         </div>
+    </section>
 
-        <div class="books-grid">
-            <!-- The Chosen Chronicles -->
-            <div class="wip-book-card reveal">
-                <div class="wip-content">
-                    <div class="wip-cover-wrapper">
-                        <img src="/assets/images/the-chosen-chronicles.png" alt="Blood of the Wild Gods: The Chosen Chronicles">
-                    </div>
-                    
-                    <div class="wip-info">
-                        <span class="wip-status">Four-Book Epic Series</span>
-                        <h2 class="wip-title">Blood of the Wild Gods: The Chosen Chronicles</h2>
-                        <div class="wip-genre">Dark Fantasy • Psychological Horror • Generational Epic</div>
-                        
-                        <p class="wip-description">
-                            A four-book journey spanning eighteen years, following Mira Roehart from entrapment 
-                            to empowerment. When a silver-tongued leader arrives promising salvation through 
-                            Zenith's Light, Mira must navigate religious extremism, discover her void-touched 
-                            heritage, and ultimately choose when to stop running and start fighting.
-                        </p>
-                        
-                        <p class="wip-description">
-                            The complete saga includes: <em>The Chosen</em> (complete at 22 chapters), 
-                            <em>The Forsaken</em> (in progress with 16+ chapters), <em>The Village</em> 
-                            (upcoming), and <em>The Return</em> (upcoming). This isn't a story about quick 
-                            revenge or easy healing—it's about the long, difficult journey of reclaiming 
-                            yourself after systematic destruction.
-                        </p>
-                        
-                        <div class="book-stats">
-                            <div class="book-stat">
-                                <span class="book-stat-number">4</span>
-                                <span class="book-stat-label">Books</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">136K+</span>
-                                <span class="book-stat-label">Words</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">38+</span>
-                                <span class="book-stat-label">Chapters</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">18</span>
-                                <span class="book-stat-label">Year Timeline</span>
-                            </div>
-                        </div>
-                        
-                        <div class="wip-meta">
-                            <span class="meta-badge">Epic Fantasy</span>
-                            <span class="meta-badge">Religious Trauma</span>
-                        </div>
-                        
-                        <div class="wip-buttons">
-                            <a href="/writing/the-chosen-chronicles/" class="btn-primary">Explore The Series</a>
-                            <a href="/chapters/the-chosen/chapter-01/" class="btn-secondary">Start Reading</a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Age of Gods Section -->
+    <section id="age-of-gods" class="age-section">
+        <div class="container">
+            <div class="age-header reveal">
+                <h2 class="age-title">The Age of Gods</h2>
+                <p class="age-description">When Divine Blood Spilled</p>
             </div>
 
-            <!-- The Lost Histories -->
-            <div class="wip-book-card reveal">
-                <div class="wip-content">
-                    <div class="wip-cover-wrapper">
+            <div class="book-card reveal">
+                <div class="book-content">
+                    <div class="book-cover-wrapper">
                         <img src="/assets/images/the-lost-histories.png" alt="Blood of the Wild Gods: The Lost Histories">
                     </div>
                     
-                    <div class="wip-info">
-                        <span class="wip-status">Work in Progress</span>
-                        <h2 class="wip-title">Blood of the Wild Gods: The Lost Histories</h2>
-                        <div class="wip-genre">Literary Dark Fantasy • Anthology</div>
+                    <div class="book-info">
+                        <span class="book-status coming-soon">Coming Soon</span>
+                        <h3 class="book-title">Blood of the Wild Gods: The Lost Histories</h3>
+                        <div class="book-series">Literary Dark Fantasy • Anthology</div>
                         
-                        <p class="wip-description">
-                            Six forgotten tales of divine tragedy and mortal courage. Stories whispered between 
-                            stone and silence, revealing why the gods fell silent and what price they paid 
-                            for loving mortals. Each tale stands alone yet weaves into the greater tapestry 
-                            of the Blood of the Wild Gods universe.
+                        <p class="book-description">
+                            Six forgotten tales of divine tragedy and mortal courage, whispered between stone and silence. 
+                            From "Seven Days of Sun"—a god cursed to watch his beloved die through endless incarnations—to 
+                            the origin of the Bloodmarked and divine corruption, these histories reveal why the gods fell 
+                            silent and what price they paid for loving mortals.
+                        </p>
+
+                        <p class="book-description">
+                            Chronicled by Tanneus G'Raja, who died for these truths. Each tale stands alone yet weaves 
+                            into the greater tapestry of the Blood of the Wild Gods universe.
                         </p>
                         
-                        <p class="wip-description">
-                            From "Seven Days of Sun"—a god cursed to watch his beloved die through endless 
-                            incarnations—to stories of the first Bloodmarked and the origin of divine corruption, 
-                            these histories explore the moments that shaped the world but were too dangerous 
-                            to remember.
-                        </p>
-                        
-                        <div class="book-stats">
-                            <div class="book-stat">
-                                <span class="book-stat-number">6</span>
-                                <span class="book-stat-label">Stories</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">152K+</span>
-                                <span class="book-stat-label">Words</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">51+</span>
-                                <span class="book-stat-label">Chapters</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">13</span>
-                                <span class="book-stat-label">Author Notes</span>
-                            </div>
+                        <div class="book-meta">
+                            <span class="meta-badge">6 Stories</span>
+                            <span class="meta-badge">152K+ Words</span>
+                            <span class="meta-badge">51+ Chapters</span>
+                            <span class="meta-badge">13 Author Notes</span>
                         </div>
                         
-                        <div class="wip-meta">
-                            <span class="meta-badge">Anthology Format</span>
-                            <span class="meta-badge">Notes by Tanneus G'Raja</span>
-                        </div>
-                        
-                        <div class="wip-buttons">
+                        <div class="book-buttons">
                             <a href="/writing/the-lost-histories/" class="btn-primary">Discover Histories</a>
                             <a href="/chapters/lost-histories/seven-days-of-sun/chapter-01/" class="btn-secondary">Read First Story</a>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- The Great Withdrawal Section -->
+    <section id="great-withdrawal" class="age-section">
+        <div class="container">
+            <div class="age-header reveal">
+                <h2 class="age-title">The Great Withdrawal</h2>
+                <p class="age-description">When Gods Fell Silent - Humanity created the Common Calendar and sought new prophecies</p>
+            </div>
+
+            <!-- Siren Bone Oracle Series -->
+            <div class="series-container reveal">
+                <div class="series-header">
+                    <h3 class="series-name">The Siren Bone Oracle Series</h3>
+                    <p class="series-count">3 Books of Prophecy and Divination</p>
+                </div>
+
+                <div class="series-books">
+                    <!-- Almanac of Stars -->
+                    <div class="book-card oracle-book-card">
+                        <div class="book-content">
+                            <div class="book-cover-wrapper">
+                                <img src="/assets/images/almanac-of-stars.PNG" alt="The Siren Bone Oracle: Almanac of Stars">
+                            </div>
+                            
+                            <div class="book-info">
+                                <span class="book-status published">Published</span>
+                                <h3 class="book-title">The Siren Bone Oracle: Almanac of Stars</h3>
+                                <div class="book-series">Practical Divination • Calendar System</div>
+                                
+                                <p class="book-description">
+                                    Written 30 years into The Great Withdrawal. When the gods fell silent, humanity needed 
+                                    practical timekeeping for commerce and daily life. Athea, born blind but gifted with 
+                                    star-sight, helped create the Common Calendar—naming its months for constellations both 
+                                    visible and prophesied.
+                                </p>
+
+                                <p class="book-description">
+                                    She then wove three divination systems to guide humanity through godless times: the Blood 
+                                    and Bone Tarot, Arcadian Astrology, and daily horoscopes channeled through siren bones. 
+                                    The calendar that keeps merchants' schedules also carries prophecies of ages yet to come.
+                                </p>
+                                
+                                <div class="book-meta">
+                                    <span class="meta-badge">167K+ Words</span>
+                                    <span class="meta-badge">23 Chapters</span>
+                                    <span class="meta-badge">365 Horoscopes</span>
+                                    <span class="meta-badge">Tarot System</span>
+                                </div>
+                                
+                                <div class="book-buttons">
+                                    <a href="https://a.co/d/almanac-link" class="btn-primary">Buy on Amazon</a>
+                                    <a href="/writing/almanac-of-stars/" class="btn-secondary">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blood & Bone Tarot -->
+                    <div class="book-card oracle-book-card">
+                        <div class="book-content">
+                            <div class="book-cover-wrapper">
+                                <img src="/assets/images/blood-bone-tarot.PNG" alt="The Siren Bone Oracle: Blood & Bone Tarot">
+                            </div>
+                            
+                            <div class="book-info">
+                                <span class="book-status coming-soon">Coming Soon</span>
+                                <h3 class="book-title">The Siren Bone Oracle: Blood & Bone Tarot</h3>
+                                <div class="book-series">78-Card Divination System</div>
+                                
+                                <p class="book-description">
+                                    The complete guide to Athea's 78-card divination system, created to help humanity navigate 
+                                    fate without divine intervention. Blood Cards reveal external forces beyond our control 
+                                    while Bone Cards represent the power of choice that remains even in godless times.
+                                </p>
+
+                                <p class="book-description">
+                                    Includes full card meanings, spreads, and the stories behind each card's creation. This 
+                                    expanded guide builds on the tarot system introduced in the Almanac.
+                                </p>
+                                
+                                <div class="book-meta">
+                                    <span class="meta-badge">78 Cards</span>
+                                    <span class="meta-badge">Full Meanings</span>
+                                    <span class="meta-badge">Spreads Guide</span>
+                                </div>
+                                
+                                <div class="book-buttons">
+                                    <a href="/writing/blood-bone-tarot/" class="btn-primary">Explore Tarot</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arcadian Astrology -->
+                    <div class="book-card oracle-book-card">
+                        <div class="book-content">
+                            <div class="book-cover-wrapper">
+                                <img src="/assets/images/arcadian-astrology.PNG" alt="The Siren Bone Oracle: Arcadian Astrology">
+                            </div>
+                            
+                            <div class="book-info">
+                                <span class="book-status coming-soon">Coming Soon</span>
+                                <h3 class="book-title">The Siren Bone Oracle: Arcadian Astrology</h3>
+                                <div class="book-series">Comprehensive Astrological Guide</div>
+                                
+                                <p class="book-description">
+                                    The comprehensive guide to Athea's astrological system that underpins the Almanac's daily 
+                                    horoscopes. Explores all twelve constellations in depth, the twelve houses, eight moon 
+                                    phases, rising signs, and compatibility.
+                                </p>
+
+                                <p class="book-description">
+                                    Reveals why eight constellations remain unborn—waiting for events that will force even 
+                                    the withdrawn gods to watch—and how to read the stars' influence on mortal lives.
+                                </p>
+                                
+                                <div class="book-meta">
+                                    <span class="meta-badge">12 Constellations</span>
+                                    <span class="meta-badge">Moon Phases</span>
+                                    <span class="meta-badge">Compatibility</span>
+                                </div>
+                                
+                                <div class="book-buttons">
+                                    <a href="/writing/arcadian-astrology/" class="btn-primary">Study the Stars</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age of Awakening Section -->
+    <section id="age-of-awakening" class="age-section">
+        <div class="container">
+            <div class="age-header reveal">
+                <h2 class="age-title">The Age of Awakening</h2>
+                <p class="age-description">When Silence Spoke</p>
+            </div>
 
             <!-- Voices of the Wild -->
-            <div class="wip-book-card reveal">
-                <div class="wip-content">
-                    <div class="wip-cover-wrapper">
+            <div class="book-card reveal">
+                <div class="book-content">
+                    <div class="book-cover-wrapper">
                         <img src="/assets/images/voices-of-the-wild.png" alt="Blood of the Wild Gods: Voices of the Wild">
                     </div>
                     
-                    <div class="wip-info">
-                        <span class="wip-status">Work in Progress</span>
-                        <h2 class="wip-title">Blood of the Wild Gods: Voices of the Wild</h2>
-                        <div class="wip-genre">Academic Fantasy • Epistolary Fiction</div>
+                    <div class="book-info">
+                        <span class="book-status in-progress">Work in Progress</span>
+                        <h3 class="book-title">Blood of the Wild Gods: Voices of the Wild</h3>
+                        <div class="book-series">Academic Fantasy • Epistolary Fiction</div>
                         
-                        <p class="wip-description">
-                            An amateur scholar's research journal documenting nature spirits who whisper warnings 
-                            of The Silence returning. What begins as simple academic curiosity unravels into 
-                            something far more sinister as patterns emerge that suggest these "harmless" spirits 
-                            might be symptoms of a much larger threat.
+                        <p class="book-description">
+                            Amateur scholar Alaquinn Althaea's research journal documenting nature spirits who whisper 
+                            warnings of The Silence returning. What begins as simple academic curiosity unravels into 
+                            cosmic horror when a water sprite warns: "The Silence... It's coming."
+                        </p>
+
+                        <p class="book-description">
+                            Each journal entry brings Quinn closer to truths that should have remained buried, where 
+                            the very act of seeking knowledge might be hastening the world's undoing.
                         </p>
                         
-                        <p class="wip-description">
-                            Written in journal format, this story explores the intersection of academic pursuit 
-                            and cosmic horror, where the very act of seeking knowledge might be hastening the 
-                            world's undoing. Each entry brings our scholar closer to truths that should have 
-                            remained buried.
-                        </p>
-                        
-                        <div class="book-stats">
-                            <div class="book-stat">
-                                <span class="book-stat-number">9K</span>
-                                <span class="book-stat-label">Words</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">6</span>
-                                <span class="book-stat-label">Chapters</span>
-                            </div>
-                            <div class="book-stat">
-                                <span class="book-stat-number">Journal</span>
-                                <span class="book-stat-label">Format</span>
-                            </div>
-                        </div>
-                        
-                        <div class="wip-meta">
-                            <span class="meta-badge">Academic Mystery</span>
+                        <div class="book-meta">
+                            <span class="meta-badge">9K Words</span>
+                            <span class="meta-badge">6 Chapters</span>
+                            <span class="meta-badge">Journal Format</span>
                             <span class="meta-badge">Romance Subplot</span>
                         </div>
                         
-                        <div class="wip-buttons">
+                        <div class="book-buttons">
                             <a href="/writing/voices-of-the-wild/" class="btn-primary">Explore Journal</a>
                             <a href="/chapters/voices-of-the-wild/chapter-01/" class="btn-secondary">Read Chapter 1</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
 
-<!-- Author Section -->
-<section class="author-section">
-    <div class="container">
-        <div class="author-content reveal">
-            <p class="author-quote">
-                I write the stories that make me uncomfortable, because comfort is the enemy of truth. 
-                If my words don't disturb someone into awareness, then I'm not doing my job as a storyteller.
-            </p>
-            
-            <div class="author-philosophy">
-                <p>My writing comes from the belief that literature should be more than entertainment - it should be transformation. I'm not interested in stories that let readers stay comfortable in their assumptions. I want to write narratives that force us to examine our own shadows, to question what we think we know about human nature, and to find beauty in the places we're afraid to look.</p>
-                
-                <p>Every story I write is born from authentic experience or deep emotional truth. I don't create suffering for shock value, but I refuse to sanitize the human experience for palatability. My characters are flawed, complex, and real because real people are messy and contradictory and beautiful in their brokenness.</p>
-            </div>
-            
-            <div class="author-links">
-                <a href="/about/" class="btn-secondary">About the Author</a>
-                <a href="/diary/" class="btn-secondary">Writing Journey</a>
-                <a href="/world-guide/" class="btn-secondary">Explore the World</a>
+            <!-- The Silence -->
+            <div class="book-card reveal">
+                <div class="book-content">
+                    <div class="book-cover-wrapper">
+                        <img src="/assets/images/EbookPic.jpg" alt="Blood of the Wild Gods: The Silence">
+                    </div>
+                    
+                    <div class="book-info">
+                        <span class="book-status published">Published</span>
+                        <h3 class="book-title">Blood of the Wild Gods: The Silence</h3>
+                        <div class="book-series">Dark Fantasy • Epic Fantasy</div>
+                        
+                        <p class="book-description">
+                            Long ago, the gods waged war across the heavens, leaving scars that reshaped the world. 
+                            Their blood birthed the Beastborn—monstrous creatures of divine wrath—and the Bloodmarked—mortals 
+                            wielding impossible power, forever teetering on the edge of corruption.
+                        </p>
+
+                        <p class="book-description">
+                            Now, as the Silent God awakens, its whispers reach five mortals: Accept, Emerge, Burn, Flee, 
+                            Blind. When silence itself becomes a weapon, the fate of the realm depends on choices that 
+                            defy destiny.
+                        </p>
+                        
+                        <div class="book-meta">
+                            <span class="meta-badge">95K+ Words</span>
+                            <span class="meta-badge">41 Chapters</span>
+                        </div>
+                        
+                        <div class="book-buttons">
+                            <a href="https://a.co/d/1XDMREf" class="btn-primary">Buy on Amazon</a>
+                            <a href="/writing/the-silence/" class="btn-secondary">Explore the Book</a>
+                            <a href="/chapters/the-silence/chapter-01/" class="btn-secondary">Read Chapter 1</a>
+                            <a href="/the-silence-soundtrack/" class="btn-secondary">Listen to Soundtrack</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <!-- Age of Consequence Section -->
+    <section id="age-of-consequence" class="age-section">
+        <div class="container">
+            <div class="age-header reveal">
+                <h2 class="age-title">The Age of Consequence</h2>
+                <p class="age-description">After the Awakening</p>
+            </div>
+
+            <!-- The Chosen Chronicles Series -->
+            <div class="series-container reveal">
+                <div class="series-header">
+                    <h3 class="series-name">The Chosen Chronicles</h3>
+                    <p class="series-count">4-Book Epic Series • 18-Year Journey</p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-content">
+                        <div class="book-cover-wrapper">
+                            <img src="/assets/images/the-chosen-chronicles.png" alt="Blood of the Wild Gods: The Chosen Chronicles">
+                        </div>
+                        
+                        <div class="book-info">
+                            <span class="book-status in-progress">Books 1-2 Complete, 3-4 Coming</span>
+                            <h3 class="book-title">Blood of the Wild Gods: The Chosen Chronicles</h3>
+                            <div class="book-series">Dark Fantasy • Psychological Horror • Generational Epic</div>
+                            
+                            <p class="book-description">
+                                Mira Roehart's eighteen-year journey from trapped believer to revolutionary mother. When 
+                                prophet Lucien arrives promising salvation through Zenith's Light, young Mira becomes 
+                                trapped in religious extremism and forced marriage. Her escape while pregnant leads to 
+                                sanctuary among the Forsaken, then years of healing in a magical forest village raising 
+                                her void-touched son Kai.
+                            </p>
+
+                            <p class="book-description">
+                                The series culminates eighteen years later when mother and son return to confront Lucien 
+                                and reclaim their world. A generational tale exploring how trauma reverberates through 
+                                time and how sometimes the greatest victory is surviving long enough to see your children 
+                                grow strong enough to fight battles you couldn't win alone.
+                            </p>
+
+                            <p class="book-description">
+                                <strong>Book 1: The Chosen</strong> (Complete - 22 chapters)<br>
+                                <strong>Book 2: The Forsaken</strong> (In Progress - 16+ chapters)<br>
+                                <strong>Book 3: The Village</strong> (Coming Soon)<br>
+                                <strong>Book 4: The Return</strong> (Coming Soon)
+                            </p>
+                            
+                            <div class="book-meta">
+                                <span class="meta-badge">4 Books</span>
+                                <span class="meta-badge">136K+ Words</span>
+                                <span class="meta-badge">38+ Chapters</span>
+                                <span class="meta-badge">18-Year Timeline</span>
+                            </div>
+                            
+                            <div class="book-buttons">
+                                <a href="/writing/the-chosen-chronicles/" class="btn-primary">Explore the Series</a>
+                                <a href="/chapters/the-chosen/chapter-01/" class="btn-secondary">Start Reading</a>
+                                <a href="/the-chosen-soundtrack/" class="btn-secondary">Listen to Soundtrack</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age of Broken Seals Section -->
+    <section id="age-of-broken-seals" class="age-section">
+        <div class="container">
+            <div class="age-header reveal">
+                <h2 class="age-title">The Age of Broken Seals</h2>
+                <p class="age-description">When Ancient Prisons Open</p>
+            </div>
+
+            <!-- Song of the Dragon -->
+            <div class="book-card reveal">
+                <div class="book-content">
+                    <div class="book-cover-wrapper">
+                        <img src="/assets/images/song-of-the-dragon.png" alt="The Song of the Dragon">
+                    </div>
+                    
+                    <div class="book-info">
+                        <span class="book-status coming-soon">Planned Trilogy</span>
+                        <h3 class="book-title">The Song of the Dragon</h3>
+                        <div class="book-series">Dark Epic Fantasy • Divine Horror</div>
+                        
+                        <p class="book-description">
+                            For millennia, a haunting melody has whispered through the minds of the grieving—divine 
+                            comfort, or so the priests claim. But when scholar Eren Glavier loses his beloved Raewyn 
+                            to plague, the song becomes his obsession. Following a map hidden in its verses, he breaks 
+                            the seal imprisoning The Dragon—an entity with the power to resurrect anything that has 
+                            ever died.
+                        </p>
+
+                        <p class="book-description">
+                            Raewyn breathes again, but The Dragon's freedom begins resurrecting the Old Gods who 
+                            hunger for vengeance. As divine plague spreads and humanity faces extinction or evolution, 
+                            Eren must choose between the woman he would damn the world to save and the world he must 
+                            damn her to protect.
+                        </p>
+
+                        <p class="book-description">
+                            <strong>Book 1: The Mourning Scholar</strong><br>
+                            <strong>Book 2: The Risen Gods</strong><br>
+                            <strong>Book 3: The Final Verse</strong>
+                        </p>
+                        
+                        <div class="book-meta">
+                            <span class="meta-badge">Trilogy</span>
+                            <span class="meta-badge">Grief & Resurrection</span>
+                            <span class="meta-badge">Divine Apocalypse</span>
+                        </div>
+                        
+                        <div class="book-buttons">
+                            <a href="/writing/song-of-the-dragon/" class="btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reading Guide Section -->
+    <section class="author-section">
+        <div class="container">
+            <div class="author-content reveal">
+                <h2 style="color: var(--primary-purple); font-size: 2em; margin-bottom: 30px;">Start Your Journey</h2>
+                
+                <p style="color: var(--text-secondary); font-size: 1.2em; line-height: 1.8; margin-bottom: 30px;">
+                    While this timeline shows the chronological order of events in the Blood of the Wild Gods universe, 
+                    each book and series stands alone. You can start anywhere that calls to you.
+                </p>
+
+                <p style="color: var(--text-light); font-size: 1.3em; font-weight: 500; margin-bottom: 30px;">
+                    New readers often begin with <em>The Silence</em> (our only published novel), then explore backward 
+                    or forward through time as curiosity guides them.
+                </p>
+
+                <p style="color: var(--text-secondary); font-size: 1.1em; line-height: 1.8;">
+                    Whether you're drawn to divine tragedy, prophetic mysteries, psychological horror, or epic battles 
+                    between mortals and gods, there's a story waiting for you in this universe where silence speaks 
+                    louder than prayers.
+                </p>
+                
+                <div class="author-links" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+                    <a href="/about/" class="btn-secondary">About the Author</a>
+                    <a href="/diary/" class="btn-secondary">Writing Journey</a>
+                    <a href="/world-guide/" class="btn-secondary">Explore the World</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
 
 <script>
     // Hide loading screen after page loads
@@ -1666,7 +1317,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     // Animate counters
     function animateCounters() {
         const counters = document.querySelectorAll('.stat-number[data-target]');
-        const speed = 200; // The lower the slower
+        const speed = 200;
 
         counters.forEach(counter => {
             const updateCount = () => {
@@ -1703,6 +1354,20 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         observerCounter.observe(statsSection);
     }
 
+    // Smooth scroll for timeline navigation
+    document.querySelectorAll('.timeline-btn').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
     // Parallax effect for orbs
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
@@ -1712,6 +1377,20 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
             const speed = 0.5 + (index * 0.2);
             const yPos = -(scrolled * speed * 0.1);
             orb.style.transform = `translateY(${yPos}px)`;
+        });
+
+        // Update active timeline button based on scroll
+        const sections = document.querySelectorAll('.age-section');
+        const timelineButtons = document.querySelectorAll('.timeline-btn');
+        
+        sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 200 && rect.bottom >= 200) {
+                timelineButtons.forEach(btn => btn.classList.remove('active'));
+                if (timelineButtons[index]) {
+                    timelineButtons[index].classList.add('active');
+                }
+            }
         });
     });
 
@@ -1733,57 +1412,5 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
     document.addEventListener('DOMContentLoaded', () => {
         const reveals = document.querySelectorAll('.reveal');
         reveals.forEach(el => observer.observe(el));
-        
-        // Fix for chapter links - ensure they're clickable
-        const chapterLinks = document.querySelectorAll('a[href*="/chapters/"]');
-        
-        chapterLinks.forEach(link => {
-            // Remove any potential event blockers
-            link.style.pointerEvents = 'auto';
-            link.style.position = 'relative';
-            link.style.zIndex = '1000';
-            link.style.cursor = 'pointer';
-            
-            // Add click event listener for debugging
-            link.addEventListener('click', function(e) {
-                console.log('Chapter link clicked:', this.href);
-                // The link should work normally, but if it doesn't, uncomment the next lines:
-                // e.preventDefault();
-                // window.location.href = this.href;
-            });
-        });
-        
-        // Check if any elements are overlapping the buttons after page load
-        setTimeout(() => {
-            const buttons = document.querySelectorAll('.btn-secondary, .btn-primary');
-            buttons.forEach(button => {
-                const rect = button.getBoundingClientRect();
-                const elementAtPoint = document.elementFromPoint(
-                    rect.left + rect.width / 2,
-                    rect.top + rect.height / 2
-                );
-                
-                if (elementAtPoint !== button && !button.contains(elementAtPoint)) {
-                    console.warn('Button is being overlapped:', button, 'by:', elementAtPoint);
-                    // Force button to top
-                    button.style.position = 'relative';
-                    button.style.zIndex = '10000';
-                }
-            });
-        }, 1000);
-    });
-
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
     });
 </script>
