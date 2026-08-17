@@ -613,7 +613,54 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
     /* Recent Thoughts Section */
     .recent-thoughts {
         padding: 100px 0;
-        background: rgba(0, 0, 0, 0.3);
+        background: linear-gradient(180deg, rgba(138, 159, 255, 0.02) 0%, transparent 100%);
+    }
+
+    .thoughts-intro {
+        text-align: center;
+        color: var(--text-secondary);
+        font-style: italic;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        line-height: 1.7;
+    }
+
+    .thought-date a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .thought-date a:hover {
+        color: var(--text-light);
+    }
+
+    .thought-more {
+        color: var(--primary-purple);
+        text-decoration: none;
+        font-style: normal;
+        white-space: nowrap;
+    }
+
+    .thought-more:hover {
+        color: var(--accent-violet);
+    }
+
+    .thoughts-all {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .thoughts-all a {
+        color: var(--primary-purple);
+        text-decoration: none;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.85em;
+        transition: color 0.3s ease;
+    }
+
+    .thoughts-all a:hover {
+        color: var(--accent-violet);
     }
 
     .thoughts-container {
@@ -767,91 +814,37 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
         </div>
     </section>
 
-    <!-- Recent Creations -->
-    <section class="recent-work">
+    <!-- Recent Thoughts — the newest social media posts, straight from The Feed -->
+    <section class="recent-thoughts">
         <div class="container">
-            <h2 class="section-title">Recent Creations</h2>
-            <div class="work-grid">
-                <!-- Latest Music -->
-                <div class="work-card reveal">
-                    <div class="work-type">Music</div>
-                    {% assign latest_music = site.posts | where: "category", "Music" | first %}
-                    {% if latest_music %}
-                        <h3 class="work-title">{{ latest_music.title }}</h3>
-                        <div class="work-date">{{ latest_music.date | date: "%B %d, %Y" }}</div>
-                        <p class="work-preview">
-                            {{ latest_music.excerpt | strip_html | truncate: 120 }}
-                        </p>
-                        <a href="{{ latest_music.url }}" class="work-link">Listen</a>
-                    {% else %}
-                        <h3 class="work-title">Coming Soon</h3>
-                        <div class="coming-soon">
-                            New music is brewing in the depths of midnight inspiration. 
-                            Check back soon for melodies born from silence and longing.
+            <h2 class="section-title">Recent Thoughts</h2>
+            <p class="thoughts-intro">Straight from my social media — poetic diary entries pulled from my real life, updated automatically.</p>
+            <div class="thoughts-container">
+                {% assign recent_social = site.social | where_exp: "p", "p.undated != true" | sort: "date" | reverse %}
+                {% if recent_social.size > 0 %}
+                    {% for thought in recent_social limit:5 %}
+                    <div class="thought-entry reveal">
+                        <div class="thought-date"><a href="{{ thought.url }}">{{ thought.date | date: "%B %-d, %Y" }}</a></div>
+                        <div class="thought-content">
+                            "{{ thought.content | replace: "<br>", " " | replace: "</p>", " " | strip_html | normalize_whitespace | truncatewords: 70 }}"
+                            {% assign wc = thought.content | strip_html | number_of_words %}
+                            {% if wc > 70 %} <a href="{{ thought.url }}" class="thought-more">Read more →</a>{% endif %}
                         </div>
-                    {% endif %}
-                </div>
-                
-                <!-- Latest Writing -->
-                <div class="work-card reveal">
-                    <div class="work-type">Writing</div>
-                    {% assign latest_writing = site.posts | where: "category", "Writing" | first %}
-                    {% if latest_writing %}
-                        <h3 class="work-title">{{ latest_writing.title }}</h3>
-                        <div class="work-date">{{ latest_writing.date | date: "%B %d, %Y" }}</div>
-                        <p class="work-preview">
-                            {{ latest_writing.excerpt | strip_html | truncate: 120 }}
-                        </p>
-                        <a href="{{ latest_writing.url }}" class="work-link">Read</a>
-                    {% else %}
-                        <h3 class="work-title">Coming Soon</h3>
-                        <div class="coming-soon">
-                            Stories are simmering, waiting for the right words to give them life. 
-                            Something beautiful is on its way.
+                    </div>
+                    {% endfor %}
+                    <div class="thoughts-all">
+                        <a href="/feed/">See everything on The Feed →</a>
+                    </div>
+                {% elsif site.data.thoughts %}
+                    {% for thought in site.data.thoughts limit:5 %}
+                    <div class="thought-entry reveal">
+                        <div class="thought-date">{{ thought.date }}</div>
+                        <div class="thought-content">
+                            "{{ thought.content }}"
                         </div>
-                    {% endif %}
-                </div>
-                
-                <!-- Latest Diary Entry -->
-                <div class="work-card reveal">
-                    <div class="work-type">Diary Entry</div>
-                    {% assign latest_diary = site.posts | where: "category", "Diary Entry" | first %}
-                    {% if latest_diary %}
-                        <h3 class="work-title">{{ latest_diary.title }}</h3>
-                        <div class="work-date">{{ latest_diary.date | date: "%B %d, %Y" }}</div>
-                        <p class="work-preview">
-                            {{ latest_diary.excerpt | strip_html | truncate: 120 }}
-                        </p>
-                        <a href="{{ latest_diary.url }}" class="work-link">Continue Reading</a>
-                    {% else %}
-                        <h3 class="work-title">Coming Soon</h3>
-                        <div class="coming-soon">
-                            This is where my unfiltered thoughts will live. 
-                            Raw, honest, and vulnerably real.
-                        </div>
-                    {% endif %}
-                </div>
-
-                <!-- Updated Community Stories Card in Recent Creations Section -->
-                <div class="work-card reveal">
-                    <div class="work-type">Survivor Stories</div>
-                    {% assign latest_survivor = site.posts | where: "category", "Survivor Stories" | first %}
-                    {% if latest_survivor %}
-                        <h3 class="work-title">{{ latest_survivor.title }}</h3>
-                        <div class="work-date">{{ latest_survivor.date | date: "%B %d, %Y" }}</div>
-                        <p class="work-preview">
-                            {{ latest_survivor.excerpt | strip_html | truncate: 120 }}
-                        </p>
-                        <a href="{{ latest_survivor.url }}" class="work-link">Read Story</a>
-                    {% else %}
-                        <h3 class="work-title">Stories Being Shared</h3>
-                        <div class="coming-soon">
-                            A space for the voices that find me in dark corners of the internet—
-                            survivors sharing truth, strangers becoming witnesses, community growing from connection.
-                        </div>
-                        <a href="/survivor-stories/" class="work-link">See Survivor Stories</a>
-                    {% endif %}
-                </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </section>
@@ -969,61 +962,6 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
         </div>
     </section>
 
-    <!-- Recent Thoughts -->
-    <section class="recent-thoughts">
-        <div class="container">
-            <h2 class="section-title">Recent Thoughts</h2>
-            <div class="thoughts-container">
-                {% comment %} Latest social media posts (from The Feed); falls back to _data/thoughts.yml {% endcomment %}
-                {% assign recent_social = site.social | where_exp: "p", "p.undated != true" | sort: "date" | reverse %}
-                {% if recent_social.size > 0 %}
-                    {% for thought in recent_social limit:3 %}
-                    <div class="thought-entry reveal">
-                        <div class="thought-date"><a href="{{ thought.url }}" style="color: inherit; text-decoration: none;">{{ thought.date | date: "%B %-d, %Y" }}</a></div>
-                        <div class="thought-content">
-                            "{{ thought.content | replace: "<br>", " " | replace: "</p>", " " | strip_html | normalize_whitespace | truncatewords: 70 }}"
-                            {% assign wc = thought.content | strip_html | number_of_words %}
-                            {% if wc > 70 %} <a href="{{ thought.url }}" style="color: var(--primary-purple); text-decoration: none; font-style: normal; white-space: nowrap;">Read more →</a>{% endif %}
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <div style="text-align: center; margin-top: 10px;">
-                        <a href="/feed/" style="color: var(--primary-purple); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85em;">See everything on The Feed →</a>
-                    </div>
-                {% elsif site.data.thoughts %}
-                    {% for thought in site.data.thoughts limit:3 %}
-                    <div class="thought-entry reveal">
-                        <div class="thought-date">{{ thought.date }}</div>
-                        <div class="thought-content">
-                            "{{ thought.content }}"
-                        </div>
-                    </div>
-                    {% endfor %}
-                {% else %}
-                    <div class="thought-entry reveal">
-                        <div class="thought-date">July 17, 2025</div>
-                        <div class="thought-content">
-                            "I built this website as my own little space carved out of the internet—something personal, a place to share my passions and everything that makes me who I am. It started as a safe haven, but over time, it's grown into something much more. From the world guide for my fantasy universe to the community page where I've begun sharing other people's stories of trauma and giving them a voice, this site has become a reflection of both my heart and the stories that matter to me. But real life has been heavy lately. The demands of my day-to-day work have drained so much of my energy, leaving me too exhausted to fully dive into the things I love. I know I've fallen behind on updating stories, and I'm sorry for that. I haven't forgotten them. I'll return to them—because writing is what I truly want to be doing. I dream of the day when that's all I have to do. Just write and write and write, without anything standing in the way."
-                        </div>
-                    </div>
-                    
-                    <div class="thought-entry reveal">
-                        <div class="thought-date">June 16, 2025</div>
-                        <div class="thought-content">
-                            "It feels so good to be making music again. I'm honestly just grateful my equipment made it through—survived a rat-infested storage unit and all kinds of wild weather. Somehow, it still works. Lately, I've been working on a song about stalkers, because—for some strange reason—that topic keeps showing up in my life. Apparently, I'm… interesting."
-                        </div>
-                    </div>
-                    
-                    <div class="thought-entry reveal">
-                        <div class="thought-date">June 14, 2025</div>
-                        <div class="thought-content">
-                            "Maybe it makes me naïve, but I've never been good at hiding how I feel. I've always been willing to set aside my pride and say the things most people wouldn't dare say out loud. That honesty gets me in trouble sometimes, but I don't know how to be any other way. If being vulnerable helps even one person feel less alone, then maybe the discomfort is worth it."
-                        </div>
-                    </div>
-                {% endif %}
-            </div>
-        </div>
-    </section>
 </div>
 
 <script>
