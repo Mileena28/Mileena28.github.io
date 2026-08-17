@@ -517,6 +517,46 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         display: block;
     }
 
+    /* Placeholder for works that don't have cover art yet */
+    .cover-placeholder {
+        aspect-ratio: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 30px;
+        background:
+            radial-gradient(ellipse at 30% 20%, rgba(177, 156, 217, 0.25) 0%, transparent 55%),
+            radial-gradient(ellipse at 70% 85%, rgba(138, 196, 255, 0.18) 0%, transparent 55%),
+            linear-gradient(160deg, #141428 0%, #0a0a14 100%);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+    }
+
+    .cover-placeholder-series {
+        color: var(--primary-purple);
+        font-size: 0.8em;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+
+    .cover-placeholder-title {
+        color: var(--text-light);
+        font-size: 1.9em;
+        font-weight: 300;
+        line-height: 1.25;
+        letter-spacing: 1px;
+    }
+
+    .cover-placeholder-note {
+        margin-top: 26px;
+        color: rgba(208, 208, 208, 0.55);
+        font-size: 0.8em;
+        font-style: italic;
+        letter-spacing: 1px;
+    }
+
     .book-info {
         position: relative;
     }
@@ -844,11 +884,11 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                 
                 <div class="series-stats">
                     <div class="stat-item">
-                        <span class="stat-number" data-target="10" data-suffix="+">0</span>
+                        <span class="stat-number" data-target="14" data-suffix="+">0</span>
                         <span class="stat-label">Total Books</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number" data-target="559" data-suffix="K+">0</span>
+                        <span class="stat-number" data-target="540" data-suffix="K+">0</span>
                         <span class="stat-label">Words Written</span>
                     </div>
                     <div class="stat-item">
@@ -877,6 +917,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                 <a href="#age-of-awakening" class="timeline-btn">Age of Awakening</a>
                 <a href="#age-of-consequence" class="timeline-btn">Age of Consequence</a>
                 <a href="#age-of-broken-seals" class="timeline-btn">Age of Broken Seals</a>
+                <a href="#age-of-occupation" class="timeline-btn">Age of Occupation</a>
             </div>
         </div>
     </section>
@@ -913,9 +954,9 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                         </p>
                         
                         <div class="book-meta">
-                            <span class="meta-badge">6 Stories</span>
-                            <span class="meta-badge">152K+ Words</span>
-                            <span class="meta-badge">51+ Chapters</span>
+                            <span class="meta-badge">6 Accounts</span>
+                            <span class="meta-badge">150K+ Words</span>
+                            <span class="meta-badge">48 Chapters</span>
                             <span class="meta-badge">13 Author Notes</span>
                         </div>
                         
@@ -953,7 +994,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                             </div>
                             
                             <div class="book-info">
-                                <span class="book-status published">Published</span>
+                                <span class="book-status coming-soon">Coming Soon</span>
                                 <h3 class="book-title">The Siren Bone Oracle: Almanac of Stars</h3>
                                 <div class="book-series">Practical Divination • Calendar System</div>
                                 
@@ -971,15 +1012,14 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                                 </p>
                                 
                                 <div class="book-meta">
-                                    <span class="meta-badge">167K+ Words</span>
+                                    <span class="meta-badge">174K+ Words</span>
                                     <span class="meta-badge">23 Chapters</span>
                                     <span class="meta-badge">365 Horoscopes</span>
                                     <span class="meta-badge">Tarot System</span>
                                 </div>
                                 
                                 <div class="book-buttons">
-                                    <a href="https://a.co/d/almanac-link" class="btn-primary">Buy on Amazon</a>
-                                    <a href="/writing/almanac-of-stars/" class="btn-secondary">Learn More</a>
+                                    <a href="/writing/almanac-of-stars/" class="btn-primary">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -1132,8 +1172,10 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                         </p>
                         
                         <div class="book-meta">
-                            <span class="meta-badge">95K+ Words</span>
+                            <span class="meta-badge">81K+ Words</span>
                             <span class="meta-badge">41 Chapters</span>
+                            <span class="meta-badge">2nd Edition</span>
+                            <span class="meta-badge">eBook • Paperback • Hardcover</span>
                         </div>
                         
                         <div class="book-buttons">
@@ -1170,7 +1212,7 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                         </div>
                         
                         <div class="book-info">
-                            <span class="book-status in-progress">Books 1-2 Complete, 3-4 Coming</span>
+                            <span class="book-status published">Book 1 Published • Book 2 Complete</span>
                             <h3 class="book-title">Blood of the Wild Gods: The Chosen Chronicles</h3>
                             <div class="book-series">Dark Fantasy • Psychological Horror • Generational Epic</div>
                             
@@ -1190,24 +1232,70 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                             </p>
 
                             <p class="book-description">
-                                <strong>Book 1: The Chosen</strong> (Complete - 22 chapters)<br>
-                                <strong>Book 2: The Forsaken</strong> (In Progress - 16+ chapters)<br>
+                                <strong>Book 1: The Chosen</strong> (Published — 22 chapters, eBook, paperback &amp; hardcover)<br>
+                                <strong>Book 2: The Forsaken</strong> (Manuscript complete — 20 chapters, publication coming)<br>
                                 <strong>Book 3: The Village</strong> (Coming Soon)<br>
                                 <strong>Book 4: The Return</strong> (Coming Soon)
                             </p>
                             
                             <div class="book-meta">
                                 <span class="meta-badge">4 Books</span>
-                                <span class="meta-badge">136K+ Words</span>
-                                <span class="meta-badge">38+ Chapters</span>
+                                <span class="meta-badge">127K+ Words</span>
+                                <span class="meta-badge">42 Chapters</span>
                                 <span class="meta-badge">18-Year Timeline</span>
                             </div>
                             
                             <div class="book-buttons">
-                                <a href="/writing/the-chosen-chronicles/" class="btn-primary">Explore the Series</a>
+                                <a href="https://www.amazon.com/dp/B0G9T928LJ" class="btn-primary">Buy The Chosen on Amazon</a>
+                                <a href="/writing/the-chosen-chronicles/" class="btn-secondary">Explore the Series</a>
                                 <a href="/chapters/the-chosen/chapter-01/" class="btn-secondary">Start Reading</a>
                                 <a href="/the-chosen-soundtrack/" class="btn-secondary">Listen to Soundtrack</a>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Girl Beneath the Cherry Tree (companion novel) -->
+            <div class="book-card reveal">
+                <div class="book-content">
+                    <div class="book-cover-wrapper">
+                        <div class="cover-placeholder">
+                            <span class="cover-placeholder-series">Blood of the Wild Gods</span>
+                            <span class="cover-placeholder-title">The Girl Beneath the Cherry Tree</span>
+                            <span class="cover-placeholder-note">Cover coming soon</span>
+                        </div>
+                    </div>
+                    
+                    <div class="book-info">
+                        <span class="book-status in-progress">Work in Progress</span>
+                        <h3 class="book-title">Blood of the Wild Gods: The Girl Beneath the Cherry Tree</h3>
+                        <div class="book-series">Standalone Companion Novel • Coming-of-Age Love Story • Fairy Tale Frame</div>
+                        
+                        <p class="book-description">
+                            <em>"There once was a girl beneath a cherry tree, and she loved a boy who became a star…"</em>
+                        </p>
+
+                        <p class="book-description">
+                            Set entirely on the island nation of Nareen, this companion novel spans ten years in the life 
+                            of Amina Korteka, a Nareenese girl who falls in love with a boy from a distant, broken 
+                            world—a boy who carries violence in his blood and vengeance in his heart, though she doesn't 
+                            know it yet. Told from Amina's eyes alone, it fills the years The Chosen Chronicles leaves 
+                            in shadow between Books 3 and 4.
+                        </p>
+
+                        <p class="book-description">
+                            Every chapter opens with a passage of fairy tale; read in sequence, those passages tell the 
+                            whole story in miniature—a story within a story, in the oral tradition of a people who 
+                            believe all things flow like water, and that some promises, once carved into bark, can 
+                            never be taken back.
+                        </p>
+                        
+                        <div class="book-meta">
+                            <span class="meta-badge">Standalone</span>
+                            <span class="meta-badge">Companion to Books 3–4</span>
+                            <span class="meta-badge">The Naru Language</span>
+                            <span class="meta-badge">Chapter 1 Drafted</span>
                         </div>
                     </div>
                 </div>
@@ -1271,6 +1359,57 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
         </div>
     </section>
 
+
+    <!-- Age of Occupation Section -->
+    <section id="age-of-occupation" class="age-section">
+        <div class="container">
+            <div class="age-header reveal">
+                <h2 class="age-title">The Age of Occupation</h2>
+                <p class="age-description">When Foreign Gods Came Ashore</p>
+            </div>
+
+            <!-- The Senach -->
+            <div class="book-card reveal">
+                <div class="book-content">
+                    <div class="book-cover-wrapper">
+                        <div class="cover-placeholder">
+                            <span class="cover-placeholder-series">Blood of the Wild Gods</span>
+                            <span class="cover-placeholder-title">The Senach</span>
+                            <span class="cover-placeholder-note">In development</span>
+                        </div>
+                    </div>
+                    
+                    <div class="book-info">
+                        <span class="book-status coming-soon">In Development</span>
+                        <h3 class="book-title">Blood of the Wild Gods: The Senach</h3>
+                        <div class="book-series">Occupation-Era Series • Political Fantasy • After The Song of the Dragon</div>
+                        
+                        <p class="book-description">
+                            Across the sea lies the Imperial Republic of Hevetica—a nation of towering, long-lived 
+                            Bohdkin whose gods never left them, whose weapons are blessed, and whose seers are infused 
+                            with divine magic through ritual. They believe their order is superior. They believe 
+                            Arcadia—a land that has nearly ended the world more than once—cannot be trusted to govern 
+                            itself. So they come to govern it.
+                        </p>
+
+                        <p class="book-description">
+                            <em>Senach</em> is the Bohdkin word for an Arcadian: <em>godless savage</em>. But in a 
+                            universe where mortals have already killed gods, an empire whose power is borrowed rather 
+                            than born has more to fear than it knows. A story about occupation, faith as infrastructure, 
+                            and what the abandoned still carry in their blood.
+                        </p>
+                        
+                        <div class="book-meta">
+                            <span class="meta-badge">Worldbuilding Underway</span>
+                            <span class="meta-badge">Hevetica &amp; the Bohdkin</span>
+                            <span class="meta-badge">Follows the Dragon Trilogy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Reading Guide Section -->
     <section class="author-section">
         <div class="container">
@@ -1283,8 +1422,8 @@ twitter:image: "/assets/images/the-chosen-chronicles.png"
                 </p>
 
                 <p style="color: var(--text-light); font-size: 1.3em; font-weight: 500; margin-bottom: 30px;">
-                    New readers often begin with <em>The Silence</em> (our only published novel), then explore backward 
-                    or forward through time as curiosity guides them.
+                    New readers usually begin with <em>The Silence</em> or <em>The Chosen</em>—the two published 
+                    novels—then explore backward or forward through time as curiosity guides them.
                 </p>
 
                 <p style="color: var(--text-secondary); font-size: 1.1em; line-height: 1.8;">
