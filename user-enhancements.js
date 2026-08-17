@@ -264,3 +264,68 @@ function addSocialShare() {
     // Insert at end
     content.appendChild(bottomShare);
 }
+
+/* ------------------------------------------------------------------
+   Google Analytics: social follow tracking
+   Records a `follow_click` event whenever someone clicks a link to one
+   of Mileena's social profiles — the follow bar on The Feed and post
+   pages, the icons on the Contact page, anywhere else on the site.
+   Look for it in GA4 under Reports → Engagement → Events → follow_click
+   (parameters: platform, source_section, page_path, page_title, link_url).
+   ------------------------------------------------------------------ */
+(function () {
+    var SOCIAL_HOSTS = {
+        'facebook.com': 'facebook', 'fb.com': 'facebook',
+        'instagram.com': 'instagram',
+        'threads.com': 'threads', 'threads.net': 'threads',
+        'tiktok.com': 'tiktok',
+        'x.com': 'x', 'twitter.com': 'x',
+        'youtube.com': 'youtube', 'youtu.be': 'youtube',
+        'open.spotify.com': 'spotify', 'spotify.com': 'spotify',
+        'music.apple.com': 'apple_music',
+        'soundcloud.com': 'soundcloud',
+        'linktr.ee': 'linktree',
+        'amazon.com': 'amazon', 'a.co': 'amazon', 'audible.com': 'audible'
+    };
+
+    function platformFor(href) {
+        try {
+            var host = new URL(href, location.href).hostname.replace(/^www\./, '').replace(/^us\./, '');
+            if (SOCIAL_HOSTS[host]) return SOCIAL_HOSTS[host];
+            var parts = host.split('.');
+            while (parts.length > 2) { parts.shift(); if (SOCIAL_HOSTS[parts.join('.')]) return SOCIAL_HOSTS[parts.join('.')]; }
+        } catch (e) {}
+        return null;
+    }
+
+    function sectionFor(link) {
+        if (link.closest('.follow-bar')) {
+            return link.closest('.social-single') ? 'post_page_follow_bar' : 'feed_follow_bar';
+        }
+        if (link.closest('.social-links')) return 'contact_page';
+        if (link.closest('footer, .footer')) return 'footer';
+        if (link.closest('.hero-links')) return 'writing_hero';
+        if (link.closest('.book-buttons, .purchase-link')) return 'book_card';
+        return 'other';
+    }
+
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        var platform = platformFor(link.href);
+        if (!platform) return;
+        var isShop = platform === 'amazon' || platform === 'audible';
+        var payload = {
+            platform: platform,
+            source_section: sectionFor(link),
+            link_url: link.href,
+            page_path: location.pathname,
+            page_title: document.title,
+            post_title: (document.querySelector('.feed-title, .post-title, .chapter-title, h1') || {}).textContent || ''
+        };
+        payload.post_title = String(payload.post_title).replace(/\s+/g, ' ').trim().slice(0, 100);
+        if (typeof gtag === 'function') {
+            gtag('event', isShop ? 'book_link_click' : 'follow_click', payload);
+        }
+    }, { passive: true });
+})();
