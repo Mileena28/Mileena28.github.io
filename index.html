@@ -974,7 +974,23 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
         <div class="container">
             <h2 class="section-title">Recent Thoughts</h2>
             <div class="thoughts-container">
-                {% if site.data.thoughts %}
+                {% comment %} Latest social media posts (from The Feed); falls back to _data/thoughts.yml {% endcomment %}
+                {% assign recent_social = site.social | where_exp: "p", "p.undated != true" | sort: "date" | reverse %}
+                {% if recent_social.size > 0 %}
+                    {% for thought in recent_social limit:3 %}
+                    <div class="thought-entry reveal">
+                        <div class="thought-date"><a href="{{ thought.url }}" style="color: inherit; text-decoration: none;">{{ thought.date | date: "%B %-d, %Y" }}</a></div>
+                        <div class="thought-content">
+                            "{{ thought.content | replace: "<br>", " " | replace: "</p>", " " | strip_html | normalize_whitespace | truncatewords: 70 }}"
+                            {% assign wc = thought.content | strip_html | number_of_words %}
+                            {% if wc > 70 %} <a href="{{ thought.url }}" style="color: var(--primary-purple); text-decoration: none; font-style: normal; white-space: nowrap;">Read more →</a>{% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <div style="text-align: center; margin-top: 10px;">
+                        <a href="/feed/" style="color: var(--primary-purple); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85em;">See everything on The Feed →</a>
+                    </div>
+                {% elsif site.data.thoughts %}
                     {% for thought in site.data.thoughts limit:3 %}
                     <div class="thought-entry reveal">
                         <div class="thought-date">{{ thought.date }}</div>

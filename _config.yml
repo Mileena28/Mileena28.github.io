@@ -49,6 +49,11 @@ collections:
   chapters:
     output: true
     permalink: /chapters/:path/
+  # Social media posts — generated from the social-media-posts repo by
+  # scripts/sync_social_posts.py (see .github/workflows/sync-social-posts.yml)
+  social:
+    output: true
+    permalink: /feed/:name/
   # Add world guide as a collection to ensure proper processing
   world_guide:
     output: true
@@ -83,6 +88,7 @@ keep_files:
 # Exclude from processing
 exclude:
   - README.md
+  - scripts
   - Gemfile
   - Gemfile.lock
   - node_modules
@@ -125,6 +131,19 @@ defaults:
         priority: 0.8
         changefreq: "monthly"
   
+  # Social media posts (The Feed)
+  - scope:
+      path: ""
+      type: "social"
+    values:
+      layout: "social"
+      author: "Mileena Rayne"
+      category: "Social Media"
+      image: "/assets/images/mileena-rayne-author.jpg"
+      sitemap:
+        priority: 0.4
+        changefreq: "monthly"
+
   # World Guide defaults
   - scope:
       path: "world-guide"
@@ -178,6 +197,9 @@ navigation:
   - url: /diary/
     priority: 0.8
     changefreq: weekly
+  - url: /feed/
+    priority: 0.8
+    changefreq: daily
   - url: /about/
     priority: 0.7
     changefreq: monthly

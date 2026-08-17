@@ -221,6 +221,7 @@
                 <nav class="nav">
                     <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
                     <a href="/diary/" {% if page.url contains "diary" %}class="active"{% endif %}>Diary</a>
+                    <a href="/feed/" {% if page.url contains "/feed/" %}class="active"{% endif %}>Feed</a>
                     <a href="/music/" {% if page.url contains "music" %}class="active"{% endif %}>Music</a>
                     <a href="/writing/" {% if page.url contains "writing" or page.url contains "chapters" %}class="active"{% endif %}>Writing</a>
                     <a href="/world-guide/" {% if page.url contains "world-guide" %}class="active"{% endif %}>World Guide</a>
@@ -242,6 +243,7 @@
         <div class="container">
             <div class="footer-nav">
                 <a href="/diary/">Diary</a>
+                <a href="/feed/">Feed</a>
                 <a href="/music/">Music</a>
                 <a href="/writing/">Writing</a>
                 <a href="/world-guide/">World Guide</a>

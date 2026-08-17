@@ -1,0 +1,101 @@
+# Keeps The Feed (/feed/) and the Diary in sync with the social-media-posts repo.
+#
+# How it works:
+#   1. Checks out this website repo and the private Mileena28/social-media-posts repo.
+#   2. Runs scripts/sync_social_posts.py, which rewrites the _social/ folder
+#      (one page per post; only the post text and date carry over).
+#   3. Commits and pushes any changes — GitHub Pages then rebuilds the site.
+#
+# When it runs:
+#   - every 6 hours (schedule)
+#   - whenever you press "Run workflow" on the Actions tab (workflow_dispatch)
+#   - whenever the sync script or its settings change on main
+#
+# One-time setup (needs to be done on GitHub, by Mileena):
+#   The social-media-posts repo is private, so this workflow needs permission
+#   to read it. Create a fine-grained personal access token that can READ
+#   ONLY the social-media-posts repository (Repository access → Only select
+#   repositories → social-media-posts; Permissions → Contents: Read-only),
+#   then add it to THIS repo under Settings → Secrets and variables → Actions
+#   as a repository secret named  SOCIAL_POSTS_TOKEN .
+
+name: Sync social media posts
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/sync_social_posts.py"
+      - "_data/social_feed.yml"
+      - ".github/workflows/sync-social-posts.yml"
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sync-social-posts
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Check that the SOCIAL_POSTS_TOKEN secret exists
+        env:
+          SOCIAL_POSTS_TOKEN: ${{ secrets.SOCIAL_POSTS_TOKEN }}
+        run: |
+          if [ -z "$SOCIAL_POSTS_TOKEN" ]; then
+            echo "::error::Missing repository secret SOCIAL_POSTS_TOKEN — see the comment at the top of .github/workflows/sync-social-posts.yml for the one-time setup."
+            exit 1
+          fi
+
+      - name: Check out social-media-posts (private)
+        uses: actions/checkout@v4
+        with:
+          repository: Mileena28/social-media-posts
+          token: ${{ secrets.SOCIAL_POSTS_TOKEN }}
+          path: .social-media-posts
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install PyYAML
+        run: pip install pyyaml
+
+      - name: Generate _social/ from the vault
+        run: python3 scripts/sync_social_posts.py --vault .social-media-posts --out _social --settings _data/social_feed.yml
+
+      - name: Commit and push if anything changed
+        id: commit
+        run: |
+          rm -rf .social-media-posts
+          git add -A _social
+          if git diff --cached --quiet; then
+            echo "No changes — the site is already up to date."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Sync social media posts into The Feed"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Ask GitHub Pages to rebuild
+        if: steps.commit.outputs.changed == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" || echo "Pages build request skipped (Pages will still rebuild on its own from the push)."

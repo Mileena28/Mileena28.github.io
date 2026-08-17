@@ -1,0 +1,8 @@
+# Settings for the social media feed (used by scripts/sync_social_posts.py).
+#
+# exclude: vault files (from the social-media-posts repo) that should NOT be
+# published on the site. Remove a line here to publish that post; add a line
+# to hide one. Filenames must match exactly.
+exclude:
+  - README.md
+  - 500-Bail-After-Strangulation.md   # archive file with an attached medical record — publish deliberately, if at all

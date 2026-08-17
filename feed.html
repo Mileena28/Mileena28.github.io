@@ -1,0 +1,207 @@
+---
+layout: default
+title: "The Feed - Social Media Posts | Mileena Rayne"
+description: "Every social media post in one place — poetic diary entries pulled from real experiences, trauma, healing, nursing, love, and the Blood of the Wild Gods universe. Follow along on Facebook, Instagram, Threads, and TikTok."
+keywords: "Mileena Rayne social media, poetic diary, trauma healing posts, ex-JW, nurse writer, Blood of the Wild Gods, mental health posts"
+image: "/assets/images/mileena-rayne-author.jpg"
+permalink: /feed/
+canonical: "https://mileenarayne.com/feed/"
+robots: "index, follow"
+og:type: "website"
+og:title: "The Feed | Mileena Rayne"
+og:description: "Every social media post in one place — poetic diary entries pulled from real experiences."
+og:image: "/assets/images/mileena-rayne-author.jpg"
+og:url: "https://mileenarayne.com/feed/"
+twitter:card: "summary_large_image"
+twitter:title: "The Feed | Mileena Rayne"
+twitter:description: "Every social media post in one place — poetic diary entries pulled from real experiences."
+twitter:image: "/assets/images/mileena-rayne-author.jpg"
+---
+
+<link rel="stylesheet" href="/assets/css/feed.css">
+
+{% assign dated_posts = site.social | where_exp: "p", "p.undated != true" | sort: "date" | reverse %}
+{% assign undated_posts = site.social | where_exp: "p", "p.undated == true" | sort: "title" %}
+{% assign total_posts = dated_posts.size | plus: undated_posts.size %}
+
+<div class="feed-page atmospheric-page">
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+        <div class="light-orb"></div>
+    </div>
+
+    <div class="feed-header">
+        <div class="container">
+            <div class="feed-header-content">
+                <h1 class="feed-title">The Feed</h1>
+                <p class="feed-subtitle">
+                    Everything I post is basically a poetic diary entry pulled straight from my deepest thoughts,
+                    my real experiences, and the entire universe I built from daydreaming too much.
+                    This is all of it, in one place — no algorithm deciding what you get to see.
+                </p>
+                {% include follow-bar.html %}
+            </div>
+        </div>
+    </div>
+
+    <div class="feed-toolbar">
+        <div class="feed-search">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"/>
+            </svg>
+            <input type="text" id="feedSearch" placeholder="Search the feed…" autocomplete="off" aria-label="Search the feed">
+        </div>
+        <div class="feed-count"><strong id="feedCount">{{ total_posts }}</strong> posts</div>
+    </div>
+
+    <div class="feed-timeline" id="feedTimeline">
+        {% for post in dated_posts %}
+        <article class="feed-post" style="animation-delay: {{ forloop.index | modulo: 8 | times: 0.05 }}s">
+            <div class="feed-post-meta">
+                <a class="feed-post-date" href="{{ post.url }}" title="Permalink">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}{% assign t = post.date | date: "%H%M" %}{% if t != "0000" %} · {{ post.date | date: "%-I:%M %p" }}{% endif %}</time>
+                </a>
+                <span class="feed-post-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+            </div>
+            <div class="feed-post-body">{{ post.content }}</div>
+            <div class="feed-post-actions">
+                <button class="feed-toggle" type="button" aria-expanded="false">Read more</button>
+                <div class="feed-post-links">
+                    <a class="feed-permalink" href="{{ post.url }}">Open</a>
+                    <button class="feed-share" type="button" data-url="{{ site.url }}{{ post.url }}">Copy link</button>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+
+        {% if undated_posts.size > 0 %}
+        <div class="feed-divider" data-undated-divider>From the archive · undated</div>
+        {% for post in undated_posts %}
+        <article class="feed-post is-undated">
+            <div class="feed-post-meta">
+                <a class="feed-post-date" href="{{ post.url }}" title="Permalink">Undated</a>
+                <span class="feed-post-title"><a href="{{ post.url }}">{{ post.title }}</a></span>
+            </div>
+            <div class="feed-post-body">{{ post.content }}</div>
+            <div class="feed-post-actions">
+                <button class="feed-toggle" type="button" aria-expanded="false">Read more</button>
+                <div class="feed-post-links">
+                    <a class="feed-permalink" href="{{ post.url }}">Open</a>
+                    <button class="feed-share" type="button" data-url="{{ site.url }}{{ post.url }}">Copy link</button>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+        {% endif %}
+
+        {% if total_posts == 0 %}
+        <div class="feed-empty is-visible">
+            Nothing here yet — the feed fills itself from my social media posts.
+        </div>
+        {% else %}
+        <div class="feed-empty" id="feedEmpty">No posts match that search.</div>
+        <div class="feed-more" id="feedMore"><button type="button">Show more</button></div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var PAGE = 20;
+    var posts = Array.prototype.slice.call(document.querySelectorAll('.feed-post'));
+    var search = document.getElementById('feedSearch');
+    var count = document.getElementById('feedCount');
+    var more = document.getElementById('feedMore');
+    var empty = document.getElementById('feedEmpty');
+    var divider = document.querySelector('[data-undated-divider]');
+    var shown = PAGE;
+    var query = '';
+
+    posts.forEach(function (post) {
+        var meta = post.querySelector('.feed-post-meta');
+        var body = post.querySelector('.feed-post-body');
+        post._search = ((meta ? meta.textContent : '') + ' ' + (body ? body.textContent : ''))
+            .replace(/\s+/g, ' ').toLowerCase();
+    });
+
+    function matches(post) {
+        return !query || post._search.indexOf(query) !== -1;
+    }
+
+    function render() {
+        var visible = 0, matched = 0, undatedVisible = false;
+        posts.forEach(function (post) {
+            var ok = matches(post);
+            if (ok) matched++;
+            var show = ok && matched <= shown;
+            post.classList.toggle('is-hidden', !show);
+            if (show) {
+                visible++;
+                if (post.classList.contains('is-undated')) undatedVisible = true;
+                collapseIfLong(post);
+            }
+        });
+        if (count) count.textContent = matched;
+        if (more) more.style.display = matched > shown ? '' : 'none';
+        if (empty) empty.classList.toggle('is-visible', matched === 0);
+        if (divider) divider.style.display = undatedVisible ? '' : 'none';
+    }
+
+    function collapseIfLong(post) {
+        var body = post.querySelector('.feed-post-body');
+        var toggle = post.querySelector('.feed-toggle');
+        if (!body || !toggle || body.dataset.measured) return;
+        body.dataset.measured = '1';
+        if (body.scrollHeight > 900) {
+            body.classList.add('is-collapsed');
+            toggle.classList.add('is-visible');
+        }
+    }
+
+    document.addEventListener('click', function (e) {
+        var toggle = e.target.closest('.feed-toggle');
+        if (toggle) {
+            var body = toggle.closest('.feed-post').querySelector('.feed-post-body');
+            var open = body.classList.toggle('is-collapsed');
+            toggle.textContent = open ? 'Read more' : 'Show less';
+            toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+            if (open) toggle.closest('.feed-post').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+        var share = e.target.closest('.feed-share');
+        if (share) {
+            var url = share.getAttribute('data-url');
+            var done = function () {
+                var old = share.textContent;
+                share.textContent = 'Copied';
+                setTimeout(function () { share.textContent = old; }, 1600);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(done, function () { window.prompt('Copy this link', url); });
+            } else {
+                window.prompt('Copy this link', url);
+            }
+        }
+    });
+
+    if (more) {
+        more.addEventListener('click', function () { shown += PAGE; render(); });
+    }
+
+    if (search) {
+        var timer;
+        search.addEventListener('input', function () {
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                query = search.value.trim().toLowerCase();
+                shown = PAGE;
+                render();
+            }, 120);
+        });
+    }
+
+    render();
+});
+</script>
