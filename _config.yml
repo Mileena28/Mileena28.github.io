@@ -126,7 +126,7 @@ defaults:
     values:
       layout: "chapter"
       author: "Mileena Rayne"
-      image: "/assets/images/EbookPic.jpg"
+      image: "/assets/images/The%20Silence%202nd%20Edition%20Cover%20Updated600.jpg"
       sitemap:
         priority: 0.8
         changefreq: "monthly"
