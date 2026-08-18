@@ -1,1 +1,1111 @@
-?
+---
+layout: default
+title: "The Siren Bone Oracle: Blood & Bone Tarot | 78-Card Divination System | Mileena Rayne"
+description: "The Siren Bone Oracle: Blood & Bone Tarot - the complete guide to Athea's 78-card divination system. Blood Cards reveal external forces beyond our control; Bone Cards represent the power of choice that remains. Major and Minor Arcana, spreads, and card meanings. Coming soon."
+keywords: "Blood and Bone Tarot, Siren Bone Oracle, fantasy tarot deck, 78 card tarot system, Major Arcana, Minor Arcana, Roots Gales Embers Tides, tarot spreads, Athea Weaver of Stars, Almanac of Stars companion, Blood of the Wild Gods, Mileena Rayne"
+image: "/assets/images/blood-bone-tarot.PNG"
+permalink: /writing/blood-bone-tarot/
+canonical: "https://mileenarayne.com/writing/blood-bone-tarot/"
+robots: "index, follow"
+og:type: "book"
+og:title: "The Siren Bone Oracle: Blood & Bone Tarot | Coming Soon"
+og:description: "Seventy-eight doorways between fate and choice. Blood is what the cosmos does to you; Bone is what remains yours to choose."
+og:image: "/assets/images/blood-bone-tarot.PNG"
+og:url: "https://mileenarayne.com/writing/blood-bone-tarot/"
+twitter:card: "summary_large_image"
+twitter:title: "The Siren Bone Oracle: Blood & Bone Tarot"
+twitter:description: "Athea's 78-card system: Blood Cards for the forces beyond our control, Bone Cards for the choice that remains. Coming soon."
+twitter:image: "/assets/images/blood-bone-tarot.PNG"
+schema:
+  "@type": "Book"
+  "@context": "https://schema.org"
+  "name": "The Siren Bone Oracle: Blood & Bone Tarot"
+  "author":
+    "@type": "Person"
+    "name": "Mileena Rayne"
+  "genre": ["Fantasy", "Divination", "Tarot"]
+  "publisher":
+    "@type": "Person"
+    "name": "Mileena Rayne"
+  "description": "The complete guide to Athea's 78-card Blood and Bone Tarot - twenty-two Major Arcana, four suits of Minor Arcana, ten sacred spreads, and full card meanings - a companion to the Almanac of Stars."
+---
+
+<style>
+    :root {
+        --primary-purple: #b19cd9;
+        --ocean-blue: #8ac4ff;
+        --accent-violet: #a8b5ff;
+        --oracle-gold: #d4af37;
+        --shadow-purple: #4a0080;
+        --deep-purple: #2a0050;
+        --midnight-black: #0a0a14;
+        --deep-night: #050510;
+        --text-light: #f0f0f0;
+        --text-secondary: #d0d0d0;
+        --glass-white: rgba(255, 255, 255, 0.05);
+        --glass-purple: rgba(177, 156, 217, 0.06);
+        --blood-red: #8b0000;
+    }
+
+    .oracle-page {
+        position: relative;
+        background: linear-gradient(135deg, #0a0a14 0%, #100a1e 50%, #0a0f1a 100%);
+        min-height: 100vh;
+        font-family: Georgia, 'Times New Roman', serif;
+    }
+
+    .cosmic-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -2;
+        background:
+            radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.14) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.10) 0%, transparent 50%),
+            radial-gradient(ellipse at center, rgba(10, 10, 20, 0.95) 0%, transparent 100%);
+        pointer-events: none;
+    }
+
+    .particle-field {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .star-orb {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(177, 156, 217, 0.35) 0%, transparent 70%);
+        filter: blur(40px);
+        opacity: 0.3;
+        animation: float-drift 24s infinite ease-in-out;
+    }
+
+    .star-orb:nth-child(1) { width: 300px; height: 300px; top: -150px; left: -150px; animation-duration: 25s; }
+    .star-orb:nth-child(2) { width: 420px; height: 420px; bottom: -200px; right: -200px; background: radial-gradient(circle, rgba(138, 196, 255, 0.35) 0%, transparent 70%); animation-duration: 30s; }
+    .star-orb:nth-child(3) { width: 350px; height: 350px; top: 50%; left: 30%; background: radial-gradient(circle, rgba(212, 175, 55, 0.18) 0%, transparent 70%); animation-duration: 35s; }
+
+    @keyframes float-drift {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        33% { transform: translate(100px, -100px) scale(1.1); }
+        66% { transform: translate(-100px, 100px) scale(0.9); }
+    }
+
+    /* Hero */
+    .book-hero {
+        padding: 120px 0 80px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+        margin: 0 auto;
+        animation: fade-in-up 1s ease-out;
+    }
+
+    @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 15px;
+        background: rgba(212, 175, 55, 0.08);
+        border: 1px solid rgba(212, 175, 55, 0.35);
+        border-radius: 50px;
+        padding: 15px 35px;
+        margin-bottom: 40px;
+        backdrop-filter: blur(20px);
+        transition: all 0.3s ease;
+        animation: badge-glow 3s ease-in-out infinite;
+        color: var(--oracle-gold);
+        font-size: 0.95em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    @keyframes badge-glow {
+        0%, 100% { box-shadow: 0 0 30px rgba(212, 175, 55, 0.15); }
+        50% { box-shadow: 0 0 50px rgba(212, 175, 55, 0.3); }
+    }
+
+    .book-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 200;
+        margin-bottom: 20px;
+        color: var(--text-light);
+        letter-spacing: -2px;
+        line-height: 1.1;
+    }
+
+    .book-title .highlight {
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue), var(--accent-violet));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 300;
+        animation: title-shimmer 4s ease-in-out infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes title-shimmer {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    .book-genre {
+        color: var(--ocean-blue);
+        font-size: 1.05em;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+    }
+
+    .book-tagline {
+        font-size: 1.3em;
+        color: var(--text-secondary);
+        max-width: 760px;
+        margin: 0 auto 50px;
+        line-height: 1.8;
+        opacity: 0.9;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    /* Showcase */
+    .book-showcase {
+        padding: 100px 0;
+        position: relative;
+        background: linear-gradient(135deg, rgba(10, 10, 20, 0.6), rgba(16, 10, 30, 0.4));
+    }
+
+    .showcase-grid {
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 80px;
+        align-items: start;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .book-cover-showcase {
+        position: sticky;
+        top: 100px;
+    }
+
+    .cover-container {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        transition: all 0.5s ease;
+        background: #0a0a0a;
+    }
+
+    .cover-container:hover {
+        transform: scale(1.03) translateY(-10px);
+        box-shadow: 0 50px 100px rgba(177, 156, 217, 0.25), 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .cover-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .cover-placeholder {
+        aspect-ratio: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 30px;
+        background:
+            radial-gradient(ellipse at 30% 20%, rgba(177, 156, 217, 0.25) 0%, transparent 55%),
+            radial-gradient(ellipse at 70% 85%, rgba(138, 196, 255, 0.18) 0%, transparent 55%),
+            linear-gradient(160deg, #141428 0%, #0a0a14 100%);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+    }
+
+    .cover-placeholder-series {
+        color: var(--primary-purple);
+        font-size: 0.8em;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+    }
+
+    .cover-placeholder-title {
+        color: var(--text-light);
+        font-size: 1.9em;
+        font-weight: 300;
+        line-height: 1.25;
+        letter-spacing: 1px;
+    }
+
+    .cover-placeholder-note {
+        margin-top: 26px;
+        color: rgba(208, 208, 208, 0.55);
+        font-size: 0.8em;
+        font-style: italic;
+        letter-spacing: 1px;
+    }
+
+    .cover-caption {
+        margin-top: 14px;
+        text-align: center;
+        color: rgba(208, 208, 208, 0.6);
+        font-size: 0.85em;
+        font-style: italic;
+        letter-spacing: 0.5px;
+    }
+
+    .status-section {
+        margin-top: 40px;
+        padding: 40px;
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.10), rgba(138, 196, 255, 0.05));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.3);
+        border-radius: 30px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .status-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), var(--ocean-blue), transparent);
+        animation: shimmer-line 3s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .status-title {
+        color: var(--oracle-gold);
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .status-note {
+        color: var(--text-secondary);
+        text-align: center;
+        line-height: 1.7;
+        margin-bottom: 25px;
+        font-size: 1em;
+    }
+
+    .status-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .status-link {
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        color: #0a0a14;
+        text-decoration: none;
+        padding: 15px 35px;
+        border-radius: 30px;
+        font-weight: 600;
+        text-align: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 15px 35px rgba(177, 156, 217, 0.25);
+    }
+
+    .status-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 45px rgba(177, 156, 217, 0.35);
+        color: #0a0a14;
+    }
+
+    .status-link.secondary {
+        background: transparent;
+        color: var(--primary-purple);
+        border: 2px solid var(--primary-purple);
+    }
+
+    .status-link.secondary:hover {
+        background: rgba(177, 156, 217, 0.1);
+        color: var(--text-light);
+    }
+
+    /* Content sections */
+    .content-section {
+        background: linear-gradient(135deg, rgba(20, 20, 30, 0.9), rgba(10, 10, 20, 0.9));
+        backdrop-filter: blur(30px);
+        border: 1px solid rgba(177, 156, 217, 0.25);
+        border-radius: 30px;
+        padding: 60px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        margin-bottom: 40px;
+    }
+
+    .content-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), var(--ocean-blue), transparent);
+        opacity: 0.8;
+        animation: shimmer-border 4s ease-in-out infinite;
+    }
+
+    @keyframes shimmer-border {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
+    .content-section:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 40px 80px rgba(177, 156, 217, 0.15), 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-title {
+        font-size: 2.3em;
+        color: var(--primary-purple);
+        margin-bottom: 30px;
+        font-weight: 300;
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-purple), var(--ocean-blue));
+        transition: width 0.5s ease;
+    }
+
+    .content-section:hover .section-title::after {
+        width: 100%;
+    }
+
+    .section-subtitle {
+        color: var(--ocean-blue);
+        font-size: 1.25em;
+        font-weight: 400;
+        margin: 35px 0 15px;
+        letter-spacing: 0.5px;
+    }
+
+    .book-description {
+        color: var(--text-secondary);
+        font-size: 1.12em;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .book-description strong {
+        color: var(--text-light);
+    }
+
+    .book-description a, .world-definition a, .oracle-table a {
+        color: var(--ocean-blue);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(138, 196, 255, 0.4);
+    }
+
+    .book-description a:hover, .world-definition a:hover, .oracle-table a:hover {
+        color: var(--text-light);
+        border-bottom-color: var(--text-light);
+    }
+
+    .book-excerpt {
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.12), rgba(138, 196, 255, 0.05));
+        border-left: 4px solid var(--primary-purple);
+        padding: 40px;
+        margin: 40px 0;
+        font-style: italic;
+        color: var(--text-light);
+        border-radius: 0 20px 20px 0;
+        position: relative;
+        overflow: hidden;
+        font-size: 1.2em;
+        line-height: 1.8;
+        backdrop-filter: blur(10px);
+        box-shadow: inset 0 0 30px rgba(177, 156, 217, 0.08);
+    }
+
+    .book-excerpt::before {
+        content: '"';
+        position: absolute;
+        top: -15px;
+        left: 35px;
+        font-size: 100px;
+        color: rgba(177, 156, 217, 0.25);
+        font-family: Georgia, serif;
+    }
+
+    .excerpt-attribution {
+        display: block;
+        margin-top: 18px;
+        font-size: 0.8em;
+        color: var(--primary-purple);
+        font-style: normal;
+        letter-spacing: 1px;
+        text-align: right;
+    }
+
+    /* Grid cards */
+    .world-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .world-card {
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.08), rgba(138, 196, 255, 0.03));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.25);
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .world-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--primary-purple);
+        box-shadow: 0 20px 40px rgba(177, 156, 217, 0.2);
+    }
+
+    .world-card.burning {
+        border-color: rgba(212, 175, 55, 0.35);
+    }
+
+    .world-card.burning .world-term {
+        color: var(--oracle-gold);
+    }
+
+    .world-term {
+        color: var(--primary-purple);
+        font-size: 1.25em;
+        font-weight: 600;
+        margin-bottom: 8px;
+        letter-spacing: 0.5px;
+    }
+
+    .world-meta {
+        color: var(--ocean-blue);
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    .world-definition {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        font-size: 1.02em;
+    }
+
+    .world-definition em {
+        color: var(--text-light);
+    }
+
+    .card-tag {
+        display: inline-block;
+        font-size: 0.7em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 12px;
+        margin-left: 8px;
+        vertical-align: middle;
+        font-weight: 600;
+    }
+
+    .card-tag.blood {
+        background: rgba(139, 0, 0, 0.35);
+        color: #ff9a9a;
+        border: 1px solid rgba(255, 120, 120, 0.4);
+    }
+
+    .card-tag.bone {
+        background: rgba(240, 240, 240, 0.12);
+        color: #f0f0f0;
+        border: 1px solid rgba(240, 240, 240, 0.4);
+    }
+
+    .card-tag.both {
+        background: linear-gradient(90deg, rgba(139, 0, 0, 0.35), rgba(240, 240, 240, 0.15));
+        color: var(--text-light);
+        border: 1px solid rgba(240, 240, 240, 0.4);
+    }
+
+    /* Tables */
+    .oracle-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 25px 0 10px;
+        font-size: 0.98em;
+        color: var(--text-secondary);
+    }
+
+    .oracle-table th {
+        text-align: left;
+        color: var(--primary-purple);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 0.8em;
+        padding: 12px 14px;
+        border-bottom: 1px solid rgba(177, 156, 217, 0.4);
+    }
+
+    .oracle-table td {
+        padding: 11px 14px;
+        border-bottom: 1px solid rgba(177, 156, 217, 0.12);
+        vertical-align: top;
+        line-height: 1.5;
+    }
+
+    .oracle-table tr:hover td {
+        background: rgba(177, 156, 217, 0.05);
+    }
+
+    .oracle-table td strong {
+        color: var(--text-light);
+    }
+
+    .oracle-table td.gold {
+        color: var(--oracle-gold);
+    }
+
+    .table-wrap {
+        overflow-x: auto;
+    }
+
+    /* Ordered steps */
+    .step-list {
+        counter-reset: step;
+        list-style: none;
+        padding: 0;
+        margin: 25px 0;
+    }
+
+    .step-list li {
+        position: relative;
+        padding: 18px 20px 18px 70px;
+        margin-bottom: 14px;
+        background: rgba(177, 156, 217, 0.05);
+        border: 1px solid rgba(177, 156, 217, 0.15);
+        border-radius: 16px;
+        color: var(--text-secondary);
+        line-height: 1.7;
+    }
+
+    .step-list li::before {
+        counter-increment: step;
+        content: counter(step);
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
+        color: #0a0a14;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .step-list li strong {
+        color: var(--text-light);
+    }
+
+    /* Companion volumes */
+    .companion-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .companion-card {
+        display: block;
+        text-decoration: none;
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.10), rgba(138, 196, 255, 0.04));
+        border: 1px solid rgba(177, 156, 217, 0.3);
+        border-radius: 20px;
+        padding: 30px;
+        transition: all 0.4s ease;
+    }
+
+    .companion-card:hover {
+        transform: translateY(-6px);
+        border-color: var(--ocean-blue);
+        box-shadow: 0 20px 40px rgba(138, 196, 255, 0.15);
+    }
+
+    .companion-status {
+        display: inline-block;
+        font-size: 0.7em;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--oracle-gold);
+        border: 1px solid rgba(212, 175, 55, 0.4);
+        border-radius: 12px;
+        padding: 3px 10px;
+        margin-bottom: 12px;
+    }
+
+    .companion-status.available {
+        color: #7fd88a;
+        border-color: rgba(127, 216, 138, 0.4);
+    }
+
+    .companion-title {
+        color: var(--text-light);
+        font-size: 1.3em;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    .companion-text {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-size: 0.98em;
+    }
+
+    .companion-link {
+        display: inline-block;
+        margin-top: 14px;
+        color: var(--ocean-blue);
+        font-size: 0.85em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    /* Footer nav */
+    .sleek-footer {
+        padding: 100px 0 80px;
+        background: linear-gradient(to bottom, transparent 0%, rgba(10, 10, 10, 0.95) 30%);
+        text-align: center;
+        margin-top: 80px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .sleek-footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
+        animation: shimmer-line 3s ease-in-out infinite;
+    }
+
+    .footer-nav {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05), rgba(10, 10, 10, 0.8));
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(177, 156, 217, 0.2);
+        border-radius: 50px;
+        padding: 15px 35px;
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-size: 0.95em;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-button:hover {
+        background: linear-gradient(135deg, rgba(177, 156, 217, 0.15), rgba(138, 196, 255, 0.1));
+        border-color: var(--primary-purple);
+        color: var(--text-light);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(177, 156, 217, 0.25);
+    }
+
+    .nav-button-icon {
+        font-size: 1.1em;
+        opacity: 0.7;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+        .showcase-grid { grid-template-columns: 1fr; gap: 50px; }
+        .book-cover-showcase { position: static; order: -1; }
+        .cover-container, .cover-placeholder { max-width: 380px; margin: 0 auto; }
+        .content-section { padding: 40px; }
+    }
+
+    @media (max-width: 768px) {
+        .book-title { font-size: 2.5rem; }
+        .cover-container, .cover-placeholder { max-width: 320px; }
+        .content-section { padding: 30px 25px; }
+        .section-title { font-size: 1.9em; }
+        .footer-nav { flex-direction: column; gap: 15px; }
+        .nav-button { width: 80%; max-width: 280px; justify-content: center; }
+        .oracle-table { font-size: 0.9em; }
+    }
+
+    @media (max-width: 480px) {
+        .content-section { padding: 25px 20px; }
+        .world-grid, .companion-grid { grid-template-columns: 1fr; }
+        .step-list li { padding-left: 62px; }
+    }
+</style>
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "The Siren Bone Oracle: Blood & Bone Tarot",
+  "author": {
+    "@type": "Person",
+    "name": "Mileena Rayne",
+    "url": "https://mileenarayne.com"
+  },
+  "genre": ["Fantasy", "Divination", "Tarot"],
+  "publisher": {
+    "@type": "Person",
+    "name": "Mileena Rayne"
+  },
+  "description": "The complete guide to Athea's 78-card Blood and Bone Tarot - twenty-two Major Arcana, four suits of Minor Arcana, ten sacred spreads, and full card meanings - a companion to the Almanac of Stars.",
+  "url": "https://mileenarayne.com/writing/blood-bone-tarot/"
+}
+</script>
+
+<div class="oracle-page">
+    <div class="cosmic-overlay"></div>
+    <div class="particle-field">
+        <div class="star-orb"></div>
+        <div class="star-orb"></div>
+        <div class="star-orb"></div>
+    </div>
+
+    <!-- Hero -->
+    <section class="book-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="status-badge">Coming Soon</div>
+                <h1 class="book-title">
+                    The Siren Bone Oracle<br>
+                    <span class="highlight">Blood &amp; Bone Tarot</span>
+                </h1>
+                <div class="book-genre">78-Card Divination System &bull; Companion to the Almanac of Stars</div>
+                <p class="book-tagline">
+                    Blood is what the cosmos does to you. Bone is what remains yours to choose. You are both. You have always been both. The cards just help you see it.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase -->
+    <section class="book-showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="book-cover-showcase">
+                    <div class="cover-container">
+                        <img src="/assets/images/blood-bone-tarot.PNG" alt="The Siren Bone Oracle: Blood &amp; Bone Tarot cover">
+                    </div>
+                    <p class="cover-caption">Companion volume to the Almanac of Stars</p>
+
+                    <div class="status-section">
+                        <h3 class="status-title">Coming Soon</h3>
+                        <p class="status-note">
+                            The complete guide to Athea's 78-card divination system, created to help humanity navigate fate without divine intervention. Not yet published.
+                        </p>
+                        <div class="status-links">
+                            <a href="/writing/almanac-of-stars/" class="status-link">The Almanac of Stars</a>
+                            <a href="/writing/arcadian-astrology/" class="status-link secondary">Arcadian Astrology</a>
+                            <a href="/world-guide/calendars/" class="status-link secondary">Calendars of Arcadia</a>
+                            <a href="/writing/" class="status-link secondary">Back to Writing</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-content">
+                    <!-- Origin -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">Fate and Choice, Painted in Star Essence</h2>
+                        <p class="book-description">
+                            When the gods fell silent and humanity came begging for new guidance, they didn't just want to know what would happen. They wanted to know what they could <em>do</em> about it. Through her siren bone needles Athea touched the space between fate and will, and what came back was not one truth but two truths dancing together&mdash;the tide that moves us, and our choice to swim or drown.
+                        </p>
+                        <p class="book-description">
+                            So she painted <strong>seventy-eight doorways</strong>, with star essence mixed with her own tears. And as she painted, the cards began to separate, like oil from water. Some bore the weight of forces beyond mortal control. Others thrummed with the power of choice. The deck was teaching her its own nature.
+                        </p>
+                        <div class="world-grid">
+                            <div class="world-card">
+                                <div class="world-term">Blood Cards <span class="card-tag blood">Blood</span></div>
+                                <div class="world-meta">The tide that carries you</div>
+                                <div class="world-definition">The inherited, the inevitable, the inescapable&mdash;generational patterns you didn't choose, collective forces that sweep through all lives, the arrival of souls you were always meant to meet, consequences of choices made before you existed. In the physical deck they bear red markings: ochre paint like dried blood, crimson thread, drops of red wax. Blood Cards say: <em>"This is happening. This will happen. This has always been happening."</em></div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">Bone Cards <span class="card-tag bone">Bone</span></div>
+                                <div class="world-meta">The choice that remains</div>
+                                <div class="world-definition">What remains when everything else is stripped away&mdash;the responses available to you regardless of circumstance, the choices that define character, the irreducible freedom that even gods cannot take. They carry white markings: chalk dust, white thread, sometimes actual small bones from creatures who chose their own deaths. Bone Cards say: <em>"You cannot control what happens, but you control who you become as it happens."</em></div>
+                            </div>
+                        </div>
+                        <div class="book-excerpt">
+                            Blood and Bone are not opponents but partners. Every reading contains both because every life contains both. You are shaped by forces beyond your control and responsible for shaping yourself, both at once. You are both wave and swimmer, both clay and sculptor.
+                            <span class="excerpt-attribution">&mdash; Athea, The Blood and Bone</span>
+                        </div>
+                    </div>
+
+                    <!-- Major Arcana -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">The Twenty-Two Paths of Transformation</h2>
+                        <p class="book-description">
+                            The Major Arcana speak of great spiritual journeys and archetypal forces. Each card has one fixed nature&mdash;and <strong>The Dancing Circle</strong>, the twenty-first, is the only card in the deck that is both Blood and Bone.
+                        </p>
+                        <div class="table-wrap">
+                        <table class="oracle-table">
+                            <thead><tr><th>#</th><th>Card</th><th>Title</th><th>Nature</th></tr></thead>
+                            <tbody>
+                                <tr><td>0</td><td><strong>The Wandering Seed</strong></td><td>The Fool's Journey Begins</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>1</td><td><strong>The Hedge Keeper</strong></td><td>The Witch at the Boundary</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>2</td><td><strong>The Veiled Sister</strong></td><td>Keeper of Hidden Truths</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>3</td><td><strong>The Harvest Mother</strong></td><td>The Eternal Womb</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>4</td><td><strong>The Iron King</strong></td><td>The Builder of Lasting Things</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>5</td><td><strong>The Keeper of Oaths</strong></td><td>The Sacred Contract</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>6</td><td><strong>The Crossroads Heart</strong></td><td>The Choice That Changes Everything</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>7</td><td><strong>The Wild Hunt</strong></td><td>The Inexorable Pursuit</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>8</td><td><strong>The Weighing Stones</strong></td><td>The Balance That Cannot Be Cheated</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>9</td><td><strong>The Nameless Hermit</strong></td><td>The Seeker in Solitude</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>10</td><td><strong>The Spinning Wheel</strong></td><td>The Eternal Return</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>11</td><td><strong>The Blood Price</strong></td><td>The Willing Sacrifice</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>12</td><td><strong>The Hung Man</strong></td><td>The Sacred Suspension</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>13</td><td><strong>The Bone Mother</strong></td><td>Death the Transformer</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>14</td><td><strong>The Star Mixer</strong></td><td>The Sacred Alchemist</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>15</td><td><strong>The Chained Crown</strong></td><td>The Prison of Success</td><td><span class="card-tag bone">Bone</span></td></tr>
+                                <tr><td>16</td><td><strong>The Lightning Tower</strong></td><td>Divine Demolition</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>17</td><td><strong>The Night Garden</strong></td><td>Hope Blooming in Darkness</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>18</td><td><strong>The Blood Moon</strong></td><td>The Territory of Shadows</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>19</td><td><strong>The Honey Sun</strong></td><td>Sweet Victory of the Soul</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>20</td><td><strong>The Calling Horn</strong></td><td>The Final Summoning</td><td><span class="card-tag blood">Blood</span></td></tr>
+                                <tr><td>21</td><td><strong>The Dancing Circle</strong></td><td>The Eternal Celebration</td><td><span class="card-tag both">Blood &amp; Bone</span></td></tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <h3 class="section-subtitle">Three Cards, in Athea's Voice</h3>
+                        <div class="world-grid">
+                            <div class="world-card">
+                                <div class="world-term">The Wandering Seed</div>
+                                <div class="world-meta">0 &bull; Bone Card</div>
+                                <div class="world-definition"><em>I see you at the threshold of everything, carrying nothing but potential.</em> The Seed drifts on winds it does not control, and still it chooses its landing. The Wandering Seed teaches that every master was once a fool who persisted.</div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">The Lightning Tower</div>
+                                <div class="world-meta">16 &bull; Blood Card</div>
+                                <div class="world-definition"><em>I see structures shattering, false foundations finally falling.</em> Sudden, catastrophic change&mdash;instant, never gradual. The tower was built wrong from the foundation. The lightning is mercy.</div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">The Chained Crown</div>
+                                <div class="world-meta">15 &bull; Bone Card</div>
+                                <div class="world-definition"><em>I see you holding chains that aren't locked, imprisoned by your own achievements.</em> The Chained Crown asks: "Would you rather be powerful or free?" Then laughs when you think they're the same.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Minor Arcana -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">The Minor Arcana: Four Suits</h2>
+                        <p class="book-description">
+                            While the Major Arcana speak of archetypal forces, the fifty-six Minor Arcana address the daily dance of living. Each suit holds fourteen cards&mdash;Ace through Ten, and a court of <strong>Apprentice, Wanderer, Keeper and Master</strong>. The siren bones sing a different melody for each: earth's steady rhythm, air's sharp whistle, fire's crackling roar, water's endless flow.
+                        </p>
+                        <div class="world-grid">
+                            <div class="world-card">
+                                <div class="world-term">Roots</div>
+                                <div class="world-meta">Earth &bull; The Material Foundation</div>
+                                <div class="world-definition">All that is tangible, grounded, built to endure. <em>Ace of Roots</em> (Bone): "I see a seed breaking frozen earth, the first promise of prosperity."</div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">Gales</div>
+                                <div class="world-meta">Air &bull; The Mental Realm</div>
+                                <div class="world-definition">All that cuts through illusion to reveal truth. <em>Nine of Gales</em> (Blood): "I see the mind becoming its own tormentor at 3 AM."</div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">Embers</div>
+                                <div class="world-meta">Fire &bull; The Creative Flame</div>
+                                <div class="world-definition">All that burns with passion, creativity and transformative power. <em>Nine of Embers</em> (Blood): "I see the last flame refusing to die, will itself as fuel."</div>
+                            </div>
+                            <div class="world-card">
+                                <div class="world-term">Tides</div>
+                                <div class="world-meta">Water &bull; The Emotional Depths</div>
+                                <div class="world-definition">All that flows, feels and transforms through the heart's currents. <em>Five of Tides</em> (Blood): "I see necessary grief, mourning what has spilled and cannot be recovered."</div>
+                            </div>
+                        </div>
+                        <p class="book-description" style="margin-top:30px;">
+                            The minor cards resolve largely by rank: every Ace, Two, Four and Seven is Bone; every Five and Ten is Blood. In the court, the Apprentice and the Wanderer are Bone&mdash;people choosing to learn&mdash;while the Keeper and the Master are Blood, carrying something handed to them.
+                        </p>
+                    </div>
+
+                    <!-- Reading the weave -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">Reading the Weave</h2>
+                        <p class="book-description">
+                            When both card types appear in a reading, watch how they speak to each other.
+                        </p>
+                        <div class="table-wrap">
+                        <table class="oracle-table">
+                            <tbody>
+                                <tr><td><strong>Blood followed by Bone</strong></td><td>Circumstance creating the need for choice. The universe presents the test; you must decide how to respond.</td></tr>
+                                <tr><td><strong>Bone followed by Blood</strong></td><td>Your choices calling down consequences. You've set forces in motion that now move beyond your control.</td></tr>
+                                <tr><td><strong>Blood surrounding Bone</strong></td><td>External forces trying to crush internal will. Your agency is being tested by circumstances that want to erase it.</td></tr>
+                                <tr><td><strong>Bone surrounding Blood</strong></td><td>Your choices creating a container for chaos. You're building structures to channel forces that would otherwise destroy.</td></tr>
+                                <tr><td><strong>Equal Blood and Bone</strong></td><td>The perfect storm where fate and free will become indistinguishable. These are the moments that define lifetimes.</td></tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <p class="book-description" style="margin-top:25px;">
+                            In the Hedge Witch tradition, reversed cards show their <strong>corrupted</strong> aspect&mdash;not opposite but shadow manifestation. And after laying any spread, the bottom card of the remaining deck is the <strong>Shadow Card</strong>: it takes no position, but it colors the entire reading.
+                        </p>
+                    </div>
+
+                    <!-- Spreads -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">The Sacred Spreads</h2>
+                        <p class="book-description">
+                            Spreads are not mere card positions but sacred geometries, each pattern a different doorway between the questioner and the mystery. The guide teaches ten, from the smallest to the master spread of the tradition:
+                        </p>
+                        <div class="table-wrap">
+                        <table class="oracle-table">
+                            <thead><tr><th>Spread</th><th>Cards</th><th>Purpose</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>The Single Seed</strong></td><td>1</td><td>For clear sight on one matter&mdash;the essential truth of your situation, stripped of pretense and projection</td></tr>
+                                <tr><td><strong>The Crossroads Path</strong></td><td>3</td><td>For decisions and choices: Where You Stand, the Left Path, the Right Path</td></tr>
+                                <tr><td><strong>The Triple Mirror</strong></td><td>3</td><td>Past echoes, present truth, future seeds: the Root, the Trunk, the Crown</td></tr>
+                                <tr><td><strong>The Season's Wheel</strong></td><td>4</td><td>For understanding cycles and timing&mdash;Spring, Summer, Autumn, Winter</td></tr>
+                                <tr><td><strong>The Hedge Cross</strong></td><td>5</td><td>Complete situation analysis: the Heart, the Crossing, the Root Below, the Crown Above, the Bridge</td></tr>
+                                <tr><td><strong>The Cauldron's Brew</strong></td><td>7</td><td>For transformation and alchemy&mdash;the Rim, the Brew, the Fire</td></tr>
+                                <tr><td><strong>The Element Dance</strong></td><td>8</td><td>For balance and elemental healing&mdash;each element's challenge and gift</td></tr>
+                                <tr><td><strong>The Lunar Mansions</strong></td><td>9</td><td>Deep emotional and psychic work: surface waters, middle depths, deep waters</td></tr>
+                                <tr><td><strong>The Hedge Walker's Map</strong></td><td>10</td><td>Spiritual journey and life path, from the Origin to the Horizon</td></tr>
+                                <tr><td><strong>The Grand Cauldron</strong></td><td>13</td><td>The master spread for complete understanding&mdash;a spiral from the Seeker to the Becoming</td></tr>
+                            </tbody>
+                        </table>
+                        </div>
+                        <div class="book-excerpt">
+                            The cards do not predict a fixed future. They reveal the currents flowing through your present moment, showing where they're likely to lead if unchanged. Every spread is both map and mirror&mdash;showing not just the path ahead but the traveler walking it.
+                        </div>
+                    </div>
+
+                    <!-- Relation to almanac -->
+                    <div class="content-section reveal">
+                        <h2 class="section-title">The Cards in the Almanac</h2>
+                        <p class="book-description">
+                            The Blood and Bone are introduced in Part Three of <a href="/writing/almanac-of-stars/"><em>The Siren Bone Oracle: Almanac of Stars</em></a>, and they run through every day of its year. Each of the 366 daily readings draws one card&mdash;<em>the Card's Voice</em>&mdash;marked BLOOD or BONE, and all seventy-eight appear at least once across the twelve reigns. When a day breaks open without warning, Athea's counsel is to turn to that day's date and read the card's section first: in emergencies, the cards speak with startling directness.
+                        </p>
+                        <p class="book-description">
+                            This expanded guide gives the full deck its own book: for every card, its nature, its visual description, its sacred story, its upright and corrupted readings, and its meanings in love, work, wealth, body and spirit&mdash;along with the ten spreads, the reading of Blood against Bone, and the stories behind each card's creation.
+                        </p>
+                        <div class="companion-grid">
+                            <a href="/writing/almanac-of-stars/" class="companion-card">
+                                <span class="companion-status">Coming Soon</span>
+                                <div class="companion-title">Almanac of Stars</div>
+                                <p class="companion-text">The complete guide to the Arcadian Calendar: twelve constellations, twelve houses, eight moon phases, and a prophecy for every day of the year.</p>
+                                <span class="companion-link">Learn More &rarr;</span>
+                            </a>
+                            <a href="/writing/arcadian-astrology/" class="companion-card">
+                                <span class="companion-status">Coming Soon</span>
+                                <div class="companion-title">Arcadian Astrology</div>
+                                <p class="companion-text">The astrological system that underpins the Almanac's daily horoscopes&mdash;constellations, houses, moon phases, rising signs and compatibility.</p>
+                                <span class="companion-link">Study the Stars &rarr;</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="sleek-footer">
+        <nav class="footer-nav">
+            <a href="/writing/" class="nav-button"><span>Back to Writing</span><span class="nav-button-icon">&rarr;</span></a>
+            <a href="/writing/almanac-of-stars/" class="nav-button"><span>Almanac of Stars</span><span class="nav-button-icon">&rarr;</span></a>
+            <a href="/world-guide/calendars/" class="nav-button"><span>Calendars of Arcadia</span><span class="nav-button-icon">&rarr;</span></a>
+        </nav>
+    </footer>
+</div>
+
+<script>
+    // Parallax drift for background orbs
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        document.querySelectorAll('.star-orb').forEach((orb, index) => {
+            const speed = 0.5 + (index * 0.2);
+            orb.style.transform = `translateY(${-(scrolled * speed * 0.1)}px)`;
+        });
+    });
+
+    // Reveal-on-scroll
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    });
+</script>

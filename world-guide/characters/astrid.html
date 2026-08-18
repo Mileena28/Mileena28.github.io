@@ -522,6 +522,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -529,7 +548,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Astrid Ravenscroft</h1>
         <p class="character-tagline">"The First Bloodmarked"</p>
     </div>
@@ -641,7 +660,7 @@
                 <section class="section">
                     <h2 class="section-title">Blood, Soil and Seeds</h2>
                     <div class="character-description">
-                        <p>In the chapter that is online, Astrid has no power but her voice and a handful of earth. What the Trickster's blood makes of her is the matter of the chapters to come; the Historian's compendium describes what the Bloodmarked are, and the world guide's other pages tell what the age remembers of them. Her heritage among the Free People—those who kept the older ways and the sacred sites—is what she brings to the choice.</p>
+                        <p>In the chapter that is online, Astrid has no power but her voice and a handful of earth. What the Trickster's blood makes of her is the matter of the chapters to come; the world guide's other pages tell what the age remembers of the Bloodmarked. Her heritage among the Free People—those who kept the older ways and the sacred sites—is what she brings to the choice.</p>
                     </div>
 
                     <div class="powers-grid">
@@ -649,9 +668,7 @@
                             <div class="power-title">The Trickster's Blood</div>
                             <div class="power-description">
                                 <strong>Freely Offered:</strong> Divine blood, given without stated price by Silas the Trickster; the Bloodmarked, the Historian writes, carry "within them the power to kill gods"<br>
-                                <strong>Conscious Integration:</strong> When a mortal drinks rather than merely touches divine blood, the Historian's compendium says, human consciousness directs the transformation instead of being overwhelmed by it<br>
-                                <strong>Amplified:</strong> Strength, sense and magical sensitivity increase; the Bloodmarked can harm, even kill, divine beings<br>
-                                <strong>Its Price:</strong> The compendium warns of changes to "fundamental aspects of personality and perception." What it costs Astrid is the tale's to tell
+                                <strong>Its Price:</strong> What it costs Astrid is the tale's to tell
                             </div>
                         </div>
 
@@ -660,7 +677,6 @@
                             <div class="power-description">
                                 <strong>The Old Ways:</strong> Prayers to the Wild Gods, offerings at the sacred stones, the ancient words spoken at the sacred grove's dawn gathering<br>
                                 <strong>Elder Magnus:</strong> Leads the invocation to the earth spirits—once with Ingrid's chicken Cordelia perched on his head<br>
-                                <strong>Older Traditions:</strong> The Free People kept spiritual practices predating the temple societies, and cared for sites of supernatural significance<br>
                                 <strong>Freedom Remembered:</strong> An old name from "the days before gods walked among them, when mortals lived without fear of divine appetite"
                             </div>
                         </div>
@@ -792,7 +808,7 @@
 
                     <p>Behind the cottage door her guilt is given its name—"five more minutes"—and her doubt is given its voice. Eamon, terrified into cruelty, tells her the Wild Gods are just stories, fairy tales to make the darkness bearable; that no one is coming. The chapter's last lines answer him: their prayers had not gone unheard, and the Wild Gods were coming. The irony of that answer is the tale.</p>
 
-                    <p>What is public beyond that chapter is the shape of her legend. Silas the Trickster offered her divine blood, and she became the first Bloodmarked—the beginning of the mortals who could kill gods, and of the war that ended the age of open divine presence. In the Godscarred Wastes the Ashborn sing of the mark as a curse; the Historian, born among them, went home after thirty-seven years and found reason to believe the songs were "selective," remembering "the ending but not the beginning. The monster but not the martyr." Astrid Ravenscroft is the beginning. The rest is <em>The Divine War</em>.</p>
+                    <p>What is public beyond that chapter is the shape of her legend. Silas the Trickster offered her divine blood, and she became the first Bloodmarked—the beginning of the mortals who could kill gods, and of the war that followed. In the Godscarred Wastes the Ashborn sing of the mark as a curse; the Historian, born among them, went home after thirty-seven years and found reason to believe the songs were "selective," remembering "the ending but not the beginning. The monster but not the martyr." Astrid Ravenscroft is the beginning. The rest is <em>The Divine War</em>.</p>
                 </div>
             </div>
         </section>

@@ -490,6 +490,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -497,9 +516,9 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Elodias</h1>
-        <p class="character-tagline">"God of the moon, of quiet stillness, of the sea's patient, sorrowful depths"</p>
+        <p class="character-tagline">"God of the Moon and Tides"</p>
     </div>
 </section>
 
@@ -523,7 +542,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Divine Domains</div>
-                            <div class="stat-value">Moon, tides, quiet stillness</div>
+                            <div class="stat-value">Moon and tides</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Kind</div>
@@ -595,25 +614,20 @@
                         </div>
                     </div>
 
-                    <div class="character-quote">
-                        Always. In every life, in every form. I will always find my way back to you, Senia. I'm not strong enough to stay away.
-                        <div class="quote-source">— Elodias, as the Historian's summary of the tale records him</div>
-                    </div>
                 </section>
 
                 <!-- Divine Powers & The Curse -->
                 <section class="section">
                     <h2 class="section-title">Cosmic Power, Cosmic Prison</h2>
                     <div class="character-description">
-                        <p>Elodias holds dominion over the moon and the tides, and the sorrowful depths of the sea are his to command. Yet all that power cannot touch the one thing that matters. The star-readers of the Almanac say the constellation called The Lovers—two lights circling eternally, one remembering, one forgetting—was written into the sky in the moment the curse took hold, and that Elodias chose eternal cycles of love and loss over never seeing Senia again.</p>
+                        <p>Elodias holds dominion over the moon and the tides. Yet all that power cannot touch the one thing that matters. The star-readers of the Almanac say the constellation called The Lovers—two lights circling eternally, one remembering, one forgetting—was written into the sky in the moment the curse took hold, and that Elodias chose eternal cycles of love and loss over never seeing Senia again.</p>
                     </div>
 
                     <div class="powers-grid">
                         <div class="power-card lunar">
-                            <div class="power-title">Moon and Stillness</div>
+                            <div class="power-title">Moon</div>
                             <div class="power-description">
-                                <strong>Domain:</strong> The moon and the quiet of night<br>
-                                <strong>Nature:</strong> Where Senia is blossoming life and radiant beauty, he is contemplation and patient depth—the moon that follows the sun<br>
+                                <strong>Domain:</strong> The moon<br>
                                 <strong>Bearing:</strong> Even in mortal guise, "the depth in his eyes suggested worlds of experience behind his youthful appearance"
                             </div>
                         </div>
@@ -621,7 +635,7 @@
                         <div class="power-card oceanic">
                             <div class="power-title">Tides</div>
                             <div class="power-description">
-                                <strong>Domain:</strong> The tides and the sea's patient depths<br>
+                                <strong>Domain:</strong> The tides<br>
                                 <strong>Manifestation:</strong> The water rises and falls with his heart; the bards say the coast of Quenos itself remembers what his grief can do<br>
                                 <strong>Sign:</strong> A wave that crashes too hard against the shore when the story turns
                             </div>
@@ -728,7 +742,7 @@
             <div class="summary-container">
                 <h2 class="summary-title">Love Eternal, Death Inevitable, Hope Unquenchable</h2>
                 <div class="summary-content">
-                    <p>Elodias is the moon that chases the sun. God of the moon, of quiet stillness, of the sea's patient, sorrowful depths, he was made to complement Senia's radiant warmth, and their love was the kind the bards of the coast still sing to the dusk. It became, through the jealousy of a lunar seer, the kind of love that is also a sentence: to find her in every incarnation, to love her for seven perfect days, and to lose her when the sun sets on the seventh night.</p>
+                    <p>Elodias is the moon that chases the sun. God of the moon and tides, he was made to complement Senia's radiant warmth, and their love was the kind the bards of the coast still sing to the dusk. It became, through the jealousy of a lunar seer, the kind of love that is also a sentence: to find her in every incarnation, to love her for seven perfect days, and to lose her when the sun sets on the seventh night.</p>
 
                     <p>What makes his story the most tender in the Historian's collection is that he keeps choosing it. He is the one who remembers. He carries a journal of her faces across lifetimes and sun daisies pressed between its pages, and still he walks into the market of Quenos and asks for the best peach. The star-readers say the constellation called The Lovers was written into the sky in the moment he chose eternal cycles of love and loss over never seeing her again—two lights circling eternally, one remembering, one forgetting.</p>
 

@@ -594,6 +594,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -601,7 +620,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Ryx Shadowclaw</h1>
         <p class="character-tagline">"The Stray"</p>
     </div>

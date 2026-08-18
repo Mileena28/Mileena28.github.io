@@ -511,6 +511,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -518,7 +537,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">The Villagers of Oakhaven</h1>
         <p class="character-tagline">"The Collective Fear"</p>
     </div>
@@ -581,7 +600,7 @@
 
                         <p>Garrett the blacksmith, his words thick with ale and something darker, insists the devil has been in those woods "longer than my gran's gran could remember. Never ages a day, never shows his face in decent company." Clara Millwright's Martha saw him once by Miller's Creek, fifteen years back—"tall as a tree and twice as dark, with eyes that glowed like hellfire," the same description her mother gave, and her mother's mother before that. Young Thomas Wickham, the baker's eldest, is ready to march into the forest with pitchforks and torches. A thin merchant from the eastern roads whispers of girls gone missing up and down the valley and found only as pools of blood. And Dennet the innkeeper, coming out of the back room with the night's ledger, tells them quietly that plenty of things in this world don't follow the rules we expect them to—"Don't make 'em evil."</p>
 
-                        <p>They are, the Historian's compendium says, a typical mortal community in its relationship with the divine—fearful of the "forest demon," yet occasionally needing protection. Their children sing a rhyme about him. Their grandparents told the same stories. And when a boy fails to come home from an errand and a red-haired tavern girl walks into the woods to look for him, they are the chorus against which The Sin of Mercy is played.</p>
+                        <p>They are fearful of the "forest demon." Their children sing a rhyme about him. Their grandparents told the same stories. And when a boy fails to come home from an errand and a red-haired tavern girl walks into the woods to look for him, they are the chorus against which The Sin of Mercy is played.</p>
                     </div>
 
                     <div class="character-quote">
@@ -626,7 +645,7 @@
                 <section class="section">
                     <h2 class="section-title">The Machinery of a Small Town's Fear</h2>
                     <div class="character-description">
-                        <p>The Historian's compendium describes villages like Oakhaven as communities that transform traumatic events into manageable narratives through collective storytelling: gathering places where experiences are shared and interpreted, a gradual consensus on the "official" version of events, and the transformation of dangerous truths into safer folklore. The Weathered Willow Inn is where Oakhaven does that work.</p>
+                        <p>Oakhaven, the Historian writes, "transformed tragedy into theater, the way humans do when truth is too heavy to carry alone." The Weathered Willow Inn is where Oakhaven does that work.</p>
                     </div>
 
                     <div class="powers-grid">

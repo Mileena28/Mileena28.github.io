@@ -511,6 +511,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -518,7 +537,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Governor Verin</h1>
         <p class="character-tagline">"The Iron Hand"</p>
     </div>
@@ -594,7 +613,7 @@
                 <section class="section">
                     <h2 class="section-title">The Guardian Who Fears the Unclassifiable</h2>
                     <div class="character-description">
-                        <p>The Historian's compendium describes the authority she serves plainly: a military-administrative government established in war-torn territories, focused on maintaining order through strict control and ideological conformity, in which everything must be properly categorised and regulated and any behaviour outside normal parameters represents a potential threat. Verin is that philosophy given a face—and, the tale insists, a belief of her own kind, not mere administration.</p>
+                        <p>Verin is post-war order given a face—and, the tale insists, a belief of her own kind, not mere administration.</p>
                     </div>
 
                     <div class="traits-grid">
@@ -626,14 +645,14 @@
                 <section class="section">
                     <h2 class="section-title">The Machinery of Post-War Governance</h2>
                     <div class="character-description">
-                        <p>Verin's power is the power of the Eastern Reclamation Authority: soldiers bearing her insignia, agents and informants, clerks and consistories, and the rigid bureaucratic structures the Historian's compendium describes as designed to process and categorise all aspects of life in the reclaimed territories.</p>
+                        <p>Verin's power is the power of the Eastern Reclamation Zone: soldiers bearing her insignia, agents, clerks and consistories.</p>
                     </div>
 
                     <div class="powers-grid">
                         <div class="power-card military">
                             <div class="power-title">Military Authority</div>
                             <div class="power-description">
-                                <strong>Rank:</strong> Regional governor—a military commander with authority over an assigned territory<br>
+                                <strong>Rank:</strong> Military governor of the Eastern Reclamation Zone<br>
                                 <strong>Instrument:</strong> Soldiers under a scarred captain, their armour bearing the stark insignia of the Governor<br>
                                 <strong>Reach:</strong> "We hold jurisdiction over any fugitive from the established territories"
                             </div>
@@ -643,8 +662,7 @@
                             <div class="power-title">Documentation and Classification</div>
                             <div class="power-description">
                                 <strong>Identity papers:</strong> A record of birth, recognised citizenship, formal qualifications and authorisation are expected of anyone who heals, teaches or mediates in her territory<br>
-                                <strong>Clerks:</strong> Three at every hearing, quills ready<br>
-                                <strong>Doctrine:</strong> Order through classification—everything properly categorised and regulated
+                                <strong>Clerks:</strong> Three at every hearing, quills ready
                             </div>
                         </div>
 
@@ -685,7 +703,7 @@
 
                         <div class="timeline-phase">
                             <div class="phase-label">The Reclamation Zone</div>
-                            <div class="phase-description">Peace is imposed through military administration: identity documentation, permits, compliance officers, and a religious council to name what threatens the order she has rebuilt.</div>
+                            <div class="phase-description">Peace is imposed through military administration: documented identity and passage papers, and a religious council to name what threatens the order she has rebuilt.</div>
                         </div>
 
                         <div class="timeline-phase">
@@ -754,7 +772,7 @@
             <div class="summary-container">
                 <h2 class="summary-title">When Protectors Become the Danger</h2>
                 <div class="summary-content">
-                    <p>Governor Verin is the face of the Eastern Reclamation Authority in The God Who Wept: a sharp-eyed woman of perhaps forty with close-cropped, iron-grey hair, whose rise was built on unflinching pragmatism and ruthless discipline during a long, grinding war, and who now keeps a fragile peace from behind a stark wooden desk in a stripped manor hall. Her clerks record every word. Her soldiers wear her insignia. Her consistories examine the accused for doctrinal deviation.</p>
+                    <p>Governor Verin is the military governor of the Eastern Reclamation Zone in The God Who Wept: a sharp-eyed woman of perhaps forty with close-cropped, iron-grey hair, whose rise was built on unflinching pragmatism and ruthless discipline during a long, grinding war, and who now keeps a fragile peace from behind a stark wooden desk in a stripped manor hall. Her clerks record every word. Her soldiers wear her insignia. Her consistories examine the accused for doctrinal deviation.</p>
 
                     <p>The tale does not paint her as a simple villain. She wields power with the fervour of belief, seeing herself as a bulwark against the hidden contagions of ideology and myth that might unravel everything she sacrificed to rebuild. Her fear is not of criminals but of the unclassifiable—of a stranger with no papers, no price and no agenda whom people revere. That fear, and what it leads her to do when the Wanderer is brought before her dais, is the subject of the account's final chapters.</p>
 

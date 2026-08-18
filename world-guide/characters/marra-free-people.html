@@ -511,6 +511,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -518,7 +537,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Marra & The Free People</h1>
         <p class="character-tagline">"The Unbowed"</p>
     </div>
@@ -543,10 +562,6 @@
                             <div class="stat-value">The God Who Wept — a later chapter of the account, not yet online</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-label">Who They Are</div>
-                            <div class="stat-value">Nomadic tribes living outside established authority, keeping older spiritual traditions (the Historian's compendium)</div>
-                        </div>
-                        <div class="stat-item">
                             <div class="stat-label">Where</div>
                             <div class="stat-value">The wild valleys and hidden camps east of the settled territories — "These woods remember older truths"</div>
                         </div>
@@ -560,7 +575,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Rite</div>
-                            <div class="stat-value">The seeing smoke — vision-smoke rituals "particularly advanced among the Free People"</div>
+                            <div class="stat-value">The seeing smoke</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Sacred Place</div>
@@ -577,9 +592,7 @@
                 <section class="section">
                     <h2 class="section-title">Guardians of Older Truths</h2>
                     <div class="character-description">
-                        <p>The Historian's compendium describes the Free People as nomadic tribes living outside established authority, maintaining older spiritual traditions and a settled resistance to institutional control — people who "possess advanced techniques for recognizing divine nature and preserving dangerous truths." They keep religious practices that predate the temple societies: communion with plant and animal spirits, reverence for ancestors, star reading, dream sharing, and the care of sites of supernatural significance. Their councils are circles in which every adult voice carries equal weight; their elders are wisdom keepers; their path walkers know the safe routes through supernatural territory.</p>
-
-                        <p>In <em>The God Who Wept</em>, Thainos meets one such band far to the east, beyond the reach of Governor Verin's authority, in a valley where the aftermath of war has left abandoned homesteads and silted irrigation channels. He finds their shrine first — river stones stacked with reverent care, an arch of woven branches, feathers and smooth pebbles and bundles of herbs laid at the charred roots of an enormous oak that lightning has split open and failed to kill. "It was grief and hope, ruin and reverence, all bound together in a single, silent testimony." Then a voice behind him: "You should not be here, stranger. This place is not for your kind."</p>
+                        <p>In <em>The God Who Wept</em>, Thainos meets a band of the Free People far to the east, beyond the reach of Governor Verin's authority, in a valley where the aftermath of war has left abandoned homesteads and silted irrigation channels. He finds their shrine first — river stones stacked with reverent care, an arch of woven branches, feathers and smooth pebbles and bundles of herbs laid at the charred roots of an enormous oak that lightning has split open and failed to kill. "It was grief and hope, ruin and reverence, all bound together in a single, silent testimony." Then a voice behind him: "You should not be here, stranger. This place is not for your kind."</p>
 
                         <p>The speaker is Marra, a woman of middle years, "her face lined with hardship and resilience, her dark hair streaked heavily with grey," standing at the centre of five men and three women with unstrung bows and spears — not raised, but ready. Her gaze is "sharp, searching, missing nothing," and she can smell "settled authority" on his clothes. When he tells them, with a dry smile, that he is no authority — "Quite the opposite" — and that he and the Governor's jurisdiction have parted over "certain… philosophical differences, let's say," her suspicion softens into curiosity, and something like kinship in shared defiance. "Names have power, stranger," she tells him. "We'll call you Stranger, then, until we know more… I am Marra, elder of the Free People. We bow to no distant rulers, nor do we accept their hollow authority over these lands. These woods remember older truths."</p>
                     </div>
@@ -630,28 +643,13 @@
                 <!-- Powers & Spiritual Practices -->
                 <section class="section">
                     <h2 class="section-title">Voices of Earth and Ancient Wisdom</h2>
-                    <div class="character-description">
-                        <p>The Free People's practices are recorded in the Historian's compendium as well as in the account, and the two agree: theirs is a knowledge kept outside temples and archives, carried in herbs, songs and custom.</p>
-                    </div>
-
                     <div class="powers-grid">
                         <div class="power-card spiritual">
                             <div class="power-title">Vision-Smoke</div>
                             <div class="power-description">
-                                <strong>What It Does:</strong> "reveal truth beneath surface appearances… pierce through divine disguises and reveal the essential nature of beings and objects" (compendium)<br>
                                 <strong>Marra's Words:</strong> "The smoke shows what words cannot. It reveals not who you claim to be — but who you are beneath the naming. Beneath the forgetting."<br>
-                                <strong>The Herbs:</strong> plants "known to open the mind, to blur the veil between waking and vision," added to the fire one by one "with reverent precision"; the compendium names truthweed, voidleaf, memorybark, spiritblossom and timesprout<br>
+                                <strong>The Herbs:</strong> plants "known to open the mind, to blur the veil between waking and vision," added to the fire one by one "with reverent precision"<br>
                                 <strong>Its Keeping:</strong> a bundle of hide "set apart from the rest of the community's belongings"
-                            </div>
-                        </div>
-
-                        <div class="power-card community">
-                            <div class="power-title">Governance</div>
-                            <div class="power-description">
-                                <strong>Circle Councils:</strong> "democratic decision-making bodies where all adult voices carry equal weight"<br>
-                                <strong>Wisdom Keepers:</strong> "elderly individuals who preserve important knowledge and provide guidance"<br>
-                                <strong>Path Walkers:</strong> "specialists who know safe routes through supernatural territories"<br>
-                                <strong>Truth Speakers and Bridge Builders:</strong> those trained to resist compulsion; those who carry word between tribes and settlements
                             </div>
                         </div>
 
@@ -660,18 +658,7 @@
                             <div class="power-description">
                                 <strong>Moving Through It:</strong> "a subtle path invisible to untrained eyes — an instinctual map known only to those who lived and breathed in rhythm with the wild"<br>
                                 <strong>Signs of Them:</strong> an improvised log bridge; trunks carved with old symbols; beehives hollowed from fallen wood; a carefully buried fire pit<br>
-                                <strong>Camp:</strong> branches and stretched hides in a loose circle; children learning to twist cord from bark<br>
-                                <strong>Sacred Sites:</strong> "caring for locations of supernatural significance" — the Lightning Oak among them
-                            </div>
-                        </div>
-
-                        <div class="power-card wisdom">
-                            <div class="power-title">Older Traditions</div>
-                            <div class="power-description">
-                                <strong>Nature Communion:</strong> "direct communication with plant and animal spirits"<br>
-                                <strong>Ancestor Reverence:</strong> "ongoing relationships with deceased family and tribal members"<br>
-                                <strong>Star Reading and Dream Sharing:</strong> navigation and prophecy by the sky; "collective exploration of the unconscious realm"<br>
-                                <strong>Memory:</strong> "living repositories of suppressed knowledge and alternative perspectives" — hidden archives, ways of escape, "truth verification"
+                                <strong>Camp:</strong> branches and stretched hides in a loose circle; children learning to twist cord from bark
                             </div>
                         </div>
                     </div>
@@ -720,7 +707,7 @@
 
                     <div class="wisdom-box">
                         <div class="wisdom-title">Why They Matter</div>
-                        Of all the mortals on the Wanderer's thousand-year road, the Free People are the ones with a rite for seeing what he is. Their vision-smoke, the compendium says, "can pierce through divine disguises" — and Marra orders it lit for the Stranger who speaks of gods as if he has argued with them. That the seeing happens by a shrine of grief and hope, at the roots of a tree that lightning could not kill, is the kind of thing this account does on purpose.
+                        Of all the mortals on the Wanderer's thousand-year road, the Free People are the ones with a rite for seeing what he is. Marra orders the seeing smoke lit for the Stranger who speaks of gods as if he has argued with them. That the seeing happens by a shrine of grief and hope, at the roots of a tree that lightning could not kill, is the kind of thing this account does on purpose.
                     </div>
 
                     <div class="character-quote">
@@ -760,7 +747,7 @@
                         <a href="tanneus-graja.html" class="related-character">
                             <div class="related-avatar">TG</div>
                             <div class="related-name">Tanneus G'Raja</div>
-                            <div class="related-role">The Historian whose compendium records their ways</div>
+                            <div class="related-role">The Historian of the account</div>
                         </a>
                     </div>
                 </section>
@@ -775,7 +762,7 @@
                 <div class="summary-content">
                     <p>Marra and the Free People are the community the Wanderer meets after the settled world has finished with him — nomads in a wild valley who keep a shrine at a wounded tree, share their fire with a stranger on condition of hearing his story, and possess, in the seeing smoke, a rite for learning "who you are beneath the naming." Marra herself is the account's clearest portrait of authority without institution: a grey-streaked woman whose word carries "like a quiet decree" and whose gaze misses nothing, least of all a practised explanation.</p>
 
-                    <p>The Historian's compendium places them in a wider frame: tribes outside every established authority, keeping traditions older than the temples, serving as "living repositories of suppressed knowledge." What the account adds is a face and a voice — "We bow to no distant rulers" — and a night by a fire in which people who have never been counted by any governor turn out to be the ones equipped to see a god.</p>
+                    <p>The account gives them a face and a voice — "We bow to no distant rulers" — and a night by a fire in which people who have never been counted by any governor turn out to be the ones equipped to see a god.</p>
 
                     <p>Their name is older than Marra's band. It belongs, in <em>The Divine War</em>, to the village of Astrid Ravenscroft in the age when mortals hid from the gods after dark — and what became of those Free People, and of the land they lived on, is that account's to tell. Here, in the east, at the roots of the Lightning Oak, it is enough that they are still free, still watching the roads, and still lighting the smoke for the strangers who come.</p>
                 </div>

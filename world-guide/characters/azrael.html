@@ -511,6 +511,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -518,7 +537,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Azrael</h1>
         <p class="character-tagline">"The Fallen Guardian"</p>
     </div>
@@ -577,7 +596,7 @@
                 <section class="section">
                     <h2 class="section-title">From Heaven's Protector to the Demon in the Woods</h2>
                     <div class="character-description">
-                        <p>Azrael was the God of Guardian Angels until the day he chose mercy over divine law. He commanded the protective hierarchy that stood between divine predators and mortal prey—the system the Historian's compendium says regulated divine-mortal interaction for millennia under his command—and he was cast from heaven for killing his corrupted brother. Now he walks the earth bearing the weight of necessary sin, and the people of Oakhaven, who have never heard his name, call him the forest demon.</p>
+                        <p>Azrael was the God of Guardian Angels until the day he chose mercy over divine law, and he was cast from heaven for killing his corrupted brother. Now he walks the earth bearing the weight of necessary sin, and the people of Oakhaven, who have never heard his name, call him the forest demon.</p>
 
                         <p>In the Weathered Willow Inn they tell it over their ale. The devil in the Dark Forest has been there longer than anyone's gran's gran could remember. He never ages a day, never shows his face in decent company. He is tall as a tree and twice as dark, with eyes that glow like hellfire—"same cursed green eyes that see right through your soul," and the same description passed from mother to daughter for a hundred years or more. Girls go missing up and down the valley and are found only as pools of blood. Children sing a rhyme about him: <em>The demon dwells in darkest wood / Where light fears to fall / He feasts on those who trust too much / And darkness takes them all.</em></p>
 
@@ -633,8 +652,7 @@
                         <div class="power-card divine">
                             <div class="power-title">God of Guardian Angels</div>
                             <div class="power-description">
-                                <strong>Office:</strong> Commander of the guardian angels—the protective hierarchy that stood between divine predators and mortal prey<br>
-                                <strong>Purpose:</strong> To prevent divine exploitation of mortals while maintaining beneficial contact between realms<br>
+                                <strong>Office:</strong> God of the Guardian Angels—the angels who protect mortals and do not walk the earth<br>
                                 <strong>Now:</strong> Cast out; the mortal world left without its protector
                             </div>
                         </div>
@@ -680,7 +698,7 @@
 
                         <div class="timeline-phase">
                             <div class="phase-label">Heaven's Guardian</div>
-                            <div class="phase-description">God of Guardian Angels, commanding the protectors who stood between mortals and those divine beings who would prey on them.</div>
+                            <div class="phase-description">God of Guardian Angels—the protectors of mortals.</div>
                         </div>
 
                         <div class="timeline-phase">
@@ -764,7 +782,7 @@
             <div class="summary-container">
                 <h2 class="summary-title">Grace Through Chosen Love</h2>
                 <div class="summary-content">
-                    <p>Azrael was the God of Guardian Angels—commander of the protective hierarchy that stood between divine predators and mortal prey—until the day he chose mercy over divine law, killed his corrupted brother, and was cast from heaven. He is one of the Wild Gods, and he walks the earth bearing the weight of necessary sin: a hermit in a cabin deep in the Dark Forest, ageless, black-haired, green-eyed, whom the crossroads village of Oakhaven has sung into a children's rhyme and blamed for every girl who has ever gone missing in the valley.</p>
+                    <p>Azrael was the God of Guardian Angels until the day he chose mercy over divine law, killed his corrupted brother, and was cast from heaven. He is one of the Wild Gods, and he walks the earth bearing the weight of necessary sin: a hermit in a cabin deep in the Dark Forest, ageless, black-haired, green-eyed, whom the crossroads village of Oakhaven has sung into a children's rhyme and blamed for every girl who has ever gone missing in the valley.</p>
 
                     <p>The reader first sees him as the villagers never have: crashing out of the night to kill the corrupted beast that has just torn a boy apart, taking its claws across his chest without a sound, and then asking a wounded tavern girl whether she will be all right before vanishing without giving his name. It is Rynn's refusal to accept the tavern's version of him—her stubborn insistence that monsters don't save people—that begins the tale proper.</p>
 

@@ -511,6 +511,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -518,7 +537,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Prince Eshuah</h1>
         <p class="character-tagline">"The Displaced Heir"</p>
     </div>
@@ -636,7 +655,7 @@
                                 <strong>Divine Recognition:</strong> Senses the ancient in Khali's song—"some songs predate humanity altogether"—and the light that clings to her edges<br>
                                 <strong>Two Shores:</strong> "That strange mixture of mortal and divine that his grandmother had called 'touching both shores but belonging to neither'"<br>
                                 <strong>Long Memory:</strong> "The Vaelari have long memories," Khali says, which is true enough without revealing anything dangerous<br>
-                                <strong>As Gods to Their People:</strong> The Historian's notes record the Vaelari as celestial-elven hybrids, and their volcanic islands as answering to their moods
+                                <strong>As Gods to Their People:</strong> The Historian's notes record the Vaelari as celestial-elven hybrids, "beautiful and terrible in their otherworldly power"
                             </div>
                         </div>
 
@@ -666,7 +685,7 @@
                                 <strong>The Alliance:</strong> Fayespire needs Moradim's wealth, trade routes and mainland connections; the marriage is his islands' survival<br>
                                 <strong>Court Manner:</strong> Courteous resignation; offers his arm and lets himself be led away from the river path when duty calls<br>
                                 <strong>Sword Forms:</strong> Practiced at dawn on the road; a prince trained as well as taught<br>
-                                <strong>Spices of Home:</strong> Cardamom and star anise, black salt from volcanic shores—Fayespire is a volcanic archipelago
+                                <strong>Spices of Home:</strong> Cardamom and star anise, black salt from volcanic shores, from the Fayespire markets
                             </div>
                         </div>
                     </div>
@@ -684,7 +703,7 @@
 
                         <div class="timeline-phase">
                             <div class="phase-label">Fayespire Childhood</div>
-                            <div class="phase-description">Raised among the Vaelari on volcanic islands where the tide's turning has a smell and a grandmother's stories tell of the old ones "wearing faces like masks."</div>
+                            <div class="phase-description">Raised among the Vaelari on islands where the tide's turning has a smell and a grandmother's stories tell of the old ones "wearing faces like masks."</div>
                         </div>
 
                         <div class="timeline-phase">
@@ -715,7 +734,7 @@
 
                     <div class="heritage-box">
                         <div class="heritage-title">The Vaelari</div>
-                        In the Historian's notes the Vaelari are celestial-elven hybrids—"born when celestial desire meets elven grace," beings who "drift through mist-veiled shores like walking poetry, beautiful and terrible in their otherworldly power." Their islands seem to answer to their moods, volcanic activity rising with collective distress and calming with peace. In Eshuah's day those islands were Fayespire; the world knows them now as Sommer Isle. What happened there in the Divine War to change the name is another tale.
+                        In the Historian's notes the Vaelari are celestial-elven hybrids—"born when celestial desire meets elven grace," beings who "drift through mist-veiled shores like walking poetry, beautiful and terrible in their otherworldly power." In Eshuah's day those islands were Fayespire; the world knows them now as Sommer Isle. What happened there in the Divine War to change the name is another tale.
                     </div>
 
                     <div class="character-quote">
@@ -773,7 +792,7 @@
             <div class="summary-container">
                 <h2 class="summary-title">The Radiant Vaelari of the Mural</h2>
                 <div class="summary-content">
-                    <p>Prince Eshuah of Fayespire is the displaced heir of the anthology's title card—a Vaelari, celestial-elven, brought across the Azure Expanse to secure by marriage the trade his volcanic islands cannot live without. He is contemplative to the point of silence, poetic to the point of exasperating his betrothed, and homesick in every line of his body. He carves driftwood into memories, asks strange questions about raindrops, and hears in a hedge-witch's lullaby something older than the twilight prayers of home.</p>
+                    <p>Prince Eshuah of Fayespire is the displaced heir of the anthology's title card—a Vaelari, celestial-elven, brought across the Azure Expanse to secure by marriage the trade his islands cannot live without. He is contemplative to the point of silence, poetic to the point of exasperating his betrothed, and homesick in every line of his body. He carves driftwood into memories, asks strange questions about raindrops, and hears in a hedge-witch's lullaby something older than the twilight prayers of home.</p>
 
                     <p>His grandmother taught him that the divine can't hide from eyes that carry even a drop of eternal blood, and the tale is in large part the story of what he sees when he looks at Khali—and what he chooses to do about a heart that "leans toward someone it has no right to want" while a kingdom's survival hangs on his duty. Those chapters are not yet online.</p>
 

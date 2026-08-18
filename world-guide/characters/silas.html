@@ -522,6 +522,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -529,7 +548,7 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Silas</h1>
         <p class="character-tagline">"The Trickster God"</p>
     </div>
@@ -555,7 +574,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Nature</div>
-                            <div class="stat-value">Divine—the Trickster God, who stands outside every faction</div>
+                            <div class="stat-value">Divine—the Trickster God</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Domain</div>
@@ -594,7 +613,7 @@
                     <div class="character-description">
                         <p>Silas is beautiful the way statues are beautiful—"all sharp angles and perfect proportions, as if someone had taken the ideal of masculine beauty and refined it past the point where human flesh could contain it." Silver hair catches lamplight like spun moonbeams; his eyes shift like liquid sunset, amber to gold, or reflect like oil on water, "reflecting everything and revealing nothing." His features never quite settle: now sharp and lovely, now ancient and wise, now something that hurts to look upon directly. He leans in doorways as if he owns the concept of ownership. He examines his nails with theatrical boredom, and his nails are claws.</p>
 
-                        <p>He is the god the anthology's showcase names simply "The Trickster God," and the guide's own history records his part in the age's ending: while other gods hunted mortals and the First Gods kept their distance, Silas watched and waited, and then offered a grieving village woman named Astrid Ravenscroft his own divine blood. From that gift came the Bloodmarked—mortals who could kill gods—and the first thread of the war that ended the age of open divine presence. His blood, he explains, has "certain properties"; where it touches an animal, the animal becomes one of the Beastborn. What it does to a human being who drinks it rather than merely touching it was, until Astrid, an open question.</p>
+                        <p>He is the god the anthology's showcase names simply "The Trickster God," and the guide's own history records his part in the age's ending: while other gods hunted mortals and the First Gods kept their distance, Silas watched and waited, and then offered a grieving village woman named Astrid Ravenscroft his own divine blood. From that gift came the Bloodmarked—mortals who could kill gods—and the first thread of the war that followed. His blood, he explains, has "certain properties"; where it touches an animal, the animal becomes one of the Beastborn. What it does to a human being who drinks it rather than merely touching it was, until Astrid, an open question.</p>
 
                         <p>His name, spoken in the villages, is passed "from mouth to ear like a contagion that might spread if spoken too loudly": Silas. The Trickster. The one who appears in moments of crisis to offer solutions that always come with prices no sane person would pay. He insists his gifts have no price. He also insists that a world so unbalanced will seek its own correction—and he seems, always, delighted at the prospect.</p>
                     </div>
@@ -669,7 +688,7 @@
                             <div class="power-title">Blood That Transforms</div>
                             <div class="power-description">
                                 <strong>Beastborn:</strong> Where his blood touches an animal, it becomes a creature "of extraordinary strength and ferocity"—wolves the size of horses, birds whose wingspans blot out the sun<br>
-                                <strong>Bloodmarked:</strong> A human who drinks it becomes something new; the Historian's compendium calls the result "no longer entirely mortal but not truly divine"<br>
+                                <strong>Bloodmarked:</strong> A human who drinks it becomes something new<br>
                                 <strong>Freely Offered:</strong> "Accept what I offer freely, without price or obligation beyond your own choices"<br>
                                 <strong>No Promises:</strong> "I cannot promise what this gift might become"
                             </div>
@@ -680,7 +699,7 @@
                             <div class="power-description">
                                 <strong>Warning:</strong> Told the assembled gods that a world so unbalanced would seek its own equilibrium—"something we may not be prepared for"<br>
                                 <strong>Prophecy or Plan:</strong> "Perhaps the hunters will become the hunted. Perhaps the strong will discover what it means to be prey"<br>
-                                <strong>Outside All Factions:</strong> Claims the Wild Gods' name when it suits him, and mocks the First Gods to their faces<br>
+                                <strong>A Wild God, When It Suits Him:</strong> Claims the Wild Gods' name when it suits him, and mocks the First Gods to their faces<br>
                                 <strong>Information:</strong> Prefers to be the one who tells heaven what is happening below—"Hearing it from a Murmelek would be just... tacky"
                             </div>
                         </div>
@@ -788,9 +807,9 @@
             <div class="summary-container">
                 <h2 class="summary-title">Possibility, at Any Price</h2>
                 <div class="summary-content">
-                    <p>Silas is the Trickster God of <em>The Divine War</em>—silver-haired, oil-eyed, clawed, and charming—who stands outside the war's two great factions and sets both of them moving. He is not one of the hunting gods; violence, he says, is the last thing on his mind. He is not one of the First Gods on their crystalline thrones, whom he taunts for changing "about as much as Leika's mountains move from their appointed spots." He calls himself a Wild God to a grieving woman when it suits him. What he loves, by his own account, is possibility: a future that, for the first time in eons, is unwritten.</p>
+                    <p>Silas is the Trickster God of <em>The Divine War</em>—silver-haired, oil-eyed, clawed, and charming—who sets the war moving. He is not one of the hunting gods; violence, he says, is the last thing on his mind. He is not one of the First Gods on their crystalline thrones, whom he taunts for changing "about as much as Leika's mountains move from their appointed spots." He calls himself a Wild God to a grieving woman when it suits him. What he loves, by his own account, is possibility: a future that, for the first time in eons, is unwritten.</p>
 
-                    <p>His instrument is his own blood. Freely offered—he is insistent on that—it made Astrid Ravenscroft the first of the Bloodmarked, and from that gift the guide's history traces the war that ended the age of open divine presence and the corruption that scarred the land. Whether the gift was salvation or a curse in disguise is argued from the first moment it is offered; the man at the forge says one thing and the woman by the river says another, and Silas is delighted by both.</p>
+                    <p>His instrument is his own blood. Freely offered—he is insistent on that—it made Astrid Ravenscroft the first of the Bloodmarked, and from that gift the guide's history traces the war that followed and the corruption that scarred the land. Whether the gift was salvation or a curse in disguise is argued from the first moment it is offered; the man at the forge says one thing and the woman by the river says another, and Silas is delighted by both.</p>
 
                     <p>He is also, in the tale, the one who says out loud what no one else will: that gods preyed on mortals with extreme violence and the universe will balance with extreme violence in return; that every choice echoes forward into futures no one intended; that the old order was rotting and had to break. The Historian's ending note, written centuries later, does not exactly disagree with him. It only counts the cost.</p>
                 </div>

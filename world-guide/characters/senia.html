@@ -536,6 +536,25 @@
                 grid-template-columns: 1fr;
             }
         }
+    
+        /* Inline text links — match the rest of the site */
+        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
+            color: #b19cd9;
+            text-decoration: none;
+            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
+            background-repeat: no-repeat;
+            background-size: 100% 1px;
+            background-position: 0 100%;
+            padding-bottom: 1px;
+            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
+        }
+        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
+            color: #ffffff;
+            background-size: 100% 2px;
+            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
+        }
+        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
+        .series-breadcrumb.secondary { opacity: 0.75; }
     </style>
 </head>
 <body>
@@ -543,9 +562,9 @@
 <!-- Header -->
 <section class="character-header">
     <div class="container">
-        <a href="/world-guide/" class="series-breadcrumb">← World Guide</a>
+        <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
         <h1 class="character-title">Senia</h1>
-        <p class="character-tagline">"Goddess of the sun, of blossoming life, of radiant beauty"</p>
+        <p class="character-tagline">"Goddess of the sun, of warmth and beauty and growing things"</p>
     </div>
 </section>
 
@@ -573,7 +592,7 @@
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">Domains</div>
-                            <div class="stat-value">Sun, blossoming life, radiant beauty</div>
+                            <div class="stat-value">The sun; warmth and beauty and growing things</div>
                         </div>
                         <div class="stat-item">
                             <div class="stat-label">This Life</div>
@@ -602,7 +621,7 @@
                 <section class="section">
                     <h2 class="section-title">Light Reborn in Endless Dawn</h2>
                     <div class="character-description">
-                        <p>In the stone-paved market square of Quenos, where morning light turns the sea mist to gold as it rises from the harbour, there is a woman with auburn hair who arranges peaches with careful, loving hands. She does not know that she is Senia, goddess of the sun, of blossoming life, of radiant beauty. To herself she is a fruit vendor with a comfortable rhythm of banter for a fair-haired stranger who favours her peaches above all other market goods, and a warmth in her voice that she reserves only for him—though she would never admit it aloud.</p>
+                        <p>In the stone-paved market square of Quenos, where morning light turns the sea mist to gold as it rises from the harbour, there is a woman with auburn hair who arranges peaches with careful, loving hands. She does not know that she is Senia, the sun incarnate, goddess of warmth and beauty and growing things. To herself she is a fruit vendor with a comfortable rhythm of banter for a fair-haired stranger who favours her peaches above all other market goods, and a warmth in her voice that she reserves only for him—though she would never admit it aloud.</p>
 
                         <p>She is one of the Wild Gods, and she is under a curse. Stripped of divinity and memory, she is reborn mortal, life after life, while Elodias—god of the moon and tides, her beloved since before the land was called Quenos—retains his immortality and his perfect recall and finds her again. Each finding gives them seven perfect days; then the sun sets on the seventh night, and fate claims its due. The Historian Tanneus G'Raja, who found on a windswept coast north of old Quenos a salt-crystallised journal full of her faces, believes he held "the grief of a god who remembers every life she lived, and every time she loved him—before the end came again."</p>
 
@@ -619,7 +638,7 @@
                 <section class="section">
                     <h2 class="section-title">The Radiant Heart</h2>
                     <div class="character-description">
-                        <p>Whether crowned or barefoot, whether she is selling sunlight in fruit or serving strangers beneath a creaking tavern sign, certain things about Senia do not change. The Historian's journal shows her face across dozens of lives—each different, each the same—and the woman of Quenos wears it with an unassuming warmth that other market girls envy and cannot imitate.</p>
+                        <p>Whether crowned or barefoot, whether she is selling peaches or serving strangers beneath a creaking tavern sign, certain things about Senia do not change. The Historian's journal shows her face across dozens of lives—each different, each the same—and the woman of Quenos wears it with an unassuming warmth that other market girls envy and cannot imitate.</p>
                     </div>
 
                     <div class="traits-grid">
@@ -778,10 +797,6 @@
                         </div>
                     </div>
 
-                    <div class="character-quote">
-                        Find me again... no matter how long it takes... no matter where I'm reborn... Find me... and help me remember... even if it's just for seven days...
-                        <div class="quote-source">— Senia, as the Historian's summary of the tale records her</div>
-                    </div>
                 </section>
 
                 <!-- Relationships -->
@@ -823,9 +838,9 @@
             <div class="summary-container">
                 <h2 class="summary-title">The Sun That Always Rises</h2>
                 <div class="summary-content">
-                    <p>Senia is the goddess of the sun, of blossoming life, of radiant beauty—and, in the life the Historian's tale opens upon, a fruit vendor in the market of Quenos who saves the best peach for a stranger with eyes the colour of a cloudless summer sky. She is one of the Wild Gods, bound by a curse woven from a lunar seer's jealousy: reborn mortal without memory of what she is, found by Elodias in every incarnation, loved for seven perfect days, and lost when the sun sets on the seventh night.</p>
+                    <p>Senia is the sun incarnate, goddess of warmth and beauty and growing things—and, in the life the Historian's tale opens upon, a fruit vendor in the market of Quenos who saves the best peach for a stranger with eyes the colour of a cloudless summer sky. She is one of the Wild Gods, bound by a curse woven from a lunar seer's jealousy: reborn mortal without memory of what she is, found by Elodias in every incarnation, loved for seven perfect days, and lost when the sun sets on the seventh night.</p>
 
-                    <p>What makes her poignant is her innocence. Unlike Elodias, who carries perfect memory across every cycle, she begins each life fresh, and each life the same essential fire burns through—in a queen who does not wait to speak, in a tavern woman smiling through her weariness, in a barefoot dancer, a soldier, a painter, and a woman arranging peaches with careful, loving hands. The bards say the market of Atheria still waits each spring for the girl who sells sunlight in fruit.</p>
+                    <p>What makes her poignant is her innocence. Unlike Elodias, who carries perfect memory across every cycle, she begins each life fresh, and each life the same essential fire burns through—in a queen who does not wait to speak, in a tavern woman smiling through her weariness, in a barefoot dancer, a soldier, a painter, and a woman arranging peaches with careful, loving hands.</p>
 
                     <p>Whether her love is worth what it costs is a question the tale puts to her, not to him; the answer it gives her is in Seven Days of Sun. The star-readers, for their part, have already written it in the sky: two lights circling eternally, one remembering, one forgetting.</p>
                 </div>
