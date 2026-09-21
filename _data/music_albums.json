@@ -1,0 +1,317 @@
+{
+  "chosen": [
+    {
+      "id": "electrofolk",
+      "edition": "Electrofolk",
+      "art": "The-Chosen-Electrofolk.png",
+      "spotify": "4a6HG5RNeYMlERyxFbGk6Y",
+      "soundcloud_id": "2289219852",
+      "soundcloud_slug": "the-chosen-electrofolk",
+      "intro": "The story of my dark fantasy novel, The Chosen, told through music. Each song follows Mira Roehart as a religious leader takes control of her coastal hometown, turning promises of salvation into a life she must escape.",
+      "sound": "This Electrofolk edition preserves the original soundtrack’s lyrics and melodies, adding electronic beats, bass, and textures to its Nordic instrumentation. War drums, pan flutes, and Hardanger fiddles retain the atmosphere of ancient forests and sacred rituals, with an electronic pulse carrying the story forward.",
+      "closing": "A companion to the novel and a musical telling of its story, exploring religious control, survival, and the choice to reclaim your life.",
+      "subtitle": "A 10-Track Journey Through Faith, Captivity, and the Fight for Freedom",
+      "tracks": [
+        {
+          "title": "The Light That Swallowed the Silence",
+          "description": "Lucien brings Zenith’s faith to Rivenglade, while Mira resists the devotion sweeping through her town."
+        },
+        {
+          "title": "Mother, Mother",
+          "description": "Mira searches for answers about her absent mother and finds belonging in the wild as those around her embrace the new faith."
+        },
+        {
+          "title": "Too Much Light Will Make You Blind",
+          "description": "A supernatural warning clashes with Mira’s loneliness, drawing her toward conversion despite knowing the cost."
+        },
+        {
+          "title": "Light and Shadow",
+          "description": "A duet pits Lucien’s promises of salvation against Mira’s refusal to surrender the wildness within her."
+        },
+        {
+          "title": "Something Ancient Rises",
+          "description": "During baptism, an ancient power in Mira’s blood rejects Lucien’s attempt to take control of her mind."
+        },
+        {
+          "title": "Forsaken",
+          "description": "A family is torn apart as a condemned man’s wife and community turn against him in the name of faith."
+        },
+        {
+          "title": "Still Water",
+          "description": "Forced to marry Lucien to protect her friend, Mira conceals her terror beneath the appearance of a willing bride."
+        },
+        {
+          "title": "Holy Ghost",
+          "description": "Isolated in Lucien’s home, Mira struggles with abuse, dissociation, and the loss of her sense of self."
+        },
+        {
+          "title": "Run From the Light",
+          "description": "At her lowest point, an encounter in the forest awakens her magic and gives her a reason to live—and run."
+        },
+        {
+          "title": "Into the Unknown Wild",
+          "description": "Mira breaks free during an attack on the temple, choosing the dangers of the forest over the captivity she knows."
+        }
+      ],
+      "status": "Available now"
+    },
+    {
+      "id": "original",
+      "edition": "Original Soundtrack",
+      "art": "The-Chosen-Soundtrack.png",
+      "spotify": "5nd4UTi7DYPwxiDuqzqHQN",
+      "soundcloud_id": "2091897863",
+      "soundcloud_slug": "the-chosen-soundtrack",
+      "intro": "The story of my dark fantasy novel, The Chosen, told through music. Each song follows Mira Roehart as a religious leader takes control of her coastal hometown, turning promises of salvation into a life she must escape.",
+      "sound": "War drums, pan flutes, Hardanger fiddles, and layered vocal lamentations create an epic folk sound rooted in Nordic instrumentation. The music carries the atmosphere of ancient forests and sacred rituals through Mira’s resistance, captivity, and awakening.",
+      "closing": "A companion to the novel and a musical telling of its story, exploring religious control, survival, and the choice to reclaim your life.",
+      "subtitle": "A 10-Track Journey Through Faith, Captivity, and the Fight for Freedom",
+      "tracks": [
+        {
+          "title": "The Light That Swallowed the Silence",
+          "description": "Lucien brings Zenith’s faith to Rivenglade, while Mira resists the devotion sweeping through her town."
+        },
+        {
+          "title": "Mother, Mother",
+          "description": "Mira searches for answers about her absent mother and finds belonging in the wild as those around her embrace the new faith."
+        },
+        {
+          "title": "Too Much Light Will Make You Blind",
+          "description": "A supernatural warning clashes with Mira’s loneliness, drawing her toward conversion despite knowing the cost."
+        },
+        {
+          "title": "Light and Shadow",
+          "description": "A duet pits Lucien’s promises of salvation against Mira’s refusal to surrender the wildness within her."
+        },
+        {
+          "title": "Something Ancient Rises",
+          "description": "During baptism, an ancient power in Mira’s blood rejects Lucien’s attempt to take control of her mind."
+        },
+        {
+          "title": "Forsaken",
+          "description": "A family is torn apart as a condemned man’s wife and community turn against him in the name of faith."
+        },
+        {
+          "title": "Still Water",
+          "description": "Forced to marry Lucien to protect her friend, Mira conceals her terror beneath the appearance of a willing bride."
+        },
+        {
+          "title": "Holy Ghost",
+          "description": "Isolated in Lucien’s home, Mira struggles with abuse, dissociation, and the loss of her sense of self."
+        },
+        {
+          "title": "Run From the Light",
+          "description": "At her lowest point, an encounter in the forest awakens her magic and gives her a reason to live—and run."
+        },
+        {
+          "title": "Into the Unknown Wild",
+          "description": "Mira breaks free during an attack on the temple, choosing the dangers of the forest over the captivity she knows."
+        }
+      ],
+      "status": "Available now"
+    },
+    {
+      "id": "instrumental",
+      "edition": "Instrumental",
+      "art": "The-Chosen-Instrumentals.PNG",
+      "spotify": "5gLyKNM4GlcZuAQAZH4Xbf",
+      "soundcloud_id": "2264341445",
+      "soundcloud_slug": "the-chosen-instrumentals",
+      "intro": "An instrumental companion to my dark fantasy novel, The Chosen, following the musical journey of its original soundtrack without lyrics. Each track reflects a stage of Mira Roehart’s story as a religious leader takes control of her hometown and she fights to reclaim her freedom.",
+      "sound": "War drums, pan flutes, and Hardanger fiddles create an epic folk sound rooted in Nordic instrumentation. Ancient forests, sacred rituals, and the tension between captivity and escape shape the album’s atmosphere, with instruments carrying the emotion of each scene.",
+      "closing": "A wordless companion to the novel, carrying its fear, sorrow, and defiance through the sound of its world.",
+      "subtitle": "A 10-Track Journey Through Faith, Captivity, and the Fight for Freedom",
+      "tracks": [
+        {
+          "title": "The Light That Swallowed the Silence",
+          "description": "The arrival of a new faith and the unease beneath its promises."
+        },
+        {
+          "title": "Mother, Mother",
+          "description": "Mira’s longing for her absent mother and the belonging she finds in the wild."
+        },
+        {
+          "title": "Too Much Light Will Make You Blind",
+          "description": "The struggle between trusting a warning and surrendering to the need to belong."
+        },
+        {
+          "title": "Light and Shadow",
+          "description": "The conflict between Lucien’s demand for devotion and Mira’s desire to remain free."
+        },
+        {
+          "title": "Something Ancient Rises",
+          "description": "The power in Mira’s blood awakens against a ritual meant to control her."
+        },
+        {
+          "title": "Forsaken",
+          "description": "A family’s destruction as faith turns love into rejection."
+        },
+        {
+          "title": "Still Water",
+          "description": "The hidden terror of a forced marriage beneath the ceremony’s calm surface."
+        },
+        {
+          "title": "Holy Ghost",
+          "description": "Isolation, grief, and Mira’s fading connection to herself."
+        },
+        {
+          "title": "Run From the Light",
+          "description": "Despair gives way to awakening and the determination to escape."
+        },
+        {
+          "title": "Into the Unknown Wild",
+          "description": "The flight from captivity into a dangerous, uncertain freedom."
+        }
+      ],
+      "status": "Available now"
+    }
+  ],
+  "silence": [
+    {
+      "id": "electrofolk",
+      "edition": "Electrofolk",
+      "art": "the-silence-soundtrack-electrofolk.png",
+      "spotify": "",
+      "soundcloud_id": "2092920983",
+      "soundcloud_slug": "the-silence-soundtrack",
+      "intro": "The story of my dark fantasy novel, Blood of the Wild Gods: The Silence, told through music. Each song follows its characters and events as an ancient god awakens, drawing five lives into a struggle against the unmaking of their world.",
+      "sound": "Celtic and Nordic folk instruments meet electronic bass, melodic rap, layered choirs, and glitch effects, carrying the story from its first whispers to its final battle.",
+      "closing": "A companion to the novel and a story told through music, about corrupted faith, found family, and what people will give to protect one another.",
+      "subtitle": "A 15-Track Journey Through Gods, Monsters, and the Cost of Saving the World",
+      "tracks": [
+        {
+          "title": "The Silent God Awakens (Electrofolk)",
+          "description": "An ancient presence stirs, disturbing nature and whispering into five mortal minds."
+        },
+        {
+          "title": "The Silent God Awakens (Nocturnal)",
+          "description": "An alternate musical telling of the opening chapter."
+        },
+        {
+          "title": "The Silver Hunter",
+          "description": "Kaelen discovers the monstrous blood within him connects him to the creatures he hunts."
+        },
+        {
+          "title": "The Blooming Whisper",
+          "description": "Elowen faces the temptation of power beyond healing and the fear of losing herself to it."
+        },
+        {
+          "title": "The Phoenix Blade",
+          "description": "Living in his brother’s shadow, Dain finds his ambition answered by a voice urging him to burn."
+        },
+        {
+          "title": "The Stray",
+          "description": "Young Ryx flees his clan’s sacrificial altar, helped by his mother and hunted by his father."
+        },
+        {
+          "title": "The Inquisitor",
+          "description": "Mordain executes the Bloodmarked, certain his cruelty serves the gods."
+        },
+        {
+          "title": "A Silent Pact",
+          "description": "Three outcasts choose to stand together as Dain turns a kingdom toward tyranny."
+        },
+        {
+          "title": "Revelations",
+          "description": "Mordain discovers his holy crusade has destroyed the very people meant to protect the world."
+        },
+        {
+          "title": "As the Bards Sing It",
+          "description": "A bard’s lament recounts Solara’s fall and the darkness taking possession of its prince."
+        },
+        {
+          "title": "Trial of Gods",
+          "description": "Four companions enter the Awakening Tomb, confronting their deepest fears and the price of victory."
+        },
+        {
+          "title": "Long Live the Silence",
+          "description": "Wearing Dain’s face and crown, the Silent God begins erasing the world."
+        },
+        {
+          "title": "Even Without Me",
+          "description": "Mordain gives a final farewell, choosing to surrender his existence so others can live."
+        },
+        {
+          "title": "Break the Crown",
+          "description": "Kaelen confronts the Silent God, while Elowen fights to save him from his own unleashed power."
+        },
+        {
+          "title": "Sing Again",
+          "description": "The world begins to recover, carrying its losses into a future made possible by sacrifice."
+        }
+      ],
+      "status": "Listen on SoundCloud"
+    },
+    {
+      "id": "dark-folk",
+      "edition": "Dark Folk",
+      "art": "the-silence-soundtrack-darkfolk.png",
+      "spotify": "",
+      "soundcloud_id": "2300744067",
+      "soundcloud_slug": "the-silence-dark-folk",
+      "intro": "The story of my dark fantasy novel, Blood of the Wild Gods: The Silence, told through music. Each song follows its characters and events as an ancient god awakens, drawing five lives into a struggle against the unmaking of their world.",
+      "sound": "This Dark Folk edition reimagines the Electrofolk album’s lyrics with different melodies and a darker, smoother sound. Bluesy vocals and folk textures blend with chillwave atmosphere, house rhythms, and electronic details, giving the story a more nocturnal feel.",
+      "closing": "A companion to the novel and a musical telling of its story, exploring corrupted faith, found family, and what people will give to protect one another.",
+      "subtitle": "A 14-Track Journey Through Gods, Monsters, and the Cost of Saving the World",
+      "tracks": [
+        {
+          "title": "The Silent God Awakens",
+          "description": "An ancient presence stirs, disturbing nature and whispering into five mortal minds."
+        },
+        {
+          "title": "The Silver Hunter",
+          "description": "Kaelen discovers the monstrous blood within him connects him to the creatures he hunts."
+        },
+        {
+          "title": "The Blooming Whisper",
+          "description": "Elowen faces the temptation of power beyond healing and the fear of losing herself to it."
+        },
+        {
+          "title": "The Phoenix Blade",
+          "description": "Living in his brother’s shadow, Dain finds his ambition answered by a voice urging him to burn."
+        },
+        {
+          "title": "The Stray",
+          "description": "Young Ryx flees his clan’s sacrificial altar, helped by his mother and hunted by his father."
+        },
+        {
+          "title": "The Inquisitor",
+          "description": "Mordain executes the Bloodmarked, certain his cruelty serves the gods."
+        },
+        {
+          "title": "A Silent Pact",
+          "description": "Three outcasts choose to stand together as Dain turns a kingdom toward tyranny."
+        },
+        {
+          "title": "Revelations",
+          "description": "Mordain discovers his holy crusade has destroyed the very people meant to protect the world."
+        },
+        {
+          "title": "As the Bards Sing It",
+          "description": "A bard’s lament recounts Solara’s fall and the darkness taking possession of its prince."
+        },
+        {
+          "title": "Trial of Gods",
+          "description": "Four companions enter the Awakening Tomb, confronting their deepest fears and the price of victory."
+        },
+        {
+          "title": "Long Live the Silence",
+          "description": "Wearing Dain’s face and crown, the Silent God begins erasing the world."
+        },
+        {
+          "title": "Even Without Me",
+          "description": "Mordain gives a final farewell, choosing to surrender his existence so others can live."
+        },
+        {
+          "title": "Break the Crown",
+          "description": "Kaelen confronts the Silent God, while Elowen fights to save him from his own unleashed power."
+        },
+        {
+          "title": "Sing Again",
+          "description": "The world begins to recover, carrying its losses into a future made possible by sacrifice."
+        }
+      ],
+      "status": "In progress · Hear the previews"
+    }
+  ]
+}

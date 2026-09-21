@@ -1,0 +1,34 @@
+<article class="album-section" id="{{ album.id }}">
+  <div class="album-art-column">
+    <img class="album-cover" src="/assets/images/{{ album.art }}" alt="{{ page.album_title }}: {{ album.edition }} album cover" width="700" height="700" loading="lazy">
+    <span class="music-eyebrow album-status">{{ album.status }}</span>
+  </div>
+  <div class="album-copy">
+    <p class="music-eyebrow">{{ page.album_title }}</p>
+    <h2>{{ album.edition }}</h2>
+    <p class="album-subtitle">{{ album.subtitle }}</p>
+    <p>{{ album.intro }}</p>
+    <p>{{ album.sound }}</p>
+    <p>{{ album.closing }}</p>
+    {% if album.id == 'dark-folk' %}<p class="music-note">I’m still working on this edition. Listen to the previews on SoundCloud as the album takes shape.</p>{% endif %}
+    <div class="album-player" data-player>
+      {% if album.spotify != '' %}
+      <div class="player-switch" aria-label="Choose a listening platform" hidden>
+        <button type="button" data-platform="spotify" aria-pressed="true">Spotify</button>
+        <button type="button" data-platform="soundcloud" aria-pressed="false">SoundCloud</button>
+      </div>
+      <iframe data-service="spotify" title="{{ page.album_title }} {{ album.edition }} on Spotify" src="https://open.spotify.com/embed/album/{{ album.spotify }}?theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      {% endif %}
+      <iframe data-service="soundcloud" title="{{ page.album_title }} {{ album.edition }} on SoundCloud" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A{{ album.soundcloud_id }}&amp;color=%23000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true" width="100%" height="450" allow="autoplay; encrypted-media" loading="lazy"></iframe>
+    </div>
+    <div class="music-actions">
+      {% if album.spotify != '' %}<a href="https://open.spotify.com/album/{{ album.spotify }}" data-music-platform="spotify">Open in Spotify ↗</a>{% endif %}
+      <a href="https://soundcloud.com/mileena_rayne/sets/{{ album.soundcloud_slug }}" data-music-platform="soundcloud">Open in SoundCloud ↗</a>
+    </div>
+    {% if page.album_group == 'chosen' and album.id != 'instrumental' %}<p class="content-note"><strong>Content note:</strong> Religious abuse, forced marriage, sexual violence, and suicidal despair.</p>{% endif %}
+    <details class="track-guide">
+      <summary>Track descriptions <span>Contains novel spoilers</span></summary>
+      <ol>{% for track in album.tracks %}<li><h3>{{ track.title }}</h3><p>{{ track.description }}</p></li>{% endfor %}</ol>
+    </details>
+  </div>
+</article>
