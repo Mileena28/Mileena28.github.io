@@ -1,0 +1,23 @@
+
+.astrology-book .astrology-two,.astrology-basics { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:25px; }
+.astrology-basics { margin:30px 0; }
+.astrology-basics article { padding:25px; background:#211b2880; border-top:1px solid #695375; }
+.astrology-basics span { color:#c6b7e8; font:.75rem/1.6 Arial,sans-serif; }
+.astrology-basics h3 { font:1.6rem/1.5 Georgia,serif; margin:15px 0; }
+.astrology-basics p { color:#c4bfce; }
+.astrology-book .oracle-intro a { color:#d2c2eb; text-underline-offset:4px; }
+.astrology-connections { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding-left:25px; color:#d2c8da; }
+.astrology-book .world-card.burning { border-top-color:#b89e75; }
+@media(max-width:600px) { .astrology-book .astrology-two,.astrology-basics,.astrology-connections { grid-template-columns:1fr; } }
+.astrology-book .astrology-table { min-width:0; margin:15px 0 25px; }
+.astrology-book .astrology-table caption { text-align:left; color:#e6d8ec; font:1.2rem/1.5 Georgia,serif; margin-bottom:20px; }
+.astrology-book .astrology-table tbody tr:nth-child(even) { background:#211b2860; }
+@media(max-width:600px) {
+
+ .astrology-book .astrology-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+ .astrology-book .astrology-table,.astrology-book .astrology-table tbody,.astrology-book .astrology-table tr { display:block; }
+ .astrology-book .astrology-table tr { border:1px solid #493d52; padding:12px; margin-bottom:15px; }
+ .astrology-book .astrology-table td { display:grid; grid-template-columns:72px minmax(0,1fr); gap:12px; border:0; padding:7px 0; }
+ .astrology-book .astrology-table td::before { content:attr(data-label); color:#c6b7e8; font-size:.75rem; }
+}
+@media(max-width:600px) { .astrology-book .astrology-table caption { display:block; width:100%; } }
