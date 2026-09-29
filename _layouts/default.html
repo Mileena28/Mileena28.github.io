@@ -215,13 +215,13 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header{% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page or page.world_page %} home-header{% endif %}">
+    <header class="header{% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page or page.world_page or page.book_detail_page %} home-header{% endif %}">
         <div class="container">
             <div class="nav-container">
                 <a href="/" class="logo">{{ site.title }}</a>
-                {% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page or page.world_page %}
+                {% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page or page.world_page or page.book_detail_page %}
                 <nav class="nav" aria-label="Main navigation">
-                    <a href="/writing/"{% if page.books_page %} class="active" aria-current="page"{% endif %}>Books</a>
+                    <a href="/writing/"{% if page.books_page or page.book_detail_page %} class="active" aria-current="page"{% endif %}>Books</a>
                     <a href="/music/">Music</a>
                     <a href="/world-guide/"{% if page.world_page %} class="active" aria-current="page"{% endif %}>World Guide</a>
                     <a href="/diary/"{% if page.diary_page %} class="active" aria-current="page"{% endif %}>Diary & Stories</a>
@@ -231,7 +231,7 @@
                 <details class="home-mobile-menu">
                     <summary>Menu</summary>
                     <nav aria-label="Mobile navigation">
-                        <a href="/writing/"{% if page.books_page %} class="active" aria-current="page"{% endif %}>Books</a>
+                        <a href="/writing/"{% if page.books_page or page.book_detail_page %} class="active" aria-current="page"{% endif %}>Books</a>
                         <a href="/music/">Music</a>
                         <a href="/world-guide/"{% if page.world_page %} class="active" aria-current="page"{% endif %}>World Guide</a>
                         <a href="/diary/">Diary</a>
