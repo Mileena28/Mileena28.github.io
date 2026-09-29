@@ -76,6 +76,10 @@
 .home-connect-actions { display: flex; flex-direction: column; gap: 14px; align-items: center; flex-shrink: 0; }
 .home-skip { position: fixed; top: 8px; left: 12px; z-index: 200; transform: translateY(-200%); background: #17131e; padding: 12px 20px; }
 .home-skip:focus { transform: translateY(0); }
+.home-visitor-note { margin: 0 0 52px; padding: clamp(28px, 5vw, 52px) clamp(24px, 6vw, 70px); border-top: 1px solid var(--home-line); border-bottom: 1px solid var(--home-line); text-align: center; }
+.home-visitor-note blockquote { max-width: 820px; margin: 0 auto; font-size: clamp(1.05rem, 1.6vw, 1.3rem); font-style: italic; }
+.home-visitor-note blockquote span { color: var(--home-lilac); overflow-wrap: anywhere; }
+.home-visitor-note figcaption { margin-top: 23px; color: var(--home-lilac); font: .65rem/1.7 Arial, sans-serif; text-transform: uppercase; letter-spacing: .16em; }
 /* A compact navigation on the homepage, with every section still reachable. */
 .home-header { padding: 22px 0; }
 .home-header .nav { gap: 28px; }
