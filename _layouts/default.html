@@ -214,10 +214,33 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header{% if page.homepage %} home-header{% endif %}">
         <div class="container">
             <div class="nav-container">
                 <a href="/" class="logo">{{ site.title }}</a>
+                {% if page.homepage %}
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="/writing/">Books</a>
+                    <a href="/music/">Music</a>
+                    <a href="/world-guide/">World Guide</a>
+                    <a href="/diary/">Diary & Stories</a>
+                    <a href="/about/">About</a>
+                    <a href="/contact/">Contact</a>
+                </nav>
+                <details class="home-mobile-menu">
+                    <summary>Menu</summary>
+                    <nav aria-label="Mobile navigation">
+                        <a href="/writing/">Books</a>
+                        <a href="/music/">Music</a>
+                        <a href="/world-guide/">World Guide</a>
+                        <a href="/diary/">Diary</a>
+                        <a href="/feed/">The Feed</a>
+                        <a href="/survivor-stories/">Survivor Stories</a>
+                        <a href="/about/">About</a>
+                        <a href="/contact/">Contact</a>
+                    </nav>
+                </details>
+                {% else %}
                 <nav class="nav">
                     <a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a>
                     <a href="/diary/" {% if page.url contains "diary" %}class="active"{% endif %}>Diary</a>
@@ -229,6 +252,7 @@
                     <a href="/about/" {% if page.url contains "about" %}class="active"{% endif %}>About</a>
                     <a href="/contact/" {% if page.url contains "contact" %}class="active"{% endif %}>Contact</a>
                 </nav>
+                {% endif %}
             </div>
         </div>
     </header>
