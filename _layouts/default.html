@@ -211,19 +211,20 @@
             scroll-behavior: smooth;
         }
     </style>
+    <link rel="stylesheet" href="{{ '/assets/css/site-footer.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
     <!-- Header -->
-    <header class="header{% if page.homepage or page.books_page or page.contact_page or page.about_page %} home-header{% endif %}">
+    <header class="header{% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page %} home-header{% endif %}">
         <div class="container">
             <div class="nav-container">
                 <a href="/" class="logo">{{ site.title }}</a>
-                {% if page.homepage or page.books_page or page.contact_page or page.about_page %}
+                {% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page %}
                 <nav class="nav" aria-label="Main navigation">
                     <a href="/writing/"{% if page.books_page %} class="active" aria-current="page"{% endif %}>Books</a>
                     <a href="/music/">Music</a>
                     <a href="/world-guide/">World Guide</a>
-                    <a href="/diary/">Diary & Stories</a>
+                    <a href="/diary/"{% if page.diary_page %} class="active" aria-current="page"{% endif %}>Diary & Stories</a>
                     <a href="/about/"{% if page.about_page %} class="active" aria-current="page"{% endif %}>About</a>
                     <a href="/contact/"{% if page.contact_page %} class="active" aria-current="page"{% endif %}>Contact</a>
                 </nav>
@@ -262,25 +263,7 @@
         {{ content }}
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-nav">
-                <a href="/diary/">Diary</a>
-                <a href="/feed/">Feed</a>
-                <a href="/music/">Music</a>
-                <a href="/writing/">Writing</a>
-                <a href="/world-guide/">World Guide</a>
-                <a href="/survivor-stories/">Survivor Stories</a>
-                <a href="/about/">About</a>
-                <a href="/contact/">Contact</a>
-            </div>
-            <div class="footer-content">
-                <p>&copy; 2025 {{ site.title }}. All rights reserved.</p>
-                <p>Built with authenticity, vulnerability, and a lot of late-night thoughts.</p>
-            </div>
-        </div>
-    </footer>
+    {% include site-footer.html %}
     
     <!-- User Experience Enhancements -->
     <script src="/user-enhancements.js"></script>

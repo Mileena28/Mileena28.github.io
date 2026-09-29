@@ -1,0 +1,29 @@
+<footer class="site-footer" aria-label="Site footer">
+  <div class="site-footer-wrap">
+    <div class="site-footer-main">
+      <div class="site-footer-intro">
+        <a class="site-footer-name" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <p>Books, music, and a little of my life.</p>
+        <a class="site-footer-contact" href="{{ '/contact/' | relative_url }}">Get in touch or ask a question →</a>
+      </div>
+      <nav class="site-footer-links" aria-label="Explore my work">
+        <h2>Explore</h2>
+        <a href="{{ '/writing/' | relative_url }}">Books</a>
+        <a href="{{ '/music/' | relative_url }}">Music</a>
+        <a href="{{ '/world-guide/' | relative_url }}">World Guide</a>
+      </nav>
+      <nav class="site-footer-links" aria-label="Diary and stories">
+        <h2>Read &amp; connect</h2>
+        <a href="{{ '/diary/' | relative_url }}">Diary &amp; Stories</a>
+        <a href="{{ '/feed/' | relative_url }}">The Feed</a>
+        <a href="{{ '/survivor-stories/' | relative_url }}">Survivor Stories</a>
+        <a href="{{ '/about/' | relative_url }}">About me</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact &amp; Q&amp;A</a>
+      </nav>
+    </div>
+    <div class="site-footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      <a href="{{ '/' | relative_url }}">Back to home ↑</a>
+    </div>
+  </div>
+</footer>
