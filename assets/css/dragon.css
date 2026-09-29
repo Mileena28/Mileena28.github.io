@@ -1,0 +1,27 @@
+.dragon-cover { width:100%; }
+.dragon-cover-art { min-height:430px; padding:38px 25px; display:flex; flex-direction:column; align-items:center; justify-content:space-between; text-align:center; border:1px solid #655172; outline:1px solid #49394e; outline-offset:-12px; background:radial-gradient(ellipse at 50% 25%,#41304d,#1a1522 70%); box-shadow:0 20px 45px #0007; }
+.dragon-cover-art > span:not(.dragon-star) { font:.65rem/1.8 Arial,sans-serif; letter-spacing:.15em; text-transform:uppercase; color:#c6b7d7; }
+.dragon-cover-art strong { font:2.6rem/1.15 Georgia,serif; color:#eee5f4; }
+.dragon-star { color:#c9addd; font-size:5rem; }
+.dragon-trilogy,.dragon-related { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:30px 0 0; padding:0; list-style:none; }
+.dragon-trilogy li,.dragon-related > a { padding:28px; border-top:1px solid #735982; background:#211b2880; }
+.dragon-trilogy span,.dragon-related span { font:.72rem/1.6 Arial,sans-serif; color:#c6b7e8; text-transform:uppercase; letter-spacing:.08em; }
+.dragon-page .dragon-trilogy h3,.dragon-related h3 { font-size:1.65rem; margin:18px 0; }
+.dragon-trilogy p,.dragon-related p,.dragon-intro,.dragon-lore p { color:#c4bfce; }
+.dragon-quotes { display:grid; grid-template-columns:1fr 1fr; gap:35px; margin-top:30px; }
+.dragon-quotes figure { margin:0; border-left:2px solid #836994; padding:8px 0 8px 28px; }
+.dragon-quotes blockquote { margin:0; font:1.17rem/1.9 Georgia,serif; color:#e2d6ec; }
+.dragon-quotes figcaption { font:.75rem/1.7 Arial,sans-serif; color:#c4bfce; margin-top:20px; }
+.dragon-intro { max-width:740px; margin:22px 0 32px; }
+.dragon-page .dragon-lore a,.dragon-intro a { color:#d2c2eb; text-underline-offset:4px; }
+.dragon-lore details { border-top:1px solid #493d52; }
+.dragon-lore details:last-child { border-bottom:1px solid #493d52; }
+.dragon-lore summary { cursor:pointer; padding:24px 5px; color:#e3d6ed; font:1.35rem/1.5 Georgia,serif; }
+.dragon-lore details > div { max-width:850px; padding:0 5px 20px; }
+.dragon-lore p { margin-bottom:20px; }
+.dragon-related > a { text-decoration:none; display:flex; flex-direction:column; }
+.dragon-related > a:hover { background:#302539; }
+.dragon-related b { color:#d2c2eb; font:.8rem/1.7 Arial,sans-serif; padding-top:22px; margin-top:auto; }
+.dragon-page a:focus-visible,.dragon-lore summary:focus-visible { outline:2px solid #d4b8ef; outline-offset:5px; }
+@media(max-width:750px) { .dragon-trilogy,.dragon-related,.dragon-quotes { grid-template-columns:1fr; } }
+@media(max-width:600px) { .dragon-cover-art { min-height:330px; padding:30px 20px; } .dragon-cover-art strong { font-size:2rem; } .dragon-star { font-size:3.4rem; } }
