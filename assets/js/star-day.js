@@ -96,12 +96,32 @@
     ctx.fillStyle='#f0e8f6';ctx.font=`${size}px Georgia`;quote.forEach(line=>{ctx.fillText(line,540,y);y+=size*1.45;});
     ctx.fillStyle='#c5afd5';ctx.font='25px Arial';ctx.fillText('ARCADIAN ASTROLOGY · MILEENA RAYNE',540,1210);ctx.font='24px Arial';ctx.fillText('mileenarayne.com/astrology',540,1250);
     const image = node('img');image.src=canvas.toDataURL('image/png');image.alt=`Share card: ${title}. ${subtitle}. ${clean(excerpt)}`;image.width=1080;image.height=1350;
-    const controls=node('div');controls.append(node('h4','Share your stars'));paragraph(controls,'Share a link to this reading. Only your signs and reading are included—not the dates or times you entered.');
+    const controls=node('div');controls.append(node('h4','Share your stars'));paragraph(controls,'Share the card image directly to a message or another app. Copy link shares the written reading instead. Neither includes the birth dates or times you entered.');
     const url='https://mileenarayne.com/astrology/#reading?'+new URLSearchParams(identity).toString();
-    const actions=node('div','','home-actions'),share=node('button','Share reading','home-button'),copy=node('button','Copy link','home-button'),status=node('p','','star-share-status');status.setAttribute('role','status');share.type=copy.type='button';
+    const actions=node('div','','home-actions'),share=node('button','Share card','home-button'),copy=node('button','Copy link','home-button'),status=node('p','','star-share-status');status.setAttribute('role','status');share.type=copy.type='button';
     const copyLink=async()=>{try{await navigator.clipboard.writeText(url);status.textContent='Reading link copied.';}catch{status.replaceChildren(node('span','Copy this link: '));const field=node('input');field.type='text';field.readOnly=true;field.value=url;field.setAttribute('aria-label','Reading link');status.append(field);field.focus();field.select();}};
     copy.addEventListener('click',copyLink);
-    share.addEventListener('click',async()=>{if(!navigator.share){await copyLink();return;}try{await navigator.share({title:'Arcadian Astrology',text:clean(title+' — '+subtitle),url});}catch(error){if(error.name!=='AbortError') await copyLink();}});
+    let cardFile;
+    share.disabled=true;
+    const unavailable=()=>{share.hidden=true;status.textContent='This browser cannot share images directly. You can copy the reading link or touch and hold the card to see your device’s image options.';};
+    // Prepare the image before the tap to preserve mobile share-sheet activation.
+    if(navigator.share && navigator.canShare){
+      canvas.toBlob(blob=>{
+        if(!blob){unavailable();return;}
+        cardFile=new File([blob],filename+'.png',{type:'image/png'});
+        if(navigator.canShare({files:[cardFile]})) share.disabled=false;
+        else unavailable();
+      },'image/png');
+    } else unavailable();
+    share.addEventListener('click',async()=>{
+      if(!cardFile)return;
+      try{
+        // File only: sending a URL here can make messaging apps choose a link preview.
+        await navigator.share({files:[cardFile]});
+      }catch(error){
+        status.textContent=error.name==='AbortError'?'Sharing canceled. Your card is still here.':'The card could not be shared. Try again, or touch and hold the card for your device’s image options.';
+      }
+    });
     actions.append(share,copy);controls.append(actions,status);card.append(image,controls);parent.append(card);
   }
   function sharedReading() {
