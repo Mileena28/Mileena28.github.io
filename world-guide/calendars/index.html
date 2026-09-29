@@ -1702,6 +1702,13 @@ twitter:image: "/assets/images/blood-of-the-wild-gods.png"
                 </div>
             </section>
 
+<section class="constellations-section" id="constellation-timeline" aria-labelledby="constellation-history-title">
+<div class="section-header"><p><a href="/astrology/">Find your Star Day, compare birthdays, and read today’s horoscope →</a></p><h2 class="section-title" id="constellation-history-title">When the stars became history</h2><p class="section-description">Five constellations have manifested in the story timeline; seven remain prophesied. This follows events within the world, not publication order. A constellation can already exist even when the book telling its origin is still in progress.</p></div>
+<p class="section-description">Athea’s Almanac belongs to the Great Withdrawal, when four constellations had manifested. The Awakener follows later, in <em>The Silence</em>. The oracle books stay in their own time; this guide can follow later developments. These entries reveal story events.</p>
+<div class="constellation-grid">{% for star in site.data.constellation_timeline %}<article class="constellation-card existing-constellation"><h3 class="constellation-title">{{ star.name }}</h3><p class="constellation-month">{{ star.era }}</p><p class="constellation-description">{{ star.event }}</p><p><a href="{{ star.url }}">{{ star.book }}</a></p><p class="constellation-description">{{ star.connection }}</p><span class="constellation-status status-existing">{{ star.status }}</span></article>{% endfor %}</div>
+<p class="section-description">The entries identify broad periods and story connections; they do not assign an exact order to every event within the Age of Gods.</p>
+</section>
+
 <!-- Constellations Section -->
 <section class="constellations-section">
     <div class="section-header">
