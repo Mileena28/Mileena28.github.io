@@ -1,19 +1,20 @@
 ---
 layout: default
-title: "About Mileena Rayne | Dark Fantasy Author & Trauma Survivor"
-description: "From Jehovah's Witness to Registered Nurse to published dark fantasy author. My journey through religious trauma, homelessness, surviving domestic violence, speaking out, and finding my voice through writing and music."
+about_page: true
+title: "About Mileena Rayne | Author, Musician & RN"
+description: "Get to know Mileena Rayne: a Minnesota writer, musician, registered nurse, and mother creating Blood of the Wild Gods."
 keywords: "Mileena Rayne, dark fantasy author, ex-JW author, former Jehovah's Witness, religious trauma survivor, domestic violence survivor, Valley News Live interview, Blood of the Wild Gods series, The Silence, The Chosen, trauma-informed writer, Minnesota author, registered nurse author"
 image: "/assets/images/mileena-rayne-author.jpg"
 canonical: "https://mileenarayne.com/about/"
 robots: "index, follow"
 og:type: "profile"
-og:title: "About Mileena Rayne | Dark Fantasy Author & Trauma Survivor"
-og:description: "From Jehovah's Witness to Registered Nurse to published dark fantasy author. Religious trauma, homelessness, surviving domestic violence, and finding my voice."
+og:title: "About Mileena Rayne | Author, Musician & RN"
+og:description: "Get to know Mileena Rayne: a Minnesota writer, musician, registered nurse, and mother creating Blood of the Wild Gods."
 og:image: "/assets/images/mileena-rayne-author.jpg"
 og:url: "https://mileenarayne.com/about/"
 twitter:card: "summary_large_image"
 twitter:title: "About Mileena Rayne"
-twitter:description: "Dark fantasy author, trauma survivor, and registered nurse creating stories that refuse to look away from hard truths."
+twitter:description: "Get to know Mileena Rayne: a Minnesota writer, musician, registered nurse, and mother creating Blood of the Wild Gods."
 twitter:image: "/assets/images/mileena-rayne-author.jpg"
 ---
 
@@ -122,1293 +123,41 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
 }
 </script>
 
-<style>
-    /* Atmospheric Background Design */
-    :root {
-        --primary-purple: #b19cd9;
-        --ocean-blue: #8ac4ff;
-        --accent-violet: #a8b5ff;
-        --deep-night: #0a0a14;
-        --text-light: #f0f0f0;
-        --text-secondary: #d0d0d0;
-        --glass-white: rgba(255, 255, 255, 0.05);
-    }
-
-    /* Ethereal Background Layers */
-    .about-page {
-        position: relative;
-        background: linear-gradient(135deg, #0a0a14 0%, #1a1a2e 50%, #0f0f1e 100%);
-        min-height: 100vh;
-    }
-
-    .cosmic-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -2;
-        background: 
-            radial-gradient(ellipse at top right, rgba(177, 156, 217, 0.1) 0%, transparent 50%),
-            radial-gradient(ellipse at bottom left, rgba(138, 196, 255, 0.08) 0%, transparent 50%);
-        pointer-events: none;
-    }
-
-    /* Floating Light Particles */
-    .particle-field {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        z-index: -1;
-        overflow: hidden;
-        pointer-events: none;
-    }
-
-    .light-orb {
-        position: absolute;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(177, 156, 217, 0.4) 0%, transparent 70%);
-        filter: blur(40px);
-        opacity: 0.3;
-        animation: float-drift 20s infinite ease-in-out;
-    }
-
-    .light-orb:nth-child(1) {
-        width: 300px;
-        height: 300px;
-        top: -150px;
-        left: -150px;
-        animation-duration: 25s;
-    }
-
-    .light-orb:nth-child(2) {
-        width: 400px;
-        height: 400px;
-        bottom: -200px;
-        right: -200px;
-        background: radial-gradient(circle, rgba(138, 196, 255, 0.4) 0%, transparent 70%);
-        animation-duration: 30s;
-    }
-
-    @keyframes float-drift {
-        0%, 100% { transform: translate(0, 0) scale(1); }
-        33% { transform: translate(100px, -100px) scale(1.1); }
-        66% { transform: translate(-100px, 100px) scale(0.9); }
-    }
-
-    /* Hero Section with Author Card */
-    .hero-section {
-        padding: 100px 0 80px;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .hero-grid {
-        display: grid;
-        grid-template-columns: 400px 1fr;
-        gap: 80px;
-        align-items: center;
-    }
-
-    /* Author Card */
-    .author-card {
-        position: relative;
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        border-radius: 30px;
-        padding: 30px;
-        transition: all 0.5s ease;
-        animation: card-entrance 1s ease-out;
-    }
-
-    @keyframes card-entrance {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .author-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 
-            0 30px 60px rgba(177, 156, 217, 0.3),
-            0 0 0 1px rgba(177, 156, 217, 0.3);
-    }
-
-    .author-image-wrapper {
-        position: relative;
-        border-radius: 20px;
-        overflow: hidden;
-        margin-bottom: 30px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .author-image-wrapper::before {
-        content: '';
-        position: absolute;
-        inset: -2px;
-        background: linear-gradient(45deg, var(--primary-purple), var(--ocean-blue), var(--primary-purple));
-        border-radius: 20px;
-        z-index: -1;
-        animation: shimmer-border 4s linear infinite;
-    }
-
-    @keyframes shimmer-border {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-
-    .author-image {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .author-name {
-        font-size: 2em;
-        color: var(--text-light);
-        text-align: center;
-        margin-bottom: 10px;
-        font-weight: 300;
-        letter-spacing: 1px;
-    }
-
-    .author-roles {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        justify-content: center;
-        margin-bottom: 25px;
-    }
-
-    .role-badge {
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.2), rgba(138, 196, 255, 0.1));
-        border: 1px solid rgba(177, 156, 217, 0.3);
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 0.85em;
-        color: var(--accent-violet);
-        font-weight: 500;
-        letter-spacing: 1px;
-    }
-
-    .author-quote {
-        color: var(--text-secondary);
-        font-style: italic;
-        text-align: center;
-        line-height: 1.6;
-        padding-top: 25px;
-        border-top: 1px solid rgba(177, 156, 217, 0.2);
-    }
-
-    /* Hero Content */
-    .hero-content {
-        position: relative;
-    }
-
-    .page-title {
-        font-size: clamp(3rem, 5vw, 4.5rem);
-        font-weight: 200;
-        margin-bottom: 30px;
-        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: title-shimmer 4s ease-in-out infinite;
-        background-size: 200% 200%;
-    }
-
-    @keyframes title-shimmer {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-    }
-
-    .hero-description {
-        color: var(--text-secondary);
-        font-size: 1.3em;
-        line-height: 1.8;
-        margin-bottom: 40px;
-        font-weight: 300;
-    }
-
-    .quick-links {
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-    }
-
-    .quick-link {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        padding: 12px 30px;
-        border-radius: 25px;
-        color: var(--text-light);
-        text-decoration: none;
-        font-weight: 400;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .quick-link::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, var(--primary-purple) 0%, transparent 70%);
-        transform: translate(-50%, -50%);
-        transition: all 0.5s ease;
-        opacity: 0.3;
-    }
-
-    .quick-link:hover::before {
-        width: 200px;
-        height: 200px;
-    }
-
-    .quick-link:hover {
-        background: rgba(177, 156, 217, 0.15);
-        border-color: var(--primary-purple);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(177, 156, 217, 0.3);
-    }
-
-    /* Main Content Sections */
-    .content-section {
-        padding: 80px 0;
-        position: relative;
-    }
-
-    .content-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .section-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        gap: 40px;
-    }
-
-    .content-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(177, 156, 217, 0.1);
-        border-radius: 25px;
-        padding: 40px;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .content-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: linear-gradient(90deg, var(--primary-purple), var(--ocean-blue));
-        transform: scaleX(0);
-        transition: transform 0.4s ease;
-        transform-origin: left;
-    }
-
-    .content-card:hover::before {
-        transform: scaleX(1);
-    }
-
-    .content-card:hover {
-        transform: translateY(-5px);
-        background: rgba(255, 255, 255, 0.05);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    }
-
-    .section-title {
-        font-size: 1.8em;
-        color: var(--primary-purple);
-        margin-bottom: 25px;
-        font-weight: 300;
-        position: relative;
-        padding-bottom: 15px;
-    }
-
-    .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 2px;
-        background: linear-gradient(90deg, var(--primary-purple), transparent);
-    }
-
-    .section-content {
-        color: var(--text-secondary);
-        line-height: 1.8;
-        font-size: 1.05em;
-    }
-
-    .section-content p {
-        margin-bottom: 20px;
-    }
-
-    /* Highlight Quote */
-    .timeline-description a {
-        color: var(--primary-purple);
-        text-decoration: none;
-        border-bottom: 1px solid rgba(177, 156, 217, 0.4);
-    }
-
-    .timeline-description a:hover {
-        color: var(--accent-violet);
-    }
-
-    .news-link {
-        display: block;
-        margin-top: 30px;
-        padding: 22px 28px;
-        border: 1px solid rgba(177, 156, 217, 0.25);
-        border-radius: 15px;
-        background: rgba(255, 255, 255, 0.03);
-        text-decoration: none;
-        transition: all 0.3s ease;
-    }
-
-    .news-link:hover {
-        border-color: var(--primary-purple);
-        background: rgba(177, 156, 217, 0.08);
-        transform: translateY(-2px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    }
-
-    .news-link-label {
-        display: block;
-        color: var(--primary-purple);
-        font-size: 0.8em;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        margin-bottom: 8px;
-    }
-
-    .news-link-title {
-        display: block;
-        color: var(--text-light);
-        font-size: 1.05em;
-        line-height: 1.5;
-    }
-
-    .highlight-quote {
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.1), rgba(138, 196, 255, 0.05));
-        border-left: 3px solid var(--primary-purple);
-        padding: 25px 30px;
-        margin: 30px 0;
-        border-radius: 0 15px 15px 0;
-        font-style: italic;
-        color: var(--text-light);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .highlight-quote::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 60px;
-        color: rgba(177, 156, 217, 0.2);
-        font-family: Georgia, serif;
-    }
-
-    /* Journey Timeline */
-    .timeline-section {
-        background: rgba(0, 0, 0, 0.3);
-        padding: 100px 0;
-    }
-
-    .timeline-container {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .timeline-header {
-        text-align: center;
-        margin-bottom: 80px;
-    }
-
-    .timeline-title {
-        font-size: 3em;
-        color: var(--text-light);
-        margin-bottom: 20px;
-        font-weight: 200;
-    }
-
-    .timeline {
-        position: relative;
-        padding: 0 50px;
-    }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(180deg, var(--primary-purple), var(--ocean-blue));
-        transform: translateX(-50%);
-    }
-
-    .timeline-item {
-        position: relative;
-        margin-bottom: 80px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 80px;
-        align-items: center;
-    }
-
-    /* Even items put their empty spacer first, so the card lands on the right */
-    .timeline-item:nth-child(even) {
-        direction: ltr;
-    }
-
-    .timeline-dot {
-        position: absolute;
-        left: 50%;
-        top: 30px;
-        width: 20px;
-        height: 20px;
-        background: var(--primary-purple);
-        border: 4px solid var(--deep-night);
-        border-radius: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        box-shadow: 0 0 20px rgba(177, 156, 217, 0.5);
-    }
-
-    .timeline-content {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        border-radius: 20px;
-        padding: 30px;
-        transition: all 0.3s ease;
-    }
-
-    .timeline-content:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.2);
-    }
-
-    .timeline-label {
-        color: var(--primary-purple);
-        font-size: 0.9em;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
-    }
-
-    .timeline-heading {
-        color: var(--text-light);
-        font-size: 1.4em;
-        margin-bottom: 15px;
-        font-weight: 400;
-    }
-
-    .timeline-description {
-        color: var(--text-secondary);
-        line-height: 1.6;
-    }
-
-    /* Worlds That Shaped Me Section */
-    .worlds-section {
-        padding: 100px 0;
-        background: linear-gradient(180deg, rgba(138, 159, 255, 0.03) 0%, rgba(0, 0, 0, 0.4) 100%);
-        position: relative;
-    }
-    
-    .worlds-header {
-        text-align: center;
-        max-width: 900px;
-        margin: 0 auto 60px;
-    }
-    
-    .worlds-intro {
-        color: var(--text-secondary);
-        font-size: 1.2em;
-        line-height: 1.8;
-        font-style: italic;
-        margin-top: 20px;
-    }
-    
-    .worlds-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        gap: 50px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .worlds-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        border-radius: 25px;
-        padding: 45px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .worlds-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05) 0%, transparent 60%);
-        pointer-events: none;
-    }
-    
-    .worlds-card-title {
-        font-size: 2em;
-        color: var(--primary-purple);
-        margin-bottom: 35px;
-        font-weight: 300;
-        text-align: center;
-        position: relative;
-        padding-bottom: 20px;
-    }
-    
-    .worlds-card-title::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
-    }
-    
-    .worlds-content {
-        position: relative;
-        z-index: 1;
-    }
-    
-    .world-item {
-        margin-bottom: 35px;
-        padding-bottom: 35px;
-        border-bottom: 1px solid rgba(177, 156, 217, 0.1);
-    }
-    
-    .world-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    
-    .world-name {
-        color: var(--accent-violet);
-        font-size: 1.3em;
-        margin-bottom: 12px;
-        font-weight: 400;
-        font-style: italic;
-    }
-    
-    .world-description {
-        color: var(--text-secondary);
-        line-height: 1.7;
-        font-size: 1.05em;
-    }
-    
-    .worlds-reflection {
-        max-width: 900px;
-        margin: 60px auto 0;
-        padding: 40px;
-        background: rgba(177, 156, 217, 0.05);
-        border-left: 3px solid var(--primary-purple);
-        border-radius: 0 15px 15px 0;
-        color: var(--text-light);
-        font-size: 1.15em;
-        line-height: 1.8;
-        text-align: center;
-        font-style: italic;
-    }
-
-    /* Current Focus Section */
-    .focus-section {
-        background: linear-gradient(135deg, rgba(177, 156, 217, 0.05), rgba(138, 196, 255, 0.03));
-        padding: 80px 0;
-    }
-
-    .focus-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .focus-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        border-radius: 20px;
-        padding: 45px 35px 35px;
-        text-align: center;
-        transition: all 0.4s ease;
-        position: relative;
-    }
-
-    /* Focus Icon Wrapper */
-    .focus-icon-wrapper {
-        position: relative;
-        width: 80px;
-        height: 80px;
-        margin: 0 auto 35px;
-    }
-    
-    .focus-icon {
-        width: 80px;
-        height: 80px;
-        background: rgba(255, 255, 255, 0.08);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 
-            0 8px 32px rgba(177, 156, 217, 0.15),
-            inset 0 0 20px rgba(255, 255, 255, 0.05),
-            0 20px 40px -10px rgba(177, 156, 217, 0.25);
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-        animation: gentle-float 4s ease-in-out infinite;
-    }
-    
-    .focus-icon-shadow {
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 60px;
-        height: 20px;
-        background: radial-gradient(ellipse at center, rgba(177, 156, 217, 0.2) 0%, transparent 70%);
-        filter: blur(8px);
-        opacity: 0.6;
-        animation: shadow-pulse 4s ease-in-out infinite;
-        pointer-events: none;
-        transition: all 0.4s ease;
-    }
-    
-    .focus-card:nth-child(1) .focus-icon,
-    .focus-card:nth-child(1) .focus-icon-shadow {
-        animation-delay: 0s;
-    }
-    
-    .focus-card:nth-child(2) .focus-icon,
-    .focus-card:nth-child(2) .focus-icon-shadow {
-        animation-delay: 1s;
-    }
-    
-    .focus-card:nth-child(3) .focus-icon,
-    .focus-card:nth-child(3) .focus-icon-shadow {
-        animation-delay: 2s;
-    }
-    
-    .focus-card:nth-child(4) .focus-icon,
-    .focus-card:nth-child(4) .focus-icon-shadow {
-        animation-delay: 3s;
-    }
-    
-    @keyframes gentle-float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-    }
-    
-    .focus-icon::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(
-            45deg,
-            transparent,
-            rgba(255, 255, 255, 0.1),
-            transparent
-        );
-        transform: rotate(45deg);
-        transition: all 0.6s ease;
-    }
-    
-    .focus-card:hover .focus-icon::before {
-        animation: glass-shimmer 0.6s ease-in-out;
-    }
-    
-    @keyframes glass-shimmer {
-        0% { transform: rotate(45deg) translateY(-100%); }
-        100% { transform: rotate(45deg) translateY(100%); }
-    }
-    
-    @keyframes shadow-pulse {
-        0%, 100% { 
-            width: 60px;
-            opacity: 0.6;
-        }
-        50% { 
-            width: 45px;
-            opacity: 0.3;
-        }
-    }
-    
-    .focus-icon svg {
-        width: 35px;
-        height: 35px;
-        stroke: var(--primary-purple);
-        fill: none;
-        stroke-width: 1.5;
-        opacity: 0.8;
-        z-index: 1;
-        position: relative;
-        filter: drop-shadow(0 4px 8px rgba(177, 156, 217, 0.3));
-    }
-
-    .focus-card:hover .focus-icon {
-        animation: gentle-float 4s ease-in-out infinite, hover-lift 0.4s ease forwards;
-        box-shadow: 
-            0 15px 40px rgba(177, 156, 217, 0.3),
-            inset 0 0 30px rgba(255, 255, 255, 0.1),
-            0 25px 50px -10px rgba(177, 156, 217, 0.35);
-        background: rgba(255, 255, 255, 0.12);
-        border-color: rgba(255, 255, 255, 0.3);
-    }
-    
-    .focus-card:hover .focus-icon-shadow {
-        width: 70px;
-        opacity: 0.8;
-        filter: blur(10px);
-    }
-    
-    @keyframes hover-lift {
-        to { transform: translateY(-8px) scale(1.05); }
-    }
-    
-    .focus-card:hover .focus-icon svg {
-        stroke: var(--accent-violet);
-        opacity: 1;
-        filter: drop-shadow(0 6px 12px rgba(177, 156, 217, 0.4));
-    }
-
-    .focus-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 25px 50px rgba(177, 156, 217, 0.25);
-    }
-
-    .focus-title {
-        color: var(--primary-purple);
-        font-size: 1.3em;
-        margin-bottom: 15px;
-        font-weight: 400;
-    }
-
-    .focus-description {
-        color: var(--text-secondary);
-        line-height: 1.6;
-    }
-
-    /* Explore More Section */
-    .explore-section {
-        padding: 80px 0;
-        position: relative;
-        background: rgba(0, 0, 0, 0.2);
-    }
-    
-    .explore-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-    
-    .explore-header {
-        text-align: center;
-        margin-bottom: 60px;
-    }
-    
-    .explore-title {
-        font-size: 3em;
-        color: var(--text-light);
-        margin-bottom: 15px;
-        font-weight: 200;
-    }
-    
-    .explore-subtitle {
-        color: var(--text-secondary);
-        font-size: 1.2em;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    .explore-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-        gap: 40px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-    
-    .explore-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(20px);
-        border: 1px solid rgba(177, 156, 217, 0.2);
-        border-radius: 25px;
-        padding: 0;
-        transition: all 0.4s ease;
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .explore-card::before {
-        content: '';
-        position: absolute;
-        top: -100px;
-        left: -100px;
-        width: 200px;
-        height: 200px;
-        background: radial-gradient(circle, var(--primary-purple) 0%, transparent 70%);
-        opacity: 0.1;
-        transition: all 0.5s ease;
-    }
-    
-    .explore-card:hover::before {
-        transform: scale(2);
-        opacity: 0.15;
-    }
-    
-    .explore-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--primary-purple);
-        box-shadow: 
-            0 30px 60px rgba(177, 156, 217, 0.3),
-            0 0 0 1px rgba(177, 156, 217, 0.3);
-    }
-    
-    .explore-image-wrapper {
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-        background: rgba(0, 0, 0, 0.3);
-    }
-    
-    /* Writing card image - vertical book cover */
-    .explore-card:first-child .explore-image-wrapper {
-        height: 400px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
-    }
-    
-    .explore-card:first-child .explore-image-wrapper img {
-        width: auto;
-        height: 100%;
-        max-width: 100%;
-        object-fit: contain;
-        transition: transform 0.5s ease;
-    }
-    
-    /* Community card image - horizontal image */
-    .explore-card:last-child .explore-image-wrapper {
-        height: 300px;
-    }
-    
-    .explore-card:last-child .explore-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.5s ease;
-    }
-    
-    .explore-card:hover .explore-image-wrapper img {
-        transform: scale(1.05);
-    }
-    
-    .explore-card-content {
-        padding: 40px 35px;
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        z-index: 1;
-    }
-    
-    .explore-card-title {
-        font-size: 2em;
-        color: var(--text-light);
-        margin-bottom: 20px;
-        font-weight: 300;
-    }
-    
-    .explore-card-description {
-        color: var(--text-secondary);
-        font-size: 1.1em;
-        line-height: 1.7;
-        margin-bottom: 35px;
-        flex: 1;
-    }
-    
-    .explore-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
-        color: white;
-        padding: 18px 45px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1.1em;
-        transition: all 0.4s ease;
-        box-shadow: 0 15px 35px rgba(177, 156, 217, 0.3);
-        position: relative;
-        overflow: hidden;
-        margin: 0 auto;
-    }
-    
-    .explore-link::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-        transition: all 0.5s ease;
-        transform: translate(-50%, -50%);
-    }
-    
-    .explore-link:hover::before {
-        width: 300px;
-        height: 300px;
-    }
-    
-    .explore-link:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
-    }
-    
-    .explore-link svg {
-        width: 20px;
-        height: 20px;
-        transition: transform 0.3s ease;
-    }
-    
-    .explore-link:hover svg {
-        transform: translateX(5px);
-    }
-
-    /* Contact CTA */
-    .cta-section {
-        padding: 100px 0;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.4);
-    }
-
-    .cta-container {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .cta-title {
-        font-size: 2.5em;
-        color: var(--text-light);
-        margin-bottom: 20px;
-        font-weight: 200;
-    }
-
-    .cta-description {
-        color: var(--text-secondary);
-        font-size: 1.1em;
-        line-height: 1.7;
-        margin-bottom: 40px;
-    }
-
-    .cta-button {
-        display: inline-block;
-        background: linear-gradient(135deg, var(--primary-purple), var(--ocean-blue));
-        color: white;
-        padding: 18px 45px;
-        border-radius: 30px;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1.1em;
-        transition: all 0.4s ease;
-        box-shadow: 0 15px 35px rgba(177, 156, 217, 0.3);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .cta-button::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
-        transition: all 0.5s ease;
-        transform: translate(-50%, -50%);
-    }
-
-    .cta-button:hover::before {
-        width: 300px;
-        height: 300px;
-    }
-
-    .cta-button:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 20px 45px rgba(177, 156, 217, 0.4);
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 1024px) {
-        .hero-grid {
-            grid-template-columns: 1fr;
-            gap: 50px;
-        }
-
-        .author-card {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .section-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .worlds-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .timeline-item {
-            grid-template-columns: 1fr;
-            gap: 0;
-            padding-left: 40px;
-        }
-
-        .timeline-item:nth-child(even) {
-            direction: ltr;
-            padding-left: 40px;
-            padding-right: 0;
-        }
-
-        .timeline::before {
-            left: 20px;
-        }
-
-        .timeline-dot {
-            left: 20px;
-        }
-
-        .focus-grid {
-            grid-template-columns: 1fr;
-            max-width: 600px;
-        }
-        
-        .explore-cards {
-            grid-template-columns: 1fr;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .page-title {
-            font-size: 2.5rem;
-        }
-
-        .hero-description {
-            font-size: 1.1em;
-        }
-
-        .quick-links {
-            flex-direction: column;
-        }
-
-        .quick-link {
-            width: 100%;
-            text-align: center;
-        }
-
-        .content-card {
-            padding: 30px 25px;
-        }
-        
-        .worlds-card {
-            padding: 30px 25px;
-        }
-        
-        .world-item {
-            margin-bottom: 25px;
-            padding-bottom: 25px;
-        }
-        
-        .world-name {
-            font-size: 1.15em;
-        }
-        
-        .world-description {
-            font-size: 0.95em;
-        }
-        
-        .worlds-reflection {
-            padding: 25px;
-            font-size: 1em;
-        }
-
-        .timeline {
-            padding: 0 20px;
-        }
-        
-        .explore-cards {
-            gap: 25px;
-        }
-        
-        .explore-card-content {
-            padding: 30px 25px;
-        }
-        
-        .explore-card:first-child .explore-image-wrapper {
-            height: 300px;
-            padding: 30px;
-        }
-        
-        .explore-card:last-child .explore-image-wrapper {
-            height: 200px;
-        }
-        
-        .explore-title {
-            font-size: 1.8em;
-        }
-        
-        .explore-card-title {
-            font-size: 1.5em;
-        }
-    }
-    
-    @media (max-width: 650px) {
-        .explore-cards {
-            grid-template-columns: 1fr;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .worlds-grid {
-            gap: 30px;
-        }
-        
-        .worlds-card {
-            padding: 25px 20px;
-        }
-        
-        .worlds-card-title {
-            font-size: 1.5em;
-        }
-        
-        .explore-cards {
-            grid-template-columns: 1fr;
-        }
-        
-        .explore-link {
-            padding: 12px 24px;
-            font-size: 0.9em;
-        }
-        
-        .explore-card:first-child .explore-image-wrapper {
-            height: 250px;
-            padding: 20px;
-        }
-    }
-</style>
-
-<div class="about-page">
-    <!-- Background Effects -->
-    <div class="cosmic-overlay"></div>
-    <div class="particle-field">
-        <div class="light-orb"></div>
-        <div class="light-orb"></div>
-    </div>
-
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="stylesheet" href="{{ '/assets/css/about.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<div class="home-page about-page">
+<a class="home-skip" href="#about-start">Skip to my story</a>
     <!-- Hero Section with Author Card -->
-    <section class="hero-section">
+    <section class="hero-section" id="about-start">
         <div class="hero-container">
             <div class="hero-grid">
+                <!-- Hero Content -->
+                <div class="hero-content">
+                    <p class="home-eyebrow">About Mileena Rayne</p><h1 class="page-title">Hi, I’m Mileena.</h1>
+                    <p class="hero-description">I’m a writer, musician, registered nurse, and mom of two girls from Minnesota. I’ve spent a lot of my life getting lost in other people’s worlds. Now I have one of my own, and I’m a little obsessed with it. This website is where I share my books, music, thoughts, and the things I’m still figuring out.</p>
+                    <nav class="quick-links" aria-label="Explore this page">
+                        <a href="#journey" class="quick-link">My Journey</a>
+                        <a href="#current" class="quick-link">Current Focus</a>
+                        <a href="#news" class="quick-link">In the News</a>
+                        <a href="/writing/" class="quick-link">My Writing</a>
+                        <a href="/music/" class="quick-link">My Music</a>
+                        <a href="#influences" class="quick-link">My Influences</a>
+                    </nav>
+                </div>
+
                 <!-- Author Card -->
                 <div class="author-card">
                     <div class="author-image-wrapper">
-                        <img src="/assets/images/mileena-rayne-author.jpg" alt="Mileena Rayne" class="author-image">
+                        <img src="/assets/images/mileena-rayne-author.jpg" alt="Mileena Rayne" class="author-image" width="600" height="750">
                     </div>
-                    <h1 class="author-name">Mileena Rayne</h1>
+                    <h2 class="author-name">Mileena Rayne</h2>
                     <div class="author-roles">
                         <span class="role-badge">Author</span>
                         <span class="role-badge">Musician</span>
                         <span class="role-badge">RN</span>
                         <span class="role-badge">Mother</span>
                     </div>
-                    <p class="author-quote">
-                        "I write from scars that have become stories, sing from silence that became songs, 
-                        and create from the chaos that once tried to consume me."
-                    </p>
-                </div>
-
-                <!-- Hero Content -->
-                <div class="hero-content">
-                    <h2 class="page-title">The Story Behind the Stories</h2>
-                    <p class="hero-description">
-                        I create dark fantasy and haunting music from lived experience—real, raw, and 
-                        unfiltered. Former Jehovah's Witness, domestic violence survivor, registered nurse, 
-                        and author of two novels, I believe in the power of uncomfortable truths and the 
-                        beauty found in broken places. Right now I'm doing the hardest thing I've ever 
-                        done: stopping long enough to heal.
-                    </p>
-                    <div class="quick-links">
-                        <a href="#journey" class="quick-link">My Journey</a>
-                        <a href="#current" class="quick-link">Current Focus</a>
-                        <a href="#news" class="quick-link">In the News</a>
-                        <a href="/writing/" class="quick-link">My Writing</a>
-                        <a href="/music/" class="quick-link">My Music</a>
-                    </div>
+                    <p class="author-quote">“The Blood of the Wild Gods universe is my passion, my obsession, and my escape. I can’t imagine a time when I’ll ever stop creating in it.”</p>
                 </div>
             </div>
         </div>
@@ -1420,39 +169,20 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
             <div class="section-grid">
                 <!-- Who I Am -->
                 <div class="content-card">
-                    <h3 class="section-title">Who I Am</h3>
+                    <h2 class="section-title">Who I Am</h2>
                     <div class="section-content">
-                        <p>
-                            I'm Mileena Rayne—a Minnesota native who writes from the intersection of trauma 
-                            and transformation. Everything I create comes from a place that once hurt: 
-                            fractured homes, religious control, and belief systems that tried to reshape 
-                            me into someone I wasn't.
-                        </p>
-                        <p>
-                            I didn't start creating until nearly thirty. Not because I lacked stories, but 
-                            because I was surviving. Once I began, I couldn't stop. Two published novels 
-                            later—<em>Blood of the Wild Gods: The Silence</em> and <em>The Chosen</em>—every 
-                            lyric, every chapter still carries memory: trauma, truth, grief, clarity. 
-                            I don't make it comfortable. I make it honest.
-                        </p>
+                        <p>I didn’t really start writing and making music until I was almost thirty. I’d wanted to write a book since I was a kid, but for a long time I was just trying to get through whatever was happening in my life. Actually finishing one felt a little unreal. Now <em>The Silence</em> and <em>The Chosen</em> are sitting on my shelf, and I get to keep going.</p>
+                        <p>There’s a lot of my life in what I make. I grew up as a Jehovah’s Witness, left at eighteen, and have spent years working through things I didn’t always have the words for. Writing gives me a way to look at some of that. It also gives me characters to care about, an entire world to get distracted by, and something I’m excited to share.</p>
                     </div>
                 </div>
 
-                <!-- What Drives Me -->
+                <!-- A Little More About Me -->
                 <div class="content-card">
-                    <h3 class="section-title">What Drives Me</h3>
+                    <h2 class="section-title">A Little More About Me</h2>
                     <div class="section-content">
-                        <p>
-                            People call me "intense"—and they're right. I feel deeply, think constantly, 
-                            and refuse to pretend something's okay when it's not. This intensity once felt 
-                            like a flaw. Now I see it as my superpower: it's what lets me write stories 
-                            that stay with people, show up fully for my patients, and speak up when it matters.
-                        </p>
-                        <p>
-                            My passion for trauma-informed care drives everything. Whether in the hospital, 
-                            through my writing, or in the survivor stories I share, I'm committed to creating 
-                            spaces where pain is witnessed, not sanitized.
-                        </p>
+                        <p>I feel things deeply, and I’m usually thinking about more than I probably need to. Sometimes that means overthinking a conversation. Sometimes it means spending hours on a detail in my fantasy world because I want it to make sense. I get excited about things, and I’m trying to get better at letting myself enjoy them without worrying so much about what someone else will think.</p>
+                        <p>I also care a lot about how people are treated. That matters to me as a nurse, as a mother, and when someone trusts me with their story. I know what it’s like to have something hurt and struggle to explain why. I want to listen before deciding I understand.</p>
+                        <p>Music is another part of that. Sometimes I’m writing about something personal, and sometimes I’m making music for the world inside my books. I like being able to explore the same feeling in a different way and hear what a story might sound like.</p>
                     </div>
                 </div>
             </div>
@@ -1460,49 +190,18 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
     </section>
 
     <!-- Religious Trauma Survivor Section -->
-    <section class="content-section" style="background: rgba(0, 0, 0, 0.2);">
+    <section class="content-section" id="faith">
         <div class="content-container">
-            <div class="content-card" style="max-width: 900px; margin: 0 auto;">
-                <h3 class="section-title">Former Jehovah's Witness & Religious Trauma Survivor</h3>
+            <div class="content-card">
+                <h2 class="section-title">Leaving the Jehovah’s Witnesses</h2>
                 <div class="section-content">
-                    <p>
-                        Born into the organization, I spent my formative years in Kingdom Halls, knocking 
-                        on doors, believing I had "the truth." At eighteen, I made the hardest decision 
-                        of my life: I left, knowing it would cost me my community, my worldview, and 
-                        relationships with family and friends still inside.
-                    </p>
-                    
-                    <div class="highlight-quote">
-                        "Leaving didn't just change my beliefs—it taught me that truth is worth any cost, 
-                        even when that cost is everything you thought you knew about yourself."
-                    </div>
-                    
-                    <p>
-                        This experience—layered with childhood trauma, family dysfunction, the pain of intimate 
-                        relationships that left their own scars, medical challenges, and the everyday battles 
-                        of survival—shapes everything I create. My dark fantasy explores not just cult psychology 
-                        but the accumulated weight of wounds that compound over time. My music voices the complex 
-                        grief of multiple losses: religious community, family bonds, innocence, trust in those 
-                        we loved most, and the selves we had to abandon to survive. Each story and song carries 
-                        the full spectrum of trauma and resilience—because healing isn't about one pivotal moment 
-                        but the slow, patient work of integrating all our broken pieces.
-                    </p>
-                    <p>
-                        As an ex-JW author and trauma survivor, I write for anyone who carries multiple 
-                        wounds, anyone whose story can't be simplified to a single event. My goal is to 
-                        create art that acknowledges the messy reality: that trauma accumulates, that 
-                        healing spirals rather than ascending, and that some days just getting through 
-                        is enough.
-                    </p>
-                    <p>
-                        Thirteen years after leaving, something has shifted. For a long time I hated 
-                        everything the organization had touched—the Bible most of all—and I built an 
-                        us-versus-them wall against anyone who still believed. Lately I've been letting 
-                        myself find hope and comfort in the scriptures I grew up on, without the pressure 
-                        and control that once came attached. Not going back. Reclaiming. I refuse to let 
-                        an ideology hold that much negativity over me, I refuse to let a book make me 
-                        recoil, and I refuse to let anyone make me feel bad about how I heal.
-                    </p>
+                    <p>I grew up going to Kingdom Halls, knocking on doors, and believing we had “the truth.” At eighteen, I left. That meant questioning things I’d been taught my whole life and knowing it would affect relationships with people I loved. I didn’t leave with everything figured out. I had to start figuring it out afterward.</p>
+
+                    <div class="highlight-quote">“I didn’t leave with everything figured out. I had to start figuring it out afterward.”</div>
+
+                    <p>That experience shows up in my writing, especially <em>The Chosen</em>. I’m interested in what happens when people are taught to distrust themselves, when love feels conditional, and when something harmful has been called normal for so long that it’s hard to recognize. Putting those experiences into a story gives me a different way to talk about them.</p>
+                    <p>There’s more to my history than leaving a religion. Childhood, relationships, health, and trying to keep life together have all played a part. Sometimes those things are hard to separate. I don’t have a neat explanation for how to get through all of it, and I don’t want this page to sound like I do.</p>
+                    <p>For a long time, I wanted nothing to do with anything the organization had touched, especially the Bible. More recently, I’ve been finding some comfort in scriptures I grew up with. I’m not returning to the organization. I’m giving myself room to decide what I believe and what helps me, without someone else deciding that for me.</p>
                 </div>
             </div>
         </div>
@@ -1511,35 +210,10 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
     <!-- Domestic Violence & Speaking Out -->
     <section class="content-section" id="news">
         <div class="content-container">
-            <div class="content-card" style="max-width: 900px; margin: 0 auto;">
-                <h3 class="section-title">Surviving Domestic Violence &amp; Speaking Out</h3>
+            <div class="content-card">
+                <h2 class="section-title">Speaking Up in My Community</h2>
                 <div class="section-content">
-                    <p>
-                        In November 2025, my ex-fiancé of almost three years strangled me in my home—shoved 
-                        me into a wall, put his hands around my neck, and shook me—minutes before I was 
-                        supposed to leave for a night shift. I went to work anyway. I took care of patients 
-                        with bruises on my neck, went to the ER afterward for the exam that documented them, 
-                        and reported it. He was arrested. Then he paid $500 in bail, walked out, and left 
-                        the country.
-                    </p>
-                    <div class="highlight-quote">
-                        "Getting out isn't the end of anything. It's the start of cleaning up everything 
-                        that got broken along the way."
-                    </div>
-                    <p>
-                        I could have stayed quiet. Instead I sat down with Valley News Live and said the 
-                        part out loud that too many survivors never get to: that a man with a prior assault 
-                        conviction can strangle a woman hard enough to leave marks and be released for 
-                        basically the cost of a Costco run. The story isn't really about me. It's about how 
-                        easily the system lets go of the people it should be holding onto—and how many 
-                        women hear "$500" and understand exactly what their safety was worth.
-                    </p>
-                    <p>
-                        The financial and legal wreckage of that relationship is something I'm still cleaning 
-                        up, and some of it I can't talk about publicly yet. But I can say this: leaving was 
-                        the right thing, speaking was the right thing, and if my saying so helps one person 
-                        recognize what they're living inside, it was worth every uncomfortable second on camera.
-                    </p>
+                    <p>In December 2025, I spoke with Valley News Live after my former fiancé was released on $500 bail following an assault against me. I wanted people to understand what that decision meant for my safety. The interview drew attention in my local community and opened up conversations about low bail in domestic violence cases and the need for reform.</p>
                     <a href="https://www.valleynewslive.com/2025/12/10/vnl-investigates-dilworth-woman-speaks-out-after-alleged-attacker-released-500-bail/" target="_blank" rel="noopener" class="news-link">
                         <span class="news-link-label">Valley News Live · December 10, 2025</span>
                         <span class="news-link-title">VNL Investigates: Dilworth woman speaks out after alleged attacker released on $500 bail →</span>
@@ -1549,117 +223,45 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
         </div>
     </section>
 
-    <!-- Worlds That Shaped Me Section -->
-    <section class="worlds-section">
+    <!-- The Worlds I Grew Up In Section -->
+    <section class="worlds-section" id="influences">
         <div class="content-container">
             <div class="worlds-header">
-                <h2 class="timeline-title">Worlds That Shaped Me</h2>
-                <p class="worlds-intro">
-                    Growing up, I found solace in stories and music. When the real world felt unbearable, 
-                    I escaped into books and games where I could be someone else, somewhere else. These 
-                    weren't just entertainment—they were survival, teaching me that other worlds existed 
-                    and that I could build my own.
-                </p>
+                <h2 class="timeline-title">The Worlds I Grew Up In</h2>
+                <p class="worlds-intro">As a kid, I looked for the thickest books I could find. More pages meant more time with the characters and less time having to come back to everything else. Games did that for me too. These are some of the worlds I spent the most time in, and I can still see pieces of what I loved about them in the things I create.</p>
             </div>
-            
+
             <div class="worlds-grid">
                 <!-- Books Section -->
                 <div class="worlds-card">
                     <h3 class="worlds-card-title">Books That Raised Me</h3>
                     <div class="worlds-content">
-                        <div class="world-item">
-                            <h4 class="world-name">Eragon Series</h4>
-                            <p class="world-description">
-                                Christopher Paolini showed me how a young person could create a beloved fantasy 
-                                world so vivid it breathed on its own. Dragons understood being different, and 
-                                through his pages I learned to love characters so deeply they became part of me.
-                            </p>
-                        </div>
-                        
-                        <div class="world-item">
-                            <h4 class="world-name">Inkheart Series</h4>
-                            <p class="world-description">
-                                Stories should be powerful enough to pull you in, to make you forget where 
-                                reality ends and fiction begins. This series taught me that words have the 
-                                power to create worlds—and sometimes, to escape them.
-                            </p>
-                        </div>
-                        
-                        <div class="world-item">
-                            <h4 class="world-name">Kira-Kira</h4>
-                            <p class="world-description">
-                                The first book that made me cry, teaching me that sad endings could be beautiful 
-                                and necessary. That you can still love a book that breaks you. That beauty 
-                                exists even in broken places, shimmering like its title—glittering.
-                            </p>
-                        </div>
-                        
-                        <div class="world-item">
-                            <h4 class="world-name">Chronicles of Narnia</h4>
-                            <p class="world-description">
-                                C.S. Lewis taught me to imagine more worlds than I thought possible, how to 
-                                fall in love with diverse characters, and most importantly, how to truly 
-                                fall in love with the world you create. Sometimes you have to leave everything 
-                                you know to find where you belong.
-                            </p>
-                        </div>
+                        <details class="world-item"><summary class="world-name">Eragon Series<span aria-hidden="true">+</span></summary><p class="world-description">I loved getting attached to the characters and having such a big world to spend time in. Knowing Christopher Paolini started young mattered to me too. It made the idea of writing my own book feel a little more possible.</p></details>
+
+                        <details class="world-item"><summary class="world-name">Inkheart Series<span aria-hidden="true">+</span></summary><p class="world-description">The idea of being pulled into a story was pretty much everything I wanted from a book. I wanted to stay there long enough that the characters felt like people I knew.</p></details>
+
+                        <details class="world-item"><summary class="world-name">Kira-Kira<span aria-hidden="true">+</span></summary><p class="world-description">This was the first book that made me cry. I still loved it, even though it hurt. I think that stayed with me: an ending doesn’t have to be happy for a book to mean something to you.</p></details>
+
+                        <details class="world-item"><summary class="world-name">Chronicles of Narnia<span aria-hidden="true">+</span></summary><p class="world-description">I loved how much there was to imagine, and how attached I became to the world and everyone in it. That feeling of wanting to go back to a place that doesn’t actually exist is something I understand very well.</p></details>
                     </div>
                 </div>
-                
+
                 <!-- Games Section -->
                 <div class="worlds-card">
-                    <h3 class="worlds-card-title">Games That Saved Me</h3>
+                    <h3 class="worlds-card-title">Games I Lived In</h3>
                     <div class="worlds-content">
-                        <div class="world-item">
-                            <h4 class="world-name">EverQuest Online Adventures: Frontiers</h4>
-                            <p class="world-description">
-                                My introduction to the wonderful world of online fantasy. The questlines told 
-                                stories I engraved into my memory. My formative years were spent living in 
-                                Tunaria, where the world I built online felt safer than the one outside my door.
-                            </p>
-                        </div>
-                        
-                        <div class="world-item">
-                            <h4 class="world-name">Final Fantasy Online</h4>
-                            <p class="world-description">
-                                Where I created my found surname: Rayne. For years I lived in that online 
-                                community, and that last name became who I really was—more real than the 
-                                identity I wore in daylight. It taught me about community in virtual spaces, 
-                                how strangers could become family.
-                            </p>
-                        </div>
-                        
-                        <div class="world-item">
-                            <h4 class="world-name">Elder Scrolls Online & Skyrim</h4>
-                            <p class="world-description">
-                                Where I truly absorbed how stories could become an interconnected puzzle spanning 
-                                years. I couldn't stop picking up quests, collecting them like little treasures 
-                                as I went along—each one revealing another piece of a larger world. Playing as a 
-                                dual-wielding warrior exploring the vast expanse of Skyrim and ESO, getting lost 
-                                in its caves and breathtaking vistas, learning every crafting skill I could master—these 
-                                worlds taught me patience in storytelling and the beauty of narratives that 
-                                unfold across time.
-                            </p>
-                        </div>
-                        
-                        <div class="world-item">
-                            <h4 class="world-name">Ark: Survival Evolved</h4>
-                            <p class="world-description">
-                                Where I learned to survive and build something beautiful in a world full of 
-                                death and danger. Every structure I raised was proof that creation is possible 
-                                even in chaos—that you can make homes in hostile places.
-                            </p>
-                        </div>
+                        <details class="world-item"><summary class="world-name">EverQuest Online Adventures: Frontiers<span aria-hidden="true">+</span></summary><p class="world-description">My first online fantasy world. I spent so much of my childhood in Tunaria, and I still remember the stories from those questlines. There were times when being there felt safer than being in my actual life.</p></details>
+
+                        <details class="world-item"><summary class="world-name">Final Fantasy Online<span aria-hidden="true">+</span></summary><p class="world-description">This is where Rayne came from. I used that name in the game, spent years in the community, and it became part of how I knew myself. Eventually I kept it. Online friendships and the places we make them can mean a lot more than people give them credit for.</p></details>
+
+                        <details class="world-item"><summary class="world-name">Elder Scrolls Online & Skyrim<span aria-hidden="true">+</span></summary><p class="world-description">I was the dual-wielding warrior picking up every quest, wandering into caves, and trying to learn every crafting skill. I loved finding out that some little detail connected to something much bigger. I still think about that when I’m working on my own world and deciding when a reader should learn something.</p></details>
+
+                        <details class="world-item"><summary class="world-name">Ark: Survival Evolved<span aria-hidden="true">+</span></summary><p class="world-description">I liked being able to build something in a place where so much could go wrong. There’s something satisfying about making a home in a game that is constantly trying to kill you.</p></details>
                     </div>
                 </div>
             </div>
-            
-            <div class="worlds-reflection">
-                These stories and worlds weren't just escapism—they were education. They taught me that 
-                being different was power, that broken things could be beautiful, that you could build 
-                homes in impossible places. Every book I read and every world I inhabited online became 
-                part of my foundation, teaching me not just how to survive, but how to create.
-            </div>
+
+            <div class="worlds-reflection">I spent years caring about characters and places someone else had made up. Now I get to make my own, and I hope they’ll mean something to someone else too.</div>
         </div>
     </section>
 
@@ -1669,106 +271,74 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
             <div class="timeline-header">
                 <h2 class="timeline-title">My Journey</h2>
             </div>
-            
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-label">Childhood</div>
                         <h3 class="timeline-heading">Lost in Other Worlds</h3>
-                        <p class="timeline-description">
-                            Found refuge in books and video games, discovering that stories could be 
-                            sanctuaries. My dad introduced me to fantasy realms where being different 
-                            wasn't a flaw—it was power.
-                        </p>
+                        <p class="timeline-description">My dad introduced me to fantasy games, and I spent a lot of time reading. I wanted the longest books and as much time in those worlds as I could get.</p>
                     </div>
                     <div></div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div></div>
                     <div class="timeline-content">
                         <div class="timeline-label">Age 18</div>
                         <h3 class="timeline-heading">Breaking Free</h3>
-                        <p class="timeline-description">
-                            Left the Jehovah's Witnesses, shattering my entire worldview. Had to rebuild 
-                            everything from nothing—searching, questioning, aching for what was real.
-                        </p>
+                        <p class="timeline-description">I left the Jehovah’s Witnesses. I had to question what I’d grown up believing and figure out what life looked like outside it.</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-label">Nearly 30</div>
                         <h3 class="timeline-heading">Finding My Voice</h3>
-                        <p class="timeline-description">
-                            Started writing and making music after years of processing. Discovered that 
-                            everything I create comes from the life I've lived—stitched with memory, 
-                            survival, and scars that never quite healed.
-                        </p>
+                        <p class="timeline-description">I started writing and making music. After wanting to write a book for so long, I was finally doing it.</p>
                     </div>
                     <div></div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div></div>
                     <div class="timeline-content">
                         <div class="timeline-label">2025</div>
                         <h3 class="timeline-heading">Starting Over</h3>
-                        <p class="timeline-description">
-                            Homeless with my two daughters—two months in a hotel room, then a month in a 
-                            shelter, in a windowless underground room I still think about. I chose the 
-                            shelter over burned bridges, and it gave me privacy, structure, and 
-                            professionals holding me up while I fell apart. We got housed again. 
-                            I still sleep with the blankets they gave me.
-                        </p>
+                        <p class="timeline-description">My daughters and I spent two months in a hotel and then a month in a shelter. Our room there was underground, without windows. The shelter gave us somewhere to stay and people who could help. We got housed again. I still sleep with the blankets they gave me.</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-label">November 2025</div>
-                        <h3 class="timeline-heading">The Night Everything Broke</h3>
-                        <p class="timeline-description">
-                            Strangled by my ex minutes before a night shift. Went to work anyway, bruises 
-                            and all. He was arrested and walked out on $500 bail. A month later I sat 
-                            down with <a href="#news">Valley News Live</a> and said exactly what I 
-                            thought about that.
-                        </p>
+                        <h3 class="timeline-heading">Speaking About What Happened</h3>
+                        <p class="timeline-description">After the assault and my former fiancé’s release on $500 bail, I spoke with <a href="#news">Valley News Live</a>. The interview led to a much bigger local conversation about bail reform and survivor safety.</p>
                     </div>
                     <div></div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div></div>
                     <div class="timeline-content">
                         <div class="timeline-label">2026</div>
                         <h3 class="timeline-heading">Holding My Books</h3>
-                        <p class="timeline-description">
-                            <em>The Silence</em> and <em>The Chosen</em> exist as hardcovers on my shelf—the 
-                            promise I made my fourth-grade teacher, kept. My first signing happened in my 
-                            car outside a UPS store, wearing a Bob Marley shirt from the shelter. Dreams 
-                            do come true; they just don't arrive dressed the way you expect.
-                        </p>
+                        <p class="timeline-description">I got to hold <em>The Silence</em> and <em>The Chosen</em> as actual hardcover books. I’d kept the promise I made my fourth-grade teacher. My first book signing happened in my car outside a UPS store, wearing a Bob Marley shirt from the shelter. That’s how it happened, and I like that I get to remember it that way.</p>
                     </div>
                 </div>
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-label">Present</div>
-                        <h3 class="timeline-heading">Giving Myself Permission</h3>
-                        <p class="timeline-description">
-                            Registered Nurse, mother of two incredible daughters, author, and musician—on 
-                            a leave of absence from work for the first time in my life, doing the 
-                            healing I've spent years postponing. Using my voice to speak for those who 
-                            can't and creating art that refuses to look away from hard truths.
-                        </p>
+                        <h3 class="timeline-heading">Where I Am Now</h3>
+                        <p class="timeline-description">I’m still on leave from nursing and planning to return to the Resource Team at the end of October. In the meantime, I’m taking care of myself, spending time on my writing and music, and trying to give myself room to enjoy my life too.</p>
                     </div>
                     <div></div>
                 </div>
@@ -1782,7 +352,7 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
             <div class="timeline-header">
                 <h2 class="timeline-title">Current Focus</h2>
             </div>
-            
+
             <div class="focus-grid">
                 <div class="focus-card">
                     <div class="focus-icon-wrapper">
@@ -1797,18 +367,9 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                         <div class="focus-icon-shadow"></div>
                     </div>
                     <h3 class="focus-title">Healing on Purpose</h3>
-                    <p class="focus-description">
-                        For the first time in my life, I've stopped white-knuckling. I'm on a leave of 
-                        absence from work to actually process what's happened—the religious trauma I've 
-                        carried since childhood, the domestic violence I survived last November, and every 
-                        fire I kept putting out in between. That means rest, help, and cleaning up my life: 
-                        the visible messes and the unseen ones alike. I gave operating room nursing eight 
-                        and a half months, but the schedule and the rest of my life could never agree, so 
-                        I'm planning to be back on the Resource Team full time at the end of October—refreshed, 
-                        and ready to take care of other people again.
-                    </p>
+                    <p class="focus-description">I’m still on leave from nursing, with plans to return to the Resource Team at the end of October. I spent eight and a half months in the operating room, but the schedule was hard to make work with the rest of my life. Right now I’m taking time to work through what’s happened and take care of things I kept putting off. I want to go back feeling more ready, rather than just pushing myself through another day.</p>
                 </div>
-                
+
                 <div class="focus-card">
                     <div class="focus-icon-wrapper">
                         <div class="focus-icon">
@@ -1820,14 +381,10 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                         </div>
                         <div class="focus-icon-shadow"></div>
                     </div>
-                    <h3 class="focus-title">Amplifying Survivor Voices</h3>
-                    <p class="focus-description">
-                        My greatest fulfillment comes from sharing community survivor stories. Each story 
-                        I write for others is a candle lit in someone's darkness—proof that healing is 
-                        possible and no one walks alone.
-                    </p>
+                    <h3 class="focus-title">Sharing Other People’s Stories</h3>
+                    <p class="focus-description">Sharing other survivors’ stories matters to me. People trust me with things that aren’t easy to talk about, and I want to take the time to get them right. I hope someone reading them recognizes a feeling or an experience they thought they were alone in.</p>
                 </div>
-                
+
                 <div class="focus-card">
                     <div class="focus-icon-wrapper">
                         <div class="focus-icon">
@@ -1841,15 +398,9 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                         <div class="focus-icon-shadow"></div>
                     </div>
                     <h3 class="focus-title">Building My Fantasy World</h3>
-                    <p class="focus-description">
-                        Blood of the Wild Gods isn't just a plan anymore. The first two books—<em>The 
-                        Silence</em> and <em>The Chosen</em>—are published and sitting on my shelf as 
-                        hardcovers with the covers I dreamed about, and the rest of the series is mapped: 
-                        beautiful, tragic, and deeply symbolic. When I'm not doing the work of healing, 
-                        I'm writing chapters or building out the world guide to make it breathe.
-                    </p>
+                    <p class="focus-description">Right now, I’m doing a major rewrite of <em>The Silence</em>. It’s the first book I finished, and I want to bring everything I’ve learned since then back to it: better scenes, more grounded characters, and the lore I developed as the world grew. The new cover is already out, and the rewritten book will be re-released soon. <em>The Forsaken</em> manuscript is complete, and I’m also working on <em>The Girl Beneath the Cherry Tree</em> and the wider Blood of the Wild Gods universe.</p>
                 </div>
-                
+
                 <div class="focus-card">
                     <div class="focus-icon-wrapper">
                         <div class="focus-icon">
@@ -1862,14 +413,8 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                         </div>
                         <div class="focus-icon-shadow"></div>
                     </div>
-                    <h3 class="focus-title">Long-Term Vision</h3>
-                    <p class="focus-description">
-                        Nursing pays the bills and keeps me human, but the dream hasn't changed: I want 
-                        writing to be more than a hobby—the life I get to live every day. Every book sold, 
-                        every post shared, every reader who tells me they saw themselves in my world moves 
-                        that day a little closer. I dream of the day when that's all I have to do. Just 
-                        write and write and write, without anything standing in the way.
-                    </p>
+                    <h3 class="focus-title">What I’m Hoping For</h3>
+                    <p class="focus-description">I would love to make a life out of writing. I’m grateful for the people who buy a book, listen to a song, share something I’ve made, or take the time to tell me what they thought. It means a lot to know someone is spending time with a world that started in my head. I still dream of being able to just write and write and write.</p>
                 </div>
             </div>
         </div>
@@ -1879,25 +424,19 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
     <section class="explore-section">
         <div class="explore-container">
             <div class="explore-header">
-                <h2 class="explore-title">Dive Deeper Into My World</h2>
-                <p class="explore-subtitle">
-                    Discover the stories that emerge from darkness and the voices that refuse to be silenced
-                </p>
+                <h2 class="explore-title">Have a Look Around</h2>
+                <p class="explore-subtitle">If you’d like to spend a little more time here, these are good places to start.</p>
             </div>
-            
+
             <div class="explore-cards">
                 <!-- Writing Card -->
                 <div class="explore-card">
                     <div class="explore-image-wrapper">
-                        <img src="/assets/images/the-chosen-chronicles.png" alt="Blood of the Wild Gods: The Chosen Chronicles">
+                        <img src="/assets/images/the-chosen-chronicles.png" alt="Blood of the Wild Gods: The Chosen Chronicles" loading="lazy">
                     </div>
                     <div class="explore-card-content">
-                        <h3 class="explore-card-title">My Dark Fantasy Worlds</h3>
-                        <p class="explore-card-description">
-                            Enter the realm of the Wild Gods where divine silence speaks louder than prayers. 
-                            Explore published novels and ongoing series that refuse to look away from humanity's 
-                            darkest truths—and brightest hopes.
-                        </p>
+                        <h3 class="explore-card-title">My Books</h3>
+                        <p class="explore-card-description">Blood of the Wild Gods is the fantasy universe I keep coming back to. You can find the books, see what I’m working on, and follow where the stories fit in the world’s timeline.</p>
                         <a href="/writing/" class="explore-link">
                             Explore My Books
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1906,19 +445,15 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Community Card -->
                 <div class="explore-card">
                     <div class="explore-image-wrapper">
-                        <img src="/assets/images/Mileena-Rayne-Survivor-Stories.png" alt="Survivor Stories Community">
+                        <img src="/assets/images/Mileena-Rayne-Survivor-Stories.png" alt="Survivor Stories Community" loading="lazy">
                     </div>
                     <div class="explore-card-content">
                         <h3 class="explore-card-title">Survivor Stories</h3>
-                        <p class="explore-card-description">
-                            Real voices from real survivors finding healing through shared experience. These are 
-                            the stories that remind us we're never alone in our darkness—and that healing is 
-                            possible, even when it feels impossible.
-                        </p>
+                        <p class="explore-card-description">These are other people’s stories, shared with me and written for this community. Take your time with them.</p>
                             <a href="/survivor-stories/" class="explore-link">
                                 Read Survivor Stories
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1935,66 +470,8 @@ twitter:image: "/assets/images/mileena-rayne-author.jpg"
     <section class="cta-section">
         <div class="cta-container">
             <h2 class="cta-title">Let's Connect</h2>
-            <p class="cta-description">
-                Whether you're a fellow survivor, a reader who sees yourself in my stories, or someone 
-                who believes in the power of uncomfortable truths—I'd love to hear from you. Your story 
-                matters, your voice matters, and you're not alone in this.
-            </p>
-            <a href="/contact/" class="cta-button">Share Your Story</a>
+            <p class="cta-description">You can send me a private message or ask a question through my Askbox. If something on this website made you curious, or you just want to tell me what you thought of a book or song, I’d love to hear from you.</p>
+            <a href="/contact/" class="cta-button">Get in Touch</a>
         </div>
     </section>
 </div>
-
-<script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // Parallax effect for orbs
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const orbs = document.querySelectorAll('.light-orb');
-        
-        orbs.forEach((orb, index) => {
-            const speed = 0.5 + (index * 0.2);
-            const yPos = -(scrolled * speed * 0.1);
-            orb.style.transform = `translateY(${yPos}px)`;
-        });
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe all cards
-    document.addEventListener('DOMContentLoaded', () => {
-        const cards = document.querySelectorAll('.content-card, .timeline-content, .focus-card, .explore-card');
-        cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.8s ease ${index * 0.1}s`;
-            observer.observe(card);
-        });
-    });
-</script>
