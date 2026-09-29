@@ -215,15 +215,15 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header{% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page %} home-header{% endif %}">
+    <header class="header{% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page or page.world_page %} home-header{% endif %}">
         <div class="container">
             <div class="nav-container">
                 <a href="/" class="logo">{{ site.title }}</a>
-                {% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page %}
+                {% if page.homepage or page.books_page or page.contact_page or page.about_page or page.diary_page or page.feed_page or page.survivor_page or page.world_page %}
                 <nav class="nav" aria-label="Main navigation">
                     <a href="/writing/"{% if page.books_page %} class="active" aria-current="page"{% endif %}>Books</a>
                     <a href="/music/">Music</a>
-                    <a href="/world-guide/">World Guide</a>
+                    <a href="/world-guide/"{% if page.world_page %} class="active" aria-current="page"{% endif %}>World Guide</a>
                     <a href="/diary/"{% if page.diary_page %} class="active" aria-current="page"{% endif %}>Diary & Stories</a>
                     <a href="/about/"{% if page.about_page %} class="active" aria-current="page"{% endif %}>About</a>
                     <a href="/contact/"{% if page.contact_page %} class="active" aria-current="page"{% endif %}>Contact</a>
@@ -233,7 +233,7 @@
                     <nav aria-label="Mobile navigation">
                         <a href="/writing/"{% if page.books_page %} class="active" aria-current="page"{% endif %}>Books</a>
                         <a href="/music/">Music</a>
-                        <a href="/world-guide/">World Guide</a>
+                        <a href="/world-guide/"{% if page.world_page %} class="active" aria-current="page"{% endif %}>World Guide</a>
                         <a href="/diary/">Diary</a>
                         <a href="/feed/">The Feed</a>
                         <a href="/survivor-stories/">Survivor Stories</a>
