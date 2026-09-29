@@ -1,9 +1,13 @@
 // User Experience Enhancements
 document.addEventListener('DOMContentLoaded', function() {
     // Create back to top button
-    const backToTop = document.createElement('div');
+    const backToTop = document.createElement('button');
+    backToTop.type = 'button';
+    backToTop.setAttribute('aria-label', 'Back to top');
     backToTop.innerHTML = '↑';
     backToTop.style.cssText = `
+        border: 0;
+        padding: 0;
         position: fixed;
         bottom: 30px;
         right: 30px;
