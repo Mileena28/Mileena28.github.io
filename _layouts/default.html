@@ -214,18 +214,18 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header{% if page.homepage or page.books_page %} home-header{% endif %}">
+    <header class="header{% if page.homepage or page.books_page or page.contact_page %} home-header{% endif %}">
         <div class="container">
             <div class="nav-container">
                 <a href="/" class="logo">{{ site.title }}</a>
-                {% if page.homepage or page.books_page %}
+                {% if page.homepage or page.books_page or page.contact_page %}
                 <nav class="nav" aria-label="Main navigation">
                     <a href="/writing/"{% if page.books_page %} class="active" aria-current="page"{% endif %}>Books</a>
                     <a href="/music/">Music</a>
                     <a href="/world-guide/">World Guide</a>
                     <a href="/diary/">Diary & Stories</a>
                     <a href="/about/">About</a>
-                    <a href="/contact/">Contact</a>
+                    <a href="/contact/"{% if page.contact_page %} class="active" aria-current="page"{% endif %}>Contact</a>
                 </nav>
                 <details class="home-mobile-menu">
                     <summary>Menu</summary>
@@ -237,7 +237,7 @@
                         <a href="/feed/">The Feed</a>
                         <a href="/survivor-stories/">Survivor Stories</a>
                         <a href="/about/">About</a>
-                        <a href="/contact/">Contact</a>
+                        <a href="/contact/"{% if page.contact_page %} class="active" aria-current="page"{% endif %}>Contact</a>
                     </nav>
                 </details>
                 {% else %}
