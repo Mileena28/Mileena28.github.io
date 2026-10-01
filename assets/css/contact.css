@@ -59,3 +59,7 @@
 @media(max-width:600px) { .contact-hero { grid-template-columns:1fr; padding:45px 0; } .contact-welcome { padding:25px; } .contact-field-row,.contact-stay { grid-template-columns:1fr; } .contact-form-card,.contact-empty,.contact-stay { padding:24px; } .contact-answer summary { font-size:1.05rem; } .contact-hero h1 { font-size:3.3rem; } .contact-form-card button { width:100%; } }
 
 .contact-hero { grid-template-columns:1fr; max-width:850px; }
+
+.contact-email-card{min-width:0;padding:32px;background:#1c1923;border:1px solid #504259;border-radius:6px;display:flex;flex-direction:column;align-items:flex-start;gap:20px}.contact-email-card h3{font-size:1.6rem}.contact-email-card p,.contact-email-card li{color:var(--home-muted)}.contact-address{overflow-wrap:anywhere;font-size:clamp(1rem,2vw,1.35rem);text-underline-offset:5px}.contact-email-card .contact-email-help{font:.82rem/1.75 Arial,sans-serif}.contact-email-card ul{padding-left:22px;line-height:1.8}.contact-email-card li+li{margin-top:12px}.contact-email-card .contact-response-note{margin-top:0}.contact-story-link{margin-top:22px}.contact-form-layout{scroll-margin-top:110px}@media(max-width:600px){.contact-email-card{padding:24px}.contact-email-card .home-button{max-width:100%;white-space:normal}}
+
+.contact-story-topics{margin-top:30px}.contact-page .contact-story-topics h3{font-size:1.35rem;margin-bottom:15px}.contact-story-topics p,.contact-story-topics li{color:var(--home-muted)}.contact-story-topics ul{padding-left:22px;margin:18px 0;line-height:1.8}.contact-story-topics li+li{margin-top:9px}
