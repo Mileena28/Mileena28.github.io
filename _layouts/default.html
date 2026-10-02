@@ -7,6 +7,17 @@
     <!-- SEO Tags - replaces manual title and description -->
     {% seo %}
     {% include json-ld-schema.html %}
+
+    <!-- Microsoft Clarity: track the live site only, not local previews. -->
+    <script>
+      if (window.location.hostname === 'mileenarayne.com' || window.location.hostname === 'www.mileenarayne.com') {
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "yrk44nszu8");
+      }
+    </script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7K576LDGCK"></script>
