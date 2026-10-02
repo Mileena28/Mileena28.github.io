@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="stylesheet" href="{{ '/assets/css/survivor-story.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<div class="home-page story-page">
+<a class="home-skip" href="#story">Skip to the story</a>
+<div class="home-wrap">
+<nav class="story-breadcrumb" aria-label="Breadcrumb"><a href="/survivor-stories/">← Survivor Stories</a><span> / </span><span>A survivor’s story</span></nav>
+<article>
+<header class="story-hero">
+<div><p class="home-eyebrow">Survivor Stories · By Mileena Rayne</p><h1>{{ page.title | escape }}</h1><p class="story-date"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time></p><div class="home-actions"><a class="home-button" href="#story">Read the story ↓</a><a class="home-text-link" href="/survivor-stories/#stories">Browse all stories →</a></div></div>
+{% if page.image %}<figure class="story-art"><img src="{{ page.image | relative_url }}" alt="Artwork for {{ page.title | escape }}" fetchpriority="high"></figure>{% endif %}
+</header>
+<div class="story-reading" id="story">{{ content }}</div>
+<section class="story-podcast" aria-labelledby="podcast-title">
+{% if page.youtube_video_id %}<div class="story-episode" id="video-version"><h2>Watch this story.</h2><div class="story-video"><iframe src="https://www.youtube.com/embed/{{ page.youtube_video_id | escape }}" title="{{ page.title | escape }} narrated by Mileena Rayne" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>{% endif %}
+<p class="home-eyebrow">Survivor Stories · The podcast</p><h2 id="podcast-title">Follow along. Listen when you’re ready.</h2><p>Find more survivor stories narrated by me, and follow the podcast for new episodes as they become available.</p><nav class="home-actions" aria-label="Follow the Survivor Stories podcast"><a class="home-button" href="https://open.spotify.com/show/59iOHYDnzm1RSnFMdPBsLn" target="_blank" rel="noopener">Spotify ↗</a><a class="home-button home-button-outline" href="https://podcasts.apple.com/us/podcast/mileena-rayne-survivor-stories-podcast/id1822924296" target="_blank" rel="noopener">Apple Podcasts ↗</a><a class="home-button home-button-outline" href="https://www.youtube.com/@mileenaraynestories" target="_blank" rel="noopener">YouTube ↗</a></nav></section>
+<footer class="story-end"><p class="home-eyebrow">Thank you for reading</p><h2>Every story deserves care.</h2><p>If you’d like to share your own experience, you can read about submitting a story for anonymous publication.</p><div class="home-actions"><a class="home-button" href="/contact/#survivor-submissions">Share your story →</a><a class="home-text-link" href="/survivor-stories/">Back to Survivor Stories →</a></div></footer>
+</article>
+<section class="story-more" aria-labelledby="more-stories"><p class="home-eyebrow">When you’re ready</p><h2 id="more-stories">More survivor stories.</h2><div class="story-more-grid">
+{% assign stories = site.posts | where: 'category', 'Survivor Stories' %}{% assign shown = 0 %}{% for story in stories %}{% if story.url != page.url and shown < 3 %}<article><p class="story-date">{{ story.date | date: '%B %-d, %Y' }}</p><h3><a href="{{ story.url | relative_url }}">{{ story.title | escape }}</a></h3><p>{{ story.excerpt | strip_html | truncatewords: 28 }}</p><a class="home-text-link" href="{{ story.url | relative_url }}">Read this story →</a></article>{% assign shown = shown | plus: 1 %}{% endif %}{% endfor %}
+</div></section>
+</div></div>

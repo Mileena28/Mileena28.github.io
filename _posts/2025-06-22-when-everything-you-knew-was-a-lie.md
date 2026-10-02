@@ -1,5 +1,7 @@
 ---
-layout: post
+layout: survivor-story
+survivor_page: true
+youtube_video_id: z3upFeetDT0
 title: "When Everything You Knew Was a Lie: One Survivor's Journey from Jehovah's Witnesses to Searching the Stars for Truth"
 date: 2025-06-22
 category: "Survivor Stories"
@@ -148,98 +150,3 @@ Thank you for answering my call. Thank you for trusting me with your broken bird
 
 <p>You are not alone in this. Even when it feels like you are. Even when the truth makes you strange. Even when the universe shows you things others won't believe. You are not alone.</p>
 </div>
-
----
-
-## Video Version
-
-<div class="video-container">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/z3upFeetDT0?si=JW6zusTUBMnKQYh9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-
-<style>
-.video-notice-box {
-    background: linear-gradient(135deg, rgba(138, 159, 255, 0.15), rgba(138, 159, 255, 0.08));
-    border: 1px solid #8a9fff;
-    border-radius: 10px;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-    font-size: 0.95em;
-    color: #b8c5ff;
-    text-align: center;
-}
-
-.content-warning-box {
-    background: rgba(255, 100, 100, 0.1);
-    border: 1px solid #ff6464;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 40px;
-    font-size: 0.95em;
-    color: #ffaaaa;
-}
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    border-radius: 10px;
-    margin: 30px 0;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10px;
-}
-
-.author-note {
-    background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.05));
-    border-left: 4px solid #8a9fff;
-    border-radius: 0 15px 15px 0;
-    padding: 30px;
-    margin: 60px 0 40px 0;
-    font-style: italic;
-}
-
-.author-note p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-.author-note p:last-child {
-    margin-bottom: 0;
-}
-
-blockquote {
-    background: rgba(40, 40, 50, 0.5);
-    border-left: 4px solid #8a9fff;
-    padding: 20px 30px;
-    margin: 30px 0;
-    font-style: italic;
-    color: #ddd;
-    border-radius: 0 10px 10px 0;
-}
-
-h2 {
-    color: #f0f0f0;
-    font-weight: 300;
-    font-size: 2em;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #8a9fff, transparent);
-    margin: 60px 0;
-}
-</style>

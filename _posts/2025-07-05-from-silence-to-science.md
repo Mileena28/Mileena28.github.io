@@ -1,5 +1,6 @@
 ---
-layout: post
+layout: survivor-story
+survivor_page: true
 title: "From Silence to Science: A Survivor's Journey from Religious Abuse to Royal Commission Testimony"
 date: 2025-07-05
 category: "Survivor Stories"
@@ -294,70 +295,3 @@ Your voice matters. Your truth matters. Your healing matters. And your freedom, 
 
 <p>To this remarkable survivor: thank you for showing us all what courage looks like when it's backed by education, what justice looks like when it's pursued through proper channels, and what healing looks like when it becomes a mission to protect others. Your story will undoubtedly help other survivors recognize their own strength and find their own paths to freedom and advocacy.</p>
 </div>
-
-<style>
-.content-warning-box {
-    background: rgba(255, 100, 100, 0.1);
-    border: 1px solid #ff6464;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 40px;
-    font-size: 0.95em;
-    color: #ffaaaa;
-}
-
-.author-note {
-    background: linear-gradient(135deg, rgba(138, 159, 255, 0.1), rgba(138, 159, 255, 0.05));
-    border-left: 4px solid #8a9fff;
-    border-radius: 0 15px 15px 0;
-    padding: 30px;
-    margin: 60px 0 40px 0;
-    font-style: italic;
-}
-
-.author-note p {
-    margin-bottom: 15px;
-    line-height: 1.8;
-}
-
-.author-note p:last-child {
-    margin-bottom: 0;
-}
-
-.author-note a {
-    color: #8a9fff;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease;
-}
-
-.author-note a:hover {
-    border-bottom-color: #8a9fff;
-}
-
-blockquote {
-    background: rgba(40, 40, 50, 0.5);
-    border-left: 4px solid #8a9fff;
-    padding: 20px 30px;
-    margin: 30px 0;
-    font-style: italic;
-    color: #ddd;
-    border-radius: 0 10px 10px 0;
-}
-
-h2 {
-    color: #f0f0f0;
-    font-weight: 300;
-    font-size: 2em;
-    margin-top: 60px;
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #8a9fff, transparent);
-    margin: 60px 0;
-}
-</style>
