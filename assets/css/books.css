@@ -97,3 +97,7 @@
 .books-page .books-tags { display:flex; flex-wrap:wrap; gap:4px 0; list-style:none; padding:0; margin:0 0 18px; }
 .books-page .books-tags li { color:#d9c3e6; font:400 .72rem/1.6 Arial,sans-serif; letter-spacing:.01em; }
 .books-page .books-tags li + li::before { content:"·"; display:inline-block; margin:0 8px; color:#ac8ebd; }
+
+.books-page h3 a, .books-page h4 a { color: inherit; text-decoration: underline; text-decoration-color: #70617d; text-underline-offset: 6px; }
+.books-cover-link { display: block; }
+.books-project .books-cover-link img { width: 100%; height: auto; }

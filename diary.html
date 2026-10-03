@@ -29,7 +29,7 @@ image: "/assets/images/mileena-rayne-author.jpg"
       <div class="home-section-heading"><div><p class="home-eyebrow">What I’ve been sharing</p><h2 id="feed-heading">Recently in the feed</h2></div><a class="home-text-link" href="/feed/">View the whole feed →</a></div>
       <div class="diary-recent">
         {% for post in recent_feed limit:3 %}
-        <article><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.excerpt | strip_html | truncatewords: 30 | escape }}</p><a class="home-text-link" href="{{ post.url | relative_url }}">Read post →</a></article>
+        <article><a class="diary-preview-link" href="{{ post.url | relative_url }}"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | truncatewords: 30 | escape }}</p><span class="home-text-link">Read post →</span></a></article>
         {% endfor %}
       </div>
     </section>
@@ -47,8 +47,8 @@ image: "/assets/images/mileena-rayne-author.jpg"
       <div id="diary-entries" class="diary-entries">
         {% for post in site.posts %}
         <article class="diary-entry" data-category="{{ post.category | escape }}" data-search="{{ post.title | escape }} {{ post.excerpt | strip_html | escape }} {{ post.tags | join: ' ' | escape }} {{ post.category | escape }}">
-          <div class="diary-entry-meta"><span>{{ post.category | replace: 'Diary Entry', 'Personal' | escape }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time></div>
-          <div><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3><p>{{ post.excerpt | strip_html | truncatewords: 42 | escape }}</p><a class="home-text-link" href="{{ post.url | relative_url }}">Read {% if post.category == 'Survivor Stories' %}story{% else %}entry{% endif %} →</a></div>
+          <a class="diary-entry-link" href="{{ post.url | relative_url }}"><div class="diary-entry-meta"><span>{{ post.category | replace: 'Diary Entry', 'Personal' | escape }}</span><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time></div>
+          <div><h3>{{ post.title | escape }}</h3><p>{{ post.excerpt | strip_html | truncatewords: 42 | escape }}</p><span class="home-text-link">Read {% if post.category == 'Survivor Stories' %}story{% else %}entry{% endif %} →</span></div></a>
         </article>
         {% endfor %}
       </div>

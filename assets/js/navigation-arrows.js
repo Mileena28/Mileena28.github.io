@@ -26,7 +26,7 @@
           svg.setAttribute('height','1em');
           svg.setAttribute('aria-hidden','true');
           svg.setAttribute('focusable','false');
-          svg.style.cssText = `display:inline-block;vertical-align:-.12em;flex-shrink:0;overflow:visible;transform:rotate(${rotations[part[0]]}deg)`;
+          svg.style.cssText = `pointer-events:none;display:inline-block;vertical-align:-.12em;flex-shrink:0;overflow:visible;transform:rotate(${rotations[part[0]]}deg)`;
           const path = document.createElementNS(svg.namespaceURI,'path');
           path.setAttribute('d','M4 12h16M14 6l6 6-6 6');
           path.setAttribute('fill','none');

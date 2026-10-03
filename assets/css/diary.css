@@ -41,3 +41,12 @@
 .diary-outro p:not(.home-eyebrow) { color:var(--home-muted); margin-top:18px; }
 .diary-outro .home-button { flex-shrink:0; }
 @media(max-width:760px) { .diary-paths,.diary-recent { grid-template-columns:1fr; } .diary-hero { padding-top:42px; } .diary-path .home-eyebrow { margin-bottom:18px; } .diary-entry { grid-template-columns:1fr; gap:14px; } .diary-entry-meta { display:flex; flex-wrap:wrap; gap:15px; } .diary-entry-meta span { margin:0; } .diary-outro { display:block; } .diary-outro .home-button { margin-top:24px; } .diary-nav { gap:20px; } .diary-search-row { flex-wrap:wrap; } }
+
+/* A preview has one destination: title, text and arrow all open it. */
+.diary-preview-link, .diary-entry-link { color: inherit; text-decoration: none; border-radius: 5px; }
+.diary-preview-link { display: block; padding: 12px; }
+.diary-entry { display: block; padding: 0; }
+.diary-entry-link { display: grid; grid-template-columns: 175px minmax(0, 1fr); gap: 35px; padding: 30px 12px; }
+.diary-preview-link:hover, .diary-entry-link:hover { background: #211c29; }
+.diary-preview-link:hover h3, .diary-entry-link:hover h3 { text-decoration: underline; text-underline-offset: 5px; }
+@media(max-width:760px) { .diary-entry-link { grid-template-columns: 1fr; gap: 14px; } }
