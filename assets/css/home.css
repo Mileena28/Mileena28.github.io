@@ -137,3 +137,9 @@
   .home-connect h2 { font-size: 2rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .home-page *, .home-header * { transition: none !important; } }
+
+/* Keep text links easy to reach without making static prose act like buttons. */
+.home-page .home-text-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; }
+.home-book h3 a { text-decoration: underline; text-decoration-color: #70617d; text-underline-offset: 6px; }
+.home-book h3 a:hover { text-decoration-color: currentColor; }
+.home-page { overflow-wrap: break-word; }

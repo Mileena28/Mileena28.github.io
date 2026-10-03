@@ -36,3 +36,13 @@
 .survivor-outro p:not(.home-eyebrow) { max-width:680px; color:#c4bfce; margin:22px 0; }
 @media(max-width:850px) { .survivor-quotes { grid-template-columns:1fr; } .survivor-quote blockquote { font-size:1.15rem; } .survivor-listen-grid { grid-template-columns:1fr; } .survivor-platforms img { max-width:300px; } }
 @media(max-width:600px) { .survivor-nav { gap:20px; } .survivor-hero { padding-top:40px; } .survivor-stories-grid { grid-template-columns:1fr; } .survivor-quote { padding:24px; } }
+
+/* One native link makes the date, title and preview a reliable touch target. */
+.survivor-story { padding: 0; }
+.survivor-story-link { display: flex; flex-direction: column; height: 100%; padding: 30px 12px; text-decoration: none; border-radius: 4px; }
+.survivor-story-link:hover, .survivor-story-link:focus-visible { background: #211c29; }
+.survivor-story-link:hover h3 { text-decoration: underline; text-underline-offset: 5px; }
+.survivor-story-link .home-text-link { margin-top: auto; }
+.survivor-nav { gap: 8px 16px; }
+.survivor-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 12px; border: 1px solid #504459; border-radius: 4px; text-decoration: underline; text-underline-offset: 4px; }
+.survivor-nav a:hover, .survivor-nav a[aria-current] { background: #302739; color: #f2eee8; }

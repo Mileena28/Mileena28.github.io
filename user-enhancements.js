@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
         justify-content: center;
         cursor: pointer;
         opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
         transition: all 0.3s ease;
         z-index: 1000;
         color: #000;
@@ -29,20 +31,34 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(backToTop);
     
-    // Show/hide on scroll
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTop.style.opacity = '1';
-        } else {
-            backToTop.style.opacity = '0';
-        }
-    });
-    
-    // Click to scroll to top
+    // Invisible controls must not intercept taps or remain in keyboard navigation.
+    function updateBackToTop() {
+        const visible = window.pageYOffset > 300;
+        backToTop.style.opacity = visible ? '1' : '0';
+        backToTop.style.visibility = visible ? 'visible' : 'hidden';
+        backToTop.style.pointerEvents = visible ? 'auto' : 'none';
+        backToTop.disabled = !visible;
+    }
+    window.addEventListener('scroll', updateBackToTop, { passive: true });
+    updateBackToTop();
     backToTop.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollTo({ top: 0, behavior: reducedMotion ? 'instant' : 'smooth' });
     });
-    
+
+    // Escape and outside taps dismiss the mobile menu without trapping focus.
+    document.querySelectorAll('.home-mobile-menu').forEach(menu => {
+        menu.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && menu.open) {
+                menu.open = false;
+                menu.querySelector('summary').focus();
+            }
+        });
+        document.addEventListener('click', event => {
+            if (!menu.contains(event.target) || event.target.closest('a[href]')) menu.open = false;
+        });
+    });
+
     // Initialize social share after page loads
     addSocialShare();
 });
