@@ -1,7 +1,8 @@
 User-agent: *
 # Welcome search indexing and retrieval for AI-generated answers.
 # These preferences do not change the path restrictions below.
-Content-signal: search=yes, ai-input=yes
+# AI model training and fine-tuning are not permitted.
+Content-signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 # Allow important content
