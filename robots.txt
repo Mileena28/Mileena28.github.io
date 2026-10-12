@@ -1,4 +1,7 @@
 User-agent: *
+# Welcome search indexing and retrieval for AI-generated answers.
+# These preferences do not change the path restrictions below.
+Content-signal: search=yes, ai-input=yes
 Allow: /
 
 # Allow important content
