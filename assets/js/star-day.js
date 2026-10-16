@@ -25,12 +25,12 @@
     renderDaily($('today-reading'), data.daily[row.day], true);
   }
   function risingFor(sign, time) {
-    if (!time) return [];
-    const [h,m] = time.split(':').map(Number), index = Math.floor(h/4);
+    const provisional = !time;
+    const [h,m] = (time || '12:00').split(':').map(Number), index = Math.floor(h/4);
     const regions = data.rising.rising_sign_system.regional_modifiers.regions;
     const table = data.rising.rising_sign_system.regional_shift_table;
     const row = table.rows.find(r => normalized(r.Constellation) === normalized(sign));
-    const indices = h%4 === 0 && m === 0 ? [(index+5)%6,index] : [index];
+    const indices = !provisional && h%4 === 0 && m === 0 ? [(index+5)%6,index] : [index];
     return indices.map(i => ({region:regions[i].name, sign:clean(row[table.headers[i+1]])}));
   }
   $('star-form').addEventListener('submit', event => {
@@ -40,6 +40,7 @@
     $('star-status').textContent = '';
     const result = $('star-result'); result.replaceChildren(); result.hidden = false;
     const sign = data.signs.find(s => normalized(s.name) === normalized(row.sign));
+    const provisional = !$('birth-time').value;
     const rising = risingFor(row.sign,$('birth-time').value);
     const moonName = row.moon.replace(' (Temporal Anomaly)','');
     const moon = data.moon.moon_phases_section.phases.find(p => normalized(p.name.replace(' BORN','')) === normalized(moonName));
@@ -47,12 +48,12 @@
     const summary = node('div','','star-summary'); summary.append(node('p','Your Star Day','home-eyebrow'),node('h3',row.sign));
     paragraph(summary, `${row.month} · Day ${row.reignDay} · ${sign.element}`);
     const facts = node('dl','','star-facts');
-    [['Constellation',(data.timeline.find(t => normalized(t.name) === normalized(sign.name)) || sign).status],['Moon',row.moon],['House',row.house],['Rising',rising.length ? rising.map(r => r.sign).join(' / ') : 'Birth time unknown']].forEach(([label,value]) => { const div = node('div');div.append(node('dt',label),node('dd',value));facts.append(div); });
+    [['Constellation',(data.timeline.find(t => normalized(t.name) === normalized(sign.name)) || sign).status],['Moon',row.moon],['House',row.house],['Rising',rising.map(r => r.sign).join(' / ') + (provisional ? ' · provisional noon' : '')]].forEach(([label,value]) => { const div = node('div');div.append(node('dt',label),node('dd',value));facts.append(div); });
     summary.append(facts);result.append(summary);
     if (row.day === '59.5') paragraph(result,'February 29 is the calendar’s separate leap day: Arcadian Day 59.5, under the Lovers and the Dark Moon. The rest of the year keeps its usual dates.');
     let body = section(result,'01 · Your constellation',true);
     paragraph(body,sign.core_reading);
-    block(body,'Your strengths',sign.strengths);block(body,'Your shadows',sign.shadows);block(body,'In love',sign.in_love);block(body,'Destiny & calling',sign.destiny_and_calling);
+    block(body,'Your strengths',sign.strengths);block(body,'Your shadows',sign.shadows);block(body,'In love',sign.in_love);block(body,'Interests & calling',sign.destiny_and_calling);
     body = section(result,'02 · Your inner self — '+moonName);
     paragraph(body,moon.description);
     block(body,'Your constellation & moon together',data.moon.sacred_combinations_section.constellations[sign.name][moonName]);
@@ -62,8 +63,8 @@
     const houseReading = data.rising.constellation_in_houses.constellations.find(c => c.name === sign.name).houses.find(h => h.house === house.number);
     block(body,sign.name.toLowerCase().replace(/\b\w/g, letter => letter.toUpperCase())+' in '+house.name,houseReading.interpretation);
     body = section(result,'04 · Your rising sign');
-    if (!rising.length) paragraph(body,'Your rising sign depends on your birth time. You can explore the rest of your reading without it, and add a time above whenever you know it.');
-    else {
+    if (provisional) paragraph(body,'Provisional noon reading: your birth time is unknown, so this example uses only the Verdant Veil column. It is a substitute to explore, not your confirmed rising sign.');
+    {
       if (rising.length > 1) paragraph(body,'You were born exactly at a turning between two regions. In the Almanac, you may claim either adjoining sky. Both are shown here for you to explore.');
       rising.forEach(r => { const reading = data.rising.rising_sign_system.rising_sign_meanings.signs.find(s => normalized(s.sign.replace(' Rising','')) === normalized(r.sign)); block(body,r.sign+' Rising · '+r.region,reading.description);paragraph(body,reading.quote); });
     }
@@ -137,11 +138,11 @@
       const lunar=data.moonCompatibility.combinations.find(p=>pairKey(p.phases)===pairKey([moon,params.get('n')]));
       if(!other||!lunar){host.hidden=true;return;}
       host.querySelector('h2').textContent=titleCase(sign.name)+' & '+titleCase(other.name);
-      const group=data.compatibility.compatibility_levels.find(g=>g.pairs.some(p=>pairKey(p.constellations)===pairKey([sign.name,other.name])));
+      const group=data.compatibility.compatibility_groups.find(g=>g.pairs.some(p=>pairKey(p.constellations)===pairKey([sign.name,other.name])));
       const pair=group.pairs.find(p=>pairKey(p.constellations)===pairKey([sign.name,other.name]));
       block(host,group.title,pair.description);block(host,lunar.title+' · '+moon+' & '+params.get('n'),lunar.description);
     } else {
-      block(host,'Your constellation',sign.core_reading);block(host,'Your strengths',sign.strengths);block(host,'Your shadows',sign.shadows);block(host,'In love',sign.in_love);block(host,'Destiny & calling',sign.destiny_and_calling);
+      block(host,'Your constellation',sign.core_reading);block(host,'Your strengths',sign.strengths);block(host,'Your shadows',sign.shadows);block(host,'In love',sign.in_love);block(host,'Interests & calling',sign.destiny_and_calling);
       block(host,'Your constellation & moon · '+moon,data.moon.sacred_combinations_section.constellations[sign.name][moon]);
       const house=data.rising.constellation_in_houses.constellations.find(c=>c.name===sign.name).houses.find(h=>h.title===params.get('h'));
       if(house)block(host,house.title,house.interpretation);
@@ -156,7 +157,7 @@
       if(rows.some(row=>!row)){$('pair-status').textContent='Please check both birthdays. One of those dates isn’t in the calendar.';$('pair-result').hidden=true;return;}
       $('pair-status').textContent='';
       const wanted=pairKey(rows.map(r=>r.sign));let match,level;
-      for(const group of data.compatibility.compatibility_levels){const found=group.pairs.find(p=>pairKey(p.constellations)===wanted);if(found){match=found;level=group;break;}}
+      for(const group of data.compatibility.compatibility_groups){const found=group.pairs.find(p=>pairKey(p.constellations)===wanted);if(found){match=found;level=group;break;}}
       const moonNames=rows.map(r=>r.moon.replace(' (Temporal Anomaly)',''));
       const lunar=data.moonCompatibility.combinations.find(p=>pairKey(p.phases)===pairKey(moonNames));
       const result=$('pair-result');result.hidden=false;result.replaceChildren();
@@ -171,7 +172,7 @@
   }
   function explorer() {
     const names=[...new Set(Object.values(data.calendar).map(r=>r.sign))];
-    for(const name of names){const sign=data.signs.find(s=>normalized(s.name)===normalized(name));const article=node('article');article.append(node('p',sign.association+' · '+(data.timeline.find(t => normalized(t.name) === normalized(sign.name)) || sign).status,'home-eyebrow'),node('h3',name));paragraph(article,sign.element);const body=section(article,'Explore '+name);const timeline=data.timeline.find(t=>normalized(t.name)===normalized(name));if(timeline){block(body,'In the story timeline',timeline.era);paragraph(body,timeline.event);const link=node('a',timeline.book);link.href=timeline.url;body.append(link);paragraph(body,timeline.connection);}paragraph(body,sign.core_reading);block(body,'Your strengths',sign.strengths);block(body,'Your shadows',sign.shadows);block(body,'The prophecy',sign.prophecy);$('constellation-grid').append(article);}
+    for(const name of names){const sign=data.signs.find(s=>normalized(s.name)===normalized(name));const article=node('article');article.append(node('p',sign.association+' · '+(data.timeline.find(t => normalized(t.name) === normalized(sign.name)) || sign).status,'home-eyebrow'),node('h3',name));paragraph(article,sign.element);block(article,'Colors',sign.colors.join(' · '));block(article,'Sacred colors',sign.sacred_colors.join(' · '));const body=section(article,'Explore '+name);const timeline=data.timeline.find(t=>normalized(t.name)===normalized(name));if(timeline){block(body,'In the story timeline',timeline.era);paragraph(body,timeline.event);const link=node('a',timeline.book);link.href=timeline.url;body.append(link);paragraph(body,timeline.connection);}paragraph(body,sign.core_reading);block(body,'Your strengths',sign.strengths);block(body,'Your shadows',sign.shadows);block(body,'The prophecy in Arcadia’s lore',sign.prophecy);$('constellation-grid').append(article);}
   }
 
   fetch('/assets/data/astrology.json').then(response => { if (!response.ok) throw new Error('Readings unavailable');return response.json(); }).then(d => {
