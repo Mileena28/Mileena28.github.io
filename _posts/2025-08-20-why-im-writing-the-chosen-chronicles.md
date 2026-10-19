@@ -202,7 +202,7 @@ For The Chosen Chronicles omnibus cover, I tried to think about how to make all 
 ### The Individual Books
 <div class="book-grid">
     <div>
-        <img src="/assets/images/the-chosen.png" alt="The Chosen Cover">
+        <img src="/assets/images/the-chosen-second-edition.jpg" alt="The Chosen Cover">
         <h4 style="text-align: center; margin-top: 10px;">Book One: The Chosen</h4>
     </div>
     <div>
