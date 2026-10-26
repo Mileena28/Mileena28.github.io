@@ -23,6 +23,7 @@
 .preview-prose blockquote { margin: 0 0 52px; padding: 12px 0 12px 28px; border-left: 2px solid #6b557a; color: #c7bdcf; }
 .silence-preview .preview-prose blockquote p:first-child { font-style: italic; font-size: 1.02em; line-height: 1.85; }
 .silence-preview .preview-prose blockquote p:last-child { font-size: .78em; margin-bottom: 0; line-height: 1.75; color: #aaa1b5; }
+.preview-prose > p:first-child::first-letter,
 .preview-prose > blockquote + p::first-letter { float: left; font-size: 4.35em; line-height: .83; padding: .11em .12em 0 0; color: #dec6a4; }
 .preview-prose hr { border: 0; text-align: center; margin: 48px auto; color: #ba9b78; }
 .preview-prose hr::after { content: '◇'; letter-spacing: .4em; }
