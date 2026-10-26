@@ -1,0 +1,54 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<link rel="stylesheet" href="{{ '/assets/css/silence-preview.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+<div class="home-page silence-preview">
+  <div class="home-wrap">
+    <nav class="preview-breadcrumb" aria-label="Reading navigation">
+      <a href="/writing/the-silence/">← About The Silence</a>
+      <a href="#chapter-text">Begin reading ↓</a>
+    </nav>
+    <header class="preview-heading">
+      <div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Silence</p>
+        <p class="preview-number">Chapter One</p>
+        <h1>{{ page.subtitle }}</h1>
+        <p class="preview-byline">By Mileena Rayne</p>
+        {% assign reading_minutes = content | strip_html | number_of_words | plus: 219 | divided_by: 220 %}
+        <p class="preview-meta">New edition · A first-chapter preview <span aria-hidden="true">/</span> {{ reading_minutes }} minute read</p>
+      </div>
+      <a class="preview-cover" href="/writing/the-silence/" aria-label="About The Silence">
+        <img src="/assets/images/the-silence-cover-2026.jpg" alt="The Silence by Mileena Rayne" width="1200" height="1914" fetchpriority="high">
+      </a>
+    </header>
+  </div>
+  <article class="preview-reading" aria-label="Chapter One: The Silence Before the Storm">
+    <div class="preview-ornament" aria-hidden="true"><span>◇</span></div>
+    <div class="preview-prose" id="chapter-text">
+      {{ content }}
+    </div>
+    <div class="preview-ornament preview-end" aria-hidden="true"><span>◇</span></div>
+    <p class="preview-endnote">End of Chapter One</p>
+  </article>
+  <div class="home-wrap">
+    <section class="preview-continue" aria-labelledby="continue-heading">
+      <div>
+        <p class="home-eyebrow">The story continues</p>
+        <h2 id="continue-heading">Return to Arcadia.</h2>
+        <p>Continue <em>The Silence</em> in Kindle, paperback, or hardcover. The complete rewritten edition is available now.</p>
+        <div class="home-actions preview-purchase">
+          <a class="home-button" href="https://www.amazon.com/dp/B0DWPM9QYJ">Kindle ↗</a>
+          <a class="home-button home-button-outline" href="https://www.amazon.com/dp/B0HP95RK9B">Paperback ↗</a>
+          <a class="home-button home-button-outline" href="https://www.amazon.com/dp/B0HP8WF67K">Hardcover ↗</a>
+        </div>
+      </div>
+      <div class="preview-more">
+        <a class="home-text-link" href="/writing/the-silence/">About the book →</a>
+        <a class="home-text-link" href="/the-silence-soundtrack/">Listen to the soundtrack →</a>
+        <a class="home-text-link" href="/writing/">Explore all books →</a>
+        <a class="home-text-link" href="#chapter-text">Back to the opening ↑</a>
+      </div>
+    </section>
+  </div>
+</div>
