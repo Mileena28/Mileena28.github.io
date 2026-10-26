@@ -1,579 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natalia DreamingOwl - The Lost Light | The Lost Histories</title>
-    <style>
-        /* Character Page Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a0f1a 0%, #2d1f2d 50%, #3d2f3d 100%);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-
-        .character-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .character-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(221, 160, 221, 0.15) 0%, rgba(216, 191, 216, 0.1) 100%);
-        }
-
-        .character-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .character-tagline {
-            font-size: 1.4em;
-            color: #dda0dd;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .series-breadcrumb {
-            background: rgba(221, 160, 221, 0.1);
-            border: 1px solid rgba(221, 160, 221, 0.3);
-            border-radius: 25px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #dda0dd;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .series-breadcrumb:hover {
-            background: rgba(221, 160, 221, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .character-content {
-            padding: 80px 0;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .character-portrait {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .portrait-container {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #9370db;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(221, 160, 221, 0.2), rgba(216, 191, 216, 0.1));
-            border: 2px solid #dda0dd;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #dda0dd;
-            font-style: italic;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .character-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(221, 160, 221, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(216, 191, 216, 0.2) 0%, transparent 50%),
-                linear-gradient(45deg, transparent 45%, rgba(221, 160, 221, 0.1) 50%, transparent 55%),
-                linear-gradient(-45deg, transparent 45%, rgba(216, 191, 216, 0.1) 50%, transparent 55%);
-            animation: meadowBreeze 16s ease-in-out infinite;
-        }
-
-        @keyframes meadowBreeze {
-            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
-            25% { transform: rotate(2deg) scale(1.02); opacity: 0.7; }
-            50% { transform: rotate(4deg) scale(0.98); opacity: 0.3; }
-            75% { transform: rotate(3deg) scale(1.01); opacity: 0.8; }
-        }
-
-        .character-stats {
-            text-align: left;
-        }
-
-        .stat-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #9370db;
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: #dda0dd;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: #ddd;
-            margin-top: 5px;
-        }
-
-        .character-info {
-            
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #dda0dd;
-            padding-bottom: 10px;
-        }
-
-        .character-description {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .character-quote {
-            background: rgba(221, 160, 221, 0.05);
-            border-left: 4px solid #dda0dd;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .character-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 3em;
-            color: #dda0dd;
-            opacity: 0.3;
-        }
-
-        .quote-source {
-            text-align: right;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .traits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .trait-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #9370db;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .trait-card:hover {
-            border-color: #dda0dd;
-            transform: translateY(-5px);
-        }
-
-        .trait-title {
-            color: #dda0dd;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .trait-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        .powers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .power-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #9370db;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .power-card:hover {
-            border-color: #dda0dd;
-            transform: translateY(-5px);
-        }
-
-        .power-card.storytelling {
-            border-left: 4px solid #dda0dd;
-        }
-
-        .power-card.faith {
-            border-left: 4px solid #d8bfd8;
-        }
-
-        .power-card.crafting {
-            border-left: 4px solid #e6e6fa;
-        }
-
-        .power-card.community {
-            border-left: 4px solid #dda0dd;
-        }
-
-        .power-title {
-            color: #dda0dd;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .power-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .related-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .related-character {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #9370db;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .related-character:hover {
-            border-color: #dda0dd;
-            transform: translateY(-5px);
-        }
-
-        .related-avatar {
-            width: 60px;
-            height: 60px;
-            background: rgba(221, 160, 221, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #dda0dd;
-            font-weight: bold;
-        }
-
-        .related-name {
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .related-role {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        .character-summary {
-            padding: 60px 0;
-            background: rgba(26, 15, 26, 0.6);
-            border-top: 1px solid #9370db;
-            border-bottom: 1px solid #9370db;
-        }
-
-        .summary-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .summary-title {
-            font-size: 2.2em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .summary-content p {
-            margin-bottom: 25px;
-        }
-
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .read-more-section {
-            background: linear-gradient(135deg, rgba(221, 160, 221, 0.2), rgba(221, 160, 221, 0.1));
-            border: 1px solid #dda0dd;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #dda0dd, #d8bfd8);
-            color: #000;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(221, 160, 221, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: rgba(221, 160, 221, 0.2);
-            color: #dda0dd;
-            border: 1px solid #dda0dd;
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(221, 160, 221, 0.3);
-        }
-
-        .analysis-timeline {
-            background: rgba(26, 15, 26, 0.4);
-            border: 1px solid #9370db;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .timeline-title {
-            color: #dda0dd;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .timeline-phase {
-            border-left: 3px solid #dda0dd;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .timeline-phase::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #dda0dd;
-            border-radius: 50%;
-        }
-
-        .phase-label {
-            color: #dda0dd;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        .phase-description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .memorial-box {
-            background: rgba(221, 160, 221, 0.1);
-            border: 1px solid rgba(221, 160, 221, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #f5f5f5;
-        }
-
-        .memorial-title {
-            color: #dda0dd;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .work-in-progress {
-            background: rgba(221, 160, 221, 0.1);
-            border: 1px solid rgba(221, 160, 221, 0.4);
-            border-radius: 10px;
-            padding: 15px 20px;
-            margin: 20px 0;
-            font-style: italic;
-            color: #dda0dd;
-            text-align: center;
-        }
-
-        .tragedy-warning {
-            background: rgba(221, 160, 221, 0.1);
-            border: 1px solid rgba(221, 160, 221, 0.4);
-            border-radius: 10px;
-            padding: 15px 20px;
-            margin: 20px 0;
-            color: #dda0dd;
-            text-align: center;
-            font-style: italic;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .character-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .character-portrait {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .character-title {
-                font-size: 2.2em;
-            }
-            
-            .character-tagline {
-                font-size: 1.2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .powers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Inline text links — match the rest of the site */
-        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
-            color: #b19cd9;
-            text-decoration: none;
-            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
-            background-repeat: no-repeat;
-            background-size: 100% 1px;
-            background-position: 0 100%;
-            padding-bottom: 1px;
-            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
-        }
-        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
-            color: #ffffff;
-            background-size: 100% 2px;
-            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
-        }
-        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .series-breadcrumb.secondary { opacity: 0.75; }
-    </style>
-</head>
-<body>
-
+---
+layout: character-profile
+world_page: true
+title: "Natalia DreamingOwl - The Lost Light | The Lost Histories"
+description: "Natalia DreamingOwl - The Lost Light | The Lost Histories — character history, relationships, and story details."
+permalink: /world-guide/characters/natalia.html
+---
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Lost Histories</p>
         <h1 class="character-title">Natalia DreamingOwl</h1>
         <p class="character-tagline">"The Lost Light"</p>
     </div>
 </section>
 
 <!-- Main Content -->
-<main class="character-content">
+<div class="character-content">
     <div class="character-container">
-        <div class="character-grid">
+        <p class="edition-note"><strong>Story spoilers ahead.</strong> This profile includes character history and plot details.</p>
+<div class="character-grid">
 
             <!-- Character Portrait & Stats -->
             <aside class="character-portrait">
                 <div class="portrait-container">
-                    <div class="character-image">
+                    <div class="character-image portrait-placeholder" data-initial="N">
                         [Character Art Coming Soon]<br>
                         <small>Blonde; hands that fly when she tells a story<br>Laughter that carries across a meadow like birdsong</small>
                     </div>
@@ -612,7 +63,7 @@
             </aside>
 
             <!-- Character Information -->
-            <div class="character-info">
+            <div class="character-info"><details class="profile-contents"><summary>On this page</summary><nav aria-label="Profile sections"><a href="#profile-section-1">The Light That Chased Away Darkness</a><a href="#profile-section-2">The Heart That Chose Joy Over Fear</a><a href="#profile-section-3">Gifts of Heart and Hearth</a><a href="#profile-section-4">Five Minutes After Sunset</a><a href="#profile-section-5">Bonds of Love, Faith and Memory</a></nav></details>
 
                 <div class="work-in-progress">
                     ⚠️ This profile is based on The Divine War, which is currently a work in progress. Only its first chapter is online; details may evolve as the story develops.
@@ -624,7 +75,7 @@
 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">The Light That Chased Away Darkness</h2>
+                    <h2 class="section-title" id="profile-section-1">The Light That Chased Away Darkness</h2>
                     <div class="character-description">
                         <p>Natalia is the friend whose infectious energy makes Astrid smile despite the melancholy that grips her. On the last afternoon of her life she lies in the grass of a meadow above the old oak grove weaving wildflowers into a crown and recounting the morning's drama—Ingrid's chicken escaping into Bjorn's bread stall, feathers everywhere, the poor man chasing it with a rolling pin while Ingrid laughs: "Well, at least now you know your bread's fresh enough for my Henrietta!" She knows all the chickens' names. She knows about Erik's poem for the baker's daughter, the one that compared Freya's eyes to fresh bread rolls, and she recites it, and the two of them laugh until their sides hurt.</p>
 
@@ -641,7 +92,7 @@
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">The Heart That Chose Joy Over Fear</h2>
+                    <h2 class="section-title" id="profile-section-2">The Heart That Chose Joy Over Fear</h2>
                     <div class="character-description">
                         <p>Natalia's gift is to find joy and humor in everything—to make even the darkest days bearable with an irrepressible spirit. She is also the careful one: she wants to leave before dark, she keeps the rules, she believes. The tale sets the two friends in balance—one who sees the world as it could be, one who sees it as it should be—and then shows what a world of hunting gods does to the one who hoped.</p>
                     </div>
@@ -673,7 +124,7 @@
 
                 <!-- Gifts -->
                 <section class="section">
-                    <h2 class="section-title">Gifts of Heart and Hearth</h2>
+                    <h2 class="section-title" id="profile-section-3">Gifts of Heart and Hearth</h2>
                     <div class="character-description">
                         <p>Natalia has no power but the ordinary kind—the kind the tale is careful to show before it takes her. She tells stories with her whole body, keeps track of a village's small dramas, weaves crowns from wildflowers, and prays.</p>
                     </div>
@@ -723,7 +174,7 @@
 
                 <!-- The Sunset -->
                 <section class="section">
-                    <h2 class="section-title">Five Minutes After Sunset</h2>
+                    <h2 class="section-title" id="profile-section-4">Five Minutes After Sunset</h2>
                     <div class="character-description">
                         <p>The tale gives Natalia one chapter, and gives that chapter to her laughter before it gives it to her fear. Then the owls fall silent, a branch snaps, and a beautiful thing steps out of the gathering shadows. What was done to her afterward is spoken of, not shown; the first chapter ends with Astrid behind a locked door and Eamon's grim prayer for the "kindest fate we can hope for now."</p>
                     </div>
@@ -775,7 +226,7 @@
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Bonds of Love, Faith and Memory</h2>
+                    <h2 class="section-title" id="profile-section-5">Bonds of Love, Faith and Memory</h2>
                     <div class="character-description">
                         <p>Natalia is known to us almost entirely through Astrid—through the friend who missed the beginning of her chicken story watching the sun, and who will carry the end of that day for the rest of her life. The Almanac of Stars remembers her too, in a single line of the Hunter's constellation: the friend who "died because they lingered five more minutes to watch a sunset."</p>
                     </div>
@@ -845,7 +296,4 @@
         </section>
 
     </div>
-</main>
-
-</body>
-</html>
+</div>

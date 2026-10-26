@@ -1,556 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Forest Elder - Village Wisdom Keeper | The Lost Histories</title>
-    <style>
-        /* Character Page Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a2e1a 0%, #2d4a2d 50%, #4a6e4a 100%);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-
-        .character-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .character-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(143, 188, 143, 0.1) 0%, rgba(143, 188, 143, 0.05) 100%);
-        }
-
-        .character-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .character-tagline {
-            font-size: 1.4em;
-            color: #8fbc8f;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .series-breadcrumb {
-            background: rgba(143, 188, 143, 0.1);
-            border: 1px solid rgba(143, 188, 143, 0.3);
-            border-radius: 25px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #8fbc8f;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .series-breadcrumb:hover {
-            background: rgba(143, 188, 143, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .character-content {
-            padding: 80px 0;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .character-portrait {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .portrait-container {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(143, 188, 143, 0.2), rgba(139, 115, 85, 0.1));
-            border: 2px solid #8fbc8f;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8fbc8f;
-            font-style: italic;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .character-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 30% 30%, rgba(143, 188, 143, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 70% 70%, rgba(139, 115, 85, 0.2) 0%, transparent 40%),
-                conic-gradient(from 0deg, transparent, rgba(143, 188, 143, 0.1), transparent);
-            animation: wisdomFlow 12s ease-in-out infinite;
-        }
-
-        @keyframes wisdomFlow {
-            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
-            25% { transform: rotate(30deg) scale(1.1); opacity: 0.6; }
-            50% { transform: rotate(60deg) scale(0.95); opacity: 0.3; }
-            75% { transform: rotate(90deg) scale(1.05); opacity: 0.7; }
-        }
-
-        .character-stats {
-            text-align: left;
-        }
-
-        .stat-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: #8fbc8f;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: #ddd;
-            margin-top: 5px;
-        }
-
-        .character-info {
-            
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #8fbc8f;
-            padding-bottom: 10px;
-        }
-
-        .character-description {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .character-quote {
-            background: rgba(143, 188, 143, 0.05);
-            border-left: 4px solid #8fbc8f;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .character-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 3em;
-            color: #8fbc8f;
-            opacity: 0.3;
-        }
-
-        .quote-source {
-            text-align: right;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .traits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .trait-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .trait-card:hover {
-            border-color: #8fbc8f;
-            transform: translateY(-5px);
-        }
-
-        .trait-title {
-            color: #8fbc8f;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .trait-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        .powers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .power-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .power-card:hover {
-            border-color: #8fbc8f;
-            transform: translateY(-5px);
-        }
-
-        .power-card.prophetic {
-            border-left: 4px solid #8fbc8f;
-        }
-
-        .power-card.wisdom {
-            border-left: 4px solid #9acd32;
-        }
-
-        .power-card.spiritual {
-            border-left: 4px solid #daa520;
-        }
-
-        .power-card.cultural {
-            border-left: 4px solid #8b7355;
-        }
-
-        .power-title {
-            color: #8fbc8f;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .power-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .related-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .related-character {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .related-character:hover {
-            border-color: #8fbc8f;
-            transform: translateY(-5px);
-        }
-
-        .related-avatar {
-            width: 60px;
-            height: 60px;
-            background: rgba(143, 188, 143, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8fbc8f;
-            font-weight: bold;
-        }
-
-        .related-name {
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .related-role {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        .character-summary {
-            padding: 60px 0;
-            background: rgba(26, 46, 26, 0.6);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-        .summary-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .summary-title {
-            font-size: 2.2em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .summary-content p {
-            margin-bottom: 25px;
-        }
-
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .read-more-section {
-            background: linear-gradient(135deg, rgba(143, 188, 143, 0.2), rgba(143, 188, 143, 0.1));
-            border: 1px solid #8fbc8f;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #8fbc8f, #9acd32);
-            color: #000;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(143, 188, 143, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: rgba(143, 188, 143, 0.2);
-            color: #8fbc8f;
-            border: 1px solid #8fbc8f;
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(143, 188, 143, 0.3);
-        }
-
-        .wisdom-timeline {
-            background: rgba(26, 46, 26, 0.4);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .timeline-title {
-            color: #8fbc8f;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .timeline-phase {
-            border-left: 3px solid #8fbc8f;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .timeline-phase::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #8fbc8f;
-            border-radius: 50%;
-        }
-
-        .phase-label {
-            color: #8fbc8f;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        .phase-description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .wisdom-box {
-            background: rgba(143, 188, 143, 0.1);
-            border: 1px solid rgba(143, 188, 143, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #f0f8e8;
-        }
-
-        .wisdom-title {
-            color: #8fbc8f;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .character-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .character-portrait {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .character-title {
-                font-size: 2.2em;
-            }
-            
-            .character-tagline {
-                font-size: 1.2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .powers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Inline text links — match the rest of the site */
-        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
-            color: #b19cd9;
-            text-decoration: none;
-            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
-            background-repeat: no-repeat;
-            background-size: 100% 1px;
-            background-position: 0 100%;
-            padding-bottom: 1px;
-            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
-        }
-        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
-            color: #ffffff;
-            background-size: 100% 2px;
-            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
-        }
-        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .series-breadcrumb.secondary { opacity: 0.75; }
-    </style>
-</head>
-<body>
-
+---
+layout: character-profile
+world_page: true
+title: "The Forest Elder - Village Wisdom Keeper | The Lost Histories"
+description: "The Forest Elder - Village Wisdom Keeper | The Lost Histories — character history, relationships, and story details."
+permalink: /world-guide/characters/forest-elder.html
+---
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Lost Histories</p>
         <h1 class="character-title">The Forest Elder</h1>
         <p class="character-tagline">"Village Wisdom Keeper"</p>
     </div>
 </section>
 
 <!-- Main Content -->
-<main class="character-content">
+<div class="character-content">
     <div class="character-container">
-        <div class="character-grid">
+        <p class="edition-note"><strong>Story spoilers ahead.</strong> This profile includes character history and plot details.</p>
+<div class="character-grid">
 
             <!-- Character Portrait & Stats -->
             <aside class="character-portrait">
                 <div class="portrait-container">
-                    <div class="character-image">
+                    <div class="character-image portrait-placeholder" data-initial="T">
                         [Character Art Coming Soon]<br>
                         <small>Eyes "clouded like misted glass"<br>Hands "twisted and gnarled like the roots of an ancient tree"</small>
                     </div>
@@ -589,11 +63,11 @@
             </aside>
 
             <!-- Character Information -->
-            <div class="character-info">
+            <div class="character-info"><details class="profile-contents"><summary>On this page</summary><nav aria-label="Profile sections"><a href="#profile-section-1">The One Who Was Waiting</a><a href="#profile-section-2">Frail Yet Unwavering</a><a href="#profile-section-3">What the Chapter Shows</a><a href="#profile-section-4">A Night in the Elder's Dwelling</a><a href="#profile-section-5">Connections</a></nav></details>
 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">The One Who Was Waiting</h2>
+                    <h2 class="section-title" id="profile-section-1">The One Who Was Waiting</h2>
                     <div class="character-description">
                         <p><em>The God Who Wept</em> follows Thainos, the god who descended from heaven with a simple quest — to find one human untouched by cruelty — and walked among mortals for a thousand years. Along that road are the people who met him: healers, elders, governors, wanderers. The Forest Elder is one of the few who saw him truly.</p>
 
@@ -615,7 +89,7 @@
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">Frail Yet Unwavering</h2>
+                    <h2 class="section-title" id="profile-section-2">Frail Yet Unwavering</h2>
                     <div class="character-description">
                         <p>The chapter draws her in a few strokes: a voice "thinned by time" that nonetheless carries "an unexpected resonance — frail yet unwavering"; hands "twisted and gnarled like the roots of an ancient tree" that reach out and find his; a touch "cool, papery," that grounds him. She sees through the calm mask he has worn for centuries, and she does it without accusation.</p>
                     </div>
@@ -647,7 +121,7 @@
 
                 <!-- Gifts & Sacred Abilities -->
                 <section class="section">
-                    <h2 class="section-title">What the Chapter Shows</h2>
+                    <h2 class="section-title" id="profile-section-3">What the Chapter Shows</h2>
                     <div class="character-description">
                         <p>She has no magic the text names. What she has is a lifetime of dreams, a village custom, and a question that strips the Wanderer's evasions away "like worn fabric."</p>
                     </div>
@@ -697,7 +171,7 @@
 
                 <!-- The Sacred Exchange -->
                 <section class="section">
-                    <h2 class="section-title">A Night in the Elder's Dwelling</h2>
+                    <h2 class="section-title" id="profile-section-4">A Night in the Elder's Dwelling</h2>
                     <div class="character-description">
                         <p>The shape of the encounter can be given without its heart. The Wanderer sits on the woven mat before her; she takes his hands; she asks him what drives him; and for the first time in what feels like lifetimes he lets the truth rise unguarded.</p>
                     </div>
@@ -749,7 +223,7 @@
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Connections</h2>
+                    <h2 class="section-title" id="profile-section-5">Connections</h2>
                     <div class="character-description">
                         <p>The Elder's ties are to the Wanderer she dreamed of, the village she is eldest of, and the young scribe who keeps its memory.</p>
                     </div>
@@ -809,7 +283,4 @@
         </section>
 
     </div>
-</main>
-
-</body>
-</html>
+</div>

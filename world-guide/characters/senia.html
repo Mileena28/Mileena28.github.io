@@ -1,582 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Senia - Goddess of the Sun | The Lost Histories</title>
-    <style>
-        /* Character Page Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a0a0a 0%, #2e1a1a 50%, #3e2116 100%);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-
-        .character-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .character-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 159, 138, 0.1) 0%, rgba(255, 159, 138, 0.05) 100%);
-        }
-
-        .character-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .character-tagline {
-            font-size: 1.4em;
-            color: #ff9f8a;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .series-breadcrumb {
-            background: rgba(255, 159, 138, 0.1);
-            border: 1px solid rgba(255, 159, 138, 0.3);
-            border-radius: 25px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #ff9f8a;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .series-breadcrumb:hover {
-            background: rgba(255, 159, 138, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .character-content {
-            padding: 80px 0;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .character-portrait {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .portrait-container {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(255, 204, 102, 0.2), rgba(255, 159, 138, 0.1));
-            border: 2px solid #ffcc66;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffcc66;
-            font-style: italic;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .character-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 204, 102, 0.2) 0%, transparent 70%);
-            animation: sunShimmer 8s ease-in-out infinite;
-        }
-
-        @keyframes sunShimmer {
-            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.3; }
-            25% { transform: rotate(90deg) scale(1.2); opacity: 0.6; }
-            50% { transform: rotate(180deg) scale(1.1); opacity: 0.4; }
-            75% { transform: rotate(270deg) scale(1.3); opacity: 0.7; }
-        }
-
-        .character-stats {
-            text-align: left;
-        }
-
-        .stat-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: #ff9f8a;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: #ddd;
-            margin-top: 5px;
-        }
-
-        .character-info {
-            
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #ff9f8a;
-            padding-bottom: 10px;
-        }
-
-        .character-description {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .character-quote {
-            background: rgba(255, 159, 138, 0.05);
-            border-left: 4px solid #ff9f8a;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .character-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 3em;
-            color: #ff9f8a;
-            opacity: 0.3;
-        }
-
-        .quote-source {
-            text-align: right;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .traits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .trait-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .trait-card:hover {
-            border-color: #ff9f8a;
-            transform: translateY(-5px);
-        }
-
-        .trait-title {
-            color: #ff9f8a;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .trait-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        .incarnations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .incarnation-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .incarnation-card:hover {
-            border-color: #ff9f8a;
-            transform: translateY(-5px);
-        }
-
-        .incarnation-card.royal {
-            border-left: 4px solid #ffd700;
-        }
-
-        .incarnation-card.common {
-            border-left: 4px solid #8b7355;
-        }
-
-        .incarnation-card.artistic {
-            border-left: 4px solid #ff6b9d;
-        }
-
-        .incarnation-card.current {
-            border-left: 4px solid #ff9f8a;
-            box-shadow: 0 0 15px rgba(255, 159, 138, 0.2);
-        }
-
-        .incarnation-title {
-            color: #ff9f8a;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .incarnation-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .related-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .related-character {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .related-character:hover {
-            border-color: #ff9f8a;
-            transform: translateY(-5px);
-        }
-
-        .related-avatar {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 159, 138, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ff9f8a;
-            font-weight: bold;
-        }
-
-        .related-name {
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .related-role {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        .character-summary {
-            padding: 60px 0;
-            background: rgba(20, 10, 10, 0.6);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-        .summary-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .summary-title {
-            font-size: 2.2em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .summary-content p {
-            margin-bottom: 25px;
-        }
-
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .read-more-section {
-            background: linear-gradient(135deg, rgba(255, 159, 138, 0.2), rgba(255, 159, 138, 0.1));
-            border: 1px solid #ff9f8a;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #ff9f8a, #ffb59a);
-            color: #000;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 159, 138, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: rgba(255, 159, 138, 0.2);
-            color: #ff9f8a;
-            border: 1px solid #ff9f8a;
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(255, 159, 138, 0.3);
-        }
-
-        .cycle-timeline {
-            background: rgba(20, 10, 10, 0.4);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .timeline-title {
-            color: #ff9f8a;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .timeline-day {
-            border-left: 3px solid #ff9f8a;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .timeline-day::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #ff9f8a;
-            border-radius: 50%;
-        }
-
-        .day-label {
-            color: #ff9f8a;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        .day-description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .memory-phases {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .memory-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .memory-card:hover {
-            border-color: #ff9f8a;
-            transform: translateY(-5px);
-        }
-
-        .memory-card.mortal {
-            border-left: 4px solid #8b7355;
-        }
-
-        .memory-card.awakening {
-            border-left: 4px solid #ff9f8a;
-        }
-
-        .memory-card.divine {
-            border-left: 4px solid #ffd700;
-        }
-
-        .memory-title {
-            color: #ff9f8a;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .memory-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .character-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .character-portrait {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .character-title {
-                font-size: 2.2em;
-            }
-            
-            .character-tagline {
-                font-size: 1.2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .incarnations-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Inline text links — match the rest of the site */
-        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
-            color: #b19cd9;
-            text-decoration: none;
-            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
-            background-repeat: no-repeat;
-            background-size: 100% 1px;
-            background-position: 0 100%;
-            padding-bottom: 1px;
-            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
-        }
-        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
-            color: #ffffff;
-            background-size: 100% 2px;
-            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
-        }
-        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .series-breadcrumb.secondary { opacity: 0.75; }
-    </style>
-</head>
-<body>
-
+---
+layout: character-profile
+world_page: true
+title: "Senia - Goddess of the Sun | The Lost Histories"
+description: "Senia - Goddess of the Sun | The Lost Histories — character history, relationships, and story details."
+permalink: /world-guide/characters/senia.html
+---
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Lost Histories</p>
         <h1 class="character-title">Senia</h1>
         <p class="character-tagline">"Goddess of the sun, of warmth and beauty and growing things"</p>
     </div>
 </section>
 
 <!-- Main Content -->
-<main class="character-content">
+<div class="character-content">
     <div class="character-container">
-        <div class="character-grid">
+        <p class="edition-note"><strong>Story spoilers ahead.</strong> This profile includes character history and plot details.</p>
+<div class="character-grid">
 
             <!-- Character Portrait & Stats -->
             <aside class="character-portrait">
                 <div class="portrait-container">
-                    <div class="character-image">
+                    <div class="character-image portrait-placeholder" data-initial="S">
                         [Character Art Coming Soon]<br>
                         <small>Auburn hair, arranging peaches with careful, loving hands<br>Hazel-green eyes that catch the sun</small>
                     </div>
@@ -615,11 +63,11 @@
             </aside>
 
             <!-- Character Information -->
-            <div class="character-info">
+            <div class="character-info"><details class="profile-contents"><summary>On this page</summary><nav aria-label="Profile sections"><a href="#profile-section-1">Light Reborn in Endless Dawn</a><a href="#profile-section-2">The Radiant Heart</a><a href="#profile-section-3">From Innocence to Remembrance</a><a href="#profile-section-4">Lives Across Lifetimes</a><a href="#profile-section-5">Seven Days of Sun</a><a href="#profile-section-6">Bonds That Transcend Death</a></nav></details>
 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">Light Reborn in Endless Dawn</h2>
+                    <h2 class="section-title" id="profile-section-1">Light Reborn in Endless Dawn</h2>
                     <div class="character-description">
                         <p>In the stone-paved market square of Quenos, where morning light turns the sea mist to gold as it rises from the harbour, there is a woman with auburn hair who arranges peaches with careful, loving hands. She does not know that she is Senia, the sun incarnate, goddess of warmth and beauty and growing things. To herself she is a fruit vendor with a comfortable rhythm of banter for a fair-haired stranger who favours her peaches above all other market goods, and a warmth in her voice that she reserves only for him—though she would never admit it aloud.</p>
 
@@ -636,7 +84,7 @@
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">The Radiant Heart</h2>
+                    <h2 class="section-title" id="profile-section-2">The Radiant Heart</h2>
                     <div class="character-description">
                         <p>Whether crowned or barefoot, whether she is selling peaches or serving strangers beneath a creaking tavern sign, certain things about Senia do not change. The Historian's journal shows her face across dozens of lives—each different, each the same—and the woman of Quenos wears it with an unassuming warmth that other market girls envy and cannot imitate.</p>
                     </div>
@@ -668,7 +116,7 @@
 
                 <!-- Memory & Transformation -->
                 <section class="section">
-                    <h2 class="section-title">From Innocence to Remembrance</h2>
+                    <h2 class="section-title" id="profile-section-3">From Innocence to Remembrance</h2>
                     <div class="character-description">
                         <p>Each of Senia's lives begins fresh, unmarked by the accumulated grief that Elodias carries for both of them. The Historian describes the connection between them as "recognition without memory, familiarity without origin"—and the movement from that recognition to full remembrance is the arc of every incarnation, and of the tale.</p>
                     </div>
@@ -708,7 +156,7 @@
 
                 <!-- Incarnations Across Time -->
                 <section class="section">
-                    <h2 class="section-title">Lives Across Lifetimes</h2>
+                    <h2 class="section-title" id="profile-section-4">Lives Across Lifetimes</h2>
                     <div class="character-description">
                         <p>The journal the Historian found held dozens of women. "One with sunlit curls. One veiled in market cloth. One crowned in blossoms. Faces drawn in reverent detail—captured as if remembered from dreams. No names remained, but whoever drew them knew her. All of her." The tale itself turns a few more of its pages: the same burning auburn hair, the same hazel-green eyes that catch the sun, in life after life.</p>
                     </div>
@@ -763,7 +211,7 @@
 
                 <!-- The Seven-Day Journey -->
                 <section class="section">
-                    <h2 class="section-title">Seven Days of Sun</h2>
+                    <h2 class="section-title" id="profile-section-5">Seven Days of Sun</h2>
                     <div class="character-description">
                         <p>Each cycle follows the same arc, and the story's own summary states its shape plainly: each lifetime brings seven perfect days before fate claims its due. The chapters now online carry the reader as far as the trade of a peach for a date; the rest is the tale.</p>
                     </div>
@@ -801,7 +249,7 @@
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Bonds That Transcend Death</h2>
+                    <h2 class="section-title" id="profile-section-6">Bonds That Transcend Death</h2>
                     <div class="character-description">
                         <p>Senia's relationships span the mortal and divine realms: the god who finds her in every life, the seer whose jealousy bound them, the village whose market she brightens, and the scholar who held her grief in his hands.</p>
                     </div>
@@ -861,7 +309,4 @@
         </section>
 
     </div>
-</main>
-
-</body>
-</html>
+</div>

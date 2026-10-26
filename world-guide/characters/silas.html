@@ -1,568 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silas - The Trickster God | The Lost Histories</title>
-    <style>
-        /* Character Page Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a1a0a 0%, #2d2d1a 50%, #3d3d2a 100%);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-
-        .character-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .character-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(218, 165, 32, 0.1) 100%);
-        }
-
-        .character-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .character-tagline {
-            font-size: 1.4em;
-            color: #ffd700;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .series-breadcrumb {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 25px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #ffd700;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .series-breadcrumb:hover {
-            background: rgba(255, 215, 0, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .character-content {
-            padding: 80px 0;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .character-portrait {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .portrait-container {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #b8860b;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(218, 165, 32, 0.1));
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffd700;
-            font-style: italic;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .character-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(218, 165, 32, 0.2) 0%, transparent 50%),
-                linear-gradient(45deg, transparent 45%, rgba(255, 215, 0, 0.1) 50%, transparent 55%),
-                linear-gradient(-45deg, transparent 45%, rgba(218, 165, 32, 0.1) 50%, transparent 55%);
-            animation: tricksterShift 12s ease-in-out infinite;
-        }
-
-        @keyframes tricksterShift {
-            0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.4; }
-            25% { transform: rotate(15deg) scale(1.05); opacity: 0.7; }
-            50% { transform: rotate(-10deg) scale(0.95); opacity: 0.9; }
-            75% { transform: rotate(8deg) scale(1.02); opacity: 0.5; }
-        }
-
-        .character-stats {
-            text-align: left;
-        }
-
-        .stat-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #b8860b;
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: #ffd700;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: #ddd;
-            margin-top: 5px;
-        }
-
-        .character-info {
-            
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 10px;
-        }
-
-        .character-description {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .character-quote {
-            background: rgba(255, 215, 0, 0.05);
-            border-left: 4px solid #ffd700;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .character-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 3em;
-            color: #ffd700;
-            opacity: 0.3;
-        }
-
-        .quote-source {
-            text-align: right;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .traits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .trait-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #b8860b;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .trait-card:hover {
-            border-color: #ffd700;
-            transform: translateY(-5px);
-        }
-
-        .trait-title {
-            color: #ffd700;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .trait-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        .powers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .power-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #b8860b;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .power-card:hover {
-            border-color: #ffd700;
-            transform: translateY(-5px);
-        }
-
-        .power-card.divine {
-            border-left: 4px solid #ffd700;
-        }
-
-        .power-card.manipulation {
-            border-left: 4px solid #daa520;
-        }
-
-        .power-card.transformation {
-            border-left: 4px solid #b8860b;
-        }
-
-        .power-card.cosmic {
-            border-left: 4px solid #cd853f;
-        }
-
-        .power-title {
-            color: #ffd700;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .power-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .related-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .related-character {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #b8860b;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .related-character:hover {
-            border-color: #ffd700;
-            transform: translateY(-5px);
-        }
-
-        .related-avatar {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 215, 0, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffd700;
-            font-weight: bold;
-        }
-
-        .related-name {
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .related-role {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        .character-summary {
-            padding: 60px 0;
-            background: rgba(26, 26, 10, 0.6);
-            border-top: 1px solid #b8860b;
-            border-bottom: 1px solid #b8860b;
-        }
-
-        .summary-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .summary-title {
-            font-size: 2.2em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .summary-content p {
-            margin-bottom: 25px;
-        }
-
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .read-more-section {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-            border: 1px solid #ffd700;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #ffd700, #daa520);
-            color: #000;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: rgba(255, 215, 0, 0.2);
-            color: #ffd700;
-            border: 1px solid #ffd700;
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(255, 215, 0, 0.3);
-        }
-
-        .analysis-timeline {
-            background: rgba(26, 26, 10, 0.4);
-            border: 1px solid #b8860b;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .timeline-title {
-            color: #ffd700;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .timeline-phase {
-            border-left: 3px solid #ffd700;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .timeline-phase::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #ffd700;
-            border-radius: 50%;
-        }
-
-        .phase-label {
-            color: #ffd700;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        .phase-description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .catalyst-box {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #f5f5f5;
-        }
-
-        .catalyst-title {
-            color: #ffd700;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .work-in-progress {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            border-radius: 10px;
-            padding: 15px 20px;
-            margin: 20px 0;
-            font-style: italic;
-            color: #ffd700;
-            text-align: center;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .character-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .character-portrait {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .character-title {
-                font-size: 2.2em;
-            }
-            
-            .character-tagline {
-                font-size: 1.2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .powers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Inline text links — match the rest of the site */
-        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
-            color: #b19cd9;
-            text-decoration: none;
-            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
-            background-repeat: no-repeat;
-            background-size: 100% 1px;
-            background-position: 0 100%;
-            padding-bottom: 1px;
-            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
-        }
-        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
-            color: #ffffff;
-            background-size: 100% 2px;
-            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
-        }
-        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .series-breadcrumb.secondary { opacity: 0.75; }
-    </style>
-</head>
-<body>
-
+---
+layout: character-profile
+world_page: true
+title: "Silas - The Trickster God | The Lost Histories"
+description: "Silas - The Trickster God | The Lost Histories — character history, relationships, and story details."
+permalink: /world-guide/characters/silas.html
+---
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Lost Histories</p>
         <h1 class="character-title">Silas</h1>
         <p class="character-tagline">"The Trickster God"</p>
     </div>
 </section>
 
 <!-- Main Content -->
-<main class="character-content">
+<div class="character-content">
     <div class="character-container">
-        <div class="character-grid">
+        <p class="edition-note"><strong>Story spoilers ahead.</strong> This profile includes character history and plot details.</p>
+<div class="character-grid">
 
             <!-- Character Portrait & Stats -->
             <aside class="character-portrait">
                 <div class="portrait-container">
-                    <div class="character-image">
+                    <div class="character-image portrait-placeholder" data-initial="S">
                         [Character Art Coming Soon]<br>
                         <small>Eyes like oil on water, shifting amber to gold<br>Silver hair like spun moonbeams; nails that are claws</small>
                     </div>
@@ -601,13 +63,13 @@
             </aside>
 
             <!-- Character Information -->
-            <div class="character-info">
+            <div class="character-info"><details class="profile-contents"><summary>On this page</summary><nav aria-label="Profile sections"><a href="#profile-section-1">The One Who Watched and Waited</a><a href="#profile-section-2">A Mind That Loves the Unwritten</a><a href="#profile-section-3">The Trickster's Arts</a><a href="#profile-section-4">The Game He Plays</a><a href="#profile-section-5">Bonds of Bait and Bargain</a><a href="#profile-section-6">The Awakening Tomb</a></nav></details>
 
                 <div class="work-in-progress"><strong>Source note:</strong> The <em>Divine War</em> material remains a work in progress. This profile also includes spoilers for Silas’s role in the rewritten <em>The Silence</em>.</div>
 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">The One Who Watched and Waited</h2>
+                    <h2 class="section-title" id="profile-section-1">The One Who Watched and Waited</h2>
                     <div class="character-description">
                         <p>Silas is beautiful the way statues are beautiful—"all sharp angles and perfect proportions, as if someone had taken the ideal of masculine beauty and refined it past the point where human flesh could contain it." Silver hair catches lamplight like spun moonbeams; his eyes shift like liquid sunset, amber to gold, or reflect like oil on water, "reflecting everything and revealing nothing." His features never quite settle: now sharp and lovely, now ancient and wise, now something that hurts to look upon directly. He leans in doorways as if he owns the concept of ownership. He examines his nails with theatrical boredom, and his nails are claws.</p>
 
@@ -624,7 +86,7 @@
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">A Mind That Loves the Unwritten</h2>
+                    <h2 class="section-title" id="profile-section-2">A Mind That Loves the Unwritten</h2>
                     <div class="character-description">
                         <p>Silas is theatrical, patient, and precise. He performs offense with a hand pressed to his chest; he laughs like silver bells; he reads a mortal's guilt at a glance—"That's the look of guilt. Someone did something they shouldn't have done"—and presses on the exact places where love, helplessness and grief meet. He claims to be honest about the one thing the other gods lie about: that he is embracing chaos on purpose. "Stagnation is death," he says. "Sometimes you have to burn the disease out to save the patient."</p>
                     </div>
@@ -656,7 +118,7 @@
 
                 <!-- Powers & Abilities -->
                 <section class="section">
-                    <h2 class="section-title">The Trickster's Arts</h2>
+                    <h2 class="section-title" id="profile-section-3">The Trickster's Arts</h2>
                     <div class="character-description">
                         <p>Silas's power is a god's power worn casually: he is wherever he wishes to be, in daylight as easily as dark, and he can vanish between one heartbeat and the next. But the gift that changes the world is not a display of force. It is a line drawn across his own forearm with one razor nail, and blood "darker, richer, with depths that seemed to hold starlight and shadow in equal measure."</p>
                     </div>
@@ -706,7 +168,7 @@
 
                 <!-- The Game -->
                 <section class="section">
-                    <h2 class="section-title">The Game He Plays</h2>
+                    <h2 class="section-title" id="profile-section-4">The Game He Plays</h2>
                     <div class="character-description">
                         <p>Silas is absent from the chapter of <em>The Divine War</em> that is online, and present in everything that follows it. The guide's history page states what is public: that he warned the gods in their Hall that an unbalanced world would correct itself, and that when they refused to act, "he made the correction himself." The shape of that correction—whom he visited, what he offered, and what he told heaven afterward—is the rest of the tale.</p>
                     </div>
@@ -758,7 +220,7 @@
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Bonds of Bait and Bargain</h2>
+                    <h2 class="section-title" id="profile-section-5">Bonds of Bait and Bargain</h2>
                     <div class="character-description">
                         <p>Silas belongs to no one. He mocks the First Gods on their crystalline thrones and calls himself a Wild God to a grieving woman; he offers the same gift to a man who says no and a woman who says yes, and seems equally entertained by both. "You know," he tells a mortal, "there's something almost endearing about how mortals convince themselves that horseshoes simply... leap from their moorings of their own accord."</p>
                     </div>
@@ -800,7 +262,7 @@
             </div>
         </div>
 
-        <section class="section"><h2 class="section-title">The Awakening Tomb</h2><div class="character-description"><p>In the rewritten <em>The Silence</em>, Silas confronts the travellers within the Awakening Tomb. His blunt questions and dry amusement strip away explanations that have become a means of avoiding a choice. Elowen hears him without seeing him; Mordain recognizes his appearance from Tanneus G’Raja’s account.</p><p>Elowen’s trial makes the possible loss of her magic painfully real before she chooses to heal her friends again. Ryx must accept that he can be alone while keeping the people he loves in memory. Mordain faces the history he has rejected and a healer he condemned without asking whether she had harmed anyone.</p><p>Silas shows Mordain Astrid accepting his blood before the war. He does not deny that divine power is dangerous; he challenges what Mordain decided that danger permitted him to do. The distinction preserves both the original creation of the Bloodmarked and the later spread of divine corruption.</p></div></section>
+        <section class="section"><h2 class="section-title" id="profile-section-6">The Awakening Tomb</h2><div class="character-description"><p>In the rewritten <em>The Silence</em>, Silas confronts the travellers within the Awakening Tomb. His blunt questions and dry amusement strip away explanations that have become a means of avoiding a choice. Elowen hears him without seeing him; Mordain recognizes his appearance from Tanneus G’Raja’s account.</p><p>Elowen’s trial makes the possible loss of her magic painfully real before she chooses to heal her friends again. Ryx must accept that he can be alone while keeping the people he loves in memory. Mordain faces the history he has rejected and a healer he condemned without asking whether she had harmed anyone.</p><p>Silas shows Mordain Astrid accepting his blood before the war. He does not deny that divine power is dangerous; he challenges what Mordain decided that danger permitted him to do. The distinction preserves both the original creation of the Bloodmarked and the later spread of divine corruption.</p></div></section>
 <!-- Character Summary -->
         <section class="character-summary">
             <div class="summary-container">
@@ -829,8 +291,4 @@
         </section>
 
     </div>
-</main>
-
-</body>
-</html>
-
+</div>

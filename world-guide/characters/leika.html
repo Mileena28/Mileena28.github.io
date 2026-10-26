@@ -1,553 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leika - Mother of Mountains | The Lost Histories</title>
-    <style>
-        /* Character Page Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a1612 0%, #2d2420 50%, #3d2e26 100%);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-
-        .character-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .character-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(139, 115, 85, 0.05) 100%);
-        }
-
-        .character-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .character-tagline {
-            font-size: 1.4em;
-            color: #8b7355;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .series-breadcrumb {
-            background: rgba(139, 115, 85, 0.1);
-            border: 1px solid rgba(139, 115, 85, 0.3);
-            border-radius: 25px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #8b7355;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .series-breadcrumb:hover {
-            background: rgba(139, 115, 85, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .character-content {
-            padding: 80px 0;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .character-portrait {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .portrait-container {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(160, 82, 45, 0.1));
-            border: 2px solid #8b7355;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8b7355;
-            font-style: italic;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .character-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(139, 115, 85, 0.3) 0%, transparent 70%);
-            animation: mountainShift 15s ease-in-out infinite;
-        }
-
-        @keyframes mountainShift {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.2; }
-            25% { transform: scale(1.05) rotate(15deg); opacity: 0.4; }
-            50% { transform: scale(0.95) rotate(30deg); opacity: 0.3; }
-            75% { transform: scale(1.1) rotate(45deg); opacity: 0.5; }
-        }
-
-        .character-stats {
-            text-align: left;
-        }
-
-        .stat-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: #8b7355;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: #ddd;
-            margin-top: 5px;
-        }
-
-        .character-info {
-            
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #8b7355;
-            padding-bottom: 10px;
-        }
-
-        .character-description {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .character-quote {
-            background: rgba(139, 115, 85, 0.05);
-            border-left: 4px solid #8b7355;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .character-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 3em;
-            color: #8b7355;
-            opacity: 0.3;
-        }
-
-        .quote-source {
-            text-align: right;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .traits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .trait-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .trait-card:hover {
-            border-color: #8b7355;
-            transform: translateY(-5px);
-        }
-
-        .trait-title {
-            color: #8b7355;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .trait-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        .powers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .power-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .power-card:hover {
-            border-color: #8b7355;
-            transform: translateY(-5px);
-        }
-
-        .power-card.geological {
-            border-left: 4px solid #8b7355;
-        }
-
-        .power-card.divine {
-            border-left: 4px solid #a0522d;
-        }
-
-        .power-card.authority {
-            border-left: 4px solid #696969;
-        }
-
-        .power-card.temporal {
-            border-left: 4px solid #2f4f4f;
-        }
-
-        .power-title {
-            color: #8b7355;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .power-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .related-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .related-character {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .related-character:hover {
-            border-color: #8b7355;
-            transform: translateY(-5px);
-        }
-
-        .related-avatar {
-            width: 60px;
-            height: 60px;
-            background: rgba(139, 115, 85, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #8b7355;
-            font-weight: bold;
-        }
-
-        .related-name {
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .related-role {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        .character-summary {
-            padding: 60px 0;
-            background: rgba(20, 18, 12, 0.6);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-        .summary-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .summary-title {
-            font-size: 2.2em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .summary-content p {
-            margin-bottom: 25px;
-        }
-
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .read-more-section {
-            background: linear-gradient(135deg, rgba(139, 115, 85, 0.2), rgba(139, 115, 85, 0.1));
-            border: 1px solid #8b7355;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #8b7355, #a0522d);
-            color: #000;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(139, 115, 85, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: rgba(139, 115, 85, 0.2);
-            color: #8b7355;
-            border: 1px solid #8b7355;
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(139, 115, 85, 0.3);
-        }
-
-        .foundation-timeline {
-            background: rgba(20, 18, 12, 0.4);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .timeline-title {
-            color: #8b7355;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .timeline-era {
-            border-left: 3px solid #8b7355;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .timeline-era::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #8b7355;
-            border-radius: 50%;
-        }
-
-        .era-label {
-            color: #8b7355;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        .era-description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .authority-box {
-            background: rgba(139, 115, 85, 0.1);
-            border: 1px solid rgba(139, 115, 85, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #d2b48c;
-        }
-
-        .authority-title {
-            color: #8b7355;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .character-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .character-portrait {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .character-title {
-                font-size: 2.2em;
-            }
-            
-            .character-tagline {
-                font-size: 1.2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .powers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Inline text links — match the rest of the site */
-        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
-            color: #b19cd9;
-            text-decoration: none;
-            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
-            background-repeat: no-repeat;
-            background-size: 100% 1px;
-            background-position: 0 100%;
-            padding-bottom: 1px;
-            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
-        }
-        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
-            color: #ffffff;
-            background-size: 100% 2px;
-            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
-        }
-        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .series-breadcrumb.secondary { opacity: 0.75; }
-    </style>
-</head>
-<body>
-
+---
+layout: character-profile
+world_page: true
+title: "Leika - Mother of Mountains | The Lost Histories"
+description: "Leika - Mother of Mountains | The Lost Histories — character history, relationships, and story details."
+permalink: /world-guide/characters/leika.html
+---
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Lost Histories</p>
         <h1 class="character-title">Leika</h1>
         <p class="character-tagline">"Mother of Mountains"</p>
     </div>
 </section>
 
 <!-- Main Content -->
-<main class="character-content">
+<div class="character-content">
     <div class="character-container">
-        <div class="character-grid">
+        <p class="edition-note"><strong>Story spoilers ahead.</strong> This profile includes character history and plot details.</p>
+<div class="character-grid">
 
             <!-- Character Portrait & Stats -->
             <aside class="character-portrait">
                 <div class="portrait-container">
-                    <div class="character-image">
+                    <div class="character-image portrait-placeholder" data-initial="L">
                         [Character Art Coming Soon]<br>
                         <small>Part woman, part living landscape; crystalline formations like armor<br>Hair that flows like lava; eyes of forest green, fertile brown and peak-white</small>
                     </div>
@@ -586,11 +63,11 @@
             </aside>
 
             <!-- Character Information -->
-            <div class="character-info">
+            <div class="character-info"><details class="profile-contents"><summary>On this page</summary><nav aria-label="Profile sections"><a href="#profile-section-1">Granite Given Breath</a><a href="#profile-section-2">The Immutable Authority</a><a href="#profile-section-3">Shaper of Worlds</a><a href="#profile-section-4">From Creation to the Silent Age</a><a href="#profile-section-5">Foundations and Fractures</a></nav></details>
 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">Granite Given Breath</h2>
+                    <h2 class="section-title" id="profile-section-1">Granite Given Breath</h2>
                     <div class="character-description">
                         <p>Before the world learned to name itself, when stars were still settling into their first dance, there walked the First—the architect-gods who had sung substance from the void and given form to the formless. Leika raised the mountains from her breath, teaching stone to reach skyward. She is vast as continents and patient as geological time, and when she rises "from the celestial foundations like granite given breath and terrible purpose," stone dust falls from her shoulders in glittering cascades and the very floor of the divine realm cracks and reforms beneath her, "unable to contain the weight of one who had lifted mountain ranges from the sea."</p>
 
@@ -607,7 +84,7 @@
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">The Immutable Authority</h2>
+                    <h2 class="section-title" id="profile-section-2">The Immutable Authority</h2>
                     <div class="character-description">
                         <p>Leika thinks in the long view of stone. She measures worth by endurance and finds the brief, breakable, self-destroying creatures of clay wanting—not from petty malice, the tale is careful to say, but "from the terrible wisdom of those who had shaped existence itself." Thainos's answer to her—"Your mountains were once volcanic ash and settling sediment, sister. Should I have declared them worthless before they found their strength?"—does not move her. Mountains endure because they accept their nature.</p>
                     </div>
@@ -639,7 +116,7 @@
 
                 <!-- Powers -->
                 <section class="section">
-                    <h2 class="section-title">Shaper of Worlds</h2>
+                    <h2 class="section-title" id="profile-section-3">Shaper of Worlds</h2>
                     <div class="character-description">
                         <p>Leika's power is the power of the earth's bones: she raised mountain ranges from oceanic depths, and reality itself struggles to bear her weight. Her creations tend the wild places she made, and long after the gods fell silent, those creations remain—one of the few threads of the divine still active in the world, and the subject of a young elf's research journal in <em>Voices of the Wild</em>.</p>
                     </div>
@@ -689,7 +166,7 @@
 
                 <!-- Ages -->
                 <section class="section">
-                    <h2 class="section-title">From Creation to the Silent Age</h2>
+                    <h2 class="section-title" id="profile-section-4">From Creation to the Silent Age</h2>
                     <div class="character-description">
                         <p>Leika's story runs from the first breath of the world to its silent aftermath. She sits with the First in the Hall of Eternal Judgment, the crystalline amphitheater where the gods sit in judgment. What was argued before that Hall in <em>The Divine War</em>, and how the First Gods answered, is the anthology's final tale.</p>
                     </div>
@@ -741,7 +218,7 @@
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Foundations and Fractures</h2>
+                    <h2 class="section-title" id="profile-section-5">Foundations and Fractures</h2>
                     <div class="character-description">
                         <p>Leika's bonds are the bonds of the First: siblings who each shaped a portion of creation and judged the others' work, and a youngest brother who chose flesh. Below her, in the world she helped make, her spirits tend the mountains and forests, and mortals of a later age still wonder what she meant by them.</p>
                     </div>
@@ -811,7 +288,4 @@
         </section>
 
     </div>
-</main>
-
-</body>
-</html>
+</div>

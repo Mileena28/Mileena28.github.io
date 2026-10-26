@@ -1,556 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thainos - The God Who Wept | The Lost Histories</title>
-    <style>
-        /* Character Page Styles */
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #1a1612 0%, #2d2820 50%, #3d3426 100%);
-            color: #f0f0f0;
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-        }
-
-        .character-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .character-header {
-            padding: 80px 0 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(218, 165, 32, 0.1) 0%, rgba(218, 165, 32, 0.05) 100%);
-        }
-
-        .character-title {
-            font-size: 3em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #f0f0f0;
-            letter-spacing: 2px;
-        }
-
-        .character-tagline {
-            font-size: 1.4em;
-            color: #daa520;
-            font-style: italic;
-            margin-bottom: 30px;
-        }
-
-        .series-breadcrumb {
-            background: rgba(218, 165, 32, 0.1);
-            border: 1px solid rgba(218, 165, 32, 0.3);
-            border-radius: 25px;
-            padding: 8px 20px;
-            display: inline-block;
-            font-size: 0.9em;
-            color: #daa520;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .series-breadcrumb:hover {
-            background: rgba(218, 165, 32, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .character-content {
-            padding: 80px 0;
-        }
-
-        .character-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 60px;
-            margin-bottom: 80px;
-        }
-
-        .character-portrait {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-
-        .portrait-container {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid #333;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-
-        .character-image {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(139, 115, 85, 0.1));
-            border: 2px solid #daa520;
-            border-radius: 15px;
-            margin-bottom: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #daa520;
-            font-style: italic;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-                .character-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 15px;
-        }
-        
-        .character-image::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(218, 165, 32, 0.3) 0%, transparent 70%);
-            animation: divineLight 12s ease-in-out infinite;
-        }
-
-        @keyframes divineLight {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
-            25% { transform: scale(1.1) rotate(45deg); opacity: 0.5; }
-            50% { transform: scale(0.9) rotate(90deg); opacity: 0.2; }
-            75% { transform: scale(1.2) rotate(135deg); opacity: 0.6; }
-        }
-
-        .character-stats {
-            text-align: left;
-        }
-
-        .stat-item {
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #333;
-        }
-
-        .stat-item:last-child {
-            border-bottom: none;
-        }
-
-        .stat-label {
-            color: #daa520;
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .stat-value {
-            color: #ddd;
-            margin-top: 5px;
-        }
-
-        .character-info {
-            
-        }
-
-        .section {
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 25px;
-            font-weight: 400;
-            border-bottom: 2px solid #daa520;
-            padding-bottom: 10px;
-        }
-
-        .character-description {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-
-        .character-quote {
-            background: rgba(218, 165, 32, 0.05);
-            border-left: 4px solid #daa520;
-            padding: 25px 30px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #ddd;
-            border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .character-quote::before {
-            content: '"';
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            font-size: 3em;
-            color: #daa520;
-            opacity: 0.3;
-        }
-
-        .quote-source {
-            text-align: right;
-            color: #999;
-            font-size: 0.9em;
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .traits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .trait-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .trait-card:hover {
-            border-color: #daa520;
-            transform: translateY(-5px);
-        }
-
-        .trait-title {
-            color: #daa520;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .trait-description {
-            color: #ccc;
-            font-size: 0.95em;
-        }
-
-        .powers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .power-card {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .power-card:hover {
-            border-color: #daa520;
-            transform: translateY(-5px);
-        }
-
-        .power-card.divine {
-            border-left: 4px solid #daa520;
-        }
-
-        .power-card.mortal {
-            border-left: 4px solid #8b7355;
-        }
-
-        .power-card.transcendent {
-            border-left: 4px solid #cd853f;
-        }
-
-        .power-card.sacrifice {
-            border-left: 4px solid #d2691e;
-        }
-
-        .power-title {
-            color: #daa520;
-            font-weight: 600;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .power-description {
-            color: #ccc;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .related-characters {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .related-character {
-            background: rgba(20, 20, 20, 0.6);
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .related-character:hover {
-            border-color: #daa520;
-            transform: translateY(-5px);
-        }
-
-        .related-avatar {
-            width: 60px;
-            height: 60px;
-            background: rgba(218, 165, 32, 0.2);
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #daa520;
-            font-weight: bold;
-        }
-
-        .related-name {
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-
-        .related-role {
-            color: #999;
-            font-size: 0.9em;
-        }
-
-        .character-summary {
-            padding: 60px 0;
-            background: rgba(20, 18, 12, 0.6);
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-        }
-
-        .summary-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .summary-title {
-            font-size: 2.2em;
-            color: #f0f0f0;
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .summary-content {
-            color: #ccc;
-            font-size: 1.1em;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        .summary-content p {
-            margin-bottom: 25px;
-        }
-
-        .summary-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .read-more-section {
-            background: linear-gradient(135deg, rgba(218, 165, 32, 0.2), rgba(218, 165, 32, 0.1));
-            border: 1px solid #daa520;
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 60px 0;
-        }
-
-        .cta-title {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-        }
-
-        .cta-description {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 1.1em;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #daa520, #f4d03f);
-            color: #000;
-            text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(218, 165, 32, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: rgba(218, 165, 32, 0.2);
-            color: #daa520;
-            border: 1px solid #daa520;
-        }
-
-        .cta-button.secondary:hover {
-            background: rgba(218, 165, 32, 0.3);
-        }
-
-        .journey-timeline {
-            background: rgba(20, 18, 12, 0.4);
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 30px 0;
-        }
-
-        .timeline-title {
-            color: #daa520;
-            font-weight: 600;
-            margin-bottom: 20px;
-            font-size: 1.2em;
-        }
-
-        .timeline-phase {
-            border-left: 3px solid #daa520;
-            padding-left: 20px;
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .timeline-phase::before {
-            content: '';
-            position: absolute;
-            left: -8px;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: #daa520;
-            border-radius: 50%;
-        }
-
-        .phase-label {
-            color: #daa520;
-            font-weight: 600;
-            font-size: 0.9em;
-        }
-
-        .phase-description {
-            color: #ccc;
-            font-size: 0.9em;
-            margin-top: 5px;
-        }
-
-        .sacrifice-box {
-            background: rgba(218, 165, 32, 0.1);
-            border: 1px solid rgba(218, 165, 32, 0.3);
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px 0;
-            color: #f4d03f;
-        }
-
-        .sacrifice-title {
-            color: #daa520;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .character-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .character-portrait {
-                position: static;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .character-title {
-                font-size: 2.2em;
-            }
-            
-            .character-tagline {
-                font-size: 1.2em;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .powers-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    
-        /* Inline text links — match the rest of the site */
-        p a:not([class]), li a:not([class]), td a:not([class]), .stat-value a:not([class]), .related-role a:not([class]) {
-            color: #b19cd9;
-            text-decoration: none;
-            background-image: linear-gradient(90deg, rgba(177, 156, 217, 0.55), rgba(138, 196, 255, 0.55));
-            background-repeat: no-repeat;
-            background-size: 100% 1px;
-            background-position: 0 100%;
-            padding-bottom: 1px;
-            transition: color 0.3s ease, background-size 0.3s ease, text-shadow 0.3s ease;
-        }
-        p a:not([class]):hover, li a:not([class]):hover, td a:not([class]):hover, .stat-value a:not([class]):hover, .related-role a:not([class]):hover {
-            color: #ffffff;
-            background-size: 100% 2px;
-            text-shadow: 0 0 12px rgba(177, 156, 217, 0.7);
-        }
-        .series-breadcrumbs { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: center; margin-bottom: 24px; }
-        .series-breadcrumb.secondary { opacity: 0.75; }
-    </style>
-</head>
-<body>
-
+---
+layout: character-profile
+world_page: true
+title: "Thainos - The God Who Wept | The Lost Histories"
+description: "Thainos - The God Who Wept | The Lost Histories — character history, relationships, and story details."
+permalink: /world-guide/characters/thainos.html
+---
 <!-- Header -->
 <section class="character-header">
     <div class="container">
         <div class="series-breadcrumbs"><a href="/world-guide/characters/" class="series-breadcrumb">← Characters</a><a href="/world-guide/" class="series-breadcrumb secondary">World Guide</a></div>
+        <p class="home-eyebrow">Blood of the Wild Gods · The Lost Histories</p>
         <h1 class="character-title">Thainos</h1>
         <p class="character-tagline">"The God Who Wept"</p>
     </div>
 </section>
 
 <!-- Main Content -->
-<main class="character-content">
+<div class="character-content">
     <div class="character-container">
-        <div class="character-grid">
+        <p class="edition-note"><strong>Story spoilers ahead.</strong> This profile includes character history and plot details.</p>
+<div class="character-grid">
 
             <!-- Character Portrait & Stats -->
             <aside class="character-portrait">
@@ -593,11 +62,11 @@
             </aside>
 
             <!-- Character Information -->
-            <div class="character-info">
+            <div class="character-info"><details class="profile-contents"><summary>On this page</summary><nav aria-label="Profile sections"><a href="#profile-section-1">The Divine Made Mortal</a><a href="#profile-section-2">The Heart of Divine Compassion</a><a href="#profile-section-3">Godhood Laid Aside</a><a href="#profile-section-4">The Search for One Untouched Soul</a><a href="#profile-section-5">Bonds That Define Divinity</a></nav></details>
 
                 <!-- Introduction -->
                 <section class="section">
-                    <h2 class="section-title">The Divine Made Mortal</h2>
+                    <h2 class="section-title" id="profile-section-1">The Divine Made Mortal</h2>
                     <div class="character-description">
                         <p>Before the world learned to name itself, when stars were still settling into their first dance, there walked the First: the architect-gods who sang substance from the void. Leika raised the mountains from her breath. Libros inscribed the laws that hold reality in place. Archadeus gave the hunt its hunger. Atonia distilled truth from chaos. Verites whispered darkness into being. Only Thainos, youngest among them, wandered without monuments to his will. While his kin built and ruled and commanded, he searched—kneeling beside newborn streams to listen to their first words, cupping starlight in his palms, studying the way morning conquers night "not through violence, but through patience. Through grace."</p>
 
@@ -614,7 +83,7 @@
 
                 <!-- Personality & Core Traits -->
                 <section class="section">
-                    <h2 class="section-title">The Heart of Divine Compassion</h2>
+                    <h2 class="section-title" id="profile-section-2">The Heart of Divine Compassion</h2>
                     <div class="character-description">
                         <p>Thainos does not thunder. When he rises to defend humanity before his siblings, "his voice did not thunder across the heavens, did not shake the foundations of reality. Instead, it was the voice of someone who had seen the heart of creation itself and found it good." What flares behind his eyes is "not wrath, but something deeper and more dangerous: conviction born of love, certainty forged in the crucible of hope itself."</p>
                     </div>
@@ -646,7 +115,7 @@
 
                 <!-- Divine Powers & Mortal Limitations -->
                 <section class="section">
-                    <h2 class="section-title">Godhood Laid Aside</h2>
+                    <h2 class="section-title" id="profile-section-3">Godhood Laid Aside</h2>
                     <div class="character-description">
                         <p>Atonia's challenge was surgical in its precision: "Walk among them. Not as you are. Strip away your immortality. Abandon your omniscience. Become one of your precious mortals." To descend into mortality was not merely to accept limitation—"it was to forget one's true nature, to become genuinely, terrifyingly finite. To risk not just death, but the erosion of everything that made one divine." No god had ever done it. None had dared.</p>
                     </div>
@@ -694,7 +163,7 @@
 
                 <!-- The Thousand-Year Journey -->
                 <section class="section">
-                    <h2 class="section-title">The Search for One Untouched Soul</h2>
+                    <h2 class="section-title" id="profile-section-4">The Search for One Untouched Soul</h2>
                     <div class="character-description">
                         <p>The published chapter ends at the moment of descent. What follows—a thousand years of walking, and the people he met on the road—is the substance of The God Who Wept. The star-readers of the Almanac say the constellation called The Wanderer carries his search, and that those born beneath it "cannot rest, cannot settle, cannot find home in any single place."</p>
                     </div>
@@ -746,7 +215,7 @@
 
                 <!-- Relationships -->
                 <section class="section">
-                    <h2 class="section-title">Bonds That Define Divinity</h2>
+                    <h2 class="section-title" id="profile-section-5">Bonds That Define Divinity</h2>
                     <div class="character-description">
                         <p>Thainos's bonds span the divine and mortal realms: the siblings who challenged him, and the mortals—healers, elders, governors, wanderers—whom he met on the thousand-year road. Some of them recognised what he was. Some of them did not.</p>
                     </div>
@@ -826,7 +295,4 @@
         </section>
 
     </div>
-</main>
-
-</body>
-</html>
+</div>
