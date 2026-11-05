@@ -82,8 +82,8 @@ body:has(.archive) .home-mobile-menu summary{color:#c6b7e8}
 .archive .ar-life{padding:100px 0}
 .archive .ar-life-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:100px;align-items:center}
 .archive .ar-life-image{position:relative}
-.archive .ar-life-image>img{display:block;width:100%;max-width:460px;aspect-ratio:1/1;object-fit:cover;box-shadow:16px 20px 0 #302739}
-.archive .ar-life-image::after{content:'SOUNDTRACK / 01';position:absolute;bottom:-11px;left:24px;background:#d2c2eb;color:#17131e;padding:9px 16px;font:.61rem/1 'DM Sans',sans-serif;letter-spacing:.18em}
+.archive .ar-life-image>img{display:block;width:100%;max-width:460px;height:auto;aspect-ratio:1/1;object-fit:contain;box-shadow:16px 20px 0 #302739}
+.archive .ar-life-image::after{content:'SOUNDTRACK / 01';display:table;position:relative;margin:24px 0 0;background:#d2c2eb;color:#17131e;padding:9px 16px;font:.61rem/1 'DM Sans',sans-serif;letter-spacing:.18em}
 .archive .ar-life h2{font-size:clamp(3.4rem,5.3vw,5.6rem);line-height:.94;letter-spacing:-.04em;margin:18px 0 24px}
 .archive .ar-life p:not(.ar-kicker){color:#c4bfce;line-height:1.9;margin-bottom:26px}
 .archive .ar-dispatch{background:var(--ar-paper);color:#211a2c;padding:75px 0 85px;border-top:6px double #8d77ab}
@@ -180,12 +180,12 @@ body:has(.archive){overflow-x:visible}
       <div class="ar-hero-visual" aria-label="The Silence cover surrounded by an illustrated eclipse">
         <div class="ar-starmap" aria-hidden="true"></div><div class="ar-eclipse" aria-hidden="true"></div>
         <figure class="ar-cover-frame"><img src="/assets/images/the-silence-cover-2026.jpg" width="1200" height="1914" alt="Book cover of The Silence by Mileena Rayne" fetchpriority="high"><figcaption>The Silence · New edition</figcaption></figure>
-        <p class="ar-hero-annotation">ARCADIA / VOL. I<br>THE BLOOD OF THE WILD GODS</p>
+        <p class="ar-hero-annotation">THE SILENCE<br>BLOOD OF THE WILD GODS</p>
       </div>
     </section>
     <div class="ar-rule">I · The novels</div>
     <section class="ar-section" id="ar-books" aria-labelledby="ar-books-title">
-      <div class="ar-section-header"><div><p class="ar-kicker">Begin here</p><h2 id="ar-books-title">The stories of Arcadia</h2></div><p>Different lives. Different ages. One world shaped by the divine and the damage left behind.</p></div>
+      <div class="ar-section-header"><div><p class="ar-kicker">Begin here</p><h2 id="ar-books-title">Blood of the Wild Gods</h2></div><p>Different lives. Different ages. One world shaped by the divine and the damage left behind.</p></div>
       <div class="ar-book-shelf">
         <article class="ar-book">
           <a href="/writing/the-silence/" aria-label="Explore The Silence"><img src="/assets/images/the-silence-cover-2026.jpg" alt="The Silence novel cover" width="1200" height="1914" loading="lazy"></a>
@@ -201,7 +201,7 @@ body:has(.archive){overflow-x:visible}
 
   <section class="ar-atlas" aria-labelledby="ar-atlas-title">
     <div class="ar-atlas-grid">
-      <div class="ar-atlas-image"><img src="/assets/images/Arcadia-Post-Divine-War-Map.png" alt="Map of Arcadia after the Divine War" width="1400" height="1000" loading="lazy"><span class="ar-map-caption">PLATE I · THE LANDS OF ARCADIA</span></div>
+      <div class="ar-atlas-image"><img src="/assets/images/Arcadia-Post-Divine-War-Map.png" alt="Map of Arcadia after the Divine War" width="1400" height="1000" loading="lazy"><span class="ar-map-caption">PLATE I · ARCADIA, A CONTINENT</span></div>
       <div class="ar-atlas-copy"><p class="ar-kicker">II · The field notes</p><h2 id="ar-atlas-title">A world with<br><em>its own</em> memory.</h2><p>The novels are only part of the record. Follow the people, languages, kingdoms, gods, constellations, and histories that continue beyond the page.</p><ol class="ar-index"><li><span>01</span> Kingdoms & forgotten histories <span>✧</span></li><li><span>02</span> Gods, faith & magic <span>✧</span></li><li><span>03</span> Languages & the stars <span>✧</span></li></ol><a class="ar-text-link" href="/world-guide/">Browse the world guide <span class="ar-arrow" aria-hidden="true"></span></a></div>
     </div>
   </section>
