@@ -8,7 +8,7 @@ permalink: /homepage-concept/
 sitemap: false
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+<link rel="stylesheet" href="{{ "/assets/css/home.css" | relative_url }}">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
 :root{--ar-bg:#101016;--ar-ink:#f2eef8;--ar-dim:#c4bfce;--ar-accent:#c6b7e8;--ar-line:#38333f;--ar-dark:#1b1921;--ar-paper:#ded5ee}
@@ -83,7 +83,7 @@ body:has(.archive) .home-mobile-menu summary{color:#c6b7e8}
 .archive .ar-life-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:100px;align-items:center}
 .archive .ar-life-image{position:relative}
 .archive .ar-life-image>img{display:block;width:100%;max-width:460px;height:auto;aspect-ratio:1/1;object-fit:contain;box-shadow:16px 20px 0 #302739}
-.archive .ar-life-image::after{content:'SOUNDTRACK / 01';display:table;position:relative;margin:24px 0 0;background:#d2c2eb;color:#17131e;padding:9px 16px;font:.61rem/1 'DM Sans',sans-serif;letter-spacing:.18em}
+
 .archive .ar-life h2{font-size:clamp(3.4rem,5.3vw,5.6rem);line-height:.94;letter-spacing:-.04em;margin:18px 0 24px}
 .archive .ar-life p:not(.ar-kicker){color:#c4bfce;line-height:1.9;margin-bottom:26px}
 .archive .ar-dispatch{background:var(--ar-paper);color:#211a2c;padding:75px 0 85px;border-top:6px double #8d77ab}
@@ -141,8 +141,27 @@ body:has(.archive){overflow-x:visible}
 @media(max-width:900px){.ar-desktop-nav{display:none}.ar-menu{display:block;margin-top:12px;border-top:1px solid var(--ar-line)}.ar-menu .ar-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 20px;margin-top:4px}.ar-menu .ar-nav a{padding:12px 0;border-top:1px solid var(--ar-line)}}
 @media(max-width:760px){.archive .ar-hero h1{font-size:clamp(3rem,12vw,6.3rem)}.archive .ar-book{grid-template-columns:125px minmax(0,1fr)}.archive .ar-hero-annotation{right:0;max-width:155px;font-size:.6rem}.archive .ar-starmap{inset:0}.archive .ar-cover-frame{left:15px}}
 @media(max-width:440px){.archive .ar-book{grid-template-columns:96px minmax(0,1fr)}.archive .ar-text-link{gap:10px;letter-spacing:.06em}.archive .ar-hero-annotation{max-width:120px}.ar-brand{font-size:1.65rem}.ar-menu .ar-nav{grid-template-columns:1fr}}
-</style>
 
+.archive .ar-hero{display:block;min-height:690px;padding:110px 0 90px}
+.archive .ar-hero::before{inset:0 calc((1170px - 100vw)/2);width:auto;max-width:none;height:auto;bottom:0;background:linear-gradient(0deg,#101016,transparent 22%),linear-gradient(90deg,#101016e6 0%,#101016aa 35%,#10101622 65%,transparent 85%),url('/assets/images/eclipse-blossoms-lilac.jpg') center/cover no-repeat;z-index:0}
+.archive .ar-hero-copy{max-width:640px}
+.archive .ar-hero-visual{display:none}
+.archive .ar-hero h1{font-size:clamp(4rem,7.3vw,7.2rem);line-height:.97}
+.archive .ar-hero-lead{max-width:480px;color:#e0d8ea;text-shadow:0 2px 10px #101016}
+@media(max-width:1234px){.archive .ar-hero::before{left:-32px;right:-32px}}
+@media(max-width:760px){.archive .ar-hero{padding:85px 0 75px;min-height:690px}.archive .ar-hero::before{left:-19px;right:-19px;background:linear-gradient(90deg,#101016e6,#10101688),linear-gradient(0deg,#101016,transparent 40%),url('/assets/images/eclipse-blossoms-lilac.jpg') 66% center/cover no-repeat}.archive .ar-hero h1{font-size:clamp(3.2rem,12vw,5.2rem)}}
+
+/* Keep each album complete, square, and clearly named. */
+.archive .ar-life-grid{grid-template-columns:1.15fr .85fr;gap:64px}
+.ar-soundtracks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;min-width:0}
+.archive .ar-album img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;box-shadow:0 12px 28px #0006}
+.archive .ar-album figcaption{padding-top:24px}
+.archive .ar-album h3{font-size:2.1rem;line-height:1.1}
+.archive .ar-album figcaption p{font:600 .65rem/1.5 'DM Sans',sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--ar-accent);margin:10px 0 15px}
+.archive .ar-album .ar-text-link{font-size:.62rem;gap:10px;letter-spacing:.06em}
+@media(max-width:1000px){.archive .ar-life-grid{grid-template-columns:1fr;gap:48px}.ar-soundtracks{max-width:720px}}
+@media(max-width:480px){.ar-soundtracks{grid-template-columns:1fr;gap:40px}.archive .ar-album{max-width:340px;width:100%;margin-inline:auto}}
+</style>
 <div class="archive" id="archive-start">
   <header class="ar-header"><div class="ar-wrap">
     <a href="/" class="ar-brand">Mileena Rayne</a>
@@ -172,8 +191,8 @@ body:has(.archive){overflow-x:visible}
   <div class="ar-wrap">
     <section class="ar-hero" aria-labelledby="ar-title">
       <div class="ar-hero-copy">
-        <p class="ar-kicker">Mileena Rayne / Author & musician</p>
-        <h1 id="ar-title">Some stories<br>refuse to <em>stay</em><br>buried.</h1>
+        <p class="ar-kicker">Mileena Rayne / Dark fantasy & original music</p>
+        <h1 id="ar-title">Blood of<br>the <em>Wild Gods</em></h1>
         <p class="ar-hero-lead">Dark fantasy, forgotten gods, fractured faith, and the people left to reckon with them. Welcome to my books, their music, and the histories that connect them.</p>
         <div class="ar-hero-ctas"><a class="ar-primary" href="#ar-books">Explore the books <span class="ar-arrow" aria-hidden="true"></span></a><a class="ar-text-link" href="/world-guide/">Enter the world guide <span class="ar-arrow" aria-hidden="true"></span></a></div>
       </div>
@@ -201,7 +220,7 @@ body:has(.archive){overflow-x:visible}
 
   <section class="ar-atlas" aria-labelledby="ar-atlas-title">
     <div class="ar-atlas-grid">
-      <div class="ar-atlas-image"><img src="/assets/images/Arcadia-Post-Divine-War-Map.png" alt="Map of Arcadia after the Divine War" width="1400" height="1000" loading="lazy"><span class="ar-map-caption">PLATE I · ARCADIA, A CONTINENT</span></div>
+      <div class="ar-atlas-image"><img src="/assets/images/Arcadia-Post-Divine-War-Map.png" alt="Map of Arcadia after the Divine War" width="1400" height="1000" loading="lazy"><span class="ar-map-caption">Arcadia</span></div>
       <div class="ar-atlas-copy"><p class="ar-kicker">II · The field notes</p><h2 id="ar-atlas-title">A world with<br><em>its own</em> memory.</h2><p>The novels are only part of the record. Follow the people, languages, kingdoms, gods, constellations, and histories that continue beyond the page.</p><ol class="ar-index"><li><span>01</span> Kingdoms & forgotten histories <span>✧</span></li><li><span>02</span> Gods, faith & magic <span>✧</span></li><li><span>03</span> Languages & the stars <span>✧</span></li></ol><a class="ar-text-link" href="/world-guide/">Browse the world guide <span class="ar-arrow" aria-hidden="true"></span></a></div>
     </div>
   </section>
@@ -209,7 +228,10 @@ body:has(.archive){overflow-x:visible}
   <div class="ar-wrap">
     <section class="ar-life" aria-labelledby="ar-music-title">
       <div class="ar-life-grid">
-        <div class="ar-life-image"><img src="/assets/images/The-Chosen-Electrofolk.png" alt="Cover art for The Chosen electrofolk soundtrack" width="700" height="700" loading="lazy"></div>
+        <div class="ar-soundtracks" aria-label="Original electrofolk soundtracks">
+<figure class="ar-album"><a href="https://mileenarayne.com/the-silence-soundtrack/" aria-label="Explore The Silence soundtracks"><img src="/assets/images/the-silence-electrofolk.jpg" alt="The Silence — Electrofolk soundtrack cover" width="3000" height="3000" loading="lazy"></a><figcaption><h3>The Silence</h3><p>Electrofolk</p><a class="ar-text-link" href="https://mileenarayne.com/the-silence-soundtrack/">Explore soundtrack <span class="ar-arrow" aria-hidden="true"></span></a></figcaption></figure>
+<figure class="ar-album"><a href="https://mileenarayne.com/the-chosen-soundtrack/" aria-label="Explore The Chosen soundtracks"><img src="/assets/images/The-Chosen-Electrofolk.png" alt="The Chosen — Electrofolk soundtrack cover" width="3000" height="3000" loading="lazy"></a><figcaption><h3>The Chosen</h3><p>Electrofolk</p><a class="ar-text-link" href="https://mileenarayne.com/the-chosen-soundtrack/">Explore soundtrack <span class="ar-arrow" aria-hidden="true"></span></a></figcaption></figure>
+</div>
         <div><p class="ar-kicker">III · The sound of the stories</p><h2 id="ar-music-title">A story can<br>have more than<br>one voice.</h2><p>The music belongs here too. Original soundtracks give the books another life, from dark folk and ritual rhythms to electronic compositions. Other songs come from my own experiences.</p><a class="ar-text-link" href="/music/">Listen to the music <span class="ar-arrow" aria-hidden="true"></span></a></div>
       </div>
     </section>
