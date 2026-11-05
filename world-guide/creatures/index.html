@@ -1,703 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creatures & Beings - Blood of the Wild Gods World Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background: radial-gradient(ellipse at center, #0f0f1f 0%, #000000 100%);
-            color: #f0f0f0;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Animated background creatures */
-        .creature-shadows {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .shadow-creature {
-            position: absolute;
-            opacity: 0.03;
-            animation: drift 25s infinite linear;
-        }
-
-        .shadow-creature.leviathan {
-            font-size: 120px;
-            color: #4a90e2;
-            animation-duration: 35s;
-        }
-
-        .shadow-creature.nimwe {
-            font-size: 60px;
-            color: #c983ff;
-            animation-duration: 20s;
-        }
-
-        .shadow-creature.beastborn {
-            font-size: 80px;
-            color: #ff6b6b;
-            animation-duration: 15s;
-        }
-
-        @keyframes drift {
-            0% {
-                transform: translateX(-100px) translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.03;
-            }
-            90% {
-                opacity: 0.03;
-            }
-            100% {
-                transform: translateX(100px) translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        .page-header {
-            padding: 140px 0 120px;
-            text-align: center;
-            background: 
-                radial-gradient(circle at 30% 70%, rgba(168, 181, 255, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 70% 30%, rgba(255, 138, 159, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(10, 10, 30, 0.9), rgba(20, 20, 40, 0.8));
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="mystical" patternUnits="userSpaceOnUse" width="40" height="40"><circle cx="20" cy="20" r="1" fill="rgba(168,181,255,0.1)"/><circle cx="10" cy="10" r="0.5" fill="rgba(255,138,159,0.08)"/><circle cx="30" cy="35" r="0.8" fill="rgba(138,255,159,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23mystical)"/></svg>') center/cover;
-            opacity: 0.6;
-            z-index: -1;
-        }
-
-        .page-title {
-            font-size: 4.5em;
-            font-weight: 200;
-            margin-bottom: 25px;
-            color: #f0f0f0;
-            letter-spacing: 4px;
-            text-shadow: 0 0 30px rgba(168, 181, 255, 0.6);
-            position: relative;
-        }
-
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            width: 200px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #a8b5ff, transparent);
-            transform: translateX(-50%);
-        }
-
-        .page-subtitle {
-            font-size: 1.6em;
-            color: #a8b5ff;
-            font-style: italic;
-            margin-bottom: 40px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            text-shadow: 0 0 15px rgba(168, 181, 255, 0.3);
-        }
-
-        .page-description {
-            font-size: 1.2em;
-            color: #ddd;
-            max-width: 1000px;
-            margin: 0 auto;
-            line-height: 1.9;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .creatures-sections {
-            position: relative;
-            z-index: 2;
-        }
-
-        .creature-category {
-            padding: 80px 20px;
-            position: relative;
-        }
-
-        .category-benevolent {
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(201, 131, 255, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(15, 5, 25, 0.9), rgba(25, 15, 35, 0.8));
-        }
-
-        .category-ancient {
-            background: 
-                radial-gradient(circle at 80% 20%, rgba(74, 144, 226, 0.1) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(5, 15, 25, 0.9), rgba(15, 25, 35, 0.8));
-        }
-
-        .category-corrupted {
-            background: 
-                radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(25, 5, 5, 0.9), rgba(35, 15, 15, 0.8));
-        }
-
-        .category-hybrid {
-            background: 
-                radial-gradient(circle at 70% 30%, rgba(159, 255, 138, 0.06) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(10, 20, 5, 0.9), rgba(20, 30, 15, 0.8));
-        }
-
-        .category-transformed {
-            background: 
-                radial-gradient(circle at 30% 70%, rgba(255, 159, 138, 0.07) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(20, 10, 5, 0.9), rgba(30, 20, 15, 0.8));
-        }
-
-        .category-header {
-            text-align: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .category-icon {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto 25px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .category-icon::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 50%;
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        .benevolent .category-icon {
-            background: linear-gradient(135deg, rgba(201, 131, 255, 0.3), rgba(168, 181, 255, 0.2));
-            box-shadow: 0 0 40px rgba(201, 131, 255, 0.3);
-        }
-
-        .benevolent .category-icon::before {
-            background: radial-gradient(circle, rgba(201, 131, 255, 0.2) 0%, transparent 70%);
-        }
-
-        .ancient .category-icon {
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.3), rgba(138, 159, 255, 0.2));
-            box-shadow: 0 0 40px rgba(74, 144, 226, 0.3);
-        }
-
-        .ancient .category-icon::before {
-            background: radial-gradient(circle, rgba(74, 144, 226, 0.2) 0%, transparent 70%);
-        }
-
-        .corrupted .category-icon {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(255, 138, 138, 0.2));
-            box-shadow: 0 0 40px rgba(255, 107, 107, 0.3);
-        }
-
-        .corrupted .category-icon::before {
-            background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, transparent 70%);
-        }
-
-        .hybrid .category-icon {
-            background: linear-gradient(135deg, rgba(159, 255, 138, 0.3), rgba(138, 255, 159, 0.2));
-            box-shadow: 0 0 40px rgba(159, 255, 138, 0.3);
-        }
-
-        .hybrid .category-icon::before {
-            background: radial-gradient(circle, rgba(159, 255, 138, 0.2) 0%, transparent 70%);
-        }
-
-        .transformed .category-icon {
-            background: linear-gradient(135deg, rgba(255, 159, 138, 0.3), rgba(255, 181, 168, 0.2));
-            box-shadow: 0 0 40px rgba(255, 159, 138, 0.3);
-        }
-
-        .transformed .category-icon::before {
-            background: radial-gradient(circle, rgba(255, 159, 138, 0.2) 0%, transparent 70%);
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.1); opacity: 0.4; }
-        }
-
-        .category-icon svg {
-            width: 50px;
-            height: 50px;
-            fill: currentColor;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
-            z-index: 1;
-            position: relative;
-        }
-
-        .category-title {
-            font-size: 3em;
-            color: #f0f0f0;
-            margin-bottom: 15px;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
-        .category-subtitle {
-            font-size: 1.2em;
-            color: #aaa;
-            font-style: italic;
-            margin-bottom: 25px;
-        }
-
-        .category-description {
-            font-size: 1.1em;
-            color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        .creatures-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 35px;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding-top: 40px;
-        }
-
-        .creature-card {
-            background: linear-gradient(135deg, rgba(20, 20, 30, 0.95), rgba(30, 30, 40, 0.9));
-            border-radius: 25px;
-            padding: 40px;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-            cursor: pointer;
-        }
-
-        .creature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: left 0.8s ease;
-        }
-
-        .creature-card:hover::before {
-            left: 100%;
-        }
-
-        .creature-card:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 50px rgba(168, 181, 255, 0.15);
-        }
-
-        .benevolent .creature-card {
-            border: 2px solid rgba(201, 131, 255, 0.3);
-        }
-
-        .benevolent .creature-card:hover {
-            border-color: #c983ff;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 50px rgba(201, 131, 255, 0.3);
-        }
-
-        .ancient .creature-card {
-            border: 2px solid rgba(74, 144, 226, 0.3);
-        }
-
-        .ancient .creature-card:hover {
-            border-color: #4a90e2;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 50px rgba(74, 144, 226, 0.3);
-        }
-
-        .corrupted .creature-card {
-            border: 2px solid rgba(255, 107, 107, 0.3);
-        }
-
-        .corrupted .creature-card:hover {
-            border-color: #ff6b6b;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 50px rgba(255, 107, 107, 0.3);
-        }
-
-        .hybrid .creature-card {
-            border: 2px solid rgba(159, 255, 138, 0.3);
-        }
-
-        .hybrid .creature-card:hover {
-            border-color: #9fff8a;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 50px rgba(159, 255, 138, 0.3);
-        }
-
-        .transformed .creature-card {
-            border: 2px solid rgba(255, 159, 138, 0.3);
-        }
-
-        .transformed .creature-card:hover {
-            border-color: #ff9f8a;
-            box-shadow: 
-                0 30px 60px rgba(0, 0, 0, 0.4),
-                0 0 50px rgba(255, 159, 138, 0.3);
-        }
-
-        .creature-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .creature-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 20px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .creature-icon::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 20px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .creature-card:hover .creature-icon::after {
-            opacity: 1;
-        }
-
-        .benevolent .creature-icon {
-            background: linear-gradient(135deg, rgba(201, 131, 255, 0.4), rgba(168, 181, 255, 0.3));
-        }
-
-        .benevolent .creature-icon::after {
-            background: linear-gradient(135deg, rgba(201, 131, 255, 0.6), rgba(168, 181, 255, 0.5));
-        }
-
-        .ancient .creature-icon {
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.4), rgba(138, 159, 255, 0.3));
-        }
-
-        .ancient .creature-icon::after {
-            background: linear-gradient(135deg, rgba(74, 144, 226, 0.6), rgba(138, 159, 255, 0.5));
-        }
-
-        .corrupted .creature-icon {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.4), rgba(255, 138, 138, 0.3));
-        }
-
-        .corrupted .creature-icon::after {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.6), rgba(255, 138, 138, 0.5));
-        }
-
-        .hybrid .creature-icon {
-            background: linear-gradient(135deg, rgba(159, 255, 138, 0.4), rgba(138, 255, 159, 0.3));
-        }
-
-        .hybrid .creature-icon::after {
-            background: linear-gradient(135deg, rgba(159, 255, 138, 0.6), rgba(138, 255, 159, 0.5));
-        }
-
-        .transformed .creature-icon {
-            background: linear-gradient(135deg, rgba(255, 159, 138, 0.4), rgba(255, 181, 168, 0.3));
-        }
-
-        .transformed .creature-icon::after {
-            background: linear-gradient(135deg, rgba(255, 159, 138, 0.6), rgba(255, 181, 168, 0.5));
-        }
-
-        .creature-card:hover .creature-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .creature-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: #fff;
-            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-            z-index: 1;
-            position: relative;
-        }
-
-        .creature-info {
-            flex: 1;
-        }
-
-        .creature-name {
-            font-size: 1.8em;
-            color: #f0f0f0;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .creature-type {
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            opacity: 0.8;
-        }
-
-        .benevolent .creature-type { color: #c983ff; }
-        .ancient .creature-type { color: #4a90e2; }
-        .corrupted .creature-type { color: #ff6b6b; }
-        .hybrid .creature-type { color: #9fff8a; }
-        .transformed .creature-type { color: #ff9f8a; }
-
-        .creature-description {
-            color: #ccc;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            font-size: 1.05em;
-        }
-
-        .creature-traits {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .trait-tag {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .benevolent .trait-tag {
-            background: rgba(201, 131, 255, 0.2);
-            color: #c983ff;
-            border: 1px solid rgba(201, 131, 255, 0.4);
-        }
-
-        .ancient .trait-tag {
-            background: rgba(74, 144, 226, 0.2);
-            color: #4a90e2;
-            border: 1px solid rgba(74, 144, 226, 0.4);
-        }
-
-        .corrupted .trait-tag {
-            background: rgba(255, 107, 107, 0.2);
-            color: #ff6b6b;
-            border: 1px solid rgba(255, 107, 107, 0.4);
-        }
-
-        .hybrid .trait-tag {
-            background: rgba(159, 255, 138, 0.2);
-            color: #9fff8a;
-            border: 1px solid rgba(159, 255, 138, 0.4);
-        }
-
-        .transformed .trait-tag {
-            background: rgba(255, 159, 138, 0.2);
-            color: #ff9f8a;
-            border: 1px solid rgba(255, 159, 138, 0.4);
-        }
-
-        .creature-card:hover .trait-tag {
-            transform: translateY(-2px);
-        }
-
-        .special-feature {
-            background: linear-gradient(135deg, rgba(30, 30, 40, 0.9), rgba(40, 40, 50, 0.8));
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-            border-left: 4px solid;
-        }
-
-        .benevolent .special-feature { border-left-color: #c983ff; }
-        .ancient .special-feature { border-left-color: #4a90e2; }
-        .corrupted .special-feature { border-left-color: #ff6b6b; }
-        .hybrid .special-feature { border-left-color: #9fff8a; }
-        .transformed .special-feature { border-left-color: #ff9f8a; }
-
-        .feature-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .benevolent .feature-title { color: #c983ff; }
-        .ancient .feature-title { color: #4a90e2; }
-        .corrupted .feature-title { color: #ff6b6b; }
-        .hybrid .feature-title { color: #9fff8a; }
-        .transformed .feature-title { color: #ff9f8a; }
-
-        .feature-description {
-            color: #ddd;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
-
-        .navigation-footer {
-            padding: 80px 20px;
-            background: rgba(5, 5, 15, 0.95);
-            text-align: center;
-            border-top: 1px solid rgba(168, 181, 255, 0.2);
-            position: relative;
-            z-index: 2;
-        }
-
-        .nav-title {
-            font-size: 2em;
-            color: #f0f0f0;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .nav-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .nav-link {
-            background: rgba(25, 25, 35, 0.8);
-            border: 1px solid rgba(168, 181, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            text-decoration: none;
-            color: #a8b5ff;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            border-color: #a8b5ff;
-            background: rgba(168, 181, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        @media (max-width: 768px) {
-            .page-title {
-                font-size: 3em;
-            }
-            
-            .page-subtitle {
-                font-size: 1.3em;
-            }
-            
-            .creatures-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-            
-            .creature-card {
-                padding: 30px;
-            }
-            
-            .category-title {
-                font-size: 2.2em;
-            }
-            
-            .nav-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 15px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="creature-shadows">
-        <div class="shadow-creature leviathan" style="left: 5%; animation-delay: 0s;">🐋</div>
-        <div class="shadow-creature nimwe" style="left: 15%; animation-delay: 5s;">🦋</div>
-        <div class="shadow-creature beastborn" style="left: 25%; animation-delay: 10s;">🐺</div>
-        <div class="shadow-creature leviathan" style="left: 35%; animation-delay: 15s;">🐙</div>
-        <div class="shadow-creature nimwe" style="left: 45%; animation-delay: 20s;">✨</div>
-        <div class="shadow-creature beastborn" style="left: 55%; animation-delay: 25s;">🦅</div>
-        <div class="shadow-creature leviathan" style="left: 65%; animation-delay: 8s;">🐉</div>
-        <div class="shadow-creature nimwe" style="left: 75%; animation-delay: 12s;">🌙</div>
-        <div class="shadow-creature beastborn" style="left: 85%; animation-delay: 18s;">🐯</div>
-        <div class="shadow-creature leviathan" style="left: 95%; animation-delay: 22s;">🦈</div>
-    </div>
-
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Creatures &amp; Beings</h1>
-            <p class="page-subtitle">
-                "From benevolent Nimwe to corrupted Beastborn, witness the entities that inhabit a world where divine blood transforms innocence into nightmare"
-            </p>
-            <div class="page-description">
-                <p>In Arcadia divine power leaves nothing it touches unchanged. Here dwell beings born from divine accident and mortal transformation, creatures that remember what they once were, spirits that still tend the wild places their makers abandoned, and creatures of the void that walk between worlds. Each represents a different facet of how divine power interacts with the mortal realm&mdash;sometimes as blessing, often as curse, always as fundamental change.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="creatures-sections">
-        <!-- Benevolent Entities -->
-        <section class="creature-category category-benevolent benevolent">
+---
+layout: default
+world_page: true
+title: "Creatures & beings | Blood of the Wild Gods World Guide"
+description: "Ancient beings, transformed creatures, and the peoples of Arcadia. Discover who shares the world."
+---
+<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/guide-editorial.css">
+<div class="home-page guide-page"><div class="home-wrap">
+<header class="guide-intro"><a class="guide-back" href="/world-guide/"><span class="guide-arrow" aria-hidden="true"></span>World Guide</a><p class="home-eyebrow">Blood of the Wild Gods · Creatures & beings</p><h1>A world beyond <em>human.</em></h1><p class="guide-deck">Ancient beings, transformed creatures, and the peoples of Arcadia. Discover who shares the world.</p><p class="guide-note">Entries draw from different points in the stories and may contain spoilers.</p></header><div class="guide-layout"><aside class="guide-contents"><details open><summary>On this page</summary><nav aria-label="On this page"><a href="#benevolent-entities"><span>01</span>Benevolent Entities</a><a href="#ancient-powers"><span>02</span>Ancient Powers</a><a href="#corrupted-beings"><span>03</span>Corrupted Beings</a><a href="#hybrid-bloodlines"><span>04</span>Hybrid Bloodlines</a><a href="#transformed-beings"><span>05</span>Transformed Beings</a><a href="#peoples-of-arcadia"><span>06</span>Peoples of Arcadia</a></nav></details></aside><div class="guide-reading"><section class="creature-category category-benevolent benevolent guide-section" id="benevolent-entities">
             <div class="container">
                 <div class="category-header">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2M7,19L8.09,15.26L15,15L8.09,14.74L7,11L5.91,14.74L1,15L5.91,15.26L7,19M19,19L20.09,15.26L24,15L20.09,14.74L19,11L17.91,14.74L14,15L17.91,15.26L19,19Z"/>
-                        </svg>
-                    </div>
+                    
                     <h2 class="category-title">Benevolent Entities</h2>
                     <p class="category-subtitle">Guardians of Balance and Hope</p>
                     <p class="category-description">
                         These beings emerge from the void not as destroyers but as healers, seeking to restore balance 
-                        to a world increasingly dominated by unchecked light&mdash;and beside them endure the small, stubborn 
+                        to a world increasingly dominated by unchecked light—and beside them endure the small, stubborn 
                         spirits of stone and stream that the Wild Gods left behind. They offer guidance without demanding worship, 
                         healing without extracting payment, and hope without requiring surrender of free will.
                     </p>
@@ -706,18 +24,14 @@
                 <div class="creatures-grid">
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">The Nimwe</h3>
                                 <div class="creature-type">Void-Touched Spirits</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            Creatures of the void who dwell in the deep woods and walk between worlds, witnessing the rise and fall of light and shadow, of gods and mortals. They appear as impossibly tall, inhumanly graceful women with skin pale as sculpted moonlight, hair like liquid silver, delicate white cat-like ears, a long tail thick with pristine fur, and luminous violet eyes that are windows into the fathomless void; the void itself clings to them like a living shroud, and they can take the shape of small white cats. Their voice is layered into a harmonious chord, as if the forest itself had spoken, and they call troubled souls &ldquo;little starling.&rdquo; Their whispers carry prophecy meant to warn and prepare, never to control. They arose in numbers after the Silence, first in the forests around Rivenglade, to restore a balance tipping toward unchecked light&mdash;which is why Zenith's Chosen brand them demons and forbid the forest.
+                            Creatures of the void who dwell in the deep woods and walk between worlds, witnessing the rise and fall of light and shadow, of gods and mortals. They appear as impossibly tall, inhumanly graceful women with skin pale as sculpted moonlight, hair like liquid silver, delicate white cat-like ears, a long tail thick with pristine fur, and luminous violet eyes that are windows into the fathomless void; the void itself clings to them like a living shroud, and they can take the shape of small white cats. Their voice is layered into a harmonious chord, as if the forest itself had spoken, and they call troubled souls “little starling.” Their whispers carry prophecy meant to warn and prepare, never to control. They arose in numbers after the Silence, first in the forests around Rivenglade, to restore a balance tipping toward unchecked light—which is why Zenith&#x27;s Chosen brand them demons and forbid the forest.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Prophetic Whispers</span>
@@ -728,25 +42,21 @@
                         <div class="special-feature">
                             <div class="feature-title">Silver Feather Tokens</div>
                             <div class="feature-description">
-                                When a Nimwe departs she leaves behind an impossibly delicate, luminous silver feather that pulses faintly with otherworldly energy. The token is proof and prophecy in one, and it hums with power in the presence of those able to sense magic&mdash;which makes it as dangerous to keep as it is precious. Their teaching is simple: too much light will make you blind.
+                                When a Nimwe departs she leaves behind an impossibly delicate, luminous silver feather that pulses faintly with otherworldly energy. The token is proof and prophecy in one, and it hums with power in the presence of those able to sense magic—which makes it as dangerous to keep as it is precious. Their teaching is simple: too much light will make you blind.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Spirits of the Wild</h3>
-                                <div class="creature-type">Leika's Children</div>
+                                <div class="creature-type">Leika&#x27;s Children</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            Believed by the oldest texts to be the children of Leika, the Mother of Mountains&mdash;who breathed life into stone and stream and gave consciousness to tree and glade&mdash;the nature spirits remain present in the world in ways their creators no longer are. A water sprite stands eight to ten inches tall, chubby and translucent blue-green with silvery highlights, its enormous eyes holding points of light like reflected stars, a mane of living water flowing around its neck independent of any breeze; such a spirit will keep a village well clean for thirty years in exchange for bread and honey cakes, and cannot resist a silver coin. Forest nymphs, the dryad-kin, are barely larger than a human child, with moss-colored skin, hair like woven leaves, fingers like delicate twigs, and a chirping language of their own. In the Verdant Veil the Dawnseekers commune with such spirits, and sacred animals bear divine markings.
+                            Believed by the oldest texts to be the children of Leika, the Mother of Mountains—who breathed life into stone and stream and gave consciousness to tree and glade—the nature spirits remain present in the world in ways their creators no longer are. A water sprite stands eight to ten inches tall, chubby and translucent blue-green with silvery highlights, its enormous eyes holding points of light like reflected stars, a mane of living water flowing around its neck independent of any breeze; such a spirit will keep a village well clean for thirty years in exchange for bread and honey cakes, and cannot resist a silver coin. Forest nymphs, the dryad-kin, are barely larger than a human child, with moss-colored skin, hair like woven leaves, fingers like delicate twigs, and a chirping language of their own. In the Verdant Veil the Dawnseekers commune with such spirits, and sacred animals bear divine markings.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Elemental Bond</span>
@@ -757,29 +67,22 @@
                         <div class="special-feature">
                             <div class="feature-title">Voices of Warning</div>
                             <div class="feature-description">
-                                Before the Silence, spirits across the realms began forgetting their purposes; one water sprite went suddenly still and spoke in a hollow, distant voice: &ldquo;The Silence&hellip; It's coming.&rdquo; Their behaviour is a barometer of the world's health, and the subject of the scholar <a href="/world-guide/characters/alaquinn-althaea.html">Alaquinn Althaea's</a> research journal, Voices of the Wild.
+                                Before the Silence, spirits across the realms began forgetting their purposes; one water sprite went suddenly still and spoke in a hollow, distant voice: “The Silence… It&#x27;s coming.” Their behaviour is a barometer of the world&#x27;s health, and the subject of the scholar <a href="/world-guide/characters/alaquinn-althaea.html">Alaquinn Althaea&#x27;s</a> research journal, Voices of the Wild.
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Ancient Powers -->
-        <section class="creature-category category-ancient ancient">
+        </section><section class="creature-category category-ancient ancient guide-section" id="ancient-powers">
             <div class="container">
                 <div class="category-header">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21M12,4A5,5 0 0,0 7,9C7,11 8.68,12.65 10.5,12.91V16H13.5V12.91C15.32,12.65 17,11 17,9A5,5 0 0,0 12,4Z"/>
-                        </svg>
-                    </div>
+                    
                     <h2 class="category-title">Ancient Powers</h2>
                     <p class="category-subtitle">Elder Beings of the Deep and the Heavens</p>
                     <p class="category-description">
                         Beings older than the kingdoms of mortals: leviathans that remember the dark before light, the Titans whose 
-                        bones became the land, the ordered hosts of angels that serve creation's balance, and the sirens 
+                        bones became the land, the ordered hosts of angels that serve creation&#x27;s balance, and the sirens 
                         of far Nareen.
                     </p>
                 </div>
@@ -787,18 +90,14 @@
                 <div class="creatures-grid">
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Ancient Leviathans</h3>
                                 <div class="creature-type">Primordial Sea Gods</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            Colossal sea creatures of the deepest trenches of the Azure Expanse, dreaming dreams that would shatter mortal minds. Their bones remember: &ldquo;They sing,&rdquo; said the seer Malritha, her hand pressed to the bleached ribs of one that had beached itself the night of her birth. &ldquo;They remember the deep. They remember the dark before light. They remember being gods.&rdquo; When cosmic balance is disturbed, ancient creatures stir in the deepest currents, and leviathan bone trembles in silent recognition, remembering its kin.
+                            Colossal sea creatures of the deepest trenches of the Azure Expanse, dreaming dreams that would shatter mortal minds. Their bones remember: “They sing,” said the seer Malritha, her hand pressed to the bleached ribs of one that had beached itself the night of her birth. “They remember the deep. They remember the dark before light. They remember being gods.” When cosmic balance is disturbed, ancient creatures stir in the deepest currents, and leviathan bone trembles in silent recognition, remembering its kin.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Deepest Trenches</span>
@@ -809,18 +108,14 @@
                         <div class="special-feature">
                             <div class="feature-title">The Beached Leviathan</div>
                             <div class="feature-description">
-                                The Weaver of Sorrows tells of a leviathan that beached itself and lay decaying on the shore for three days while no scavenger would touch it; the moon temple claimed the skeleton as an omen and displayed its ribs for centuries&mdash;until a child harvested them for a loom whose frame pulsed with faint internal light, as if the creature's spirit remained trapped within its bones.
+                                The Weaver of Sorrows tells of a leviathan that beached itself and lay decaying on the shore for three days while no scavenger would touch it; the moon temple claimed the skeleton as an omen and displayed its ribs for centuries—until a child harvested them for a loom whose frame pulsed with faint internal light, as if the creature&#x27;s spirit remained trapped within its bones.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5.04,7.5L12,10.85L18.96,7.5L12,4.15Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">The Titans</h3>
                                 <div class="creature-type">Bones of the World</div>
@@ -838,18 +133,14 @@
                         <div class="special-feature">
                             <div class="feature-title">The Hollow Spire</div>
                             <div class="feature-description">
-                                Scholars and mystics carved their libraries into the bones of the fallen&mdash;the <a href="/world-guide/geography/#hollow-spire">Hollow Spire</a>, where forbidden texts hint at gods yet to awaken, and where dungeons are hewn from the Titan's very bones.
+                                Scholars and mystics carved their libraries into the bones of the fallen—the <a href="/world-guide/geography/#hollow-spire">Hollow Spire</a>, where forbidden texts hint at gods yet to awaken, and where dungeons are hewn from the Titan&#x27;s very bones.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,1L21,5V11C21,16.55 17.16,21.74 12,23C6.84,21.74 3,16.55 3,11V5L12,1M12,7C10.89,7 10,7.89 10,9A2,2 0 0,0 12,11A2,2 0 0,0 14,9C14,7.89 13.11,7 12,7M9,13C8.45,13 8,13.45 8,14C8,14.55 8.45,15 9,15C9.55,15 10,14.55 10,14C10,13.45 9.55,13 9,13M12,13C11.45,13 11,13.45 11,14C11,14.55 11.45,15 12,15C12.55,15 13,14.55 13,14C13,13.45 12.55,13 12,13M15,13C14.45,13 14,13.45 14,14C14,14.55 14.45,15 15,15C15.55,15 16,14.55 16,14C16,13.45 15.55,13 15,13Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Angels</h3>
                                 <div class="creature-type">Servants of Order and Light</div>
@@ -872,18 +163,14 @@
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,2L13.09,8.26L22,9L14.74,13.09L17,22L12,16.74L7,22L9.26,13.09L2,9L10.91,8.26L12,2Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Sirens of the Deep</h3>
                                 <div class="creature-type">Sea-Kin of Nareen</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            On the island nation of Nareen&mdash;far from Arcadia's shores&mdash;the sirens of the sea share a sacred covenant with the Nareenese who live alongside them. After storms the people leave offerings of fish upon the rocks, and in return the sirens allow their magical artifacts to wash upon the beach for mortal use, and leave water from the deepest trenches, black sand from the ocean floor, and great shells found only in the deep. A siren that washes ashore dead must be buried on the beach in a tomb of seashells so that its soul may return to the sea. Those few whose hair turns white are recognised as blessed and can understand the sirens' language, serving as bridges between the two peoples.
+                            On the island nation of Nareen—far from Arcadia&#x27;s shores—the sirens of the sea share a sacred covenant with the Nareenese who live alongside them. After storms the people leave offerings of fish upon the rocks, and in return the sirens allow their magical artifacts to wash upon the beach for mortal use, and leave water from the deepest trenches, black sand from the ocean floor, and great shells found only in the deep. A siren that washes ashore dead must be buried on the beach in a tomb of seashells so that its soul may return to the sea. Those few whose hair turns white are recognised as blessed and can understand the sirens&#x27; language, serving as bridges between the two peoples.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Sacred Covenant</span>
@@ -894,29 +181,22 @@
                         <div class="special-feature">
                             <div class="feature-title">The Siren Bone Oracle</div>
                             <div class="feature-description">
-                                In Arcadia, siren bones&mdash;&ldquo;gifts from depths no living thing should visit&rdquo;&mdash;were the needles through which Athea, the blind oracle of the Great Withdrawal, touched the night sky and wove her calendar, tarot and horoscopes. Nareen's lore belongs to the companion novel The Girl Beneath the Cherry Tree, still in progress.
+                                In Arcadia, siren bones—“gifts from depths no living thing should visit”—were the needles through which Athea, the blind oracle of the Great Withdrawal, touched the night sky and wove her calendar, tarot and horoscopes. Nareen&#x27;s lore belongs to the companion novel The Girl Beneath the Cherry Tree, still in progress.
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-        </section>
-
-        <!-- Corrupted Beings -->
-        <section class="creature-category category-corrupted corrupted">
+        </section><section class="creature-category category-corrupted corrupted guide-section" id="corrupted-beings">
             <div class="container">
                 <div class="category-header">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19L12,12L19,19V9Z"/>
-                        </svg>
-                    </div>
+                    
                     <h2 class="category-title">Corrupted Beings</h2>
                     <p class="category-subtitle">Innocence Transformed by Divine Violence</p>
                     <p class="category-description">
                         These creatures represent the ongoing consequences of cosmic violence, transformed by exposure 
-                        to divine blood corruption or birthed by the encroaching silence&mdash;innocent beasts made monstrous 
+                        to divine blood corruption or birthed by the encroaching silence—innocent beasts made monstrous 
                         through no sin save being in the wrong place when divinity bled, their bodies remembering shapes 
                         they should not possess.
                     </p>
@@ -925,11 +205,7 @@
                 <div class="creatures-grid">
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5.04,7.5L12,10.85L18.96,7.5L12,4.15Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">The Beastborn</h3>
                                 <div class="creature-type">Divinely Corrupted Animals</div>
@@ -943,18 +219,14 @@
                         <div class="special-feature">
                             <div class="feature-title">Major Classifications</div>
                             <div class="feature-description">
-                                Ridgeback Stalkers (armored ambush predators of the Wastes), Gorefang Behemoths (massive tusked chargers), Razorwing Harpies (canyon-spanning flyers whose screech can shatter stone), Stonehide Titans (earth-shaking giants), Skywraiths (circling terrors of the sky), Wasteland Crawlers (whose leathery hides make hunters' armor), the Ice Boars of the tundra, and the terrifying Virelith&mdash;shadow panthers with hollow sockets for eyes and tendrils of inky darkness that devour light itself. During the Silence, Void Wraiths led Beastborn hordes; void-corrupted Beastborn still haunt the wilds, hunted by wandering protectors.
+                                Ridgeback Stalkers (armored ambush predators of the Wastes), Gorefang Behemoths (massive tusked chargers), Razorwing Harpies (canyon-spanning flyers whose screech can shatter stone), Stonehide Titans (earth-shaking giants), Skywraiths (circling terrors of the sky), Wasteland Crawlers (whose leathery hides make hunters&#x27; armor), the Ice Boars of the tundra, and the terrifying Virelith—shadow panthers with hollow sockets for eyes and tendrils of inky darkness that devour light itself. During the Silence, Void Wraiths led Beastborn hordes; void-corrupted Beastborn still haunt the wilds, hunted by wandering protectors.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Void Wraiths</h3>
                                 <div class="creature-type">Harbingers of Silence</div>
@@ -976,21 +248,14 @@
 
                 </div>
             </div>
-        </section>
-
-        <!-- Hybrid Bloodlines -->
-        <section class="creature-category category-hybrid hybrid">
+        </section><section class="creature-category category-hybrid hybrid guide-section" id="hybrid-bloodlines">
             <div class="container">
                 <div class="category-header">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2M7,19L8.09,15.26L15,15L8.09,14.74L7,11L5.91,14.74L1,15L5.91,15.26L7,19M19,19L20.09,15.26L24,15L20.09,14.74L19,11L17.91,14.74L14,15L17.91,15.26L19,19Z"/>
-                        </svg>
-                    </div>
+                    
                     <h2 class="category-title">Hybrid Bloodlines</h2>
                     <p class="category-subtitle">Children of Two Worlds</p>
                     <p class="category-description">
-                        When divine blood meets mortal flesh through union rather than combat, it produces hybrid beings&mdash;living consequences of the catastrophic meeting of infinite power and finite flesh, 
+                        When divine blood meets mortal flesh through union rather than combat, it produces hybrid beings—living consequences of the catastrophic meeting of infinite power and finite flesh, 
                         neither wholly human nor wholly divine, embodying the dangerous poetry of divine longing made flesh and touching both shores 
                         while belonging to neither.
                     </p>
@@ -999,18 +264,14 @@
                 <div class="creatures-grid">
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Vaelari</h3>
                                 <div class="creature-type">Celestial-Elven Hybrids</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            Elf-divine hybrids, exceedingly rare and almost legendary, born when celestial desire meets elven grace. They are marked by intensely vibrant light blue eyes&mdash;&ldquo;eyes that hold starlight,&rdquo; eyes touched by the heavens&mdash;a universally recognised hallmark of the lineage. Their births are seen as significant omens, inspiring awe and reverence within both elven and human societies and particularly among the spiritual elite. Most commonly found on Sommer Isle in the Azure Expanse, they drift through mist-veiled shores like walking poetry, beautiful and terrible in their otherworldly power.
+                            Elf-divine hybrids, exceedingly rare and almost legendary, born when celestial desire meets elven grace. They are marked by intensely vibrant light blue eyes—“eyes that hold starlight,” eyes touched by the heavens—a universally recognised hallmark of the lineage. Their births are seen as significant omens, inspiring awe and reverence within both elven and human societies and particularly among the spiritual elite. Most commonly found on Sommer Isle in the Azure Expanse, they drift through mist-veiled shores like walking poetry, beautiful and terrible in their otherworldly power.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Eyes That Hold Starlight</span>
@@ -1021,18 +282,14 @@
                         <div class="special-feature">
                             <div class="feature-title">Raised with Reverence</div>
                             <div class="feature-description">
-                                A Vaelari raised on Sommer Isle is met from birth with immense reverence and expectation, seen as divinely touched&mdash;yet the Vaelari are not native to the isle and remain rare even there. Their blood, one prince's grandmother said, touches both shores but belongs to neither.
+                                A Vaelari raised on Sommer Isle is met from birth with immense reverence and expectation, seen as divinely touched—yet the Vaelari are not native to the isle and remain rare even there. Their blood, one prince&#x27;s grandmother said, touches both shores but belongs to neither.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Haelim</h3>
                                 <div class="creature-type">Divine-Human Hybrids</div>
@@ -1050,34 +307,21 @@
                         <div class="special-feature">
                             <div class="feature-title">Hidden Among Mortals</div>
                             <div class="feature-description">
-                                Such a child is neither wholly human nor wholly divine&mdash;too powerful for mortal flesh, too wild for mortal society&mdash;and its power may wake before it can walk. The Sin of Mercy tells of one such child, <a href="/world-guide/characters/hope.html">Hope</a>&mdash;proof that divine and mortal blood can coexist when raised with love instead of violence.
+                                Such a child is neither wholly human nor wholly divine—too powerful for mortal flesh, too wild for mortal society—and its power may wake before it can walk. The Sin of Mercy tells of one such child, <a href="/world-guide/characters/hope.html">Hope</a>—proof that divine and mortal blood can coexist when raised with love instead of violence.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 48.839 48.839" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
-                    c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
-                    c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742
-                    c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181
-                    C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0
-                    S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971
-                    s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878
-                    c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z
-                     M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414
-                    S48.455,16.861,45.727,15.602z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Baelak</h3>
                                 <div class="creature-type">Divine Beastmen (Mythological)</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            Beastman-divine hybrids so rare that most consider them myth within myth&mdash;legends told by drunkards and madmen. Of all the children of divine longing they are the rarest, and the least is known of them.
+                            Beastman-divine hybrids so rare that most consider them myth within myth—legends told by drunkards and madmen. Of all the children of divine longing they are the rarest, and the least is known of them.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Beastman Blood</span>
@@ -1095,21 +339,14 @@
 
                 </div>
             </div>
-        </section>
-
-        <!-- Transformed Beings -->
-        <section class="creature-category category-transformed transformed">
+        </section><section class="creature-category category-transformed transformed guide-section" id="transformed-beings">
             <div class="container">
                 <div class="category-header">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
-                        </svg>
-                    </div>
+                    
                     <h2 class="category-title">Transformed Beings</h2>
                     <p class="category-subtitle">Mortals Reshaped by Supernatural Forces</p>
                     <p class="category-description">
-                        Mortals who have been changed by divine blood&mdash;granted godlike power at the cost, a little at a time, 
+                        Mortals who have been changed by divine blood—granted godlike power at the cost, a little at a time, 
                         of their original humanity.
                     </p>
                 </div>
@@ -1117,11 +354,7 @@
                 <div class="creatures-grid">
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7,2V13H10V22L17,10H13L17,2H7Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">The Bloodmarked</h3>
                                 <div class="creature-type">Divine Blood Warriors</div>
@@ -1143,21 +376,14 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Peoples of Arcadia -->
-        <section class="creature-category category-hybrid hybrid">
+        </section><section class="creature-category category-hybrid hybrid guide-section" id="peoples-of-arcadia">
             <div class="container">
                 <div class="category-header">
-                    <div class="category-icon">
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
-                        </svg>
-                    </div>
+                    
                     <h2 class="category-title">Peoples of Arcadia</h2>
                     <p class="category-subtitle">The Three Races and Their Neighbours</p>
                     <p class="category-description">
-                        For millennia three races&mdash;humanity, the ethereal Elfkind, and the brutish Beastmen&mdash;have lived beneath the divine shadow, 
+                        For millennia three races—humanity, the ethereal Elfkind, and the brutish Beastmen—have lived beneath the divine shadow, 
                         building civilizations atop ancient battlefields and raising kingdoms that reflect forgotten prayers. The oldest texts say each was shaped by a different First God, 
                         and that the youngest of them, humanity, was made deliberately fragile.
                     </p>
@@ -1166,18 +392,14 @@
                 <div class="creatures-grid">
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Humanity</h3>
-                                <div class="creature-type">Thainos's Clay</div>
+                                <div class="creature-type">Thainos&#x27;s Clay</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            Shaped from responsive clay on the banks of the River of First Light by Thainos, the god who wept. Where Libros's angels knew only perfect order, these creatures would know the chaos of longing; he gave them softer skin than made sense, bodies that would bruise at a touch, hearts that could break from mere words, minds that would never be satisfied, and souls that could contain infinities housed in flesh that lasted mere moments. He made them absurd. He made them glorious. From the relic-hunting Ashborn of the Godscarred Wastes to the fire-blooded nobles of Solara, the fishing folk of Atheria and the refugees of Rivenglade, humanity has built the greater part of Arcadia's kingdoms.
+                            Shaped from responsive clay on the banks of the River of First Light by Thainos, the god who wept. Where Libros&#x27;s angels knew only perfect order, these creatures would know the chaos of longing; he gave them softer skin than made sense, bodies that would bruise at a touch, hearts that could break from mere words, minds that would never be satisfied, and souls that could contain infinities housed in flesh that lasted mere moments. He made them absurd. He made them glorious. From the relic-hunting Ashborn of the Godscarred Wastes to the fire-blooded nobles of Solara, the fishing folk of Atheria and the refugees of Rivenglade, humanity has built the greater part of Arcadia&#x27;s kingdoms.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Free Will</span>
@@ -1186,27 +408,23 @@
                             <span class="trait-tag">Endless Reaching</span>
                         </div>
                         <div class="special-feature">
-                            <div class="feature-title">The Wanderer's Legacy</div>
+                            <div class="feature-title">The Wanderer&#x27;s Legacy</div>
                             <div class="feature-description">
-                                When <a href="/world-guide/characters/thainos.html">Thainos</a> completed his thousand-year search for one soul untouched by cruelty, his essence scattered like seeds across all humanity&mdash;making every human a potential carrier of sacred light.
+                                When <a href="/world-guide/characters/thainos.html">Thainos</a> completed his thousand-year search for one soul untouched by cruelty, his essence scattered like seeds across all humanity—making every human a potential carrier of sacred light.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2M7,19L8.09,15.26L15,15L8.09,14.74L7,11L5.91,14.74L1,15L5.91,15.26L7,19M19,19L20.09,15.26L24,15L20.09,14.74L19,11L17.91,14.74L14,15L17.91,15.26L19,19Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Elfkind</h3>
-                                <div class="creature-type">Atonia's Children</div>
+                                <div class="creature-type">Atonia&#x27;s Children</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            The ethereal Elfkind, whom the First God Atonia shaped to know crystalline truth. The reclusive Dawnseekers of the Verdant Veil live in symbiosis with a forest made sentient by the blood of the Wild Gods, communing with spirits, hearing the whispers of the Wild Gods, and revering their Bloodmarked, whose powers are tied to nature itself. Far to the southeast, the elves of Sommer Isle raise cities of white marble and gold filigree devoted almost exclusively to Zenith; proud, reserved, and secure in their own purity, they regard the Dawnseekers as &ldquo;low elves&rdquo; tainted by the wider world.
+                            The ethereal Elfkind, whom the First God Atonia shaped to know crystalline truth. The reclusive Dawnseekers of the Verdant Veil live in symbiosis with a forest made sentient by the blood of the Wild Gods, communing with spirits, hearing the whispers of the Wild Gods, and revering their Bloodmarked, whose powers are tied to nature itself. Far to the southeast, the elves of Sommer Isle raise cities of white marble and gold filigree devoted almost exclusively to Zenith; proud, reserved, and secure in their own purity, they regard the Dawnseekers as “low elves” tainted by the wider world.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Nature Communion</span>
@@ -1217,40 +435,27 @@
                         <div class="special-feature">
                             <div class="feature-title">The Verdant Veil</div>
                             <div class="feature-description">
-                                The Dawnseekers guard the <a href="/world-guide/geography/#verdant-veil">Verdant Veil</a>, a realm where trees whisper forgotten prayers, rivers shift course with moods, and beasts bear divine sigils&mdash;and where its princess, <a href="/world-guide/characters/elowen-faerwyn.html">Elowen Faerwyn</a>, was raised to speak the rustling language of the leaves.
+                                The Dawnseekers guard the <a href="/world-guide/geography/#verdant-veil">Verdant Veil</a>, a realm where trees whisper forgotten prayers, rivers shift course with moods, and beasts bear divine sigils—and where its princess, <a href="/world-guide/characters/elowen-faerwyn.html">Elowen Faerwyn</a>, was raised to speak the rustling language of the leaves.
                             </div>
                         </div>
                     </div>
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 48.839 48.839" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M39.041,36.843c2.054,3.234,3.022,4.951,3.022,6.742c0,3.537-2.627,5.252-6.166,5.252
-                    c-1.56,0-2.567-0.002-5.112-1.326c0,0-1.649-1.509-5.508-1.354c-3.895-0.154-5.545,1.373-5.545,1.373
-                    c-2.545,1.323-3.516,1.309-5.074,1.309c-3.539,0-6.168-1.713-6.168-5.252c0-1.791,0.971-3.506,3.024-6.742
-                    c0,0,3.881-6.445,7.244-9.477c2.43-2.188,5.973-2.18,5.973-2.18h1.093v-0.001c0,0,3.698-0.009,5.976,2.181
-                    C35.059,30.51,39.041,36.844,39.041,36.843z M16.631,20.878c3.7,0,6.699-4.674,6.699-10.439S20.331,0,16.631,0
-                    S9.932,4.674,9.932,10.439S12.931,20.878,16.631,20.878z M10.211,30.988c2.727-1.259,3.349-5.723,1.388-9.971
-                    s-5.761-6.672-8.488-5.414s-3.348,5.723-1.388,9.971C3.684,29.822,7.484,32.245,10.211,30.988z M32.206,20.878
-                    c3.7,0,6.7-4.674,6.7-10.439S35.906,0,32.206,0s-6.699,4.674-6.699,10.439C25.507,16.204,28.506,20.878,32.206,20.878z
-                     M45.727,15.602c-2.728-1.259-6.527,1.165-8.488,5.414s-1.339,8.713,1.389,9.972c2.728,1.258,6.527-1.166,8.488-5.414
-                    S48.455,16.861,45.727,15.602z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Beastmen</h3>
-                                <div class="creature-type">Archadeus's Children</div>
+                                <div class="creature-type">Archadeus&#x27;s Children</div>
                             </div>
                         </div>
                         <p class="creature-description">
-                            A race of highly intelligent animals who stand on their hind legs, whom the First God Archadeus shaped to know primal strength. Each species forms its own tribe&mdash;feline, ursine, and more&mdash;and in the Crimson Tundra they are united under the Bloodfang Clans, whose brutal laws, fierce loyalty, and veneration of the War God demand strength, sacrifice, and ferocity. Any Bloodmarked born into the clans is deemed a sacred offering, ritually slaughtered on the Blood Moon so that warriors may drink the divine blood and be enhanced. Not all Beastmen accept these ways: exiles from the tundra can be found as far away as the Hollow Spire's own acolytes.
+                            A race of highly intelligent animals who stand on their hind legs, whom the First God Archadeus shaped to know primal strength. Each species forms its own tribe—feline, ursine, and more—and in the Crimson Tundra they are united under the Bloodfang Clans, whose brutal laws, fierce loyalty, and veneration of the War God demand strength, sacrifice, and ferocity. Any Bloodmarked born into the clans is deemed a sacred offering, ritually slaughtered on the Blood Moon so that warriors may drink the divine blood and be enhanced. Not all Beastmen accept these ways: exiles from the tundra can be found as far away as the Hollow Spire&#x27;s own acolytes.
                         </p>
                         <div class="creature-traits">
                             <span class="trait-tag">Primal Strength</span>
                             <span class="trait-tag">Tribal Loyalty</span>
                             <span class="trait-tag">Night Senses</span>
-                            <span class="trait-tag">War God's Rites</span>
+                            <span class="trait-tag">War God&#x27;s Rites</span>
                         </div>
                         <div class="special-feature">
                             <div class="feature-title">The Stray</div>
@@ -1262,11 +467,7 @@
 
                     <div class="creature-card">
                         <div class="creature-header">
-                            <div class="creature-icon">
-                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M10,9.5C10,10.3 9.3,11 8.5,11C7.7,11 7,10.3 7,9.5C7,8.7 7.7,8 8.5,8C9.3,8 10,8.7 10,9.5M17,9.5C17,10.3 16.3,11 15.5,11C14.7,11 14,10.3 14,9.5C14,8.7 14.7,8 15.5,8C16.3,8 17,8.7 17,9.5M12,17.23C10.25,17.23 8.71,16.5 7.81,15.42L9.23,14C9.68,14.72 10.75,15.23 12,15.23C13.25,15.23 14.32,14.72 14.77,14L16.19,15.42C15.29,16.5 13.75,17.23 12,17.23Z"/>
-                                </svg>
-                            </div>
+                            
                             <div class="creature-info">
                                 <h3 class="creature-name">Murmeleks</h3>
                                 <div class="creature-type">Gossip Brokers</div>
@@ -1289,271 +490,5 @@
 
                 </div>
             </div>
-        </section>
-
-    </div>
-
-<!-- Dynamic Navigation Footer -->
-<!-- Place this at the bottom of your page, before closing </body> -->
-
-<section class="navigation-footer" id="dynamicFooter">
-    <div class="container">
-        <h2 class="nav-title">Continue Your Journey Through Arcadia</h2>
-        <div class="nav-grid" id="navGrid">
-            <!-- Links will be dynamically inserted here -->
-        </div>
-    </div>
-</section>
-
-<style>
-    /* Navigation Footer Styling - Reusable across all pages */
-    .navigation-footer {
-        padding: 80px 20px;
-        background: linear-gradient(135deg, 
-            rgba(10, 10, 30, 0.95) 0%, 
-            rgba(5, 5, 20, 0.98) 100%);
-        text-align: center;
-        border-top: 2px solid rgba(138, 159, 255, 0.3);
-        position: relative;
-        z-index: 2;
-        overflow: hidden;
-    }
-
-    /* Subtle cosmic effect for the footer */
-    .navigation-footer::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(ellipse at 50% 0%, 
-            rgba(138, 159, 255, 0.05) 0%, 
-            transparent 70%);
-        pointer-events: none;
-    }
-
-    .nav-title {
-        font-size: 2.2em;
-        color: #f0f0f0;
-        margin-bottom: 40px;
-        font-weight: 300;
-        letter-spacing: 2px;
-        text-shadow: 
-            0 0 20px rgba(138, 159, 255, 0.3),
-            0 2px 10px rgba(0, 0, 0, 0.6);
-        opacity: 0;
-        animation: fadeInTitle 1s ease forwards;
-    }
-
-    @keyframes fadeInTitle {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-    }
-
-    .nav-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .nav-link {
-        background: linear-gradient(135deg, 
-            rgba(25, 25, 60, 0.4) 0%, 
-            rgba(15, 15, 40, 0.8) 100%);
-        border: 1px solid rgba(138, 159, 255, 0.2);
-        border-radius: 15px;
-        padding: 20px;
-        text-decoration: none;
-        color: #8a9fff;
-        transition: all 0.4s ease;
-        font-weight: 500;
-        position: relative;
-        overflow: hidden;
-        opacity: 0;
-        animation: fadeInLink 0.8s ease forwards;
-    }
-
-    .nav-link::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, 
-            transparent, 
-            rgba(138, 159, 255, 0.1), 
-            transparent);
-        transition: left 0.6s ease;
-    }
-
-    .nav-link:hover::before {
-        left: 100%;
-    }
-
-    .nav-link:hover {
-        border-color: #8a9fff;
-        background: linear-gradient(135deg, 
-            rgba(138, 159, 255, 0.15) 0%, 
-            rgba(100, 120, 200, 0.2) 100%);
-        transform: translateY(-3px);
-        color: #ffffff;
-        box-shadow: 
-            0 10px 25px rgba(0, 0, 0, 0.3),
-            0 0 20px rgba(138, 159, 255, 0.2);
-    }
-
-    /* Special styling for World Guide Home link */
-    .nav-link.home-link {
-        background: linear-gradient(135deg, 
-            rgba(75, 40, 130, 0.3) 0%, 
-            rgba(138, 159, 255, 0.2) 100%);
-        border-color: rgba(180, 120, 220, 0.3);
-        color: #b478dc;
-    }
-
-    .nav-link.home-link:hover {
-        border-color: #b478dc;
-        background: linear-gradient(135deg, 
-            rgba(180, 120, 220, 0.2) 0%, 
-            rgba(138, 159, 255, 0.3) 100%);
-        color: #d4a4f4;
-    }
-
-    /* Stagger the link animations */
-    .nav-link:nth-child(1) { animation-delay: 0.1s; }
-    .nav-link:nth-child(2) { animation-delay: 0.2s; }
-    .nav-link:nth-child(3) { animation-delay: 0.3s; }
-    .nav-link:nth-child(4) { animation-delay: 0.4s; }
-    .nav-link:nth-child(5) { animation-delay: 0.5s; }
-    .nav-link:nth-child(6) { animation-delay: 0.6s; }
-
-    @keyframes fadeInLink {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-    }
-
-    @media (max-width: 768px) {
-        .nav-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        
-        .nav-title {
-            font-size: 1.8em;
-        }
-    }
-</style>
-
-<script>
-    // Dynamic Footer Navigation Script
-    (function() {
-        // Complete catalog of world guide sections
-        const worldGuideSections = [
-            { name: "Characters", path: "/world-guide/characters/" },
-            { name: "Bae'Ravah Language", path: "/world-guide/language/" },
-            { name: "Calendar Systems", path: "/world-guide/calendars/" },
-            { name: "Geography & Realms", path: "/world-guide/geography/" },
-            { name: "Kingdoms & Politics", path: "/world-guide/kingdoms/" },
-            { name: "Divine Realms", path: "/world-guide/divine-realms/" },
-            { name: "Magic Systems", path: "/world-guide/magic/" },
-            { name: "Magical Materials", path: "/world-guide/magical-materials/" },
-            { name: "History & Timeline", path: "/world-guide/history/" },
-            { name: "Organizations", path: "/world-guide/organizations/" },
-            { name: "Creatures & Beings", path: "/world-guide/creatures/" },
-            { name: "Daily Life & Culture", path: "/world-guide/daily-life/" }
-        ];
-
-        // Mystical subtitles that can appear occasionally
-        const mysticalTitles = [
-            "Continue Your Journey Through Arcadia",
-            "Explore the Mysteries That Await",
-            "Where Will the Cosmic Winds Guide You?",
-            "Discover What Lies Beyond the Veil",
-            "Follow the Threads of Destiny",
-            "Chart Your Path Through Divine Realms"
-        ];
-
-        // Get current page path to exclude it from navigation
-        const currentPath = window.location.pathname;
-        
-        // Filter out current section
-        const availableSections = worldGuideSections.filter(section => 
-            !currentPath.includes(section.path.replace(/\/$/, ''))
-        );
-
-        // Fisher-Yates shuffle algorithm for true randomness
-        function shuffleArray(array) {
-            const shuffled = [...array];
-            for (let i = shuffled.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-            }
-            return shuffled;
-        }
-
-        // Select random sections
-        const shuffledSections = shuffleArray(availableSections);
-        const selectedSections = shuffledSections.slice(0, 5);
-
-        // Build the navigation grid
-        const navGrid = document.getElementById('navGrid');
-        
-        if (navGrid) {
-            // Clear any existing content
-            navGrid.innerHTML = '';
-            
-            // Add the selected random sections
-            selectedSections.forEach(section => {
-                const link = document.createElement('a');
-                link.href = section.path;
-                link.className = 'nav-link';
-                link.textContent = section.name;
-                navGrid.appendChild(link);
-            });
-            
-            // Always add World Guide Home as the last item
-            const homeLink = document.createElement('a');
-            homeLink.href = '/world-guide/';
-            homeLink.className = 'nav-link home-link';
-            homeLink.textContent = 'World Guide Home';
-            navGrid.appendChild(homeLink);
-        }
-
-        // Optionally randomize the title
-        const navTitle = document.querySelector('.navigation-footer .nav-title');
-        if (navTitle && Math.random() > 0.5) { // 50% chance to use alternate title
-            const randomTitle = mysticalTitles[Math.floor(Math.random() * mysticalTitles.length)];
-            navTitle.textContent = randomTitle;
-        }
-
-        // Add subtle hover sound effect (optional enhancement)
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('mouseenter', function() {
-                // Create a subtle glow effect on hover
-                this.style.textShadow = '0 0 10px rgba(138, 159, 255, 0.6)';
-            });
-            
-            link.addEventListener('mouseleave', function() {
-                this.style.textShadow = '';
-            });
-        });
-    })();
-</script>
-</body>
-</html>
+        </section></div></div><span id="dynamicFooter"></span><span id="mystical"></span><span id="navGrid"></span><footer class="guide-next"><p class="home-eyebrow">Continue exploring</p><nav aria-label="Related guide pages"><a href="/world-guide/">All guide topics<span class="guide-arrow" aria-hidden="true"></span></a><a href="/world-guide/geography/">Explore the atlas<span class="guide-arrow" aria-hidden="true"></span></a><a href="/writing/">Find the stories<span class="guide-arrow" aria-hidden="true"></span></a></nav></footer></div></div>
+<script src="/assets/js/guide-editorial.js" defer></script>
