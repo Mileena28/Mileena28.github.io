@@ -1,0 +1,181 @@
+---
+layout: default
+homepage: true
+title: "The Archive | Mileena Rayne — Homepage Design Concept"
+description: "A proposed literary-archive homepage for Mileena Rayne, featuring Blood of the Wild Gods, fantasy novels, original soundtracks, and the Arcadian world guide."
+image: "/assets/images/the-silence-cover-2026.jpg"
+permalink: /homepage-concept/
+sitemap: false
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/home.css' | relative_url }}">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--ar-bg:#0d0e0c;--ar-ink:#eee8d9;--ar-dim:#aca99b;--ar-gold:#bca578;--ar-line:#514b3d;--ar-dark:#171916;--ar-paper:#dfd3b7}
+body:has(.archive){background:var(--ar-bg);color:var(--ar-ink)}
+body:has(.archive)::before{display:none}
+body:has(.archive) .header{background:#10110f;border-bottom:1px solid #504632;backdrop-filter:none;padding:19px 0}
+body:has(.archive) .header .logo{font-family:'Cormorant Garamond',Georgia,serif;font-size:2.05rem;text-transform:uppercase;letter-spacing:.13em}
+body:has(.archive) .header .nav a{font:500 .75rem/1.5 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#d7d0bd}
+body:has(.archive) .header .nav a:hover{color:#eacb90}
+body:has(.archive) .home-mobile-menu summary{color:#d7c19a}
+.archive{font-family:'DM Sans',Arial,sans-serif;color:var(--ar-ink);font-size:15px;line-height:1.65;overflow:hidden;background:var(--ar-bg)}
+.archive *{box-sizing:border-box}
+.archive a{color:inherit}
+.archive a:focus-visible{outline:3px solid #ead19c;outline-offset:4px}
+.archive h1,.archive h2,.archive h3,.archive blockquote{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+.archive h1,.archive h2,.archive h3,.archive p,.archive figure{margin:0}
+.archive .ar-wrap{width:min(1170px,calc(100% - 64px));margin:auto}
+.archive .ar-kicker{font:600 .67rem/1.5 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.23em;color:var(--ar-gold)}
+.archive .ar-text-link{text-decoration:none;display:inline-flex;gap:16px;align-items:center;font:600 .75rem/1.5 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase;border-bottom:1px solid var(--ar-gold);padding-bottom:10px;transition:color .18s}
+.archive .ar-text-link:hover{color:var(--ar-gold)}
+.archive .ar-issue{border-bottom:1px solid #403b30;background:#151711}
+.archive .ar-issue-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:39px;font:.64rem/1.4 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#c8bba3}
+.archive .ar-issue a{color:#d7c59d;text-decoration:none}
+.archive .ar-issue a:hover{text-decoration:underline}
+.archive .ar-hero{position:relative;display:grid;grid-template-columns:1.13fr .87fr;gap:64px;align-items:center;min-height:635px;padding:90px 0 85px}
+.archive .ar-hero::before{content:'';position:absolute;left:-33vw;bottom:-145px;width:900px;height:420px;background:radial-gradient(ellipse,#50412919,transparent 70%);pointer-events:none}
+.archive .ar-hero-copy{position:relative;z-index:2}
+.archive .ar-hero h1{font-size:clamp(4.2rem,7vw,7.5rem);letter-spacing:-.055em;line-height:.87;margin:24px 0 29px;max-width:720px}
+.archive .ar-hero h1 em{font-weight:400;color:#c3a778}
+.archive .ar-hero-lead{font:400 1.05rem/1.95 'DM Sans',sans-serif;color:#c1bcac;max-width:500px}
+.archive .ar-hero-ctas{display:flex;align-items:center;flex-wrap:wrap;gap:32px;margin-top:36px}
+.archive .ar-primary{display:inline-flex;align-items:center;justify-content:center;gap:28px;background:#ccb991;color:#171714!important;text-decoration:none;padding:15px 24px;font:700 .75rem/1.5 'DM Sans',sans-serif;letter-spacing:.12em;text-transform:uppercase;min-height:49px}
+.archive .ar-primary:hover{background:#eddbad}
+.archive .ar-hero-visual{position:relative;height:530px;min-width:0}
+.archive .ar-starmap{position:absolute;inset:-15px -90px 0 -50px;opacity:.65;background:radial-gradient(circle at 55% 39%,transparent 0 74px,#7f775b66 75px 76px,transparent 77px 129px,#7f775b55 130px 131px,transparent 132px 182px,#7f775b3b 183px 184px,transparent 185px),linear-gradient(115deg,transparent 49.9%,#887e5f20 50%,transparent 50.1%),linear-gradient(15deg,transparent 49.9%,#887e5f24 50%,transparent 50.1%);border-radius:50%}
+.archive .ar-starmap::after{content:'✧　　·　　✧　　 ✦　　　·　 ✧';position:absolute;top:9%;left:12%;color:#a89168;font-size:20px;transform:rotate(-17deg);letter-spacing:14px}
+.archive .ar-eclipse{position:absolute;z-index:1;top:35px;right:-27px;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle at 45% 48%,#080908 0 34%,#77644b 35%,#ceba8f 37%,#746247 38%,#22241d 43%,transparent 44%);box-shadow:0 0 70px #b99f6d0f}
+.archive .ar-cover-frame{position:absolute;z-index:2;bottom:27px;left:23px;width:235px;padding:9px 9px 14px;background:#211e17;border:1px solid #807051;transform:rotate(-7deg);box-shadow:22px 24px 32px #0009}
+.archive .ar-cover-frame img{display:block;width:100%;height:345px;object-fit:cover}
+.archive .ar-cover-frame figcaption{font:.61rem/1.5 'DM Sans',sans-serif;color:#d3b988;letter-spacing:.16em;text-align:center;text-transform:uppercase;margin-top:12px}
+.archive .ar-hero-annotation{position:absolute;z-index:3;bottom:68px;right:8px;border-left:1px solid var(--ar-gold);padding:0 0 0 15px;color:#cdb995;font:.68rem/1.8 'DM Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.archive .ar-rule{display:flex;align-items:center;gap:20px;border-top:1px solid var(--ar-line);padding:22px 0;color:#a89675;font:.68rem/1.5 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.18em}
+.archive .ar-rule::after{content:'';height:1px;background:#494535;flex:1}
+.archive .ar-section{padding:76px 0 100px}
+.archive .ar-section-header{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:49px}
+.archive .ar-section-header h2{font-size:clamp(3rem,5vw,5.2rem);line-height:1;margin-top:13px;letter-spacing:-.035em}
+.archive .ar-section-header p:last-child{max-width:300px;color:#b2ae9f;font-size:.89rem}
+.archive .ar-book-shelf{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.archive .ar-book{display:grid;grid-template-columns:155px 1fr;gap:26px;position:relative;border-top:1px solid var(--ar-line);padding-top:24px}
+.archive .ar-book img{width:100%;height:auto;display:block;box-shadow:8px 12px 22px #0007}
+.archive .ar-number{font:.67rem/1.5 'DM Sans',sans-serif;letter-spacing:.2em;color:var(--ar-gold)}
+.archive .ar-book h3{font-size:3rem;line-height:.9;margin:18px 0 13px}
+.archive .ar-book h3 a{text-decoration:none}
+.archive .ar-book h3 a:hover{color:var(--ar-gold)}
+.archive .ar-book .ar-book-meta{color:#bda983;font:.63rem/1.5 'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.12em;margin-bottom:18px}
+.archive .ar-book p:not(.ar-book-meta){font-size:.87rem;line-height:1.8;color:#b8b4a8;margin-bottom:20px}
+.archive .ar-book .ar-text-link{font-size:.65rem}
+.archive .ar-atlas{position:relative;background:#191b17;border-top:1px solid #62573b;border-bottom:1px solid #62573b}
+.archive .ar-atlas-grid{display:grid;grid-template-columns:1.04fr .96fr;min-height:555px}
+.archive .ar-atlas-image{position:relative;min-height:450px;border-right:1px solid #62573b;background:#1b1a13}
+.archive .ar-atlas-image img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:sepia(.65) saturate(.55) brightness(.55) contrast(1.12)}
+.archive .ar-atlas-image::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,#191b17 100%),linear-gradient(0deg,#191b17d9,transparent 45%)}
+.archive .ar-atlas-image .ar-map-caption{position:absolute;z-index:1;bottom:32px;left:24px;font:.67rem/1.6 'DM Sans',sans-serif;letter-spacing:.19em;color:#e9d5a5;text-transform:uppercase}
+.archive .ar-atlas-copy{padding:80px clamp(28px,6vw,86px)}
+.archive .ar-atlas h2{font-size:clamp(3.7rem,5vw,5.7rem);line-height:.95;letter-spacing:-.045em;margin:20px 0 24px}
+.archive .ar-atlas h2 em{color:#c3a778}
+.archive .ar-atlas-copy>p:not(.ar-kicker){color:#bdb8a9;line-height:1.9;max-width:410px;margin-bottom:29px}
+.archive .ar-index{list-style:none;margin:0 0 32px;padding:0;border-top:1px solid #514b3d}
+.archive .ar-index li{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #514b3d;font:.74rem/1.4 'DM Sans',sans-serif;color:#d5cbb6}
+.archive .ar-index span{color:#b6a17b;font-size:.64rem}
+.archive .ar-life{padding:100px 0}
+.archive .ar-life-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:100px;align-items:center}
+.archive .ar-life-image{position:relative}
+.archive .ar-life-image>img{display:block;width:100%;max-width:460px;aspect-ratio:1/1;object-fit:cover;box-shadow:16px 20px 0 #24251c}
+.archive .ar-life-image::after{content:'SOUNDTRACK / 01';position:absolute;bottom:-11px;left:24px;background:#c6b187;color:#15150f;padding:9px 16px;font:.61rem/1 'DM Sans',sans-serif;letter-spacing:.18em}
+.archive .ar-life h2{font-size:clamp(3.4rem,5.3vw,5.6rem);line-height:.94;letter-spacing:-.04em;margin:18px 0 24px}
+.archive .ar-life p:not(.ar-kicker){color:#bcb8ab;line-height:1.9;margin-bottom:26px}
+.archive .ar-dispatch{background:var(--ar-paper);color:#211f19;padding:75px 0 85px;border-top:6px double #87744f}
+.archive .ar-dispatch .ar-kicker{color:#725f3f}
+.archive .ar-dispatch h2{font-size:clamp(3.2rem,5vw,5rem);line-height:1;letter-spacing:-.04em;margin:12px 0 22px}
+.archive .ar-dispatch-intro{color:#5b5449;max-width:670px;line-height:1.85}
+.archive .ar-dispatch-items{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin:37px 0 38px}
+.archive .ar-dispatch-item{border-top:1px solid #8e7d61;padding-top:19px}
+.archive .ar-dispatch-item time{display:block;color:#766447;text-transform:uppercase;letter-spacing:.16em;font-size:.66rem}
+.archive .ar-dispatch-item h3{font-size:2.15rem;margin:13px 0}
+.archive .ar-dispatch-item h3 a{text-decoration:none}
+.archive .ar-dispatch-item h3 a:hover{text-decoration:underline}
+.archive .ar-dispatch-item p{color:#60584c;font-size:.87rem;line-height:1.8}
+.archive .ar-dispatch .ar-text-link{border-color:#765f39;color:#332a1d}
+.archive .ar-ending{padding:94px 0 102px;text-align:center}
+.archive .ar-ending .ar-symbol{font:400 3rem/1 Georgia,serif;color:#b89b64;margin-bottom:18px}
+.archive .ar-ending h2{font-size:clamp(3rem,5vw,5.3rem);line-height:.98;margin:18px auto 28px;max-width:700px}
+.archive .ar-ending p:not(.ar-kicker):not(.ar-symbol){color:#b9b4a5;max-width:660px;margin:0 auto 26px}
+.archive .ar-ending .ar-text-link{margin-top:10px}
+@media(max-width:1024px){.archive .ar-hero{gap:20px}.archive .ar-hero-visual{height:470px}.archive .ar-eclipse{right:-60px}.archive .ar-cover-frame{left:0}.archive .ar-book-shelf{gap:28px}.archive .ar-book{grid-template-columns:118px 1fr;gap:20px}.archive .ar-life-grid{gap:54px}}
+@media(max-width:760px){.archive .ar-wrap{width:min(100% - 38px,1170px)}.archive .ar-hero{grid-template-columns:1fr;padding:65px 0 44px;gap:20px;min-height:0}.archive .ar-hero h1{font-size:clamp(4rem,13vw,6.3rem)}.archive .ar-hero-visual{height:330px;max-width:450px;width:100%;margin:auto}.archive .ar-starmap{inset:-25px -20px 0 -10px}.archive .ar-eclipse{width:260px;height:260px;top:0;right:14px}.archive .ar-cover-frame{width:155px;left:36px;bottom:1px}.archive .ar-cover-frame img{height:230px}.archive .ar-hero-annotation{right:8px;bottom:20px}.archive .ar-section{padding:60px 0 70px}.archive .ar-section-header{display:block;margin-bottom:30px}.archive .ar-section-header p:last-child{margin-top:16px}.archive .ar-book-shelf{grid-template-columns:1fr;gap:36px}.archive .ar-book{grid-template-columns:125px 1fr}.archive .ar-atlas-grid{grid-template-columns:1fr}.archive .ar-atlas-image{min-height:310px;border-right:0;border-bottom:1px solid #62573b}.archive .ar-atlas-copy{padding:50px 26px 60px}.archive .ar-life{padding:72px 0}.archive .ar-life-grid{grid-template-columns:1fr;gap:45px}.archive .ar-life-image>img{max-width:340px}.archive .ar-dispatch{padding:60px 0}.archive .ar-dispatch-items{grid-template-columns:1fr;gap:26px}.archive .ar-ending{padding:68px 0}.archive .ar-issue-inner{letter-spacing:.07em}.archive .ar-issue .ar-issue-right{display:none}}
+@media(max-width:440px){.archive .ar-hero h1{font-size:3.9rem}.archive .ar-hero-ctas{gap:23px}.archive .ar-primary{width:100%}.archive .ar-book{grid-template-columns:96px 1fr;gap:18px}.archive .ar-book h3{font-size:2.4rem}.archive .ar-book .ar-text-link{letter-spacing:.06em}.archive .ar-book p:not(.ar-book-meta){font-size:.8rem}}
+@media(prefers-reduced-motion:reduce){.archive *{scroll-behavior:auto!important;transition:none!important}}
+</style>
+
+<div class="archive" id="archive-start">
+  <div class="ar-issue"><div class="ar-wrap ar-issue-inner"><span>THE COLLECTED WORKS OF MILEENA RAYNE</span><span class="ar-issue-right">FICTION · MUSIC · MYTHOLOGY</span><a href="#ar-books">OPEN THE ARCHIVE ↓</a></div></div>
+
+  <div class="ar-wrap">
+    <section class="ar-hero" aria-labelledby="ar-title">
+      <div class="ar-hero-copy">
+        <p class="ar-kicker">Mileena Rayne / Author & musician</p>
+        <h1 id="ar-title">Some stories<br>refuse to <em>stay</em><br>buried.</h1>
+        <p class="ar-hero-lead">Dark fantasy, forgotten gods, fractured faith, and the people left to reckon with them. Welcome to my books, their music, and the histories that connect them.</p>
+        <div class="ar-hero-ctas"><a class="ar-primary" href="#ar-books">Explore the books <span aria-hidden="true">↗</span></a><a class="ar-text-link" href="/world-guide/">Enter the world guide <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="ar-hero-visual" aria-label="The Silence cover surrounded by an illustrated eclipse">
+        <div class="ar-starmap" aria-hidden="true"></div><div class="ar-eclipse" aria-hidden="true"></div>
+        <figure class="ar-cover-frame"><img src="/assets/images/the-silence-cover-2026.jpg" width="1200" height="1914" alt="Book cover of The Silence by Mileena Rayne" fetchpriority="high"><figcaption>The Silence · New edition</figcaption></figure>
+        <p class="ar-hero-annotation">ARCADIA / VOL. I<br>THE BLOOD OF THE WILD GODS</p>
+      </div>
+    </section>
+    <div class="ar-rule">I · The novels</div>
+    <section class="ar-section" id="ar-books" aria-labelledby="ar-books-title">
+      <div class="ar-section-header"><div><p class="ar-kicker">Begin here</p><h2 id="ar-books-title">The stories of Arcadia</h2></div><p>Different lives. Different ages. One world shaped by the divine and the damage left behind.</p></div>
+      <div class="ar-book-shelf">
+        <article class="ar-book">
+          <a href="/writing/the-silence/" aria-label="Explore The Silence"><img src="/assets/images/the-silence-cover-2026.jpg" alt="The Silence novel cover" width="1200" height="1914" loading="lazy"></a>
+          <div><span class="ar-number">01 / THE SILENCE</span><h3><a href="/writing/the-silence/">The Silence</a></h3><p class="ar-book-meta">Rewritten edition · Available now</p><p>A hunter, a healer, and a power stirring beneath Arcadia. Five lives converge as an ancient presence begins to wake.</p><a class="ar-text-link" href="/writing/the-silence/">Discover the novel <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="ar-book">
+          <a href="/writing/the-chosen-chronicles/" aria-label="Explore The Chosen"><img src="/assets/images/the-chosen-second-edition.jpg" alt="The Chosen novel cover" width="1400" height="2233" loading="lazy"></a>
+          <div><span class="ar-number">02 / THE CHOSEN CHRONICLES</span><h3><a href="/writing/the-chosen-chronicles/">The Chosen</a></h3><p class="ar-book-meta">Book I · Second edition</p><p>In Rivenglade, salvation comes with a price. Mira Roehart must escape the man who would make her faith a prison.</p><a class="ar-text-link" href="/writing/the-chosen-chronicles/">Discover the novel <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <section class="ar-atlas" aria-labelledby="ar-atlas-title">
+    <div class="ar-atlas-grid">
+      <div class="ar-atlas-image"><img src="/assets/images/Arcadia-Post-Divine-War-Map.png" alt="Map of Arcadia after the Divine War" width="1400" height="1000" loading="lazy"><span class="ar-map-caption">PLATE I · THE LANDS OF ARCADIA</span></div>
+      <div class="ar-atlas-copy"><p class="ar-kicker">II · The field notes</p><h2 id="ar-atlas-title">A world with<br><em>its own</em> memory.</h2><p>The novels are only part of the record. Follow the people, languages, kingdoms, gods, constellations, and histories that continue beyond the page.</p><ol class="ar-index"><li><span>01</span> Kingdoms & forgotten histories <span>✧</span></li><li><span>02</span> Gods, faith & magic <span>✧</span></li><li><span>03</span> Languages & the stars <span>✧</span></li></ol><a class="ar-text-link" href="/world-guide/">Browse the world guide <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+
+  <div class="ar-wrap">
+    <section class="ar-life" aria-labelledby="ar-music-title">
+      <div class="ar-life-grid">
+        <div class="ar-life-image"><img src="/assets/images/The-Chosen-Electrofolk.png" alt="Cover art for The Chosen electrofolk soundtrack" width="700" height="700" loading="lazy"></div>
+        <div><p class="ar-kicker">III · The sound of the stories</p><h2 id="ar-music-title">A story can<br>have more than<br>one voice.</h2><p>The music belongs here too. Original soundtracks give the books another life, from dark folk and ritual rhythms to electronic compositions. Other songs come from my own experiences.</p><a class="ar-text-link" href="/music/">Listen to the music <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="ar-dispatch" aria-labelledby="ar-dispatch-title">
+    <div class="ar-wrap">
+      <p class="ar-kicker">IV · From the writer's desk</p><h2 id="ar-dispatch-title">Outside the fiction.</h2><p class="ar-dispatch-intro">There is a real life behind the imagined one. I write about that, too: the things I've lived through, what I'm thinking about, and whatever I feel like sharing.</p>
+      {% assign recent_social = site.social | where_exp: "p", "p.undated != true" | sort: "date" | reverse %}
+      {% if recent_social.size > 0 %}
+      <div class="ar-dispatch-items">
+        {% for thought in recent_social limit:2 %}
+        <article class="ar-dispatch-item"><time datetime="{{ thought.date | date: '%Y-%m-%d' }}">{{ thought.date | date: "%B %-d, %Y" }}</time><h3><a href="{{ thought.url }}">{{ thought.title | escape }}</a></h3><p>{{ thought.content | replace: "<br>", " " | replace: "</p>", " " | strip_html | normalize_whitespace | truncatewords: 27 | escape }}</p></article>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <a class="ar-text-link" href="/feed/">Read the feed <span aria-hidden="true">↗</span></a>
+      <span style="display:inline-block;width:24px"></span>
+      <a class="ar-text-link" href="/diary/">Read the diary <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="ar-ending" aria-labelledby="ar-ending-title">
+    <div class="ar-wrap"><p class="ar-symbol" aria-hidden="true">☾</p><p class="ar-kicker">The person behind the pages</p><h2 id="ar-ending-title">The archive is still<br>being written.</h2><p>I'm Mileena. I write books, make music, and keep creating new pieces of this world. This is the place where they meet.</p><a class="ar-text-link" href="/about/">A little about me <span aria-hidden="true">↗</span></a></div>
+  </section>
+</div>
